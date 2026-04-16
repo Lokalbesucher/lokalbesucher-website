@@ -112,23 +112,27 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 
 ### Farben
 ```css
---bg:       #0c0e1a;
---surface:  #111328;
---surface2: #181b35;
---border:   #1e2240;
+--bg:       #1e365c;  /* Navy Basis */
+--surface:  #243f6b;
+--surface2: #19304f;
+--border:   #2d5080;
 --yellow:   #ffbd59;  /* PRIMARY CTA */
---blue:     #4f82ff;
+--blue:     #6aa3cf;  /* Helle Navy-Variation für Akzente */
 --green:    #3ecf8e;
 --red:      #ff5c5c;
---text:     #e8eaf6;
---muted:    #6b7099;
+--text:     #f0f4ff;
+--muted:    #8badd4;
 ```
 
 ### Typografie (self-hosted — DSGVO!)
-- **Headlines:** Syne 700/800
-- **Body:** DM Sans 300/400/500
-- **Mono:** DM Mono 400/500
+- **Headlines:** Mont 700/800 (FontShare, self-hosted)
+- **Body:** Arial, sans-serif (Systemschrift — kein Hosting nötig)
+- **Mono:** DM Mono 400/500 (Google Fonts, self-hosted)
 - font-display: swap auf allen @font-face
+
+### Hintergrundmuster
+- Subtiles CSS-Karomuster auf `body` (45°-Gradients, kein Bild)
+- background-size: 32px 32px; background-position: 0 0, 16px 16px
 
 ### Design
 - Dark Theme durchgängig
