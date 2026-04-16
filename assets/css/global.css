@@ -798,6 +798,85 @@ p {
   }
 }
 
+/* ── Team Cards ────────────────────────────────────────────── */
+
+/* Tobias Pin-Form */
+.tobias-pin-wrap {
+  position: relative;
+  width: 160px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.tobias-pin-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  border-top: 22px solid #ffbd59;
+}
+
+.tobias-pin-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  border: 4px solid #ffbd59;
+}
+
+/* Mitarbeiter-Karten (Hochformat) */
+.team-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  text-align: center;
+  transition: border-color .25s ease, transform .25s ease;
+}
+
+.team-card:hover {
+  border-color: rgba(255, 189, 89, .35);
+  transform: translateY(-3px);
+}
+
+.team-card-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.team-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform .4s ease;
+}
+
+.team-card:hover .team-card-img img {
+  transform: scale(1.04);
+}
+
+.team-card-name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .9rem;
+  color: var(--text);
+  padding: .75rem .75rem .2rem;
+}
+
+.team-card-role {
+  font-size: .78rem;
+  color: var(--muted);
+  padding-bottom: .9rem;
+}
+
 /* ── Trust Strip ───────────────────────────────────────────── */
 
 .trust-strip {
