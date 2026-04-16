@@ -217,7 +217,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 
 ## 8. PRODUKT — NUR ULTIMATE PAKET!
 
-**Ultimate: 279€/Monat** *(zzgl. 19% MwSt., Einrichtung: 379€)*
+**Ultimate: 279€/Monat** *(zzgl. 19% MwSt., Einrichtung: 379€, Laufzeit: 12 Monate)*
 - 50+ Branchenverzeichnisse
 - KI-Bewertungsantworten in unter 60 Min.
 - 4 Posts/Monat auf 9 Plattformen
@@ -226,6 +226,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 - TapTag NFC-Bewertungssystem
 - 1 Bewertungslöschantrag/Woche
 
+**NIEMALS schreiben:** "keine Mindestlaufzeit" — das ist FALSCH. Laufzeit ist 12 Monate.
 **Kein Professional Paket — nirgendwo erwähnen!**
 
 ---
@@ -321,7 +322,7 @@ mit konsistenten Attributen überall identisch auftreten: Website, GBP, Verzeich
 - `FAQPage` auf: Homepage, Pillar Page, FAQ-Seite
 - `BreadcrumbList` auf allen Unterseiten
 - `AggregateRating` — nur wenn echte sichtbare Bewertungen auf der Seite
-- `GeoCoordinates` mit exakten Koordinaten Recklinghausen
+- `GeoCoordinates` mit exakten Koordinaten Datteln (51.6547° N, 7.3400° E)
 - `areaServed` auf alle NRW-Städte + Deutschland
 
 ### 15.2 GEO — AI-Zitierbarkeit
@@ -413,13 +414,10 @@ Ausführen mit: `python scripts/download-images.py`
 
 ## 18. UMSETZUNGSREIHENFOLGE
 
-1. `global.css`, `_headers`, `_redirects`, `robots.txt`, Fonts
-2. Homepage (`/`) — P1
-3. Pillar Page (`/google-business-agentur/`) — P1
-4. FAQ (`/faq/`) — P1
-5. Impressum + Datenschutz — Pflicht
-6. Cookie Consent (Klaro) — Pflicht vor Go-Live
-7. Case Studies — P2
-8. ROI Kalkulator + Schema Generator — P2
-9. sitemap.xml — vor Go-Live
-10. DNS umzeigen — erst wenn alles fertig!
+1. Adresse auf allen Seiten korrigieren: Im Westerkamp 7, 45711 Datteln
+2. `_headers`, `_redirects`, `robots.txt` — Pflicht
+3. `sitemap.xml` — vor Go-Live
+4. Cookie Consent (Klaro.js) — Pflicht vor Go-Live
+5. ROI Kalkulator + Schema Generator — P2
+6. Case Studies — **werden separat mit Tobias besprochen, noch nicht anfassen!**
+7. DNS umzeigen — erst wenn alles fertig und getestet!
