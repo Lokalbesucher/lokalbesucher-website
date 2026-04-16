@@ -264,16 +264,108 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 ## 12. GIT WORKFLOW
 
 ```powershell
-cd C:\Users\Admin\Documents\lokalbesucher-website
+cd "C:\lokalbesucher - webseite"
 git add .
-git commit -m "beschreibung"
+git commit -m "beschreibung auf deutsch"
 git push origin main
 # Cloudflare deployed automatisch in ~30 Sekunden
 ```
 
 ---
 
-## 13. BUGS DER ALTEN SITE (beheben!)
+## 13. ARBEITSUMGEBUNG — KRITISCH
+
+- **Arbeitsverzeichnis:** `C:\lokalbesucher - webseite\` — IMMER, AUSNAHMSLOS
+- **NIEMALS** `C:\tmp\`, `C:\Users\...` oder andere Pfade nutzen
+- Alle Dateien immer relativ zum Arbeitsverzeichnis anlegen
+- In Node.js Scripts: `path.join(__dirname, ...)` nutzen statt absolute Pfade
+- Vor jedem Datei-Schreiben prüfen ob Zielordner existiert, ggf. `fs.mkdirSync` mit `recursive: true`
+- Kein `C:\tmp\` für temporäre Dateien — stattdessen `C:\lokalbesucher - webseite\tmp\` (wird in .gitignore eingetragen)
+- Bei Fehler "ENOENT: no such file or directory": immer erst Ordner anlegen, dann Datei schreiben
+
+---
+
+## 14. ANALYTICS & TRACKING
+
+### Google Analytics 4
+- GA4 Measurement ID: wird von Tobias bereitgestellt (oder in Search Console nachschauen)
+- Einbindung: via gtag.js, NUR nach Cookie Consent (Klaro)
+- GA4 Consent Mode v2: `analytics_storage` und `ad_storage` default auf `denied`
+- Nach Consent: beide auf `granted` setzen
+- Tag in `<head>` aller Seiten einbauen — aber erst aktiv wenn Consent gegeben
+
+### Google Search Console
+- Verification: TXT-Record ist bereits in Cloudflare DNS vorhanden (`HXLOQvZw5-ZnBE_rEjG4SHi-wwMuk6irAUiaqGNIpOo`)
+- Kein neuer Verification-Tag nötig — Search Console bleibt verbunden
+- Nach DNS-Umzug: in Search Console neue Sitemap einreichen (`https://lokalbesucher.de/sitemap.xml`)
+- Wichtig: nach Go-Live alle alten WordPress-URLs als "entfernt" markieren falls sie 404 werden
+
+### Bing Webmaster Tools
+- MS-Verification TXT-Record ist bereits vorhanden (`ms45748817`)
+- Nach Go-Live ebenfalls Sitemap einreichen
+
+---
+
+## 15. SEO & GEO PLAYBOOK — JEDE SEITE
+
+### 15.1 Entity-First Prinzip
+Google 2026 rankt Business Entities, nicht Seiten. "Lokalbesucher GmbH" muss als Entität
+mit konsistenten Attributen überall identisch auftreten: Website, GBP, Verzeichnisse, LinkedIn.
+
+**Schema.org Stack — Pflicht auf jeder Seite:**
+- `Organization` + `LocalBusiness` + `ProfessionalService` kombiniert (Homepage)
+- `sameAs` verlinkt auf: GBP-URL, LinkedIn, ProvenExpert, Trustindex, Facebook
+- `Person` für Tobias Frank als Experte/Autor mit E-E-A-T-Signalen
+- `WebSite` mit `SearchAction` (Homepage)
+- `Service` für jede einzelne Leistung (eigene Sections)
+- `FAQPage` auf: Homepage, Pillar Page, FAQ-Seite
+- `BreadcrumbList` auf allen Unterseiten
+- `AggregateRating` — nur wenn echte sichtbare Bewertungen auf der Seite
+- `GeoCoordinates` mit exakten Koordinaten Recklinghausen
+- `areaServed` auf alle NRW-Städte + Deutschland
+
+### 15.2 GEO — AI-Zitierbarkeit
+50% der von AI zitierten Inhalte sind unter 13 Wochen alt — Frische ist kritisch.
+
+**Jede Seite braucht:**
+- **Answer Capsules:** Für jede Hauptfrage einen 50-60 Wort Absatz der direkt antwortet
+  (kein Einleiten, keine Umschreibung — direkt die Antwort)
+- **Fakten-Dichte:** Mindestens eine konkrete Zahl/Statistik alle 150-200 Wörter
+  ("800+ Bewertungen", "+158% Aufrufe", "3,9 Mio. Profilaufrufe")
+- **FAQ-Block** mit id-Anchors: `<div id="faq-was-kostet">` damit AI präzise zitieren kann
+- **Datum der letzten Aktualisierung** sichtbar auf der Seite
+- **Klare H2/H3-Struktur** die Fragen als Überschriften formuliert
+  (z.B. "Was kostet eine Google Business Agentur?" statt "Preise")
+
+### 15.3 E-E-A-T — Tobias Frank als Experte
+- Autorenbox auf allen inhaltlichen Seiten: Foto, Name, Titel, 20 Jahre Erfahrung
+- `Person` Schema mit `jobTitle`, `worksFor`, `sameAs` → LinkedIn
+- Frühere Stationen nennen: Salesforce, Amazon, StepStone (Expertise-Beweis)
+- Case Studies mit echten, verifizierbaren Zahlen
+- Externe Verlinkungen zu Quellen stärken E-E-A-T
+
+### 15.4 Lokale NRW-Signale
+- "Recklinghausen", "NRW", "Ruhrgebiet", "Nordrhein-Westfalen" natürlich in Texte einbauen
+- NAP in Footer: Münsterstr. 13-15, 45657 Recklinghausen — identisch auf JEDER Seite
+- Mittelfristig: Städte-Landingpages für Dortmund, Essen, Bochum, Gelsenkirchen, Herne etc.
+- Google Maps Einbettung auf Kontakt/Impressum-Seite
+
+### 15.5 Content-Checkliste vor jedem Commit
+Bevor eine Seite committed wird, prüfen:
+- [ ] Title Tag: "[Hauptkeyword] | Lokalbesucher" (50-60 Zeichen)
+- [ ] Meta Description: Call-to-Action + Keyword + USP (150-160 Zeichen)
+- [ ] H1: exakt einmal, enthält Hauptkeyword + Ortsangabe
+- [ ] Schema.org: validiert mit schema.org/validator Gedankengang
+- [ ] Answer Capsule: erste Frage direkt in 50-60 Wörtern beantwortet
+- [ ] Mindestens 3 konkrete Zahlen/Stats auf der Seite
+- [ ] FAQ-Section mit FAQPage-Schema
+- [ ] Canonical Tag korrekt
+- [ ] OG-Tags vollständig
+- [ ] WhatsApp-CTA above the fold
+
+---
+
+## 16. BUGS DER ALTEN SITE (beheben!)
 
 - `info@domain.tld` → `info@lokalbesucher.de`
 - Inkonsistente Navigation → eine einheitliche Nav
@@ -284,7 +376,42 @@ git push origin main
 
 ---
 
-## 14. UMSETZUNGSREIHENFOLGE
+## 17. BILDER — SEO-OPTIMIERT
+
+Beim ersten Start dieses Projekts: Python-Script ausführen um alle Bilder von der
+aktuellen WordPress-Site zu laden, in WebP zu konvertieren und SEO-konform zu benennen.
+
+Script liegt unter: `scripts/download-images.py`
+Ausführen mit: `python scripts/download-images.py`
+
+### Bild-Mapping (WordPress-Original → SEO-Dateiname → Alt-Text)
+
+| Original | Neuer Name | Alt-Text |
+|----------|------------|----------|
+| logo_708e...png | lokalbesucher-logo.webp | Lokalbesucher Logo — Google Business Agentur Recklinghausen |
+| logo_453...png | lokalbesucher-logo-dark.webp | Lokalbesucher Logo dunkel |
+| Lokalbesucher-Invers.png | lokalbesucher-logo-invers.webp | Lokalbesucher Logo weiß |
+| HeroNew.png | lokalbesucher-google-business-agentur-hero.webp | Inhaberin lächelt — dank Lokalbesucher bei Google sichtbar in Recklinghausen |
+| circle-home-3.webp | lokalbesucher-google-business-optimierung-nrw.webp | Google Business Optimierung NRW — Lokalbesucher Recklinghausen |
+| About-2.png | lokalbesucher-team-google-business-experten.webp | Lokalbesucher Team — Google Business Experten aus Recklinghausen NRW |
+| creative-agency-dark-01.webp | lokalbesucher-lokales-marketing-agentur.webp | Lokales Marketing für KMU — Lokalbesucher Agentur Recklinghausen |
+| output-onlinepngtools-3.png | lokalbesucher-local-seo-nrw-google.webp | Local SEO NRW — Google Business Optimierung Lokalbesucher |
+| wave-a.png | preisplan-welle-design-a.webp | Dekoratives Element Preisplan |
+| wave-b.png | preisplan-welle-design-b.webp | Dekoratives Element Preisplan Ultimate |
+
+### Regeln für alle Bilder
+- Format: WebP (Qualität 85%)
+- Dateinamen: lowercase, nur Bindestriche, keyword-reich, Ort/Region wenn sinnvoll
+- Alt-Texte: beschreibend + keyword, max 125 Zeichen, kein "Bild von..."
+- Dekorative Bilder: alt="" (leer)
+- Logos: alt="Lokalbesucher Logo — Google Business Agentur Recklinghausen"
+- Immer width + height Attribute angeben
+- Lazy loading auf allem außer above-the-fold (loading="eager" für Hero)
+- Neue Bilder die Tobias liefert: gleiches Schema anwenden
+
+---
+
+## 18. UMSETZUNGSREIHENFOLGE
 
 1. `global.css`, `_headers`, `_redirects`, `robots.txt`, Fonts
 2. Homepage (`/`) — P1
