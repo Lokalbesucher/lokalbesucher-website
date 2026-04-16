@@ -38,8 +38,8 @@
     @media(min-width:1200px){.container{padding-inline:3rem}}
     .site-header{position:sticky;top:0;z-index:100;background:rgba(12,14,26,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1e2240}
     .nav{display:flex;align-items:center;gap:2rem;height:4rem}
-    .nav-logo{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:1.2rem;flex-shrink:0}
-    .nav-logo span{color:#ffbd59}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;font-family:Arial,sans-serif;font-weight:700;font-size:1.2rem;color:#e8eaf6;flex-shrink:0}
+    .nav-logo img{height:2.4rem;width:auto;display:block}
     .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
     .btn-primary{background:#ffbd59;color:#0c0e1a;box-shadow:0 4px 24px rgba(255,189,89,.2)}
     .btn-primary:hover{background:#ffc96d;transform:translateY(-1px)}
@@ -140,7 +140,10 @@
 <header class="site-header" role="banner">
   <div class="container">
     <nav class="nav" aria-label="Hauptnavigation">
-      <a href="/" class="nav-logo" aria-label="Lokalbesucher – Startseite">Lokal<span>besucher</span></a>
+      <a href="/" class="nav-logo" aria-label="Lokalbesucher – Startseite">
+        <img src="/assets/images/lokalbesucher-invers.webp" alt="" width="35" height="38" loading="eager">
+        Lokalbesucher
+      </a>
       <ul class="nav-links" role="list">
         <li><a href="/google-business-agentur/">Leistungen</a></li>
         <li><a href="/case-studies/">Erfolge</a></li>
@@ -498,7 +501,10 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand">Lokal<span>besucher</span></div>
+        <div class="footer-brand">
+          <img src="/assets/images/lokalbesucher-invers.webp" alt="" width="34" height="37" loading="lazy">
+          Lokalbesucher
+        </div>
         <p class="footer-tagline">Die Google Business Agentur für lokale Unternehmen in Deutschland.</p>
         <address class="footer-nap" style="font-style:normal">
           <strong>Lokalbesucher GmbH</strong>
