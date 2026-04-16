@@ -1,0 +1,13 @@
+{
+  "name": "lokalbesucher-build-tools",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "download-images": "node scripts/download-images.js",
+    "download-fonts": "node scripts/download-fonts.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.4"
+  }
+}
