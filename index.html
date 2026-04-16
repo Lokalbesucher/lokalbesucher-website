@@ -45,8 +45,8 @@
     @media(min-width:1200px){.container{padding-inline:3rem}}
     .site-header{position:sticky;top:0;z-index:100;background:rgba(12,14,26,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1e2240}
     .nav{display:flex;align-items:center;gap:2rem;height:4rem}
-    .nav-logo{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:1.2rem;flex-shrink:0}
-    .nav-logo span{color:#ffbd59}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;font-family:Arial,sans-serif;font-weight:700;font-size:1.2rem;color:#e8eaf6;flex-shrink:0}
+    .nav-logo img{height:2.4rem;width:auto;display:block}
     .hero{padding-block:5rem 4rem;position:relative;overflow:hidden}
     @media(min-width:768px){.hero{padding-block:7rem 5rem}}
     .hero-badge{display:inline-flex;align-items:center;gap:.4em;padding:.35em .9em;font-size:.78rem;font-weight:500;border-radius:999px;border:1px solid rgba(255,189,89,.3);background:rgba(255,189,89,.1);color:#ffbd59;margin-bottom:1.5rem}
@@ -178,7 +178,8 @@
   <div class="container">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="/" class="nav-logo" aria-label="Lokalbesucher – Startseite">
-        Lokal<span>besucher</span>
+        <img src="/assets/images/lokalbesucher-invers.webp" alt="" width="35" height="38" loading="eager">
+        Lokalbesucher
       </a>
 
       <ul class="nav-links" role="list">
@@ -609,7 +610,10 @@
     <div class="footer-grid">
 
       <div>
-        <div class="footer-brand">Lokal<span>besucher</span></div>
+        <div class="footer-brand">
+          <img src="/assets/images/lokalbesucher-invers.webp" alt="" width="34" height="37" loading="lazy">
+          Lokalbesucher
+        </div>
         <p class="footer-tagline">
           Die Google Business Agentur für lokale Unternehmen in Deutschland.
           Dauerhaft sichtbar. Messbar erfolgreich.

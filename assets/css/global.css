@@ -506,15 +506,20 @@ p {
 }
 
 .nav-logo {
-  font-family: var(--font-head);
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
   font-size: 1.2rem;
   color: var(--text);
   flex-shrink: 0;
 }
 
-.nav-logo span {
-  color: var(--yellow);
+.nav-logo img {
+  height: 2.4rem; /* doppelte Schrifthöhe */
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -664,14 +669,20 @@ p {
 }
 
 .footer-brand {
-  font-family: var(--font-head);
-  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: Arial, sans-serif;
+  font-weight: 700;
   font-size: 1.15rem;
+  color: var(--text);
   margin-bottom: var(--space-md);
 }
 
-.footer-brand span {
-  color: var(--yellow);
+.footer-brand img {
+  height: 2.3rem;
+  width: auto;
+  display: block;
 }
 
 .footer-tagline {
