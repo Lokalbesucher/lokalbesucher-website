@@ -798,6 +798,45 @@ p {
   }
 }
 
+/* ── Trust Strip ───────────────────────────────────────────── */
+
+.trust-strip {
+  padding-block: var(--space-xl);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.trust-label {
+  text-align: center;
+  font-size: .8rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  margin-bottom: var(--space-lg);
+}
+
+.trust-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem 3rem;
+}
+
+.trust-logos img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: .5;
+  transition: opacity .25s ease;
+}
+
+.trust-logos img:hover {
+  opacity: .85;
+}
+
 /* ── Stat-Block ────────────────────────────────────────────── */
 
 .stats-grid {
