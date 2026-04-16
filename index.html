@@ -67,7 +67,7 @@
     .hero-check{display:flex;align-items:center;gap:.45rem;font-size:.85rem;color:#6b7099}
     /* Hero Image */
     .hero-img-wrap{position:relative;display:flex;justify-content:center}
-    .hero-img-wrap img{border-radius:20px;width:100%;max-width:520px;object-fit:cover;box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(255,189,89,.08)}
+    .hero-img-wrap img{border-radius:20px;width:100%;max-width:520px;object-fit:cover}
     .hero-img-glow{position:absolute;inset:-20px;background:radial-gradient(ellipse at center,rgba(255,189,89,.12) 0%,transparent 70%);pointer-events:none;border-radius:24px}
     @media(max-width:899px){.hero-img-wrap{order:-1}}
   </style>
@@ -308,15 +308,15 @@
     <div class="container">
       <p class="trust-label">Vertrauen von 200+ Unternehmen in ganz Deutschland</p>
       <div class="trust-logos">
-        <img src="/assets/images/orthoclinic-hamburg-kunde.webp"
+        <img src="/assets/images/orthoclinic-kunde-lokalbesucher.webp"
              alt="Orthoclinic Hamburg" width="80" height="80" loading="lazy">
-        <img src="/assets/images/easyfitness-local-seo-ergebnis.webp"
+        <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp"
              alt="Easy Fitness" width="80" height="80" loading="lazy">
-        <img src="/assets/images/mangalmezze-google-bewertungen-erfolg.webp"
+        <img src="/assets/images/mangalmezze-kunde-lokalbesucher.webp"
              alt="Mangal Mezze" width="80" height="80" loading="lazy">
-        <img src="/assets/images/bb-local-seo-kunde.webp"
+        <img src="/assets/images/bb-kunde-lokalbesucher.webp"
              alt="BattleKart" width="80" height="80" loading="lazy">
-        <img src="/assets/images/qulis-google-bewertungen-kunde.webp"
+        <img src="/assets/images/qulis-kunde-lokalbesucher.webp"
              alt="Qulis" width="80" height="80" loading="lazy">
       </div>
     </div>
@@ -437,15 +437,6 @@
         </div>
       </div>
 
-      <!-- Agenturbild -->
-      <div style="margin-top:3.5rem;border-radius:20px;overflow:hidden;border:1px solid var(--border)">
-        <img src="/assets/images/lokalbesucher-digitales-marketing-nrw.webp"
-             alt="Lokalbesucher Team bei der Arbeit — lokales Marketing für KMU"
-             width="1200" height="500"
-             loading="lazy"
-             style="width:100%;height:auto;max-height:420px;object-fit:cover;display:block">
-      </div>
-
     </div>
   </section>
 
@@ -453,95 +444,105 @@
   <section class="section" aria-labelledby="team-title">
     <div class="container">
 
-      <div style="display:grid;grid-template-columns:1fr;gap:3.5rem;align-items:center">
+      <div class="section-header">
+        <span class="section-label">Wer steckt dahinter?</span>
+        <h2 class="section-title" id="team-title">Erfahrung, die sich auszahlt</h2>
+        <p class="section-desc" style="max-width:660px;margin-inline:auto">
+          Kein anonymes Agentur-Kollektiv. Hinter Lokalbesucher steckt ein Team mit echter
+          Sales- und Marketing-Erfahrung aus 20+ Jahren bei Salesforce, Amazon und StepStone.
+        </p>
+      </div>
 
-        <!-- Tobias-Block -->
-        <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center">
-          <div style="text-align:center">
-            <span class="section-label">Wer steckt dahinter?</span>
-            <h2 class="section-title" id="team-title">Erfahrung, die sich auszahlt</h2>
-            <p class="section-desc" style="max-width:660px;margin-inline:auto">
-              Kein anonymes Agentur-Kollektiv. Hinter Lokalbesucher steckt ein Team mit echter
-              Sales- und Marketing-Erfahrung aus 20+ Jahren bei Salesforce, Amazon und StepStone.
-            </p>
+      <!-- Tobias Frank — Geschäftsführer (Pin-Form) -->
+      <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:3.5rem">
+        <div class="tobias-pin-wrap" aria-hidden="true">
+          <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
+               alt="Tobias Frank — Geschäftsführer Lokalbesucher GmbH"
+               width="160" height="180"
+               loading="lazy"
+               class="tobias-pin-img">
+        </div>
+        <div style="text-align:center;margin-top:1.5rem;max-width:560px">
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;margin-bottom:.25rem">Tobias Frank</div>
+          <div style="font-size:.875rem;color:#ffbd59;margin-bottom:.5rem">Geschäftsführer</div>
+          <div style="font-size:.8rem;color:#6b7099;margin-bottom:1.25rem">20+ Jahre Sales &amp; Marketing · Salesforce · Amazon · StepStone</div>
+          <blockquote style="font-size:.95rem;line-height:1.75;color:#c5c8e0;border-left:3px solid #ffbd59;padding-left:1rem;font-style:italic;margin:0;text-align:left">
+            „Lokale Sichtbarkeit ist kein Zufall — sie ist das Ergebnis konsequenter,
+            täglicher Arbeit. Genau das machen wir für dich."
+          </blockquote>
+        </div>
+      </div>
+
+      <!-- Team-Foto Gruppe -->
+      <div style="margin-bottom:3rem;border-radius:16px;overflow:hidden;border:1px solid var(--border)">
+        <img src="/assets/images/lokalbesucher-team-datteln-nrw.webp"
+             alt="Das Lokalbesucher Team — Google Business Experten aus Datteln, NRW"
+             width="1200" height="500"
+             loading="lazy"
+             style="width:100%;height:auto;max-height:380px;object-fit:cover;display:block">
+      </div>
+
+      <!-- Team-Karten — Hochformat -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.25rem">
+
+        <div class="team-card">
+          <div class="team-card-img">
+            <img src="/assets/images/kim-frank-lokalbesucher-team.webp"
+                 alt="Kim Frank — Head of Operations, Lokalbesucher"
+                 width="200" height="260" loading="lazy">
           </div>
+          <div class="team-card-name">Kim Frank</div>
+          <div class="team-card-role">Head of Operations</div>
         </div>
 
-        <!-- Tobias Portrait -->
-        <div style="display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center">
-          <div style="display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2rem">
-            <div style="display:flex;flex-direction:column;gap:1.5rem;align-items:flex-start">
-              <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap">
-                <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
-                     alt="Tobias Frank — Geschäftsführer Lokalbesucher GmbH"
-                     width="100" height="100"
-                     loading="lazy"
-                     style="border-radius:50%;object-fit:cover;border:3px solid #ffbd59;flex-shrink:0">
-                <div>
-                  <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;margin-bottom:.2rem">Tobias Frank</div>
-                  <div style="font-size:.875rem;color:#ffbd59;margin-bottom:.35rem">Geschäftsführer &amp; Gründer</div>
-                  <div style="font-size:.825rem;color:#6b7099">20+ Jahre Sales &amp; Marketing · Salesforce · Amazon · StepStone</div>
-                </div>
-              </div>
-              <blockquote style="font-size:1rem;line-height:1.75;color:#e8eaf6;border-left:3px solid #ffbd59;padding-left:1.25rem;font-style:italic;margin:0">
-                „Lokale Sichtbarkeit ist kein Zufall — sie ist das Ergebnis konsequenter,
-                täglicher Arbeit. Genau das machen wir für dich."
-              </blockquote>
-            </div>
+        <div class="team-card">
+          <div class="team-card-img">
+            <img src="/assets/images/mara-goronschewski-lokalbesucher-team.webp"
+                 alt="Mara Goronschewski — Social Media Managerin, Lokalbesucher"
+                 width="200" height="260" loading="lazy">
           </div>
+          <div class="team-card-name">Mara Goronschewski</div>
+          <div class="team-card-role">Social Media Managerin</div>
         </div>
 
-        <!-- Team-Grid -->
-        <div>
-          <p style="text-align:center;font-size:.875rem;color:#6b7099;margin-bottom:2rem;text-transform:uppercase;letter-spacing:.08em">Unser Team</p>
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1.5rem">
-
-            <div style="text-align:center">
-              <div style="width:90px;height:90px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:2px solid var(--border)">
-                <img src="/assets/images/kim-frank-lokalbesucher-team.webp"
-                     alt="Kim Frank — Lokalbesucher Team"
-                     width="90" height="90"
-                     loading="lazy"
-                     style="width:100%;height:100%;object-fit:cover">
-              </div>
-              <div style="font-weight:600;font-size:.9rem;margin-bottom:.2rem">Kim Frank</div>
-              <div style="font-size:.8rem;color:#6b7099">Operations</div>
-            </div>
-
-            <div style="text-align:center">
-              <div style="width:90px;height:90px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:2px solid var(--border)">
-                <img src="/assets/images/mara-goronschewski-lokalbesucher-team.webp"
-                     alt="Mara Goronschewski — Lokalbesucher Team"
-                     width="90" height="90"
-                     loading="lazy"
-                     style="width:100%;height:100%;object-fit:cover">
-              </div>
-              <div style="font-weight:600;font-size:.9rem;margin-bottom:.2rem">Mara Goronschewski</div>
-              <div style="font-size:.8rem;color:#6b7099">Marketing</div>
-            </div>
-
-            <div style="text-align:center">
-              <div style="width:90px;height:90px;border-radius:50%;overflow:hidden;margin:0 auto 1rem;border:2px solid var(--border)">
-                <img src="/assets/images/lucy-kalweit-lokalbesucher-team.webp"
-                     alt="Lucy Kalweit — Lokalbesucher Team"
-                     width="90" height="90"
-                     loading="lazy"
-                     style="width:100%;height:100%;object-fit:cover">
-              </div>
-              <div style="font-weight:600;font-size:.9rem;margin-bottom:.2rem">Lucy Kalweit</div>
-              <div style="font-size:.8rem;color:#6b7099">Kundenbetreuung</div>
-            </div>
-
+        <div class="team-card">
+          <div class="team-card-img">
+            <img src="/assets/images/lucy-kalweit-lokalbesucher-team.webp"
+                 alt="Lucy Kalweit — Social Media Managerin, Lokalbesucher"
+                 width="200" height="260" loading="lazy">
           </div>
+          <div class="team-card-name">Lucy Kalweit</div>
+          <div class="team-card-role">Social Media Managerin</div>
+        </div>
 
-          <!-- Team-Bild -->
-          <div style="margin-top:2.5rem;border-radius:16px;overflow:hidden;border:1px solid var(--border)">
-            <img src="/assets/images/lokalbesucher-team-datteln-nrw.webp"
-                 alt="Das Lokalbesucher Team — Google Business Experten aus NRW"
-                 width="1200" height="500"
-                 loading="lazy"
-                 style="width:100%;height:auto;max-height:380px;object-fit:cover;display:block">
+        <div class="team-card">
+          <div class="team-card-img">
+            <img src="/assets/images/sophie-merkel-lokalbesucher.webp"
+                 alt="Sophie Merkel — Creative Managerin, Lokalbesucher"
+                 width="200" height="260" loading="lazy">
           </div>
+          <div class="team-card-name">Sophie Merkel</div>
+          <div class="team-card-role">Creative Managerin</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-img">
+            <img src="/assets/images/milena-booken-lokalbesucher.webp"
+                 alt="Milena-Ebru Booken — Sales Managerin, Lokalbesucher"
+                 width="200" height="260" loading="lazy">
+          </div>
+          <div class="team-card-name">Milena-Ebru Booken</div>
+          <div class="team-card-role">Sales Managerin</div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-card-img">
+            <img src="/assets/images/milana-wedau-lokalbesucher.webp"
+                 alt="Milana Wedau — Performance Managerin, Lokalbesucher"
+                 width="200" height="260" loading="lazy">
+          </div>
+          <div class="team-card-name">Milana Wedau</div>
+          <div class="team-card-role">Performance Managerin</div>
         </div>
 
       </div>
@@ -623,93 +624,19 @@
   </section>
 
   <!-- CASE STUDIES ──────────────────────────────────────────── -->
-  <section class="section" aria-labelledby="cases-title">
+  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="cases-title">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Unsere Erfolge</span>
         <h2 class="section-title" id="cases-title">Echte Ergebnisse, echte Unternehmen</h2>
-        <p class="section-desc">Keine Hochglanz-Versprechen. Nur Zahlen die für sich sprechen.</p>
+        <p class="section-desc">
+          800+ Bewertungen in 9 Monaten. 40x ROAS. Dauerhaft Top 3 in der Region.
+          Die ausführlichen Case Studies folgen in Kürze.
+        </p>
       </div>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem">
-
-        <article class="card" style="padding:0;overflow:hidden">
-          <div style="aspect-ratio:16/9;overflow:hidden;background:var(--surface2)">
-            <img src="/assets/images/bb-local-seo-kunde.webp"
-                 alt="BattleKart Oberhausen — 800+ Bewertungen in 9 Monaten"
-                 width="600" height="338"
-                 loading="lazy"
-                 style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease"
-                 onmouseover="this.style.transform='scale(1.04)'"
-                 onmouseout="this.style.transform='scale(1)'">
-          </div>
-          <div style="padding:1.5rem">
-            <div style="margin-bottom:1rem"><span class="badge badge-yellow">800+ Bewertungen</span></div>
-            <h3 style="font-size:1.1rem;margin-bottom:.5rem">BattleKart Oberhausen</h3>
-            <p style="font-size:.875rem;color:#6b7099;margin-bottom:1.25rem;line-height:1.7">
-              Von 0 auf 800+ Bewertungen in nur 9 Monaten.
-              Dauerhaft Top 1 in der Region für Indoor-Kart.
-            </p>
-            <a href="/case-studies/battlekart/" class="btn btn-ghost btn-sm">
-              Case Study lesen
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="card" style="padding:0;overflow:hidden">
-          <div style="aspect-ratio:16/9;overflow:hidden;background:var(--surface2)">
-            <img src="/assets/images/lokalbesucher-lokale-sichtbarkeit-google.webp"
-                 alt="Eventlocation — 40x ROAS durch Google Business Optimierung"
-                 width="600" height="338"
-                 loading="lazy"
-                 style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease"
-                 onmouseover="this.style.transform='scale(1.04)'"
-                 onmouseout="this.style.transform='scale(1)'">
-          </div>
-          <div style="padding:1.5rem">
-            <div style="margin-bottom:1rem"><span class="badge badge-green">40x ROAS</span></div>
-            <h3 style="font-size:1.1rem;margin-bottom:.5rem">Eventlocation NRW</h3>
-            <p style="font-size:.875rem;color:#6b7099;margin-bottom:1.25rem;line-height:1.7">
-              40-facher Return on Ad Spend durch optimiertes
-              Google-Profil und gezieltes Bewertungsmanagement.
-            </p>
-            <a href="/case-studies/schlosshotel-westerholt/" class="btn btn-ghost btn-sm">
-              Case Study lesen
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="card" style="padding:0;overflow:hidden">
-          <div style="aspect-ratio:16/9;overflow:hidden;background:var(--surface2)">
-            <img src="/assets/images/orthoclinic-hamburg-local-seo-ergebnis.webp"
-                 alt="Orthoclinic Düsseldorf — dauerhaft Top 3 bei Google"
-                 width="600" height="338"
-                 loading="lazy"
-                 style="width:100%;height:100%;object-fit:cover;transition:transform .4s ease"
-                 onmouseover="this.style.transform='scale(1.04)'"
-                 onmouseout="this.style.transform='scale(1)'">
-          </div>
-          <div style="padding:1.5rem">
-            <div style="margin-bottom:1rem"><span class="badge badge-blue">Dauerhaft Top 3</span></div>
-            <h3 style="font-size:1.1rem;margin-bottom:.5rem">Orthoclinic Düsseldorf</h3>
-            <p style="font-size:.875rem;color:#6b7099;margin-bottom:1.25rem;line-height:1.7">
-              Dauerhaft Top 3 in Düsseldorf für orthopädische Fachklinik —
-              mehr Patienten, weniger Marketingaufwand.
-            </p>
-            <a href="/case-studies/orthoclinic/" class="btn btn-ghost btn-sm">
-              Case Study lesen
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-        </article>
-
-      </div>
-
-      <div style="text-align:center;margin-top:2.5rem">
+      <div style="text-align:center">
         <a href="/case-studies/" class="btn btn-ghost">
-          Alle Case Studies ansehen
+          Alle Erfolge ansehen
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
@@ -736,14 +663,6 @@
         <p style="font-size:.875rem">Wird eingebettet sobald Tobias den Code bereitstellt.</p>
       </div>
 
-      <!-- Bewertungs-Grafik als visueller Anker -->
-      <div style="margin-top:2.5rem;display:flex;justify-content:center">
-        <img src="/assets/images/lokalbesucher-local-seo-badge.webp"
-             alt="5-Sterne Bewertungen — Lokalbesucher Kundenzufriedenheit"
-             width="600" height="400"
-             loading="lazy"
-             style="max-width:480px;width:100%;border-radius:16px;border:1px solid var(--border)">
-      </div>
     </div>
   </section>
 
