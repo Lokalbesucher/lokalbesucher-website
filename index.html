@@ -1,1 +1,751 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- ── Primäre SEO-Tags ───────────────────────────────────── -->
+  <title>Google Business Agentur NRW | Mehr lokale Kunden | Lokalbesucher</title>
+  <meta name="description" content="Lokalbesucher ist die führende Google Business Agentur in NRW. 100+ Unternehmen. 3,9 Mio. Profilaufrufe. Dauerhaft Top 3 bei Google Maps. Jetzt kostenlos beraten lassen.">
+  <link rel="canonical" href="https://lokalbesucher.de/">
+
+  <!-- ── Open Graph ──────────────────────────────────────────── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://lokalbesucher.de/">
+  <meta property="og:title"       content="Google Business Agentur NRW | Lokalbesucher">
+  <meta property="og:description" content="100+ lokale Unternehmen. 3,9 Mio. Profilaufrufe. Dauerhaft Top 3 bei Google Maps. Die Google Business Agentur aus Recklinghausen.">
+  <meta property="og:image"       content="https://lokalbesucher.de/assets/images/og-home.webp">
+  <meta property="og:locale"      content="de_DE">
+  <meta property="og:site_name"   content="Lokalbesucher">
+
+  <!-- ── Twitter Card ───────────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Google Business Agentur NRW | Lokalbesucher">
+  <meta name="twitter:description" content="100+ Unternehmen. 3,9 Mio. Profilaufrufe. Dauerhaft Top 3 bei Google Maps.">
+  <meta name="twitter:image"       content="https://lokalbesucher.de/assets/images/og-home.webp">
+
+  <!-- ── Preload kritische Ressourcen ───────────────────────── -->
+  <link rel="preload" href="/assets/fonts/syne-700.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-800.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/css/global.css"          as="style">
+
+  <!-- ── Critical CSS inline (above the fold) ───────────────── -->
+  <style>
+    /* Minimal critical CSS – verhindert FOUC */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0c0e1a;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4,h5,h6{font-family:'Syne',system-ui,sans-serif;line-height:1.15}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    .container{width:100%;max-width:1200px;margin-inline:auto;padding-inline:1.5rem}
+    @media(min-width:768px){.container{padding-inline:2rem}}
+    @media(min-width:1200px){.container{padding-inline:3rem}}
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(12,14,26,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1e2240}
+    .nav{display:flex;align-items:center;gap:2rem;height:4rem}
+    .nav-logo{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:1.2rem;flex-shrink:0}
+    .nav-logo span{color:#ffbd59}
+    .hero{padding-block:5rem 4rem;position:relative;overflow:hidden}
+    @media(min-width:768px){.hero{padding-block:7rem 5rem}}
+    .hero-badge{display:inline-flex;align-items:center;gap:.4em;padding:.35em .9em;font-size:.78rem;font-weight:500;border-radius:999px;border:1px solid rgba(255,189,89,.3);background:rgba(255,189,89,.1);color:#ffbd59;margin-bottom:1.5rem}
+    .hero-title{font-size:clamp(2rem,6vw,3.75rem);font-weight:800;margin-bottom:1.25rem;letter-spacing:-.01em}
+    .hero-title em{color:#ffbd59;font-style:normal}
+    .hero-desc{font-size:clamp(1rem,2.5vw,1.2rem);color:#6b7099;margin-bottom:2rem;max-width:580px}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
+    .btn-primary{background:#ffbd59;color:#0c0e1a;box-shadow:0 4px 24px rgba(255,189,89,.2)}
+    .btn-primary:hover{background:#ffc96d;transform:translateY(-1px);box-shadow:0 6px 32px rgba(255,189,89,.35)}
+    .btn-ghost{background:transparent;color:#e8eaf6;border-color:#1e2240}
+    .btn-ghost:hover{background:#111328;border-color:#6b7099}
+    .btn-lg{font-size:1.05rem;padding:1em 2em}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3rem}
+  </style>
+
+  <!-- ── Global CSS (async) ─────────────────────────────────── -->
+  <link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
+
+  <!-- ── Favicon ────────────────────────────────────────────── -->
+  <link rel="icon" href="/assets/images/favicon.webp" type="image/webp">
+
+  <!-- ── Schema.org JSON-LD ─────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://lokalbesucher.de/#business",
+        "name": "Lokalbesucher GmbH",
+        "alternateName": "Lokalbesucher Google Business Agentur",
+        "description": "Google Business Agentur in Recklinghausen. Wir steigern die lokale Sichtbarkeit von KMU in Deutschland durch professionelles Google Business Management.",
+        "url": "https://lokalbesucher.de/",
+        "logo": { "@type": "ImageObject", "url": "https://lokalbesucher.de/assets/images/logo.webp" },
+        "image": "https://lokalbesucher.de/assets/images/og-home.webp",
+        "telephone": "+4915122358883",
+        "email": "info@lokalbesucher.de",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Münsterstr. 13-15",
+          "addressLocality": "Recklinghausen",
+          "postalCode": "45657",
+          "addressRegion": "NRW",
+          "addressCountry": "DE"
+        },
+        "geo": { "@type": "GeoCoordinates", "latitude": 51.614, "longitude": 7.197 },
+        "areaServed": { "@type": "Country", "name": "Deutschland" },
+        "priceRange": "€€",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+4915122358883",
+          "contactType": "customer service",
+          "availableLanguage": "German"
+        },
+        "numberOfEmployees": { "@type": "QuantitativeValue", "value": 11 },
+        "foundingDate": "2019"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://lokalbesucher.de/#website",
+        "url": "https://lokalbesucher.de/",
+        "name": "Lokalbesucher",
+        "publisher": { "@id": "https://lokalbesucher.de/#business" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://lokalbesucher.de/#webpage",
+        "url": "https://lokalbesucher.de/",
+        "name": "Google Business Agentur NRW | Mehr lokale Kunden | Lokalbesucher",
+        "isPartOf": { "@id": "https://lokalbesucher.de/#website" },
+        "about": { "@id": "https://lokalbesucher.de/#business" },
+        "description": "Lokalbesucher ist die führende Google Business Agentur in NRW. 100+ Unternehmen, 3,9 Mio. Profilaufrufe, dauerhaft Top 3 bei Google Maps.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://lokalbesucher.de/" }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was kostet die Google Business Optimierung bei Lokalbesucher?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Das Ultimate Paket kostet 279 € pro Monat zzgl. 19 % MwSt. Die einmalige Einrichtungsgebühr beträgt 379 € zzgl. MwSt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Für welche Unternehmen eignet sich Lokalbesucher?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Lokalbesucher ist ideal für kleine und mittelständische Unternehmen in Deutschland, die lokal bei Google gefunden werden wollen. Besonders geeignet für Restaurants, Handwerker, Arztpraxen, Hotels und den lokalen Einzelhandel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie schnell sehe ich erste Ergebnisse?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Erste messbare Verbesserungen in Profilaufrufen und Aktionen sind in der Regel nach 4–8 Wochen sichtbar. Stabile Top-3-Platzierungen entstehen typischerweise in 3–6 Monaten."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- ── Skip Link ──────────────────────────────────────────────── -->
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+<!-- ── Header ────────────────────────────────────────────────── -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/" class="nav-logo" aria-label="Lokalbesucher – Startseite">
+        Lokal<span>besucher</span>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/google-business-agentur/">Leistungen</a></li>
+        <li><a href="/case-studies/">Erfolge</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+
+      <a href="https://wa.me/4915122358883"
+         class="btn btn-primary nav-cta"
+         rel="noopener noreferrer"
+         target="_blank"
+         aria-label="Kostenlose Beratung via WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Kostenlos beraten
+      </a>
+
+      <button class="nav-toggle"
+              aria-controls="nav-drawer"
+              aria-expanded="false"
+              aria-label="Navigation öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+
+  <div id="nav-drawer" class="nav-drawer" role="navigation" aria-label="Mobile Navigation">
+    <a href="/google-business-agentur/">Leistungen</a>
+    <a href="/case-studies/">Erfolge</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/impressum/">Impressum</a>
+    <a href="https://wa.me/4915122358883"
+       rel="noopener noreferrer"
+       target="_blank"
+       class="btn btn-primary"
+       style="width:fit-content;margin-top:.5rem">
+      WhatsApp Beratung
+    </a>
+  </div>
+</header>
+
+<!-- ── Main ───────────────────────────────────────────────────── -->
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero grid-bg glow-yellow" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-badge">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Nr. 1 Google Business Agentur in NRW
+      </div>
+
+      <h1 class="hero-title" id="hero-title">
+        Mehr Kunden durch<br>
+        <em>Google Maps &amp; Business</em>
+      </h1>
+
+      <p class="hero-desc">
+        Wir bringen lokale Unternehmen dauerhaft in die Top 3 bei Google.
+        100+ betreute Kunden. 3,9&nbsp;Mio. Profilaufrufe. Messbare Ergebnisse.
+      </p>
+
+      <div class="hero-cta">
+        <a href="https://wa.me/4915122358883"
+           class="btn btn-primary btn-lg"
+           rel="noopener noreferrer"
+           target="_blank"
+           aria-label="Jetzt kostenlose Beratung via WhatsApp starten">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Kostenlose Beratung
+        </a>
+        <a href="/google-business-agentur/" class="btn btn-ghost btn-lg">
+          Leistungen ansehen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center">
+        <div style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#6b7099">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Keine Mindestlaufzeit
+        </div>
+        <div style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#6b7099">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          KI-Bewertungsantworten &lt;&nbsp;60&nbsp;Min.
+        </div>
+        <div style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:#6b7099">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Monatliches Reporting
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="section" aria-label="Unsere Zahlen">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card" data-reveal>
+          <span class="stat-number">100+</span>
+          <span class="stat-label">betreute Unternehmen</span>
+        </div>
+        <div class="stat-card" data-reveal>
+          <span class="stat-number">3,9&nbsp;Mio.</span>
+          <span class="stat-label">Profilaufrufe generiert</span>
+        </div>
+        <div class="stat-card" data-reveal>
+          <span class="stat-number">780k+</span>
+          <span class="stat-label">Anrufe, Routen, Klicks</span>
+        </div>
+        <div class="stat-card" data-reveal>
+          <span class="stat-number">40x</span>
+          <span class="stat-label">ROAS Schlosshotel Westerholt</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WARUM LOKALBESUCHER -->
+  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Warum Lokalbesucher?</span>
+        <h2 class="section-title" id="why-title">Google Business ist mehr als ein Profil</h2>
+        <p class="section-desc">
+          Die meisten Unternehmen verpassen täglich potenzielle Kunden —
+          weil ihr Google-Profil nicht aktiv gepflegt wird. Wir ändern das.
+        </p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+
+        <div class="card fade-up">
+          <div class="icon-box icon-box-yellow" style="margin-bottom:1.25rem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:.75rem">KI-Bewertungsantworten</h3>
+          <p style="font-size:.9rem;color:#6b7099;line-height:1.7">
+            Jede Bewertung wird in unter 60 Minuten professionell beantwortet —
+            KI-gestützt, aber immer individuell. Kein Copy-Paste.
+          </p>
+        </div>
+
+        <div class="card fade-up">
+          <div class="icon-box icon-box-blue" style="margin-bottom:1.25rem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:.75rem">4 Posts auf 9 Plattformen</h3>
+          <p style="font-size:.9rem;color:#6b7099;line-height:1.7">
+            Monatlich 4 Posts auf Google Business, Facebook, Instagram und mehr.
+            600+ Profil-Updates im Jahr. Dein Profil bleibt immer aktuell.
+          </p>
+        </div>
+
+        <div class="card fade-up">
+          <div class="icon-box icon-box-green" style="margin-bottom:1.25rem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:.75rem">50+ Branchenverzeichnisse</h3>
+          <p style="font-size:.9rem;color:#6b7099;line-height:1.7">
+            Konsistente NAP-Daten auf über 50 relevanten Verzeichnissen —
+            ein entscheidender Rankingfaktor den die meisten ignorieren.
+          </p>
+        </div>
+
+        <div class="card fade-up">
+          <div class="icon-box icon-box-yellow" style="margin-bottom:1.25rem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:.75rem">TapTag NFC-System</h3>
+          <p style="font-size:.9rem;color:#6b7099;line-height:1.7">
+            Bewertungen sammeln mit einem Tipp — unser NFC-Chip macht es
+            für deine Kunden so einfach wie möglich.
+          </p>
+        </div>
+
+        <div class="card fade-up">
+          <div class="icon-box icon-box-blue" style="margin-bottom:1.25rem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:.75rem">Monatliches Reporting</h3>
+          <p style="font-size:.9rem;color:#6b7099;line-height:1.7">
+            Klare Zahlen. Kein Bullshit. Du siehst monatlich schwarz auf weiß
+            was sich verbessert hat — Aufrufe, Anrufe, Routenanfragen.
+          </p>
+        </div>
+
+        <div class="card fade-up">
+          <div class="icon-box icon-box-green" style="margin-bottom:1.25rem">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 style="font-size:1.1rem;margin-bottom:.75rem">Bewertungslöschung</h3>
+          <p style="font-size:.9rem;color:#6b7099;line-height:1.7">
+            1 Löschantrag für gefälschte oder regelwidrige Bewertungen pro Woche —
+            damit dein Ruf sauber bleibt.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DAS PAKET -->
+  <section class="section glow-yellow" aria-labelledby="paket-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Transparente Preise</span>
+        <h2 class="section-title" id="paket-title">Das Ultimate Paket</h2>
+        <p class="section-desc">
+          Kein Kleingedrucktes. Kein Upsell. Alles was du brauchst um
+          lokal bei Google zu dominieren.
+        </p>
+      </div>
+
+      <div style="max-width:720px;margin-inline:auto">
+        <div class="price-card">
+          <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;justify-content:space-between;margin-bottom:2rem">
+            <div>
+              <div class="badge badge-yellow" style="margin-bottom:1rem">Ultimate Paket</div>
+              <div class="price-tag">279 &euro; <span>/ Monat</span></div>
+              <div class="price-period">zzgl. 19&nbsp;% MwSt. &middot; Einrichtung: 379&nbsp;&euro; einmalig</div>
+            </div>
+            <a href="https://wa.me/4915122358883"
+               class="btn btn-primary btn-lg"
+               rel="noopener noreferrer"
+               target="_blank"
+               aria-label="Jetzt starten via WhatsApp">
+              Jetzt starten
+            </a>
+          </div>
+
+          <hr class="divider" style="margin-block:0 2rem">
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0">
+            <ul class="feature-list" style="margin-right:2rem">
+              <li class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                50+ Branchenverzeichnisse
+              </li>
+              <li class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                KI-Bewertungsantworten &lt;&nbsp;60&nbsp;Min.
+              </li>
+              <li class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                4 Posts / Monat auf 9 Plattformen
+              </li>
+              <li class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Monatliches Reporting
+              </li>
+            </ul>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                600+ Profil-Updates / Jahr
+              </li>
+              <li class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                TapTag NFC-Bewertungssystem
+              </li>
+              <li class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                1 Bewertungslöschantrag / Woche
+              </li>
+              <li class="feature-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                Persönlicher Ansprechpartner
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="cases-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Unsere Erfolge</span>
+        <h2 class="section-title" id="cases-title">Echte Ergebnisse, echte Unternehmen</h2>
+        <p class="section-desc">Keine Hochglanz-Versprechen. Nur Zahlen die für sich sprechen.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
+
+        <article class="card">
+          <div style="margin-bottom:1.25rem"><span class="badge badge-yellow">800+ Bewertungen</span></div>
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem">BattleKart Oberhausen</h3>
+          <p style="font-size:.875rem;color:#6b7099;margin-bottom:1.25rem;line-height:1.7">
+            Von 0 auf 800+ Bewertungen in nur 9 Monaten.
+            Dauerhaft Top 1 in der Region für Indoor-Kart.
+          </p>
+          <a href="/case-studies/battlekart/" class="btn btn-ghost btn-sm">
+            Case Study lesen
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <article class="card">
+          <div style="margin-bottom:1.25rem"><span class="badge badge-green">40x ROAS</span></div>
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem">Schlosshotel Westerholt</h3>
+          <p style="font-size:.875rem;color:#6b7099;margin-bottom:1.25rem;line-height:1.7">
+            40-facher Return on Ad Spend durch optimiertes
+            Google-Profil und gezieltes Bewertungsmanagement.
+          </p>
+          <a href="/case-studies/schlosshotel-westerholt/" class="btn btn-ghost btn-sm">
+            Case Study lesen
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+        <article class="card">
+          <div style="margin-bottom:1.25rem"><span class="badge badge-blue">Dauerhaft Top 3</span></div>
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem">Orthoclinic Düsseldorf</h3>
+          <p style="font-size:.875rem;color:#6b7099;margin-bottom:1.25rem;line-height:1.7">
+            Dauerhaft Top 3 in Düsseldorf für orthopädische Fachklinik —
+            mehr Patienten, weniger Marketingaufwand.
+          </p>
+          <a href="/case-studies/orthoclinic/" class="btn btn-ghost btn-sm">
+            Case Study lesen
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </article>
+
+      </div>
+
+      <div style="text-align:center;margin-top:2.5rem">
+        <a href="/case-studies/" class="btn btn-ghost">
+          Alle Case Studies ansehen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title" id="faq-title">Häufige Fragen</h2>
+      </div>
+
+      <div style="max-width:720px;margin-inline:auto;display:flex;flex-direction:column;gap:1rem">
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-1">
+            Was kostet das Ultimate Paket?
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-1" hidden>
+            Das Ultimate Paket kostet <strong>279&nbsp;&euro;&nbsp;/&nbsp;Monat</strong> zzgl. 19&nbsp;% MwSt.
+            Die einmalige Einrichtungsgebühr beträgt 379&nbsp;&euro; zzgl. MwSt. Monatlich kündbar.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2">
+            Wie schnell sehe ich Ergebnisse?
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-2" hidden>
+            Erste messbare Verbesserungen in Profilaufrufen und Aktionen sind typischerweise
+            nach 4–8 Wochen sichtbar. Stabile Top-3-Platzierungen entstehen in 3–6 Monaten —
+            abhängig von Branche und Wettbewerb.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3">
+            Für welche Branchen ist Lokalbesucher geeignet?
+            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-3" hidden>
+            Lokalbesucher ist ideal für alle lokalen Unternehmen die über Google Maps
+            gefunden werden wollen — Restaurants, Handwerker, Arztpraxen, Hotels,
+            Einzelhandel, Freizeiteinrichtungen und mehr.
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:2.5rem">
+        <a href="/faq/" class="btn btn-ghost">
+          Alle Fragen ansehen
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINALER CTA -->
+  <section class="section" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="cta-section">
+        <span class="section-label">Bereit durchzustarten?</span>
+        <h2 class="cta-section-title" id="cta-title">
+          Dein Google-Profil ist<br>dein bester Verkäufer
+        </h2>
+        <p class="cta-section-desc">
+          Lass uns in 15 Minuten schauen wo du gerade stehst und
+          was möglich ist. Kostenlos und unverbindlich.
+        </p>
+        <div class="cta-group">
+          <a href="https://wa.me/4915122358883"
+             class="btn btn-primary btn-lg"
+             rel="noopener noreferrer"
+             target="_blank"
+             aria-label="WhatsApp Beratung starten">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp Beratung starten
+          </a>
+          <a href="mailto:info@lokalbesucher.de" class="btn btn-ghost btn-lg">
+            info@lokalbesucher.de
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">Lokal<span>besucher</span></div>
+        <p class="footer-tagline">
+          Die Google Business Agentur für lokale Unternehmen in Deutschland.
+          Dauerhaft sichtbar. Messbar erfolgreich.
+        </p>
+        <address class="footer-nap" style="font-style:normal">
+          <strong>Lokalbesucher GmbH</strong>
+          Münsterstr. 13-15<br>
+          45657 Recklinghausen<br>
+          <a href="tel:+4915122358883">+49&nbsp;151&nbsp;22358883</a><br>
+          <a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a>
+        </address>
+      </div>
+
+      <nav aria-label="Leistungen">
+        <div class="footer-col-title">Leistungen</div>
+        <ul class="footer-links" role="list">
+          <li><a href="/google-business-agentur/">Google Business Optimierung</a></li>
+          <li><a href="/google-business-agentur/#bewertungen">Bewertungsmanagement</a></li>
+          <li><a href="/google-business-agentur/#verzeichnisse">Branchenverzeichnisse</a></li>
+          <li><a href="/google-business-agentur/#reporting">Monatliches Reporting</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Unternehmen">
+        <div class="footer-col-title">Unternehmen</div>
+        <ul class="footer-links" role="list">
+          <li><a href="/case-studies/">Erfolgsgeschichten</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/schema-org-generator/">Schema Generator</a></li>
+          <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI Kalkulator</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <div class="footer-col-title">Jetzt starten</div>
+        <p style="font-size:.875rem;color:#6b7099;margin-bottom:1rem;line-height:1.7">
+          Kostenlose Erstberatung — direkt via WhatsApp, ohne Wartezeit.
+        </p>
+        <a href="https://wa.me/4915122358883"
+           class="btn btn-primary"
+           rel="noopener noreferrer"
+           target="_blank"
+           aria-label="WhatsApp Beratung starten">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp Beratung
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Lokalbesucher GmbH &middot; Alle Rechte vorbehalten</p>
+      <nav class="footer-legal-links" aria-label="Rechtliches">
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="#cookie-settings" id="cookie-settings-link">Cookie-Einstellungen</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ── WhatsApp Float ─────────────────────────────────────────── -->
+<a href="https://wa.me/4915122358883"
+   class="whatsapp-float"
+   rel="noopener noreferrer"
+   target="_blank"
+   aria-label="WhatsApp Beratung starten">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  Jetzt beraten lassen
+</a>
+
+<!-- ── Scripts ────────────────────────────────────────────────── -->
+<script>
+(function () {
+  'use strict';
+
+  // Mobile Nav Toggle
+  var toggle = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('nav-drawer');
+  if (toggle && drawer) {
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      drawer.classList.toggle('is-open', !open);
+    });
+    document.addEventListener('click', function (e) {
+      if (!toggle.contains(e.target) && !drawer.contains(e.target)) {
+        toggle.setAttribute('aria-expanded', 'false');
+        drawer.classList.remove('is-open');
+      }
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        toggle.setAttribute('aria-expanded', 'false');
+        drawer.classList.remove('is-open');
+        toggle.focus();
+      }
+    });
+  }
+
+  // Accordion
+  document.querySelectorAll('.accordion-trigger').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.accordion-trigger').forEach(function (b) {
+        b.setAttribute('aria-expanded', 'false');
+        var el = document.getElementById(b.getAttribute('aria-controls'));
+        if (el) el.hidden = true;
+      });
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        var body = document.getElementById(btn.getAttribute('aria-controls'));
+        if (body) body.hidden = false;
+      }
+    });
+  });
+
+  // Scroll Reveal
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible', 'revealed');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('[data-reveal], .fade-up').forEach(function (el) {
+      obs.observe(el);
+    });
+  }
+
+}());
+</script>
+
+<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}</style>
+
+</body>
+</html>
