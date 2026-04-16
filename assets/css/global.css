@@ -4,23 +4,61 @@
    ============================================================ */
 
 /* ── Self-hosted Fonts ─────────────────────────────────────── */
-/* Mont (Headlines) — FontShare, kostenlos, DSGVO-konform      */
-/* Body: Arial (Systemschrift, kein Hosting nötig)             */
 
 @font-face {
-  font-family: 'Mont';
+  font-family: 'Syne';
   font-style:  normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/assets/fonts/mont-700.woff2') format('woff2');
+  src: url('/assets/fonts/syne-700.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Mont';
+  font-family: 'Syne';
   font-style:  normal;
   font-weight: 800;
   font-display: swap;
-  src: url('/assets/fonts/mont-800.woff2') format('woff2');
+  src: url('/assets/fonts/syne-800.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style:  normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/assets/fonts/dm-sans-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style:  italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/assets/fonts/dm-sans-300-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/dm-sans-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style:  italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/dm-sans-400-italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style:  normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/dm-sans-500.woff2') format('woff2');
 }
 
 @font-face {
@@ -42,21 +80,21 @@
 /* ── Design Tokens ─────────────────────────────────────────── */
 
 :root {
-  /* Farben — Navy CI */
-  --bg:       #1e365c;
-  --surface:  #243f6b;
-  --surface2: #19304f;
-  --border:   #2d5080;
+  /* Farben */
+  --bg:       #0c0e1a;
+  --surface:  #111328;
+  --surface2: #181b35;
+  --border:   #1e2240;
   --yellow:   #ffbd59;
-  --blue:     #6aa3cf;  /* Hellere Navy-Variation für Akzente */
+  --blue:     #4f82ff;
   --green:    #3ecf8e;
   --red:      #ff5c5c;
-  --text:     #f0f4ff;
-  --muted:    #8badd4;
+  --text:     #e8eaf6;
+  --muted:    #6b7099;
 
   /* Typografie */
-  --font-head: 'Mont', 'Trebuchet MS', system-ui, sans-serif;
-  --font-body: Arial, sans-serif;
+  --font-head: 'Syne', system-ui, sans-serif;
+  --font-body: 'DM Sans', system-ui, sans-serif;
   --font-mono: 'DM Mono', 'Courier New', monospace;
 
   /* Abstände */
@@ -81,7 +119,7 @@
   --shadow-sm: 0 1px 3px rgba(0,0,0,.4);
   --shadow-md: 0 4px 16px rgba(0,0,0,.5);
   --shadow-lg: 0 8px 32px rgba(0,0,0,.6);
-  --shadow-yellow: 0 4px 24px rgba(255,189,89,.25);
+  --shadow-yellow: 0 4px 24px rgba(255,189,89,.2);
 
   /* Animationen */
   --ease: cubic-bezier(.4,0,.2,1);
@@ -104,13 +142,6 @@ html {
 
 body {
   background-color: var(--bg);
-  /* Subtiles Karomuster (CSS only) */
-  background-image:
-    linear-gradient(45deg, rgba(255,255,255,.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.03) 75%),
-    linear-gradient(45deg, rgba(255,255,255,.03) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.03) 75%);
-  background-size: 32px 32px;
-  background-position: 0 0, 16px 16px;
-  background-attachment: fixed;
   color: var(--text);
   font-family: var(--font-body);
   font-weight: 400;
@@ -168,7 +199,7 @@ p {
   left: var(--space-md);
   padding: var(--space-sm) var(--space-md);
   background: var(--yellow);
-  color: #1e365c;
+  color: #0c0e1a;
   font-weight: 700;
   border-radius: var(--radius-sm);
   z-index: 9999;
@@ -210,14 +241,13 @@ p {
   }
 }
 
-/* ── Karo-Hintergrund (verstärkt für Sektionen) ────────────── */
+/* ── Grid-Hintergrund ──────────────────────────────────────── */
 
 .grid-bg {
   background-image:
-    linear-gradient(45deg, rgba(255,255,255,.045) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.045) 75%),
-    linear-gradient(45deg, rgba(255,255,255,.045) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.045) 75%);
-  background-size: 32px 32px;
-  background-position: 0 0, 16px 16px;
+    linear-gradient(rgba(78,130,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(78,130,255,.04) 1px, transparent 1px);
+  background-size: 48px 48px;
 }
 
 /* ── Typografie-Skala ──────────────────────────────────────── */
@@ -282,7 +312,7 @@ p {
 /* Primär — Gelb */
 .btn-primary {
   background: var(--yellow);
-  color: #1e365c;
+  color: #0c0e1a;
   box-shadow: var(--shadow-yellow);
 }
 
@@ -313,7 +343,7 @@ p {
 
 .btn-outline:hover {
   background: var(--yellow);
-  color: #1e365c;
+  color: #0c0e1a;
 }
 
 /* Größen */
@@ -371,8 +401,8 @@ p {
 }
 
 .badge-blue {
-  background: rgba(106,163,207,.15);
-  border-color: rgba(106,163,207,.35);
+  background: rgba(79,130,255,.12);
+  border-color: rgba(79,130,255,.3);
   color: var(--blue);
 }
 
@@ -446,7 +476,7 @@ p {
 }
 
 .icon-box-blue {
-  background: rgba(106,163,207,.15);
+  background: rgba(79,130,255,.12);
   color: var(--blue);
 }
 
@@ -461,7 +491,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(30,54,92,.9);
+  background: rgba(12,14,26,.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
