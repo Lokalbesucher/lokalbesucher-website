@@ -24,7 +24,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 **Tobias Frank** — Inhaber Lokalbesucher GmbH
 - Google Business Agentur, Recklinghausen, NRW
 - Team: ~11 Mitarbeiter
-- Adresse: Münsterstr. 13-15, 45657 Recklinghausen
+- Adresse: Im Westerkamp 7, 45711 Datteln
 - Zielgruppe: KMU in Deutschland die lokal bei Google gefunden werden wollen
 - Erfahrung: ~20 Jahre Sales & Marketing (Salesforce, Amazon, StepStone)
 
@@ -247,7 +247,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 - WhatsApp: https://wa.me/4915122358883
 - E-Mail: info@lokalbesucher.de
 - Tel: +49 151 22358883
-- Adresse: Münsterstr. 13-15, 45657 Recklinghausen
+- Adresse: Im Westerkamp 7, 45711 Datteln
 
 ---
 
@@ -346,7 +346,7 @@ mit konsistenten Attributen überall identisch auftreten: Website, GBP, Verzeich
 
 ### 15.4 Lokale NRW-Signale
 - "Recklinghausen", "NRW", "Ruhrgebiet", "Nordrhein-Westfalen" natürlich in Texte einbauen
-- NAP in Footer: Münsterstr. 13-15, 45657 Recklinghausen — identisch auf JEDER Seite
+- NAP in Footer: Im Westerkamp 7, 45711 Datteln — identisch auf JEDER Seite
 - Mittelfristig: Städte-Landingpages für Dortmund, Essen, Bochum, Gelsenkirchen, Herne etc.
 - Google Maps Einbettung auf Kontakt/Impressum-Seite
 
