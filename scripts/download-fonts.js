@@ -15,29 +15,19 @@ import { join } from 'path';
 const OUTPUT_DIR = 'assets/fonts';
 
 // ─── Schriften ────────────────────────────────────────────────────────────────
-// Mont: FontShare (kostenlos, DSGVO-konform, self-hosted)
-// DM Mono: Google Fonts (Body ist Arial — kein Hosting nötig)
-// HINWEIS: Mont ist ein kommerzieller Font von Fontfabric (fontfabric.com).
-// Als funktionierender Stand-in wird Montserrat heruntergeladen und als
-// 'Mont' @font-face registriert — beide Fonts sind optisch sehr ähnlich.
-// Für die echten Mont-Dateien:
-//   1. WOFF2 von https://fontfabric.com/fonts/mont/ kaufen/herunterladen
-//   2. Als assets/fonts/mont-700.woff2 + mont-800.woff2 ablegen
-//   3. CSS ändert sich nicht — @font-face zeigt bereits auf diese Pfade
+// Google Fonts CSS2 API Anfragen (WOFF2 via modernen User-Agent)
 const FONT_REQUESTS = [
   {
-    name:       'Mont',          // Wird als 'Mont' @font-face registriert
-    familyUrl:  'Montserrat',    // Stand-in via Google Fonts (ersetzen mit echtem Mont)
-    url:        'https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap',
-    source:     'google',
-    outputName: 'mont',          // Dateiname: mont-700.woff2, mont-800.woff2
+    name: 'Syne',
+    url:  'https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap',
   },
   {
-    name:       'DM Mono',
-    familyUrl:  'DM Mono',
-    url:        'https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap',
-    source:     'google',
-    outputName: null,            // Standard-Namensgebung
+    name: 'DM Sans',
+    url:  'https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap',
+  },
+  {
+    name: 'DM Mono',
+    url:  'https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap',
   },
 ];
 
@@ -65,13 +55,12 @@ function toFilename(family, style, weight) {
     : `${base}-${weight}.woff2`;
 }
 
-/** Holt den Fonts CSS-Text (Google oder FontShare) und extrahiert alle @font-face Blöcke */
-async function fetchFontCSS(req) {
-  const headers = req.source === 'google'
-    ? { 'User-Agent': MODERN_UA }
-    : {}; // FontShare liefert WOFF2 ohne spezifischen UA
-  const res = await fetch(req.url, { headers });
-  if (!res.ok) throw new Error(`HTTP ${res.status} für ${req.url}`);
+/** Holt den Google Fonts CSS-Text und extrahiert alle @font-face Blöcke */
+async function fetchFontCSS(url) {
+  const res = await fetch(url, {
+    headers: { 'User-Agent': MODERN_UA },
+  });
+  if (!res.ok) throw new Error(`HTTP ${res.status} für ${url}`);
   return res.text();
 }
 
@@ -136,7 +125,7 @@ async function main() {
 
     let css;
     try {
-      css = await fetchFontCSS(req);
+      css = await fetchFontCSS(req.url);
     } catch (err) {
       log.error(`Fehler: ${err.message}`);
       continue;
@@ -146,19 +135,12 @@ async function main() {
     log.info(`${faces.length} @font-face Blöcke gefunden`);
 
     for (const face of faces) {
-      // outputName erlaubt Umbenennung (z.B. Montserrat → mont)
-      const registeredFamily = req.outputName
-        ? req.name  // z.B. 'Mont' statt 'Montserrat'
-        : face.family;
-      const fileBaseName = req.outputName || face.family.toLowerCase().replace(/\s+/g, '-');
-      const filename = face.style === 'italic'
-        ? `${fileBaseName}-${face.weight}-italic.woff2`
-        : `${fileBaseName}-${face.weight}.woff2`;
+      const filename   = toFilename(face.family, face.style, face.weight);
       const outputPath = join(OUTPUT_DIR, filename);
 
       try {
         await downloadWoff2(face.woff2Url, outputPath);
-        allFaces.push({ ...face, family: registeredFamily, localFile: filename });
+        allFaces.push({ ...face, localFile: filename });
       } catch (err) {
         log.error(`Download fehlgeschlagen: ${face.woff2Url} — ${err.message}`);
       }

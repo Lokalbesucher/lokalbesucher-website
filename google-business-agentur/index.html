@@ -25,31 +25,32 @@
   <meta name="twitter:image"       content="https://lokalbesucher.de/assets/images/og-home.webp">
 
   <!-- ── Preload ───────────────────────────────────────────────── -->
-  <link rel="preload" href="/assets/fonts/mont-700.woff2"    as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/mont-800.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-700.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-800.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/css/global.css"          as="style">
 
   <!-- ── Critical CSS ──────────────────────────────────────────── -->
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{background:#1e365c;color:#f0f4ff;font-family:Arial,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    h1,h2,h3,h4,h5,h6{font-family:'Mont',system-ui,sans-serif;line-height:1.15}
+    body{background:#0c0e1a;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4,h5,h6{font-family:'Syne',system-ui,sans-serif;line-height:1.15}
     img{display:block;max-width:100%;height:auto}
     a{color:inherit;text-decoration:none}
     ul{list-style:none}
     .container{width:100%;max-width:1200px;margin-inline:auto;padding-inline:1.5rem}
     @media(min-width:768px){.container{padding-inline:2rem}}
     @media(min-width:1200px){.container{padding-inline:3rem}}
-    .site-header{position:sticky;top:0;z-index:100;background:rgba(30,54,92,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #2d5080}
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(12,14,26,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1e2240}
     .nav{display:flex;align-items:center;gap:2rem;height:4rem}
-    .nav-logo{font-family:'Mont',system-ui,sans-serif;font-weight:800;font-size:1.2rem;flex-shrink:0}
+    .nav-logo{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:1.2rem;flex-shrink:0}
     .nav-logo span{color:#ffbd59}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:'Mont',system-ui,sans-serif;font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
-    .btn-primary{background:#ffbd59;color:#1e365c;box-shadow:0 4px 24px rgba(255,189,89,.2)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
+    .btn-primary{background:#ffbd59;color:#0c0e1a;box-shadow:0 4px 24px rgba(255,189,89,.2)}
     .btn-primary:hover{background:#ffc96d;transform:translateY(-1px);box-shadow:0 6px 32px rgba(255,189,89,.35)}
-    .btn-ghost{background:transparent;color:#f0f4ff;border-color:#2d5080}
-    .btn-ghost:hover{background:#243f6b;border-color:#8badd4}
+    .btn-ghost{background:transparent;color:#e8eaf6;border-color:#1e2240}
+    .btn-ghost:hover{background:#111328;border-color:#6b7099}
     .btn-lg{font-size:1.05rem;padding:1em 2em}
     /* Page Hero */
     .page-hero{padding-block:4.5rem 3.5rem;position:relative;overflow:hidden}
@@ -57,7 +58,7 @@
     .page-hero-label{display:inline-flex;align-items:center;gap:.4em;padding:.35em .9em;font-size:.78rem;font-weight:500;border-radius:999px;border:1px solid rgba(255,189,89,.3);background:rgba(255,189,89,.1);color:#ffbd59;margin-bottom:1.25rem}
     .page-hero-title{font-size:clamp(1.875rem,5.5vw,3.25rem);font-weight:800;margin-bottom:1.25rem;letter-spacing:-.01em;max-width:820px}
     .page-hero-title em{color:#ffbd59;font-style:normal}
-    .page-hero-desc{font-size:clamp(.95rem,2.2vw,1.15rem);color:#8badd4;margin-bottom:2rem;max-width:620px;line-height:1.75}
+    .page-hero-desc{font-size:clamp(.95rem,2.2vw,1.15rem);color:#6b7099;margin-bottom:2rem;max-width:620px;line-height:1.75}
     .hero-cta{display:flex;flex-wrap:wrap;gap:1rem}
   </style>
 
@@ -295,10 +296,10 @@
           <h2 id="was-ist-title" style="font-size:clamp(1.5rem,4vw,2.25rem);font-weight:800;margin-bottom:1.25rem">
             Was ist Google Business Optimierung — und warum ist sie entscheidend?
           </h2>
-          <div style="display:flex;flex-direction:column;gap:1.25rem;color:#8badd4;font-size:.97rem;line-height:1.8">
+          <div style="display:flex;flex-direction:column;gap:1.25rem;color:#6b7099;font-size:.97rem;line-height:1.8">
             <p>
-              <strong style="color:#f0f4ff">Google Business Profile</strong> (früher: Google My Business) ist das Unternehmensverzeichnis von Google.
-              Es erscheint in der Google Suche und in Google Maps — direkt oberhalb der organischen Suchergebnisse, im sogenannten <strong style="color:#f0f4ff">Local Pack</strong>.
+              <strong style="color:#e8eaf6">Google Business Profile</strong> (früher: Google My Business) ist das Unternehmensverzeichnis von Google.
+              Es erscheint in der Google Suche und in Google Maps — direkt oberhalb der organischen Suchergebnisse, im sogenannten <strong style="color:#e8eaf6">Local Pack</strong>.
               Für lokale Suchanfragen wie "Zahnarzt Recklinghausen" oder "Pizzeria in der Nähe" ist das Local Pack die meistgeklickte Position überhaupt.
             </p>
             <p>
@@ -306,16 +307,16 @@
             </p>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-block:.5rem">
               <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.25rem">
-                <div style="font-family:'Mont',sans-serif;font-weight:700;color:#ffbd59;margin-bottom:.5rem">Relevanz</div>
-                <p style="font-size:.875rem;color:#8badd4">Passt dein Profil zur Suchanfrage? Vollständigkeit, Kategorien, Posts, Fotos und Keywords im Profil.</p>
+                <div style="font-family:'Syne',sans-serif;font-weight:700;color:#ffbd59;margin-bottom:.5rem">Relevanz</div>
+                <p style="font-size:.875rem;color:#6b7099">Passt dein Profil zur Suchanfrage? Vollständigkeit, Kategorien, Posts, Fotos und Keywords im Profil.</p>
               </div>
               <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.25rem">
-                <div style="font-family:'Mont',sans-serif;font-weight:700;color:#6aa3cf;margin-bottom:.5rem">Entfernung</div>
-                <p style="font-size:.875rem;color:#8badd4">Wie nah ist dein Standort zum Suchenden? Kann nur bedingt beeinflusst werden — der Rest schon.</p>
+                <div style="font-family:'Syne',sans-serif;font-weight:700;color:#4f82ff;margin-bottom:.5rem">Entfernung</div>
+                <p style="font-size:.875rem;color:#6b7099">Wie nah ist dein Standort zum Suchenden? Kann nur bedingt beeinflusst werden — der Rest schon.</p>
               </div>
               <div style="background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1.25rem">
-                <div style="font-family:'Mont',sans-serif;font-weight:700;color:#3ecf8e;margin-bottom:.5rem">Bekanntheit</div>
-                <p style="font-size:.875rem;color:#8badd4">Bewertungen, Backlinks, Erwähnungen in Branchenverzeichnissen. Hier liegt das größte Hebelpotenzial.</p>
+                <div style="font-family:'Syne',sans-serif;font-weight:700;color:#3ecf8e;margin-bottom:.5rem">Bekanntheit</div>
+                <p style="font-size:.875rem;color:#6b7099">Bewertungen, Backlinks, Erwähnungen in Branchenverzeichnissen. Hier liegt das größte Hebelpotenzial.</p>
               </div>
             </div>
             <p>
@@ -351,25 +352,25 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
             </div>
             <h3 style="font-size:1.4rem;margin-bottom:1rem">Vollständige Profil-Optimierung</h3>
-            <p style="color:#8badd4;line-height:1.8;margin-bottom:1.25rem">
+            <p style="color:#6b7099;line-height:1.8;margin-bottom:1.25rem">
               Wir analysieren dein bestehendes Profil und optimieren jeden einzelnen Faktor:
               korrekte Kategorien, vollständige Beschreibungen mit relevanten Keywords,
               alle verfügbaren Attribute, Öffnungszeiten, Dienstleistungen und Produkteinträge.
             </p>
             <ul style="display:flex;flex-direction:column;gap:.75rem">
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Kategorien-Audit und Optimierung
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Keyword-optimierte Unternehmensbeschreibung
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 600+ Profil-Updates im Jahr
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Saisonale Anpassungen (Feiertage, Sonderöffnungszeiten)
               </li>
@@ -377,8 +378,8 @@
           </div>
           <div class="fade-up" style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center">
             <div style="text-align:center">
-              <div style="font-size:3rem;font-family:'Mont',sans-serif;font-weight:800;color:#ffbd59;margin-bottom:.5rem">600+</div>
-              <div style="color:#8badd4;font-size:.9rem">Profil-Updates<br>pro Jahr</div>
+              <div style="font-size:3rem;font-family:'Syne',sans-serif;font-weight:800;color:#ffbd59;margin-bottom:.5rem">600+</div>
+              <div style="color:#6b7099;font-size:.9rem">Profil-Updates<br>pro Jahr</div>
             </div>
           </div>
         </div>
@@ -391,13 +392,13 @@
             <!-- Fake Bewertungsantwort als Visual -->
             <div style="background:var(--bg);border-radius:10px;padding:1rem;font-size:.85rem">
               <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem">
-                <div style="width:32px;height:32px;background:#2d5080;border-radius:50%;flex-shrink:0"></div>
+                <div style="width:32px;height:32px;background:#1e2240;border-radius:50%;flex-shrink:0"></div>
                 <div>
                   <div style="font-weight:600;font-size:.8rem">Maria S.</div>
                   <div style="color:#ffbd59;font-size:.7rem">★★★★★</div>
                 </div>
               </div>
-              <p style="color:#8badd4;font-size:.8rem;line-height:1.6">"Super freundlich und kompetent! Bin begeistert von der Beratung. Sehr empfehlenswert!"</p>
+              <p style="color:#6b7099;font-size:.8rem;line-height:1.6">"Super freundlich und kompetent! Bin begeistert von der Beratung. Sehr empfehlenswert!"</p>
             </div>
             <div style="background:rgba(255,189,89,.06);border:1px solid rgba(255,189,89,.2);border-radius:10px;padding:1rem;font-size:.85rem">
               <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem">
@@ -406,7 +407,7 @@
                 </div>
                 <div style="font-weight:600;font-size:.8rem;color:#ffbd59">Inhaber-Antwort · in 23&nbsp;Min.</div>
               </div>
-              <p style="color:#f0f4ff;font-size:.8rem;line-height:1.6">Liebe Maria, herzlichen Dank für deine tolle Bewertung! Es freut uns sehr, dass du dich bei uns so gut aufgehoben gefühlt hast. Wir freuen uns auf deinen nächsten Besuch!</p>
+              <p style="color:#e8eaf6;font-size:.8rem;line-height:1.6">Liebe Maria, herzlichen Dank für deine tolle Bewertung! Es freut uns sehr, dass du dich bei uns so gut aufgehoben gefühlt hast. Wir freuen uns auf deinen nächsten Besuch!</p>
             </div>
           </div>
           <div class="fade-up">
@@ -414,26 +415,26 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </div>
             <h3 style="font-size:1.4rem;margin-bottom:1rem">KI-Bewertungsmanagement</h3>
-            <p style="color:#8badd4;line-height:1.8;margin-bottom:1.25rem">
+            <p style="color:#6b7099;line-height:1.8;margin-bottom:1.25rem">
               Jede neue Bewertung — positiv oder negativ — wird in unter 60 Minuten professionell beantwortet.
               Unsere KI erstellt individuelle Antworten die menschlich klingen und deine Markenstimme transportieren.
               Kein Copy-Paste, keine Formulartexte.
             </p>
             <ul style="display:flex;flex-direction:column;gap:.75rem">
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6aa3cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4f82ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Antwortzeit unter 60 Minuten — garantiert
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6aa3cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4f82ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Individuelle Antworten auf jede Bewertung
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6aa3cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4f82ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Professioneller Umgang mit negativen Bewertungen
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6aa3cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4f82ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 1 Löschantrag / Woche für regelwidrige Bewertungen
               </li>
             </ul>
@@ -449,36 +450,36 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
             </div>
             <h3 style="font-size:1.4rem;margin-bottom:1rem">50+ Branchenverzeichnisse</h3>
-            <p style="color:#8badd4;line-height:1.8;margin-bottom:1.25rem">
-              <strong style="color:#f0f4ff">NAP-Konsistenz</strong> (Name, Address, Phone) ist ein entscheidender lokaler Rankingfaktor.
+            <p style="color:#6b7099;line-height:1.8;margin-bottom:1.25rem">
+              <strong style="color:#e8eaf6">NAP-Konsistenz</strong> (Name, Address, Phone) ist ein entscheidender lokaler Rankingfaktor.
               Abweichende Adressen oder Telefonnummern in verschiedenen Verzeichnissen schaden deinem Ranking.
               Wir pflegen deine Daten auf 50+ relevanten Plattformen aktuell und einheitlich.
             </p>
             <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem">
-              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#8badd4">Google Maps</span>
-              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#8badd4">Yelp</span>
-              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#8badd4">Gelbe Seiten</span>
-              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#8badd4">Das Örtliche</span>
-              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#8badd4">Bing Places</span>
-              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#8badd4">Apple Maps</span>
-              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#8badd4">Foursquare</span>
-              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#8badd4">TripAdvisor</span>
-              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#8badd4">+ 42 weitere</span>
+              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#6b7099">Google Maps</span>
+              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#6b7099">Yelp</span>
+              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#6b7099">Gelbe Seiten</span>
+              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#6b7099">Das Örtliche</span>
+              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#6b7099">Bing Places</span>
+              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#6b7099">Apple Maps</span>
+              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#6b7099">Foursquare</span>
+              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#6b7099">TripAdvisor</span>
+              <span style="background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:.3em .75em;font-size:.78rem;color:#6b7099">+ 42 weitere</span>
             </div>
           </div>
           <div class="fade-up" style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem">
-            <div style="font-family:'Mont',sans-serif;font-weight:800;font-size:2.5rem;color:#3ecf8e;margin-bottom:.25rem">50+</div>
-            <div style="color:#8badd4;font-size:.875rem;margin-bottom:1.5rem">Verzeichnisse konsistent gepflegt</div>
+            <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2.5rem;color:#3ecf8e;margin-bottom:.25rem">50+</div>
+            <div style="color:#6b7099;font-size:.875rem;margin-bottom:1.5rem">Verzeichnisse konsistent gepflegt</div>
             <div style="display:flex;flex-direction:column;gap:.75rem">
               <div style="display:flex;justify-content:space-between;align-items:center;font-size:.85rem">
-                <span style="color:#8badd4">Ohne Optimierung</span>
+                <span style="color:#6b7099">Ohne Optimierung</span>
                 <span style="color:#ff5c5c;font-weight:600">~60 % Fehler</span>
               </div>
               <div style="background:var(--border);border-radius:4px;height:6px;overflow:hidden">
                 <div style="width:60%;height:100%;background:#ff5c5c;border-radius:4px"></div>
               </div>
               <div style="display:flex;justify-content:space-between;align-items:center;font-size:.85rem;margin-top:.5rem">
-                <span style="color:#8badd4">Mit Lokalbesucher</span>
+                <span style="color:#6b7099">Mit Lokalbesucher</span>
                 <span style="color:#3ecf8e;font-weight:600">100 % konsistent</span>
               </div>
               <div style="background:var(--border);border-radius:4px;height:6px;overflow:hidden">
@@ -495,25 +496,25 @@
           <div class="fade-up" style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:1rem">
             <!-- Mock Post-Preview -->
             <div style="background:var(--bg);border-radius:10px;overflow:hidden">
-              <div style="height:100px;background:linear-gradient(135deg,#2d5080,#243f6b);display:flex;align-items:center;justify-content:center">
+              <div style="height:100px;background:linear-gradient(135deg,#1e2240,#111328);display:flex;align-items:center;justify-content:center">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
               </div>
               <div style="padding:1rem">
-                <div style="font-size:.75rem;color:#8badd4;margin-bottom:.4rem">Google Business Post · Heute</div>
+                <div style="font-size:.75rem;color:#6b7099;margin-bottom:.4rem">Google Business Post · Heute</div>
                 <div style="font-size:.85rem;font-weight:600;margin-bottom:.3rem">Aktionsangebot: Jetzt 10&nbsp;% sparen</div>
-                <div style="font-size:.78rem;color:#8badd4">Nur bis Ende des Monats — jetzt direkt über Google anfragen...</div>
+                <div style="font-size:.78rem;color:#6b7099">Nur bis Ende des Monats — jetzt direkt über Google anfragen...</div>
               </div>
             </div>
             <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem">
-              <div style="background:var(--bg);border-radius:6px;padding:.75rem;text-align:center;font-size:.75rem;color:#8badd4">
+              <div style="background:var(--bg);border-radius:6px;padding:.75rem;text-align:center;font-size:.75rem;color:#6b7099">
                 <div style="font-weight:700;color:#ffbd59;font-size:1rem">4</div>
                 Posts/Monat
               </div>
-              <div style="background:var(--bg);border-radius:6px;padding:.75rem;text-align:center;font-size:.75rem;color:#8badd4">
+              <div style="background:var(--bg);border-radius:6px;padding:.75rem;text-align:center;font-size:.75rem;color:#6b7099">
                 <div style="font-weight:700;color:#ffbd59;font-size:1rem">9</div>
                 Plattformen
               </div>
-              <div style="background:var(--bg);border-radius:6px;padding:.75rem;text-align:center;font-size:.75rem;color:#8badd4">
+              <div style="background:var(--bg);border-radius:6px;padding:.75rem;text-align:center;font-size:.75rem;color:#6b7099">
                 <div style="font-weight:700;color:#ffbd59;font-size:1rem">48</div>
                 Posts/Jahr
               </div>
@@ -524,25 +525,25 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
             </div>
             <h3 style="font-size:1.4rem;margin-bottom:1rem">Content auf 9 Plattformen</h3>
-            <p style="color:#8badd4;line-height:1.8;margin-bottom:1.25rem">
+            <p style="color:#6b7099;line-height:1.8;margin-bottom:1.25rem">
               Regelmäßige Aktivität ist ein Rankingsignal. Wir erstellen monatlich 4 maßgeschneiderte Posts
               und veröffentlichen sie auf Google Business, Facebook, Instagram und weiteren Plattformen —
               vollständig in deinem Namen, ohne Aufwand für dich.
             </p>
             <ul style="display:flex;flex-direction:column;gap:.75rem">
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Angebote, Events, Neuigkeiten, saisonale Posts
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Professionelle Texte + Bild-Empfehlungen
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Google, Facebook, Instagram + 6 weitere
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.9rem;color:#6b7099">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Freigabe durch dich vor Veröffentlichung
               </li>
@@ -560,26 +561,26 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
             <h3 style="font-size:1.2rem;margin-bottom:.75rem">Monatliches Reporting</h3>
-            <p style="font-size:.9rem;color:#8badd4;line-height:1.7;margin-bottom:1rem">
+            <p style="font-size:.9rem;color:#6b7099;line-height:1.7;margin-bottom:1rem">
               Jeden Monat bekommst du einen klaren Report: Profilaufrufe, Anrufe,
               Routenanfragen, Foto-Aufrufe — mit Vergleich zum Vormonat.
               Du siehst genau was sich verbessert hat.
             </p>
             <ul style="display:flex;flex-direction:column;gap:.6rem">
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#8badd4">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6aa3cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#6b7099">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4f82ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Profilaufrufe &amp; Impressionen
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#8badd4">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6aa3cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#6b7099">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4f82ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Anrufe, Klicks, Routenanfragen
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#8badd4">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6aa3cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#6b7099">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4f82ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Bewertungsentwicklung
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#8badd4">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6aa3cf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#6b7099">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4f82ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Ranking-Vergleich zur Konkurrenz
               </li>
             </ul>
@@ -590,25 +591,25 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h3 style="font-size:1.2rem;margin-bottom:.75rem">TapTag NFC-Bewertungssystem</h3>
-            <p style="font-size:.9rem;color:#8badd4;line-height:1.7;margin-bottom:1rem">
+            <p style="font-size:.9rem;color:#6b7099;line-height:1.7;margin-bottom:1rem">
               Dein Kunde hält sein Smartphone an den TapTag-Chip — und landet direkt
               auf deiner Google-Bewertungsseite. Kein Suchen, kein Tippen,
               kein Abbruch. BattleKart: 800+ Bewertungen in 9 Monaten.
             </p>
             <ul style="display:flex;flex-direction:column;gap:.6rem">
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#6b7099">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 NFC + QR-Code auf jedem Chip
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#6b7099">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Im Paket inklusive — kein Aufpreis
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#6b7099">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Funktioniert mit jedem Smartphone
               </li>
-              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#8badd4">
+              <li style="display:flex;align-items:center;gap:.75rem;font-size:.875rem;color:#6b7099">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
                 Direkt an Google-Bewertungsseite verknüpft
               </li>
@@ -634,36 +635,36 @@
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;counter-reset:steps">
 
         <div class="card fade-up" style="position:relative;counter-increment:steps">
-          <div style="font-family:'Mont',sans-serif;font-weight:800;font-size:3rem;color:rgba(255,189,89,.15);line-height:1;margin-bottom:1rem">01</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;color:rgba(255,189,89,.15);line-height:1;margin-bottom:1rem">01</div>
           <h3 style="font-size:1.05rem;margin-bottom:.75rem">Analyse &amp; Aufnahme</h3>
-          <p style="font-size:.875rem;color:#8badd4;line-height:1.7">
+          <p style="font-size:.875rem;color:#6b7099;line-height:1.7">
             Wir prüfen dein bestehendes Profil, analysieren deine Mitbewerber und
             identifizieren die größten Hebel für dein Ranking.
           </p>
         </div>
 
         <div class="card fade-up" style="position:relative;counter-increment:steps">
-          <div style="font-family:'Mont',sans-serif;font-weight:800;font-size:3rem;color:rgba(255,189,89,.15);line-height:1;margin-bottom:1rem">02</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;color:rgba(255,189,89,.15);line-height:1;margin-bottom:1rem">02</div>
           <h3 style="font-size:1.05rem;margin-bottom:.75rem">Vollständige Einrichtung</h3>
-          <p style="font-size:.875rem;color:#8badd4;line-height:1.7">
+          <p style="font-size:.875rem;color:#6b7099;line-height:1.7">
             Profil-Optimierung, Einrichtung auf 50+ Verzeichnissen, TapTag-Versand,
             Aktivierung des Bewertungsmanagements. Einmalig, gründlich.
           </p>
         </div>
 
         <div class="card fade-up" style="position:relative;counter-increment:steps">
-          <div style="font-family:'Mont',sans-serif;font-weight:800;font-size:3rem;color:rgba(255,189,89,.15);line-height:1;margin-bottom:1rem">03</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;color:rgba(255,189,89,.15);line-height:1;margin-bottom:1rem">03</div>
           <h3 style="font-size:1.05rem;margin-bottom:.75rem">Laufende Pflege</h3>
-          <p style="font-size:.875rem;color:#8badd4;line-height:1.7">
+          <p style="font-size:.875rem;color:#6b7099;line-height:1.7">
             Monatlich 4 Posts, alle Bewertungen beantwortet, Profil aktuell gehalten.
             Du konzentrierst dich aufs Geschäft, wir auf dein Google-Profil.
           </p>
         </div>
 
         <div class="card fade-up" style="position:relative;counter-increment:steps">
-          <div style="font-family:'Mont',sans-serif;font-weight:800;font-size:3rem;color:rgba(255,189,89,.15);line-height:1;margin-bottom:1rem">04</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:3rem;color:rgba(255,189,89,.15);line-height:1;margin-bottom:1rem">04</div>
           <h3 style="font-size:1.05rem;margin-bottom:.75rem">Reporting &amp; Optimierung</h3>
-          <p style="font-size:.875rem;color:#8badd4;line-height:1.7">
+          <p style="font-size:.875rem;color:#6b7099;line-height:1.7">
             Monatlicher Report mit klaren Zahlen. Wir analysieren was funktioniert
             und optimieren kontinuierlich weiter.
           </p>
@@ -761,7 +762,7 @@
         <article class="card" style="border-left:3px solid #ffbd59">
           <div class="badge badge-yellow" style="margin-bottom:1rem">800+ Bewertungen</div>
           <h3 style="font-size:1.05rem;margin-bottom:.5rem">BattleKart Oberhausen</h3>
-          <p style="font-size:.875rem;color:#8badd4;margin-bottom:1rem;line-height:1.7">
+          <p style="font-size:.875rem;color:#6b7099;margin-bottom:1rem;line-height:1.7">
             In 9 Monaten von kaum Bewertungen auf über 800 — durch TapTag und
             systematisches Bewertungsmanagement. Dauerhaft Nr. 1 in der Region.
           </p>
@@ -774,7 +775,7 @@
         <article class="card" style="border-left:3px solid #3ecf8e">
           <div class="badge badge-green" style="margin-bottom:1rem">ROAS 40x</div>
           <h3 style="font-size:1.05rem;margin-bottom:.5rem">Schlosshotel Westerholt</h3>
-          <p style="font-size:.875rem;color:#8badd4;margin-bottom:1rem;line-height:1.7">
+          <p style="font-size:.875rem;color:#6b7099;margin-bottom:1rem;line-height:1.7">
             40-facher Return on Ad Spend — durch optimiertes Google-Profil statt teurer Ads.
             Organic Traffic ersetzt bezahlte Klicks vollständig.
           </p>
@@ -784,10 +785,10 @@
           </a>
         </article>
 
-        <article class="card" style="border-left:3px solid #6aa3cf">
+        <article class="card" style="border-left:3px solid #4f82ff">
           <div class="badge badge-blue" style="margin-bottom:1rem">+158 % Aufrufe</div>
           <h3 style="font-size:1.05rem;margin-bottom:.5rem">Peperoncino Restaurant</h3>
-          <p style="font-size:.875rem;color:#8badd4;margin-bottom:1rem;line-height:1.7">
+          <p style="font-size:.875rem;color:#6b7099;margin-bottom:1rem;line-height:1.7">
             158 % mehr Profilaufrufe nach vollständiger Google Business Optimierung.
             Mehr Tischreservierungen, mehr Laufkundschaft.
           </p>
@@ -955,7 +956,7 @@
       </nav>
       <div>
         <div class="footer-col-title">Jetzt starten</div>
-        <p style="font-size:.875rem;color:#8badd4;margin-bottom:1rem;line-height:1.7">
+        <p style="font-size:.875rem;color:#6b7099;margin-bottom:1rem;line-height:1.7">
           Kostenlose Erstberatung via WhatsApp — ohne Wartezeit.
         </p>
         <a href="https://wa.me/4915122358883"
