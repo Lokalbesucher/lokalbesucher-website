@@ -223,7 +223,13 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 - 4 Posts/Monat auf 9 Plattformen
 - Monatliches Reporting
 - 600+ Profil-Updates/Jahr
-- TapTag NFC-Bewertungssystem
+- TapTag — WELTWEIT EINZIGARTIGES Produkt von Lokalbesucher:
+  - Schlüsselanhänger (kein NFC-Chip!) mit individuellem QR-Code pro Mitarbeiter
+  - Kunden scannen den QR-Code des jeweiligen Mitarbeiters → direkt zur Bewertung
+  - Echtzeit-Dashboard: Bewertungen pro Mitarbeiter einsehbar
+  - Monatliche Sachpreis-Verlosung unter allen Anhängern (bezahlt & versteuert von Lokalbesucher!)
+  - Bisherige Preise: iPad, 4K TV, SmartWatch, Sony Noise Cancelling Kopfhörer
+  - NIEMALS als "NFC-Chip" oder "NFC-System" bezeichnen — es ist ein Schlüsselanhänger mit QR-Code!
 - 1 Bewertungslöschantrag/Woche
 
 **NIEMALS schreiben:** "keine Mindestlaufzeit" — das ist FALSCH. Laufzeit ist 12 Monate.
@@ -236,10 +242,10 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 - 100+ betreute Unternehmen
 - 3,9 Mio. Profilaufrufe generiert
 - 780.000 Aktionen (Anrufe, Routen, Klicks)
-- BattleKart: 800+ Bewertungen in 9 Monaten
+- BattleKart Bochum (EVA-Erlebniscenter): 800+ Bewertungen in 9 Monaten — erster Standort, der TapTag testete; danach rollout auf weitere Standorte. Aktuell nur Bochum erwähnen.
 - Peperoncino: +158% Aufrufe
-- Schlosshotel: ROAS 40x
-- Orthoclinic: dauerhaft Top 3
+- Schlosshotel NRW (ANONYM — nie namentlich nennen!): ROAS 40x organisch
+- NIEMALS "Orthoclinic dauerhaft Top 3" schreiben — diese Aussage ist FALSCH
 
 ---
 
