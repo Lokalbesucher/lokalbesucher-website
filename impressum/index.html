@@ -169,6 +169,44 @@
 
         <hr class="divider">
 
+        <!-- Standort -->
+        <section aria-labelledby="standort">
+          <h2 id="standort" style="font-family:'Syne',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:.85rem;font-weight:700;margin-bottom:1rem;color:#ffbd59">Standort</h2>
+          <div id="map-placeholder" style="background:#111328;border:1px solid #1e2240;border-radius:12px;padding:2rem;text-align:center">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin:0 auto 1rem"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p style="font-size:.95rem;color:#e8eaf6;margin-bottom:.25rem;font-weight:500">Lokalbesucher GmbH</p>
+            <p style="font-size:.875rem;color:#6b7099;margin-bottom:1.25rem">Im Westerkamp 7, 45711 Datteln</p>
+            <button onclick="lbLoadMap()" style="font-family:'Syne',sans-serif;font-weight:700;font-size:.875rem;padding:.6em 1.25em;background:transparent;color:#6b7099;border:1px solid #1e2240;border-radius:10px;cursor:pointer" onmouseover="this.style.borderColor='#6b7099';this.style.color='#e8eaf6'" onmouseout="this.style.borderColor='#1e2240';this.style.color='#6b7099'">
+              Google Maps laden
+            </button>
+            <p style="font-size:.75rem;color:#6b7099;margin-top:.75rem">Durch Laden werden Daten an Google übertragen. Siehe <a href="/datenschutz/#googlemaps" style="color:#ffbd59">Datenschutzerklärung</a>.</p>
+          </div>
+          <div id="map-container" hidden>
+            <iframe
+              src=""
+              data-src="https://maps.google.com/maps?q=Lokalbesucher+GmbH,+Im+Westerkamp+7,+45711+Datteln&output=embed&hl=de&z=15"
+              width="100%" height="320"
+              style="border:0;border-radius:12px;display:block"
+              allowfullscreen loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Standort Lokalbesucher GmbH, Im Westerkamp 7, 45711 Datteln"
+              aria-label="Google Maps — Standort Lokalbesucher GmbH"></iframe>
+          </div>
+          <script>
+          function lbLoadMap() {
+            document.getElementById('map-placeholder').hidden = true;
+            var c = document.getElementById('map-container');
+            c.hidden = false;
+            var f = c.querySelector('iframe');
+            f.src = f.dataset.src;
+            localStorage.setItem('lb-maps-consent', 'granted');
+          }
+          if (localStorage.getItem('lb-maps-consent') === 'granted') lbLoadMap();
+          </script>
+        </section>
+
+        <hr class="divider">
+
         <!-- Umsatzsteuer-ID -->
         <section aria-labelledby="ust">
           <h2 id="ust" style="font-family:'Syne',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:.85rem;font-weight:700;margin-bottom:1rem;color:#ffbd59">Umsatzsteuer-ID</h2>
