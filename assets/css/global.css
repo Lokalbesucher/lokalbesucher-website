@@ -597,7 +597,7 @@ p {
 
 .nav-dropdown {
   position: absolute;
-  top: calc(100% + .75rem);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   min-width: 210px;
@@ -605,6 +605,7 @@ p {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: .5rem;
+  padding-top: calc(.5rem + .75rem);
   list-style: none;
   opacity: 0;
   pointer-events: none;
@@ -612,19 +613,19 @@ p {
   transform: translateX(-50%) translateY(-4px);
   box-shadow: 0 8px 32px rgba(0,0,0,.4);
   z-index: 200;
+  background-clip: padding-box;
 }
 
 .nav-dropdown::before {
   content: '';
   position: absolute;
-  top: -6px;
+  top: calc(.75rem - 6px);
   left: 50%;
   transform: translateX(-50%);
   width: 12px;
   height: 6px;
   background: var(--surface);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  border-top: none;
 }
 
 .nav-has-dropdown:hover .nav-dropdown,
