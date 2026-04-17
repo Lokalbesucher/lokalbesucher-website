@@ -958,6 +958,18 @@
               </div>
 
               <div style="margin-bottom:1.25rem">
+                <label class="lb-label" for="lb-business">Unternehmen *</label>
+                <input class="lb-input" type="text" id="lb-business" name="companyName"
+                       required autocomplete="organization" placeholder="Muster GmbH">
+              </div>
+
+              <div style="margin-bottom:1.25rem">
+                <label class="lb-label" for="lb-email">E-Mail *</label>
+                <input class="lb-input" type="email" id="lb-email" name="email"
+                       required autocomplete="email" placeholder="max@muster.de">
+              </div>
+
+              <div style="margin-bottom:1.25rem">
                 <label class="lb-label" for="lb-phone">Telefon *</label>
                 <input class="lb-input" type="tel" id="lb-phone" name="phone"
                        required autocomplete="tel" placeholder="+49 151 ...">
@@ -1028,26 +1040,22 @@
         btn.textContent = 'Wird gesendet …';
 
         try {
-          var res  = await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-853d-7b58b2ab79a1', {
+          await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-853d-7b58b2ab79a1', {
             method: 'POST',
+            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              name:    document.getElementById('lb-name').value.trim(),
-              phone:   document.getElementById('lb-phone').value.trim(),
-              website: form.querySelector('[name="website"]').value,
-              source:  'Bewertungsmanagement'
+              name:        document.getElementById('lb-name').value.trim(),
+              companyName: document.getElementById('lb-business').value.trim(),
+              email:       document.getElementById('lb-email').value.trim(),
+              phone:       document.getElementById('lb-phone').value.trim(),
+              source:      'Bewertungsmanagement'
             })
           });
-          var json = await res.json();
-
-          if (json.success) {
-            form.hidden = true;
-            document.getElementById('lb-form-success').hidden = false;
-            if (typeof gtag === 'function') {
-              gtag('event', 'form_submit', { event_category:'lead', event_label:'bewertungsmanagement' });
-            }
-          } else {
-            throw new Error(json.message || 'Fehler');
+          form.hidden = true;
+          document.getElementById('lb-form-success').hidden = false;
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_submit', { event_category:'lead', event_label:'bewertungsmanagement' });
           }
         } catch(ex) {
           btn.disabled = false;
