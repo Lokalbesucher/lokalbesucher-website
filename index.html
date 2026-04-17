@@ -726,32 +726,124 @@
   </section>
 
   <!-- FINALER CTA ───────────────────────────────────────────── -->
-  <section class="section" aria-labelledby="cta-title">
+  <section class="section" id="anfrage" aria-labelledby="hp-form-title">
     <div class="container">
-      <div class="cta-section">
-        <span class="section-label">Bereit durchzustarten?</span>
-        <h2 class="cta-section-title" id="cta-title">
-          Dein Google-Profil ist<br>dein bester Verkäufer
-        </h2>
-        <p class="cta-section-desc">
-          Lass uns in 15 Minuten schauen wo du gerade stehst und
-          was möglich ist. Kostenlos und unverbindlich.
-        </p>
-        <div class="cta-group">
-          <a href="https://wa.me/4915122358883"
-             class="btn btn-primary btn-lg"
-             rel="noopener noreferrer"
-             target="_blank"
-             aria-label="WhatsApp Beratung starten">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-            WhatsApp Beratung starten
-          </a>
-          <a href="mailto:info@lokalbesucher.de" class="btn btn-ghost btn-lg">
-            info@lokalbesucher.de
-          </a>
+      <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:start;max-width:960px;margin:0 auto">
+        <style>
+          @media(min-width:768px){#hp-form-grid{grid-template-columns:1fr 1fr!important}}
+        </style>
+        <div id="hp-form-grid" style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:start">
+          <div>
+            <span class="section-label">Bereit durchzustarten?</span>
+            <h2 class="section-title" id="hp-form-title" style="margin-bottom:1.25rem">
+              Dein Google-Profil ist<br>dein bester Verkäufer
+            </h2>
+            <p style="color:#6b7099;margin-bottom:2rem;line-height:1.75">
+              Lass uns in 15 Minuten schauen wo du gerade stehst und was möglich ist.
+              Kostenlos und unverbindlich.
+            </p>
+            <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem">
+              <div class="lb-trust-item"><span class="lb-trust-dot"></span>Antwort heute noch — garantiert</div>
+              <div class="lb-trust-item"><span class="lb-trust-dot"></span>200+ Unternehmen bereits optimiert</div>
+              <div class="lb-trust-item"><span class="lb-trust-dot"></span>100% kostenlos, kein Verkaufsgespräch</div>
+              <div class="lb-trust-item"><span class="lb-trust-dot"></span>Keine Verpflichtung</div>
+            </div>
+            <div style="background:#111328;border:1px solid #1e2240;border-radius:12px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex-shrink:0;margin-top:.1rem"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <div>
+                <div style="font-size:.875rem;font-weight:600;color:#e8eaf6;margin-bottom:.2rem">Tobias Frank</div>
+                <div style="font-size:.8rem;color:#6b7099">Inhaber · antwortet persönlich</div>
+              </div>
+            </div>
+          </div>
+          <div style="background:#111328;border:1px solid #1e2240;border-radius:20px;padding:2rem">
+            <form id="hp-lead-form" novalidate>
+              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+              <div style="margin-bottom:1.25rem">
+                <label class="lb-label" for="hp-name">Dein Name *</label>
+                <input class="lb-input" type="text" id="hp-name" name="name"
+                       required autocomplete="name" placeholder="Max Mustermann">
+              </div>
+              <div style="margin-bottom:1.25rem">
+                <label class="lb-label" for="hp-phone">Telefon *</label>
+                <input class="lb-input" type="tel" id="hp-phone" name="phone"
+                       required autocomplete="tel" placeholder="+49 151 ...">
+              </div>
+              <div style="margin-bottom:1.5rem">
+                <label style="display:flex;gap:.75rem;align-items:flex-start;cursor:pointer">
+                  <input type="checkbox" id="hp-dsgvo" required
+                         style="flex-shrink:0;margin-top:.2rem;accent-color:#ffbd59;width:16px;height:16px">
+                  <span style="font-size:.8rem;color:#6b7099;line-height:1.5">
+                    Ich bin einverstanden, dass Lokalbesucher mich einmalig zu meiner Anfrage kontaktiert.
+                    <a href="/datenschutz/" style="color:#ffbd59;text-decoration:underline">Datenschutz</a>
+                  </span>
+                </label>
+              </div>
+              <button type="submit" id="hp-submit-btn"
+                      style="width:100%;background:#ffbd59;color:#0c0e1a;border:none;border-radius:12px;padding:1em 1.5em;font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.5rem">
+                Kostenlose Analyse anfordern
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <p id="hp-form-error" style="display:none;margin-top:.75rem;font-size:.8rem;color:#ff5c5c;text-align:center"></p>
+            </form>
+            <div id="hp-form-success" hidden style="text-align:center;padding:1rem 0">
+              <div style="width:56px;height:56px;background:rgba(62,207,142,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.5rem;color:#e8eaf6">Danke! Anfrage erhalten.</h3>
+              <p style="color:#6b7099;font-size:.9rem;margin-bottom:1.5rem">
+                Tobias meldet sich <strong style="color:#e8eaf6">heute noch</strong> persönlich bei dir.
+              </p>
+              <p style="font-size:.8rem;color:#6b7099;margin-bottom:.75rem">Noch schneller? Direkt via WhatsApp:</p>
+              <a href="https://wa.me/4915122358883" class="btn btn-ghost" rel="noopener noreferrer" target="_blank" style="width:100%;justify-content:center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                WhatsApp öffnen
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <script>
+    (function(){
+      var form = document.getElementById('hp-lead-form');
+      var btn  = document.getElementById('hp-submit-btn');
+      var err  = document.getElementById('hp-form-error');
+      if (!form) return;
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();
+        err.style.display = 'none';
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        btn.disabled = true;
+        btn.textContent = 'Wird gesendet …';
+        try {
+          var res = await fetch('https://lokalbesucher-form.workers.dev/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name:    document.getElementById('hp-name').value.trim(),
+              phone:   document.getElementById('hp-phone').value.trim(),
+              website: form.querySelector('[name="website"]').value,
+              source:  'Homepage'
+            })
+          });
+          var json = await res.json();
+          if (json.success) {
+            form.hidden = true;
+            document.getElementById('hp-form-success').hidden = false;
+            if (typeof gtag === 'function') {
+              gtag('event', 'form_submit', { event_category:'lead', event_label:'homepage' });
+            }
+          } else { throw new Error(json.message || 'Fehler'); }
+        } catch(ex) {
+          btn.disabled = false;
+          btn.textContent = 'Kostenlose Analyse anfordern';
+          err.textContent = 'Senden fehlgeschlagen — bitte versuche es erneut oder schreib uns direkt.';
+          err.style.display = 'block';
+        }
+      });
+    }());
+    </script>
   </section>
 
 </main>
