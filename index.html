@@ -453,37 +453,18 @@
         </p>
       </div>
 
-      <!-- Tobias Frank — Geschäftsführer (Pin-Form) -->
-      <div style="display:flex;flex-direction:column;align-items:center;margin-bottom:3.5rem">
-        <div class="tobias-pin-wrap" aria-hidden="true">
-          <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
-               alt="Tobias Frank — Geschäftsführer Lokalbesucher GmbH"
-               width="160" height="180"
-               loading="lazy"
-               class="tobias-pin-img">
-        </div>
-        <div style="text-align:center;margin-top:1.5rem;max-width:560px">
-          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;margin-bottom:.25rem">Tobias Frank</div>
-          <div style="font-size:.875rem;color:#ffbd59;margin-bottom:.5rem">Geschäftsführer</div>
-          <div style="font-size:.8rem;color:#6b7099;margin-bottom:1.25rem">20+ Jahre Sales &amp; Marketing · Salesforce · Amazon · StepStone</div>
-          <blockquote style="font-size:.95rem;line-height:1.75;color:#c5c8e0;border-left:3px solid #ffbd59;padding-left:1rem;font-style:italic;margin:0;text-align:left">
-            „Lokale Sichtbarkeit ist kein Zufall — sie ist das Ergebnis konsequenter,
-            täglicher Arbeit. Genau das machen wir für dich."
-          </blockquote>
-        </div>
-      </div>
+      <!-- Team-Karten — Hochformat, 2 Reihen -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.25rem">
 
-      <!-- Team-Foto Gruppe -->
-      <div style="margin-bottom:3rem;border-radius:16px;overflow:hidden;border:1px solid var(--border)">
-        <img src="/assets/images/lokalbesucher-team-datteln-nrw.webp"
-             alt="Das Lokalbesucher Team — Google Business Experten aus Datteln, NRW"
-             width="1200" height="500"
-             loading="lazy"
-             style="width:100%;height:auto;max-height:380px;object-fit:cover;display:block">
-      </div>
-
-      <!-- Team-Karten — Hochformat -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1.25rem">
+        <div class="team-card">
+          <div class="team-card-img">
+            <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
+                 alt="Tobias Frank — Geschäftsführer Lokalbesucher GmbH"
+                 width="200" height="260" loading="lazy">
+          </div>
+          <div class="team-card-name">Tobias Frank</div>
+          <div class="team-card-role">Geschäftsführer</div>
+        </div>
 
         <div class="team-card">
           <div class="team-card-img">
@@ -508,11 +489,11 @@
         <div class="team-card">
           <div class="team-card-img">
             <img src="/assets/images/lucy-kalweit-lokalbesucher-team.webp"
-                 alt="Lucy Kalweit — Social Media Managerin, Lokalbesucher"
+                 alt="Lucy Kalweit — Teamleitung Social Media, Lokalbesucher"
                  width="200" height="260" loading="lazy">
           </div>
           <div class="team-card-name">Lucy Kalweit</div>
-          <div class="team-card-role">Social Media Managerin</div>
+          <div class="team-card-role">Teamleitung Social Media</div>
         </div>
 
         <div class="team-card">
@@ -652,15 +633,14 @@
         <p class="section-desc">Echte Bewertungen von echten Unternehmen — ungefiltert.</p>
       </div>
 
-      <!-- Trustindex Bewertungs-Widget -->
-      <!-- TODO: Trustindex embed code von Tobias einsetzen -->
-      <!-- <script src="https://cdn.trustindex.io/loader.js?XXXXXXX"></script> -->
+      <!-- Trustindex Bewertungs-Widget (lazy load, min-height für CLS=0) -->
+      <div style="min-height:420px">
+        <script defer async src='https://cdn.trustindex.io/loader.js?63b545638482762e0396f5948cd'></script>
+      </div>
 
-      <!-- Platzhalter bis Trustindex-Code vorliegt -->
-      <div style="background:var(--surface2);border:1px dashed var(--border);border-radius:16px;padding:3rem 2rem;text-align:center;color:#6b7099">
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin:0 auto 1rem"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        <p style="font-size:1rem;margin-bottom:.5rem;color:#e8eaf6;font-weight:600">Trustindex Bewertungsfeed</p>
-        <p style="font-size:.875rem">Wird eingebettet sobald Tobias den Code bereitstellt.</p>
+      <!-- Trustindex Social Media Feed (lazy load, min-height für CLS=0) -->
+      <div style="min-height:420px;margin-top:2rem">
+        <script defer async src='https://cdn.trustindex.io/loader-feed.js?41cfdc338a3475991c66d60eb33'></script>
       </div>
 
     </div>
