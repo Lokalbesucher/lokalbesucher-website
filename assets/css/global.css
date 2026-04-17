@@ -802,16 +802,12 @@ p {
 
 /* Team-Karten (Hochformat) */
 .team-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 14px;
   overflow: hidden;
   text-align: center;
-  transition: border-color .25s ease, transform .25s ease;
+  transition: transform .25s ease;
 }
 
 .team-card:hover {
-  border-color: rgba(255, 189, 89, .35);
   transform: translateY(-3px);
 }
 
@@ -819,6 +815,7 @@ p {
   width: 100%;
   aspect-ratio: 3 / 4;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .team-card-img img {
@@ -839,15 +836,15 @@ p {
 .team-card-name {
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: .9rem;
+  font-size: 1rem;
   color: var(--text);
-  padding: .75rem .75rem .2rem;
+  padding: .5rem .5rem .15rem;
 }
 
 .team-card-role {
-  font-size: .78rem;
+  font-size: .9rem;
   color: var(--muted);
-  padding-bottom: .9rem;
+  padding-bottom: .6rem;
 }
 
 /* ── Trust Strip ───────────────────────────────────────────── */
