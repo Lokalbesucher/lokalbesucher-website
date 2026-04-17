@@ -28,7 +28,7 @@
   <link rel="preload" href="/assets/fonts/syne-700.woff2"    as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/syne-800.woff2"    as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp"     as="image">
+  <link rel="preload" href="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp" as="image" fetchpriority="high">
 
   <!-- ── Critical CSS inline (above the fold) ───────────────── -->
   <style>
@@ -827,9 +827,8 @@
         btn.disabled = true;
         btn.textContent = 'Wird gesendet …';
         try {
-          await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-853d-7b58b2ab79a1', {
+          var res = await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-853d-7b58b2ab79a1', {
             method: 'POST',
-            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               name:        document.getElementById('hp-name').value.trim(),
@@ -839,6 +838,7 @@
               source:      'Homepage'
             })
           });
+          if (!res.ok) throw new Error(res.status);
           form.hidden = true;
           document.getElementById('hp-form-success').hidden = false;
           if (typeof gtag === 'function') {
