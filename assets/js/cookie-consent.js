@@ -69,6 +69,32 @@
     document.getElementById('lb-btn-decline').addEventListener('click', decline);
   }
 
+  /* ── Conversion Tracking ──────────────────────────────────── */
+  function trackEvent(name, params) {
+    if (typeof gtag === 'function') gtag('event', name, params);
+  }
+
+  function bindTracking() {
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        trackEvent('whatsapp_click', {
+          event_category: 'contact',
+          event_label: el.getAttribute('aria-label') || 'WhatsApp'
+        });
+      });
+    });
+    document.querySelectorAll('a[href^="tel:"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        trackEvent('phone_click', {
+          event_category: 'contact',
+          event_label: el.href
+        });
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', bindTracking);
+
   /* ── Footer-Link öffnet Banner erneut ─────────────────────── */
   function bindSettingsLink() {
     var link = document.getElementById('cookie-settings-link');
