@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /tmp/
+Disallow: /scripts/
+
+Sitemap: https://lokalbesucher.de/sitemap.xml

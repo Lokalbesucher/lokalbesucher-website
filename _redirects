@@ -1,0 +1,40 @@
+# ── Spezifische Redirects (Priorität vor Wildcards) ───────────────────────────
+
+# Bekannte WordPress-Pfad-Bugs
+/home/faq/                                              /faq/                                                           301
+/home/google-business-agentur/                          /google-business-agentur/                                       301
+/home/impressum/                                        /impressum/                                                     301
+/home/datenschutz/                                      /datenschutz/                                                   301
+/home/bewertungsmanagement/                             /bewertungsmanagement/                                          301
+/home/case-studies/                                     /case-studies/                                                  301
+
+# Alte WordPress-Leistungsseiten (typische Slugs)
+/leistungen/                                            /google-business-agentur/                                       301
+/leistungen/google-business-optimierung/                /google-business-agentur/                                       301
+/leistungen/bewertungsmanagement/                       /bewertungsmanagement/                                          301
+/google-business-optimierung/                           /google-business-agentur/                                       301
+/bewertungen/                                           /bewertungsmanagement/                                          301
+/google-bewertungen/                                    /bewertungsmanagement/                                          301
+
+# Alte Kontakt/Über-uns-Seiten → Homepage
+/kontakt/                                               /                                                               301
+/ueber-uns/                                             /                                                               301
+/ueber-uns/team/                                        /                                                               301
+/team/                                                  /                                                               301
+/uber-uns/                                              /                                                               301
+
+# ── Wildcard: /home/* → /* ────────────────────────────────────────────────────
+/home/:splat                                            /:splat                                                         301
+
+# ── WordPress-System-URLs → Homepage ─────────────────────────────────────────
+/wp-admin/*                                             /                                                               301
+/wp-login.php                                           /                                                               301
+/wp-content/*                                           /                                                               301
+/wp-includes/*                                          /                                                               301
+/feed/                                                  /                                                               301
+/feed/*                                                 /                                                               301
+/xmlrpc.php                                             /                                                               301
+/category/*                                             /                                                               301
+/tag/*                                                  /                                                               301
+/author/*                                               /                                                               301
+/page/*                                                 /                                                               301
