@@ -941,9 +941,8 @@
         btn.disabled = true;
         btn.textContent = 'Wird gesendet …';
         try {
-          await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-853d-7b58b2ab79a1', {
+          var res = await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-853d-7b58b2ab79a1', {
             method: 'POST',
-            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               name:        document.getElementById('sg-name').value.trim(),
@@ -953,6 +952,7 @@
               source:      'Schema.org Generator'
             })
           });
+          if (!res.ok) throw new Error(res.status);
           form.hidden = true;
           document.getElementById('sg-form-success').hidden = false;
           if (typeof gtag === 'function') {
