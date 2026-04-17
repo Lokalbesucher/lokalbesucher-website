@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ROI-Kalkulator Google Business | Was kostet dich eine schlechte Bewertung? | Lokalbesucher</title>
+  <meta name="description" content="Kostenloser ROI-Kalkulator: Berechne in 60 Sekunden was jede Bewertung wert ist und welches Umsatzpotenzial du liegen lässt. Google Business Agentur Lokalbesucher.">
+  <link rel="canonical" href="https://lokalbesucher.de/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://lokalbesucher.de/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">
+  <meta property="og:title"       content="ROI-Kalkulator Google Business | Lokalbesucher">
+  <meta property="og:description" content="Berechne in 60 Sekunden was jede Bewertung wirklich wert ist — kostenloser ROI-Kalkulator.">
+  <meta property="og:image"       content="https://lokalbesucher.de/assets/images/og-home.webp">
+  <meta name="twitter:card"       content="summary_large_image">
+
+  <link rel="preload" href="/assets/fonts/syne-700.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-800.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Global CSS -->
+  <link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
+
+  <link rel="icon" href="/assets/images/favicon.webp" type="image/webp">
+
+  <!-- reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdTl30sAAAAAKis2EzgjxVkiZw_mehJsHQsn5jq" async defer></script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://lokalbesucher.de/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/#webpage",
+        "url": "https://lokalbesucher.de/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/",
+        "name": "ROI-Kalkulator Google Business | Lokalbesucher",
+        "isPartOf": { "@id": "https://lokalbesucher.de/#website" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://lokalbesucher.de/" },
+            { "@type": "ListItem", "position": 2, "name": "ROI-Kalkulator", "item": "https://lokalbesucher.de/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/" }
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── KALKULATOR DESIGN TOKENS ─────────────────────────────── */
+    :root {
+      --gold:  #ffbd59;
+      --gold2: #ffc96d;
+      --gd:    rgba(255,189,89,.12);
+      --gb:    rgba(255,189,89,.28);
+      --green: #3ecf8e;
+      --grd:   rgba(62,207,142,.1);
+      --grb:   rgba(62,207,142,.28);
+      --red:   #ff5c5c;
+      --rdd:   rgba(255,92,92,.1);
+      --rdb:   rgba(255,92,92,.28);
+      --blue:  #4f82ff;
+      --bld:   rgba(79,130,255,.1);
+      --blb:   rgba(79,130,255,.28);
+      --s1:    #111328;
+      --s2:    #181b35;
+      --s3:    #1e2240;
+      --txt:   #e8eaf6;
+      --mut:   #6b7099;
+      --dim:   #4a5572;
+      --r:     14px;
+      --rsm:   9px;
+    }
+
+    /* ── KALKULATOR WRAP ──────────────────────────────────────── */
+    .kalc-wrap {
+      position: relative; z-index: 1;
+      max-width: 1080px; margin: 0 auto;
+      padding: 0 20px 100px;
+    }
+    @media (max-width: 600px) { .kalc-wrap { padding: 0 12px 60px; } }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    .kalc-hero { text-align: center; padding: 56px 20px 48px; }
+    .kalc-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gd); border: 1px solid var(--gb); border-radius: 100px;
+      padding: 6px 18px; font-size: 11px; font-weight: 700; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 26px;
+    }
+    .kalc-hero h1 {
+      font-family: 'Syne', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1.05; color: #fff; letter-spacing: -.01em; margin-bottom: 18px;
+    }
+    .kalc-hero h1 em { color: var(--gold); font-style: normal; display: block; }
+    .kalc-hero p {
+      font-size: 1rem; color: var(--mut); max-width: 540px;
+      margin: 0 auto 48px; line-height: 1.75; font-weight: 300;
+    }
+
+    /* ── SECTION LABEL ────────────────────────────────────────── */
+    .slabel {
+      font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 14px; display: flex; align-items: center; gap: 12px;
+    }
+    .slabel::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gb), transparent); }
+
+    /* ── BRANCH GRID ──────────────────────────────────────────── */
+    .bgrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 9px; margin-bottom: 44px;
+    }
+    .bb {
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      padding: 15px 10px; background: var(--s1);
+      border: 1.5px solid rgba(255,255,255,.06); border-radius: var(--rsm);
+      cursor: pointer; font-family: 'DM Sans', system-ui, sans-serif; font-size: 11px; font-weight: 600;
+      color: var(--mut); transition: .18s ease; text-align: center; position: relative;
+    }
+    .bb .conv-badge {
+      position: absolute; top: 5px; right: 5px;
+      font-size: 9px; font-weight: 700; color: var(--green);
+      background: var(--grd); border-radius: 100px; padding: 1px 5px;
+      opacity: 0; transition: .18s;
+    }
+    .bb:hover { border-color: rgba(255,255,255,.14); background: var(--s2); color: var(--txt); transform: translateY(-2px); }
+    .bb:hover .conv-badge { opacity: 1; }
+    .bb.active { border-color: var(--gold); background: var(--gd); color: var(--gold); box-shadow: 0 0 28px var(--gd); }
+    .bb.active .conv-badge { opacity: 1; color: var(--gold); }
+    .bi { font-size: 26px; }
+
+    /* ── MAIN COLUMNS ─────────────────────────────────────────── */
+    .mcols { display: grid; grid-template-columns: 310px 1fr; gap: 18px; align-items: start; }
+    @media (max-width: 780px) { .mcols { grid-template-columns: 1fr; } }
+    .mcols > *, .rcols > *, .bot2 > *, .bgrid > * { min-width: 0; }
+
+    /* ── PANEL ────────────────────────────────────────────────── */
+    .panel {
+      background: var(--s1); border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--r); padding: 24px; position: relative; overflow: hidden;
+      min-width: 0; max-width: 100%;
+    }
+    .pt {
+      font-size: 11px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase;
+      color: var(--mut); margin-bottom: 22px; display: flex; align-items: center; gap: 9px;
+    }
+    .pt::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,.07); }
+    .accent { position: absolute; top: 0; left: 0; right: 0; height: 1.5px; }
+    .accent.gold  { background: linear-gradient(90deg, transparent, var(--gold) 40%, transparent); }
+    .accent.green { background: linear-gradient(90deg, transparent, var(--green) 40%, transparent); }
+    .accent.red   { background: linear-gradient(90deg, transparent, var(--red) 40%, transparent); }
+    .accent.blue  { background: linear-gradient(90deg, transparent, var(--blue) 40%, transparent); }
+
+    /* ── SLIDERS ──────────────────────────────────────────────── */
+    .ig { margin-bottom: 19px; }
+    .il {
+      font-size: 11.5px; font-weight: 500; color: var(--mut); margin-bottom: 7px;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 6px; flex-wrap: wrap;
+    }
+    .iv {
+      font-family: 'DM Mono', monospace; font-size: 12px; color: var(--gold);
+      background: var(--gd); padding: 2px 10px; border-radius: 100px; font-weight: 500;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    input[type=range] {
+      -webkit-appearance: none; width: 100%; max-width: 100%; height: 3px;
+      background: rgba(255,255,255,.1); border-radius: 100px; outline: none; cursor: pointer;
+      display: block;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 17px; height: 17px; background: var(--gold);
+      border-radius: 50%; box-shadow: 0 0 10px rgba(255,189,89,.3); transition: transform .15s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.25); }
+    .rl {
+      display: flex; justify-content: space-between; font-size: 9.5px;
+      color: var(--dim); margin-top: 3px; font-family: 'DM Mono', monospace;
+    }
+
+    /* CLV BOX */
+    .clvbox {
+      background: var(--s2); border: 1px solid var(--gb); border-radius: var(--rsm);
+      padding: 18px; text-align: center; margin-top: 22px;
+    }
+    .clvlbl { font-size: 10px; text-transform: uppercase; letter-spacing: .13em; color: var(--mut); margin-bottom: 4px; font-weight: 600; }
+    .clvnum {
+      font-family: 'Syne', system-ui, sans-serif; font-weight: 800;
+      font-size: 3rem; color: var(--gold); line-height: 1;
+      transition: all .35s cubic-bezier(.34,1.56,.64,1);
+    }
+    .clvsub { font-size: 10px; color: var(--dim); margin-top: 3px; }
+
+    /* ── RESULT CARDS ─────────────────────────────────────────── */
+    .rcols { display: flex; flex-direction: column; gap: 14px; width: 100%; min-width: 0; }
+    .rc {
+      background: var(--s1); border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--r); padding: 22px; position: relative; overflow: hidden;
+      transition: transform .2s; width: 100%; box-sizing: border-box; min-width: 0;
+    }
+    .rc:hover { transform: translateY(-2px); }
+    .rc.pos  { border-color: var(--grb); }
+    .rc.neg  { border-color: var(--rdb); }
+    .rc.gold { border-color: var(--gb); }
+    .rc.blue { border-color: var(--blb); }
+
+    .rh { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .rt { font-size: 12px; font-weight: 600; color: var(--mut); line-height: 1.5; flex: 1; min-width: 0; }
+    .rt strong { color: var(--txt); display: block; }
+    .tag {
+      font-size: 9.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 100px; white-space: nowrap; flex-shrink: 0;
+    }
+    .tag.p { background: var(--grd); color: var(--green); border: 1px solid var(--grb); }
+    .tag.n { background: var(--rdd); color: var(--red);   border: 1px solid var(--rdb); }
+    .tag.g { background: var(--gd);  color: var(--gold);  border: 1px solid var(--gb); }
+    .tag.b { background: var(--bld); color: var(--blue);  border: 1px solid var(--blb); }
+
+    .rbig {
+      font-family: 'Syne', system-ui, sans-serif; font-weight: 800;
+      font-size: clamp(2.25rem, 8vw, 3.75rem); line-height: 1;
+      transition: all .4s cubic-bezier(.34,1.56,.64,1);
+    }
+    .rbig.green { color: var(--green); }
+    .rbig.red   { color: var(--red); }
+    .rbig.gold  { color: var(--gold); }
+    .rbig.blue  { color: var(--blue); }
+    .rsub { font-size: 11px; color: var(--dim); margin-top: 5px; line-height: 1.55; }
+
+    .bkd { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,.06); display: flex; flex-direction: column; gap: 7px; }
+    .br  { display: flex; justify-content: space-between; align-items: center; font-size: 11px; gap: 8px; }
+    .brl { color: var(--dim); flex: 1; min-width: 0; }
+    .brv { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--mut); font-weight: 500; white-space: nowrap; flex-shrink: 0; }
+
+    /* STAR SIMULATOR */
+    .stars { display: flex; gap: 4px; margin: 12px 0; }
+    .sp {
+      flex: 1; min-width: 0; padding: 8px 2px; background: var(--s2);
+      border: 1.5px solid rgba(255,255,255,.07); border-radius: 8px;
+      cursor: pointer; text-align: center; font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--mut); transition: .18s; display: flex; flex-direction: column;
+      align-items: center; gap: 3px; overflow: hidden;
+    }
+    .sp .ss { font-size: clamp(10px, 3vw, 18px); white-space: nowrap; }
+    .sp .sn { font-size: 10px; font-weight: 700; }
+    .sp:hover { border-color: rgba(255,255,255,.16); transform: translateY(-2px); }
+    .sp.s1.on { border-color: var(--red);   background: var(--rdd); color: var(--red); }
+    .sp.s2.on { border-color: #f97316; background: rgba(249,115,22,.1); color: #f97316; }
+    .sp.s3.on { border-color: #eab308; background: rgba(234,179,8,.1);  color: #eab308; }
+    .sp.s4.on { border-color: var(--green); background: var(--grd); color: var(--green); }
+    .sp.s5.on { border-color: var(--green); background: var(--grd); color: var(--green); box-shadow: 0 0 18px var(--grd); }
+
+    .sim2 { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 12px; }
+    .sb {
+      padding: 14px; border-radius: var(--rsm); min-width: 0;
+      border: 1px solid rgba(255,255,255,.07); text-align: center; transition: .25s;
+    }
+    .sbn {
+      font-family: 'Syne', system-ui, sans-serif; font-weight: 800;
+      font-size: clamp(1.375rem, 5vw, 1.875rem); line-height: 1; margin-bottom: 3px; transition: .3s;
+    }
+    .sbl { font-size: 9.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--dim); }
+
+    /* BOTTOM 2 COLS */
+    .bot2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+    @media (max-width: 680px) { .bot2 { grid-template-columns: 1fr; } }
+
+    /* TAP TAGS */
+    .taprow { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 14px; }
+    .tapbox { padding: 12px; background: var(--s2); border-radius: var(--rsm); border: 1px solid var(--gb); min-width: 0; }
+    .taplbl { font-size: 9px; color: var(--mut); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 5px; font-weight: 600; line-height: 1.3; }
+    .tapnum {
+      font-family: 'Syne', system-ui, sans-serif; font-weight: 800;
+      font-size: clamp(1.25rem, 5vw, 2.125rem); color: var(--gold); line-height: 1; transition: .35s;
+    }
+    .tapsub { font-size: 9px; color: var(--dim); margin-top: 2px; }
+    .tap-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+    .tap-header-badges { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+
+    /* GROWTH BARS */
+    .gbwrap { margin-top: 14px; }
+    .gblbl { font-size: 10px; color: var(--mut); margin-bottom: 8px; font-weight: 600; letter-spacing: .05em; }
+    .gbrow { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+    .gbn   { font-size: 10px; color: var(--mut); width: 32px; text-align: right; flex-shrink: 0; }
+    .gbt   { flex: 1; min-width: 0; height: 6px; background: rgba(255,255,255,.07); border-radius: 100px; overflow: hidden; }
+    .gbf   { height: 100%; border-radius: 100px; background: var(--green); transition: width 1s ease; }
+    .gbv   { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--green); width: 32px; flex-shrink: 0; font-weight: 500; }
+
+    /* VISIBILITY */
+    .vis3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+    .vbox { background: var(--s2); border-radius: var(--rsm); padding: 12px 8px; text-align: center; border: 1px solid var(--blb); min-width: 0; }
+    .vnum { font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: clamp(1.375rem, 5vw, 2.25rem); color: var(--blue); line-height: 1; margin-bottom: 3px; }
+    .vlbl { font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: .07em; line-height: 1.4; }
+
+    .case-chip {
+      display: flex; align-items: center; gap: 7px; flex-wrap: wrap;
+      background: var(--s3); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 100px; padding: 5px 14px; font-size: 11px; color: var(--mut); margin-top: 12px;
+    }
+    .case-chip strong { color: var(--green); }
+    .vis-proj { margin-top: 12px; padding: 12px 14px; background: var(--bld); border-radius: var(--rsm); border: 1px solid var(--blb); }
+    .vis-proj-lbl { font-size: 11px; color: var(--mut); margin-bottom: 5px; font-weight: 600; }
+    .vis-proj-row { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+    .vis-proj-new { font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: clamp(1.75rem, 6vw, 2.375rem); color: var(--blue); }
+    .vis-proj-old { font-size: 11px; color: var(--dim); }
+
+    /* CTA SECTION */
+    .kalc-cta {
+      margin-top: 44px;
+      background: linear-gradient(135deg, var(--s1) 0%, var(--s2) 50%, #131630 100%);
+      border: 1px solid var(--gb); border-radius: 20px; padding: 52px 48px;
+      position: relative; overflow: hidden;
+    }
+    @media (max-width: 640px) { .kalc-cta { padding: 36px 24px; } }
+    .kalc-cta::before {
+      content: ''; position: absolute; top: -40%; right: -8%; width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(255,189,89,.07) 0%, transparent 65%); pointer-events: none;
+    }
+    .kalc-cta::after {
+      content: ''; position: absolute; bottom: -30%; left: -8%; width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(62,207,142,.04) 0%, transparent 65%); pointer-events: none;
+    }
+    .cta-inner {
+      position: relative; z-index: 1;
+      display: grid; grid-template-columns: 1fr auto; gap: 52px; align-items: start;
+    }
+    @media (max-width: 680px) { .cta-inner { grid-template-columns: 1fr; gap: 32px; } }
+
+    .cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .cta-h {
+      font-family: 'Syne', system-ui, sans-serif; font-weight: 800;
+      font-size: clamp(1.875rem, 4.5vw, 3.25rem); line-height: .98; color: #fff; margin-bottom: 24px;
+    }
+    .cta-h span { color: var(--gold); }
+    #cta-loss { color: var(--red); position: relative; display: inline-block; }
+    #cta-loss::after {
+      content: ''; position: absolute; bottom: 2px; left: 0; right: 0;
+      height: 3px; background: var(--red); opacity: .5; border-radius: 2px;
+    }
+    @keyframes lossFlash { 0% { opacity:1; } 30% { opacity:.4; color:#fff; } 100% { opacity:1; } }
+    .loss-update { animation: lossFlash .5s ease; }
+    .cta-h-tap { font-size: clamp(1.25rem, 2.8vw, 2.125rem); color: var(--mut); display: block; }
+
+    .features { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-bottom: 28px; }
+    @media (max-width: 680px) { .features { grid-template-columns: 1fr; } }
+    .feat { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--mut); line-height: 1.5; }
+    .feat-dot {
+      width: 20px; height: 20px; background: var(--grd); border: 1px solid var(--grb);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700; color: var(--green); flex-shrink: 0; margin-top: 1px;
+    }
+    .report-box { background: rgba(62,207,142,.06); border: 1px solid var(--grb); border-radius: var(--rsm); padding: 18px 20px; }
+    .report-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--green); margin-bottom: 10px; }
+    .report-items { display: flex; flex-direction: column; gap: 6px; }
+    .ri { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--mut); }
+    .ri-dot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
+
+    /* PRICE BLOCK */
+    .pblock { text-align: center; flex-shrink: 0; min-width: 220px; }
+    .plbl { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--mut); margin-bottom: 4px; }
+    .pbig { font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 5.5rem; color: var(--gold); line-height: .88; letter-spacing: .01em; }
+    .punit { font-size: 12px; color: var(--dim); margin-top: 4px; margin-bottom: 16px; }
+
+    /* ROI BOX */
+    .roi-box { background: var(--grd); border: 1px solid var(--grb); border-radius: var(--rsm); padding: 16px 18px; text-align: center; margin-bottom: 14px; }
+    .roi-lbl { font-size: 10px; color: var(--mut); margin-bottom: 3px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; }
+    .roi-big { font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 2.75rem; color: var(--green); line-height: 1; transition: .35s; }
+    .roi-net { font-size: 11px; color: var(--dim); margin-top: 4px; font-family: 'DM Mono', monospace; }
+    .roi-sub { font-size: 10px; color: var(--dim); margin-top: 2px; }
+
+    /* CONTACT FORM */
+    .lb-cform { display: flex; flex-direction: column; gap: 9px; margin-top: 14px; }
+    .lb-cform input[type="text"],
+    .lb-cform input[type="tel"],
+    .lb-cform input[type="email"] {
+      display: block; width: 100%; padding: 12px 14px;
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
+      border-radius: 9px; color: var(--txt);
+      font-family: 'DM Sans', system-ui, sans-serif; font-size: 13px; font-weight: 400;
+      outline: none; box-shadow: none; transition: border-color .18s;
+      box-sizing: border-box;
+    }
+    .lb-cform input::placeholder { color: var(--dim); }
+    .lb-cform input:focus { border-color: var(--gold); background: rgba(255,255,255,.11); }
+    .cf-msg { font-size: 12px; min-height: 18px; text-align: center; font-weight: 600; }
+    .cf-msg.ok  { color: var(--green); }
+    .cf-msg.err { color: var(--red); }
+
+    .ctabtn {
+      display: block; width: 100%; background: var(--gold); color: #0c0e1a;
+      font-family: 'Syne', system-ui, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .04em;
+      padding: 15px 24px; border-radius: var(--rsm); border: none; cursor: pointer;
+      transition: .18s; text-align: center;
+    }
+    .ctabtn:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,189,89,.3); }
+
+    .wa-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%;
+      background: transparent; color: var(--txt); border: 1px solid rgba(255,255,255,.18);
+      font-family: 'Syne', system-ui, sans-serif; font-weight: 600; font-size: 13px;
+      padding: 13px 24px; border-radius: var(--rsm); cursor: pointer; transition: .18s;
+      text-decoration: none; box-sizing: border-box; margin-top: 8px;
+    }
+    .wa-btn:hover { border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.06); }
+    .cta-footnote { font-size: 10px; color: var(--dim); text-align: center; margin-top: 10px; }
+
+    /* TOOLTIP */
+    .tip-wrap { position: relative; display: inline-flex; }
+    .tip-trigger {
+      width: 18px; height: 18px; background: var(--gd); border: 1px solid var(--gb);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 700; color: var(--gold); cursor: pointer; user-select: none;
+    }
+    .tip-box {
+      display: none; position: absolute; bottom: calc(100% + 8px); left: 50%;
+      transform: translateX(-50%); width: 260px; background: var(--s3);
+      border: 1px solid var(--gb); border-radius: var(--rsm);
+      padding: 12px 14px; font-size: 11px; color: var(--mut); line-height: 1.6;
+      box-shadow: 0 8px 32px rgba(0,0,0,.5); z-index: 100;
+    }
+    .tip-box strong { color: var(--gold); display: block; margin-bottom: 4px; }
+    .tip-box::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 6px solid transparent; border-top-color: var(--gb); }
+    .tip-wrap:hover .tip-box { display: block; }
+
+    /* FOOTNOTE */
+    .kalc-footnote { text-align: center; font-size: 10.5px; color: var(--dim); margin-top: 52px; line-height: 2; }
+
+    /* ANIMATION */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    .anim { animation: fadeUp .35s ease forwards; }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .bgrid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 6px; }
+      .bb { padding: 10px 5px; font-size: 10px; gap: 5px; }
+      .bi { font-size: 20px; }
+      .rc { padding: 16px; }
+      .panel { padding: 16px; }
+      .kalc-cta { padding: 28px 18px; }
+      .cta-inner { gap: 28px; }
+      .pblock { min-width: unset; width: 100%; }
+      .features { grid-template-columns: 1fr; }
+      .stars { flex-wrap: wrap; gap: 6px; }
+      .sp { flex: 0 0 calc(50% - 3px); }
+      .sp:nth-child(3), .sp:nth-child(4), .sp:nth-child(5) { flex: 0 0 calc(33.33% - 4px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Skip Link ──────────────────────────────────────────────── -->
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+<!-- ── Header ────────────────────────────────────────────────── -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/" class="nav-logo" aria-label="Lokalbesucher – Startseite">
+        <img src="/assets/images/lokalbesucher-logo-invers.webp" alt="" width="35" height="38" loading="eager">
+        Lokalbesucher
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/google-business-agentur/">Leistungen</a></li>
+        <li><a href="/case-studies/">Erfolge</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+      <a href="https://wa.me/4915122358883"
+         class="btn btn-primary nav-cta"
+         rel="noopener noreferrer" target="_blank"
+         aria-label="Kostenlose Beratung via WhatsApp">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Kostenlos beraten
+      </a>
+      <button class="nav-toggle" aria-controls="nav-drawer" aria-expanded="false" aria-label="Navigation öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div id="nav-drawer" class="nav-drawer" role="navigation" aria-label="Mobile Navigation">
+    <a href="/google-business-agentur/">Leistungen</a>
+    <a href="/case-studies/">Erfolge</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/impressum/">Impressum</a>
+    <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank" class="btn btn-primary" style="width:fit-content;margin-top:.5rem">WhatsApp Beratung</a>
+  </div>
+</header>
+
+<!-- ── Main ───────────────────────────────────────────────────── -->
+<main id="main">
+<div class="kalc-wrap">
+
+  <!-- HERO -->
+  <div class="kalc-hero">
+    <div class="kalc-badge">⚡ Kostenloser ROI-Kalkulator</div>
+    <h1>Was kostet dich eine<em>schlechte Bewertung?</em></h1>
+    <p>Berechne in 60 Sekunden: was jede Bewertung wirklich wert ist, was eine einzige 1-Stern-Bewertung an Umsatz vernichtet — und welches Potenzial du gerade liegen lässt.</p>
+  </div>
+
+  <!-- BRANCH -->
+  <div class="slabel">01 — Deine Branche</div>
+  <div class="bgrid" id="bgrid">
+    <button class="bb active" data-b="restaurant" data-bon="45"  data-bsq="8"   data-bind="2"   data-conv="1.5" data-growth="48" data-visgrowth="48" data-best="158" data-bestcase="Ristorante Peperoncino"      data-bs="8309"  data-be="21410" data-bname="Restaurants" onclick="setBranch(this)">
+      <span class="bi">🍽️</span>Restaurant<span class="conv-badge">Ø +48% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="arzt" data-bon="150" data-bsq="3" data-bind="7" data-conv="1.2" data-growth="69" data-visgrowth="69" data-best="170" data-bestcase="Praxis Theres" data-bs="1106" data-be="2987" data-bname="Arzt / Praxis" onclick="setBranch(this)">
+      <span class="bi">🩺</span>Arzt / Praxis<span class="conv-badge">Ø +69% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="beauty" data-bon="80" data-bsq="6" data-bind="2.5" data-conv="1.8" data-growth="55" data-visgrowth="55" data-best="104" data-bestcase="Viabeauty" data-bs="3560" data-be="4251" data-bname="Beauty & Kosmetik" onclick="setBranch(this)">
+      <span class="bi">💅</span>Beauty / Kosmetik<span class="conv-badge">Ø +55% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="friseur" data-bon="65" data-bsq="5" data-bind="2" data-conv="1.5" data-growth="12" data-visgrowth="46" data-best="12" data-bestcase="Hairlounge by Tuba & Cihan" data-bs="1764" data-be="1975" data-bname="Friseure" onclick="setBranch(this)">
+      <span class="bi">✂️</span>Friseur<span class="conv-badge">Ø +12% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="hotel" data-bon="140" data-bsq="2" data-bind="4" data-conv="2.0" data-growth="35" data-visgrowth="35" data-best="50" data-bestcase="Hotel Rimberg" data-bs="25532" data-be="38294" data-bname="Hotels" onclick="setBranch(this)">
+      <span class="bi">🏨</span>Hotel<span class="conv-badge">Ø +35% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="fitness" data-bon="55" data-bsq="12" data-bind="2.5" data-conv="1.0" data-growth="13" data-visgrowth="46" data-best="13" data-bestcase="Easy Fitness Hannover Süd" data-bs="16133" data-be="18253" data-bname="Fitnessstudios" onclick="setBranch(this)">
+      <span class="bi">🏋️</span>Fitnessstudio<span class="conv-badge">Ø +13% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="sanitar" data-bon="320" data-bsq="1.5" data-bind="6" data-conv="2.0" data-growth="62" data-visgrowth="62" data-best="92" data-bestcase="Schäfer Heizungsbau Herten" data-bs="173" data-be="333" data-bname="Sanitär / Heizung" onclick="setBranch(this)">
+      <span class="bi">🔧</span>Sanitär / Heizung<span class="conv-badge">Ø +62% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="ergo" data-bon="95" data-bsq="10" data-bind="3" data-conv="1.3" data-growth="57" data-visgrowth="57" data-best="104" data-bestcase="Physio Well" data-bs="280" data-be="572" data-bname="Physio / Ergo" onclick="setBranch(this)">
+      <span class="bi">💆</span>Physio / Ergo<span class="conv-badge">Ø +57% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="kampf" data-bon="70" data-bsq="10" data-bind="3" data-conv="1.2" data-growth="75" data-visgrowth="75" data-best="85" data-bestcase="Karate Team Achern" data-bs="260" data-be="482" data-bname="Kampfsport" onclick="setBranch(this)">
+      <span class="bi">🥋</span>Kampfsport<span class="conv-badge">Ø +75% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="bau" data-bon="2800" data-bsq="1.5" data-bind="5" data-conv="1.2" data-growth="45" data-visgrowth="45" data-best="72" data-bestcase="Surmann Garten- & Landschaftsbau" data-bs="784" data-be="1347" data-bname="Bauunternehmen" onclick="setBranch(this)">
+      <span class="bi">🏗️</span>Bauunternehmen<span class="conv-badge">Ø +45% Aufrufe</span>
+    </button>
+    <button class="bb" data-b="sonst" data-bon="90" data-bsq="4" data-bind="3" data-conv="1.0" data-growth="38" data-visgrowth="38" data-best="104" data-bestcase="KPC Interim" data-bs="214" data-be="437" data-bname="Lokale Unternehmen" onclick="setBranch(this)">
+      <span class="bi">🏪</span>Sonstiges<span class="conv-badge">Ø +38% Aufrufe</span>
+    </button>
+  </div>
+
+  <!-- INPUTS + RESULTS -->
+  <div class="slabel">02 — Deine Kennzahlen</div>
+  <div class="mcols">
+
+    <!-- LEFT: Sliders -->
+    <div class="panel">
+      <div class="accent gold"></div>
+      <div class="pt">Eingaben anpassen</div>
+
+      <div class="ig">
+        <div class="il">Ø Bon pro Besuch <span class="iv" id="v-bon">45 €</span></div>
+        <input type="range" id="r-bon" min="10" max="5000" step="5" value="45" oninput="upd()">
+        <div class="rl"><span>10 €</span><span>5.000 €</span></div>
+      </div>
+      <div class="ig">
+        <div class="il">Besuche pro Jahr &amp; Kunde <span class="iv" id="v-bsq">8×</span></div>
+        <input type="range" id="r-bsq" min="1" max="24" step="0.5" value="8" oninput="upd()">
+        <div class="rl"><span>1×</span><span>24×</span></div>
+      </div>
+      <div class="ig">
+        <div class="il">Kundenbindung (Jahre) <span class="iv" id="v-bind">2 J.</span></div>
+        <input type="range" id="r-bind" min="0.5" max="15" step="0.5" value="2" oninput="upd()">
+        <div class="rl"><span>0,5</span><span>15 J.</span></div>
+      </div>
+      <div class="ig">
+        <div class="il">Google-Bewertungsschnitt <span class="iv" id="v-stars">4,2 ⭐</span></div>
+        <input type="range" id="r-stars" min="1.0" max="5.0" step="0.1" value="4.2" oninput="upd()">
+        <div class="rl"><span>1,0</span><span>5,0 ⭐</span></div>
+      </div>
+      <div class="ig">
+        <div class="il">Anzahl Google-Bewertungen <span class="iv" id="v-anz">54</span></div>
+        <input type="range" id="r-anz" min="1" max="500" step="1" value="54" oninput="upd()">
+        <div class="rl"><span>1</span><span>500</span></div>
+      </div>
+      <div class="ig">
+        <div class="il">Monatl. Profilaufrufe (Google) <span class="iv" id="v-auf">1.800</span></div>
+        <input type="range" id="r-auf" min="50" max="50000" step="50" value="1800" oninput="upd()">
+        <div class="rl"><span>50</span><span>50.000</span></div>
+      </div>
+
+      <div class="clvbox">
+        <div class="clvlbl">Customer Lifetime Value</div>
+        <div class="clvnum" id="clv">720 €</div>
+        <div class="clvsub">Was ein Stammkunde dir insgesamt bringt</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Results -->
+    <div class="rcols">
+
+      <!-- GUTE BEWERTUNG -->
+      <div class="rc pos">
+        <div class="accent green"></div>
+        <div class="rh">
+          <div class="rt"><strong>Was bringt dir eine positive Bewertung?</strong></div>
+          <span class="tag p">Wert ↑</span>
+        </div>
+        <div class="rbig green" id="r-gut">5.040 €</div>
+        <div class="rsub">Indirekter Wert durch gewonnene Neukunden × Customer Lifetime Value</div>
+        <div class="bkd">
+          <div class="br"><span class="brl">Nur Sterne (Ø 1 Neukunde × CLV)</span><span class="brv" id="b1">720 €</span></div>
+          <div class="br"><span class="brl">Sterne + Text (Ø 4 Neukunden × CLV)</span><span class="brv" id="b2">2.880 €</span></div>
+          <div class="br"><span class="brl">Sterne + Text + Foto ✦ (Ø 7 Neukunden)</span><span class="brv" id="b3">5.040 €</span></div>
+        </div>
+      </div>
+
+      <!-- SCHLECHTE BEWERTUNG -->
+      <div class="rc neg">
+        <div class="accent red"></div>
+        <div class="rh">
+          <div class="rt"><strong>Was kostet eine einzige 1-Stern-Bewertung?</strong></div>
+          <span class="tag n">Schaden ↓</span>
+        </div>
+        <div class="rbig red" id="r-bad">−3.780 €</div>
+        <div class="rsub">Jahres-Umsatzschaden durch Sternverlust — Quelle: Harvard Business School (7 % pro Stern)</div>
+        <div class="bkd">
+          <div class="br"><span class="brl">Neuer Schnitt danach</span><span class="brv" id="b-ns">4,16 ⭐</span></div>
+          <div class="br"><span class="brl">Sternverlust</span><span class="brv" id="b-vl" style="color:var(--red)">−0,04 ⭐</span></div>
+          <div class="br"><span class="brl">5⭐ zur Kompensation nötig</span><span class="brv" id="b-kp">8 Bew.</span></div>
+        </div>
+      </div>
+
+      <!-- STERN SIMULATOR -->
+      <div class="rc gold">
+        <div class="accent gold"></div>
+        <div class="rh">
+          <div class="rt">Stern-Simulator — <strong>was passiert gerade?</strong></div>
+          <span class="tag g">Live</span>
+        </div>
+        <div style="font-size:11px;color:var(--dim);margin-bottom:8px">Wähle die Sterne einer neuen Bewertung:</div>
+        <div class="stars">
+          <button class="sp s1" onclick="setSim(1,this)"><span class="ss">⭐</span><span class="sn">1</span></button>
+          <button class="sp s2" onclick="setSim(2,this)"><span class="ss">⭐⭐</span><span class="sn">2</span></button>
+          <button class="sp s3" onclick="setSim(3,this)"><span class="ss">⭐⭐⭐</span><span class="sn">3</span></button>
+          <button class="sp s4" onclick="setSim(4,this)"><span class="ss">⭐⭐⭐⭐</span><span class="sn">4</span></button>
+          <button class="sp s5 on" onclick="setSim(5,this)"><span class="ss">⭐⭐⭐⭐⭐</span><span class="sn">5</span></button>
+        </div>
+        <div class="sim2">
+          <div class="sb" id="sb-s"><div class="sbn green" id="sim-s">4,24</div><div class="sbl">Neuer Schnitt</div></div>
+          <div class="sb" id="sb-e"><div class="sbn green" id="sim-e">+2.520 €</div><div class="sbl">Jahres-Effekt</div></div>
+        </div>
+      </div>
+
+    </div><!-- /rcols -->
+  </div><!-- /mcols -->
+
+  <!-- BOTTOM: TAP TAGS + VISIBILITY -->
+  <div class="bot2">
+
+    <!-- TAP TAGS -->
+    <div class="rc gold" style="margin-top:0">
+      <div class="accent gold"></div>
+      <div class="rh" style="align-items:flex-start">
+        <div style="flex:1;min-width:0">
+          <div class="tap-header-row">
+            <span style="font-family:'Syne',sans-serif;font-weight:800;font-size:22px;color:var(--gold);letter-spacing:.04em">Tap Tags</span>
+          </div>
+          <div class="tap-header-badges">
+            <span style="font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--gd);color:var(--gold);border:1px solid var(--gb);padding:2px 8px;border-radius:100px;white-space:nowrap">⚡ Exklusive Innovation</span>
+            <div class="tip-wrap">
+              <div class="tip-trigger">ℹ</div>
+              <div class="tip-box">
+                <strong>Was sind Tap Tags?</strong>
+                NFC-Anhänger für Mitarbeiter — Kunden tippen einfach ihr Smartphone dran und landen direkt auf deiner Google-Bewertungsseite. Nur 4–5-Sterne-Flows. Plus: monatliche Sachpreisverlosungen für Mitarbeiter als Anreiz. Exklusiv von Lokalbesucher.
+              </div>
+            </div>
+          </div>
+          <div style="font-size:11px;color:var(--mut);font-weight:500;margin-top:6px">10 neue ⭐⭐⭐⭐⭐ pro Monat — automatisch</div>
+        </div>
+        <span class="tag g" style="flex-shrink:0">Wachstum</span>
+      </div>
+
+      <label id="tap-toggle" style="display:flex;align-items:center;gap:12px;cursor:pointer;margin:16px 0;padding:14px 16px;background:linear-gradient(135deg,rgba(255,189,89,.15),rgba(255,189,89,.05));border-radius:var(--rsm);border:2px solid var(--gold);box-shadow:0 0 20px rgba(255,189,89,.1);">
+        <input type="checkbox" id="tap-check" onchange="upd()" style="width:20px;height:20px;accent-color:var(--gold);cursor:pointer;flex-shrink:0;">
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--gold);line-height:1.2">Ja, ich will den Tap Tags Booster</div>
+          <div style="font-size:10px;color:var(--mut);margin-top:2px">Schalte das Wachstumspotenzial frei</div>
+        </div>
+      </label>
+      <div class="taprow">
+        <div class="tapbox">
+          <div class="taplbl">Neuer Schnitt<br>nach 12 Monaten</div>
+          <div class="tapnum" id="tap-sc">4,82</div>
+          <div class="tapsub">+120 neue ⭐⭐⭐⭐⭐</div>
+        </div>
+        <div class="tapbox">
+          <div class="taplbl">Umsatzpotenzial<br>Tap Tags p.a.</div>
+          <div class="tapnum" id="tap-rev">+216.000 €</div>
+          <div class="tapsub" id="tap-sub">120 Bew. × 3 NK × CLV</div>
+        </div>
+      </div>
+      <div class="gbwrap">
+        <div class="gblbl">Sternschnitt-Entwicklung (Monat 1 → 12)</div>
+        <div id="gbars"></div>
+      </div>
+    </div>
+
+    <!-- GOOGLE VISIBILITY -->
+    <div class="rc blue" style="margin-top:0">
+      <div class="accent blue"></div>
+      <div class="rh">
+        <div class="rt">Google Sichtbarkeit — <strong>echte Kundendaten</strong></div>
+        <span class="tag b">Daten</span>
+      </div>
+      <div style="font-size:11px;color:var(--dim);margin-bottom:12px">
+        Profilaufrufe unserer Kunden <span id="vis-bname">im Bereich Restaurants</span> nach 12 Monaten mit Lokalbesucher:
+      </div>
+      <div class="vis3">
+        <div class="vbox"><div class="vnum" id="vis-avg">+48%</div><div class="vlbl">Ø Aufrufe-<br>Wachstum</div></div>
+        <div class="vbox"><div class="vnum" id="vis-best">+158%</div><div class="vlbl">Bestes<br>Ergebnis</div></div>
+        <div class="vbox"><div class="vnum">+<span id="vis-xtra">864</span></div><div class="vlbl">Mehr Aufrufe<br>pro Monat</div></div>
+      </div>
+      <div class="case-chip" id="vis-case">
+        📍 <strong>Ristorante Peperoncino</strong>: 8.309 → 21.410 (+158%)
+      </div>
+      <div class="vis-proj">
+        <div class="vis-proj-lbl">Deine Aufrufe mit Lokalbesucher (Prognose)</div>
+        <div class="vis-proj-row">
+          <div class="vis-proj-new" id="vis-new">2.664</div>
+          <div class="vis-proj-old">statt <span id="vis-old">1.800</span> / Monat</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /bot2 -->
+
+  <!-- CTA -->
+  <div class="kalc-cta">
+    <div class="cta-inner">
+      <div>
+        <div class="cta-eyebrow">💡 Lokalbesucher</div>
+        <div class="cta-h">Du lässt gerade <span id="cta-loss">18.700 €</span> liegen.<br><span class="cta-h-tap" id="cta-tap-line">Mit Tap Tags sogar <span id="cta-loss-tap" style="color:var(--gold)">32.000 €</span>.</span></div>
+        <div class="features">
+          <div class="feat"><div class="feat-dot">✓</div>Löschung negativer Bewertungen</div>
+          <div class="feat"><div class="feat-dot">✓</div>Aktive Generierung positiver Bewertungen</div>
+          <div class="feat"><div class="feat-dot">✓</div>Jede Bewertung beantwortet in 60 Min.</div>
+          <div class="feat"><div class="feat-dot">✓</div>50+ Verzeichnisse gepflegt</div>
+          <div class="feat"><div class="feat-dot">✓</div>4 Posts / Monat auf 9 Plattformen</div>
+          <div class="feat"><div class="feat-dot">✓</div>Google-Profil nach aktuellem Standard</div>
+          <div class="feat"><div class="feat-dot">✓</div>600+ Profil-Updates im Jahr</div>
+          <div class="feat"><div class="feat-dot">✓</div>Monatliches Reporting</div>
+        </div>
+        <div class="report-box">
+          <div class="report-title">🎁 Kostenlose Analyse bei Anfrage</div>
+          <div class="report-items">
+            <div class="ri"><div class="ri-dot"></div>Vollständige Wettbewerber- &amp; Ranking-Analyse</div>
+            <div class="ri"><div class="ri-dot"></div>KI-Sichtbarkeit: wie gut finden ChatGPT, Perplexity &amp; Gemini dich?</div>
+            <div class="ri"><div class="ri-dot"></div>Konkrete To-do-Liste für mehr Sichtbarkeit</div>
+            <div class="ri"><div class="ri-dot"></div>Bewertungsprofil-Audit deiner Top-3-Mitbewerber</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pblock">
+        <div class="plbl">Dein Investment</div>
+        <div class="pbig">279€</div>
+        <div class="punit">netto / Monat · 12 Monate Laufzeit</div>
+
+        <div class="roi-box">
+          <div class="roi-lbl">Umsatzpotenzial pro Jahr</div>
+          <div class="roi-big" id="roi-big">+18.700 €</div>
+          <div class="roi-net" id="roi-net"></div>
+          <div class="roi-sub">konservative Schätzung bei mehr Sichtbarkeit &amp; Bewertungen</div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="lb-cform">
+          <input type="text"  id="cf-name"  placeholder="Dein Name" required>
+          <input type="tel"   id="cf-phone" placeholder="Handynummer" required>
+          <input type="email" id="cf-email" placeholder="E-Mail-Adresse" required>
+          <div id="cf-msg" class="cf-msg"></div>
+          <button class="ctabtn" id="cf-btn" onclick="submitForm()">Jetzt Wettbewerbsvorteil sichern →</button>
+          <a href="https://wa.me/4915122358883"
+             class="wa-btn"
+             rel="noopener noreferrer" target="_blank">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Direkt via WhatsApp anfragen
+          </a>
+          <div class="cta-footnote">
+            <span style="font-size:9px;opacity:.5">Geschützt durch reCAPTCHA · Google Privacy &amp; Terms</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="kalc-footnote">
+    Aufrufe-Wachstum basiert auf echten Kundendaten aus 12 Monaten Lokalbesucher-Betreuung (n=63 Unternehmen).<br>
+    Umsatzeffekt: Harvard Business School (2011) · Conversion-Raten: BrightLocal &amp; WebFX Industry Benchmarks (2025, konservativ) · Review-Wert: BrightLocal Consumer Survey (2023)<br>
+    <em>Alle Zahlen sind Schätzwerte und zeigen Potenziale auf. Individuelle Ergebnisse hängen von Branche, Markt und Ausgangssituation ab.</em>
+  </p>
+
+</div><!-- /kalc-wrap -->
+</main>
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="/assets/images/lokalbesucher-logo-invers.webp" alt="" width="34" height="37" loading="lazy">
+          Lokalbesucher
+        </div>
+        <p class="footer-tagline">Die Google Business Agentur für lokale Unternehmen in Deutschland. Dauerhaft sichtbar. Messbar erfolgreich.</p>
+        <address class="footer-nap" style="font-style:normal">
+          <strong>Lokalbesucher GmbH</strong><br>
+          Im Westerkamp 7<br>45711 Datteln<br>
+          <a href="tel:+4915122358883">+49&nbsp;151&nbsp;22358883</a><br>
+          <a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a>
+        </address>
+      </div>
+      <nav aria-label="Leistungen">
+        <div class="footer-col-title">Leistungen</div>
+        <ul class="footer-links" role="list">
+          <li><a href="/google-business-agentur/">Google Business Optimierung</a></li>
+          <li><a href="/google-business-agentur/#bewertungen">Bewertungsmanagement</a></li>
+          <li><a href="/google-business-agentur/#verzeichnisse">Branchenverzeichnisse</a></li>
+          <li><a href="/google-business-agentur/#reporting">Monatliches Reporting</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Unternehmen">
+        <div class="footer-col-title">Unternehmen</div>
+        <ul class="footer-links" role="list">
+          <li><a href="/case-studies/">Erfolgsgeschichten</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/schema-org-generator/">Schema Generator</a></li>
+          <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI Kalkulator</a></li>
+        </ul>
+      </nav>
+      <div>
+        <div class="footer-col-title">Jetzt starten</div>
+        <p style="font-size:.875rem;color:#6b7099;margin-bottom:1rem;line-height:1.7">Kostenlose Erstberatung — direkt via WhatsApp, ohne Wartezeit.</p>
+        <a href="https://wa.me/4915122358883" class="btn btn-primary" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp Beratung starten">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp Beratung
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Lokalbesucher GmbH &middot; Alle Rechte vorbehalten</p>
+      <nav class="footer-legal-links" aria-label="Rechtliches">
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="#cookie-settings" id="cookie-settings-link">Cookie-Einstellungen</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- ── WhatsApp Float ─────────────────────────────────────────── -->
+<a href="https://wa.me/4915122358883" class="whatsapp-float" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp Beratung starten">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  Jetzt beraten lassen
+</a>
+
+<!-- ── Nav Script ─────────────────────────────────────────────── -->
+<script>
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('nav-drawer');
+  if (toggle && drawer) {
+    toggle.addEventListener('click', function () {
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      drawer.classList.toggle('is-open', !open);
+    });
+    document.addEventListener('click', function (e) {
+      if (!toggle.contains(e.target) && !drawer.contains(e.target)) {
+        toggle.setAttribute('aria-expanded', 'false');
+        drawer.classList.remove('is-open');
+      }
+    });
+  }
+}());
+</script>
+
+<!-- ── Kalkulator Script (Logik 1:1 aus Original) ────────────── -->
+<script>
+// ── STATE ──
+let simSt = 5;
+let bd = {};
+
+// ── HELPERS ──
+function fmt(v, prefix='') {
+  const abs = Math.round(Math.abs(v)).toLocaleString('de-DE');
+  const sign = v < 0 ? '−' : (prefix === '+' ? '+' : '');
+  return sign + abs + ' €';
+}
+function anim(el, txt) {
+  el.classList.remove('anim'); void el.offsetWidth;
+  el.textContent = txt; el.classList.add('anim');
+}
+
+// ── BRANCH PICKER ──
+function setBranch(btn) {
+  document.querySelectorAll('.bb').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  bd = {
+    bon:       parseFloat(btn.dataset.bon),
+    bsq:       parseFloat(btn.dataset.bsq),
+    bind:      parseFloat(btn.dataset.bind),
+    conv:      parseFloat(btn.dataset.conv) / 100,
+    growth:    parseFloat(btn.dataset.growth),
+    visgrowth: parseFloat(btn.dataset.visgrowth),
+    best:      parseFloat(btn.dataset.best),
+    bestcase:  btn.dataset.bestcase,
+    bs:        parseInt(btn.dataset.bs),
+    be:        parseInt(btn.dataset.be),
+    bname:     btn.dataset.bname,
+  };
+  document.getElementById('r-bon').value  = bd.bon;
+  document.getElementById('r-bsq').value  = bd.bsq;
+  document.getElementById('r-bind').value = bd.bind;
+  upd();
+}
+
+// ── STAR SIMULATOR ──
+function setSim(s, el) {
+  simSt = s;
+  document.querySelectorAll('.sp').forEach(b => b.classList.remove('on'));
+  el.classList.add('on');
+  upd();
+}
+
+// ── GROWTH BARS ──
+function buildBars(stars0, anz0) {
+  const c = document.getElementById('gbars');
+  c.innerHTML = '';
+  [2, 4, 6, 9, 12].forEach(m => {
+    const nAnz = anz0 + m * 10;
+    const nAvg = (stars0 * anz0 + 5 * m * 10) / nAnz;
+    const pct  = Math.min(100, ((nAvg - 1) / 4) * 100);
+    const row  = document.createElement('div');
+    row.className = 'gbrow';
+    row.innerHTML = `<span class="gbn">M${m}</span>
+      <div class="gbt"><div class="gbf" style="width:0" data-w="${pct.toFixed(1)}%"></div></div>
+      <span class="gbv">${nAvg.toFixed(2)}</span>`;
+    c.appendChild(row);
+  });
+  setTimeout(() => {
+    c.querySelectorAll('.gbf').forEach(f => { f.style.width = f.dataset.w; });
+  }, 100);
+}
+
+// ── MAIN UPDATE ──
+function upd() {
+  const bon   = parseFloat(document.getElementById('r-bon').value);
+  const bsq   = parseFloat(document.getElementById('r-bsq').value);
+  const bind  = parseFloat(document.getElementById('r-bind').value);
+  const stars = parseFloat(document.getElementById('r-stars').value);
+  const anz   = parseInt(document.getElementById('r-anz').value);
+  const auf   = parseInt(document.getElementById('r-auf').value);
+
+  document.getElementById('v-bon').textContent  = bon >= 1000 ? (bon/1000).toFixed(1).replace('.',',')+' k €' : bon+' €';
+  document.getElementById('v-bsq').textContent  = (bsq % 1 === 0 ? bsq : bsq.toFixed(1))+'×';
+  document.getElementById('v-bind').textContent = (bind % 1 === 0 ? bind : bind.toFixed(1))+' J.';
+  document.getElementById('v-stars').textContent= stars.toFixed(1).replace('.',',')+' ⭐';
+  document.getElementById('v-anz').textContent  = anz;
+  document.getElementById('v-auf').textContent  = auf.toLocaleString('de-DE');
+
+  const clv = bon * bsq * bind;
+  anim(document.getElementById('clv'), Math.round(clv).toLocaleString('de-DE')+' €');
+
+  const gFoto = clv * 7;
+  anim(document.getElementById('r-gut'), fmt(gFoto));
+  document.getElementById('b1').textContent = Math.round(clv * 1).toLocaleString('de-DE')+' €';
+  document.getElementById('b2').textContent = Math.round(clv * 4).toLocaleString('de-DE')+' €';
+  document.getElementById('b3').textContent = Math.round(clv * 7).toLocaleString('de-DE')+' €';
+
+  const estUms   = Math.max(auf * bon * bd.conv * 12, 60000);
+  const neuSchn  = (stars * anz + 1) / (anz + 1);
+  const verlust  = stars - neuSchn;
+  const schaden  = estUms * verlust * 0.07 * -1;
+  const komp     = Math.max(1, Math.ceil(verlust * anz / Math.max(5 - neuSchn, 0.01)));
+
+  anim(document.getElementById('r-bad'), fmt(schaden));
+  document.getElementById('b-ns').textContent = neuSchn.toFixed(2).replace('.',',')+' ⭐';
+  document.getElementById('b-vl').textContent = '−'+verlust.toFixed(3).replace('.',',')+' ⭐';
+  document.getElementById('b-kp').textContent = komp+' Bew.';
+
+  const simNeu   = (stars * anz + simSt) / (anz + 1);
+  const simDelta = simNeu - stars;
+  const simEff   = estUms * simDelta * 0.07;
+  const simPos   = simEff >= 0;
+
+  anim(document.getElementById('sim-s'), simNeu.toFixed(2).replace('.',','));
+  anim(document.getElementById('sim-e'), (simPos ? '+' : '−')+Math.abs(Math.round(simEff)).toLocaleString('de-DE')+' €');
+
+  ['sb-s','sb-e'].forEach(id => {
+    const el = document.getElementById(id);
+    el.style.borderColor = simPos ? 'var(--grb)' : 'var(--rdb)';
+    el.style.background  = simPos ? 'var(--grd)' : 'var(--rdd)';
+  });
+  document.getElementById('sim-s').style.color = simPos ? 'var(--green)' : 'var(--red)';
+  document.getElementById('sim-e').style.color = simPos ? 'var(--green)' : 'var(--red)';
+
+  const tapEnabled = document.getElementById('tap-check').checked;
+  const tap12anz = anz + 120;
+  const tap12avg = (stars * anz + 5 * 120) / tap12anz;
+  const tapRev   = tapEnabled ? 120 * 3 * clv : 0;
+  anim(document.getElementById('tap-sc'), (tapEnabled ? tap12avg : ((stars * anz + 5 * 0) / anz)).toFixed(2).replace('.',','));
+  anim(document.getElementById('tap-rev'), tapEnabled ? '+'+Math.round(tapRev).toLocaleString('de-DE')+' €' : '— €');
+  document.getElementById('tap-sub').textContent = tapEnabled ? '120 Bew. × 3 NK × CLV' : 'Tap Tags nicht aktiviert';
+  buildBars(stars, anz);
+
+  const extraAuf  = Math.round(auf * bd.visgrowth / 100);
+  const newAuf    = auf + extraAuf;
+  const dispGrowth = bd.visgrowth !== bd.growth
+    ? `+${bd.visgrowth}% <span style="font-size:9px;color:var(--dim)">(Ø alle Branchen)</span>`
+    : `+${bd.visgrowth}%`;
+  document.getElementById('vis-bname').textContent  = 'im Bereich '+bd.bname;
+  document.getElementById('vis-avg').innerHTML      = dispGrowth;
+  document.getElementById('vis-best').textContent   = '+'+bd.best+'%';
+  document.getElementById('vis-xtra').textContent   = extraAuf.toLocaleString('de-DE');
+  document.getElementById('vis-new').textContent    = newAuf.toLocaleString('de-DE');
+  document.getElementById('vis-old').textContent    = auf.toLocaleString('de-DE');
+  document.getElementById('vis-case').innerHTML     = `📍 <strong>${bd.bestcase}</strong>: ${bd.bs.toLocaleString('de-DE')} → ${bd.be.toLocaleString('de-DE')} (+${bd.best}%)`;
+
+  const extraKunden   = extraAuf * bd.conv;
+  const extraRevMonth = extraKunden * bon;
+  const extraRevYear  = extraRevMonth * 12;
+  const tapRevYear    = tapRev;
+  const totalGross    = extraRevYear + tapRevYear;
+  const cost          = 279 * 12;
+  const netGain       = totalGross - cost;
+
+  anim(document.getElementById('roi-big'), '+'+Math.round(totalGross).toLocaleString('de-DE')+' €');
+  const netEl = document.getElementById('roi-net');
+  netEl.textContent = 'Netto-Gewinn: ' + (netGain >= 0 ? '+' : '−') + Math.abs(Math.round(netGain)).toLocaleString('de-DE') + ' €';
+  netEl.style.color = netGain >= 0 ? 'var(--green)' : 'var(--red)';
+
+  const lossEl    = document.getElementById('cta-loss');
+  const lossTapEl = document.getElementById('cta-loss-tap');
+  const tapLine   = document.getElementById('cta-tap-line');
+  const totalWithTap = extraRevYear + (120 * 3 * clv);
+
+  lossEl.classList.remove('loss-update'); void lossEl.offsetWidth;
+  lossEl.textContent = Math.round(totalGross).toLocaleString('de-DE') + ' €';
+  lossEl.classList.add('loss-update');
+
+  lossTapEl.classList.remove('loss-update'); void lossTapEl.offsetWidth;
+  lossTapEl.textContent = Math.round(totalWithTap).toLocaleString('de-DE') + ' €';
+  lossTapEl.classList.add('loss-update');
+
+  tapLine.style.opacity = tapEnabled ? '0.4' : '1';
+  tapLine.style.textDecoration = tapEnabled ? 'line-through' : 'none';
+}
+
+// ── FORM SUBMIT ──
+function submitForm() {
+  const name  = document.getElementById('cf-name').value.trim();
+  const phone = document.getElementById('cf-phone').value.trim();
+  const email = document.getElementById('cf-email').value.trim();
+  const msg   = document.getElementById('cf-msg');
+
+  if (!name || !phone || !email) {
+    msg.className = 'cf-msg err';
+    msg.textContent = 'Bitte alle Felder ausfüllen.';
+    return;
+  }
+  if (!/\S+@\S+\.\S+/.test(email)) {
+    msg.className = 'cf-msg err';
+    msg.textContent = 'Bitte eine gültige E-Mail eingeben.';
+    return;
+  }
+
+  const btn = document.getElementById('cf-btn');
+  btn.disabled = true;
+  btn.textContent = 'Wird gesendet…';
+  msg.className = 'cf-msg';
+  msg.textContent = '';
+
+  grecaptcha.ready(() => {
+    grecaptcha.execute('6LdTl30sAAAAAKis2EzgjxVkiZw_mehJsHQsn5jq', { action: 'contact' })
+      .then(token => {
+        const tapWanted = document.getElementById('tap-check').checked;
+        const branche   = document.querySelector('.bb.active')?.dataset.bname || 'k.A.';
+        const potenzial = document.getElementById('roi-big').textContent;
+
+        const payload = new URLSearchParams({
+          name, phone, email, branche, potenzial,
+          tap_tags:        tapWanted ? 'Ja' : 'Nein',
+          recaptcha_token: token,
+          quelle:          'ROI-Kalkulator lokalbesucher.de'
+        });
+
+        fetch('https://hooks.zapier.com/hooks/catch/17928974/u0a57h7/', {
+          method: 'POST', mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: payload.toString()
+        });
+
+        msg.className = 'cf-msg ok';
+        msg.textContent = '✓ Anfrage gesendet! Wir melden uns innerhalb von 24h.';
+        btn.disabled = false;
+        btn.textContent = 'Jetzt Wettbewerbsvorteil sichern →';
+        document.getElementById('cf-name').value  = '';
+        document.getElementById('cf-phone').value = '';
+        document.getElementById('cf-email').value = '';
+      })
+      .catch(() => {
+        msg.className = 'cf-msg err';
+        msg.textContent = 'reCAPTCHA Fehler — bitte Seite neu laden.';
+        btn.disabled = false;
+        btn.textContent = 'Jetzt Wettbewerbsvorteil sichern →';
+      });
+  });
+}
+
+// ── INIT ──
+const firstBtn = document.querySelector('.bb.active');
+setBranch(firstBtn);
+upd();
+</script>
+
+</body>
+</html>
