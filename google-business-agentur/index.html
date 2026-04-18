@@ -1082,7 +1082,7 @@
         btn.disabled = true;
         btn.textContent = 'Wird gesendet …';
         if (form.querySelector('[name="website"]').value) return (btn.disabled = false);
-        if (Date.now() - loadTime < 3000) return (btn.disabled = false);
+        if (Date.now() - loadTime < 800) return (btn.disabled = false);
         try {
           var res = await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-853d-7b58b2ab79a1', {
             method: 'POST',
