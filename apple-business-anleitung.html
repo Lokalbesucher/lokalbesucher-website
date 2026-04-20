@@ -3,615 +3,771 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apple Business – Anleitung für Kunden</title>
+<meta name="robots" content="noindex, nofollow">
+<title>Apple Business – Anleitung für Kunden | Lokalbesucher</title>
+
+<link rel="preload" href="/assets/fonts/syne-800.woff2"    as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap');
+  @font-face { font-family:'Syne';   src:url('/assets/fonts/syne-700.woff2')    format('woff2'); font-weight:700; font-display:swap; }
+  @font-face { font-family:'Syne';   src:url('/assets/fonts/syne-800.woff2')    format('woff2'); font-weight:800; font-display:swap; }
+  @font-face { font-family:'DM Sans';src:url('/assets/fonts/dm-sans-300.woff2') format('woff2'); font-weight:300; font-display:swap; }
+  @font-face { font-family:'DM Sans';src:url('/assets/fonts/dm-sans-400.woff2') format('woff2'); font-weight:400; font-display:swap; }
+  @font-face { font-family:'DM Sans';src:url('/assets/fonts/dm-sans-500.woff2') format('woff2'); font-weight:500; font-display:swap; }
+  @font-face { font-family:'DM Mono';src:url('/assets/fonts/dm-mono-400.woff2') format('woff2'); font-weight:400; font-display:swap; }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --apple-blue: #0071e3;
-    --apple-blue-dark: #0051a2;
-    --apple-gray: #f5f5f7;
-    --apple-dark: #1d1d1f;
-    --apple-mid: #6e6e73;
-    --apple-light: #fbfbfd;
-    --lb-yellow: #ffbd59;
-    --success: #34c759;
-    --warning: #ff9f0a;
-    --step-bg: #fff;
-    --border: #d2d2d7;
-  }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
 
   body {
-    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: var(--apple-light);
-    color: var(--apple-dark);
-    line-height: 1.6;
-    min-height: 100vh;
+    font-family:'DM Sans',system-ui,sans-serif;
+    background:#0c0e1a;
+    color:#e8eaf6;
+    line-height:1.6;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    background-image:
+      linear-gradient(rgba(78,130,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(78,130,255,.04) 1px, transparent 1px);
+    background-size:48px 48px;
   }
 
-  /* Header */
-  .header {
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: saturate(180%) blur(20px);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid var(--border);
-    padding: 18px 40px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  h1,h2,h3,h4,h5,h6 { font-family:'Syne',system-ui,sans-serif; line-height:1.15; }
+  a { color:inherit; text-decoration:none; }
+
+  /* ── Header ────────────────────────────────────────────────── */
+  .site-header {
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(12,14,26,.85);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid #1e2240;
   }
 
-  .apple-logo {
-    font-size: 28px;
-    line-height: 1;
+  .nav {
+    display:flex;
+    align-items:center;
+    gap:1rem;
+    height:4rem;
+    max-width:720px;
+    margin-inline:auto;
+    padding-inline:1.5rem;
   }
 
-  .header-text {
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--apple-dark);
-    letter-spacing: -0.3px;
+  .nav-apple {
+    display:flex;
+    align-items:center;
+    gap:.65rem;
+    flex-shrink:0;
   }
 
-  .header-sub {
-    font-size: 13px;
-    color: var(--apple-mid);
-    margin-top: 1px;
+  .apple-svg {
+    width:22px;
+    height:27px;
+    fill:#e8eaf6;
+    flex-shrink:0;
   }
 
-  .lb-badge {
-    margin-left: auto;
-    background: var(--lb-yellow);
-    color: var(--apple-dark);
-    font-size: 12px;
-    font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 20px;
-    letter-spacing: 0.2px;
+  .nav-label {
+    font-family:'Syne',system-ui,sans-serif;
+    font-weight:700;
+    font-size:1rem;
+    color:#e8eaf6;
+    letter-spacing:-.01em;
+    white-space:nowrap;
   }
 
-  /* Hero */
+  .nav-divider {
+    width:1px;
+    height:20px;
+    background:#1e2240;
+    flex-shrink:0;
+  }
+
+  .nav-sub {
+    font-size:.8rem;
+    color:#6b7099;
+    white-space:nowrap;
+  }
+
+  .nav-logo-lb {
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    flex-shrink:0;
+  }
+
+  .nav-logo-lb img {
+    height:2rem;
+    width:auto;
+    display:block;
+  }
+
+  /* ── Layout ─────────────────────────────────────────────────── */
+  .wrap {
+    max-width:720px;
+    margin-inline:auto;
+    padding-inline:1.5rem;
+  }
+
+  /* ── Hero ───────────────────────────────────────────────────── */
   .hero {
-    text-align: center;
-    padding: 64px 40px 48px;
-    max-width: 680px;
-    margin: 0 auto;
+    padding:4rem 1.5rem 3rem;
+    max-width:720px;
+    margin-inline:auto;
+    text-align:center;
+    position:relative;
+  }
+
+  .hero::before {
+    content:'';
+    position:absolute;
+    inset:-40px -80px;
+    background:radial-gradient(ellipse 60% 50% at 50% 20%, rgba(255,189,89,.07) 0%, transparent 70%);
+    pointer-events:none;
   }
 
   .hero-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #0071e3, #34aadc);
-    border-radius: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 28px;
-    font-size: 36px;
-    box-shadow: 0 12px 40px rgba(0,113,227,0.25);
+    width:72px;
+    height:72px;
+    background:linear-gradient(135deg,#1a1d3a,#252850);
+    border:1px solid #1e2240;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 1.75rem;
+    box-shadow:0 8px 32px rgba(0,0,0,.4);
+  }
+
+  .hero-icon svg {
+    width:32px;
+    height:40px;
+    fill:#e8eaf6;
+  }
+
+  .hero-eyebrow {
+    display:inline-flex;
+    align-items:center;
+    gap:.4em;
+    padding:.35em .9em;
+    font-size:.78rem;
+    font-weight:500;
+    border-radius:999px;
+    border:1px solid rgba(79,130,255,.3);
+    background:rgba(79,130,255,.1);
+    color:#4f82ff;
+    margin-bottom:1.25rem;
   }
 
   .hero h1 {
-    font-size: 36px;
-    font-weight: 700;
-    letter-spacing: -0.8px;
-    line-height: 1.15;
-    color: var(--apple-dark);
-    margin-bottom: 16px;
+    font-size:clamp(1.75rem,5vw,2.75rem);
+    font-weight:800;
+    letter-spacing:-.02em;
+    margin-bottom:1rem;
+    color:#e8eaf6;
   }
 
   .hero p {
-    font-size: 18px;
-    color: var(--apple-mid);
-    max-width: 520px;
-    margin: 0 auto 12px;
+    font-size:1.05rem;
+    color:#6b7099;
+    max-width:480px;
+    margin-inline:auto;
   }
 
-  /* Important notice */
+  /* ── Notice ─────────────────────────────────────────────────── */
   .notice {
-    max-width: 680px;
-    margin: 0 auto 48px;
-    padding: 0 40px;
+    max-width:720px;
+    margin:0 auto 2.5rem;
+    padding-inline:1.5rem;
   }
 
   .notice-box {
-    background: #fff8e6;
-    border: 1.5px solid var(--lb-yellow);
-    border-radius: 16px;
-    padding: 20px 24px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
+    background:#111328;
+    border:1px solid rgba(255,189,89,.25);
+    border-left:3px solid #ffbd59;
+    border-radius:12px;
+    padding:1.1rem 1.25rem;
+    display:flex;
+    gap:1rem;
+    align-items:flex-start;
   }
 
-  .notice-icon {
-    font-size: 22px;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
+  .notice-icon { font-size:1.2rem; flex-shrink:0; margin-top:.1rem; }
 
   .notice-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--apple-dark);
-    margin-bottom: 5px;
+    font-family:'Syne',system-ui,sans-serif;
+    font-size:.9rem;
+    font-weight:700;
+    color:#ffbd59;
+    margin-bottom:.3rem;
   }
 
   .notice-text {
-    font-size: 14px;
-    color: #5a4a00;
-    line-height: 1.5;
+    font-size:.875rem;
+    color:#6b7099;
+    line-height:1.55;
   }
 
-  /* Path selector */
+  .notice-text strong { color:#e8eaf6; }
+
+  /* ── Path selector ──────────────────────────────────────────── */
   .path-section {
-    max-width: 680px;
-    margin: 0 auto 48px;
-    padding: 0 40px;
+    max-width:720px;
+    margin:0 auto 2.5rem;
+    padding-inline:1.5rem;
   }
 
-  .path-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--apple-mid);
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 16px;
+  .section-label {
+    font-family:'Syne',system-ui,sans-serif;
+    font-size:.75rem;
+    font-weight:700;
+    color:#6b7099;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    margin-bottom:1rem;
   }
 
   .path-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:.75rem;
   }
 
   .path-card {
-    background: #fff;
-    border: 2px solid var(--border);
-    border-radius: 16px;
-    padding: 20px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    text-align: center;
+    background:#111328;
+    border:1.5px solid #1e2240;
+    border-radius:16px;
+    padding:1.4rem 1.25rem;
+    cursor:pointer;
+    transition:border-color .25s,background .25s,transform .25s,box-shadow .25s;
+    text-align:center;
   }
 
-  .path-card:hover, .path-card.active {
-    border-color: var(--apple-blue);
-    box-shadow: 0 0 0 4px rgba(0,113,227,0.1);
+  .path-card:hover {
+    border-color:#4f82ff;
+    background:#131630;
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(79,130,255,.12);
   }
 
-  .path-card-icon { font-size: 28px; margin-bottom: 8px; }
-  .path-card-title { font-size: 15px; font-weight: 600; color: var(--apple-dark); margin-bottom: 4px; }
-  .path-card-sub { font-size: 13px; color: var(--apple-mid); }
+  .path-card.active {
+    border-color:#ffbd59;
+    background:rgba(255,189,89,.06);
+    box-shadow:0 0 0 3px rgba(255,189,89,.12);
+  }
 
-  /* Steps */
+  .path-card-icon { font-size:1.75rem; margin-bottom:.6rem; }
+
+  .path-card-title {
+    font-family:'Syne',system-ui,sans-serif;
+    font-size:.95rem;
+    font-weight:700;
+    color:#e8eaf6;
+    margin-bottom:.25rem;
+  }
+
+  .path-card-sub { font-size:.8rem; color:#6b7099; }
+
+  /* ── Steps section ──────────────────────────────────────────── */
   .steps-section {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 40px 80px;
+    max-width:720px;
+    margin:0 auto;
+    padding:0 1.5rem 5rem;
   }
 
-  .section-title {
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: -0.4px;
-    color: var(--apple-dark);
-    margin-bottom: 8px;
+  .steps-title {
+    font-size:1.4rem;
+    font-weight:800;
+    letter-spacing:-.02em;
+    color:#e8eaf6;
+    margin-bottom:.35rem;
   }
 
-  .section-sub {
-    font-size: 15px;
-    color: var(--apple-mid);
-    margin-bottom: 28px;
+  .steps-sub {
+    font-size:.9rem;
+    color:#6b7099;
+    margin-bottom:1.75rem;
   }
 
+  /* ── Single step card ───────────────────────────────────────── */
   .step {
-    background: #fff;
-    border: 1.5px solid var(--border);
-    border-radius: 20px;
-    padding: 28px;
-    margin-bottom: 16px;
-    position: relative;
-    transition: box-shadow 0.2s;
+    background:#111328;
+    border:1px solid #1e2240;
+    border-radius:16px;
+    padding:1.6rem;
+    margin-bottom:.875rem;
+    transition:border-color .2s,box-shadow .2s;
   }
 
   .step:hover {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    border-color:rgba(79,130,255,.3);
+    box-shadow:0 4px 20px rgba(0,0,0,.3);
   }
 
-  .step-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 0;
+  .step-row {
+    display:flex;
+    align-items:flex-start;
+    gap:1rem;
   }
 
-  .step-number {
-    width: 36px;
-    height: 36px;
-    background: var(--apple-blue);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 1px;
+  .step-num {
+    width:34px;
+    height:34px;
+    background:#4f82ff;
+    color:#fff;
+    font-family:'Syne',system-ui,sans-serif;
+    font-size:.85rem;
+    font-weight:700;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    margin-top:.1rem;
+    box-shadow:0 4px 12px rgba(79,130,255,.3);
   }
 
-  .step-content { flex: 1; }
+  .step-body { flex:1; }
+
+  .tag {
+    display:inline-block;
+    font-size:.7rem;
+    font-weight:700;
+    font-family:'Syne',system-ui,sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    padding:.2em .65em;
+    border-radius:6px;
+    margin-bottom:.6rem;
+    background:#181b35;
+    color:#6b7099;
+    border:1px solid #1e2240;
+  }
+
+  .tag.danger { background:rgba(255,92,92,.1); color:#ff5c5c; border-color:rgba(255,92,92,.25); }
+  .tag.success { background:rgba(62,207,142,.1); color:#3ecf8e; border-color:rgba(62,207,142,.25); }
 
   .step-title {
-    font-size: 17px;
-    font-weight: 600;
-    color: var(--apple-dark);
-    margin-bottom: 8px;
-    letter-spacing: -0.2px;
+    font-family:'Syne',system-ui,sans-serif;
+    font-size:1rem;
+    font-weight:700;
+    color:#e8eaf6;
+    margin-bottom:.6rem;
   }
 
   .step-desc {
-    font-size: 15px;
-    color: #3a3a3c;
-    line-height: 1.55;
-    margin-bottom: 0;
+    font-size:.9rem;
+    color:#6b7099;
+    line-height:1.65;
   }
 
-  .step-desc p { margin-bottom: 8px; }
-  .step-desc p:last-child { margin-bottom: 0; }
+  .step-desc p { margin-bottom:.5rem; }
+  .step-desc p:last-child { margin-bottom:0; }
+  .step-desc strong { color:#e8eaf6; }
 
-  .step-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--apple-blue);
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 980px;
-    font-size: 14px;
-    font-weight: 600;
-    margin-top: 16px;
-    transition: background 0.2s;
+  /* ── Highlight box ──────────────────────────────────────────── */
+  .highlight {
+    background:#181b35;
+    border:1px solid #1e2240;
+    border-radius:10px;
+    padding:1rem 1.1rem;
+    margin-top:.875rem;
   }
 
-  .step-link:hover { background: var(--apple-blue-dark); }
-
-  .step-link.secondary {
-    background: var(--apple-gray);
-    color: var(--apple-blue);
+  .highlight-label {
+    font-family:'Syne',system-ui,sans-serif;
+    font-size:.7rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:#6b7099;
+    margin-bottom:.5rem;
   }
 
-  .step-link.secondary:hover { background: #e8e8ed; }
-
-  .tag {
-    display: inline-block;
-    background: var(--apple-gray);
-    color: var(--apple-mid);
-    font-size: 12px;
-    font-weight: 600;
-    padding: 3px 10px;
-    border-radius: 6px;
-    margin-bottom: 10px;
-    letter-spacing: 0.2px;
+  .partner-id {
+    font-family:'DM Mono','Courier New',monospace;
+    font-size:1.2rem;
+    color:#ffbd59;
+    letter-spacing:.08em;
+    word-break:break-all;
   }
 
-  .tag.important {
-    background: #fff0f0;
-    color: #d70015;
+  /* ── Buttons ────────────────────────────────────────────────── */
+  .btn {
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    padding:.7em 1.4em;
+    font-family:'Syne',system-ui,sans-serif;
+    font-weight:700;
+    font-size:.875rem;
+    line-height:1;
+    border-radius:10px;
+    border:2px solid transparent;
+    cursor:pointer;
+    white-space:nowrap;
+    transition:background .25s,transform .25s,box-shadow .25s;
+    text-decoration:none;
+    margin-top:1rem;
   }
 
-  .tag.tip {
-    background: #e8f4e8;
-    color: #1a7f37;
+  .btn-blue {
+    background:#4f82ff;
+    color:#fff;
+    box-shadow:0 4px 16px rgba(79,130,255,.25);
   }
 
-  .highlight-box {
-    background: var(--apple-gray);
-    border-radius: 12px;
-    padding: 16px 18px;
-    margin-top: 14px;
-    font-size: 14px;
-    color: var(--apple-dark);
+  .btn-blue:hover {
+    background:#6fa3ff;
+    transform:translateY(-1px);
+    box-shadow:0 6px 20px rgba(79,130,255,.35);
   }
 
-  .highlight-box strong {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--apple-mid);
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  .btn-yellow {
+    background:#ffbd59;
+    color:#0c0e1a;
+    box-shadow:0 4px 16px rgba(255,189,89,.2);
   }
 
-  .id-display {
-    font-family: 'SF Mono', 'Courier New', monospace;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--apple-blue);
-    letter-spacing: 1px;
-    word-break: break-all;
+  .btn-yellow:hover {
+    background:#ffc96d;
+    transform:translateY(-1px);
+    box-shadow:0 6px 24px rgba(255,189,89,.35);
   }
 
-  .divider {
-    height: 1px;
-    background: var(--border);
-    margin: 36px 0;
+  .btn-green {
+    background:#25d366;
+    color:#fff;
+    box-shadow:0 4px 16px rgba(37,211,102,.25);
   }
 
-  /* Hidden path content */
-  .path-content { display: none; }
-  .path-content.show { display: block; }
+  .btn-green:hover {
+    background:#1fb85a;
+    transform:translateY(-1px);
+    box-shadow:0 6px 20px rgba(37,211,102,.35);
+  }
 
-  /* Footer */
+  /* ── Default prompt ─────────────────────────────────────────── */
+  .prompt-box {
+    text-align:center;
+    padding:3rem 1.5rem;
+  }
+
+  .prompt-box .icon { font-size:2.5rem; margin-bottom:.75rem; }
+
+  .prompt-box .title {
+    font-family:'Syne',system-ui,sans-serif;
+    font-size:1.05rem;
+    font-weight:700;
+    color:#e8eaf6;
+    margin-bottom:.4rem;
+  }
+
+  .prompt-box .sub { font-size:.9rem; color:#6b7099; }
+
+  /* ── Hidden content ─────────────────────────────────────────── */
+  .path-content { display:none; }
+  .path-content.show { display:block; }
+
+  /* ── Footer ─────────────────────────────────────────────────── */
   .footer {
-    text-align: center;
-    padding: 32px 40px;
-    border-top: 1px solid var(--border);
-    background: #fff;
+    text-align:center;
+    padding:2rem 1.5rem;
+    border-top:1px solid #1e2240;
+    background:#111328;
   }
 
-  .footer-logo {
-    font-size: 14px;
-    color: var(--apple-mid);
-    margin-bottom: 4px;
+  .footer-brand {
+    font-size:.85rem;
+    color:#6b7099;
+    margin-bottom:.3rem;
   }
 
-  .footer-logo span {
-    color: var(--lb-yellow);
-    font-weight: 700;
+  .footer-brand span {
+    color:#ffbd59;
+    font-family:'Syne',system-ui,sans-serif;
+    font-weight:700;
   }
 
-  .footer-contact {
-    font-size: 13px;
-    color: var(--apple-mid);
+  .footer-links {
+    font-size:.8rem;
+    color:#6b7099;
   }
 
-  .footer-contact a {
-    color: var(--apple-blue);
-    text-decoration: none;
+  .footer-links a {
+    color:#4f82ff;
+    transition:color .2s;
   }
 
-  @media (max-width: 600px) {
-    .header { padding: 16px 20px; }
-    .hero { padding: 40px 20px 32px; }
-    .hero h1 { font-size: 26px; }
-    .hero p { font-size: 16px; }
-    .notice, .path-section, .steps-section { padding: 0 20px 60px; }
-    .path-cards { grid-template-columns: 1fr; }
-    .step { padding: 20px; }
+  .footer-links a:hover { color:#6fa3ff; }
+
+  /* ── Mobile ─────────────────────────────────────────────────── */
+  @media (max-width:600px) {
+    .nav-divider, .nav-sub { display:none; }
+    .nav-logo-lb img { height:1.6rem; }
+    .hero { padding:2.5rem 1.25rem 2rem; }
+    .hero h1 { font-size:1.75rem; }
+    .notice, .path-section, .steps-section { padding-inline:1.25rem; }
+    .path-cards { grid-template-columns:1fr; }
+    .step { padding:1.25rem; }
+    .partner-id { font-size:1rem; }
   }
 </style>
 </head>
 <body>
 
 <!-- Header -->
-<div class="header">
-  <div class="apple-logo">🍎</div>
-  <div>
-    <div class="header-text">Apple Business – Schnellanleitung</div>
-    <div class="header-sub">Bereitgestellt von Lokalbesucher GmbH</div>
-  </div>
-  <div class="lb-badge">Lokalbesucher GmbH</div>
-</div>
+<header class="site-header">
+  <nav class="nav" aria-label="Seitennavigation">
+    <div class="nav-apple">
+      <!-- Apple logo SVG -->
+      <svg class="apple-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 814 1000" aria-hidden="true">
+        <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 376.8 31 226.7 31 180.3 31 51 96.4 20.6 154.1 20.6c66.1 0 128.2 44.4 172.8 44.4 42.8 0 114.3-46.5 191.3-46.5 30.4 0 108.2 2.6 168.7 72.4zm-234.4-181c29.7-33.6 51.4-80.2 51.4-126.8 0-6.5-.6-13-1.3-19.5-49 1.9-107.6 32.8-142.5 71.5-27.6 30.4-53.7 78.2-53.7 125.5 0 6.5 1.3 13.1 1.9 15.1 3.2.6 8.4 1.3 13.7 1.3 44.1 0 99.9-29.1 130.5-67.1z"/>
+      </svg>
+      <span class="nav-label">Apple Business</span>
+    </div>
+    <div class="nav-divider"></div>
+    <span class="nav-sub">Schnellanleitung</span>
+    <a href="https://lokalbesucher.de" class="nav-logo-lb" aria-label="Zurück zu lokalbesucher.de">
+      <img src="/assets/images/lokalbesucher-logo-weiss.webp" alt="Lokalbesucher" width="140" height="32" loading="eager">
+    </a>
+  </nav>
+</header>
 
 <!-- Hero -->
-<div class="hero">
-  <div class="hero-icon">🗺️</div>
+<section class="hero">
+  <div class="hero-icon" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 814 1000">
+      <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 376.8 31 226.7 31 180.3 31 51 96.4 20.6 154.1 20.6c66.1 0 128.2 44.4 172.8 44.4 42.8 0 114.3-46.5 191.3-46.5 30.4 0 108.2 2.6 168.7 72.4zm-234.4-181c29.7-33.6 51.4-80.2 51.4-126.8 0-6.5-.6-13-1.3-19.5-49 1.9-107.6 32.8-142.5 71.5-27.6 30.4-53.7 78.2-53.7 125.5 0 6.5 1.3 13.1 1.9 15.1 3.2.6 8.4 1.3 13.7 1.3 44.1 0 99.9-29.1 130.5-67.1z"/>
+    </svg>
+  </div>
+  <div class="hero-eyebrow">Apple Maps Setup</div>
   <h1>Dein Unternehmen auf Apple Maps</h1>
   <p>Damit wir dein Profil verwalten können, brauchst du einen Apple Business Account. Das dauert 10 Minuten.</p>
-</div>
+</section>
 
-<!-- Important Notice -->
+<!-- Notice -->
 <div class="notice">
   <div class="notice-box">
-    <div class="notice-icon">⚠️</div>
+    <span class="notice-icon">⚠️</span>
     <div>
-      <div class="notice-title">Wichtig: Das ist NICHT dein normaler Apple Account</div>
-      <div class="notice-text">Dein persönlicher Apple Account (iPhone, App Store, iCloud) bleibt unberührt. Apple Business ist ein <strong>separates, kostenloses Geschäftskonto</strong> – komplett unabhängig von allem anderen.</div>
+      <div class="notice-title">Das ist NICHT dein normaler Apple Account</div>
+      <div class="notice-text">Dein persönlicher Apple Account (iPhone, App Store, iCloud) bleibt unberührt. Apple Business ist ein <strong>separates, kostenloses Geschäftskonto</strong> – komplett unabhängig.</div>
     </div>
   </div>
 </div>
 
 <!-- Path selector -->
 <div class="path-section">
-  <div class="path-label">Wo stehst du gerade?</div>
+  <div class="section-label">Wo stehst du gerade?</div>
   <div class="path-cards">
-    <div class="path-card" onclick="showPath('new')">
+    <div class="path-card" onclick="showPath('new', this)" role="button" tabindex="0" aria-pressed="false">
       <div class="path-card-icon">🆕</div>
-      <div class="path-card-title">Ich habe noch keinen Account</div>
+      <div class="path-card-title">Noch keinen Account</div>
       <div class="path-card-sub">Ich fange von vorne an</div>
     </div>
-    <div class="path-card" onclick="showPath('existing')">
+    <div class="path-card" onclick="showPath('existing', this)" role="button" tabindex="0" aria-pressed="false">
       <div class="path-card-icon">✅</div>
-      <div class="path-card-title">Ich habe bereits einen Account</div>
-      <div class="path-card-sub">Ich möchte Lokalbesucher hinzufügen</div>
+      <div class="path-card-title">Account vorhanden</div>
+      <div class="path-card-sub">Lokalbesucher hinzufügen</div>
     </div>
   </div>
 </div>
 
-<!-- Steps: Neuer Account -->
+<!-- Steps -->
 <div class="steps-section">
 
+  <!-- Neuer Account -->
   <div id="path-new" class="path-content">
-    <div class="section-title">Account erstellen & uns einladen</div>
-    <div class="section-sub">Folge diesen 4 Schritten – du schaffst das.</div>
+    <div class="steps-title">Account erstellen &amp; uns einladen</div>
+    <div class="steps-sub">Folge diesen 4 Schritten – du schaffst das.</div>
 
     <div class="step">
-      <div class="step-header">
-        <div class="step-number">1</div>
-        <div class="step-content">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
           <div class="tag">Start</div>
           <div class="step-title">Apple Business Seite öffnen</div>
           <div class="step-desc">
             <p>Klicke auf den Button unten. Die Seite öffnet sich in einem neuen Tab.</p>
-            <p><strong>Tipp:</strong> Melde dich dort nicht mit deinem iPhone-Account an – klicke stattdessen auf „Registrieren" oder „Sign up now".</p>
+            <p><strong>Tipp:</strong> Melde dich nicht mit deinem iPhone-Account an – klicke auf „Sign up now".</p>
           </div>
-          <a href="https://business.apple.com" target="_blank" class="step-link">➜ business.apple.com öffnen</a>
+          <a href="https://business.apple.com" target="_blank" rel="noopener noreferrer" class="btn btn-blue">➜ business.apple.com öffnen</a>
         </div>
       </div>
     </div>
 
     <div class="step">
-      <div class="step-header">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <div class="tag important">Wichtig</div>
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="tag danger">Wichtig</div>
           <div class="step-title">Account erstellen</div>
           <div class="step-desc">
             <p>Klicke auf <strong>„Sign up now"</strong> und fülle das Formular aus:</p>
-            <p>• <strong>Name der Organisation:</strong> Dein Firmenname<br>
-               • <strong>E-Mail:</strong> Am besten eine Geschäfts-E-Mail (z.B. info@deinfirmenname.de) – diese Adresse darf <strong>noch nie</strong> für iCloud oder den App Store genutzt worden sein<br>
-               • <strong>Adresse:</strong> Deine Firmenadresse<br>
-               • <strong>Website:</strong> Deine Firmenwebseite</p>
-            <p>Am Ende der Registrierung musst du deine Firma verifizieren. Apple schickt dir eine E-Mail und eventuell ruft jemand kurz an – das ist normal.</p>
+            <p>
+              • <strong>Organisation:</strong> Dein Firmenname<br>
+              • <strong>E-Mail:</strong> Eine Geschäfts-E-Mail – diese Adresse darf <strong>noch nie</strong> für iCloud oder App Store genutzt worden sein<br>
+              • <strong>Adresse + Website:</strong> Deiner Firma
+            </p>
+            <p>Apple verifiziert deine Firma per E-Mail – eventuell ruft jemand kurz an. Das ist normal.</p>
           </div>
-          <div class="highlight-box">
-            <strong>💡 Tipp</strong>
-            Das ist ein kostenloser Geschäftsaccount. Du zahlst nichts.
+          <div class="highlight">
+            <div class="highlight-label">💡 Hinweis</div>
+            Der Account ist kostenlos. Du zahlst nichts.
           </div>
         </div>
       </div>
     </div>
 
     <div class="step">
-      <div class="step-header">
-        <div class="step-number">3</div>
-        <div class="step-content">
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-body">
           <div class="tag">Nach dem Login</div>
           <div class="step-title">Lokalbesucher als Partner hinzufügen</div>
           <div class="step-desc">
-            <p>Nachdem du eingeloggt bist, gehe zu:</p>
-            <p><strong>Einstellungen (oben rechts) → Integrations → Partner Access</strong></p>
+            <p>Nach dem Login gehe zu:<br>
+            <strong>Einstellungen (oben rechts) → Integrations → Partner Access</strong></p>
             <p>Trage dort unsere Partner-ID ein:</p>
           </div>
-          <div class="highlight-box">
-            <strong>Unsere Partner-ID (kopieren & einfügen)</strong>
-            <div class="id-display">1510532804329614848</div>
+          <div class="highlight">
+            <div class="highlight-label">Unsere Partner-ID — kopieren &amp; einfügen</div>
+            <div class="partner-id">1510532804329614848</div>
           </div>
-          <p style="font-size:14px;color:var(--apple-mid);margin-top:12px;">Klicke danach auf „Einladung senden" oder „Confirm".</p>
+          <p style="font-size:.8rem;color:#6b7099;margin-top:.75rem;">Klicke danach auf „Einladung senden" oder „Confirm".</p>
         </div>
       </div>
     </div>
 
     <div class="step">
-      <div class="step-header">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <div class="tag tip">Fertig!</div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="tag success">Fertig!</div>
           <div class="step-title">Kurz Bescheid geben</div>
           <div class="step-desc">
-            <p>Schreib uns kurz, dass du die Einladung gesendet hast – dann übernehmen wir alles weitere für dich.</p>
+            <p>Schreib uns kurz, dass du die Einladung gesendet hast – dann übernehmen wir alles weitere.</p>
           </div>
-          <a href="https://wa.me/4915122358883" target="_blank" class="step-link" style="background:#25d366;">💬 WhatsApp an Lokalbesucher</a>
+          <a href="https://wa.me/4915122358883" target="_blank" rel="noopener noreferrer" class="btn btn-green">💬 WhatsApp an Lokalbesucher</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Steps: Existierender Account -->
+  <!-- Existierender Account -->
   <div id="path-existing" class="path-content">
-    <div class="section-title">Lokalbesucher als Partner hinzufügen</div>
-    <div class="section-sub">Du hast bereits einen Account – das geht schnell.</div>
+    <div class="steps-title">Lokalbesucher als Partner hinzufügen</div>
+    <div class="steps-sub">Du hast bereits einen Account – das geht schnell.</div>
 
     <div class="step">
-      <div class="step-header">
-        <div class="step-number">1</div>
-        <div class="step-content">
+      <div class="step-row">
+        <div class="step-num">1</div>
+        <div class="step-body">
           <div class="step-title">Einloggen</div>
           <div class="step-desc">
             <p>Gehe auf <strong>business.apple.com</strong> und melde dich mit deinem Apple Business Account an.</p>
-            <p>Achtung: Das ist nicht dein normaler Apple Account – es ist der Geschäftsaccount deiner Firma.</p>
+            <p>Achtung: Nicht mit dem privaten Apple Account – es ist der Geschäftsaccount deiner Firma.</p>
           </div>
-          <a href="https://business.apple.com" target="_blank" class="step-link">➜ business.apple.com öffnen</a>
+          <a href="https://business.apple.com" target="_blank" rel="noopener noreferrer" class="btn btn-blue">➜ business.apple.com öffnen</a>
         </div>
       </div>
     </div>
 
     <div class="step">
-      <div class="step-header">
-        <div class="step-number">2</div>
-        <div class="step-content">
+      <div class="step-row">
+        <div class="step-num">2</div>
+        <div class="step-body">
           <div class="step-title">Partner Access öffnen</div>
           <div class="step-desc">
-            <p>Nach dem Login:</p>
-            <p><strong>Oben rechts auf deinen Firmennamen klicken → Settings → Integrations → Partner Access</strong></p>
+            <p>Nach dem Login:<br>
+            <strong>Oben rechts auf deinen Firmennamen → Settings → Integrations → Partner Access</strong></p>
           </div>
         </div>
       </div>
     </div>
 
     <div class="step">
-      <div class="step-header">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <div class="tag important">Wichtig</div>
+      <div class="step-row">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="tag danger">Wichtig</div>
           <div class="step-title">Unsere Partner-ID eintragen</div>
           <div class="step-desc">
-            <p>Kopiere die ID unten und füge sie in das Feld ein. Dann auf <strong>„Confirm"</strong> klicken.</p>
+            <p>Kopiere die ID und füge sie in das Feld ein. Dann auf <strong>„Confirm"</strong> klicken.</p>
           </div>
-          <div class="highlight-box">
-            <strong>Unsere Partner-ID (kopieren & einfügen)</strong>
-            <div class="id-display">1510532804329614848</div>
+          <div class="highlight">
+            <div class="highlight-label">Unsere Partner-ID — kopieren &amp; einfügen</div>
+            <div class="partner-id">1510532804329614848</div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="step">
-      <div class="step-header">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <div class="tag tip">Fast fertig!</div>
+      <div class="step-row">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="tag success">Fast fertig!</div>
           <div class="step-title">Kurz Bescheid geben</div>
           <div class="step-desc">
             <p>Schreib uns kurz – dann übernehmen wir sofort.</p>
           </div>
-          <a href="https://wa.me/4915122358883" target="_blank" class="step-link" style="background:#25d366;">💬 WhatsApp an Lokalbesucher</a>
+          <a href="https://wa.me/4915122358883" target="_blank" rel="noopener noreferrer" class="btn btn-green">💬 WhatsApp an Lokalbesucher</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Default: prompt to select -->
+  <!-- Default -->
   <div id="path-default">
-    <div style="text-align:center;padding:40px 20px;color:var(--apple-mid);">
-      <div style="font-size:40px;margin-bottom:12px;">☝️</div>
-      <div style="font-size:17px;font-weight:600;color:var(--apple-dark);margin-bottom:8px;">Wähle oben deine Situation</div>
-      <div style="font-size:15px;">Dann zeigen wir dir genau die richtigen Schritte.</div>
+    <div class="prompt-box">
+      <div class="icon">☝️</div>
+      <div class="title">Wähle oben deine Situation</div>
+      <div class="sub">Dann zeigen wir dir genau die richtigen Schritte.</div>
     </div>
   </div>
 
 </div>
 
 <!-- Footer -->
-<div class="footer">
-  <div class="footer-logo">Bereitgestellt von <span>Lokalbesucher GmbH</span></div>
-  <div class="footer-contact">
-    Fragen? <a href="https://wa.me/4915122358883">WhatsApp: +49 151 22358883</a> · <a href="https://lokalbesucher.de">lokalbesucher.de</a>
+<footer class="footer">
+  <div class="footer-brand">Bereitgestellt von <span>Lokalbesucher GmbH</span></div>
+  <div class="footer-links">
+    Fragen? <a href="https://wa.me/4915122358883">WhatsApp +49 151 22358883</a> · <a href="https://lokalbesucher.de">lokalbesucher.de</a>
   </div>
-</div>
+</footer>
 
 <script>
-  function showPath(type) {
-    document.querySelectorAll('.path-card').forEach(c => c.classList.remove('active'));
+  function showPath(type, card) {
+    document.querySelectorAll('.path-card').forEach(c => {
+      c.classList.remove('active');
+      c.setAttribute('aria-pressed', 'false');
+    });
     document.querySelectorAll('.path-content').forEach(c => c.classList.remove('show'));
     document.getElementById('path-default').style.display = 'none';
 
-    event.currentTarget.classList.add('active');
+    card.classList.add('active');
+    card.setAttribute('aria-pressed', 'true');
     document.getElementById('path-' + type).classList.add('show');
 
     setTimeout(() => {
       document.querySelector('.steps-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 100);
   }
+
+  document.querySelectorAll('.path-card').forEach(card => {
+    card.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+    });
+  });
 </script>
 
 </body>
