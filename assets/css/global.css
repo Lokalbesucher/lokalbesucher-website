@@ -526,6 +526,8 @@ p {
   display: none;
   gap: var(--space-xl);
   margin-inline: auto;
+  align-items: center;
+  list-style: none;
 }
 
 @media (min-width: 900px) {

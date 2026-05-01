@@ -70,6 +70,15 @@
     .hero-img-wrap img{border-radius:20px;width:100%;max-width:520px;object-fit:cover}
     .hero-img-glow{position:absolute;inset:-20px;background:radial-gradient(ellipse at center,rgba(255,189,89,.12) 0%,transparent 70%);pointer-events:none;border-radius:24px}
     @media(max-width:899px){.hero-img-wrap{order:-1}}
+    /* ── Nav alignment fix ──────────────────────────────────── */
+    .nav-links{align-items:center;list-style:none}
+    /* ── Form (lb-* classes) ────────────────────────────────── */
+    .lb-label{display:block;font-size:.875rem;font-weight:500;color:#e8eaf6;margin-bottom:.5rem}
+    .lb-input{width:100%;background:#181b35;border:1px solid #1e2240;border-radius:10px;padding:.75rem 1rem;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;font-size:.95rem;line-height:1.5;transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none;appearance:none}
+    .lb-input:focus{border-color:#ffbd59;box-shadow:0 0 0 3px rgba(255,189,89,.15)}
+    .lb-input::placeholder{color:#6b7099}
+    .lb-trust-item{display:flex;align-items:center;gap:.6rem;font-size:.875rem;color:#6b7099}
+    .lb-trust-dot{width:6px;height:6px;background:#ffbd59;border-radius:50%;flex-shrink:0}
   </style>
 
   <!-- ── Global CSS (async) ─────────────────────────────────── -->
