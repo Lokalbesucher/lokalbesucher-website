@@ -488,7 +488,12 @@
       </div>
 
       <!-- Team-Karten — Hochformat, 2 Reihen -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:1rem">
+      <style>
+        #team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;overflow:hidden}
+        @media(min-width:560px){#team-grid{grid-template-columns:repeat(3,1fr);gap:1rem}}
+        @media(min-width:900px){#team-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
+      </style>
+      <div id="team-grid">
 
         <div class="team-card">
           <div class="team-card-img">
