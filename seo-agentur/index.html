@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>SEO Agentur Deutschland | Mehr organischer Traffic | Lokalbesucher</title>
+  <meta name="description" content="SEO Agentur für Unternehmen mit lokalem Einzugsgebiet. On-Page, technisches SEO, strukturierte Daten und Ladezeit-Optimierung — messbar, auswertbar, nachhaltig.">
+  <link rel="canonical" href="https://lokalbesucher.de/seo-agentur/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://lokalbesucher.de/seo-agentur/">
+  <meta property="og:title"       content="SEO Agentur | Mehr organischer Traffic | Lokalbesucher">
+  <meta property="og:description" content="Kein Rätselraten. Kein Anzeigenbudget. Lokalbesucher optimiert deine Website so, dass Google sie versteht — und Kunden sie finden.">
+  <meta property="og:image"       content="https://lokalbesucher.de/assets/images/og-home.webp">
+  <meta property="og:locale"      content="de_DE">
+  <meta property="og:site_name"   content="Lokalbesucher">
+
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="SEO Agentur | Lokalbesucher">
+  <meta name="twitter:description" content="Kein Rätselraten. Kein Anzeigenbudget. Mehr Besucher durch bessere Auffindbarkeit bei Google.">
+  <meta name="twitter:image"       content="https://lokalbesucher.de/assets/images/og-home.webp">
+
+  <link rel="preload" href="/assets/fonts/syne-700.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-800.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0c0e1a;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3,h4{font-family:'Syne',system-ui,sans-serif;line-height:1.15}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    address{font-style:normal}
+    .container{width:100%;max-width:1200px;margin-inline:auto;padding-inline:1.5rem}
+    @media(min-width:768px){.container{padding-inline:2rem}}
+    @media(min-width:1200px){.container{padding-inline:3rem}}
+    /* Header */
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(12,14,26,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1e2240}
+    .nav{display:flex;align-items:center;gap:2rem;height:4rem}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;font-family:Arial,sans-serif;font-weight:700;font-size:1.2rem;color:#e8eaf6;flex-shrink:0;text-decoration:none}
+    .nav-logo img{height:2.4rem;width:auto;display:block}
+    .nav-links{display:none}
+    @media(min-width:900px){.nav-links{display:flex;align-items:center;gap:1.75rem;list-style:none;margin-left:auto}.nav-links a{color:#6b7099;text-decoration:none;font-size:.95rem;transition:color .2s}.nav-links a:hover{color:#e8eaf6}}
+    .nav-has-dropdown{position:relative}
+    .nav-has-dropdown>a::after{content:'▾';margin-left:.35rem;font-size:.7em;opacity:.6}
+    .nav-dropdown{display:none;position:absolute;top:calc(100% + .5rem);left:0;background:#111328;border:1px solid #1e2240;border-radius:12px;padding:.5rem;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+    .nav-has-dropdown:hover .nav-dropdown,.nav-has-dropdown:focus-within .nav-dropdown{display:block}
+    .nav-dropdown a{display:block;padding:.6rem 1rem;color:#6b7099;text-decoration:none;font-size:.9rem;border-radius:8px;white-space:nowrap}
+    .nav-dropdown a:hover{background:#181b35;color:#e8eaf6}
+    .dropdown-badge{display:inline-block;background:#ffbd59;color:#0c0e1a;font-size:.65rem;font-weight:700;padding:.15em .5em;border-radius:4px;margin-left:.5rem;vertical-align:middle}
+    .nav-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;margin-left:auto}
+    .nav-toggle span{display:block;width:22px;height:2px;background:#e8eaf6;border-radius:2px;transition:all .25s}
+    @media(min-width:900px){.nav-toggle{display:none}}
+    .nav-cta{display:none}
+    @media(min-width:900px){.nav-cta{display:inline-flex}}
+    .nav-drawer{display:none;flex-direction:column;gap:.25rem;padding:1rem;background:#111328;border-top:1px solid #1e2240}
+    .nav-drawer.is-open{display:flex}
+    .nav-drawer a{color:#e8eaf6;text-decoration:none;padding:.6rem .75rem;border-radius:8px;font-size:1rem}
+    .nav-drawer a:hover{background:#181b35}
+    .drawer-sub-label{font-size:.75rem;color:#6b7099;text-transform:uppercase;letter-spacing:.08em;padding:.5rem .75rem 0}
+    .drawer-sub-link{padding-left:1.5rem!important;color:#6b7099!important}
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
+    .btn-primary{background:#ffbd59;color:#0c0e1a;box-shadow:0 4px 24px rgba(255,189,89,.2)}
+    .btn-primary:hover{background:#ffc96d;transform:translateY(-1px);box-shadow:0 6px 32px rgba(255,189,89,.35)}
+    .btn-ghost{background:transparent;color:#e8eaf6;border-color:#1e2240}
+    .btn-ghost:hover{background:#111328;border-color:#6b7099}
+    .btn-lg{font-size:1.05rem;padding:1em 2em}
+    /* Skip link */
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:fixed;top:0;left:0;width:auto;height:auto;padding:.75rem 1.5rem;background:#ffbd59;color:#0c0e1a;font-weight:700;z-index:10000;text-decoration:none}
+    /* Breadcrumb */
+    .breadcrumb{display:flex;align-items:center;gap:.5rem;font-size:.85rem;padding-block:1.5rem;flex-wrap:wrap}
+    .breadcrumb a{color:#6b7099;text-decoration:none}
+    .breadcrumb a:hover{color:#e8eaf6}
+    .breadcrumb-sep{color:#1e2240;user-select:none}
+    /* Hero */
+    .hero{padding-block:4rem 3rem;position:relative;overflow:hidden}
+    @media(min-width:900px){.hero{padding-block:5.5rem 4rem}}
+    .hero::before{content:'';position:absolute;top:-20%;right:-10%;width:55%;height:130%;background:radial-gradient(ellipse at center,rgba(79,130,255,.06) 0%,transparent 65%);pointer-events:none}
+    .hero-badge{display:inline-flex;align-items:center;gap:.4em;padding:.35em .9em;font-size:.78rem;font-weight:500;border-radius:999px;border:1px solid rgba(79,130,255,.3);background:rgba(79,130,255,.08);color:#4f82ff;margin-bottom:1.5rem}
+    .hero-title{font-size:clamp(2rem,5.5vw,3.25rem);font-weight:800;margin-bottom:1.25rem;letter-spacing:-.01em;max-width:720px}
+    .hero-title em{color:#ffbd59;font-style:normal}
+    .hero-desc{font-size:clamp(1rem,2vw,1.1rem);color:#6b7099;margin-bottom:2rem;max-width:580px;line-height:1.8}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem}
+    .hero-checks{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem}
+    .hero-check{display:flex;align-items:center;gap:.45rem;font-size:.85rem;color:#6b7099}
+    /* Answer Capsule */
+    .answer-capsule{background:#111328;border:1px solid #1e2240;border-left:3px solid #ffbd59;border-radius:0 12px 12px 0;padding:1.25rem 1.5rem;margin:1.5rem 0}
+    .answer-capsule p{color:#6b7099;font-size:.97rem;line-height:1.85;margin:0}
+    .answer-capsule strong{color:#e8eaf6}
+    /* Stats */
+    .stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:2rem 0}
+    @media(min-width:600px){.stats-row{grid-template-columns:repeat(4,1fr)}}
+    .stat-box{background:#111328;border:1px solid #1e2240;border-radius:16px;padding:1.25rem 1rem;text-align:center}
+    .stat-num{font-family:'Syne',system-ui,sans-serif;font-size:clamp(1.5rem,4vw,2.25rem);font-weight:800;color:#ffbd59;line-height:1}
+    .stat-label{font-size:.78rem;color:#6b7099;margin-top:.4rem;line-height:1.4}
+    /* Section */
+    .section{padding-block:4.5rem}
+    @media(min-width:900px){.section{padding-block:5.5rem}}
+    .section-label{display:inline-block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#ffbd59;margin-bottom:.75rem}
+    .section-title{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:800;margin-bottom:1rem}
+    .section-desc{color:#6b7099;font-size:1rem;line-height:1.8;margin-bottom:2rem;max-width:700px}
+    /* Process steps */
+    .process-grid{display:grid;grid-template-columns:1fr;gap:0;margin-top:2rem}
+    @media(min-width:768px){.process-grid{grid-template-columns:repeat(4,1fr)}}
+    .process-step{display:flex;flex-direction:column;position:relative;padding:1.75rem 1.5rem 1.75rem 1.5rem}
+    @media(min-width:768px){.process-step{padding:2rem 1.5rem}}
+    .process-step::before{content:'';position:absolute;background:rgba(255,189,89,.15);border-radius:16px;inset:4px}
+    @media(min-width:768px){.process-step:not(:last-child)::after{content:'→';position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:#ffbd59;font-size:1.1rem;z-index:1}}
+    .process-num{font-family:'Syne',system-ui,sans-serif;font-size:.75rem;font-weight:700;color:#ffbd59;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.75rem;position:relative}
+    .process-title{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1.05rem;color:#e8eaf6;margin-bottom:.6rem;position:relative}
+    .process-desc{font-size:.875rem;color:#6b7099;line-height:1.7;position:relative}
+    /* Service cards */
+    .service-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
+    @media(min-width:600px){.service-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.service-grid{grid-template-columns:repeat(3,1fr)}}
+    .service-card{background:#111328;border:1px solid #1e2240;border-radius:16px;padding:1.75rem;transition:border-color .25s}
+    .service-card:hover{border-color:rgba(255,189,89,.3)}
+    .service-icon{width:44px;height:44px;background:rgba(255,189,89,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem}
+    .service-title{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1rem;color:#e8eaf6;margin-bottom:.5rem}
+    .service-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#4f82ff;background:rgba(79,130,255,.1);border-radius:4px;padding:.2em .6em;margin-bottom:.75rem}
+    .service-desc{font-size:.875rem;color:#6b7099;line-height:1.75}
+    .service-list{display:flex;flex-direction:column;gap:.45rem;margin-top:.75rem}
+    .service-list-item{display:flex;align-items:flex-start;gap:.5rem;font-size:.82rem;color:#6b7099}
+    .service-list-item svg{flex-shrink:0;margin-top:.1rem}
+    /* Insight box */
+    .insight-box{background:linear-gradient(135deg,rgba(79,130,255,.08) 0%,rgba(79,130,255,.03) 100%);border:1px solid rgba(79,130,255,.2);border-radius:16px;padding:1.75rem 2rem;margin:2rem 0}
+    .insight-box p{color:#6b7099;font-size:.95rem;line-height:1.85}
+    .insight-box strong{color:#e8eaf6}
+    .insight-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#4f82ff;margin-bottom:.6rem}
+    /* Checklist */
+    .check-grid{display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:1.5rem}
+    @media(min-width:600px){.check-grid{grid-template-columns:repeat(2,1fr)}}
+    .check-item{display:flex;align-items:flex-start;gap:.75rem;background:#111328;border:1px solid #1e2240;border-radius:12px;padding:1rem 1.25rem}
+    .check-item svg{flex-shrink:0;margin-top:.1rem}
+    .check-item-text{font-size:.875rem;color:#6b7099;line-height:1.6}
+    .check-item-text strong{color:#e8eaf6;display:block;margin-bottom:.2rem;font-size:.9rem}
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:1rem;margin-top:1.5rem}
+    .faq-item{background:#111328;border:1px solid #1e2240;border-radius:14px;overflow:hidden}
+    .faq-item details summary{list-style:none;cursor:pointer;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.97rem;color:#e8eaf6}
+    .faq-item details summary::-webkit-details-marker{display:none}
+    .faq-chevron{flex-shrink:0;color:#6b7099;transition:transform .25s}
+    .faq-item details[open] summary .faq-chevron{transform:rotate(180deg);color:#ffbd59}
+    .faq-body{padding:0 1.5rem 1.25rem;color:#6b7099;font-size:.925rem;line-height:1.85}
+    .faq-body a{color:#ffbd59;text-decoration:underline;text-underline-offset:3px}
+    /* CTA */
+    .cta-box{background:linear-gradient(135deg,#111328 0%,#181b35 100%);border:1px solid #1e2240;border-radius:24px;padding:3.5rem 2rem;text-align:center}
+    .cta-box h2{font-size:clamp(1.5rem,3.5vw,2.25rem);font-weight:800;margin-bottom:.75rem}
+    .cta-box p{color:#6b7099;font-size:1rem;max-width:520px;margin:0 auto 2rem;line-height:1.75}
+    .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    /* WhatsApp Float */
+    .whatsapp-float{position:fixed;bottom:1.5rem;right:1.5rem;z-index:500;background:#25d366;border-radius:50%;width:3.25rem;height:3.25rem;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .25s;text-decoration:none}
+    .whatsapp-float:hover{transform:scale(1.1)}
+    /* Footer */
+    .site-footer{background:#111328;border-top:1px solid #1e2240;padding:3rem 0 1.5rem}
+    .footer-grid{display:grid;grid-template-columns:1fr;gap:2.5rem}
+    @media(min-width:640px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.footer-grid{grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem}}
+    .footer-brand{display:flex;align-items:center;gap:.55rem;font-family:Arial,sans-serif;font-weight:700;font-size:1.1rem;color:#e8eaf6;margin-bottom:.75rem}
+    .footer-brand img{height:2.2rem;width:auto}
+    .footer-tagline{font-size:.875rem;color:#6b7099;margin-bottom:1rem}
+    .footer-nap{font-size:.875rem;color:#6b7099;line-height:1.8}
+    .footer-nap strong{color:#e8eaf6}
+    .footer-nap a{color:#6b7099;text-decoration:none}
+    .footer-nap a:hover{color:#e8eaf6}
+    .footer-col-title{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#6b7099;margin-bottom:1rem}
+    .footer-links{display:flex;flex-direction:column;gap:.6rem}
+    .footer-links a{font-size:.875rem;color:#6b7099;text-decoration:none}
+    .footer-links a:hover{color:#e8eaf6}
+    .footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid #1e2240;font-size:.8rem;color:#6b7099}
+    .footer-legal-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+    .footer-legal-links a{color:#6b7099;text-decoration:none}
+    .footer-legal-links a:hover{color:#e8eaf6}
+    [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+    [data-reveal].is-visible{opacity:1;transform:none}
+  </style>
+
+  <link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
+  <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/images/favicon.webp" type="image/webp" sizes="any">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://lokalbesucher.de/seo-agentur/#service",
+        "name": "Suchmaschinenoptimierung (SEO)",
+        "description": "On-Page SEO, technisches SEO, strukturierte Daten und interne Verlinkung für Unternehmen mit lokalem Einzugsgebiet — messbar, auswertbar, nachhaltig.",
+        "provider": {
+          "@type": "Organization",
+          "@id": "https://lokalbesucher.de/#organization",
+          "name": "Lokalbesucher GmbH"
+        },
+        "areaServed": "Deutschland",
+        "serviceType": "Search Engine Optimization"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was macht eine SEO Agentur?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Eine SEO Agentur verbessert die Sichtbarkeit einer Website in den organischen (unbezahlten) Suchergebnissen von Google. Das umfasst On-Page-Optimierung (Inhalte, Überschriften, interne Verlinkung), technisches SEO (Ladezeit, Struktur, Indexierbarkeit) und strukturierte Daten, die Google direkt sagen wer das Unternehmen ist und was es anbietet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie lange dauert es bis SEO Ergebnisse sichtbar werden?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Erste messbare Verbesserungen sind in der Regel nach 6–12 Wochen sichtbar — abhängig davon wie gut die Website bisher optimiert war und wie stark der Wettbewerb ist. Technische Korrekturen wirken oft innerhalb von Tagen, während Ranking-Verbesserungen für neue Inhalte 3–6 Monate brauchen können. SEO ist eine nachhaltige Investition, kein Quick-Fix."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was ist der Unterschied zwischen SEO und Google Ads?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Google Ads sind bezahlte Anzeigen — sie sind sofort sichtbar, kosten aber für jeden Klick. SEO ist organisch — es kostet Zeit, liefert aber dauerhaft Traffic ohne laufende Klickpreise. Idealerweise kombiniert man beides: Ads für sofortige Sichtbarkeit, SEO für nachhaltiges Wachstum."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Was sind strukturierte Daten und warum sind sie wichtig?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Strukturierte Daten sind maschinenlesbare Informationen, die Google direkt sagen wer du bist, was du anbietest und wo du sitzt — ohne dass Google das raten muss. Sie erhöhen die Chance auf erweiterte Suchergebnisse (Rich Results) und sind 2026 besonders wichtig, weil Google sie nutzt um Inhalte in KI-generierten Antworten zu zitieren."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Für wen lohnt sich SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SEO lohnt sich für alle Unternehmen, die online gefunden werden wollen — von der Einzelperson bis zum Mittelständler. Besonders stark ist der ROI für Unternehmen mit lokalem Einzugsgebiet, die Kunden aus einer definierten Region ansprechen: Handwerker, Praxen, Restaurants, Dienstleister, lokale Händler."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Startseite","item":"https://lokalbesucher.de/"},
+          {"@type":"ListItem","position":2,"name":"SEO Agentur","item":"https://lokalbesucher.de/seo-agentur/"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','wait_for_update':500});</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRKS5RL7MP"></script>
+  <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});</script>
+  <script>(function(l,e,a,d,i,n,f,o){if(!l[i]){l.GlobalLeadinfoNamespace=l.GlobalLeadinfoNamespace||[];l.GlobalLeadinfoNamespace.push(i);l[i]=function(){(l[i].q=l[i].q||[]).push(arguments)};l[i].t=l[i].t||n;l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;o.src=d;f.parentNode.insertBefore(o,f);}}(window,document,'script','https://cdn.leadinfo.eu/ping.js','leadinfo','LI-69EB16FC309C3'));</script>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="/" class="nav-logo" aria-label="Lokalbesucher – Startseite">
+        <img src="/assets/images/lokalbesucher-logo-invers.webp" alt="" width="35" height="38" loading="eager">
+        Lokalbesucher
+      </a>
+      <ul class="nav-links" role="list">
+        <li class="nav-has-dropdown">
+          <a href="/google-business-agentur/" aria-haspopup="true">Leistungen</a>
+          <ul class="nav-dropdown" role="menu">
+            <li><a href="/google-business-agentur/" role="menuitem">Google Business Optimierung</a></li>
+            <li><a href="/bewertungsmanagement/" role="menuitem">Bewertungsmanagement</a></li>
+            <li><a href="/seo-agentur/" role="menuitem" aria-current="true">SEO Agentur</a></li>
+          </ul>
+        </li>
+        <li><a href="/case-studies/">Erfolge</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/jobs/">Jobs</a></li>
+        <li class="nav-has-dropdown">
+          <a href="#" aria-haspopup="true">Tools</a>
+          <ul class="nav-dropdown" role="menu">
+            <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/" role="menuitem">ROI-Kalkulator <span class="dropdown-badge">Kostenlos</span></a></li>
+            <li><a href="/schema-org-generator/" role="menuitem">Schema Generator <span class="dropdown-badge">Neu</span></a></li>
+          </ul>
+        </li>
+      </ul>
+      <a href="https://wa.me/4915122358883" class="btn btn-primary nav-cta" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp Beratung">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Kostenlos beraten
+      </a>
+      <button class="nav-toggle" aria-controls="nav-drawer" aria-expanded="false" aria-label="Navigation öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+  <div id="nav-drawer" class="nav-drawer" role="navigation" aria-label="Mobile Navigation">
+    <span class="drawer-sub-label">Leistungen</span>
+    <a href="/google-business-agentur/" class="drawer-sub-link">Google Business Optimierung</a>
+    <a href="/bewertungsmanagement/" class="drawer-sub-link">Bewertungsmanagement</a>
+    <a href="/seo-agentur/" class="drawer-sub-link" aria-current="true">SEO Agentur</a>
+    <a href="/case-studies/">Erfolge</a>
+    <a href="/faq/">FAQ</a>
+    <a href="/jobs/">Jobs</a>
+    <span class="drawer-sub-label">Tools</span>
+    <a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/" class="drawer-sub-link">ROI-Kalkulator</a>
+    <a href="/schema-org-generator/" class="drawer-sub-link">Schema Generator</a>
+    <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank" class="btn btn-primary" style="width:fit-content;margin-top:.5rem">WhatsApp Beratung</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+      <a href="/">Startseite</a>
+      <span class="breadcrumb-sep" aria-hidden="true">›</span>
+      <span aria-current="page">SEO Agentur</span>
+    </nav>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        Organisch · Messbar · Nachhaltig
+      </div>
+
+      <h1 id="hero-title" class="hero-title">
+        SEO Agentur — mehr Besucher.<br>
+        <em>Ohne einen Cent für Anzeigen.</em>
+      </h1>
+
+      <p class="hero-desc">
+        Google entscheidet täglich, wen es zeigt und wen es versteckt.
+        Wir sorgen dafür, dass deine Website alle Signale sendet, die Google braucht —
+        und dass echte Kunden dich finden, bevor sie zur Konkurrenz gehen.
+      </p>
+
+      <div class="hero-cta">
+        <a href="https://wa.me/4915122358883" class="btn btn-primary btn-lg" rel="noopener noreferrer" target="_blank" aria-label="SEO-Beratung via WhatsApp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Kostenlose SEO-Analyse anfragen
+        </a>
+        <a href="#leistungen" class="btn btn-ghost btn-lg">Was wir optimieren</a>
+      </div>
+
+      <div class="hero-checks">
+        <div class="hero-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Für 1-Person-Betriebe bis Mittelstand
+        </div>
+        <div class="hero-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Monatliches Reporting mit echten Zahlen
+        </div>
+        <div class="hero-check">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          Deutschlandweit aktiv
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       WAS IST SEO? — ANSWER CAPSULE
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="section" style="background:#111328;border-top:1px solid #1e2240;border-bottom:1px solid #1e2240" aria-labelledby="was-ist-title">
+    <div class="container">
+      <div style="max-width:780px;margin-inline:auto">
+        <span class="section-label">Einordnung</span>
+        <h2 id="was-ist-title" class="section-title">Was macht eine SEO Agentur — und wann lohnt es sich?</h2>
+
+        <div class="answer-capsule" id="faq-was-macht-seo">
+          <p>
+            <strong>Direkte Antwort:</strong> Eine SEO Agentur sorgt dafür, dass deine Website in den unbezahlten Google-Ergebnissen weiter oben erscheint.
+            Das passiert nicht durch Tricks, sondern weil Google versteht wer du bist, was du anbietest und warum du vertrauenswürdig bist.
+            Wer in den Top 3 rankt, bekommt den Löwenanteil der Klicks — dauerhaft und ohne Klickpreise.
+          </p>
+        </div>
+
+        <p style="color:#6b7099;line-height:1.85;margin-bottom:1.5rem">
+          SEO lohnt sich besonders für Unternehmen, die Kunden aus einer definierten Region ansprechen:
+          <strong style="color:#e8eaf6">Handwerker, Praxen, Restaurants, lokale Dienstleister, Einzelhändler</strong> —
+          also alle, bei denen der Suchende in der Nähe ist und eine konkrete Absicht hat.
+          Aber auch überregionale Dienstleister und B2B-Unternehmen profitieren massiv,
+          wenn die Website bisher unsichtbar ist.
+        </p>
+
+        <div class="insight-box">
+          <div class="insight-label">Stand 2026</div>
+          <p>
+            <strong>25 % aller Google-Suchen zeigen heute eine KI-Antwort</strong> direkt über den Suchergebnissen.
+            Wer in dieser KI-Antwort zitiert wird, bekommt bis zu 35 % mehr Klicks als auf Position 1.
+            Das erfordert einen anderen Ansatz als klassisches SEO — und ist genau das, worauf wir uns vorbereiten.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       LEISTUNGEN
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="section" id="leistungen" aria-labelledby="leistungen-title" data-reveal>
+    <div class="container">
+      <span class="section-label">Was wir optimieren</span>
+      <h2 id="leistungen-title" class="section-title">SEO von A bis Z — alles aus einer Hand</h2>
+      <p class="section-desc">
+        Wir analysieren über 200 Rankingfaktoren, priorisieren was wirklich zählt
+        und liefern monatlich einen Report der zeigt was sich verändert hat — kein Bauchgefühl, nur Zahlen.
+      </p>
+
+      <div class="service-grid">
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffbd59"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11zM9.5 14.5l1.5 1.5 3.5-3.5-1.06-1.06L11 13.44l-.94-.94L8.5 14l1 .5z"/></svg>
+          </div>
+          <div class="service-tag">On-Page SEO</div>
+          <div class="service-title">Inhalte die Google versteht</div>
+          <p class="service-desc">Überschriften-Struktur, Texte, Meta-Titel und Beschreibungen — so aufgebaut, dass Google auf den ersten Blick weiß worum es geht. Plus: jede Seite bekommt ein klares Thema, keine Keyword-Konkurrenz untereinander.</p>
+          <ul class="service-list" aria-label="Enthaltene Maßnahmen">
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Keyword-Analyse nach echter Suchintention
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Title Tags &amp; Meta Descriptions optimieren
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              H1–H3 Struktur &amp; Themen-Silo-Aufbau
+            </li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffbd59"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM4 12h4v2H4v-2zm10 6H4v-2h10v2zm6 0h-4v-2h4v2zm0-4H10v-2h10v2z"/></svg>
+          </div>
+          <div class="service-tag">Technisches SEO</div>
+          <div class="service-title">Was Besucher nicht sehen, aber Google schon</div>
+          <p class="service-desc">Ob Google deine Seiten überhaupt findet und indexiert, ob die Seitenstruktur Sinn ergibt, ob kaputte Links Signale verschwenden — wir finden und beheben technische Blockaden, die Rankings kosten.</p>
+          <ul class="service-list">
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Vollständiges technisches Audit
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Crawlbarkeit &amp; Indexierbarkeit prüfen
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Redirects, Canonicals, Duplicate Content
+            </li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffbd59"><path d="M9.5 6.5v3h-3v-3h3M11 5H5v6h6V5zm-1.5 9.5v3h-3v-3h3M11 13H5v6h6v-6zm6.5-6.5v3h-3v-3h3M19 5h-6v6h6V5zm-6 8h1.5v1.5H13V13zm1.5 1.5H16V16h-1.5v-1.5zM16 13h1.5v1.5H16V13zm-3 3h1.5v1.5H13V16zm1.5 1.5H16V19h-1.5v-1.5zM16 16h1.5v1.5H16V16zm1.5-1.5H19V16h-1.5v-1.5zm0 3H19V19h-1.5v-1.5zM22 7h-2V4h-3V2h5v5zm0 15v-5h-2v3h-3v2h5zM2 22h5v-2H4v-3H2v5zM2 2v5h2V4h3V2H2z"/></svg>
+          </div>
+          <div class="service-tag">Strukturierte Daten</div>
+          <div class="service-title">Google sagen wer du bist — direkt</div>
+          <p class="service-desc">Strukturierte Daten sind maschinenlesbare Infos, die Google nicht raten lassen müssen. Sie erhöhen die Chance auf erweiterte Suchergebnisse — und sind 2026 entscheidend, um in KI-generierten Antworten zitiert zu werden.</p>
+          <ul class="service-list">
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Schema.org für alle relevanten Seitentypen
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              FAQ, LocalBusiness, Service, Article
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Rich Results Testing &amp; Validierung
+            </li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffbd59"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
+          </div>
+          <div class="service-tag">Interne Verlinkung</div>
+          <div class="service-title">Die Wege auf deiner Website — strategisch</div>
+          <p class="service-desc">Wie deine Seiten untereinander verlinkt sind, bestimmt wohin Google seine Aufmerksamkeit lenkt. Wir bauen eine Struktur, in der wichtige Seiten mehr Gewicht bekommen — und Besucher intuitiv zum nächsten Schritt geführt werden.</p>
+          <ul class="service-list">
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Hub-and-Spoke Seitenstruktur
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Ankertext-Optimierung (kein "hier klicken")
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Themencluster aufbauen und verknüpfen
+            </li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffbd59"><path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/></svg>
+          </div>
+          <div class="service-tag">Core Web Vitals</div>
+          <div class="service-title">Schnell. Stabil. Auf jedem Gerät.</div>
+          <p class="service-desc">Google misst wie schnell deine Seite lädt, wie stabil sie beim Aufbau ist und wie schnell sie auf Eingaben reagiert — auf die Millisekunde genau. Wir bringen dich in den grünen Bereich, den Google für Rankings bevorzugt.</p>
+          <ul class="service-list">
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Ladezeit-Analyse &amp; Optimierung
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Mobile-First Optimierung
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              PageSpeed Insights auf grün bringen
+            </li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffbd59"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          </div>
+          <div class="service-tag">Externe Verlinkung</div>
+          <div class="service-title">Autorität durch Erwähnungen aufbauen</div>
+          <p class="service-desc">Wenn andere vertrauenswürdige Seiten auf dich verlinken, wertet Google dich als Autorität in deinem Thema. Wir identifizieren relevante Linkquellen und bauen gezielt Erwähnungen auf — keine Spam-Links, nur thematisch passende.</p>
+          <ul class="service-list">
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Backlink-Analyse &amp; Wettbewerbsvergleich
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Thematisch relevante Linkquellen
+            </li>
+            <li class="service-list-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#3ecf8e" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Branchenverzeichnisse &amp; PR-Erwähnungen
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SO ARBEITEN WIR — PROZESS
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="section" style="background:#111328;border-top:1px solid #1e2240;border-bottom:1px solid #1e2240" aria-labelledby="prozess-title" data-reveal>
+    <div class="container">
+      <span class="section-label">Ablauf</span>
+      <h2 id="prozess-title" class="section-title">Von der Analyse zur ersten Seite</h2>
+      <p class="section-desc">Kein Copy-Paste von der Stange. Jede Optimierung beginnt mit einer ehrlichen Bestandsaufnahme — was läuft, was blockiert, was als nächstes den größten Hebel hat.</p>
+
+      <div class="process-grid" role="list">
+        <div class="process-step" role="listitem">
+          <div class="process-num">01</div>
+          <div class="process-title">Vollständige Analyse</div>
+          <p class="process-desc">Technisches Audit, Keyword-Recherche, Wettbewerbsanalyse. Wir schauen uns an wo du stehst und welche Blockaden dich aufhalten.</p>
+        </div>
+        <div class="process-step" role="listitem">
+          <div class="process-num">02</div>
+          <div class="process-title">Priorisierte Strategie</div>
+          <p class="process-desc">Nicht alles auf einmal. Wir priorisieren die Maßnahmen mit dem größten Hebel — Quick Wins zuerst, langfristige Aufgaben mit klarem Zeitplan.</p>
+        </div>
+        <div class="process-step" role="listitem">
+          <div class="process-num">03</div>
+          <div class="process-title">Laufende Umsetzung</div>
+          <p class="process-desc">On-Page, technische Korrekturen, strukturierte Daten, interne Verlinkung, Ladezeit — Schritt für Schritt umgesetzt, immer mit Begründung.</p>
+        </div>
+        <div class="process-step" role="listitem">
+          <div class="process-num">04</div>
+          <div class="process-title">Monatliches Reporting</div>
+          <p class="process-desc">Rankings, organischer Traffic, technischer Status — aufbereitet für Unternehmer. Du siehst was sich verändert hat und warum.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       SEO 2026 — WARUM DAS JETZT ANDERS IST
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="heute-title" data-reveal>
+    <div class="container">
+      <div style="max-width:780px;margin-inline:auto">
+        <span class="section-label">Stand 2026</span>
+        <h2 id="heute-title" class="section-title">SEO 2026 — was sich grundlegend verändert hat</h2>
+
+        <div class="answer-capsule" id="faq-seo-heute">
+          <p>
+            <strong>Früher reichte Keyword-Dichte.</strong> Heute bewertet Google über 200 Faktoren gleichzeitig —
+            darunter wie lange Besucher auf der Seite bleiben, ob die Seite auf Mobilgeräten funktioniert,
+            ob der Autor wirklich Experte ist und ob der Inhalt echten Mehrwert liefert oder nur für Algorithmen geschrieben wurde.
+            Wer nach alten Mustern arbeitet, verliert — auch wenn er jahrelang gut gerankt hat.
+          </p>
+        </div>
+
+        <div class="check-grid">
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div class="check-item-text">
+              <strong>Themenautorität statt Keywords</strong>
+              Google rankt Seiten, die ein Thema vollständig abdecken — nicht die, die ein Keyword am häufigsten nennen.
+            </div>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div class="check-item-text">
+              <strong>Hilfreicher Inhalt — oder gar nicht</strong>
+              Seit März 2024 ist Googles "Helpful Content"-Bewertung fest im Kernalgorithmus. Dünne Seiten ziehen die ganze Domain nach unten.
+            </div>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div class="check-item-text">
+              <strong>Klickverhalten zählt mit</strong>
+              Google beobachtet ob Besucher auf deiner Seite bleiben oder sofort zurückklicken. Gute UX ist kein Nice-to-have — sie ist ein Rankingfaktor.
+            </div>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div class="check-item-text">
+              <strong>KI-Suche verändert alles</strong>
+              ChatGPT, Gemini und Perplexity crawlen Websites wie Google. Wer strukturierte Daten und faktendichte Inhalte hat, wird zitiert — wer das nicht hat, existiert nicht.
+            </div>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div class="check-item-text">
+              <strong>Mobile ist primär</strong>
+              Googles Index basiert seit 2023 ausschließlich auf der mobilen Version deiner Website. Desktop ist sekundär.
+            </div>
+          </div>
+          <div class="check-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <div class="check-item-text">
+              <strong>Vertrauen schlägt Volumen</strong>
+              Ein Link von einer thematisch passenden, vertrauenswürdigen Seite ist mehr wert als 100 Links von irrelevanten Seiten.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       CASE STUDY
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="case-title" data-reveal>
+    <div class="container">
+      <div style="max-width:780px;margin-inline:auto">
+        <span class="section-label">Echtes Ergebnis</span>
+        <h2 id="case-title" class="section-title">Von 47 auf 130+ Klicks täglich — Hotel aus NRW</h2>
+        <p style="color:#6b7099;line-height:1.85;margin-bottom:2rem">
+          Ein Hotel in NRW wollte Hochzeiten, Firmenevents und Geburtstagsfeiern nicht länger dem Zufall überlassen.
+          Der Weg: neue Landingpages für jede Veranstaltungsart, ein neuer Buchungskanal über Eventim — und eine kombinierte SEO- und Ads-Strategie, die beides zusammenbringt.
+        </p>
+
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:2rem">
+          <div class="stat-box" style="text-align:left;padding:1.5rem">
+            <div class="stat-num" style="font-size:clamp(2rem,5vw,3rem)">+177%</div>
+            <div class="stat-label" style="font-size:.875rem;margin-top:.5rem;line-height:1.5">mehr organische Klicks täglich<br><span style="color:#6b7099;font-size:.8rem">von 47 auf über 130 Klicks/Tag</span></div>
+          </div>
+          <div class="stat-box" style="text-align:left;padding:1.5rem">
+            <div class="stat-num" style="font-size:clamp(2rem,5vw,3rem)">3–5</div>
+            <div class="stat-label" style="font-size:.875rem;margin-top:.5rem;line-height:1.5">konkrete Anfragen täglich<br><span style="color:#6b7099;font-size:.8rem">für Events, Hochzeiten, Geburtstage</span></div>
+          </div>
+          <div class="stat-box" style="text-align:left;padding:1.5rem">
+            <div class="stat-num" style="font-size:clamp(1.75rem,4vw,2.5rem)">5-stellig</div>
+            <div class="stat-label" style="font-size:.875rem;margin-top:.5rem;line-height:1.5">neuer inkrementeller Umsatz<br><span style="color:#6b7099;font-size:.8rem">über neuen Eventim-Buchungskanal</span></div>
+          </div>
+          <div class="stat-box" style="text-align:left;padding:1.5rem">
+            <div class="stat-num" style="font-size:clamp(1.75rem,4vw,2.5rem)">NRW</div>
+            <div class="stat-label" style="font-size:.875rem;margin-top:.5rem;line-height:1.5">Hotel, anonym auf Wunsch<br><span style="color:#6b7099;font-size:.8rem">Ergebnis aus SEO + Ads kombiniert</span></div>
+          </div>
+        </div>
+
+        <div class="answer-capsule">
+          <p>
+            <strong>Was wirklich dahintersteckt:</strong> Nicht ein einzelner Trick, sondern Systematik.
+            Eigene Seiten für Hochzeiten, Geburtstage und Firmenevents — jede mit klarer Struktur, strukturierten Daten und gezielter interner Verlinkung.
+            Dazu ein neuer organischer Buchungskanal der Umsatz bringt, der vorher schlicht nicht existierte.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="section" style="background:#111328;border-top:1px solid #1e2240;border-bottom:1px solid #1e2240" aria-labelledby="faq-title" data-reveal>
+    <div class="container">
+      <div style="max-width:780px;margin-inline:auto">
+        <span class="section-label">Häufige Fragen</span>
+        <h2 id="faq-title" class="section-title">SEO — was du wissen solltest</h2>
+
+        <div class="faq-list" id="faq">
+
+          <div class="faq-item" id="faq-was-macht">
+            <details>
+              <summary>
+                Was macht eine SEO Agentur konkret?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </summary>
+              <div class="faq-body">
+                <p>Eine SEO Agentur verbessert die Sichtbarkeit deiner Website in den unbezahlten Google-Ergebnissen. Das umfasst: Inhalte und Überschriften-Struktur optimieren, technische Fehler beheben (kaputte Links, langsame Ladezeiten, falsche Weiterleitungen), strukturierte Daten einbauen damit Google direkt versteht wer du bist — und interne Verlinkung strategisch aufbauen. Alles wird monatlich ausgewertet und dokumentiert.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-item" id="faq-dauer">
+            <details>
+              <summary>
+                Wie lange dauert es bis ich SEO-Ergebnisse sehe?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6 6-1.41-1.41z"/></svg>
+              </summary>
+              <div class="faq-body">
+                <p>Technische Korrekturen wirken oft innerhalb von Tagen — Google crawlt schnelle Seiten häufiger. Erste messbare Ranking-Verbesserungen sind nach 6–12 Wochen realistisch. Stabile Positionen in den Top 3 für wettbewerbsstarke Begriffe brauchen 3–6 Monate. SEO ist eine Investition die exponentiell wächst — kein Schalter der sofort angeht.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-item" id="faq-seo-vs-ads">
+            <details>
+              <summary>
+                SEO oder Google Ads — was ist sinnvoller?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6 6-1.41-1.41z"/></svg>
+              </summary>
+              <div class="faq-body">
+                <p>Beides hat seinen Platz. Google Ads liefern sofort Sichtbarkeit — aber nur solange du zahlst. SEO braucht Zeit, liefert dann aber dauerhaft Traffic ohne Klickpreise. Die ideale Kombination: Ads für sofortige Ergebnisse während SEO aufgebaut wird — und langfristig wird der Ads-Bedarf kleiner. Wir bieten <a href="/google-ads/">Google Ads</a> und SEO aus einer Hand, damit beide Kanäle sich gegenseitig verstärken.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-item" id="faq-strukturierte-daten">
+            <details>
+              <summary>
+                Was sind strukturierte Daten und warum brauche ich sie?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6 6-1.41-1.41z"/></svg>
+              </summary>
+              <div class="faq-body">
+                <p>Strukturierte Daten sind ein kurzer Codeblock der Google direkt sagt: "Das ist ein Restaurant in Recklinghausen, es hat 4,8 Sterne, es ist dienstags bis sonntags geöffnet." Google muss das dann nicht mehr von der Seite ablesen — und zeigt es direkt in den Suchergebnissen an. 2026 nutzen KI-Systeme wie Googles AI Overviews strukturierte Daten auch als Vertrauenssignal um zu entscheiden, wen sie zitieren.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-item" id="faq-fuer-wen">
+            <details>
+              <summary>
+                Für wen macht SEO besonders viel Sinn?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6 6-1.41-1.41z"/></svg>
+              </summary>
+              <div class="faq-body">
+                <p>SEO lohnt sich für jeden der online gefunden werden will — vom 1-Person-Betrieb bis zum Mittelständler. Besonders stark ist der ROI für <strong>Unternehmen mit lokalem Einzugsgebiet</strong>: Handwerker, Arztpraxen, Restaurants, Salons, Kanzleien, Agenturen. Aber auch E-Commerce, SaaS und B2B-Dienstleister profitieren massiv wenn ihre Website bisher kaum Sichtbarkeit hat. Wir betreuen Kunden in Deutschland, Österreich und der Schweiz.</p>
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════
+       CTA
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="section" aria-labelledby="cta-title" data-reveal>
+    <div class="container">
+      <div class="cta-box">
+        <span class="section-label" style="display:block;margin-bottom:.75rem">Nächster Schritt</span>
+        <h2 id="cta-title">Kostenlose SEO-Analyse — unverbindlich</h2>
+        <p>Wir schauen uns deine Website an und zeigen dir konkret welche 3 Maßnahmen den größten Hebel haben. Kein Pitch, kein Pauschalangebot — direkt auf deine Situation zugeschnitten.</p>
+        <div class="cta-btns">
+          <a href="https://wa.me/4915122358883" class="btn btn-primary btn-lg" rel="noopener noreferrer" target="_blank" aria-label="SEO-Analyse via WhatsApp anfragen">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Jetzt SEO-Analyse anfragen
+          </a>
+          <a href="mailto:info@lokalbesucher.de" class="btn btn-ghost btn-lg">info@lokalbesucher.de</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="/assets/images/lokalbesucher-logo-invers.webp" alt="" width="34" height="37" loading="lazy">
+          Lokalbesucher
+        </div>
+        <p class="footer-tagline">einfach. lokal. erfolgreich.</p>
+        <address class="footer-nap">
+          <strong>Lokalbesucher GmbH</strong><br>
+          Im Westerkamp 7<br>
+          45711 Datteln<br>
+          <a href="tel:+4915122358883">+49&nbsp;151&nbsp;22358883</a><br>
+          <a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a>
+        </address>
+      </div>
+      <nav aria-label="Leistungen">
+        <div class="footer-col-title">Leistungen</div>
+        <ul class="footer-links" role="list">
+          <li><a href="/google-business-agentur/">Google Business Optimierung</a></li>
+          <li><a href="/bewertungsmanagement/">Bewertungsmanagement</a></li>
+          <li><a href="/google-business-agentur/#verzeichnisse">Branchenverzeichnisse</a></li>
+          <li><a href="/google-business-agentur/#reporting">Monatliches Reporting</a></li>
+          <li><a href="/werbeagentur-recklinghausen/">Werbeagentur Recklinghausen</a></li>
+          <li><a href="/seo-agentur/" aria-current="page">SEO Agentur</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Unternehmen">
+        <div class="footer-col-title">Unternehmen</div>
+        <ul class="footer-links" role="list">
+          <li><a href="/case-studies/">Erfolgsgeschichten</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/jobs/">Jobs</a></li>
+          <li><a href="/schema-org-generator/">Schema Generator</a></li>
+          <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI Kalkulator</a></li>
+        </ul>
+      </nav>
+      <div>
+        <div class="footer-col-title">Jetzt starten</div>
+        <p style="font-size:.875rem;color:#6b7099;margin-bottom:1rem;line-height:1.7">Kostenlose Erstberatung — direkt via WhatsApp, ohne Wartezeit.</p>
+        <a href="https://wa.me/4915122358883" class="btn btn-primary" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp Beratung starten">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          WhatsApp Beratung
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Lokalbesucher GmbH &middot; Alle Rechte vorbehalten</p>
+      <nav class="footer-legal-links" aria-label="Rechtliches">
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+        <a href="#cookie-settings" id="cookie-settings-link">Cookie-Einstellungen</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/4915122358883" class="whatsapp-float" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp Beratung starten">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+</a>
+
+<script src="/assets/js/components.js" defer></script>
+</body>
+</html>
