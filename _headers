@@ -5,6 +5,10 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   X-XSS-Protection: 1; mode=block
 
+# cookie-consent.js: short cache so consent-mode fixes propagate quickly
+/assets/js/cookie-consent.js
+  Cache-Control: public, max-age=300, must-revalidate
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
