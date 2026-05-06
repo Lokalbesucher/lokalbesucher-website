@@ -742,7 +742,7 @@
     </div>
   </section>
 
-  <!-- BEWERTUNGEN (Trustindex) ──────────────────────────────── -->
+  <!-- BEWERTUNGEN ─────────────────────────────────────────── -->
   <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="reviews-title">
     <div class="container">
       <div class="section-header">
@@ -751,14 +751,51 @@
         <p class="section-desc">Echte Bewertungen von echten Unternehmen — ungefiltert.</p>
       </div>
 
-      <!-- Trustindex Bewertungs-Widget (lazy load, min-height für CLS=0) -->
-      <div style="min-height:420px">
-        <script defer async src='https://cdn.trustindex.io/loader.js?63b545638482762e0396f5948cd'></script>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-top:2rem">
+
+        <blockquote style="background:#0c0e1a;border:1px solid #1e2240;border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;gap:2px" aria-label="5 von 5 Sterne">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p style="font-size:.95rem;color:#6b7099;line-height:1.7;flex:1">"Seit wir mit Lokalbesucher arbeiten, klingelt das Telefon deutlich öfter. Die Ergebnisse sprechen für sich — wir sind bei Google Maps jetzt dauerhaft oben."</p>
+          <footer style="font-size:.85rem;color:#e8eaf6;font-weight:600">BattleKart Bochum</footer>
+        </blockquote>
+
+        <blockquote style="background:#0c0e1a;border:1px solid #1e2240;border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;gap:2px" aria-label="5 von 5 Sterne">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p style="font-size:.95rem;color:#6b7099;line-height:1.7;flex:1">"+158 % mehr Profilaufrufe in weniger als einem Jahr. Das Team ist immer erreichbar und liefert echte Resultate — kein leeres Versprechen."</p>
+          <footer style="font-size:.85rem;color:#e8eaf6;font-weight:600">Ristorante Peperoncino</footer>
+        </blockquote>
+
+        <blockquote style="background:#0c0e1a;border:1px solid #1e2240;border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+          <div style="display:flex;gap:2px" aria-label="5 von 5 Sterne">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p style="font-size:.95rem;color:#6b7099;line-height:1.7;flex:1">"Professionell, schnell und wirklich effektiv. Wir hätten nicht gedacht, dass so viel Potenzial in unserem Google-Profil steckt. Absolut empfehlenswert."</p>
+          <footer style="font-size:.85rem;color:#e8eaf6;font-weight:600">ViaBeauty</footer>
+        </blockquote>
+
       </div>
 
-      <!-- Trustindex Social Media Feed (lazy load, min-height für CLS=0) -->
-      <div style="min-height:420px;margin-top:2rem">
-        <script defer async src='https://cdn.trustindex.io/loader-feed.js?41cfdc338a3475991c66d60eb33'></script>
+      <div style="text-align:center;margin-top:2.5rem">
+        <a href="https://www.google.com/search?q=Lokalbesucher+GmbH+Bewertungen" rel="noopener noreferrer" target="_blank" class="btn btn-ghost">
+          Alle Google-Bewertungen lesen
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
       </div>
 
     </div>
