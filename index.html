@@ -25,9 +25,8 @@
   <meta name="twitter:image"       content="https://lokalbesucher.de/assets/images/og-home.webp">
 
   <!-- ── Preload kritische Ressourcen ───────────────────────── -->
-  <link rel="preload" href="/assets/fonts/syne-700.woff2"    as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/syne-800.woff2"    as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp" as="image" fetchpriority="high">
 
   <!-- ── Critical CSS inline (above the fold) ───────────────── -->
@@ -79,6 +78,22 @@
     .lb-input::placeholder{color:#6b7099}
     .lb-trust-item{display:flex;align-items:center;gap:.6rem;font-size:.875rem;color:#6b7099}
     .lb-trust-dot{width:6px;height:6px;background:#ffbd59;border-radius:50%;flex-shrink:0}
+    /* ── Critical above-fold from global.css (prevents CLS on async load) ── */
+    .section{padding-block:4rem}
+    @media(min-width:768px){.section{padding-block:6rem}}
+    .grid-bg{background-image:linear-gradient(rgba(78,130,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(78,130,255,.04) 1px,transparent 1px);background-size:48px 48px}
+    .glow-yellow{position:relative}
+    .glow-yellow::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:min(80vw,600px);height:min(80vw,600px);background:radial-gradient(circle,rgba(255,189,89,.08) 0%,transparent 65%);pointer-events:none;z-index:0}
+    .glow-yellow > *{position:relative;z-index:1}
+    .trust-strip{padding-block:2rem;border-top:1px solid #1e2240;border-bottom:1px solid #1e2240;background:#111328}
+    .trust-label{text-align:center;font-size:.8rem;color:#6b7099;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.5rem}
+    .trust-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2rem 3rem}
+    .trust-logos img{height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.5}
+    .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+    @media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+    .stat-card{text-align:center;padding:2rem;background:#111328;border:1px solid #1e2240;border-radius:16px}
+    .stat-number{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:clamp(1.75rem,4vw,2.5rem);color:#ffbd59;display:block;line-height:1;margin-bottom:.5rem}
+    .stat-label{font-size:.85rem;color:#6b7099}
   </style>
 
   <!-- ── Global CSS (async) ─────────────────────────────────── -->
@@ -195,14 +210,6 @@
   <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});</script>
   <script>gtag('config', 'AW-11287998127');</script>
 
-  <!-- Leadinfo B2B-Besucher-Identifikation (cookie-frei, DSGVO-konform) -->
-  <script>
-  (function(l,e,a,d,i,n,f,o){if(!l[i]){l.GlobalLeadinfoNamespace=l.GlobalLeadinfoNamespace||[];
-  l.GlobalLeadinfoNamespace.push(i);l[i]=function(){(l[i].q=l[i].q||[]).push(arguments)};l[i].t=l[i].t||n;
-  l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;o.src=d;f.parentNode.insertBefore(o,f);}
-  }(window,document,'script','https://cdn.leadinfo.eu/ping.js','leadinfo','LI-69EB16FC309C3'));
-  </script>
-  <!-- /Leadinfo -->
 </head>
 <body>
 
@@ -1099,6 +1106,8 @@
 
 <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}</style>
 <script src="/assets/js/cookie-consent.js?v=2026-05-06" defer></script>
+  <!-- Leadinfo B2B-Besucher-Identifikation — body-end für Performance -->
+  <script>(function(l,e,a,d,i,n,f,o){if(!l[i]){l.GlobalLeadinfoNamespace=l.GlobalLeadinfoNamespace||[];l.GlobalLeadinfoNamespace.push(i);l[i]=function(){(l[i].q=l[i].q||[]).push(arguments)};l[i].t=l[i].t||n;l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;o.src=d;f.parentNode.insertBefore(o,f);}}(window,document,'script','https://cdn.leadinfo.eu/ping.js','leadinfo','LI-69EB16FC309C3'));</script>
   <!-- Google Ads click conversions: WhatsApp + Tel -->
   <script>(function(){if(typeof gtag!=='function')return;document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var href=a.getAttribute('href')||'';if(/^https?:\/\/(api\.whatsapp\.com|wa\.me)\//i.test(href)){gtag('event','conversion',{'send_to':'AW-11287998127/f0A5CI7I-KccEK_dxIYq','value':50.0,'currency':'EUR'});}else if(/^tel:/i.test(href)){gtag('event','conversion',{'send_to':'AW-11287998127/VFn8CJHI-KccEK_dxIYq','value':75.0,'currency':'EUR'});}},{capture:true});})();</script>
 </body>
