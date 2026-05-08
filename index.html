@@ -947,12 +947,14 @@
         btn.disabled = true;
         btn.textContent = 'Wird gesendet …';
         try {
+          var nameVal = document.getElementById('hp-name').value.trim();
           var payload = new URLSearchParams({
-            name:        document.getElementById('hp-name').value.trim(),
-            companyName: document.getElementById('hp-business').value.trim(),
-            email:       document.getElementById('hp-email').value.trim(),
-            phone:       document.getElementById('hp-phone').value.trim(),
-            source:      'Homepage Kontaktformular'
+            name:             nameVal,
+            ansprechpartner:  nameVal,
+            companyName:      document.getElementById('hp-business').value.trim(),
+            email:            document.getElementById('hp-email').value.trim(),
+            phone:            document.getElementById('hp-phone').value.trim(),
+            source:           'Homepage Kontaktformular'
           });
           var res = await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-053d-7b58b2ab79a1', {
             method: 'POST',
