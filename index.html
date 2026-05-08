@@ -882,10 +882,14 @@
                 <input class="lb-input" type="text" id="hp-name" name="name"
                        required autocomplete="name" placeholder="Max Mustermann">
               </div>
-              <div style="margin-bottom:1.25rem">
+              <div style="margin-bottom:1.25rem;position:relative">
                 <label class="lb-label" for="hp-business">Unternehmen *</label>
                 <input class="lb-input" type="text" id="hp-business" name="companyName"
-                       required autocomplete="organization" placeholder="Muster GmbH">
+                       required autocomplete="off" placeholder="Firmenname eingeben…"
+                       aria-autocomplete="list" aria-controls="hp-places-dd">
+                <div id="hp-places-dd" role="listbox" aria-label="Unternehmensvorschläge"
+                     style="display:none;position:absolute;top:100%;left:0;right:0;background:#111328;border:1px solid #1e2240;border-top:none;border-radius:0 0 10px 10px;z-index:200;max-height:220px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.5)"></div>
+                <input type="hidden" id="hp-place-id" name="placeId">
               </div>
               <div style="margin-bottom:1.25rem">
                 <label class="lb-label" for="hp-email">E-Mail *</label>
@@ -933,6 +937,81 @@
       </div>
     </div>
     <script>
+    /* ── Google Places Autocomplete für Unternehmensfeld ─── */
+    (function(){
+      var HP_KEY = 'AIzaSyDuz0V-su1x-5z1SNdlIlVVn2-icOBWlTE';
+      var inp    = document.getElementById('hp-business');
+      var dd     = document.getElementById('hp-places-dd');
+      var hidden = document.getElementById('hp-place-id');
+      var token  = null;
+      var timer  = null;
+      var apiLoaded = false;
+
+      function loadAPI() {
+        if (apiLoaded || window.google?.maps?.places) { apiLoaded = true; return; }
+        apiLoaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://maps.googleapis.com/maps/api/js?key=' + HP_KEY + '&libraries=places&language=de';
+        s.async = true;
+        document.head.appendChild(s);
+      }
+
+      function closeDd() {
+        dd.style.display = 'none';
+        dd.innerHTML = '';
+      }
+
+      function showSuggestions(preds) {
+        dd.innerHTML = '';
+        if (!preds || !preds.length) { closeDd(); return; }
+        preds.forEach(function(p) {
+          var item = document.createElement('div');
+          item.setAttribute('role', 'option');
+          item.setAttribute('aria-selected', 'false');
+          item.style.cssText = 'padding:.75rem 1rem;cursor:pointer;border-bottom:1px solid #1e2240;font-size:.875rem';
+          item.innerHTML = '<span style="color:#e8eaf6;font-weight:600">' + p.structured_formatting.main_text + '</span>' +
+            '<br><span style="color:#7c83aa;font-size:.78rem">' + (p.structured_formatting.secondary_text || '') + '</span>';
+          item.addEventListener('mousedown', function(e) {
+            e.preventDefault();
+            inp.value = p.structured_formatting.main_text;
+            hidden.value = p.place_id;
+            closeDd();
+            token = null;
+          });
+          dd.appendChild(item);
+        });
+        dd.style.display = 'block';
+      }
+
+      inp.addEventListener('focus', loadAPI);
+
+      inp.addEventListener('input', function() {
+        hidden.value = '';
+        clearTimeout(timer);
+        var val = inp.value.trim();
+        if (val.length < 2) { closeDd(); return; }
+        timer = setTimeout(function() {
+          if (!window.google?.maps?.places) return;
+          if (!token) token = new google.maps.places.AutocompleteSessionToken();
+          new google.maps.places.AutocompleteService().getPlacePredictions({
+            input: val,
+            sessionToken: token,
+            types: ['establishment'],
+            componentRestrictions: { country: 'de' }
+          }, function(preds, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) showSuggestions(preds);
+            else closeDd();
+          });
+        }, 280);
+      });
+
+      document.addEventListener('click', function(e) {
+        if (!inp.contains(e.target) && !dd.contains(e.target)) closeDd();
+      });
+    }());
+    </script>
+
+    <script>
     (function(){
       var form = document.getElementById('hp-lead-form');
       var loadTime = Date.now();
@@ -947,15 +1026,18 @@
         btn.disabled = true;
         btn.textContent = 'Wird gesendet …';
         try {
-          var nameVal = document.getElementById('hp-name').value.trim();
-          var payload = new URLSearchParams({
+          var nameVal    = document.getElementById('hp-name').value.trim();
+          var placeIdVal = document.getElementById('hp-place-id').value.trim();
+          var params = {
             name:             nameVal,
             ansprechpartner:  nameVal,
             companyName:      document.getElementById('hp-business').value.trim(),
             email:            document.getElementById('hp-email').value.trim(),
             phone:            document.getElementById('hp-phone').value.trim(),
             source:           'Homepage Kontaktformular'
-          });
+          };
+          if (placeIdVal) params.placeId = placeIdVal;
+          var payload = new URLSearchParams(params);
           var res = await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-053d-7b58b2ab79a1', {
             method: 'POST',
             body: payload
