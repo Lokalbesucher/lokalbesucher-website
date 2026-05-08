@@ -501,97 +501,57 @@
     </div>
   </section>
 
-  <!-- ÜBER UNS / TEAM ─────────────────────────────────────────── -->
+  <!-- TEAM TEASER ─────────────────────────────────────────────── -->
   <section class="section" aria-labelledby="team-title">
     <div class="container">
-
       <div class="section-header">
         <span class="section-label">Wer steckt dahinter?</span>
         <h2 class="section-title" id="team-title">Erfahrung, die sich auszahlt</h2>
-        <p class="section-desc" style="max-width:660px;margin-inline:auto">
-          Kein anonymes Agentur-Kollektiv. Hinter Lokalbesucher steckt ein Team mit echter
-          Sales- und Marketing-Erfahrung aus 20+ Jahren bei Salesforce, Amazon und StepStone.
-        </p>
+        <p class="section-desc">Kein anonymes Agentur-Kollektiv — 11 Experten mit 20+ Jahren bei Salesforce, Amazon und StepStone.</p>
       </div>
 
-      <!-- Team-Karten — Hochformat, 2 Reihen -->
-      <style>
-        #team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;overflow:hidden}
-        @media(min-width:560px){#team-grid{grid-template-columns:repeat(3,1fr);gap:1rem}}
-        @media(min-width:900px){#team-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
-      </style>
-      <div id="team-grid">
+      <div style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-bottom:2.5rem">
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
-                 alt="Tobias Frank — Geschäftsführer Lokalbesucher GmbH"
-                 width="200" height="260" loading="lazy">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;width:140px">
+          <img src="/assets/images/tobias-frank-autor-lokalbesucher.webp"
+               alt="Tobias Frank — Geschäftsführer Lokalbesucher"
+               width="100" height="100" loading="lazy"
+               style="border-radius:50%;width:100px;height:100px;object-fit:cover;object-position:top;border:2px solid #1e2240">
+          <div style="text-align:center">
+            <div style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.875rem;color:#e8eaf6">Tobias Frank</div>
+            <div style="font-size:.75rem;color:#7c83aa">Geschäftsführer</div>
           </div>
-          <div class="team-card-name">Tobias Frank</div>
-          <div class="team-card-role">Geschäftsführer</div>
         </div>
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="/assets/images/kim-frank-lokalbesucher-team.webp"
-                 alt="Kim Frank — Head of Operations, Lokalbesucher"
-                 width="200" height="260" loading="lazy">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;width:140px">
+          <img src="/assets/images/kim-frank-lokalbesucher-team.webp"
+               alt="Kim Frank — Head of Operations, Lokalbesucher"
+               width="100" height="130" loading="lazy"
+               style="border-radius:50%;width:100px;height:100px;object-fit:cover;object-position:top;border:2px solid #1e2240">
+          <div style="text-align:center">
+            <div style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.875rem;color:#e8eaf6">Kim Frank</div>
+            <div style="font-size:.75rem;color:#7c83aa">Head of Operations</div>
           </div>
-          <div class="team-card-name">Kim Frank</div>
-          <div class="team-card-role">Head of Operations</div>
         </div>
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="/assets/images/mara-goronschewski-lokalbesucher-team.webp"
-                 alt="Mara Goronschewski — Social Media Managerin, Lokalbesucher"
-                 width="200" height="260" loading="lazy">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;width:140px">
+          <img src="/assets/images/mara-goronschewski-lokalbesucher-team.webp"
+               alt="Mara Goronschewski — Social Media Managerin, Lokalbesucher"
+               width="100" height="130" loading="lazy"
+               style="border-radius:50%;width:100px;height:100px;object-fit:cover;object-position:top;border:2px solid #1e2240">
+          <div style="text-align:center">
+            <div style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.875rem;color:#e8eaf6">Mara Goronschewski</div>
+            <div style="font-size:.75rem;color:#7c83aa">Social Media</div>
           </div>
-          <div class="team-card-name">Mara Goronschewski</div>
-          <div class="team-card-role">Social Media Managerin</div>
         </div>
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="/assets/images/lucy-kalweit-lokalbesucher-team.webp"
-                 alt="Lucy Kalweit — Teamleitung Social Media, Lokalbesucher"
-                 width="200" height="260" loading="lazy">
-          </div>
-          <div class="team-card-name">Lucy Kalweit</div>
-          <div class="team-card-role">Teamleitung Social Media</div>
-        </div>
+      </div>
 
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="/assets/images/sophie-merkel-lokalbesucher.webp"
-                 alt="Sophie Merkel — Creative Managerin, Lokalbesucher"
-                 width="200" height="260" loading="lazy">
-          </div>
-          <div class="team-card-name">Sophie Merkel</div>
-          <div class="team-card-role">Creative Managerin</div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="/assets/images/milena-booken-lokalbesucher.webp"
-                 alt="Milena-Ebru Booken — Sales Managerin, Lokalbesucher"
-                 width="200" height="260" loading="lazy">
-          </div>
-          <div class="team-card-name">Milena-Ebru Booken</div>
-          <div class="team-card-role">Sales Managerin</div>
-        </div>
-
-        <div class="team-card">
-          <div class="team-card-img">
-            <img src="/assets/images/milana-wedau-lokalbesucher.webp"
-                 alt="Milana Wedau — Performance Managerin, Lokalbesucher"
-                 width="200" height="260" loading="lazy">
-          </div>
-          <div class="team-card-name">Milana Wedau</div>
-          <div class="team-card-role">Performance Managerin</div>
-        </div>
-
+      <div style="text-align:center">
+        <a href="/team/" class="btn btn-ghost">
+          Alle 11 Teammitglieder kennenlernen
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -1133,8 +1093,10 @@
       <nav aria-label="Unternehmen">
         <div class="footer-col-title">Unternehmen</div>
         <ul class="footer-links" role="list">
+          <li><a href="/team/">Team</a></li>
           <li><a href="/case-studies/">Erfolgsgeschichten</a></li>
-          <li><a href="/faq/">FAQ</a></li><li><a href="/jobs/">Jobs</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/jobs/">Jobs</a></li>
           <li><a href="/schema-org-generator/">Schema Generator</a></li>
           <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI Kalkulator</a></li>
         </ul>
