@@ -9,11 +9,7 @@
   font-family: 'Syne';
   font-style:  normal;
   font-weight: 700;
-  font-display: swap;
-  size-adjust: 105%;
-  ascent-override: 88%;
-  descent-override: 20%;
-  line-gap-override: 0%;
+  font-display: optional;
   src: url('/assets/fonts/syne-700.woff2') format('woff2');
 }
 
@@ -21,11 +17,7 @@
   font-family: 'Syne';
   font-style:  normal;
   font-weight: 800;
-  font-display: swap;
-  size-adjust: 105%;
-  ascent-override: 88%;
-  descent-override: 20%;
-  line-gap-override: 0%;
+  font-display: optional;
   src: url('/assets/fonts/syne-800.woff2') format('woff2');
 }
 
