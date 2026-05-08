@@ -77,14 +77,31 @@
     .lb-trust-item{display:flex;align-items:center;gap:.6rem;font-size:.875rem;color:#7c83aa}
     .lb-trust-dot{width:6px;height:6px;background:#ffbd59;border-radius:50%;flex-shrink:0}
     /* ── Critical above-fold from global.css (prevents CLS on async load) ── */
-    /* @font-face inline — Fonts greifen vor global.css */
+    /* @font-face inline */
     @font-face{font-family:'Syne';font-style:normal;font-weight:700;font-display:optional;src:url('/assets/fonts/syne-700.woff2') format('woff2')}
     @font-face{font-family:'Syne';font-style:normal;font-weight:800;font-display:optional;src:url('/assets/fonts/syne-800.woff2') format('woff2')}
     @font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:optional;src:url('/assets/fonts/dm-sans-400.woff2') format('woff2')}
+    /* Critical above-fold CSS — exakte Werte aus global.css */
+    .section{padding-block:6rem}
+    @media(min-width:768px){.section{padding-block:8rem}}
+    .grid-bg{background-image:linear-gradient(rgba(78,130,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(78,130,255,.04) 1px,transparent 1px);background-size:48px 48px}
+    .glow-yellow{position:relative}
+    .glow-yellow::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:min(80vw,600px);height:min(80vw,600px);background:radial-gradient(circle,rgba(255,189,89,.08) 0%,transparent 65%);pointer-events:none;z-index:0}
+    .glow-yellow>*{position:relative;z-index:1}
+    .trust-strip{padding-block:2rem;border-top:1px solid #1e2240;border-bottom:1px solid #1e2240;background:#111328}
+    .trust-label{text-align:center;font-size:.8rem;color:#7c83aa;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.5rem}
+    .trust-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2rem 3rem}
+    .trust-logos img{height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.5}
+    .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+    @media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
+    .stat-card{text-align:center;padding:2rem;background:#111328;border:1px solid #1e2240;border-radius:16px}
+    .stat-number{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:clamp(1.75rem,4vw,2.5rem);color:#ffbd59;display:block;line-height:1;margin-bottom:.5rem}
+    .stat-label{font-size:.85rem;color:#7c83aa}
   </style>
 
-  <!-- ── Global CSS — render-blocking für CLS=0 ────────────── -->
-  <link rel="stylesheet" href="/assets/css/global.css">
+  <!-- ── Global CSS async ─────────────────────────────────── -->
+  <link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
 
   <!-- ── Favicon ────────────────────────────────────────────── -->
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
@@ -352,16 +369,12 @@
     <div class="container">
       <p class="trust-label">Vertrauen von 200+ Unternehmen in ganz Deutschland</p>
       <div class="trust-logos">
-        <img src="/assets/images/orthoclinic-kunde-lokalbesucher.webp"
-             alt="Orthoclinic Hamburg" width="80" height="80" loading="lazy">
-        <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp"
-             alt="Easy Fitness" width="80" height="80" loading="lazy">
-        <img src="/assets/images/mangalmezze-kunde-lokalbesucher.webp"
-             alt="Mangal Mezze" width="80" height="80" loading="lazy">
+        <img src="/assets/images/orthoclinic-kunde-lokalbesucher.webp" width="48" height="48" loading="lazy">
+        <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp" width="48" height="48" loading="lazy">
+        <img src="/assets/images/mangalmezze-kunde-lokalbesucher.webp" width="48" height="48" loading="lazy">
         <img src="/assets/images/bb-kunde-lokalbesucher.webp"
              alt="BattleKart" width="80" height="80" loading="lazy">
-        <img src="/assets/images/qulis-kunde-lokalbesucher.webp"
-             alt="Qulis" width="80" height="80" loading="lazy">
+        <img src="/assets/images/qulis-kunde-lokalbesucher.webp" width="48" height="48" loading="lazy">
       </div>
     </div>
   </section>
@@ -1094,7 +1107,7 @@
           Münsterstraße 13-15<br>
           45657 Recklinghausen<br>
           <a href="tel:+4915122358883">+49&nbsp;151&nbsp;22358883</a><br>
-          <a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a>
+          <!--email_off--><a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a><!--/email_off-->
         </address>
       </div>
 
