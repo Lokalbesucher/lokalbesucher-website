@@ -46,12 +46,14 @@
     .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
     @media(min-width:600px){.team-grid{grid-template-columns:repeat(3,1fr)}}
     @media(min-width:900px){.team-grid{grid-template-columns:repeat(4,1fr)}}
-    .team-card{background:#111328;border:1px solid #1e2240;border-radius:16px;overflow:hidden;transition:border-color .2s,transform .2s}
+    .team-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+    @media(min-width:480px){.team-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:800px){.team-grid{grid-template-columns:repeat(4,1fr)}}
+    .team-card{background:#111328;border:1px solid #1e2240;border-radius:16px;overflow:hidden;transition:border-color .2s,transform .2s;display:flex;flex-direction:column;align-items:center;padding:1.25rem 1rem}
     .team-card:hover{border-color:rgba(255,189,89,.3);transform:translateY(-2px)}
-    .team-card img{width:100%;aspect-ratio:200/260;object-fit:cover;object-position:top}
-    .team-card-body{padding:1rem}
-    .team-card-name{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.2rem}
-    .team-card-role{font-size:.8rem;color:#7c83aa}
+    .team-card img{width:100%;max-width:160px;height:auto;border-radius:12px;object-fit:cover;object-position:top;margin-bottom:.875rem}
+    .team-card-name{font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.9rem;color:#e8eaf6;margin-bottom:.2rem;text-align:center}
+    .team-card-role{font-size:.78rem;color:#7c83aa;text-align:center}
   </style>
 
   <link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
@@ -220,91 +222,62 @@
   <section class="section" aria-label="Das Team">
     <div class="container">
 
-      <!-- Tobias als Highlight -->
-      <div style="display:grid;grid-template-columns:1fr;gap:2rem;max-width:800px;margin:0 auto 4rem;background:#111328;border:1px solid #1e2240;border-radius:20px;overflow:hidden">
-        <div style="display:flex;flex-wrap:wrap;gap:2rem;padding:2rem;align-items:center">
-          <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
-               alt="Tobias Frank — Inhaber Lokalbesucher GmbH"
-               width="120" height="156" loading="eager"
-               style="width:120px;height:auto;border-radius:16px;flex-shrink:0">
-          <div style="flex:1;min-width:200px">
-            <div style="font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#ffbd59;margin-bottom:.4rem">Gründer &amp; Geschäftsführer</div>
-            <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:.5rem">Tobias Frank</h2>
-            <p style="font-size:.9rem;color:#7c83aa;line-height:1.7;margin-bottom:1rem">
-              20 Jahre Sales &amp; Marketing — zuerst bei <strong style="color:#e8eaf6">Salesforce</strong>,
-              dann <strong style="color:#e8eaf6">Amazon</strong>, dann <strong style="color:#e8eaf6">StepStone</strong>.
-              Seit 2019 macht er mit Lokalbesucher 200+ Unternehmen bei Google Maps sichtbar.
-            </p>
-            <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank"
-               class="btn btn-primary" aria-label="Tobias direkt kontaktieren">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-              Direkt schreiben
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Rest des Teams -->
       <div class="team-grid">
+
+        <div class="team-card">
+          <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
+               alt="Tobias Frank — Geschäftsführer Lokalbesucher GmbH"
+               width="400" height="520" loading="eager">
+          <div class="team-card-name">Tobias Frank</div>
+          <div class="team-card-role">Geschäftsführer</div>
+        </div>
 
         <div class="team-card">
           <img src="/assets/images/kim-frank-lokalbesucher-team.webp"
                alt="Kim Frank — Head of Operations, Lokalbesucher"
                width="400" height="520" loading="lazy">
-          <div class="team-card-body">
-            <div class="team-card-name">Kim Frank</div>
-            <div class="team-card-role">Head of Operations</div>
-          </div>
+          <div class="team-card-name">Kim Frank</div>
+          <div class="team-card-role">Head of Operations</div>
         </div>
 
         <div class="team-card">
           <img src="/assets/images/mara-goronschewski-lokalbesucher-team.webp"
                alt="Mara Goronschewski — Social Media Managerin, Lokalbesucher"
                width="400" height="520" loading="lazy">
-          <div class="team-card-body">
-            <div class="team-card-name">Mara Goronschewski</div>
-            <div class="team-card-role">Social Media Managerin</div>
-          </div>
+          <div class="team-card-name">Mara Goronschewski</div>
+          <div class="team-card-role">Social Media Managerin</div>
         </div>
 
         <div class="team-card">
           <img src="/assets/images/lucy-kalweit-lokalbesucher-team.webp"
                alt="Lucy Kalweit — Teamleitung Social Media, Lokalbesucher"
                width="400" height="520" loading="lazy">
-          <div class="team-card-body">
-            <div class="team-card-name">Lucy Kalweit</div>
-            <div class="team-card-role">Teamleitung Social Media</div>
-          </div>
+          <div class="team-card-name">Lucy Kalweit</div>
+          <div class="team-card-role">Teamleitung Social Media</div>
         </div>
 
         <div class="team-card">
           <img src="/assets/images/sophie-merkel-lokalbesucher.webp"
                alt="Sophie Merkel — Creative Managerin, Lokalbesucher"
                width="400" height="520" loading="lazy">
-          <div class="team-card-body">
-            <div class="team-card-name">Sophie Merkel</div>
-            <div class="team-card-role">Creative Managerin</div>
-          </div>
+          <div class="team-card-name">Sophie Merkel</div>
+          <div class="team-card-role">Creative Managerin</div>
         </div>
 
         <div class="team-card">
           <img src="/assets/images/milena-booken-lokalbesucher.webp"
                alt="Milena-Ebru Booken — Sales Managerin, Lokalbesucher"
                width="400" height="520" loading="lazy">
-          <div class="team-card-body">
-            <div class="team-card-name">Milena-Ebru Booken</div>
-            <div class="team-card-role">Sales Managerin</div>
-          </div>
+          <div class="team-card-name">Milena-Ebru Booken</div>
+          <div class="team-card-role">Sales Managerin</div>
         </div>
 
         <div class="team-card">
           <img src="/assets/images/milana-wedau-lokalbesucher.webp"
                alt="Milana Wedau — Performance Managerin, Lokalbesucher"
                width="400" height="520" loading="lazy">
-          <div class="team-card-body">
-            <div class="team-card-name">Milana Wedau</div>
-            <div class="team-card-role">Performance Managerin</div>
-          </div>
+          <div class="team-card-name">Milana Wedau</div>
+          <div class="team-card-role">Performance Managerin</div>
         </div>
 
       </div>
