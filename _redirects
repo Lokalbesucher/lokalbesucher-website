@@ -19,7 +19,8 @@
 # Alte Kontakt/Über-uns-Seiten → Homepage
 /kontakt/                                               /                                                               301
 /ueber-uns/                                             /                                                               301
-/ueber-uns/team/                                        /team/                                                          301
+/ueber-uns/team/                                        /unser-team/                                                    301
+/team/                                                  /unser-team/                                                    301
 /uber-uns/                                              /                                                               301
 
 # ── Wildcard: /home/* → /* ────────────────────────────────────────────────────
