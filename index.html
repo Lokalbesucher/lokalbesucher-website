@@ -355,21 +355,6 @@
             </div>
           </div>
 
-          <div style="display:flex;align-items:center;gap:1rem;margin-top:1.5rem;flex-wrap:wrap">
-            <a href="https://www.google.com/partners/agency?id=9897265706"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Lokalbesucher ist offizieller Google Partner — Badge verifizieren"
-               style="display:inline-block;background:#fff;border-radius:10px;padding:.35rem .6rem;line-height:0;box-shadow:0 2px 12px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s"
-               onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 20px rgba(0,0,0,.35)'"
-               onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 12px rgba(0,0,0,.25)'">
-              <img src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
-                   alt="Offizieller Google Partner — Lokalbesucher GmbH"
-                   width="150" height="54"
-                   loading="eager">
-            </a>
-            <span style="font-size:.78rem;color:#7c83aa;line-height:1.4;max-width:180px">Zertifizierter<br>Google Partner seit 2026</span>
-          </div>
         </div>
 
         <!-- Bild-Spalte -->
@@ -387,20 +372,30 @@
   </section>
 
   <!-- TRUST STRIP ───────────────────────────────────────────── -->
-  <section class="trust-strip" aria-label="Zertifizierungen und Kunden">
+  <section class="trust-strip" aria-label="Zertifizierungen und Kunden" style="padding-block:2rem 1.75rem">
     <div class="container">
-      <div style="display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.25rem">
+
+      <!-- Google Partner Badge -->
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;margin-bottom:1.75rem">
+        <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7c83aa;margin:0">Offiziell zertifiziert</p>
         <a href="https://www.google.com/partners/agency?id=9897265706"
            target="_blank"
            rel="noopener noreferrer"
-           aria-label="Offizieller Google Partner — Badge verifizieren"
-           style="display:inline-block;background:#fff;border-radius:8px;padding:.3rem .5rem;line-height:0;box-shadow:0 1px 8px rgba(0,0,0,.2)">
+           aria-label="Offizieller Google Partner — Lokalbesucher GmbH verifizieren"
+           style="display:inline-block;background:#fff;border-radius:10px;padding:.4rem .7rem;line-height:0;box-shadow:0 2px 16px rgba(0,0,0,.3);transition:transform .2s,box-shadow .2s"
+           onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(0,0,0,.4)'"
+           onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(0,0,0,.3)'">
           <img src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
                alt="Offizieller Google Partner — Lokalbesucher GmbH"
-               width="120" height="43"
+               width="160" height="58"
                loading="lazy">
         </a>
       </div>
+
+      <!-- Trennlinie -->
+      <div style="width:3rem;height:1px;background:#1e2240;margin:0 auto 1.5rem"></div>
+
+      <!-- Kunden-Logos -->
       <p class="trust-label">Vertrauen von 100+ Unternehmen in ganz Deutschland</p>
       <div class="trust-logos">
         <img src="/assets/images/orthoclinic-kunde-lokalbesucher.webp" alt="Orthoclinic Hamburg" width="48" height="48" loading="lazy">
@@ -409,6 +404,7 @@
         <img src="/assets/images/bb-kunde-lokalbesucher.webp" alt="BattleKart" width="48" height="48" loading="lazy">
         <img src="/assets/images/qulis-kunde-lokalbesucher.webp" alt="Qulis" width="48" height="48" loading="lazy">
       </div>
+
     </div>
   </section>
 
