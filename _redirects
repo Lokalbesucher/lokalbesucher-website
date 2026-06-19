@@ -23,6 +23,33 @@
 /team/                                                  /unser-team/                                                    301
 /uber-uns/                                              /                                                               301
 
+# ── Alte WordPress Directory-/Listing-Plugin-URLs → passende aktive Seite ────
+/locations.kml                                          /werbeagentur-recklinghausen/                                   301
+/l_claims/*                                             /bewertungsmanagement/                                          301
+/l_price_type/*                                         /google-business-agentur/                                       301
+/listing/*                                              /case-studies/                                                  301
+/location/*                                             /werbeagentur-recklinghausen/                                   301
+/categories/*                                           /case-studies/                                                  301
+/events-search                                          /                                                               301
+/events-search/*                                        /                                                               301
+/ad-manager/                                            /google-ads/                                                    301
+/ad-manager/*                                           /google-ads/                                                    301
+/foto-video/                                            /social-media-agentur/                                          301
+/pf/*                                                   /case-studies/                                                  301
+/bedroom-colors-youll-never-regret/                     /                                                               301
+
+# Alte WooCommerce-Produkte + Paket-Seiten → passende aktive Seite
+# (spezifische Produkte zuerst, dann Catch-all /product/*)
+/product/google-ranking-check/                          /google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/   301
+/product/lokalbesucher-professional/                    /google-business-agentur/                                       301
+/product/*                                              /google-business-agentur/                                       301
+/packages/                                              /google-business-agentur/                                       301
+
+# /home-Varianten der Directory-Plugin-URLs (1 Hop statt 2 über /home/:splat)
+/home/category/*                                        /                                                               301
+/home/author/*                                          /unser-team/                                                    301
+/home/pf/*                                              /case-studies/                                                  301
+
 # ── Wildcard: /home/* → /* ────────────────────────────────────────────────────
 /home/:splat                                            /:splat                                                         301
 
@@ -36,5 +63,5 @@
 /xmlrpc.php                                             /                                                               301
 /category/*                                             /                                                               301
 /tag/*                                                  /                                                               301
-/author/*                                               /                                                               301
+/author/*                                               /unser-team/                                                    301
 /page/*                                                 /                                                               301
