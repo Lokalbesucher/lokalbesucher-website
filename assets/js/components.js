@@ -1,24 +1,27 @@
 /* components.js — Lokalbesucher */
 
-/* ── Fade-up IntersectionObserver ──────────────────────────── */
+/* ── Scroll-Reveal IntersectionObserver ────────────────────── */
+/* Behandelt .fade-up (Inline-CSS) UND [data-reveal] (global.css + Inline-CSS).
+   Setzt beide Reveal-Klassen, weil je nach Seite .is-visible bzw. .revealed greift. */
 (function () {
+  var SEL = '.fade-up, [data-reveal]';
+  function reveal(el) { el.classList.add('is-visible', 'revealed'); }
+
   if (!('IntersectionObserver' in window)) {
-    document.querySelectorAll('.fade-up').forEach(function (el) {
-      el.classList.add('is-visible');
-    });
+    document.querySelectorAll(SEL).forEach(reveal);
     return;
   }
 
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
+        reveal(entry.target);
         observer.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.fade-up').forEach(function (el) {
+  document.querySelectorAll(SEL).forEach(function (el) {
     observer.observe(el);
   });
 }());
