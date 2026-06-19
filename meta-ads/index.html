@@ -167,6 +167,64 @@
     .footer-legal-links a:hover{color:#e8eaf6}
     [data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
     [data-reveal].is-visible{opacity:1;transform:none}
+    /* Trust bar */
+    .trust-bar{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#1e2240;border:1px solid #1e2240;border-radius:16px;overflow:hidden;margin-top:.5rem}
+    @media(min-width:768px){.trust-bar{grid-template-columns:repeat(4,1fr)}}
+    .trust-item{background:#0c0e1a;padding:1.5rem 1.1rem;text-align:center}
+    .trust-num{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:clamp(1.45rem,4vw,2rem);color:#ffbd59;line-height:1}
+    .trust-label{font-size:.78rem;color:#7c83aa;margin-top:.45rem;line-height:1.4}
+    /* Problem cards */
+    .problem-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:2rem}
+    @media(min-width:768px){.problem-grid{grid-template-columns:repeat(3,1fr)}}
+    .problem-card{background:#0c0e1a;border:1px solid #1e2240;border-radius:16px;padding:1.75rem}
+    .problem-card .x{width:40px;height:40px;border-radius:10px;background:rgba(255,92,92,.1);display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:#ff5c5c;font-size:1.4rem;font-weight:700}
+    .problem-card h3{font-size:1.05rem;color:#e8eaf6;margin-bottom:.5rem}
+    .problem-card p{font-size:.875rem;color:#7c83aa;line-height:1.7}
+    /* Package bundle */
+    .pkg-grid{display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:1.5rem}
+    @media(min-width:640px){.pkg-grid{grid-template-columns:repeat(2,1fr)}}
+    .pkg-item{display:flex;gap:.7rem;align-items:flex-start;background:#0c0e1a;border:1px solid #1e2240;border-radius:12px;padding:1rem 1.15rem}
+    .pkg-item svg{flex-shrink:0;margin-top:.15rem}
+    .pkg-item strong{display:block;color:#e8eaf6;font-size:.9rem;font-family:'Syne',system-ui,sans-serif;margin-bottom:.15rem}
+    .pkg-item span{font-size:.82rem;color:#7c83aa;line-height:1.55}
+    /* Compare table */
+    .compare-wrap{overflow-x:auto;margin-top:1.5rem;border:1px solid #1e2240;border-radius:16px}
+    .compare{width:100%;border-collapse:collapse;min-width:480px}
+    .compare th,.compare td{padding:1rem 1.15rem;text-align:left;font-size:.875rem;border-bottom:1px solid #1e2240;vertical-align:top}
+    .compare thead th{font-family:'Syne',system-ui,sans-serif;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:#7c83aa;background:#0c0e1a}
+    .compare th[scope=row]{color:#e8eaf6;font-weight:500;font-family:'DM Sans',sans-serif;text-transform:none;letter-spacing:0}
+    .compare .col-us{color:#e8eaf6;background:rgba(255,189,89,.05)}
+    .compare .col-us strong{color:#ffbd59}
+    .compare tr:last-child td,.compare tr:last-child th{border-bottom:none}
+    /* For whom */
+    .forwhom{display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:1.5rem}
+    @media(min-width:640px){.forwhom{grid-template-columns:repeat(2,1fr)}}
+    .forwhom li{display:flex;gap:.6rem;align-items:center;background:#111328;border:1px solid #1e2240;border-radius:12px;padding:.9rem 1.15rem;font-size:.9rem;color:#e8eaf6}
+    .forwhom li svg{flex-shrink:0;color:#3ecf8e}
+    /* Lead form */
+    .lead-form-section{background:linear-gradient(135deg,#111328 0%,#181b35 100%);border:1px solid #1e2240;border-radius:24px;padding:2.5rem 1.5rem;max-width:820px;margin-inline:auto}
+    @media(min-width:768px){.lead-form-section{padding:3rem}}
+    .lead-form{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.75rem}
+    @media(min-width:600px){.lead-form{grid-template-columns:1fr 1fr}}
+    .lf-field{display:flex;flex-direction:column;gap:.4rem}
+    .lf-field.full{grid-column:1/-1}
+    .lf-field label{font-size:.8rem;font-weight:600;color:#7c83aa}
+    .lf-field input,.lf-field select{width:100%;padding:.85rem 1rem;background:#0c0e1a;border:1.5px solid #1e2240;border-radius:12px;color:#e8eaf6;font-size:1rem;font-family:inherit;transition:border-color .2s}
+    .lf-field input:focus,.lf-field select:focus{outline:none;border-color:rgba(255,189,89,.5)}
+    .lf-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+    .lf-submit{grid-column:1/-1}
+    .lf-legal{grid-column:1/-1;font-size:.75rem;color:#7c83aa;opacity:.7;line-height:1.5}
+    .lf-error{grid-column:1/-1;color:#ff5c5c;font-size:.85rem;display:none}
+    .lf-success{text-align:center;padding:1rem 0}
+    .lf-success .ok{width:56px;height:56px;border-radius:50%;background:rgba(62,207,142,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+    .lf-success h3{font-size:1.3rem;color:#e8eaf6;margin-bottom:.5rem}
+    .lf-success p{color:#7c83aa;font-size:.95rem}
+    /* Sticky mobile CTA */
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:600;display:flex;gap:.6rem;padding:.7rem .9rem;background:rgba(12,14,26,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid #1e2240}
+    .sticky-cta .btn{flex:1;justify-content:center;padding:.85em 1em;font-size:.9rem}
+    @media(min-width:768px){.sticky-cta{display:none}}
+    @media(max-width:767px){.whatsapp-float{bottom:5rem}body{padding-bottom:4.5rem}}
+    .inline-cta{text-align:center;margin-top:2.25rem}
   </style>
 
   <link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
@@ -186,7 +244,7 @@
         "provider": {"@type":"Organization","@id":"https://lokalbesucher.de/#organization","name":"Lokalbesucher GmbH"},
         "areaServed": "Deutschland",
         "serviceType": "Social Media Advertising",
-        "dateModified": "2026-05-12",
+        "dateModified": "2026-06-19",
         "datePublished": "2026-04-17"
       },
       {
@@ -230,6 +288,30 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Ja — und oft deutlich besser als klassische Stellenanzeigen. Meta ermöglicht gezieltes Targeting nach Beruf, Region, Interessen und Verhalten. Für einen Zahnarzt generierten wir über 100 Bewerbungen in 2 Wochen — deutlich mehr als über traditionelle Jobportale, und zu einem Bruchteil der Kosten."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie viel Werbebudget brauche ich für Meta Ads?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Das hängt von Ziel, Branche und Region ab. Für die meisten lokalen Betriebe starten wir mit einem überschaubaren Test-Budget und skalieren erst, wenn die Zahlen stimmen. Im kostenlosen Strategiegespräch nennen wir eine realistische Spanne für den jeweiligen Fall."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie schnell kommen die ersten Anfragen oder Bewerbungen über Meta Ads?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In der Regel gehen die Kampagnen wenige Tage nach dem Setup live und die ersten Anfragen kommen oft schon in der ersten Woche. Für einen Zahnarzt waren es über 100 Bewerbungen in zwei Wochen. Die Kosten pro Lead sinken danach meist weiter, weil laufend optimiert wird."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Brauche ich für Meta Ads eine eigene Website oder Landingpage?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nicht zwingend. Über native Lead-Formulare direkt in Facebook und Instagram funktionieren Kampagnen auch ohne Website. Wenn eine Landingpage sinnvoll ist, wird sie passend zur Anzeige erstellt, damit die Botschaft vom Klick bis zur Anfrage durchgängig ist."
             }
           }
         ]
@@ -329,21 +411,20 @@
 
       <h1 id="hero-title" class="hero-title">
         Meta Ads Agentur —<br>
-        <em>Leads unter 30 €.</em> Optional mit Termin.
+        <em>planbar neue Kunden und Bewerber.</em>
       </h1>
 
       <p class="hero-desc">
-        Jemand sucht gerade nicht nach dir — aber in drei Tagen könnte er Kunde sein.
-        Meta Ads sprechen genau diese Gruppe an: gezielt nach Region, Alter und Interessen.
-        Wir entwickeln Kampagne, Creatives und bei Bedarf das Lead-Qualifying. Du bekommst fertige Anfragen.
-      <p style="font-size:.78rem;color:#7c83aa;margin-bottom:1.5rem"><time datetime="2026-05-12">Zuletzt aktualisiert: Mai 2026</time></p>
-
+        Facebook &amp; Instagram Ads, die nicht nur Reichweite bringen, sondern <strong style="color:#e8eaf6">qualifizierte Anfragen und Bewerbungen</strong> —
+        auf Wunsch bis zum fertig gebuchten Termin. Wir schalten dieselben Kampagnen für uns selbst und generieren eigene Anfragen für unter 30 €.
       </p>
+      <p style="font-size:.78rem;color:#7c83aa;margin-bottom:1.5rem"><time datetime="2026-06-19">Zuletzt aktualisiert: Juni 2026</time></p>
 
       <div class="hero-cta">
-        <a href="https://wa.me/4915122358883" class="btn btn-primary btn-lg" rel="noopener noreferrer" target="_blank">
+        <a href="#anfrage" class="btn btn-primary btn-lg">Kostenloses Strategiegespräch sichern</a>
+        <a href="https://wa.me/4915122358883" class="btn btn-ghost btn-lg" rel="noopener noreferrer" target="_blank">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Kostenlose Kampagnenberatung
+          WhatsApp Beratung
         </a>
         <a href="#ergebnisse" class="btn btn-ghost btn-lg">Echte Ergebnisse sehen</a>
       </div>
@@ -365,6 +446,18 @@
     </div>
   </section>
 
+  <!-- TRUST BAR -->
+  <section style="padding-block:0 1rem" aria-label="Kennzahlen auf einen Blick">
+    <div class="container">
+      <div class="trust-bar">
+        <div class="trust-item"><div class="trust-num">100+</div><div class="trust-label">Bewerbungen in 2 Wochen (Zahnarzt)</div></div>
+        <div class="trust-item"><div class="trust-num">&lt; 30 €</div><div class="trust-label">Lead-Kosten — eigene Kampagnen</div></div>
+        <div class="trust-item"><div class="trust-num">100.000 €+</div><div class="trust-label">Projektanfragen im Gartenbau</div></div>
+        <div class="trust-item"><div class="trust-num">100+</div><div class="trust-label">betreute Unternehmen</div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ── Autorenbox (E-E-A-T) ─────────────────────────────────── -->
   <div style="border-bottom:1px solid #1e2240;padding:1rem 0">
     <div class="container">
@@ -381,6 +474,32 @@
       </div>
     </div>
   </div>
+
+  <!-- PROBLEM -->
+  <section class="section" aria-labelledby="problem-title" data-reveal>
+    <div class="container">
+      <span class="section-label">Warum es oft nicht läuft</span>
+      <h2 id="problem-title" class="section-title">Warum die meisten Betriebe an Facebook &amp; Instagram Ads scheitern</h2>
+      <p class="section-desc">Es liegt fast nie am Budget — sondern an drei Fehlern, die wir bei fast jedem Neukunden vorher sehen.</p>
+      <div class="problem-grid">
+        <div class="problem-card">
+          <div class="x" aria-hidden="true">✕</div>
+          <h3>Teure Jobportale ohne Rücklauf</h3>
+          <p>Stellenanzeigen kosten hunderte Euro und erreichen nur Leute, die ohnehin schon suchen. Die besten Fachkräfte sind angestellt — und dort nicht zu finden.</p>
+        </div>
+        <div class="problem-card">
+          <div class="x" aria-hidden="true">✕</div>
+          <h3>Reichweite statt Anfragen</h3>
+          <p>Likes und Aufrufe zahlen keine Rechnungen. Ohne klares Angebot, passendes Targeting und konvertierende Creatives verbrennt Budget — ohne dass eine echte Anfrage entsteht.</p>
+        </div>
+        <div class="problem-card">
+          <div class="x" aria-hidden="true">✕</div>
+          <h3>Leads, die niemand abarbeitet</h3>
+          <p>Anfragen kommen rein und versanden, weil niemand schnell genug nachfasst oder qualifiziert. Aus heißen Interessenten werden kalte Kontakte.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ANSWER CAPSULE -->
   <section class="section" style="background:#111328;border-top:1px solid #1e2240;border-bottom:1px solid #1e2240" aria-labelledby="was-ist-title">
@@ -435,7 +554,8 @@
           <p class="case-desc">
             Hochpreisige Gartengestaltungen verkaufen sich nicht über Google — die Kunden müssen
             erst inspiriert werden. Meta Ads erreichen genau diese Zielgruppe: Eigenheimbesitzer
-            mit Interesse an Garten und Immobilien. Ergebnis: qualifizierte Projektanfragen für unter 500 € pro Lead.
+            mit Interesse an Garten und Immobilien. Ergebnis: ein kontinuierlicher Strom qualifizierter
+            Projektanfragen für unter 500 € pro Lead — bei Projektwerten von 100.000 € und mehr.
           </p>
         </div>
 
@@ -510,11 +630,11 @@
   <!-- LEISTUNGEN -->
   <section class="section" aria-labelledby="leistungen-title" data-reveal>
     <div class="container">
-      <span class="section-label">Was wir schalten</span>
-      <h2 id="leistungen-title" class="section-title">Meta Ads von Strategie bis Abschluss</h2>
+      <span class="section-label">Rundum-Sorglos</span>
+      <h2 id="leistungen-title" class="section-title">Dein komplettes Meta-Ads-Paket — von Strategie bis gebuchtem Termin</h2>
       <p class="section-desc">
-        Facebook Ads und Instagram Ads sind Werkzeuge — entscheidend ist die Strategie dahinter.
-        Wir übernehmen alles: von der Zielgruppe bis zum gebuchten Termin.
+        Du kümmerst dich um nichts außer um die Anfragen, die reinkommen.
+        Wir übernehmen die komplette Kette — Strategie, Creatives, Schaltung, laufende Optimierung und auf Wunsch Qualifizierung &amp; Terminierung.
       </p>
 
       <div class="service-grid">
@@ -567,6 +687,22 @@
           <p class="service-desc">Impressionen, Klicks, Leads, Kosten pro Lead, Qualifizierungsquote — monatlich aufbereitet und erklärt. Du weißt immer was dein Budget macht und ob sich die Kampagne rechnet.</p>
         </div>
 
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffbd59"><path d="M3.5 18.5l6-6 4 4L22 8.92 20.59 7.5l-7.09 7.09-4-4L2 16.99z"/></svg>
+          </div>
+          <div class="service-title">Laufendes Monitoring &amp; Optimierung</div>
+          <p class="service-desc">Wir überwachen Kosten pro Lead, Zielgruppen und Creatives kontinuierlich und steuern laufend nach — schwache Anzeigen raus, starke hoch skaliert. Eine Kampagne ist bei uns nie „fertig", sie wird Woche für Woche besser.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="#ffbd59"><path d="M12 2l2.39 4.84L19.74 7.6l-3.87 3.77.91 5.33L12 14.18l-4.78 2.52.91-5.33L4.26 7.6l5.35-.76z"/></svg>
+          </div>
+          <div class="service-title">Organischer Content (Add-on)</div>
+          <p class="service-desc">Auf Wunsch übernehmen wir auch dein organisches Posting auf Facebook und Instagram — Ads und Profil ziehen dann an einem Strang. Mehr dazu auf unserer <a href="/social-media-agentur/" style="color:#ffbd59;text-decoration:underline;text-underline-offset:3px">Social-Media-Agentur-Seite</a>.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -600,6 +736,52 @@
           <p class="process-desc">Optional: Wir nehmen die Nachbearbeitung ab. Qualifizierung, Terminierung — du bekommst nur Termine die wirklich was wert sind.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- VERGLEICH -->
+  <section class="section" aria-labelledby="vergleich-title" data-reveal>
+    <div class="container">
+      <div style="max-width:840px;margin-inline:auto">
+        <span class="section-label">Direktvergleich</span>
+        <h2 id="vergleich-title" class="section-title">Social Recruiting über Meta vs. klassische Jobportale</h2>
+        <p class="section-desc">Warum 100+ Bewerbungen in 2 Wochen kein Zufall sind — der Unterschied im Überblick.</p>
+        <div class="compare-wrap">
+          <table class="compare">
+            <thead>
+              <tr><th scope="col">Kriterium</th><th scope="col">Klassische Jobportale</th><th scope="col" class="col-us">Meta Social Recruiting</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Erreichte Kandidaten</th><td>Nur aktiv Suchende</td><td class="col-us"><strong>Auch zufriedene Angestellte</strong> (passiv erreichbar)</td></tr>
+              <tr><th scope="row">Kosten</th><td>Hohe Fixkosten pro Anzeige</td><td class="col-us"><strong>Bruchteil davon</strong> — Budget frei steuerbar</td></tr>
+              <tr><th scope="row">Geschwindigkeit</th><td>Wochen bis Monate</td><td class="col-us"><strong>Erste Bewerbungen in Tagen</strong></td></tr>
+              <tr><th scope="row">Zielgenauigkeit</th><td>Begrenzt nach Jobtitel</td><td class="col-us"><strong>Beruf, Region, Interessen, Verhalten</strong></td></tr>
+              <tr><th scope="row">Typisches Ergebnis</th><td>Wenige, oft unpassende Rückläufer</td><td class="col-us"><strong>100+ Bewerbungen in 2 Wochen</strong> (Zahnarzt)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="answer-capsule" id="faq-meta-vs-jobportal" style="margin-top:1.75rem">
+          <p><strong>Kurz:</strong> Jobportale erreichen nur die Minderheit, die gerade aktiv sucht. Meta Ads erreichen auch die qualifizierten Fachkräfte, die zufrieden angestellt sind — und genau die willst du gewinnen. Für einen Zahnarzt brachten wir so über 100 Bewerbungen in 2 Wochen, zu einem Bruchteil der Jobportal-Kosten.</p>
+        </div>
+        <div class="inline-cta"><a href="#anfrage" class="btn btn-primary btn-lg">Strategiegespräch sichern</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FÜR WEN -->
+  <section class="section" style="background:#111328;border-top:1px solid #1e2240;border-bottom:1px solid #1e2240" aria-labelledby="fuerwen-title" data-reveal>
+    <div class="container">
+      <span class="section-label">Passt das zu dir?</span>
+      <h2 id="fuerwen-title" class="section-title">Für wen Facebook &amp; Instagram Ads besonders funktionieren</h2>
+      <p class="section-desc">Meta Ads spielen ihre Stärke da aus, wo Menschen erst inspiriert werden müssen — oder wo du Personal suchst, das gar nicht aktiv sucht.</p>
+      <ul class="forwhom" role="list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Handwerk &amp; Bau mit Fachkräftemangel</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Garten- &amp; Landschaftsbau mit hochpreisigen Projekten</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Praxen &amp; Kliniken zur Personalgewinnung</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Küchenstudios, Möbel &amp; Wohnen</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Hochpreisige Dienstleistungen mit Beratungsbedarf</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Lokale Betriebe, die planbar Anfragen statt Zufall wollen</li>
+      </ul>
     </div>
   </section>
 
@@ -672,6 +854,101 @@
             </details>
           </div>
 
+          <div class="faq-item" id="faq-budget">
+            <details>
+              <summary>
+                Wie viel Werbebudget brauche ich für Meta Ads?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </summary>
+              <div class="faq-body">
+                <p>Das hängt von Ziel, Branche und Region ab. Für die meisten lokalen Betriebe starten wir mit einem überschaubaren Test-Budget und skalieren erst, wenn die Zahlen stimmen. Im kostenlosen Strategiegespräch nennen wir dir eine realistische Spanne für deinen Fall — kein Budget ins Blaue.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-item" id="faq-erste-leads">
+            <details>
+              <summary>
+                Wie schnell kommen die ersten Anfragen oder Bewerbungen?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </summary>
+              <div class="faq-body">
+                <p>In der Regel gehen die Kampagnen wenige Tage nach dem Setup live, und die ersten Anfragen kommen oft schon in der ersten Woche. Für einen Zahnarzt waren es 100+ Bewerbungen in 2 Wochen. Die Kosten pro Lead sinken danach meist weiter, weil wir laufend optimieren.</p>
+              </div>
+            </details>
+          </div>
+
+          <div class="faq-item" id="faq-website">
+            <details>
+              <summary>
+                Brauche ich für Meta Ads eine eigene Website oder Landingpage?
+                <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+              </summary>
+              <div class="faq-body">
+                <p>Nicht zwingend. Über native Lead-Formulare direkt in Facebook und Instagram funktionieren Kampagnen auch ganz ohne Website. Wenn eine Landingpage sinnvoll ist, erstellen wir sie passend zur Anzeige — damit die Botschaft vom Klick bis zur Anfrage durchgängig ist.</p>
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANFRAGE / LEAD FORM -->
+  <section class="section" id="anfrage" aria-labelledby="anfrage-title" data-reveal>
+    <div class="container">
+      <div class="lead-form-section">
+        <span class="section-label">Kostenloses Strategiegespräch</span>
+        <h2 id="anfrage-title" class="section-title" style="margin-bottom:1rem">Sichere dir deinen Platz für diese Woche</h2>
+
+        <div style="display:flex;gap:.7rem;align-items:flex-start;background:rgba(255,189,89,.07);border:1px solid rgba(255,189,89,.25);border-radius:14px;padding:1rem 1.15rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true" style="flex-shrink:0;margin-top:.1rem"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+          <p style="font-size:.9rem;color:#e8eaf6;line-height:1.65;margin:0"><strong>Wir nehmen pro Woche nur einen neuen Werbekunden auf.</strong> Warum? Weil wir uns vor dem ersten Euro Budget tief in deinen Markt, deinen Wettbewerb und dein Setup einarbeiten — volle Aufmerksamkeit statt Fließband.</p>
+        </div>
+
+        <p style="color:#7c83aa;font-size:.95rem;line-height:1.7;margin-top:1.25rem">In 15 Minuten klären wir, ob Meta Ads für dich rechnen — mit realistischen Zahlen zu erwarteten Leads und Kosten. Unverbindlich und kostenlos.</p>
+
+        <form class="lead-form" id="meta-lead-form" novalidate>
+          <div class="lf-field">
+            <label for="ml-name">Dein Name *</label>
+            <input type="text" id="ml-name" name="name" autocomplete="name" required>
+          </div>
+          <div class="lf-field">
+            <label for="ml-company">Unternehmen *</label>
+            <input type="text" id="ml-company" name="company" autocomplete="organization" required>
+          </div>
+          <div class="lf-field">
+            <label for="ml-branche">Branche</label>
+            <input type="text" id="ml-branche" name="branche" autocomplete="off" placeholder="z.B. Zahnarztpraxis, Galabau, Küchenstudio …">
+          </div>
+          <div class="lf-field">
+            <label for="ml-goal">Dein Ziel</label>
+            <select id="ml-goal" name="goal">
+              <option value="">Bitte wählen …</option>
+              <option>Mehr Kundenanfragen</option>
+              <option>Mitarbeiter / Bewerber gewinnen</option>
+              <option>Beides</option>
+            </select>
+          </div>
+          <div class="lf-field full">
+            <label for="ml-phone">Mobilnummer *</label>
+            <input type="tel" id="ml-phone" name="phone" autocomplete="tel" placeholder="0171 1234567" required>
+          </div>
+          <div class="lf-field full">
+            <label for="ml-email">E-Mail (optional)</label>
+            <input type="email" id="ml-email" name="email" autocomplete="email" placeholder="name@firma.de">
+          </div>
+          <input type="text" class="lf-hp" id="ml-website" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="lf-error" id="ml-error" role="alert"></p>
+          <button type="submit" class="btn btn-primary btn-lg lf-submit" id="ml-submit">Kostenloses Strategiegespräch anfragen →</button>
+          <p class="lf-legal">Mit dem Absenden erklärst du dich mit einer Kontaktaufnahme einverstanden. Deine Daten werden gemäß <a href="/datenschutz/" style="color:#7c83aa;text-decoration:underline">DSGVO</a> vertraulich behandelt — keine Weitergabe an Dritte.</p>
+        </form>
+
+        <div id="meta-lead-success" class="lf-success" hidden>
+          <div class="ok" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3>Danke! Anfrage erhalten.</h3>
+          <p>Tobias meldet sich <strong style="color:#e8eaf6">heute noch</strong> persönlich bei dir. Noch schneller? <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank" style="color:#ffbd59;text-decoration:underline">Direkt via WhatsApp</a>.</p>
         </div>
       </div>
     </div>
@@ -682,14 +959,14 @@
     <div class="container">
       <div class="cta-box" style="background:linear-gradient(135deg,#0c0e1a 0%,#111328 100%)">
         <span class="section-label" style="display:block;margin-bottom:.75rem">Nächster Schritt</span>
-        <h2 id="cta-title">Kostenlose Kampagnenberatung</h2>
-        <p>Wir schauen uns an ob Meta Ads für dein Unternehmen Sinn machen — mit realistischen Zahlen zu erwarteten Leads und Kosten. Und ob Lead-Qualifizierung und Terminierung für dich interessant ist.</p>
+        <h2 id="cta-title">Bereit für planbare Anfragen?</h2>
+        <p>Wir arbeiten nur mit Betrieben, bei denen sich Meta Ads wirklich rechnen — und nehmen pro Woche nur einen neuen Werbekunden auf. Im kostenlosen Strategiegespräch klären wir mit echten Zahlen, ob du dazugehörst.</p>
         <div class="cta-btns">
           <a href="https://wa.me/4915122358883" class="btn btn-primary btn-lg" rel="noopener noreferrer" target="_blank">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             Jetzt Beratung anfragen
           </a>
-          <a href="mailto:info@lokalbesucher.de" class="btn btn-ghost btn-lg">info@lokalbesucher.de</a>
+          <a href="#anfrage" class="btn btn-ghost btn-lg">Lieber das Formular ausfüllen</a>
         </div>
       </div>
     </div>
@@ -756,10 +1033,56 @@
   </div>
 </footer>
 
+<div class="sticky-cta" role="region" aria-label="Schnellkontakt">
+  <a href="#anfrage" class="btn btn-primary">Strategiegespräch</a>
+  <a href="https://wa.me/4915122358883" class="btn btn-ghost" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+</div>
+
 <a href="https://wa.me/4915122358883" class="whatsapp-float" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp Beratung starten">
   <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
+<script>
+(function(){
+  // GHL Inbound-Webhook für source "meta-ads":
+  var META_WEBHOOK = "https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/d1f245e0-1d61-4177-af6c-a15378ba74d0";
+  var form = document.getElementById('meta-lead-form');
+  if(!form) return;
+  var loadTime = Date.now();
+  var btn = document.getElementById('ml-submit');
+  var err = document.getElementById('ml-error');
+  function showErr(m){ err.textContent = m; err.style.display = 'block'; }
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    err.style.display = 'none';
+    if (document.getElementById('ml-website').value) return;        // Honeypot
+    if (Date.now() - loadTime < 1200) return;                       // Zeitfalle
+    var name    = document.getElementById('ml-name').value.trim();
+    var company = document.getElementById('ml-company').value.trim();
+    var phone   = document.getElementById('ml-phone').value.trim();
+    if (!name || !company || !phone) { showErr('Bitte fülle Name, Unternehmen und Mobilnummer aus.'); return; }
+    btn.disabled = true; var lbl = btn.textContent; btn.textContent = 'Wird gesendet …';
+    var data = {
+      name: name, companyName: company, phone: phone,
+      email:   document.getElementById('ml-email').value.trim(),
+      branche: document.getElementById('ml-branche').value,
+      goal:    document.getElementById('ml-goal').value,
+      source: 'meta-ads', timestamp: new Date().toISOString()
+    };
+    try {
+      if (!META_WEBHOOK) throw new Error('no-webhook');
+      var res = await fetch(META_WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data), keepalive:true });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      form.hidden = true;
+      document.getElementById('meta-lead-success').hidden = false;
+      if (typeof gtag === 'function') { gtag('event','generate_lead',{event_category:'lead',event_label:'meta-ads'}); }
+    } catch(ex) {
+      btn.disabled = false; btn.textContent = lbl;
+      showErr('Senden fehlgeschlagen — bitte versuche es erneut oder schreib uns direkt via WhatsApp.');
+    }
+  });
+}());
+</script>
 <script src="/assets/js/cookie-consent.js" defer></script>
 <script src="/assets/js/components.js" defer></script>
 </body>
