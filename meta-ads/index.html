@@ -895,6 +895,21 @@
     </div>
   </section>
 
+  <!-- IN ZAHLEN -->
+  <section class="section" aria-labelledby="zahlen-title" data-reveal>
+    <div class="container">
+      <span class="section-label">Zahlen, Daten, Fakten</span>
+      <h2 id="zahlen-title" class="section-title">Was hinter Lokalbesucher steckt</h2>
+      <p class="section-desc">Keine Versprechen ins Blaue — belastbare Zahlen aus über 100 betreuten Unternehmen.</p>
+      <div class="trust-bar">
+        <div class="trust-item"><div class="trust-num">100+</div><div class="trust-label">betreute Unternehmen</div></div>
+        <div class="trust-item"><div class="trust-num">3,9 Mio.</div><div class="trust-label">generierte Profilaufrufe</div></div>
+        <div class="trust-item"><div class="trust-num">780.000</div><div class="trust-label">Aktionen (Anrufe, Routen, Klicks)</div></div>
+        <div class="trust-item"><div class="trust-num">20 Jahre</div><div class="trust-label">Erfahrung in Sales &amp; Marketing</div></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ANFRAGE / LEAD FORM -->
   <section class="section" id="anfrage" aria-labelledby="anfrage-title" data-reveal>
     <div class="container">
@@ -1073,8 +1088,13 @@
       if (!META_WEBHOOK) throw new Error('no-webhook');
       var res = await fetch(META_WEBHOOK, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data), keepalive:true });
       if (!res.ok) throw new Error('HTTP ' + res.status);
+      btn.textContent = lbl;
+      btn.disabled = false;
       form.hidden = true;
-      document.getElementById('meta-lead-success').hidden = false;
+      form.style.display = 'none';   // [hidden] wird sonst von .lead-form{display:grid} ueberschrieben
+      var ok = document.getElementById('meta-lead-success');
+      ok.hidden = false;
+      ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
       if (typeof gtag === 'function') { gtag('event','generate_lead',{event_category:'lead',event_label:'meta-ads'}); }
     } catch(ex) {
       btn.disabled = false; btn.textContent = lbl;
