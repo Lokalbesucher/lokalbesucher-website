@@ -716,7 +716,7 @@
                 </div>
               </div>
               <p id="sgLeadErr" class="sg-error sg-hidden" role="alert"></p>
-              <button class="sg-btn-main" onclick="sgSubmitLead()">Code freischalten →</button>
+              <button class="sg-btn-main" onclick="sgSubmitLead(this)">Code freischalten →</button>
               <p class="sg-lead-legal">Mit dem Absenden erklärst du dich mit einer Kontaktaufnahme einverstanden. Deine Daten werden gemäß DSGVO vertraulich behandelt.</p>
             </div>
           </div>
@@ -969,7 +969,7 @@
               companyName: document.getElementById('sg-business').value.trim(),
               email:       document.getElementById('sg-email').value.trim(),
               phone:       document.getElementById('sg-phone').value.trim(),
-              source:      'Schema.org Generator'
+              source:      'schema-beratung'
             })
           });
           if (!res.ok) throw new Error(res.status);
@@ -1254,7 +1254,7 @@ function sgToggleSeoEdit(){
   }
 }
 
-function sgSubmitLead(){
+async function sgSubmitLead(btn){
   const email=sg$("sgLeadEmail").value.trim();
   const phone=sg$("sgLeadPhone").value.trim();
   const errEl=sg$("sgLeadErr");
@@ -1265,13 +1265,26 @@ function sgSubmitLead(){
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){errEl.textContent="Bitte gültige E-Mail eingeben.";errEl.classList.remove("sg-hidden");return}
   if(!sgValidatePhone(phone)){errEl.textContent="Bitte eine gültige deutsche Mobilnummer eingeben (z.B. 0171 1234567).";errEl.classList.remove("sg-hidden");phoneInp.classList.add("has-error");return}
   errEl.classList.add("sg-hidden");
-  sgHide("sgCodeLocked");
-  sgShow("sgCodeUnlocked");
-  if(SG_WEBHOOK){
-    const data={email,phone,business_name:sgPlace?.name||"",business_address:sgPlace?.formatted_address||"",business_type:sgSchema?.["@type"]||"",business_rating:String(sgPlace?.rating||""),business_reviews:String(sgPlace?.user_ratings_total||""),business_website:sgPlace?.website||"",business_phone:sgPlace?.international_phone_number||sgPlace?.formatted_phone_number||"",schema_score:sg$("sgScoreBadge")?.textContent||"",source:"schema-generator",timestamp:new Date().toISOString()};
-    const params=new URLSearchParams();
-    Object.entries(data).forEach(([k,v])=>params.append(k,v));
-    navigator.sendBeacon?navigator.sendBeacon(SG_WEBHOOK,params):fetch(SG_WEBHOOK,{method:"POST",body:params,mode:"no-cors"}).catch(e=>console.warn("Webhook:",e));
+
+  const data={email,phone,business_name:sgPlace?.name||"",business_address:sgPlace?.formatted_address||"",business_type:sgSchema?.["@type"]||"",business_rating:String(sgPlace?.rating||""),business_reviews:String(sgPlace?.user_ratings_total||""),business_website:sgPlace?.website||"",business_phone:sgPlace?.international_phone_number||sgPlace?.formatted_phone_number||"",schema_score:sg$("sgScoreBadge")?.textContent||"",source:"schema-generator",timestamp:new Date().toISOString()};
+
+  // Erst Lead sichern (mit Bestätigung), DANN Code freischalten.
+  const origLabel=btn?btn.textContent:"";
+  if(btn){btn.disabled=true;btn.textContent="Wird freigeschaltet …";}
+  try{
+    if(SG_WEBHOOK){
+      const params=new URLSearchParams();
+      Object.entries(data).forEach(([k,v])=>params.append(k,v));
+      const res=await fetch(SG_WEBHOOK,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},body:params,keepalive:true});
+      if(!res.ok)throw new Error("HTTP "+res.status);
+    }
+    sgHide("sgCodeLocked");
+    sgShow("sgCodeUnlocked");
+    if(typeof gtag==="function"){gtag('event','unlock_code',{event_category:'lead',event_label:'schema-org-generator'});}
+  }catch(ex){
+    if(btn){btn.disabled=false;btn.textContent=origLabel||"Code freischalten →";}
+    errEl.textContent="Senden fehlgeschlagen — bitte versuche es erneut.";
+    errEl.classList.remove("sg-hidden");
   }
 }
 
