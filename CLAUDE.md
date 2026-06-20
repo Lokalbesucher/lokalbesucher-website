@@ -23,7 +23,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 
 **Tobias Frank** — Inhaber Lokalbesucher GmbH
 - Google Business Agentur, Recklinghausen, NRW
-- Team: ~11 Mitarbeiter
+- Team: ~12 Mitarbeiter
 - Adresse: Im Westerkamp 7, 45711 Datteln
 - Zielgruppe: KMU in Deutschland die lokal bei Google gefunden werden wollen
 - Erfahrung: ~20 Jahre Sales & Marketing (Salesforce, Amazon, StepStone)
