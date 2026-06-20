@@ -185,11 +185,19 @@
     .ticks svg{flex-shrink:0;color:var(--yellow);margin-top:.15rem}
 
     /* QUOTE (navy) */
-    .quote{background:var(--surface);border-block:1px solid var(--border);padding:5rem 0;overflow:hidden}
-    .quote .mark{font-family:'Syne',sans-serif;font-size:9rem;line-height:.6;font-weight:800;color:var(--yellow);opacity:.9}
-    .quote blockquote{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,3.6vw,2.4rem);line-height:1.25;max-width:24ch;letter-spacing:-.02em;margin:.5rem 0 1.4rem}
-    .quote .stars{color:var(--yellow);letter-spacing:.18em;margin-bottom:1.1rem}
-    .quote cite{font-style:normal;color:var(--muted);font-weight:600}
+    .quote{background:var(--surface);border-block:1px solid var(--border);padding:4.5rem 0;overflow:hidden}
+    .q-head{margin-bottom:2rem}
+    .q-carousel{overflow:hidden}
+    .q-track{display:flex;gap:1.5rem;transition:transform .9s cubic-bezier(.4,0,.2,1);will-change:transform}
+    .q-card{flex:0 0 calc(50% - .75rem);background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:2rem;display:flex;flex-direction:column}
+    @media(max-width:767px){.q-card{flex:0 0 100%}}
+    .q-card .stars{color:var(--yellow);letter-spacing:.16em;margin-bottom:1rem}
+    .q-card blockquote{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.1rem,1.9vw,1.45rem);line-height:1.4;letter-spacing:-.01em;margin-bottom:1.1rem;color:var(--text)}
+    .q-card cite{font-style:normal;color:var(--text);font-weight:700;font-size:.95rem;font-family:'Syne',sans-serif}
+    .q-card .g{display:inline-flex;align-items:center;gap:.45rem;font-size:.76rem;color:var(--muted);margin-top:.5rem}
+    .gdots{display:inline-flex;gap:3px}
+    .gdots i{width:7px;height:7px;border-radius:50%;display:block}
+    .gdots i:nth-child(1){background:#4285F4}.gdots i:nth-child(2){background:#EA4335}.gdots i:nth-child(3){background:#FBBC05}.gdots i:nth-child(4){background:#34A853}
 
     /* FORM */
     .form-wrap{background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--border);border-radius:26px;padding:2.5rem 1.5rem;max-width:820px;margin-inline:auto}
@@ -461,13 +469,29 @@
     </div>
   </section>
 
-  <!-- QUOTE -->
+  <!-- KUNDENSTIMMEN (rotierend) -->
   <section class="quote">
     <div class="wrap">
-      <div class="mark" aria-hidden="true">“</div>
-      <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-      <blockquote>Ein paar Wochen später wussten wir nicht, welche Anfrage wir zuerst bearbeiten sollten.</blockquote>
-      <cite>— Susanne Janßen, zufriedene Kundin</cite>
+      <div class="q-head" data-r>
+        <span class="eyebrow">Kundenstimmen</span>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-top:.6rem">Echte Stimmen, echte Ergebnisse.</h2>
+      </div>
+      <div class="q-carousel">
+        <div class="q-track" id="qTrack">
+          <figure class="q-card">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote>„Von Beginn an hatten wir mit Tobias einen festen Ansprechpartner. Ein paar Wochen später wussten wir nicht, welche Anfrage wir zuerst bearbeiten sollten. Unsere Werbung ist einfach TOP."</blockquote>
+            <figcaption><cite>Susanne Janßen</cite></figcaption>
+            <span class="g"><span class="gdots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Google Rezension</span>
+          </figure>
+          <figure class="q-card">
+            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+            <blockquote>„Der Service ist professionell, zuverlässig und genau auf die Bedürfnisse zugeschnitten. Besonders beeindruckt hat mich die transparente Kommunikation und die schnelle Umsetzung. Klare Empfehlung!"</blockquote>
+            <figcaption><cite>Mesut Aksoy</cite></figcaption>
+            <span class="g"><span class="gdots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Google Rezension</span>
+          </figure>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -590,6 +614,18 @@
       }catch(x){ b.disabled=false; b.textContent=l; e.textContent='Senden fehlgeschlagen — bitte erneut versuchen oder via WhatsApp.'; e.style.display='block'; }
     });
     function hp(id){return document.getElementById(id).value.trim();}
+  }());
+
+  // Kundenstimmen-Karussell (Desktop 2, Mobil 1, langsame Rotation)
+  (function(){
+    var track=document.getElementById('qTrack'); if(!track) return;
+    var cards=track.children; if(cards.length<2) return;
+    var idx=0, GAP=24;
+    function vis(){return window.innerWidth<768?1:2;}
+    function maxI(){return Math.max(0, cards.length - vis());}
+    function go(){ var cw=cards[0].getBoundingClientRect().width+GAP; track.style.transform='translateX('+(-idx*cw)+'px)'; }
+    setInterval(function(){ idx = idx>=maxI()?0:idx+1; go(); }, 5200);
+    window.addEventListener('resize', function(){ if(idx>maxI())idx=maxI(); go(); });
   }());
 </script>
 <script src="/assets/js/components.js?v=20260619" defer></script>
