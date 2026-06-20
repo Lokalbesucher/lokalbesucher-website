@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Design-Preview — Lokalbesucher (intern)</title>
+
+  <link rel="preload" href="/assets/fonts/syne-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <style>
+    @font-face{font-family:'Syne';src:url('/assets/fonts/syne-800.woff2') format('woff2');font-weight:800;font-display:swap}
+    @font-face{font-family:'Syne';src:url('/assets/fonts/syne-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    @font-face{font-family:'DM Sans';src:url('/assets/fonts/dm-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
+
+    :root{
+      --bg:#0b0d18; --bg2:#0f1222; --surface:#13162b; --border:#23284a;
+      --yellow:#ffbd59; --yellow-deep:#f0a23a; --green:#3ecf8e;
+      --text:#eef0fb; --muted:#9097bd;
+      --cream:#f4efe4; --ink:#14151f;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    h1,h2,h3{font-family:'Syne',system-ui,sans-serif;line-height:1.02;letter-spacing:-.02em}
+    .wrap{width:100%;max-width:1180px;margin-inline:auto;padding-inline:1.5rem}
+    @media(min-width:900px){.wrap{padding-inline:2.5rem}}
+
+    /* grain overlay (kein Bild-Request, reines SVG) */
+    body::after{content:'';position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:.05;mix-blend-mode:soft-light;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+    /* Preview-Hinweis */
+    .pv-bar{background:var(--yellow);color:#1a1205;text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.45rem}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;padding:.95em 1.7em;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s}
+    .btn-y{background:var(--yellow);color:#1a1205;box-shadow:0 10px 30px -8px rgba(255,189,89,.55)}
+    .btn-y:hover{transform:translateY(-2px) rotate(-.5deg);box-shadow:0 16px 40px -10px rgba(255,189,89,.7)}
+    .btn-o{border-color:var(--border);color:var(--text)}
+    .btn-o:hover{border-color:var(--yellow);color:var(--yellow)}
+
+    /* hand-drawn marker */
+    .hl{position:relative;white-space:nowrap;color:var(--yellow)}
+    .hl svg{position:absolute;left:-2%;bottom:-.22em;width:104%;height:.5em;overflow:visible}
+    .hl path{fill:none;stroke:var(--yellow);stroke-width:5;stroke-linecap:round;opacity:.9}
+    .circle{position:relative;display:inline-block}
+    .circle svg{position:absolute;left:-12%;top:-14%;width:124%;height:128%;overflow:visible}
+    .circle path{fill:none;stroke:var(--yellow);stroke-width:4;stroke-linecap:round}
+
+    /* eyebrow */
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    .eyebrow .pin{width:14px;height:14px;color:var(--yellow)}
+
+    /* HERO */
+    .hero{position:relative;padding:3rem 0 4.5rem;background:
+      radial-gradient(120% 80% at 85% -10%,rgba(255,189,89,.10),transparent 55%),
+      linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+    @media(min-width:920px){.hero-grid{grid-template-columns:1.15fr .85fr;gap:3rem}}
+    .hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;margin:1.1rem 0 1.3rem}
+    .hero h1 .light{color:var(--muted);font-weight:700}
+    .hero-sub{font-size:clamp(1.05rem,2.2vw,1.25rem);color:var(--muted);max-width:34ch;margin-bottom:2rem}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+    .hero-meta{display:flex;gap:1.6rem;margin-top:2.2rem;flex-wrap:wrap}
+    .hero-meta div{font-size:.85rem;color:var(--muted)}
+    .hero-meta b{display:block;font-family:'Syne',sans-serif;font-size:1.5rem;color:var(--text);font-weight:800;letter-spacing:-.02em}
+
+    /* hero visual — getiltetes Foto + floating chip + pin */
+    .hero-visual{position:relative;justify-self:center}
+    .photo-frame{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--border);transform:rotate(2.2deg);box-shadow:0 40px 80px -30px rgba(0,0,0,.8);max-width:420px}
+    .photo-frame img{width:100%;filter:saturate(1.05) contrast(1.03)}
+    .photo-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(160deg,transparent 50%,rgba(255,189,89,.12))}
+    .chip{position:absolute;left:-26px;bottom:34px;background:var(--cream);color:var(--ink);border-radius:16px;padding:.85rem 1.1rem;box-shadow:0 24px 50px -16px rgba(0,0,0,.7);transform:rotate(-3deg)}
+    .chip b{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:800;display:block;letter-spacing:-.02em}
+    .chip span{font-size:.72rem;color:#5c5b52;font-weight:600}
+    .blob{position:absolute;right:-30px;top:-26px;width:96px;height:96px;background:var(--yellow);border-radius:46% 54% 60% 40%/52% 44% 56% 48%;z-index:-1;opacity:.85}
+
+    /* Marquee / Kundenvertrauen */
+    .trust{padding:2.2rem 0;border-block:1px solid var(--border);background:var(--bg2)}
+    .trust p{text-align:center;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.3rem}
+    .logos{display:flex;gap:2.2rem;align-items:center;justify-content:center;flex-wrap:wrap}
+    .logos img{height:54px;width:auto;border-radius:12px;opacity:.78;filter:grayscale(.3);transition:opacity .25s,filter .25s,transform .25s}
+    .logos img:hover{opacity:1;filter:none;transform:translateY(-3px)}
+
+    /* Zahlen — versetztes, editoriales Raster */
+    .nums{padding:5rem 0}
+    .nums-head{max-width:30ch;margin-bottom:2.5rem}
+    .nums-head h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:800}
+    .nums-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+    @media(min-width:760px){.nums-grid{grid-template-columns:repeat(4,1fr)}}
+    .stat{padding:1.6rem 1.2rem;border-radius:18px;border:1px solid var(--border);background:var(--surface)}
+    .stat:nth-child(odd){transform:translateY(-14px)}
+    .stat:nth-child(2){background:var(--yellow);color:#1a1205;border-color:transparent}
+    .stat .big{font-family:'Syne',sans-serif;font-size:clamp(2.1rem,4vw,2.9rem);font-weight:800;letter-spacing:-.03em;line-height:1}
+    .stat small{display:block;margin-top:.5rem;font-size:.82rem;color:var(--muted);line-height:1.45}
+    .stat:nth-child(2) small{color:#6a5320}
+
+    /* CREAM Section — bricht das Dauer-Dunkel */
+    .cream{background:var(--cream);color:var(--ink);padding:5.5rem 0;position:relative}
+    .cream .eyebrow{color:#8a7a52}
+    .cream h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;max-width:18ch;margin:1rem 0 2.8rem}
+    .steps{display:grid;grid-template-columns:1fr;gap:1.4rem}
+    @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+    .step{padding-top:1.2rem;border-top:2px solid var(--ink)}
+    .step .n{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:999px;background:var(--ink);color:var(--cream);margin-bottom:.9rem}
+    .step h3{font-size:1.25rem;font-weight:700;margin-bottom:.5rem}
+    .step p{color:#54534a;font-size:.95rem}
+
+    /* Split photo + claim */
+    .split{padding:5.5rem 0}
+    .split-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+    @media(min-width:900px){.split-grid{grid-template-columns:.95fr 1.05fr;gap:3.5rem}}
+    .split-photo{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--border);transform:rotate(-1.6deg)}
+    .split-photo img{width:100%}
+    .split h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;margin-bottom:1.2rem}
+    .split p{color:var(--muted);font-size:1.05rem;margin-bottom:1.2rem;max-width:40ch}
+    .ticks{display:flex;flex-direction:column;gap:.7rem}
+    .ticks div{display:flex;gap:.6rem;align-items:flex-start;font-size:.98rem}
+    .ticks svg{flex-shrink:0;color:var(--yellow);margin-top:.15rem}
+
+    /* Testimonial — gelber Block, übergroßes Zitat */
+    .quote{background:var(--yellow);color:#1a1205;padding:5rem 0;position:relative;overflow:hidden}
+    .quote .mark{font-family:'Syne',sans-serif;font-size:9rem;line-height:.6;font-weight:800;opacity:.35}
+    .quote blockquote{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,3.6vw,2.5rem);line-height:1.2;max-width:20ch;letter-spacing:-.02em;margin:.5rem 0 1.6rem}
+    .quote cite{font-style:normal;font-weight:600;color:#6a5320}
+    .quote .stars{color:#1a1205;font-size:1.1rem;letter-spacing:.18em;margin-bottom:1.2rem}
+
+    /* CTA */
+    .cta{padding:6rem 0;text-align:center;background:
+      radial-gradient(80% 120% at 50% 120%,rgba(255,189,89,.16),transparent 60%),var(--bg)}
+    .cta h2{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;max-width:18ch;margin:0 auto 1.4rem}
+    .cta p{color:var(--muted);max-width:42ch;margin:0 auto 2.2rem}
+
+    footer{padding:2.5rem 0;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem;text-align:center}
+
+    [data-r]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    [data-r].in{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+
+<div class="pv-bar">Interne Design-Preview · noindex · entscheidet die Richtung</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg> Google Business Agentur · Kreis Recklinghausen</span>
+      <h1>Damit dich deine Kunden
+        <span class="hl">finden<svg viewBox="0 0 220 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C 60 4, 165 4, 216 11"/></svg></span><br>
+        <span class="light">— nicht deine Konkurrenz.</span>
+      </h1>
+      <p class="hero-sub">Wir bringen dein Unternehmen auf Google Maps nach oben — mit echten Bewertungen, Profilpflege und einem Team, das du beim Vornamen kennst.</p>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-y">Kostenlosen Sichtbarkeits-Check holen</a>
+        <a href="#" class="btn btn-o">So funktioniert's</a>
+      </div>
+      <div class="hero-meta">
+        <div><b>3,9 Mio.</b> Profilaufrufe generiert</div>
+        <div><b>100+</b> betreute Unternehmen</div>
+        <div><b>780.000</b> Aktionen ausgelöst</div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <span class="blob" aria-hidden="true"></span>
+      <div class="photo-frame">
+        <img src="/assets/images/lokalbesucher-team-datteln-nrw.webp" alt="Das Lokalbesucher Team aus dem Kreis Recklinghausen" width="420" height="300" loading="eager">
+      </div>
+      <div class="chip">
+        <b>+158 %</b>
+        <span>mehr Profilaufrufe in 3 Monaten</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="wrap">
+    <p>Vertrauen von lokalen Unternehmen in ganz Deutschland</p>
+    <div class="logos">
+      <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp" alt="EasyFitness" width="120" height="54" loading="lazy">
+      <img src="/assets/images/mangalmezze-kunde-lokalbesucher.webp" alt="Mangal Mezze" width="120" height="54" loading="lazy">
+      <img src="/assets/images/orthoclinic-kunde-lokalbesucher.webp" alt="Orthoclinic" width="120" height="54" loading="lazy">
+      <img src="/assets/images/bb-kunde-lokalbesucher.webp" alt="Kunde von Lokalbesucher" width="120" height="54" loading="lazy">
+      <img src="/assets/images/qulis-kunde-lokalbesucher.webp" alt="Qulis" width="120" height="54" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ZAHLEN -->
+<section class="nums">
+  <div class="wrap">
+    <div class="nums-head" data-r>
+      <span class="eyebrow">Zahlen, Daten, Fakten</span>
+      <h2>Keine Versprechen. <span class="circle">Belege.<svg viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M40 8 C 120 -2, 205 12, 175 38 C 150 64, 40 70, 16 48 C -2 30, 14 12, 70 8"/></svg></span></h2>
+    </div>
+    <div class="nums-grid">
+      <div class="stat" data-r><div class="big">100+</div><small>betreute Unternehmen in Deutschland</small></div>
+      <div class="stat" data-r><div class="big">800+</div><small>echte 5-Sterne-Bewertungen bei BattleKart Bochum in 9 Monaten</small></div>
+      <div class="stat" data-r><div class="big">3,9 Mio.</div><small>generierte Profilaufrufe</small></div>
+      <div class="stat" data-r><div class="big">780.000</div><small>Aktionen: Anrufe, Routen, Klicks</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- CREAM: So einfach -->
+<section class="cream">
+  <div class="wrap">
+    <span class="eyebrow">So läuft's ab</span>
+    <h2>Wir lernen uns kennen — dann machen wir alles für dich.</h2>
+    <div class="steps">
+      <div class="step" data-r><span class="n">01</span><h3>Kennenlernen</h3><p>Im kostenlosen Erstgespräch schauen wir uns an, wo du bei Google stehst. Du musst nichts vorbereiten.</p></div>
+      <div class="step" data-r><span class="n">02</span><h3>Wir bauen auf</h3><p>Profil, Bewertungen, Verzeichnisse, Posts — wir übernehmen die komplette Umsetzung.</p></div>
+      <div class="step" data-r><span class="n">03</span><h3>Du wirst gefunden</h3><p>Mehr Anrufe, mehr Routenanfragen, mehr Kunden. Monatlich nachvollziehbar im Reporting.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT -->
+<section class="split">
+  <div class="wrap split-grid">
+    <div class="split-photo" data-r>
+      <img src="/assets/images/mangalmezze-kunde-lokalbesucher.webp" alt="Lokales Unternehmen, das mit Lokalbesucher sichtbarer wurde" width="520" height="380" loading="lazy">
+    </div>
+    <div data-r>
+      <span class="eyebrow">Echte Betriebe, echte Ergebnisse</span>
+      <h2>Vom Geheimtipp zur ersten Wahl in der Umgebung.</h2>
+      <p>Lokale Unternehmen verlieren täglich Kunden an Wettbewerber, die einfach besser gefunden werden. Wir drehen das um.</p>
+      <div class="ticks">
+        <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> TapTag — weltweit einzigartig: dein Bewertungs-Booster</div>
+        <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> KI-Bewertungsantworten in unter 60 Minuten</div>
+        <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 50+ Branchenverzeichnisse, immer aktuell</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="quote">
+  <div class="wrap">
+    <div class="mark" aria-hidden="true">“</div>
+    <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+    <blockquote>Ein paar Wochen später wussten wir nicht, welche Anfrage wir zuerst bearbeiten sollten.</blockquote>
+    <cite>— Susanne Janßen, zufriedene Kundin</cite>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Bereit, <span class="hl">gefunden<svg viewBox="0 0 260 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C 70 4, 195 4, 256 11"/></svg></span> zu werden?</h2>
+    <p>Kostenloser Sichtbarkeits-Check — wir zeigen dir in 15 Minuten, wo du stehst und was realistisch drin ist.</p>
+    <a href="#" class="btn btn-y">Jetzt Check holen</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Design-Preview für Lokalbesucher GmbH · nur intern · <a href="/" style="color:var(--yellow)">zurück zur Live-Seite</a></div>
+</footer>
+
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('[data-r]').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
