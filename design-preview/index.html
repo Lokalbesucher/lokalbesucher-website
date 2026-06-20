@@ -102,15 +102,15 @@
     .stat:nth-child(2) small{color:#6a5320}
 
     /* CREAM Section — bricht das Dauer-Dunkel */
-    .cream{background:var(--cream);color:var(--ink);padding:5.5rem 0;position:relative}
-    .cream .eyebrow{color:#8a7a52}
+    .cream{background:var(--yellow);color:#1a1205;padding:5.5rem 0;position:relative}
+    .cream .eyebrow{color:#7a5e1e}
     .cream h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;max-width:18ch;margin:1rem 0 2.8rem}
     .steps{display:grid;grid-template-columns:1fr;gap:1.4rem}
     @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
-    .step{padding-top:1.2rem;border-top:2px solid var(--ink)}
-    .step .n{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:999px;background:var(--ink);color:var(--cream);margin-bottom:.9rem}
+    .step{padding-top:1.2rem;border-top:2px solid rgba(26,18,5,.25)}
+    .step .n{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:999px;background:#1a1205;color:var(--yellow);margin-bottom:.9rem}
     .step h3{font-size:1.25rem;font-weight:700;margin-bottom:.5rem}
-    .step p{color:#54534a;font-size:.95rem}
+    .step p{color:#5c4a17;font-size:.95rem}
 
     /* Split photo + claim */
     .split{padding:5.5rem 0}
@@ -125,11 +125,11 @@
     .ticks svg{flex-shrink:0;color:var(--yellow);margin-top:.15rem}
 
     /* Testimonial — gelber Block, übergroßes Zitat */
-    .quote{background:var(--yellow);color:#1a1205;padding:5rem 0;position:relative;overflow:hidden}
-    .quote .mark{font-family:'Syne',sans-serif;font-size:9rem;line-height:.6;font-weight:800;opacity:.35}
-    .quote blockquote{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,3.6vw,2.5rem);line-height:1.2;max-width:20ch;letter-spacing:-.02em;margin:.5rem 0 1.6rem}
-    .quote cite{font-style:normal;font-weight:600;color:#6a5320}
-    .quote .stars{color:#1a1205;font-size:1.1rem;letter-spacing:.18em;margin-bottom:1.2rem}
+    .quote{background:#13162b;color:var(--text);padding:5rem 0;position:relative;overflow:hidden;border-block:1px solid var(--border)}
+    .quote .mark{font-family:'Syne',sans-serif;font-size:9rem;line-height:.6;font-weight:800;opacity:.9;color:var(--yellow)}
+    .quote blockquote{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.5rem,3.6vw,2.5rem);line-height:1.2;max-width:20ch;letter-spacing:-.02em;margin:.5rem 0 1.6rem;color:var(--text)}
+    .quote cite{font-style:normal;font-weight:600;color:var(--muted)}
+    .quote .stars{color:var(--yellow);font-size:1.1rem;letter-spacing:.18em;margin-bottom:1.2rem}
 
     /* CTA */
     .cta{padding:6rem 0;text-align:center;background:
