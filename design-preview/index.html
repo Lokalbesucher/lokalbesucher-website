@@ -185,20 +185,21 @@
     .ticks svg{flex-shrink:0;color:var(--yellow);margin-top:.15rem}
 
     /* QUOTE (navy) */
-    .quote{background:var(--surface);border-block:1px solid var(--border);padding:4.5rem 0;overflow:hidden}
-    .q-head{margin-bottom:2rem}
-    .q-carousel{overflow:hidden}
-    .q-track{display:flex;gap:1.5rem;transition:transform .9s cubic-bezier(.4,0,.2,1);will-change:transform}
-    .q-card{flex:0 0 calc(50% - .75rem);background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:2rem;display:flex;flex-direction:column}
-    @media(max-width:767px){.q-card{flex:0 0 100%}}
-    .q-card .stars{color:var(--yellow);letter-spacing:.16em;margin-bottom:1rem}
-    .q-card blockquote{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.1rem,1.9vw,1.45rem);line-height:1.4;letter-spacing:-.01em;margin-bottom:1.1rem;color:var(--text)}
-    .q-card cite{font-style:normal;color:var(--text);font-weight:700;font-size:.95rem;font-family:'Syne',sans-serif}
-    .q-card .role{display:block;font-weight:400;font-size:.8rem;color:var(--muted);margin-top:.15rem;font-family:'DM Sans',sans-serif}
-    .q-card .g{display:inline-flex;align-items:center;gap:.45rem;font-size:.76rem;color:var(--muted);margin-top:.5rem}
+    .quote{background:var(--surface);border-block:1px solid var(--border);padding:5rem 0;overflow:hidden}
+    .qx{max-width:780px;min-height:300px}
+    .qx .mark{font-family:'Syne',sans-serif;font-size:7rem;line-height:.42;font-weight:800;color:var(--yellow);opacity:.85;margin-bottom:1rem}
+    .qx-body{transition:opacity .5s ease}
+    .qx .stars{color:var(--yellow);letter-spacing:.18em;font-size:1.05rem;margin-bottom:1.1rem}
+    .qx blockquote{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.4rem,3vw,2.15rem);line-height:1.32;letter-spacing:-.015em;margin-bottom:1.4rem;color:var(--text)}
+    .qx cite{font-style:normal;color:var(--text);font-weight:700;font-family:'Syne',sans-serif;font-size:1.05rem}
+    .qx .role{display:block;font-family:'DM Sans',sans-serif;font-weight:400;font-size:.85rem;color:var(--muted);margin-top:.15rem}
+    .qx .g{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;color:var(--muted);margin-top:.9rem}
     .gdots{display:inline-flex;gap:3px}
     .gdots i{width:7px;height:7px;border-radius:50%;display:block}
     .gdots i:nth-child(1){background:#4285F4}.gdots i:nth-child(2){background:#EA4335}.gdots i:nth-child(3){background:#FBBC05}.gdots i:nth-child(4){background:#34A853}
+    .q-dots{display:flex;gap:.55rem;margin-top:2rem}
+    .q-dots b{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background .3s,transform .3s;cursor:pointer;display:block}
+    .q-dots b.on{background:var(--yellow);transform:scale(1.25)}
 
     /* FORM */
     .form-wrap{background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--border);border-radius:26px;padding:2.5rem 1.5rem;max-width:820px;margin-inline:auto}
@@ -473,43 +474,15 @@
   <!-- KUNDENSTIMMEN (rotierend) -->
   <section class="quote">
     <div class="wrap">
-      <div class="q-head" data-r>
-        <span class="eyebrow">Kundenstimmen</span>
-        <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-top:.6rem">Echte Stimmen, echte Ergebnisse.</h2>
-      </div>
-      <div class="q-carousel">
-        <div class="q-track" id="qTrack">
-          <figure class="q-card">
-            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <blockquote>„Von Beginn an hatten wir mit Tobias einen festen Ansprechpartner. Ein paar Wochen später wussten wir nicht, welche Anfrage wir zuerst bearbeiten sollten. Unsere Werbung ist einfach TOP."</blockquote>
-            <figcaption><cite>Susanne Janßen</cite></figcaption>
-            <span class="g"><span class="gdots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Google Rezension</span>
-          </figure>
-          <figure class="q-card">
-            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <blockquote>„Der Service ist professionell, zuverlässig und genau auf die Bedürfnisse zugeschnitten. Besonders beeindruckt hat mich die transparente Kommunikation und die schnelle Umsetzung. Klare Empfehlung!"</blockquote>
-            <figcaption><cite>Mesut Aksoy</cite></figcaption>
-            <span class="g"><span class="gdots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Google Rezension</span>
-          </figure>
-          <figure class="q-card">
-            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <blockquote>„Vom ersten Gespräch an war spürbar, dass hier mit Herz, Leidenschaft und echtem Verständnis für Marken gearbeitet wird. Besonderes Dankeschön an Lucy für ein tolles Instagram-Reel — sehr viele Views. Mit Lokalbesucher entstehen großartige Dinge."</blockquote>
-            <figcaption><cite>Viktoria Tkachenko</cite></figcaption>
-            <span class="g"><span class="gdots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Google Rezension</span>
-          </figure>
-          <figure class="q-card">
-            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <blockquote>„Obwohl ich dachte, dass ich bereits gut online präsent bin, hat Tobi mein Profil überarbeitet und verwaltet. Das Ergebnis ist einfach beeindruckend. Hätte ich Lokalbesucher nur früher kennengelernt!"</blockquote>
-            <figcaption><cite>Cihan Sögüt</cite></figcaption>
-            <span class="g"><span class="gdots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Google Rezension</span>
-          </figure>
-          <figure class="q-card">
-            <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
-            <blockquote>„Große Empfehlung! Tobias und sein Team betreuen unser Google-Profil und unterstützen uns rund um unseren digitalen Auftritt. Er nimmt sich viel Zeit und supportet uns auch mit Fotos &amp; Videodreh — super einfach im Umgang und immer mit guten Ideen."</blockquote>
-            <figcaption><cite>Daniel Dominguez Schmeisser<span class="role">Steuerberater</span></cite></figcaption>
-            <span class="g"><span class="gdots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Google Rezension</span>
-          </figure>
+      <div class="qx">
+        <div class="mark" aria-hidden="true">“</div>
+        <div class="qx-body" id="qxBody" aria-live="polite">
+          <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <blockquote id="qxText">„Von Beginn an hatten wir mit Tobias einen festen Ansprechpartner. Ein paar Wochen später wussten wir nicht, welche Anfrage wir zuerst bearbeiten sollten. Unsere Werbung ist einfach TOP."</blockquote>
+          <cite id="qxCite">Susanne Janßen</cite>
+          <span class="g"><span class="gdots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Google Rezension</span>
         </div>
+        <div class="q-dots" id="qxDots" aria-hidden="true"></div>
       </div>
     </div>
   </section>
@@ -635,16 +608,27 @@
     function hp(id){return document.getElementById(id).value.trim();}
   }());
 
-  // Kundenstimmen-Karussell (Desktop 2, Mobil 1, langsame Rotation)
+  // Kundenstimmen — grosser Quote, langsamer Crossfade durch alle Stimmen
   (function(){
-    var track=document.getElementById('qTrack'); if(!track) return;
-    var cards=track.children; if(cards.length<2) return;
-    var idx=0, GAP=24;
-    function vis(){return window.innerWidth<768?1:2;}
-    function maxI(){return Math.max(0, cards.length - vis());}
-    function go(){ var cw=cards[0].getBoundingClientRect().width+GAP; track.style.transform='translateX('+(-idx*cw)+'px)'; }
-    setInterval(function(){ idx = idx>=maxI()?0:idx+1; go(); }, 5200);
-    window.addEventListener('resize', function(){ if(idx>maxI())idx=maxI(); go(); });
+    var body=document.getElementById('qxBody'); if(!body) return;
+    var txt=document.getElementById('qxText'), cite=document.getElementById('qxCite'), dotsEl=document.getElementById('qxDots');
+    var Q=[
+      {t:"Von Beginn an hatten wir mit Tobias einen festen Ansprechpartner. Ein paar Wochen später wussten wir nicht, welche Anfrage wir zuerst bearbeiten sollten. Unsere Werbung ist einfach TOP.",n:"Susanne Janßen",r:""},
+      {t:"Der Service ist professionell, zuverlässig und genau auf die Bedürfnisse zugeschnitten. Besonders beeindruckt hat mich die transparente Kommunikation und die schnelle Umsetzung. Klare Empfehlung!",n:"Mesut Aksoy",r:""},
+      {t:"Vom ersten Gespräch an war spürbar, dass hier mit Herz, Leidenschaft und echtem Verständnis für Marken gearbeitet wird. Besonderes Dankeschön an Lucy für ein tolles Instagram-Reel — sehr viele Views. Mit Lokalbesucher entstehen großartige Dinge.",n:"Viktoria Tkachenko",r:""},
+      {t:"Obwohl ich dachte, dass ich bereits gut online präsent bin, hat Tobi mein Profil überarbeitet und verwaltet. Das Ergebnis ist einfach beeindruckend. Hätte ich Lokalbesucher nur früher kennengelernt!",n:"Cihan Sögüt",r:""},
+      {t:"Große Empfehlung! Tobias und sein Team betreuen unser Google-Profil und unterstützen uns rund um unseren digitalen Auftritt. Er nimmt sich viel Zeit und supportet uns auch mit Fotos & Videodreh — super einfach im Umgang und immer mit guten Ideen.",n:"Daniel Dominguez Schmeisser",r:"Steuerberater"}
+    ];
+    var i=0, timer;
+    Q.forEach(function(_,k){ var d=document.createElement('b'); if(k===0)d.className='on'; d.addEventListener('click',function(){ go(k); arm(); }); dotsEl.appendChild(d); });
+    function render(k){
+      txt.textContent='„'+Q[k].t+'“';
+      cite.innerHTML=Q[k].n+(Q[k].r?'<span class="role">'+Q[k].r+'</span>':'');
+      var ds=dotsEl.children; for(var j=0;j<ds.length;j++) ds[j].className=(j===k?'on':'');
+    }
+    function go(k){ body.style.opacity=0; setTimeout(function(){ i=k; render(i); body.style.opacity=1; },480); }
+    function arm(){ clearInterval(timer); timer=setInterval(function(){ go((i+1)%Q.length); },5500); }
+    arm();
   }());
 </script>
 <script src="/assets/js/components.js?v=20260619" defer></script>
