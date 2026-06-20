@@ -253,8 +253,8 @@
     .team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:760px;margin:0 auto}
     @media(max-width:600px){.team-row{gap:.7rem}}
     .tm{text-align:center}
-    .tm img{width:100%;max-width:210px;aspect-ratio:5/6;object-fit:cover;object-position:top;border-radius:18px;border:1px solid var(--border);margin:0 auto .8rem;transition:transform .2s}
-    .tm:hover img{transform:translateY(-5px) rotate(-1.5deg)}
+    .tm img{width:100%;max-width:190px;height:auto;margin:0 auto .5rem;filter:drop-shadow(0 16px 26px rgba(0,0,0,.5));transition:transform .25s}
+    .tm:hover img{transform:translateY(-6px)}
     .tm-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem}
     .tm-role{font-size:.82rem;color:var(--muted)}
     [data-r]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
