@@ -46,8 +46,8 @@
 
     /* hand-drawn marker */
     .hl{position:relative;white-space:nowrap;color:var(--yellow)}
-    .hl svg{position:absolute;left:-3%;bottom:-.32em;width:106%;height:.78em;overflow:visible}
-    .hl path{fill:none;stroke:var(--yellow);stroke-width:10;stroke-linecap:round;opacity:.95}
+    .hl svg{position:absolute;left:-2%;bottom:-.12em;width:104%;height:.36em;overflow:visible}
+    .hl path{fill:none;stroke:var(--yellow);stroke-width:4;stroke-linecap:round;opacity:.95;vector-effect:non-scaling-stroke}
     .circle{position:relative;display:inline-block}
     .circle svg{position:absolute;left:-20%;top:-30%;width:140%;height:160%;overflow:visible}
     .circle path{fill:none;stroke:var(--yellow);stroke-width:7;stroke-linecap:round}
@@ -69,6 +69,7 @@
     .hero-meta{display:flex;gap:1.6rem;margin-top:2.2rem;flex-wrap:wrap}
     .hero-meta div{font-size:.85rem;color:var(--muted)}
     .hero-meta b{display:block;font-family:'Syne',sans-serif;font-size:1.5rem;color:var(--text);font-weight:800;letter-spacing:-.02em}
+    @media(max-width:560px){.hero-meta{gap:1rem 1.4rem}.hero-meta div{flex:1 0 40%}.hero-meta b{font-size:1.2rem}}
 
     /* hero visual — getiltetes Foto + floating chip + pin */
     .hero-visual{position:relative;justify-self:center}
