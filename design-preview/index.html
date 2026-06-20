@@ -244,6 +244,19 @@
     .sticky-cta .btn{flex:1;justify-content:center;padding:.8em 1em;font-size:.9rem}
     @media(min-width:768px){.sticky-cta{display:none}}
 
+    .gp-badge{display:inline-flex;align-items:center;gap:.55rem;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;margin-top:1.5rem;font-size:.86rem;color:var(--text)}
+    .gp-badge .g-dots{display:inline-flex;gap:3px}
+    .gp-badge .g-dots i{width:8px;height:8px;border-radius:50%;display:block}
+    .gp-badge .g-dots i:nth-child(1){background:#4285F4}.gp-badge .g-dots i:nth-child(2){background:#EA4335}.gp-badge .g-dots i:nth-child(3){background:#FBBC05}.gp-badge .g-dots i:nth-child(4){background:#34A853}
+    .gp-badge b{font-family:'Syne',sans-serif;font-weight:700}
+    .gp-badge .chk{color:var(--green)}
+    .team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:760px;margin:0 auto}
+    @media(max-width:600px){.team-row{gap:.7rem}}
+    .tm{text-align:center}
+    .tm img{width:100%;max-width:210px;aspect-ratio:5/6;object-fit:cover;object-position:top;border-radius:18px;border:1px solid var(--border);margin:0 auto .8rem;transition:transform .2s}
+    .tm:hover img{transform:translateY(-5px) rotate(-1.5deg)}
+    .tm-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem}
+    .tm-role{font-size:.82rem;color:var(--muted)}
     [data-r]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
     [data-r].in{opacity:1;transform:none}
   </style>
@@ -301,6 +314,7 @@
           <a href="#anfrage" class="btn btn-y">Kostenlosen Sichtbarkeits-Check holen</a>
           <a href="#paket" class="btn btn-o">Was kostet das?</a>
         </div>
+        <span class="gp-badge"><span class="g-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> <b>Google Partner</b> <svg class="chk" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
         <div class="hero-meta">
           <div><b>3,9 Mio.</b> Profilaufrufe generiert</div>
           <div><b>100+</b> betreute Unternehmen</div>
@@ -427,6 +441,22 @@
           <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Monatliche Sachpreis-Verlosung — von uns bezahlt</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head" data-r style="text-align:center;max-width:none;margin-inline:auto">
+        <span class="eyebrow" style="display:flex;justify-content:center">Wer dahinter steckt</span>
+        <h2>Ein starkes Team für deinen Erfolg.</h2>
+      </div>
+      <div class="team-row">
+        <div class="tm" data-r><img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp" alt="Tobias Frank — Inhaber Lokalbesucher GmbH" width="210" height="252" loading="lazy"><div class="tm-name">Tobias Frank</div><div class="tm-role">Inhaber &amp; Geschäftsführer</div></div>
+        <div class="tm" data-r><img src="/assets/images/lucy-kalweit-lokalbesucher-team-2026.webp" alt="Lucy Kalweit — Teamleitung Social Media, Lokalbesucher" width="210" height="252" loading="lazy"><div class="tm-name">Lucy Kalweit</div><div class="tm-role">Teamleitung Social Media</div></div>
+        <div class="tm" data-r><img src="/assets/images/mara-goronschewski-lokalbesucher-team.webp" alt="Mara Goronschewski — Social Media Managerin, Lokalbesucher" width="210" height="252" loading="lazy"><div class="tm-name">Mara Goronschewski</div><div class="tm-role">Social Media Managerin</div></div>
+      </div>
+      <div style="text-align:center;margin-top:2.2rem"><a href="/unser-team/" class="btn btn-o">Das ganze Team kennenlernen</a></div>
     </div>
   </section>
 
