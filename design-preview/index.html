@@ -254,12 +254,9 @@
     .sticky-cta .btn{flex:1;justify-content:center;padding:.8em 1em;font-size:.9rem}
     @media(min-width:768px){.sticky-cta{display:none}}
 
-    .gp-slot{display:inline-flex;align-items:center;margin-top:1.5rem}
-    .gp-slot img{height:56px;width:auto;display:block;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
-    .gp-fallback{display:none;align-items:center;gap:.5rem;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:.5rem 1rem;font-size:.86rem;color:var(--text)}
-    .gp-fallback b{font-family:'Syne',sans-serif;font-weight:700}
-    .gp-slot.gp-missing img{display:none}
-    .gp-slot.gp-missing .gp-fallback{display:inline-flex}
+    .gp-badge{display:inline-block;margin-top:1.5rem;transition:transform .2s}
+    .gp-badge:hover{transform:translateY(-2px)}
+    .gp-badge img{height:72px;width:auto;display:block}
     .team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:760px;margin:0 auto}
     @media(max-width:600px){.team-row{gap:.7rem}}
     .tm{text-align:center}
@@ -325,7 +322,9 @@
           <a href="#anfrage" class="btn btn-y">Kostenlosen Sichtbarkeits-Check holen</a>
           <a href="#paket" class="btn btn-o">Was kostet das?</a>
         </div>
-        <span class="gp-slot" id="gpSlot"><img src="/assets/images/google-partner-badge.webp" alt="Google Partner — zertifizierte Agentur" height="56" loading="lazy" onerror="this.closest('.gp-slot').classList.add('gp-missing')"><span class="gp-fallback">Offizieller <b>Google Partner</b></span></span>
+        <a class="gp-badge" href="https://www.google.com/partners/agency?id=9897265706" target="_blank" rel="noopener noreferrer" aria-label="Lokalbesucher — zertifizierter Google Partner, Status ansehen">
+          <img src="/assets/images/google-partner-badge.svg" alt="Google Partner" width="75" height="72" loading="lazy">
+        </a>
         <div class="hero-meta">
           <div><b>3,9 Mio.</b> Profilaufrufe generiert</div>
           <div><b>100+</b> betreute Unternehmen</div>
