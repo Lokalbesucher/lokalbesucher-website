@@ -254,13 +254,12 @@
     .sticky-cta .btn{flex:1;justify-content:center;padding:.8em 1em;font-size:.9rem}
     @media(min-width:768px){.sticky-cta{display:none}}
 
-    .gp-wrap{display:flex;align-items:center;gap:1rem;margin-top:1.6rem;flex-wrap:wrap}
-    .gp-badge{display:inline-block;transition:transform .2s;flex-shrink:0}
-    .gp-badge:hover{transform:translateY(-2px)}
-    .gp-badge img{height:72px;width:auto;display:block}
-    .gp-text{max-width:32ch}
-    .gp-text b{display:block;font-family:'Syne',sans-serif;font-weight:700;font-size:.98rem;color:var(--text)}
-    .gp-text span{display:block;font-size:.82rem;color:var(--muted);line-height:1.45;margin-top:.2rem}
+    .gp-cert{display:flex;flex-direction:column;align-items:center;gap:.55rem;margin-bottom:1.5rem}
+    .gp-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
+    .gp-badge{display:inline-block;background:#fff;border-radius:10px;padding:.4rem .7rem;line-height:0;box-shadow:0 2px 16px rgba(0,0,0,.3);transition:transform .2s,box-shadow .2s}
+    .gp-badge:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.4)}
+    .gp-badge img{height:46px;width:auto;display:block}
+    .gp-divider{width:3rem;height:1px;background:var(--border);margin:0 auto 1.4rem}
     .team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:760px;margin:0 auto}
     @media(max-width:600px){.team-row{gap:.7rem}}
     .tm{text-align:center}
@@ -326,15 +325,6 @@
           <a href="#anfrage" class="btn btn-y">Kostenlosen Sichtbarkeits-Check holen</a>
           <a href="#paket" class="btn btn-o">Was kostet das?</a>
         </div>
-        <div class="gp-wrap">
-          <a class="gp-badge" href="https://www.google.com/partners/agency?id=9897265706" target="_blank" rel="noopener noreferrer" aria-label="Lokalbesucher — zertifizierter Google Partner, Status ansehen">
-            <img src="/assets/images/google-partner-badge.svg" alt="Google Partner" width="75" height="72" loading="lazy">
-          </a>
-          <div class="gp-text">
-            <b>Wir sind zertifizierter Google Partner.</b>
-            <span>Diese offizielle Auszeichnung vergibt Google nur an Agenturen mit nachgewiesener Performance — ein Gütesiegel, dem du vertrauen kannst.</span>
-          </div>
-        </div>
         <div class="hero-meta">
           <div><b>3,9 Mio.</b> Profilaufrufe generiert</div>
           <div><b>100+</b> betreute Unternehmen</div>
@@ -344,7 +334,7 @@
       <div class="hero-visual">
         <span class="blob" aria-hidden="true"></span>
         <div class="photo-frame">
-          <img src="/assets/images/lokalbesucher-team-datteln-nrw.webp" alt="Das Lokalbesucher Team aus dem Kreis Recklinghausen" width="420" height="300" loading="eager">
+          <img src="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp" alt="Unternehmerin lächelt — dank Lokalbesucher dauerhaft sichtbar bei Google" width="560" height="600" loading="eager" fetchpriority="high">
         </div>
         <div class="chip"><b>+158 %</b><span>mehr Profilaufrufe in 3 Monaten</span></div>
       </div>
@@ -354,6 +344,13 @@
   <!-- TRUST -->
   <section class="trust">
     <div class="wrap">
+      <div class="gp-cert">
+        <p class="gp-eyebrow">Offiziell zertifiziert</p>
+        <a class="gp-badge" href="https://www.google.com/partners/agency?id=9897265706" target="_blank" rel="noopener noreferrer" aria-label="Offizieller Google Partner — Lokalbesucher GmbH, Status ansehen">
+          <img src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg" alt="Offizieller Google Partner — Lokalbesucher GmbH" width="160" height="58" loading="lazy">
+        </a>
+      </div>
+      <div class="gp-divider" aria-hidden="true"></div>
       <p>Vertrauen von lokalen Unternehmen in ganz Deutschland</p>
       <div class="logos">
         <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp" alt="EasyFitness" width="110" height="46" loading="lazy">
