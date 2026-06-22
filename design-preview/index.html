@@ -254,12 +254,12 @@
     .sticky-cta .btn{flex:1;justify-content:center;padding:.8em 1em;font-size:.9rem}
     @media(min-width:768px){.sticky-cta{display:none}}
 
-    .gp-badge{display:inline-flex;align-items:center;gap:.55rem;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:.5rem .95rem;margin-top:1.5rem;font-size:.86rem;color:var(--text)}
-    .gp-badge .g-dots{display:inline-flex;gap:3px}
-    .gp-badge .g-dots i{width:8px;height:8px;border-radius:50%;display:block}
-    .gp-badge .g-dots i:nth-child(1){background:#4285F4}.gp-badge .g-dots i:nth-child(2){background:#EA4335}.gp-badge .g-dots i:nth-child(3){background:#FBBC05}.gp-badge .g-dots i:nth-child(4){background:#34A853}
-    .gp-badge b{font-family:'Syne',sans-serif;font-weight:700}
-    .gp-badge .chk{color:var(--green)}
+    .gp-slot{display:inline-flex;align-items:center;margin-top:1.5rem}
+    .gp-slot img{height:56px;width:auto;display:block;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35))}
+    .gp-fallback{display:none;align-items:center;gap:.5rem;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:.5rem 1rem;font-size:.86rem;color:var(--text)}
+    .gp-fallback b{font-family:'Syne',sans-serif;font-weight:700}
+    .gp-slot.gp-missing img{display:none}
+    .gp-slot.gp-missing .gp-fallback{display:inline-flex}
     .team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:760px;margin:0 auto}
     @media(max-width:600px){.team-row{gap:.7rem}}
     .tm{text-align:center}
@@ -325,7 +325,7 @@
           <a href="#anfrage" class="btn btn-y">Kostenlosen Sichtbarkeits-Check holen</a>
           <a href="#paket" class="btn btn-o">Was kostet das?</a>
         </div>
-        <span class="gp-badge"><span class="g-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> <b>Google Partner</b> <svg class="chk" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
+        <span class="gp-slot" id="gpSlot"><img src="/assets/images/google-partner-badge.webp" alt="Google Partner — zertifizierte Agentur" height="56" loading="lazy" onerror="this.closest('.gp-slot').classList.add('gp-missing')"><span class="gp-fallback">Offizieller <b>Google Partner</b></span></span>
         <div class="hero-meta">
           <div><b>3,9 Mio.</b> Profilaufrufe generiert</div>
           <div><b>100+</b> betreute Unternehmen</div>
@@ -480,7 +480,6 @@
           <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
           <blockquote id="qxText">„Von Beginn an hatten wir mit Tobias einen festen Ansprechpartner. Ein paar Wochen später wussten wir nicht, welche Anfrage wir zuerst bearbeiten sollten. Unsere Werbung ist einfach TOP."</blockquote>
           <cite id="qxCite">Susanne Janßen</cite>
-          <span class="g"><span class="gdots" aria-hidden="true"><i></i><i></i><i></i><i></i></span> Google Rezension</span>
         </div>
         <div class="q-dots" id="qxDots" aria-hidden="true"></div>
       </div>
