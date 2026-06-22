@@ -12,19 +12,19 @@ Wir bauen lokalbesucher.de komplett neu als statische HTML/CSS/JS Site auf Cloud
 Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kein Build-Tool.
 
 - **Repo:** github.com/Lokalbesucher/lokalbesucher-website
-- **Live-Preview:** lokalbesucher-website.pages.dev
-- **Ziel-Domain:** lokalbesucher.de (wird umgezogen wenn Site fertig und getestet ist)
+- **Live-Domain:** lokalbesucher.de — **DNS-Umzug ERFOLGT, Site ist LIVE** auf Cloudflare Pages (Stand 2026-06). Achtung: jeder Push auf main geht direkt live!
+- **Preview:** lokalbesucher-website.pages.dev
 - **Hosting:** Cloudflare Pages (Free Plan)
-- **Deployment:** Automatisch bei jedem Push auf main
+- **Deployment:** Automatisch bei jedem Push auf main (~30 Sek.)
 
 ---
 
 ## 2. AUFTRAGGEBER
 
 **Tobias Frank** — Inhaber Lokalbesucher GmbH
-- Google Business Agentur, Recklinghausen, NRW
-- Team: ~12 Mitarbeiter
-- Adresse: Karl-Breuing-Str. 2, 45770 Marl
+- Google Business Agentur aus dem **Kreis Recklinghausen**, NRW (Büro in Marl)
+- Team: ~12 Mitarbeiter — **NIE öffentlich die Mitarbeiterzahl nennen** (Tobias findet „11/12 Leute" prahlerisch; `numberOfEmployees` aus Schema raus, Fließtext zahllos)
+- Adresse: Karl-Breuing-Str. 2, 45770 Marl (offiziell, HRB 19857)
 - Zielgruppe: KMU in Deutschland die lokal bei Google gefunden werden wollen
 - Erfahrung: ~20 Jahre Sales & Marketing (Salesforce, Amazon, StepStone)
 
@@ -80,14 +80,13 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 - Link im Footer auf JEDER Seite
 - Datum der letzten Aktualisierung angeben
 
-### 4.3 Cookie Consent — PFLICHT VOR GO-LIVE
+### 4.3 Cookie Consent — UMGESETZT (live)
 **Strategie: Privacy by Design**
 - Technisch notwendige Cookies (Cloudflare): kein Consent nötig
-- Google Analytics 4: nur nach Consent — GA4 Consent Mode v2
-- Implementierung: **Klaro.js** (Open Source, kostenlos, DSGVO-konform)
-- "Nur notwendige" als vorausgewählte Option — Marketing NIE vorausgewählt
-- Consent in localStorage, widerrufbar jederzeit
-- Link "Cookie-Einstellungen" im Footer
+- Google Analytics 4 + Google Ads: nur nach Consent — GA4 Consent Mode v2
+- Implementierung: **eigenes, self-hosted `assets/js/cookie-consent.js`** (DSGVO-konform, KEIN Klaro / kein 3rd-Party-Tool). localStorage-Key `lb-consent`, auf ALLEN Seiten eingebunden. (Hinweis: ältere CLAUDE-Versionen nannten Klaro.js — das wurde bewusst durch die eigene Lösung ersetzt.)
+- "Nur notwendige" möglich — Marketing NIE vorausgewählt
+- Consent widerrufbar jederzeit (Link "Cookie-Einstellungen" im Footer)
 
 ### 4.4 Barrierefreiheit (WCAG 2.1 AA)
 - Alle Bilder: aussagekräftige alt-Texte, dekorative Bilder: alt=""
@@ -142,21 +141,45 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 
 ## 6. SEITENSTRUKTUR (URLs 1:1 für SEO!)
 
-| URL | Seite | Prio |
-|-----|-------|------|
-| `/` | Homepage | P1 |
-| `/google-business-agentur/` | Pillar Page | P1 |
-| `/faq/` | FAQ | P1 |
-| `/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/` | ROI Kalkulator | P2 |
-| `/schema-org-generator/` | Tool | P2 |
-| `/case-studies/` | Übersicht | P2 |
-| `/case-studies/battlekart/` | Case Study | P2 |
-| `/case-studies/orthoclinic/` | Case Study | P2 |
-| `/case-studies/janel-saal/` | Case Study | P2 |
-| `/case-studies/schlosshotel-westerholt/` | Case Study | P2 |
-| `/case-studies/stephan-schnieder/` | Case Study | P2 |
-| `/impressum/` | Impressum | Pflicht |
-| `/datenschutz/` | Datenschutz | Pflicht |
+> **Stand 2026-06: Site ist live, alle folgenden Seiten existieren.** (Quelle der Wahrheit = Ordnerstruktur im Repo + `sitemap.xml`.)
+
+**Kern / SEO**
+| URL | Seite |
+|-----|-------|
+| `/` | Homepage (editorial Glow-up Design, live) |
+| `/google-business-agentur/` | Pillar Page |
+| `/bewertungsmanagement/` | Leistung Reputationsmanagement |
+| `/faq/` | FAQ |
+| `/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/` | ROI Kalkulator |
+| `/schema-org-generator/` | Tool (zieht Traffic) |
+
+**Service-Landingpages** (conversion-optimiert, On-Page-Lead-Formular → geteilter GHL-Webhook, unterschieden per `source`)
+| URL | `source` |
+|-----|----------|
+| `/meta-ads/` | `meta-ads` |
+| `/google-ads/` | `google-ads` |
+| `/seo-agentur/` | `seo-agentur` |
+| `/social-media-agentur/` | `social-media-agentur` |
+
+**Lokale Seiten** (Stadt-/Regio, kein Doorway — je eigener lokaler Content)
+| URL | Notiz |
+|-----|-------|
+| `/werbeagentur-recklinghausen/` | Begriff „Werbeagentur", breiter Fokus |
+| `/google-business-agentur-recklinghausen/` | Stadt-Seite Heimatmarkt, `source` = gleich URL |
+| `/google-business-agentur-bochum/` | Stadt-Seite, Proof BattleKart + anon. Küchenstudio |
+
+**Unternehmen**
+| URL | Seite |
+|-----|-------|
+| `/unser-team/` | Team |
+| `/jobs/` | Karriere |
+
+**Case Studies** (9 Stück, mit Tobias abgestimmt & live)
+`/case-studies/` (Übersicht) · `battlekart` · `ristorante-peperoncino` · `viabeauty` · `orthoclinic-hamburg` · `muhis-restaurant` · `solar-richter` · `elithera-physio` · `praxis-theres` · `sanitaer-susak`
+
+**Rechtlich (Pflicht):** `/impressum/` · `/datenschutz/` · `/agb/`
+
+**Mittelfristig geplant:** weitere NRW-Stadt-Seiten (z. B. Datteln) NUR mit echtem lokalem Beleg; ab ~4–5 Städten eine „Einzugsgebiet"/Standorte-Hub-Seite. Verlinkung der Städte aktuell über Footer-Block „Standorte" + Pillar/Home, nicht über Top-Nav.
 
 ---
 
@@ -242,10 +265,12 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 - 100+ betreute Unternehmen
 - 3,9 Mio. Profilaufrufe generiert
 - 780.000 Aktionen (Anrufe, Routen, Klicks)
+- **Offizieller Google Partner** — echtes Original-Badge (`assets/images/google-partner-badge.svg`), verlinkt auf die Status-Seite `https://www.google.com/partners/agency?id=9897265706`. Wording: „Offizieller Google Partner" — **NIE** „zertifiziert"/„certified" (wir sind Partner, nicht zertifiziert) und NIE eigenen Text dazu erfinden.
 - BattleKart Bochum (EVA-Erlebniscenter): 800+ Bewertungen in 9 Monaten — erster Standort, der TapTag testete; danach rollout auf weitere Standorte. Aktuell nur Bochum erwähnen.
 - Peperoncino: +158% Aufrufe
 - Schlosshotel NRW (ANONYM — nie namentlich nennen!): ROAS 40x organisch
 - NIEMALS "Orthoclinic dauerhaft Top 3" schreiben — diese Aussage ist FALSCH
+- **TapTag/Bewertungen-Wording:** Reputations**management** / -schutz, NIE „Bewertungen löschen" als Werbeversprechen (nur 1 Löschantrag/Woche bei rechtswidrigen Bewertungen ist Fakt, aber nicht als „wir löschen schlechte Bewertungen" framen).
 
 ---
 
@@ -354,7 +379,7 @@ mit konsistenten Attributen überall identisch auftreten: Website, GBP, Verzeich
 ### 15.4 Lokale NRW-Signale
 - "Recklinghausen", "NRW", "Ruhrgebiet", "Nordrhein-Westfalen" natürlich in Texte einbauen
 - NAP in Footer: Karl-Breuing-Str. 2, 45770 Marl — identisch auf JEDER Seite
-- Mittelfristig: Städte-Landingpages für Dortmund, Essen, Bochum, Gelsenkirchen, Herne etc.
+- Städte-Landingpages: **Bochum + Recklinghausen LIVE** (Gold-Standard-Blaupause). Weitere (Dortmund, Essen, Gelsenkirchen, Herne, Datteln …) NUR mit echtem lokalem Beleg pro Stadt — Inhalt je Stadt substanziell eigen, kein Name-Swap (Doorway-Risiko!). Verlinkung über Footer-Block „Standorte".
 - Google Maps Einbettung auf Kontakt/Impressum-Seite
 
 ### 15.5 Content-Checkliste vor jedem Commit
@@ -420,10 +445,17 @@ Ausführen mit: `python scripts/download-images.py`
 
 ## 18. UMSETZUNGSREIHENFOLGE
 
-1. Adresse: Karl-Breuing-Str. 2, 45770 Marl (erledigt — GBP offiziell in Marl, NAP sitewide synchron)
-2. `_headers`, `_redirects`, `robots.txt` — Pflicht
-3. `sitemap.xml` — vor Go-Live
-4. Cookie Consent (Klaro.js) — Pflicht vor Go-Live
-5. ROI Kalkulator + Schema Generator — P2
-6. Case Studies — **werden separat mit Tobias besprochen, noch nicht anfassen!**
-7. DNS umzeigen — erst wenn alles fertig und getestet!
+**Phase 1 — Go-Live (alles ✅ ERLEDIGT):**
+1. ✅ Adresse Karl-Breuing-Str. 2, 45770 Marl (GBP offiziell in Marl, NAP sitewide synchron)
+2. ✅ `_headers`, `_redirects`, `robots.txt`
+3. ✅ `sitemap.xml`
+4. ✅ Cookie Consent — eigenes `cookie-consent.js` (nicht Klaro), Consent Mode v2
+5. ✅ ROI Kalkulator + Schema Generator
+6. ✅ Case Studies (9 Stück, mit Tobias abgestimmt) — live
+7. ✅ DNS umgezogen — Site ist LIVE
+
+**Phase 2 — laufend (aktueller Fokus):**
+- Conversion-Service-LPs (meta/google/seo/social) — live, feeden geteilten GHL-Webhook
+- Lokale Stadt-Seiten — Bochum + Recklinghausen live; weitere nur mit echtem Beleg
+- **OFFEN (Tobias / per Browser-Prompt):** GHL-Workflow je `source` taggen (siehe Memory `project_tracking`)
+- Design-Politur, GEO-/SEO-Feinschliff, weitere echte Bilder von Tobias einpflegen
