@@ -254,11 +254,12 @@
     .sticky-cta .btn{flex:1;justify-content:center;padding:.8em 1em;font-size:.9rem}
     @media(min-width:768px){.sticky-cta{display:none}}
 
-    .gp-cert{display:flex;flex-direction:column;align-items:center;gap:.55rem;margin-bottom:1.5rem}
-    .gp-eyebrow{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0}
-    .gp-badge{display:inline-block;background:#fff;border-radius:10px;padding:.4rem .7rem;line-height:0;box-shadow:0 2px 16px rgba(0,0,0,.3);transition:transform .2s,box-shadow .2s}
-    .gp-badge:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.4)}
-    .gp-badge img{height:46px;width:auto;display:block}
+    .gp-cert{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.6rem;flex-wrap:wrap}
+    .gp-badge{display:inline-block;line-height:0;transition:transform .2s}
+    .gp-badge:hover{transform:translateY(-3px)}
+    .gp-badge img{height:62px;width:auto;display:block;filter:drop-shadow(0 8px 20px rgba(0,0,0,.45))}
+    .gp-cap{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:var(--text)}
+    .gp-cap b{color:var(--yellow)}
     .gp-divider{width:3rem;height:1px;background:var(--border);margin:0 auto 1.4rem}
     .team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:760px;margin:0 auto}
     @media(max-width:600px){.team-row{gap:.7rem}}
@@ -344,10 +345,10 @@
   <section class="trust">
     <div class="wrap">
       <div class="gp-cert">
-        <p class="gp-eyebrow">Offiziell zertifiziert</p>
         <a class="gp-badge" href="https://www.google.com/partners/agency?id=9897265706" target="_blank" rel="noopener noreferrer" aria-label="Offizieller Google Partner — Lokalbesucher GmbH, Status ansehen">
-          <img src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg" alt="Offizieller Google Partner — Lokalbesucher GmbH" width="160" height="58" loading="lazy">
+          <img src="/assets/images/google-partner-badge.svg" alt="Google Partner" width="62" height="60" loading="lazy">
         </a>
+        <span class="gp-cap">Offiziell von <b>Google</b> zertifiziert</span>
       </div>
       <div class="gp-divider" aria-hidden="true"></div>
       <p>Vertrauen von lokalen Unternehmen in ganz Deutschland</p>
@@ -632,7 +633,9 @@
     }
     function go(k){ body.style.opacity=0; setTimeout(function(){ i=k; render(i); body.style.opacity=1; },480); }
     function arm(){ clearInterval(timer); timer=setInterval(function(){ go((i+1)%Q.length); },5500); }
-    arm();
+    function measure(){ body.style.minHeight=''; var mh=0; for(var k=0;k<Q.length;k++){ render(k); if(body.offsetHeight>mh) mh=body.offsetHeight; } render(i); body.style.minHeight=mh+'px'; }
+    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(measure,200); });
+    measure(); arm();
   }());
 </script>
 <script src="/assets/js/components.js?v=20260619" defer></script>
