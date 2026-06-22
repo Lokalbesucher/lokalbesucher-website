@@ -24,7 +24,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 **Tobias Frank** — Inhaber Lokalbesucher GmbH
 - Google Business Agentur, Recklinghausen, NRW
 - Team: ~12 Mitarbeiter
-- Adresse: Im Westerkamp 7, 45711 Datteln
+- Adresse: Karl-Breuing-Str. 2, 45770 Marl
 - Zielgruppe: KMU in Deutschland die lokal bei Google gefunden werden wollen
 - Erfahrung: ~20 Jahre Sales & Marketing (Salesforce, Amazon, StepStone)
 
@@ -254,7 +254,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 - WhatsApp: https://wa.me/4915122358883
 - E-Mail: info@lokalbesucher.de
 - Tel: +49 151 22358883
-- Adresse: Im Westerkamp 7, 45711 Datteln
+- Adresse: Karl-Breuing-Str. 2, 45770 Marl
 
 ---
 
@@ -328,7 +328,7 @@ mit konsistenten Attributen überall identisch auftreten: Website, GBP, Verzeich
 - `FAQPage` auf: Homepage, Pillar Page, FAQ-Seite
 - `BreadcrumbList` auf allen Unterseiten
 - `AggregateRating` — nur wenn echte sichtbare Bewertungen auf der Seite
-- `GeoCoordinates` mit exakten Koordinaten Datteln (51.6547° N, 7.3400° E)
+- `GeoCoordinates` mit exakten Koordinaten Marl (51.6391° N, 7.1041° E)
 - `areaServed` auf alle NRW-Städte + Deutschland
 
 ### 15.2 GEO — AI-Zitierbarkeit
@@ -353,7 +353,7 @@ mit konsistenten Attributen überall identisch auftreten: Website, GBP, Verzeich
 
 ### 15.4 Lokale NRW-Signale
 - "Recklinghausen", "NRW", "Ruhrgebiet", "Nordrhein-Westfalen" natürlich in Texte einbauen
-- NAP in Footer: Im Westerkamp 7, 45711 Datteln — identisch auf JEDER Seite
+- NAP in Footer: Karl-Breuing-Str. 2, 45770 Marl — identisch auf JEDER Seite
 - Mittelfristig: Städte-Landingpages für Dortmund, Essen, Bochum, Gelsenkirchen, Herne etc.
 - Google Maps Einbettung auf Kontakt/Impressum-Seite
 
@@ -420,7 +420,7 @@ Ausführen mit: `python scripts/download-images.py`
 
 ## 18. UMSETZUNGSREIHENFOLGE
 
-1. Adresse auf allen Seiten korrigieren: Im Westerkamp 7, 45711 Datteln
+1. Adresse: Karl-Breuing-Str. 2, 45770 Marl (erledigt — GBP offiziell in Marl, NAP sitewide synchron)
 2. `_headers`, `_redirects`, `robots.txt` — Pflicht
 3. `sitemap.xml` — vor Go-Live
 4. Cookie Consent (Klaro.js) — Pflicht vor Go-Live
