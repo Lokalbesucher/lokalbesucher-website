@@ -1,1250 +1,658 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ── Primäre SEO-Tags ───────────────────────────────────── -->
-  <title>Google Business Agentur NRW | Mehr lokale Kunden | Lokalbesucher</title>
-  <meta name="description" content="einfach. lokal. erfolgreich. — Lokalbesucher macht 100+ Unternehmen dauerhaft sichtbar bei Google Maps. 3,9 Mio. Profilaufrufe. Jetzt kostenlos beraten lassen.">
+  <title>Google Business Agentur NRW — mehr lokale Kunden | Lokalbesucher</title>
+  <meta name="description" content="Lokalbesucher bringt dein Unternehmen bei Google Maps nach oben — mit echten Bewertungen, Profilpflege und TapTag. Über 100 betreute Unternehmen, 3,9 Mio. Profilaufrufe.">
   <link rel="canonical" href="https://lokalbesucher.de/">
 
-  <!-- ── Open Graph ──────────────────────────────────────────── -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://lokalbesucher.de/">
-  <meta property="og:title"       content="Google Business Agentur NRW | Lokalbesucher">
-  <meta property="og:description" content="100+ lokale Unternehmen. 3,9 Mio. Profilaufrufe. Dauerhaft Top 3 bei Google Maps. Die Google Business Agentur aus Recklinghausen / NRW.">
-  <meta property="og:image"       content="https://lokalbesucher.de/assets/images/og-home.webp">
-  <meta property="og:locale"      content="de_DE">
-  <meta property="og:site_name"   content="Lokalbesucher">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lokalbesucher.de/">
+  <meta property="og:title" content="Google Business Agentur NRW — mehr lokale Kunden | Lokalbesucher">
+  <meta property="og:description" content="Google Maps nach oben — echte Bewertungen, Profilpflege, TapTag. 100+ betreute Unternehmen, 3,9 Mio. Profilaufrufe. Offizieller Google Partner.">
+  <meta property="og:image" content="https://lokalbesucher.de/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Lokalbesucher">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Business Agentur NRW | Lokalbesucher">
+  <meta name="twitter:description" content="Echte Bewertungen, Profilpflege, TapTag. 100+ Unternehmen, 3,9 Mio. Profilaufrufe. Offizieller Google Partner.">
+  <meta name="twitter:image" content="https://lokalbesucher.de/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp">
 
-  <!-- ── Twitter Card ───────────────────────────────────────── -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Google Business Agentur NRW | Lokalbesucher">
-  <meta name="twitter:description" content="100+ Unternehmen. 3,9 Mio. Profilaufrufe. Dauerhaft Top 3 bei Google Maps.">
-  <meta name="twitter:image"       content="https://lokalbesucher.de/assets/images/og-home.webp">
-
-  <!-- ── Preload Hero-Image (LCP) ───────────────────────────── -->
+  <link rel="preload" href="/assets/fonts/syne-800.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp" as="image" fetchpriority="high">
-
-  <!-- ── Critical CSS inline (above the fold) ───────────────── -->
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{background:#0c0e1a;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    h1,h2,h3,h4,h5,h6{font-family:'Syne',system-ui,sans-serif;line-height:1.15}
-    img{display:block;max-width:100%;height:auto}
-    a{color:inherit;text-decoration:none}
-    ul{list-style:none}
-    .container{width:100%;max-width:1200px;margin-inline:auto;padding-inline:1.5rem}
-    @media(min-width:768px){.container{padding-inline:2rem}}
-    @media(min-width:1200px){.container{padding-inline:3rem}}
-    .site-header{position:sticky;top:0;z-index:100;background:rgba(12,14,26,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1e2240}
-    .nav{display:flex;align-items:center;gap:2rem;height:4rem}
-    .nav-logo{display:flex;align-items:center;gap:.55rem;font-family:Arial,sans-serif;font-weight:700;font-size:1.2rem;color:#e8eaf6;flex-shrink:0}
-    .nav-logo img{height:2.4rem;width:auto;display:block}
-    /* Hero */
-    .hero{padding-block:4rem 3rem;position:relative;overflow:hidden}
-    @media(min-width:900px){.hero{padding-block:5.5rem 4rem}}
-    .hero-grid{display:grid;grid-template-columns:1fr;gap:3rem;align-items:center}
-    @media(min-width:900px){.hero-grid{grid-template-columns:1fr 1fr;gap:4rem}}
-    .hero-badge{display:inline-flex;align-items:center;gap:.4em;padding:.35em .9em;font-size:.78rem;font-weight:500;border-radius:999px;border:1px solid rgba(255,189,89,.3);background:rgba(255,189,89,.1);color:#ffbd59;margin-bottom:1.5rem}
-    .hero-title{font-size:clamp(2rem,5.5vw,3.5rem);font-weight:800;margin-bottom:1.25rem;letter-spacing:-.01em}
-    .hero-title em{color:#ffbd59;font-style:normal}
-    .hero-desc{font-size:clamp(1rem,2vw,1.15rem);color:#7c83aa;margin-bottom:2rem;max-width:520px}
-    .hero-slogan{font-size:clamp(.95rem,1.8vw,1.05rem);color:#e8eaf6;font-weight:500;margin-bottom:2rem;padding-left:1rem;border-left:3px solid #ffbd59;line-height:1.5}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
-    .btn-primary{background:#ffbd59;color:#0c0e1a;box-shadow:0 4px 24px rgba(255,189,89,.2)}
-    .btn-primary:hover{background:#ffc96d;transform:translateY(-1px);box-shadow:0 6px 32px rgba(255,189,89,.35)}
-    .btn-ghost{background:transparent;color:#e8eaf6;border-color:#1e2240}
-    .btn-ghost:hover{background:#111328;border-color:#7c83aa}
-    .btn-lg{font-size:1.05rem;padding:1em 2em}
-    .hero-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
-    .hero-checks{display:flex;flex-wrap:wrap;gap:1rem}
-    .hero-check{display:flex;align-items:center;gap:.45rem;font-size:.85rem;color:#7c83aa}
-    /* Hero Image */
-    .hero-img-wrap{position:relative;display:flex;justify-content:center}
-    .hero-img-wrap img{border-radius:20px;width:100%;max-width:520px;object-fit:cover}
-    .hero-img-glow{position:absolute;inset:-20px;background:radial-gradient(ellipse at center,rgba(255,189,89,.12) 0%,transparent 70%);pointer-events:none;border-radius:24px}
-    @media(max-width:899px){.hero-img-wrap{order:-1}}
-    /* ── Nav alignment fix ──────────────────────────────────── */
-    .nav-links{align-items:center;list-style:none}
-    /* ── Form (lb-* classes) ────────────────────────────────── */
-    .lb-label{display:block;font-size:.875rem;font-weight:500;color:#e8eaf6;margin-bottom:.5rem}
-    .lb-input{width:100%;background:#181b35;border:1px solid #1e2240;border-radius:10px;padding:.75rem 1rem;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;font-size:.95rem;line-height:1.5;transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none;appearance:none}
-    .lb-input:focus{border-color:#ffbd59;box-shadow:0 0 0 3px rgba(255,189,89,.15)}
-    .lb-input::placeholder{color:#7c83aa}
-    .lb-trust-item{display:flex;align-items:center;gap:.6rem;font-size:.875rem;color:#7c83aa}
-    .lb-trust-dot{width:6px;height:6px;background:#ffbd59;border-radius:50%;flex-shrink:0}
-    /* ── Critical above-fold from global.css (prevents CLS on async load) ── */
-    /* @font-face inline */
-    @font-face{font-family:'Syne';font-style:normal;font-weight:700;font-display:optional;src:url('/assets/fonts/syne-700.woff2') format('woff2')}
-    @font-face{font-family:'Syne';font-style:normal;font-weight:800;font-display:optional;src:url('/assets/fonts/syne-800.woff2') format('woff2')}
-    @font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:optional;src:url('/assets/fonts/dm-sans-400.woff2') format('woff2')}
-    /* Critical above-fold CSS — exakte Werte aus global.css */
-    .section{padding-block:6rem}
-    @media(min-width:768px){.section{padding-block:8rem}}
-    .grid-bg{background-image:linear-gradient(rgba(78,130,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(78,130,255,.04) 1px,transparent 1px);background-size:48px 48px}
-    .glow-yellow{position:relative}
-    .glow-yellow::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:min(80vw,600px);height:min(80vw,600px);background:radial-gradient(circle,rgba(255,189,89,.08) 0%,transparent 65%);pointer-events:none;z-index:0}
-    .glow-yellow>*{position:relative;z-index:1}
-    .trust-strip{padding-block:2rem;border-top:1px solid #1e2240;border-bottom:1px solid #1e2240;background:#111328}
-    .trust-label{text-align:center;font-size:.8rem;color:#7c83aa;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1.5rem}
-    .trust-logos{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2rem 3rem}
-    .trust-logos img{height:48px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.5}
-    .stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-    @media(min-width:768px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
-    .stat-card{text-align:center;padding:2rem;background:#111328;border:1px solid #1e2240;border-radius:16px}
-    .stat-number{font-family:'Syne',system-ui,sans-serif;font-weight:800;font-size:clamp(1.75rem,4vw,2.5rem);color:#ffbd59;display:block;line-height:1;margin-bottom:.5rem}
-    .stat-label{font-size:.85rem;color:#7c83aa}
-    .section-header{text-align:center;margin-bottom:4rem}
-    .section-label{display:inline-block;font-size:.78rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#ffbd59;margin-bottom:1rem}
-    .section-title{font-size:clamp(1.75rem,4vw,2.75rem);font-weight:800;margin-bottom:1rem}
-    .section-desc{font-size:1.05rem;color:#7c83aa;max-width:600px;margin-inline:auto}
-    .badge{display:inline-flex;align-items:center;gap:.4em;padding:.35em .9em;font-size:.78rem;font-weight:500;border-radius:999px;border:1px solid}
-    .badge-yellow{background:rgba(255,189,89,.12);border-color:rgba(255,189,89,.3);color:#ffbd59}
-  </style>
-
-  <!-- ── Global CSS async ─────────────────────────────────── -->
-  <link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
-
-  <!-- ── Favicon ────────────────────────────────────────────── -->
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/images/favicon.webp" type="image/webp" sizes="any">
 
-  <!-- ── Schema.org JSON-LD ─────────────────────────────────── -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://lokalbesucher.de/#business",
-        "name": "Lokalbesucher GmbH",
-        "alternateName": "Lokalbesucher Google Business Agentur",
-        "description": "Google Business Agentur in NRW. Wir steigern die lokale Sichtbarkeit von KMU in Deutschland durch professionelles Google Business Management.",
-        "url": "https://lokalbesucher.de/",
-        "logo": { "@type": "ImageObject", "url": "https://lokalbesucher.de/assets/images/lokalbesucher-logo-invers.webp" },
-        "image": "https://lokalbesucher.de/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp",
-        "telephone": "+4915122358883",
-        "email": "info@lokalbesucher.de",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Karl-Breuing-Str. 2",
-          "addressLocality": "Marl",
-          "postalCode": "45770",
-          "addressRegion": "NRW",
-          "addressCountry": "DE"
-        },
-        "geo": { "@type": "GeoCoordinates", "latitude": 51.6590, "longitude": 7.0890 },
-        "areaServed": { "@type": "Country", "name": "Deutschland" },
-        "priceRange": "€€",
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-            "opens": "09:00",
-            "closes": "18:00"
-          }
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "+4915122358883",
-          "contactType": "customer service",
-          "availableLanguage": "German"
-        },
-        "foundingDate": "2019",
-        "hasMap": "https://maps.google.com/maps?q=Lokalbesucher+GmbH,+Karl-Breuing-Str.+2,+45770+Marl"
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://lokalbesucher.de/#website",
-        "url": "https://lokalbesucher.de/",
-        "name": "Lokalbesucher",
-        "publisher": { "@id": "https://lokalbesucher.de/#business" }
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://lokalbesucher.de/#webpage",
-        "url": "https://lokalbesucher.de/",
-        "name": "Google Business Agentur NRW | Mehr lokale Kunden | Lokalbesucher",
-        "isPartOf": { "@id": "https://lokalbesucher.de/#website" },
-        "about": { "@id": "https://lokalbesucher.de/#business" },
-        "description": "einfach. lokal. erfolgreich. — Lokalbesucher macht 100+ Unternehmen dauerhaft sichtbar bei Google Maps. 3,9 Mio. Profilaufrufe, lokale Marketing-Agentur aus NRW.",
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://lokalbesucher.de/" }
-          ]
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Was kostet die Google Business Optimierung bei Lokalbesucher?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Das Ultimate Paket kostet 279 € pro Monat zzgl. 19 % MwSt. Die einmalige Einrichtungsgebühr beträgt 379 € zzgl. MwSt. Laufzeit: 12 Monate."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Für welche Unternehmen eignet sich Lokalbesucher?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Lokalbesucher ist ideal für kleine und mittelständische Unternehmen in Deutschland, die lokal bei Google gefunden werden wollen. Besonders geeignet für Restaurants, Handwerker, Arztpraxen, Hotels und den lokalen Einzelhandel."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Wie schnell sehe ich erste Ergebnisse?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Erste messbare Verbesserungen in Profilaufrufen und Aktionen sind in der Regel nach 4–8 Wochen sichtbar. Stabile Top-3-Platzierungen entstehen typischerweise in 3–6 Monaten."
-            }
-          }
-        ]
-      }
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":["Organization","LocalBusiness","ProfessionalService"],"@id":"https://lokalbesucher.de/#organization","name":"Lokalbesucher GmbH","url":"https://lokalbesucher.de/","logo":"https://lokalbesucher.de/assets/images/lokalbesucher-logo.webp","telephone":"+4915122358883","email":"info@lokalbesucher.de","address":{"@type":"PostalAddress","streetAddress":"Karl-Breuing-Str. 2","postalCode":"45770","addressLocality":"Marl","addressRegion":"NRW","addressCountry":"DE"},"areaServed":"DE","description":"Google Business Agentur aus dem Kreis Recklinghausen — lokale Sichtbarkeit für KMU in Deutschland."},
+      {"@type":"WebSite","@id":"https://lokalbesucher.de/#website","url":"https://lokalbesucher.de/","name":"Lokalbesucher","publisher":{"@id":"https://lokalbesucher.de/#organization"}},
+      {"@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Was kostet das Ultimate Paket?","acceptedAnswer":{"@type":"Answer","text":"Das Ultimate Paket kostet 279 € pro Monat zzgl. 19 % MwSt. Einmalige Einrichtungsgebühr: 379 € zzgl. MwSt. Laufzeit: 12 Monate. Alle Leistungen sind enthalten."}},
+        {"@type":"Question","name":"Was ist TapTag?","acceptedAnswer":{"@type":"Answer","text":"TapTag ist ein weltweit einzigartiger Schlüsselanhänger mit individuellem QR-Code pro Mitarbeiter. Kunden scannen den Code und kommen direkt zur Bewertung — inklusive Echtzeit-Dashboard und monatlicher Sachpreis-Verlosung."}},
+        {"@type":"Question","name":"Wie schnell sehe ich Ergebnisse?","acceptedAnswer":{"@type":"Answer","text":"Erste Effekte auf Profilaufrufe und Anfragen sind oft innerhalb weniger Wochen sichtbar. BattleKart Bochum sammelte mit TapTag über 800 Bewertungen in 9 Monaten."}}
+      ]}
     ]
   }
   </script>
 
-  <!-- ── GA4 Consent Mode v2 — ID ersetzen: G-KRKS5RL7MP ──────── -->
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRKS5RL7MP"></script>
-  <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});</script>
-  <script>gtag('config', 'AW-11287998127');</script>
+  <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});gtag('config','AW-11287998127');</script>
+  <script>(function(l,e,a,d,i,n,f,o){if(!l[i]){l.GlobalLeadinfoNamespace=l.GlobalLeadinfoNamespace||[];l.GlobalLeadinfoNamespace.push(i);l[i]=function(){(l[i].q=l[i].q||[]).push(arguments)};l[i].t=l[i].t||n;l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;o.src=d;f.parentNode.insertBefore(o,f);}}(window,document,'script','https://cdn.leadinfo.eu/ping.js','leadinfo','LI-69EB16FC309C3'));</script>
 
+  <style>
+    @font-face{font-family:'Syne';src:url('/assets/fonts/syne-800.woff2') format('woff2');font-weight:800;font-display:swap}
+    @font-face{font-family:'Syne';src:url('/assets/fonts/syne-700.woff2') format('woff2');font-weight:700;font-display:swap}
+    @font-face{font-family:'DM Sans';src:url('/assets/fonts/dm-sans-400.woff2') format('woff2');font-weight:400;font-display:swap}
+
+    :root{
+      --bg:#0c0e1a; --bg2:#0e1022; --surface:#13162b; --surface2:#181b35; --border:#1e2240;
+      --yellow:#ffbd59; --green:#3ecf8e; --text:#eef0fb; --muted:#9097bd; --ink:#1a1205;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    ul{list-style:none}
+    address{font-style:normal}
+    h1,h2,h3{font-family:'Syne',system-ui,sans-serif;line-height:1.04;letter-spacing:-.02em}
+    .wrap{width:100%;max-width:1180px;margin-inline:auto;padding-inline:1.5rem}
+    @media(min-width:900px){.wrap{padding-inline:2.5rem}}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+    .eyebrow .pin{width:14px;height:14px;color:var(--yellow)}
+    section{position:relative}
+
+    body::after{content:'';position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:.05;mix-blend-mode:soft-light;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+    .pv-bar{background:var(--yellow);color:var(--ink);text-align:center;font-size:.74rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.4rem;position:relative;z-index:200}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;padding:.9em 1.6em;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,border-color .2s;white-space:nowrap}
+    .btn-y{background:var(--yellow);color:var(--ink);box-shadow:0 10px 30px -10px rgba(255,189,89,.55)}
+    .btn-y:hover{transform:translateY(-2px);box-shadow:0 16px 40px -10px rgba(255,189,89,.7)}
+    .btn-o{border-color:var(--border);color:var(--text)}
+    .btn-o:hover{border-color:var(--yellow);color:var(--yellow)}
+    .btn-sm{padding:.6em 1.1em;font-size:.9rem}
+
+    /* hand-drawn marker */
+    .hl{position:relative;white-space:nowrap;color:var(--yellow)}
+    .hl svg{position:absolute;left:-2%;bottom:-.12em;width:104%;height:.36em;overflow:visible}
+    .hl path{fill:none;stroke:var(--yellow);stroke-width:4;stroke-linecap:round;opacity:.95;vector-effect:non-scaling-stroke}
+    .circle{position:relative;display:inline-block}
+    .circle svg{position:absolute;left:-16%;top:-26%;width:132%;height:152%;overflow:visible}
+    .circle path{fill:none;stroke:var(--yellow);stroke-width:4;stroke-linecap:round;vector-effect:non-scaling-stroke}
+
+    /* NAV */
+    .site-header{position:sticky;top:0;z-index:120;background:rgba(12,14,26,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav{display:flex;align-items:center;gap:2rem;height:4.2rem}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;color:var(--text);flex-shrink:0}
+    .nav-logo img{height:2.2rem;width:auto}
+    .nav-links{display:none}
+    @media(min-width:960px){.nav-links{display:flex;align-items:center;gap:1.6rem;margin-left:auto}.nav-links a{color:var(--muted);font-size:.95rem;transition:color .2s}.nav-links a:hover{color:var(--text)}}
+    .nav-has-dropdown{position:relative}
+    .nav-has-dropdown>a::after{content:'▾';margin-left:.3rem;font-size:.7em;opacity:.6}
+    .nav-dropdown{display:none;position:absolute;top:calc(100% + .6rem);left:0;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:.5rem;min-width:230px;box-shadow:0 18px 40px rgba(0,0,0,.5)}
+    .nav-has-dropdown:hover .nav-dropdown,.nav-has-dropdown:focus-within .nav-dropdown{display:block}
+    .nav-dropdown a{display:block;padding:.6rem .9rem;color:var(--muted);font-size:.9rem;border-radius:9px}
+    .nav-dropdown a:hover{background:var(--surface2);color:var(--text)}
+    .nav-cta{display:none}
+    @media(min-width:960px){.nav-cta{display:inline-flex}}
+    .nav-toggle{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;margin-left:auto}
+    .nav-toggle span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px}
+    @media(min-width:960px){.nav-toggle{display:none}}
+    .nav-drawer{display:none;flex-direction:column;gap:.2rem;padding:1rem 1.5rem 1.5rem;background:var(--surface);border-top:1px solid var(--border)}
+    .nav-drawer.is-open{display:flex}
+    .nav-drawer a{color:var(--text);padding:.65rem .25rem;border-bottom:1px solid var(--border);font-size:1rem}
+    .nav-drawer .sub{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;padding-top:.8rem;border:0}
+
+    /* HERO */
+    .hero{padding:3rem 0 4.5rem;background:radial-gradient(120% 80% at 85% -10%,rgba(255,189,89,.10),transparent 55%),linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%)}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+    @media(min-width:920px){.hero-grid{grid-template-columns:1.12fr .88fr;gap:3rem}}
+    .hero h1{font-size:clamp(2.5rem,6.5vw,4.7rem);font-weight:800;margin:1.1rem 0 1.3rem}
+    .hero h1 .light{color:var(--muted);font-weight:700}
+    .hero-sub{font-size:clamp(1.02rem,2.1vw,1.2rem);color:var(--muted);max-width:36ch;margin-bottom:2rem}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+    .hero-meta{display:flex;gap:1.6rem;margin-top:2.2rem;flex-wrap:wrap}
+    .hero-meta div{font-size:.84rem;color:var(--muted)}
+    .hero-meta b{display:block;font-family:'Syne',sans-serif;font-size:1.5rem;color:var(--text);font-weight:800;letter-spacing:-.02em}
+    @media(max-width:560px){.hero-meta{gap:1rem 1.4rem}.hero-meta div{flex:1 0 40%}.hero-meta b{font-size:1.2rem}}
+    .hero-visual{position:relative;justify-self:center}
+    .hero-visual::before{content:'';position:absolute;inset:-26px;background:radial-gradient(ellipse at center,rgba(255,189,89,.13) 0%,transparent 70%);pointer-events:none}
+    .photo-frame{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 40px 80px -34px rgba(0,0,0,.75);max-width:470px}
+    .photo-frame img{width:100%;display:block}
+    .chip{position:absolute;left:-20px;bottom:26px;background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:16px;padding:.85rem 1.1rem;box-shadow:0 24px 50px -16px rgba(0,0,0,.7)}
+    .chip b{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;display:block;color:var(--yellow)}
+    .chip span{font-size:.72rem;color:var(--muted);font-weight:600}
+
+    /* TRUST */
+    .trust{padding:2.2rem 0;border-block:1px solid var(--border);background:var(--bg2)}
+    .trust p{text-align:center;font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.3rem}
+    .logos{display:flex;gap:2.4rem;align-items:center;justify-content:center;flex-wrap:wrap}
+    .logos img{height:46px;width:auto;border-radius:10px;opacity:.8;filter:grayscale(.25);transition:.25s}
+    .logos img:hover{opacity:1;filter:none;transform:translateY(-3px)}
+
+    /* sections */
+    .sec{padding:5rem 0}
+    .sec-head{max-width:34ch;margin-bottom:2.5rem}
+    .sec-head h2{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;margin-top:.8rem}
+    .sec-head p{color:var(--muted);margin-top:1rem}
+
+    /* NUMBERS */
+    .nums-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+    @media(min-width:760px){.nums-grid{grid-template-columns:repeat(4,1fr)}}
+    .stat{padding:1.6rem 1.2rem;border-radius:18px;border:1px solid var(--border);background:var(--surface)}
+    .stat:nth-child(odd){transform:translateY(-14px)}
+    .stat:nth-child(2){background:var(--yellow);color:var(--ink);border-color:transparent}
+    .stat .big{font-family:'Syne',sans-serif;font-size:clamp(2.1rem,4vw,2.9rem);font-weight:800;letter-spacing:-.03em;line-height:1}
+    .stat small{display:block;margin-top:.5rem;font-size:.82rem;color:var(--muted);line-height:1.45}
+    .stat:nth-child(2) small{color:#6a5320}
+
+    /* STEPS (gelb) */
+    .bright{background:var(--yellow);color:var(--ink);padding:5.5rem 0}
+    .bright .eyebrow{color:#7a5e1e}
+    .bright h2{font-size:clamp(2rem,4.5vw,3.2rem);font-weight:800;max-width:20ch;margin:1rem 0 2.8rem}
+    .steps{display:grid;grid-template-columns:1fr;gap:1.4rem}
+    @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+    .step{padding-top:1.2rem;border-top:2px solid rgba(26,18,5,.25)}
+    .step .n{font-family:'Syne',sans-serif;font-weight:800;display:inline-flex;align-items:center;justify-content:center;width:2.4rem;height:2.4rem;border-radius:999px;background:var(--ink);color:var(--yellow);margin-bottom:.9rem}
+    .step h3{font-size:1.25rem;font-weight:700;margin-bottom:.5rem}
+    .step p{color:#5c4a17;font-size:.95rem}
+    .bright .more{margin-top:2.5rem}
+
+    /* SERVICES */
+    .serv{display:grid;grid-template-columns:1fr;gap:1rem}
+    @media(min-width:640px){.serv{grid-template-columns:1fr 1fr}}
+    @media(min-width:980px){.serv{grid-template-columns:1fr 1fr 1fr}}
+    .serv a{display:block;padding:1.6rem;border:1px solid var(--border);border-radius:18px;background:var(--surface);transition:transform .2s,border-color .2s}
+    .serv a:hover{transform:translateY(-4px);border-color:rgba(255,189,89,.45)}
+    .serv .ico{font-size:1.4rem;margin-bottom:.7rem}
+    .serv h3{font-size:1.1rem;font-weight:700;margin-bottom:.35rem}
+    .serv p{font-size:.88rem;color:var(--muted)}
+    .serv .go{color:var(--yellow);font-size:.85rem;font-weight:600;margin-top:.7rem;display:inline-block}
+
+    /* PRICING */
+    .price{background:linear-gradient(150deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--border);border-radius:26px;padding:2.5rem;max-width:880px;margin-inline:auto;position:relative;overflow:hidden}
+    .price::before{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;background:radial-gradient(circle,rgba(255,189,89,.16),transparent 70%)}
+    .price-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1.5rem;flex-wrap:wrap;position:relative}
+    .price-badge{display:inline-block;background:rgba(255,189,89,.14);color:var(--yellow);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.35em .8em;border-radius:999px;margin-bottom:.8rem}
+    .price-amount{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.6rem,6vw,3.6rem);letter-spacing:-.03em}
+    .price-amount span{font-size:1rem;color:var(--muted);font-weight:600;font-family:'DM Sans',sans-serif}
+    .price-fine{font-size:.8rem;color:var(--muted);margin-top:.3rem}
+    .price-feats{display:grid;grid-template-columns:1fr;gap:.7rem;margin:2rem 0;position:relative}
+    @media(min-width:620px){.price-feats{grid-template-columns:1fr 1fr;gap:.7rem 1.6rem}}
+    .price-feats div{display:flex;gap:.6rem;align-items:flex-start;font-size:.93rem;color:var(--text)}
+    .price-feats svg{flex-shrink:0;color:var(--yellow);margin-top:.18rem}
+
+    /* SPLIT */
+    .split-grid{display:grid;grid-template-columns:1fr;gap:2.5rem;align-items:center}
+    @media(min-width:900px){.split-grid{grid-template-columns:.92fr 1.08fr;gap:3.5rem}}
+    .split-photo{border-radius:22px;overflow:hidden;border:1px solid var(--border);transform:rotate(-1.6deg)}
+    .split-photo img{width:100%}
+    .ticks{display:flex;flex-direction:column;gap:.7rem;margin-top:1.2rem}
+    .ticks div{display:flex;gap:.6rem;align-items:flex-start;font-size:.98rem}
+    .ticks svg{flex-shrink:0;color:var(--yellow);margin-top:.15rem}
+
+    /* QUOTE (navy) */
+    .quote{background:var(--surface);border-block:1px solid var(--border);padding:5rem 0;overflow:hidden}
+    .qx{max-width:780px;min-height:300px}
+    .qx .mark{font-family:'Syne',sans-serif;font-size:7rem;line-height:.42;font-weight:800;color:var(--yellow);opacity:.85;margin-bottom:1rem}
+    .qx-body{transition:opacity .5s ease}
+    .qx .stars{color:var(--yellow);letter-spacing:.18em;font-size:1.05rem;margin-bottom:1.1rem}
+    .qx blockquote{font-family:'Syne',sans-serif;font-weight:700;font-size:clamp(1.4rem,3vw,2.15rem);line-height:1.32;letter-spacing:-.015em;margin-bottom:1.4rem;color:var(--text)}
+    .qx cite{font-style:normal;color:var(--text);font-weight:700;font-family:'Syne',sans-serif;font-size:1.05rem}
+    .qx .role{display:block;font-family:'DM Sans',sans-serif;font-weight:400;font-size:.85rem;color:var(--muted);margin-top:.15rem}
+    .qx .g{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;color:var(--muted);margin-top:.9rem}
+    .gdots{display:inline-flex;gap:3px}
+    .gdots i{width:7px;height:7px;border-radius:50%;display:block}
+    .gdots i:nth-child(1){background:#4285F4}.gdots i:nth-child(2){background:#EA4335}.gdots i:nth-child(3){background:#FBBC05}.gdots i:nth-child(4){background:#34A853}
+    .q-dots{display:flex;gap:.55rem;margin-top:2rem}
+    .q-dots b{width:8px;height:8px;border-radius:50%;background:var(--border);transition:background .3s,transform .3s;cursor:pointer;display:block}
+    .q-dots b.on{background:var(--yellow);transform:scale(1.25)}
+
+    /* FORM */
+    .form-wrap{background:linear-gradient(135deg,var(--surface) 0%,var(--surface2) 100%);border:1px solid var(--border);border-radius:26px;padding:2.5rem 1.5rem;max-width:820px;margin-inline:auto}
+    @media(min-width:768px){.form-wrap{padding:3rem}}
+    .lead-form{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.6rem}
+    @media(min-width:600px){.lead-form{grid-template-columns:1fr 1fr}}
+    .lf{display:flex;flex-direction:column;gap:.4rem}
+    .lf.full{grid-column:1/-1}
+    .lf label{font-size:.8rem;font-weight:600;color:var(--muted)}
+    .lf input{width:100%;padding:.85rem 1rem;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;color:var(--text);font-size:1rem;font-family:inherit}
+    .lf input:focus{outline:none;border-color:rgba(255,189,89,.5)}
+    .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+    .lf-err{grid-column:1/-1;color:#ff6b6b;font-size:.85rem;display:none}
+    .lf-legal{grid-column:1/-1;font-size:.74rem;color:var(--muted);opacity:.7;line-height:1.5}
+    .lf-ok{text-align:center;padding:1rem 0}
+    .lf-ok .ok{width:54px;height:54px;border-radius:50%;background:rgba(62,207,142,.12);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+    .lf-ok h3{font-size:1.3rem;margin-bottom:.5rem}
+    .lf-ok p{color:var(--muted)}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:.9rem;max-width:820px;margin-inline:auto}
+    .faq-item{border:1px solid var(--border);border-radius:14px;background:var(--surface);overflow:hidden}
+    .faq-item summary{list-style:none;cursor:pointer;padding:1.15rem 1.4rem;font-family:'Syne',sans-serif;font-weight:700;font-size:.98rem;display:flex;justify-content:space-between;gap:1rem}
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{content:'+';color:var(--yellow);font-size:1.3rem;line-height:1}
+    .faq-item[open] summary::after{content:'–'}
+    .faq-item .a{padding:0 1.4rem 1.2rem;color:var(--muted);font-size:.94rem;line-height:1.8}
+
+    /* CTA */
+    .cta{padding:6rem 0;text-align:center;background:radial-gradient(80% 120% at 50% 120%,rgba(255,189,89,.16),transparent 60%),var(--bg)}
+    .cta h2{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;max-width:18ch;margin:0 auto 1.3rem}
+    .cta p{color:var(--muted);max-width:42ch;margin:0 auto 2rem}
+
+    /* FOOTER */
+    footer.ft{background:var(--surface);border-top:1px solid var(--border);padding:3rem 0 1.5rem;font-size:.9rem}
+    .ft-grid{display:grid;grid-template-columns:1fr;gap:2rem}
+    @media(min-width:760px){.ft-grid{grid-template-columns:2fr 1fr 1.4fr}}
+    .ft-brand{display:flex;align-items:center;gap:.5rem;font-family:'Syne',sans-serif;font-weight:800;margin-bottom:.6rem}
+    .ft-brand img{height:2rem}
+    .ft-nap{color:var(--muted);line-height:1.8}
+    .ft-nap a{color:var(--muted)}
+    .ft h4{font-family:'Syne',sans-serif;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.9rem}
+    .ft-links{display:flex;flex-direction:column;gap:.5rem}
+    .ft-links a{color:var(--muted)}
+    .ft-links a:hover{color:var(--text)}
+    .ft-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem}
+    .ft-legal{display:flex;gap:1.3rem;flex-wrap:wrap}
+
+    .wa-float{position:fixed;bottom:1.4rem;right:1.4rem;z-index:300;width:3.3rem;height:3.3rem;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(37,211,102,.45)}
+    @media(max-width:767px){.wa-float{bottom:5rem}body{padding-bottom:4.5rem}}
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:310;display:flex;gap:.6rem;padding:.7rem .9rem;background:rgba(12,14,26,.95);backdrop-filter:blur(12px);border-top:1px solid var(--border)}
+    .sticky-cta .btn{flex:1;justify-content:center;padding:.8em 1em;font-size:.9rem}
+    @media(min-width:768px){.sticky-cta{display:none}}
+
+    .gp-cert{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.6rem;flex-wrap:wrap}
+    .gp-badge{display:inline-block;line-height:0;transition:transform .2s}
+    .gp-badge:hover{transform:translateY(-3px)}
+    .gp-badge img{height:124px;width:auto;display:block;filter:drop-shadow(0 12px 28px rgba(0,0,0,.45))}
+    .gp-cap{font-family:'Syne',sans-serif;font-weight:700;font-size:1.15rem;color:var(--text)}
+    .gp-cap b{color:var(--yellow)}
+    .gp-divider{width:3rem;height:1px;background:var(--border);margin:0 auto 1.4rem}
+    .team-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;max-width:760px;margin:0 auto}
+    @media(max-width:600px){.team-row{gap:.7rem}}
+    .tm{text-align:center}
+    .tm img{display:block;height:225px;width:auto;margin:0 auto .5rem;filter:drop-shadow(0 14px 24px rgba(0,0,0,.5));transition:transform .25s}
+    @media(max-width:600px){.tm img{height:150px}}
+    .tm:hover img{transform:translateY(-6px)}
+    .tm-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem}
+    .tm-role{font-size:.82rem;color:var(--muted)}
+    [data-r]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    [data-r].in{opacity:1;transform:none}
+  </style>
 </head>
 <body>
 
-<!-- ── Skip Link ──────────────────────────────────────────────── -->
-<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 
-<!-- ── Header ────────────────────────────────────────────────── -->
-<header class="site-header" role="banner">
-  <div class="container">
+<header class="site-header">
+  <div class="wrap">
     <nav class="nav" aria-label="Hauptnavigation">
-      <a href="/" class="nav-logo" aria-label="Lokalbesucher – Startseite">
-        <img src="/assets/images/lokalbesucher-logo-invers.webp" alt="Lokalbesucher Logo" width="35" height="38" loading="eager">
-        Lokalbesucher
-      </a>
-
+      <a href="/" class="nav-logo"><img src="/assets/images/lokalbesucher-logo-invers.webp" alt="Lokalbesucher" width="32" height="35"> Lokalbesucher</a>
       <ul class="nav-links" role="list">
-        <li class="nav-has-dropdown">
-          <a href="/google-business-agentur/" aria-haspopup="true">Leistungen</a>
+        <li class="nav-has-dropdown"><a href="/google-business-agentur/" aria-haspopup="true">Leistungen</a>
           <ul class="nav-dropdown">
             <li><a href="/google-business-agentur/">Google Business Optimierung</a></li>
             <li><a href="/bewertungsmanagement/">Bewertungsmanagement</a></li>
             <li><a href="/seo-agentur/">SEO Agentur</a></li>
             <li><a href="/google-ads/">Google &amp; YouTube Ads</a></li>
             <li><a href="/meta-ads/">Facebook &amp; Instagram Ads</a></li>
+            <li><a href="/social-media-agentur/">Social Media Agentur</a></li>
           </ul>
         </li>
         <li><a href="/case-studies/">Erfolge</a></li>
-        <li><a href="/faq/">FAQ</a></li><li><a href="/jobs/">Jobs</a></li>
-        <li class="nav-has-dropdown">
-          <a href="#" aria-haspopup="true">Tools</a>
-          <ul class="nav-dropdown">
-            <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI-Kalkulator <span class="dropdown-badge">Kostenlos</span></a></li>
-            <li><a href="/schema-org-generator/">Schema Generator <span class="dropdown-badge">Neu</span></a></li>
-          </ul>
-        </li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/jobs/">Jobs</a></li>
       </ul>
-
-      <a href="https://wa.me/4915122358883"
-         class="btn btn-primary nav-cta"
-         rel="noopener noreferrer"
-         target="_blank"
-         aria-label="Kostenlose Beratung via WhatsApp">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-        Kostenlos beraten
-      </a>
-
-      <button class="nav-toggle"
-              aria-controls="nav-drawer"
-              aria-expanded="false"
-              aria-label="Navigation öffnen">
-        <span></span><span></span><span></span>
-      </button>
+      <a href="https://wa.me/4915122358883" class="btn btn-y btn-sm nav-cta" rel="noopener noreferrer" target="_blank">Kostenlos beraten</a>
+      <button class="nav-toggle" aria-controls="nav-drawer" aria-expanded="false" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     </nav>
   </div>
-
   <div id="nav-drawer" class="nav-drawer" role="navigation" aria-label="Mobile Navigation">
-    <span class="drawer-sub-label">Leistungen</span>
-    <a href="/google-business-agentur/" class="drawer-sub-link">Google Business Optimierung</a>
-    <a href="/bewertungsmanagement/" class="drawer-sub-link">Bewertungsmanagement</a>
-    <a href="/seo-agentur/" class="drawer-sub-link">SEO Agentur</a>
-    <a href="/google-ads/" class="drawer-sub-link">Google &amp; YouTube Ads</a>
-    <a href="/meta-ads/" class="drawer-sub-link">Facebook &amp; Instagram Ads</a>
+    <span class="sub">Leistungen</span>
+    <a href="/google-business-agentur/">Google Business Optimierung</a>
+    <a href="/bewertungsmanagement/">Bewertungsmanagement</a>
+    <a href="/seo-agentur/">SEO Agentur</a>
+    <a href="/google-ads/">Google &amp; YouTube Ads</a>
+    <a href="/meta-ads/">Facebook &amp; Instagram Ads</a>
+    <a href="/social-media-agentur/">Social Media Agentur</a>
     <a href="/case-studies/">Erfolge</a>
     <a href="/faq/">FAQ</a>
-    <a href="/jobs/">Jobs</a>
-    <span class="drawer-sub-label">Tools</span>
-    <a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/" class="drawer-sub-link">ROI-Kalkulator</a>
-    <a href="/schema-org-generator/" class="drawer-sub-link">Schema Generator</a>
-    <a href="/impressum/">Impressum</a>
-    <a href="https://wa.me/4915122358883"
-       rel="noopener noreferrer"
-       target="_blank"
-       class="btn btn-primary"
-       style="width:fit-content;margin-top:.5rem">
-      WhatsApp Beratung
-    </a>
+    <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank" class="btn btn-y" style="margin-top:1rem">WhatsApp Beratung</a>
   </div>
 </header>
 
-<!-- ── Main ───────────────────────────────────────────────────── -->
-<main id="main">
-
-  <!-- HERO ──────────────────────────────────────────────────── -->
-  <section class="hero grid-bg glow-yellow" aria-labelledby="hero-title">
-    <div class="container">
-      <div class="hero-grid">
-
-        <!-- Text-Spalte -->
-        <div>
-          <div class="hero-badge">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            einfach. lokal. erfolgreich.
-          </div>
-
-          <h1 class="hero-title" id="hero-title">
-            Mehr Kunden durch<br>
-            <em>Google Maps &amp; Business</em>
-          </h1>
-
-          <p class="hero-desc">
-            Lokale Unternehmen aus dem Ruhrgebiet finden wir oben bei Google — und dabei bleibt es auch.
-            100+ aktive Kunden. 3,9&nbsp;Mio. Profilaufrufe. Jeden Monat Zahlen statt Versprechen.
-          </p>
-
-          <p class="hero-slogan">Du machst dein Geschäft. Wir machen deine Sichtbarkeit.</p>
-
-          <div class="hero-cta">
-            <a href="https://wa.me/4915122358883"
-               class="btn btn-primary btn-lg"
-               rel="noopener noreferrer"
-               target="_blank"
-               aria-label="Jetzt kostenlose Beratung via WhatsApp starten">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-              Kostenlose Beratung
-            </a>
-            <a href="/google-business-agentur/" class="btn btn-ghost btn-lg">
-              Leistungen ansehen
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-          </div>
-
-          <div class="hero-checks">
-            <div class="hero-check">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              12 Monate Laufzeit
-            </div>
-            <div class="hero-check">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              KI-Bewertungsantworten &lt;&nbsp;60&nbsp;Min.
-            </div>
-            <div class="hero-check">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffbd59" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Monatliches Reporting
-            </div>
-          </div>
-
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><svg class="pin" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1112 6a2.5 2.5 0 010 5.5z"/></svg> Google Business Agentur · Kreis Recklinghausen</span>
+        <h1>Damit dich deine Kunden <span class="hl">finden<svg viewBox="0 0 220 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C 60 4, 165 4, 216 11"/></svg></span><br><span class="light">— nicht deine Konkurrenz.</span></h1>
+        <p class="hero-sub">Wir bringen dein Unternehmen auf Google Maps nach oben — mit echten Bewertungen, Profilpflege und einem Team, das du beim Vornamen kennst.</p>
+        <div class="hero-cta">
+          <a href="#anfrage" class="btn btn-y">Kostenlosen Sichtbarkeits-Check holen</a>
+          <a href="#paket" class="btn btn-o">Was kostet das?</a>
         </div>
-
-        <!-- Bild-Spalte -->
-        <div class="hero-img-wrap">
-          <div class="hero-img-glow" aria-hidden="true"></div>
-          <img src="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp"
-               alt="Unternehmerin lächelt — dank Lokalbesucher dauerhaft sichtbar bei Google"
-               width="560" height="600"
-               loading="eager"
-               fetchpriority="high">
+        <div class="hero-meta">
+          <div><b>3,9 Mio.</b> Profilaufrufe generiert</div>
+          <div><b>100+</b> betreute Unternehmen</div>
+          <div><b>780.000</b> Aktionen ausgelöst</div>
         </div>
-
+      </div>
+      <div class="hero-visual">
+        <div class="photo-frame">
+          <img src="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp" alt="Unternehmerin lächelt — dank Lokalbesucher dauerhaft sichtbar bei Google" width="560" height="600" loading="eager" fetchpriority="high">
+        </div>
+        <div class="chip"><b>+158 %</b><span>mehr Profilaufrufe in 3 Monaten</span></div>
       </div>
     </div>
   </section>
 
-  <!-- TRUST STRIP ───────────────────────────────────────────── -->
-  <section class="trust-strip" aria-label="Zertifizierungen und Kunden" style="padding-block:2rem 1.75rem">
-    <div class="container">
-
-      <!-- Google Partner Badge -->
-      <div style="display:flex;flex-direction:column;align-items:center;gap:.5rem;margin-bottom:1.75rem">
-        <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7c83aa;margin:0">Offiziell zertifiziert</p>
-        <a href="https://www.google.com/partners/agency?id=9897265706"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Offizieller Google Partner — Lokalbesucher GmbH verifizieren"
-           style="display:inline-block;background:#fff;border-radius:10px;padding:.4rem .7rem;line-height:0;box-shadow:0 2px 16px rgba(0,0,0,.3);transition:transform .2s,box-shadow .2s"
-           onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 6px 24px rgba(0,0,0,.4)'"
-           onmouseout="this.style.transform='';this.style.boxShadow='0 2px 16px rgba(0,0,0,.3)'">
-          <img src="https://www.gstatic.com/partners/badge/images/2026/PartnerBadgeClickable.svg"
-               alt="Offizieller Google Partner — Lokalbesucher GmbH"
-               width="160" height="58"
-               loading="lazy">
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="wrap">
+      <div class="gp-cert">
+        <a class="gp-badge" href="https://www.google.com/partners/agency?id=9897265706" target="_blank" rel="noopener noreferrer" aria-label="Offizieller Google Partner — Lokalbesucher GmbH, Status ansehen">
+          <img src="/assets/images/google-partner-badge.svg" alt="Offizieller Google Partner" width="124" height="120" loading="lazy">
         </a>
+        <span class="gp-cap">Offizieller <b>Google</b> Partner</span>
       </div>
-
-      <!-- Trennlinie -->
-      <div style="width:3rem;height:1px;background:#1e2240;margin:0 auto 1.5rem"></div>
-
-      <!-- Kunden-Logos -->
-      <p class="trust-label">Vertrauen von 100+ Unternehmen in ganz Deutschland</p>
-      <div class="trust-logos">
-        <img src="/assets/images/orthoclinic-kunde-lokalbesucher.webp" alt="Orthoclinic Hamburg" width="48" height="48" loading="lazy">
-        <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp" alt="Easy Fitness" width="48" height="48" loading="lazy">
-        <img src="/assets/images/mangalmezze-kunde-lokalbesucher.webp" alt="Mangal Mezze" width="48" height="48" loading="lazy">
-        <img src="/assets/images/bb-kunde-lokalbesucher.webp" alt="BattleKart" width="48" height="48" loading="lazy">
-        <img src="/assets/images/qulis-kunde-lokalbesucher.webp" alt="Qulis" width="48" height="48" loading="lazy">
-      </div>
-
-    </div>
-  </section>
-
-  <!-- STATS ─────────────────────────────────────────────────── -->
-  <section class="section" aria-label="Unsere Zahlen">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card" data-reveal>
-          <span class="stat-number">100+</span>
-          <span class="stat-label">betreute Unternehmen</span>
-        </div>
-        <div class="stat-card" data-reveal>
-          <span class="stat-number">3,9&nbsp;Mio.</span>
-          <span class="stat-label">Profilaufrufe generiert</span>
-        </div>
-        <div class="stat-card" data-reveal>
-          <span class="stat-number">780k+</span>
-          <span class="stat-label">Anrufe, Routen, Klicks</span>
-        </div>
-        <div class="stat-card" data-reveal>
-          <span class="stat-number">40x</span>
-          <span class="stat-label">ROAS Eventlocation</span>
-        </div>
+      <div class="gp-divider" aria-hidden="true"></div>
+      <p>Vertrauen von lokalen Unternehmen in ganz Deutschland</p>
+      <div class="logos">
+        <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp" alt="EasyFitness" width="110" height="46" loading="lazy">
+        <img src="/assets/images/orthoclinic-kunde-lokalbesucher.webp" alt="Orthoclinic" width="110" height="46" loading="lazy">
+        <img src="/assets/images/bb-kunde-lokalbesucher.webp" alt="Kunde von Lokalbesucher" width="110" height="46" loading="lazy">
+        <img src="/assets/images/qulis-kunde-lokalbesucher.webp" alt="Qulis" width="110" height="46" loading="lazy">
       </div>
     </div>
   </section>
 
-  <!-- WARUM LOKALBESUCHER ────────────────────────────────────── -->
-  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="why-title">
-    <div class="container">
-
-      <!-- Intro mit Bild -->
-      <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center;margin-bottom:4rem">
-        <div style="text-align:center">
-          <span class="section-label">Warum Lokalbesucher?</span>
-          <h2 class="section-title" id="why-title" style="margin-bottom:1rem">Google Business ist mehr als ein Profil</h2>
-          <p class="section-desc" style="max-width:680px;margin-inline:auto">
-            Ich sehe es jeden Tag: tolle Betriebe, die bei Google auf Seite 2 verschwinden.
-            Nicht weil sie schlecht sind — sondern weil niemand ihr Profil anfasst.
-            Wir ändern das. Vollständig, konsequent, monatlich messbar.
-          </p>
-        </div>
+  <!-- NUMBERS -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head" data-r>
+        <span class="eyebrow">Zahlen, Daten, Fakten</span>
+        <h2>Keine leeren Versprechen — <span class="circle">messbare Erfolge.<svg viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M40 8 C 120 -2, 205 12, 175 38 C 150 64, 40 70, 16 48 C -2 30, 14 12, 70 8"/></svg></span></h2>
       </div>
-
-      <!-- Feature-Bild + Karten -->
-      <div style="display:grid;grid-template-columns:1fr;gap:2rem;align-items:start">
-
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem">
-
-          <div class="card fade-up">
-            <div class="icon-box icon-box-yellow" style="margin-bottom:1.25rem">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            </div>
-            <h3 style="font-size:1.1rem;margin-bottom:.75rem">KI-Bewertungsantworten</h3>
-            <p style="font-size:.9rem;color:#7c83aa;line-height:1.7">
-              Jede Bewertung wird in unter 60 Minuten professionell beantwortet —
-              KI-gestützt, aber immer individuell. Kein Copy-Paste.
-            </p>
-          </div>
-
-          <div class="card fade-up">
-            <div class="icon-box icon-box-blue" style="margin-bottom:1.25rem">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-            </div>
-            <h3 style="font-size:1.1rem;margin-bottom:.75rem">4 Posts auf 9 Plattformen</h3>
-            <p style="font-size:.9rem;color:#7c83aa;line-height:1.7">
-              Monatlich 4 Posts auf Google Business, Facebook, Instagram und mehr.
-              600+ Profil-Updates im Jahr. Dein Profil bleibt immer aktuell.
-            </p>
-          </div>
-
-          <div class="card fade-up">
-            <div class="icon-box icon-box-green" style="margin-bottom:1.25rem">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-            </div>
-            <h3 style="font-size:1.1rem;margin-bottom:.75rem">50+ Branchenverzeichnisse</h3>
-            <p style="font-size:.9rem;color:#7c83aa;line-height:1.7">
-              Konsistente NAP-Daten auf über 50 relevanten Verzeichnissen —
-              ein entscheidender Rankingfaktor den die meisten ignorieren.
-            </p>
-          </div>
-
-          <div class="card fade-up">
-            <div class="icon-box icon-box-yellow" style="margin-bottom:1.25rem">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 style="font-size:1.1rem;margin-bottom:.5rem">TapTag — weltweit einzigartig</h3>
-            <p style="font-size:.9rem;color:#7c83aa;line-height:1.7">
-              Schlüsselanhänger mit individuellem QR-Code pro Mitarbeiter. Echtzeit-Dashboard. Monatliche Sachpreis-Verlosung von Lokalbesucher.
-            </p>
-          </div>
-
-          <div class="card fade-up">
-            <div class="icon-box icon-box-blue" style="margin-bottom:1.25rem">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <h3 style="font-size:1.1rem;margin-bottom:.75rem">Monatliches Reporting</h3>
-            <p style="font-size:.9rem;color:#7c83aa;line-height:1.7">
-              Klare Zahlen. Kein Bullshit. Du siehst monatlich schwarz auf weiß
-              was sich verbessert hat — Aufrufe, Anrufe, Routenanfragen.
-            </p>
-          </div>
-
-          <div class="card fade-up">
-            <div class="icon-box icon-box-green" style="margin-bottom:1.25rem">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3 style="font-size:1.1rem;margin-bottom:.75rem">Reputationsmanagement</h3>
-            <p style="font-size:.9rem;color:#7c83aa;line-height:1.7">
-              Wir schützen deinen guten Ruf — proaktiv und kontinuierlich,
-              damit dein Profil sauber und vertrauenswürdig bleibt.
-            </p>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TEAM TEASER ─────────────────────────────────────────────── -->
-  <section class="section" aria-labelledby="team-title">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Wer steckt dahinter?</span>
-        <h2 class="section-title" id="team-title">Ein starkes Team für deinen Erfolg</h2>
-      </div>
-
-      <div style="display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-bottom:2.5rem">
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;width:120px">
-          <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
-               alt="Tobias Frank — Geschäftsführer Lokalbesucher"
-               width="120" height="156" loading="lazy"
-               style="width:120px;height:auto;border-radius:12px">
-          <div style="text-align:center">
-            <div style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.875rem;color:#e8eaf6">Tobias Frank</div>
-            <div style="font-size:.75rem;color:#7c83aa">Geschäftsführer</div>
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;width:120px">
-          <img src="/assets/images/kim-frank-lokalbesucher-team.webp"
-               alt="Kim Frank — Head of Operations, Lokalbesucher"
-               width="120" height="156" loading="lazy"
-               style="width:120px;height:auto;border-radius:12px">
-          <div style="text-align:center">
-            <div style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.875rem;color:#e8eaf6">Kim Frank</div>
-            <div style="font-size:.75rem;color:#7c83aa">Head of Operations</div>
-          </div>
-        </div>
-
-        <div style="display:flex;flex-direction:column;align-items:center;gap:.75rem;width:120px">
-          <img src="/assets/images/lucy-kalweit-lokalbesucher-team-2026.webp"
-               alt="Lucy Kalweit — Teamleitung Social Media, Lokalbesucher"
-               width="120" height="156" loading="lazy"
-               style="width:120px;height:auto;border-radius:12px">
-          <div style="text-align:center">
-            <div style="font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:.875rem;color:#e8eaf6">Lucy Kalweit</div>
-            <div style="font-size:.75rem;color:#7c83aa">Social Media Lead</div>
-          </div>
-        </div>
-
-      </div>
-
-      <div style="text-align:center">
-        <a href="/unser-team/" class="btn btn-ghost">
-          Das ganze Team kennenlernen
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+      <div class="nums-grid">
+        <div class="stat" data-r><div class="big">100+</div><small>betreute Unternehmen in Deutschland</small></div>
+        <div class="stat" data-r><div class="big">800+</div><small>5-Sterne-Bewertungen bei BattleKart Bochum in 9 Monaten</small></div>
+        <div class="stat" data-r><div class="big">3,9 Mio.</div><small>generierte Profilaufrufe</small></div>
+        <div class="stat" data-r><div class="big">780.000</div><small>Aktionen: Anrufe, Routen, Klicks</small></div>
       </div>
     </div>
   </section>
 
-  <!-- DAS PAKET ─────────────────────────────────────────────── -->
-  <section class="section glow-yellow" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="paket-title">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Transparente Preise</span>
-        <h2 class="section-title" id="paket-title">Das Ultimate Paket</h2>
-        <p class="section-desc">
-          Digitale Sichtbarkeit — günstig und unkompliziert. Für 279&nbsp;€ im Monat ist alles dabei,
-          was tatsächlich wirkt, und wir sorgen dafür, dass dich deine Kunden optimal finden.
-        </p>
+  <!-- STEPS -->
+  <section class="bright">
+    <div class="wrap">
+      <span class="eyebrow">So läuft's ab</span>
+      <h2>Wir lernen uns kennen — dann lehnst du dich zurück und genießt die Show.</h2>
+      <div class="steps">
+        <div class="step" data-r><span class="n">01</span><h3>Kennenlernen</h3><p>Im kostenlosen Erstgespräch schauen wir, wo du bei Google stehst. Du musst nichts vorbereiten.</p></div>
+        <div class="step" data-r><span class="n">02</span><h3>Wir bauen auf</h3><p>Profil, Bewertungen, Verzeichnisse, Posts — wir übernehmen die komplette Umsetzung.</p></div>
+        <div class="step" data-r><span class="n">03</span><h3>Du wirst gefunden</h3><p>Mehr Anrufe, mehr Routenanfragen, mehr Kunden. Monatlich nachvollziehbar im Reporting.</p></div>
       </div>
+      <div class="more"><a href="#anfrage" class="btn btn-o" style="border-color:rgba(26,18,5,.3);color:var(--ink)">Sichtbarkeits-Check holen</a></div>
+    </div>
+  </section>
 
-      <div style="max-width:720px;margin-inline:auto">
-        <div class="price-card">
-          <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;justify-content:space-between;margin-bottom:2rem">
-            <div>
-              <div class="badge badge-yellow" style="margin-bottom:1rem">Ultimate Paket</div>
-              <div class="price-tag">279 &euro; <span>/ Monat</span></div>
-              <div class="price-period">zzgl. 19&nbsp;% MwSt. &middot; Einrichtung: 379&nbsp;&euro; einmalig &middot; 12 Monate Laufzeit</div>
-            </div>
-            <a href="https://wa.me/4915122358883"
-               class="btn btn-primary btn-lg"
-               rel="noopener noreferrer"
-               target="_blank"
-               aria-label="Jetzt starten via WhatsApp">
-              Jetzt starten
-            </a>
-          </div>
-
-          <hr class="divider" style="margin-block:0 2rem">
-
-          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0">
-            <ul class="feature-list" style="margin-right:2rem">
-              <li class="feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                50+ Branchenverzeichnisse
-              </li>
-              <li class="feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                KI-Bewertungsantworten &lt;&nbsp;60&nbsp;Min.
-              </li>
-              <li class="feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                4 Posts / Monat auf 9 Plattformen
-              </li>
-              <li class="feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Monatliches Reporting
-              </li>
-            </ul>
-            <ul class="feature-list">
-              <li class="feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                600+ Profil-Updates / Jahr
-              </li>
-              <li class="feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                TapTag
-              </li>
-              <li class="feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Reputationsmanagement &amp; Schutz deines guten Rufs
-              </li>
-              <li class="feature-item">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                Persönlicher Ansprechpartner
-              </li>
-            </ul>
-          </div>
-        </div>
+  <!-- SERVICES -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head" data-r>
+        <span class="eyebrow">Alles aus einer Hand</span>
+        <h2>Mehr als Google Business.</h2>
+        <p>Von lokaler Sichtbarkeit bis bezahlte Werbung — wir decken alle Kanäle ab, die lokale Unternehmen heute brauchen.</p>
       </div>
-      <div style="text-align:center;margin-top:1.5rem">
-        <a href="/google-business-agentur/" class="btn btn-ghost">
-          Mehr zur Google Business Optimierung
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+      <div class="serv">
+        <a href="/google-business-agentur/" data-r><div class="ico">📍</div><h3>Google Business</h3><p>Lokal nach oben bei Google Maps & Suche.</p><span class="go">Mehr erfahren →</span></a>
+        <a href="/bewertungsmanagement/" data-r><div class="ico">⭐</div><h3>Bewertungsmanagement</h3><p>Mehr echte Bewertungen, KI-Antworten in &lt;60 Min.</p><span class="go">Mehr erfahren →</span></a>
+        <a href="/seo-agentur/" data-r><div class="ico">🔎</div><h3>SEO</h3><p>Dauerhaft gefunden werden — ohne Klickpreise.</p><span class="go">Mehr erfahren →</span></a>
+        <a href="/google-ads/" data-r><div class="ico">🎯</div><h3>Google &amp; YouTube Ads</h3><p>Anfragen von Menschen, die aktiv suchen.</p><span class="go">Mehr erfahren →</span></a>
+        <a href="/meta-ads/" data-r><div class="ico">📣</div><h3>Facebook &amp; Instagram Ads</h3><p>Leads & Bewerber über Meta — ab unter 10 €.</p><span class="go">Mehr erfahren →</span></a>
+        <a href="/social-media-agentur/" data-r><div class="ico">🎬</div><h3>Social Media</h3><p>Content & Reels, die Reichweite bringen.</p><span class="go">Mehr erfahren →</span></a>
       </div>
     </div>
   </section>
 
-  <!-- WEITERE LEISTUNGEN ─────────────────────────────────────── -->
-  <section class="section" aria-labelledby="leistungen-uebersicht-title">
-    <div class="container">
-      <span class="section-label">Alle Leistungen</span>
-      <h2 class="section-title" id="leistungen-uebersicht-title">Mehr als Google Business — alles aus einer Hand</h2>
-      <p class="section-desc" style="max-width:640px">Von der lokalen Sichtbarkeit bis zur bezahlten Werbung: Lokalbesucher deckt alle digitalen Kanäle ab, die lokale Unternehmen heute brauchen.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem">
-        <a href="/google-business-agentur/" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-decoration:none;transition:border-color .2s,transform .2s;display:block" onmouseover="this.style.borderColor='rgba(255,189,89,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-          <div style="font-size:1.25rem;margin-bottom:.5rem">📍</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.3rem">Google Business</div>
-          <div style="font-size:.8rem;color:#7c83aa">Lokal Top 3 bei Google Maps</div>
-        </a>
-        <a href="/bewertungsmanagement/" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-decoration:none;transition:border-color .2s,transform .2s;display:block" onmouseover="this.style.borderColor='rgba(255,189,89,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-          <div style="font-size:1.25rem;margin-bottom:.5rem">⭐</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.3rem">Bewertungsmanagement</div>
-          <div style="font-size:.8rem;color:#7c83aa">Mehr 5-Sterne, schnell beantwortet</div>
-        </a>
-        <a href="/seo-agentur/" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-decoration:none;transition:border-color .2s,transform .2s;display:block" onmouseover="this.style.borderColor='rgba(255,189,89,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-          <div style="font-size:1.25rem;margin-bottom:.5rem">🔍</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.3rem">SEO Agentur</div>
-          <div style="font-size:.8rem;color:#7c83aa">Mehr Traffic ohne Klickpreise</div>
-        </a>
-        <a href="/google-ads/" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-decoration:none;transition:border-color .2s,transform .2s;display:block" onmouseover="this.style.borderColor='rgba(255,189,89,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-          <div style="font-size:1.25rem;margin-bottom:.5rem">🎯</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.3rem">Google &amp; YouTube Ads</div>
-          <div style="font-size:.8rem;color:#7c83aa">Anfragen ab Tag 1</div>
-        </a>
-        <a href="/meta-ads/" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem;text-decoration:none;transition:border-color .2s,transform .2s;display:block" onmouseover="this.style.borderColor='rgba(255,189,89,.4)';this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='var(--border)';this.style.transform='none'">
-          <div style="font-size:1.25rem;margin-bottom:.5rem">📱</div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.3rem">Facebook &amp; Instagram Ads</div>
-          <div style="font-size:.8rem;color:#7c83aa">Leads unter 30 € mit Terminierung</div>
-        </a>
+  <!-- PRICING -->
+  <section class="sec" id="paket">
+    <div class="wrap">
+      <div class="sec-head" data-r style="max-width:none;text-align:center;margin-inline:auto">
+        <span class="eyebrow" style="justify-content:center;display:flex">Transparente Preise</span>
+        <h2>Digitale Sichtbarkeit — <span class="hl">günstig<svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C 55 5, 150 5, 196 11"/></svg></span> und unkompliziert.</h2>
+        <p style="margin-inline:auto">Ein Paket, alles dabei, was tatsächlich wirkt. Wir sorgen dafür, dass dich deine Kunden optimal finden.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- CASE STUDIES ──────────────────────────────────────────── -->
-  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="cases-title">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Unsere Erfolge</span>
-        <h2 class="section-title" id="cases-title">Echte Ergebnisse, echte Unternehmen</h2>
-        <p class="section-desc">
-          Zahlen reden mehr als wir. Alle direkt aus den Google-Business-Dashboards unserer Kunden — nichts hochgerechnet, nichts geschätzt.
-        </p>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-bottom:2rem">
-        <a href="/case-studies/battlekart/" class="card" style="text-decoration:none;border-left:3px solid #ffbd59;transition:border-color .2s,transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-          <div class="badge badge-yellow" style="margin-bottom:1rem">800+ Bewertungen</div>
-          <h3 style="font-size:1.05rem;margin-bottom:.5rem;color:#e8eaf6">BattleKart Bochum</h3>
-          <p style="font-size:.875rem;color:#7c83aa;margin-bottom:1rem;line-height:1.7">800+ echte 5-Sterne-Bewertungen in 9 Monaten — durch TapTag und KI-Antworten in unter 60 Min.</p>
-          <span style="font-size:.875rem;font-weight:700;color:#ffbd59;font-family:'Syne',sans-serif">Case Study lesen →</span>
-        </a>
-        <a href="/case-studies/viabeauty/" class="card" style="text-decoration:none;border-left:3px solid #4f82ff;transition:border-color .2s,transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-          <div class="badge badge-blue" style="margin-bottom:1rem">+388% Aufrufe</div>
-          <h3 style="font-size:1.05rem;margin-bottom:.5rem;color:#e8eaf6">Viabeauty</h3>
-          <p style="font-size:.875rem;color:#7c83aa;margin-bottom:1rem;line-height:1.7">+388% mehr Profilaufrufe. Kein Werbebudget, kein Trick — konsequente Profil-Pflege über 12 Monate.</p>
-          <span style="font-size:.875rem;font-weight:700;color:#ffbd59;font-family:'Syne',sans-serif">Case Study lesen →</span>
-        </a>
-        <a href="/case-studies/solar-richter/" class="card" style="text-decoration:none;border-left:3px solid #3ecf8e;transition:border-color .2s,transform .2s" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
-          <div class="badge badge-green" style="margin-bottom:1rem">16.000 Aufrufe/Monat</div>
-          <h3 style="font-size:1.05rem;margin-bottom:.5rem;color:#e8eaf6">Solar Richter</h3>
-          <p style="font-size:.875rem;color:#7c83aa;margin-bottom:1rem;line-height:1.7">Ein Handwerksbetrieb im Photovoltaik-Boom — von praktisch null auf 16.000 Profilaufrufe im Monat. Komplett organisch.</p>
-          <span style="font-size:.875rem;font-weight:700;color:#ffbd59;font-family:'Syne',sans-serif">Case Study lesen →</span>
-        </a>
-      </div>
-      <div style="text-align:center">
-        <a href="/case-studies/" class="btn btn-ghost">
-          Alle 9 Erfolge ansehen
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- BEWERTUNGEN ─────────────────────────────────────────── -->
-  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="reviews-title">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Kundenstimmen</span>
-        <h2 class="section-title" id="reviews-title">Was unsere Kunden sagen</h2>
-        <p class="section-desc">Keine Hochglanzzitate aus der Marketingabteilung. Die hier kommen von Inhabern.</p>
-      </div>
-
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;margin-top:2rem">
-
-        <blockquote style="background:#0c0e1a;border:1px solid #1e2240;border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
-          <div style="display:flex;gap:2px" aria-label="5 von 5 Sterne">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p style="font-size:.95rem;color:#7c83aa;line-height:1.7;flex:1">"Seit wir mit Lokalbesucher arbeiten, klingelt das Telefon deutlich öfter. Wir sind bei Google Maps jetzt dauerhaft oben — und das bleibt auch so."</p>
-          <footer style="font-size:.85rem;color:#e8eaf6;font-weight:600">BattleKart Bochum</footer>
-        </blockquote>
-
-        <blockquote style="background:#0c0e1a;border:1px solid #1e2240;border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
-          <div style="display:flex;gap:2px" aria-label="5 von 5 Sterne">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p style="font-size:.95rem;color:#7c83aa;line-height:1.7;flex:1">"+158 % mehr Profilaufrufe in weniger als einem Jahr. Ich hab nicht erwartet dass das so schnell geht — aber es funktioniert."</p>
-          <footer style="font-size:.85rem;color:#e8eaf6;font-weight:600">Ristorante Peperoncino</footer>
-        </blockquote>
-
-        <blockquote style="background:#0c0e1a;border:1px solid #1e2240;border-radius:16px;padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
-          <div style="display:flex;gap:2px" aria-label="5 von 5 Sterne">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffbd59" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </div>
-          <p style="font-size:.95rem;color:#7c83aa;line-height:1.7;flex:1">"Wir hätten nicht gedacht, dass so viel Potenzial in unserem Google-Profil steckt. Jetzt wissen wir es — und sehen es jeden Monat im Reporting."</p>
-          <footer style="font-size:.85rem;color:#e8eaf6;font-weight:600">ViaBeauty</footer>
-        </blockquote>
-
-      </div>
-
-      <div style="text-align:center;margin-top:2.5rem">
-        <a href="https://www.google.com/search?q=Lokalbesucher+GmbH+Bewertungen" rel="noopener noreferrer" target="_blank" class="btn btn-ghost">
-          Alle Google-Bewertungen lesen
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FAQ ───────────────────────────────────────────────────── -->
-  <section class="section" aria-labelledby="faq-title">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">FAQ</span>
-        <h2 class="section-title" id="faq-title">Häufige Fragen</h2>
-      </div>
-
-      <div style="max-width:720px;margin-inline:auto;display:flex;flex-direction:column;gap:1rem" id="faq-was-kostet">
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-1">
-            Was kostet das Ultimate Paket?
-            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </button>
-          <div class="accordion-body" id="faq-1" hidden>
-            Das Ultimate Paket kostet <strong>279&nbsp;&euro;&nbsp;/&nbsp;Monat</strong> zzgl. 19&nbsp;% MwSt.
-            Die einmalige Einrichtungsgebühr beträgt 379&nbsp;&euro; zzgl. MwSt. Laufzeit: 12 Monate.
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-2">
-            Wie schnell sehe ich Ergebnisse?
-            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </button>
-          <div class="accordion-body" id="faq-2" hidden>
-            Nach 4–8 Wochen siehst du erste Bewegung — mehr Profilaufrufe, mehr Anrufe.
-            Stabile Top-3-Platzierungen? Je nach Wettbewerb 3 bis 6 Monate.
-            Das ist kein Versprechen, das ist Erfahrungswert aus 100+ Projekten.
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <button class="accordion-trigger" aria-expanded="false" aria-controls="faq-3">
-            Für welche Branchen ist Lokalbesucher geeignet?
-            <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          </button>
-          <div class="accordion-body" id="faq-3" hidden>
-            Alle lokalen Betriebe mit physischem Standort oder Servicegebiet. Restaurants,
-            Handwerker, Arztpraxen, Hotels, Freizeit. Wir haben Erfahrung in über 20 Branchen —
-            wenn jemand deinen Typ Unternehmen googeln könnte, sind wir der richtige Partner.
-          </div>
-        </div>
-
-      </div>
-
-      <div style="text-align:center;margin-top:2.5rem">
-        <a href="/faq/" class="btn btn-ghost">
-          Alle Fragen ansehen
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINALER CTA ───────────────────────────────────────────── -->
-  <section class="section" id="anfrage" aria-labelledby="hp-form-title">
-    <div class="container">
-      <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:start;max-width:960px;margin:0 auto">
-        <style>
-          @media(min-width:768px){#hp-form-grid{grid-template-columns:1fr 1fr!important}}
-        </style>
-        <div id="hp-form-grid" style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:start">
+      <div class="price" data-r>
+        <div class="price-top">
           <div>
-            <span class="section-label">Bereit durchzustarten?</span>
-            <h2 class="section-title" id="hp-form-title" style="margin-bottom:1.25rem">
-              Dein Google-Profil ist<br>dein bester Verkäufer
-            </h2>
-            <p style="color:#7c83aa;margin-bottom:2rem;line-height:1.75">
-              Schick uns deinen Firmennamen. Wir schauen in 15 Minuten rein, wo du stehst und
-              was realistisch drin ist. Kein Pitchdeck. Kein Verkaufsgespräch.
-            </p>
-            <div style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:2rem">
-              <div class="lb-trust-item"><span class="lb-trust-dot"></span>Tobias antwortet persönlich — heute noch</div>
-              <div class="lb-trust-item"><span class="lb-trust-dot"></span>100+ Unternehmen in NRW und Deutschland</div>
-              <div class="lb-trust-item"><span class="lb-trust-dot"></span>Erstgespräch kostenlos — kein Pitchdeck, kein Sales-Script</div>
-              <div class="lb-trust-item"><span class="lb-trust-dot"></span>Kein Druck, keine Verpflichtung</div>
-            </div>
-            <div style="background:#111328;border:1px solid #1e2240;border-radius:12px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start">
-              <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp" alt="Tobias Frank — Inhaber Lokalbesucher GmbH" width="46" height="58" loading="lazy" style="flex-shrink:0;width:46px;height:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.4))">
-              <div>
-                <div style="font-size:.875rem;font-weight:600;color:#e8eaf6;margin-bottom:.2rem">Tobias Frank</div>
-                <div style="font-size:.8rem;color:#7c83aa">Inhaber · antwortet persönlich</div>
-              </div>
-            </div>
+            <span class="price-badge">Ultimate Paket</span>
+            <div class="price-amount">279 €<span> / Monat</span></div>
+            <div class="price-fine">zzgl. 19 % MwSt. · Einrichtung 379 € · Laufzeit 12 Monate</div>
           </div>
-          <div style="background:#111328;border:1px solid #1e2240;border-radius:20px;padding:2rem">
-            <form id="hp-lead-form" novalidate>
-              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-              <div style="margin-bottom:1.25rem">
-                <label class="lb-label" for="hp-name">Dein Name *</label>
-                <input class="lb-input" type="text" id="hp-name" name="name"
-                       required autocomplete="name" placeholder="Max Mustermann">
-              </div>
-              <div style="margin-bottom:1.25rem;position:relative">
-                <label class="lb-label" for="hp-business">Unternehmen *</label>
-                <input class="lb-input" type="text" id="hp-business" name="companyName"
-                       required autocomplete="off" placeholder="Firmenname eingeben…"
-                       aria-autocomplete="list" aria-controls="hp-places-dd">
-                <div id="hp-places-dd" role="listbox" aria-label="Unternehmensvorschläge"
-                     style="display:none;position:absolute;top:100%;left:0;right:0;background:#111328;border:1px solid #1e2240;border-top:none;border-radius:0 0 10px 10px;z-index:200;max-height:220px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,.5)"></div>
-                <input type="hidden" id="hp-place-id" name="placeId">
-              </div>
-              <div style="margin-bottom:1.25rem">
-                <label class="lb-label" for="hp-email">E-Mail *</label>
-                <input class="lb-input" type="email" id="hp-email" name="email"
-                       required autocomplete="email" placeholder="max@muster.de">
-              </div>
-              <div style="margin-bottom:1.25rem">
-                <label class="lb-label" for="hp-phone">Telefon *</label>
-                <input class="lb-input" type="tel" id="hp-phone" name="phone"
-                       required autocomplete="tel" placeholder="+49 151 ...">
-              </div>
-              <div style="margin-bottom:1.5rem">
-                <label style="display:flex;gap:.75rem;align-items:flex-start;cursor:pointer">
-                  <input type="checkbox" id="hp-dsgvo" required
-                         style="flex-shrink:0;margin-top:.2rem;accent-color:#ffbd59;width:16px;height:16px">
-                  <span style="font-size:.8rem;color:#7c83aa;line-height:1.5">
-                    Ich bin einverstanden, dass Lokalbesucher mich einmalig zu meiner Anfrage kontaktiert.
-                    <a href="/datenschutz/" style="color:#ffbd59;text-decoration:underline">Datenschutz</a>
-                  </span>
-                </label>
-              </div>
-              <button type="submit" id="hp-submit-btn"
-                      style="width:100%;background:#ffbd59;color:#0c0e1a;border:none;border-radius:12px;padding:1em 1.5em;font-family:'Syne',system-ui,sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.5rem">
-                Kostenlose Analyse anfordern
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </button>
-              <p id="hp-form-error" style="display:none;margin-top:.75rem;font-size:.8rem;color:#ff5c5c;text-align:center"></p>
-            </form>
-            <div id="hp-form-success" hidden style="text-align:center;padding:1rem 0">
-              <div style="width:56px;height:56px;background:rgba(62,207,142,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <h3 style="font-size:1.25rem;font-weight:700;margin-bottom:.5rem;color:#e8eaf6">Danke! Anfrage erhalten.</h3>
-              <p style="color:#7c83aa;font-size:.9rem;margin-bottom:1.5rem">
-                Tobias meldet sich <strong style="color:#e8eaf6">heute noch</strong> persönlich bei dir.
-              </p>
-              <p style="font-size:.8rem;color:#7c83aa;margin-bottom:.75rem">Noch schneller? Direkt via WhatsApp:</p>
-              <a href="https://wa.me/4915122358883" class="btn btn-ghost" rel="noopener noreferrer" target="_blank" style="width:100%;justify-content:center">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                WhatsApp öffnen
-              </a>
-            </div>
-          </div>
+          <a href="#anfrage" class="btn btn-y">Jetzt starten</a>
+        </div>
+        <div class="price-feats">
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 50+ Branchenverzeichnisse</div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> KI-Bewertungsantworten in &lt; 60 Min.</div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 4 Posts / Monat auf 9 Plattformen</div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 600+ Profil-Updates / Jahr</div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> TapTag — weltweit einzigartig</div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Reputationsmanagement &amp; Schutz deines guten Rufs</div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Monatliches Reporting</div>
+          <div><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Persönlicher Ansprechpartner</div>
+        </div>
+        <a href="/google-business-agentur/" class="go" style="color:var(--yellow);font-weight:600">Alle Details zur Google Business Optimierung →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPLIT / TapTag -->
+  <section class="sec">
+    <div class="wrap split-grid">
+      <div class="split-photo" data-r>
+        <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp" alt="Lokales Unternehmen, das mit Lokalbesucher sichtbarer wurde" width="520" height="380" loading="lazy">
+      </div>
+      <div data-r>
+        <span class="eyebrow">Weltweit einzigartig</span>
+        <h2 style="font-size:clamp(2rem,4.5vw,3rem);font-weight:800;margin:.9rem 0 1.1rem">TapTag — dein Bewertungs-Booster.</h2>
+        <p style="color:var(--muted);max-width:42ch">Ein Schlüsselanhänger mit individuellem QR-Code pro Mitarbeiter. Kunden scannen, bewerten — und du siehst alles im Echtzeit-Dashboard. Sowas gibt's nur bei uns.</p>
+        <div class="ticks">
+          <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> QR-Code pro Mitarbeiter — direkt zur Bewertung</div>
+          <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Echtzeit-Dashboard pro Mitarbeiter</div>
+          <div><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Monatliche Sachpreis-Verlosung — von uns bezahlt</div>
         </div>
       </div>
     </div>
-    <script>
-    /* ── Google Places Autocomplete für Unternehmensfeld ─── */
-    (function(){
-      var HP_KEY = 'AIzaSyDuz0V-su1x-5z1SNdlIlVVn2-icOBWlTE';
-      var inp    = document.getElementById('hp-business');
-      var dd     = document.getElementById('hp-places-dd');
-      var hidden = document.getElementById('hp-place-id');
-      var token  = null;
-      var timer  = null;
-      var apiLoaded = false;
-
-      function loadAPI() {
-        if (apiLoaded || window.google?.maps?.places) { apiLoaded = true; return; }
-        apiLoaded = true;
-        var s = document.createElement('script');
-        s.src = 'https://maps.googleapis.com/maps/api/js?key=' + HP_KEY + '&libraries=places&language=de';
-        s.async = true;
-        document.head.appendChild(s);
-      }
-
-      function closeDd() {
-        dd.style.display = 'none';
-        dd.innerHTML = '';
-      }
-
-      function showSuggestions(preds) {
-        dd.innerHTML = '';
-        if (!preds || !preds.length) { closeDd(); return; }
-        preds.forEach(function(p) {
-          var item = document.createElement('div');
-          item.setAttribute('role', 'option');
-          item.setAttribute('aria-selected', 'false');
-          item.style.cssText = 'padding:.75rem 1rem;cursor:pointer;border-bottom:1px solid #1e2240;font-size:.875rem';
-          item.innerHTML = '<span style="color:#e8eaf6;font-weight:600">' + p.structured_formatting.main_text + '</span>' +
-            '<br><span style="color:#7c83aa;font-size:.78rem">' + (p.structured_formatting.secondary_text || '') + '</span>';
-          item.addEventListener('mousedown', function(e) {
-            e.preventDefault();
-            inp.value = p.structured_formatting.main_text;
-            hidden.value = p.place_id;
-            closeDd();
-            /* Details holen: Telefon auto-befüllen */
-            var svc = new google.maps.places.PlacesService(document.createElement('div'));
-            svc.getDetails({
-              placeId: p.place_id,
-              sessionToken: token,
-              fields: ['formatted_phone_number', 'international_phone_number', 'website']
-            }, function(place, st) {
-              if (st === google.maps.places.PlacesServiceStatus.OK) {
-                var phoneInp = document.getElementById('hp-phone');
-                if (phoneInp && !phoneInp.value && place.international_phone_number) {
-                  phoneInp.value = place.international_phone_number;
-                }
-              }
-            });
-            token = null;
-          });
-          dd.appendChild(item);
-        });
-        dd.style.display = 'block';
-      }
-
-      inp.addEventListener('focus', loadAPI);
-
-      inp.addEventListener('input', function() {
-        hidden.value = '';
-        clearTimeout(timer);
-        var val = inp.value.trim();
-        if (val.length < 2) { closeDd(); return; }
-        timer = setTimeout(function() {
-          if (!window.google?.maps?.places) return;
-          if (!token) token = new google.maps.places.AutocompleteSessionToken();
-          new google.maps.places.AutocompleteService().getPlacePredictions({
-            input: val,
-            sessionToken: token,
-            types: ['establishment'],
-            componentRestrictions: { country: 'de' }
-          }, function(preds, status) {
-            if (status === google.maps.places.PlacesServiceStatus.OK) showSuggestions(preds);
-            else closeDd();
-          });
-        }, 280);
-      });
-
-      document.addEventListener('click', function(e) {
-        if (!inp.contains(e.target) && !dd.contains(e.target)) closeDd();
-      });
-    }());
-    </script>
-
-    <script>
-    (function(){
-      var form = document.getElementById('hp-lead-form');
-      var loadTime = Date.now();
-      var btn  = document.getElementById('hp-submit-btn');
-      var err  = document.getElementById('hp-form-error');
-      if (!form) return;
-      form.addEventListener('submit', async function(e){
-        e.preventDefault();
-        err.style.display = 'none';
-        if (!form.checkValidity()) { form.reportValidity(); return; }
-        if (form.querySelector('[name="website"]').value) return;
-        btn.disabled = true;
-        btn.textContent = 'Wird gesendet …';
-        try {
-          var nameVal    = document.getElementById('hp-name').value.trim();
-          var placeIdVal = document.getElementById('hp-place-id').value.trim();
-          var params = {
-            name:             nameVal,
-            ansprechpartner:  nameVal,
-            companyName:      document.getElementById('hp-business').value.trim(),
-            email:            document.getElementById('hp-email').value.trim(),
-            phone:            document.getElementById('hp-phone').value.trim(),
-            source:           'Homepage Kontaktformular'
-          };
-          if (placeIdVal) params.placeId = placeIdVal;
-          var payload = new URLSearchParams(params);
-          var res = await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-053d-7b58b2ab79a1', {
-            method: 'POST',
-            body: payload
-          });
-          if (!res.ok) throw new Error(res.status);
-          form.hidden = true;
-          document.getElementById('hp-form-success').hidden = false;
-          if (typeof gtag === 'function') {
-            gtag('event', 'form_submit', { event_category:'lead', event_label:'homepage' });
-            gtag('event', 'conversion', { 'send_to': 'AW-11287998127/_UL3CNfG-KccEK_dxIYq', 'value': 150.0, 'currency': 'EUR' });
-          }
-        } catch(ex) {
-          btn.disabled = false;
-          btn.textContent = 'Kostenlose Analyse anfordern';
-          err.textContent = 'Senden fehlgeschlagen (Status: ' + (ex.message||'Netzwerkfehler') + ') — bitte schreib uns direkt via WhatsApp.';
-          err.style.display = 'block';
-        }
-      });
-    }());
-    </script>
   </section>
 
+  <!-- TEAM -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head" data-r style="text-align:center;max-width:none;margin-inline:auto">
+        <span class="eyebrow" style="display:flex;justify-content:center">Wer dahinter steckt</span>
+        <h2>Ein starkes Team für deinen Erfolg.</h2>
+      </div>
+      <div class="team-row">
+        <div class="tm" data-r><img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp" alt="Tobias Frank — Inhaber Lokalbesucher GmbH" width="200" height="260" loading="lazy"><div class="tm-name">Tobias Frank</div><div class="tm-role">Inhaber &amp; Geschäftsführer</div></div>
+        <div class="tm" data-r><img src="/assets/images/lucy-kalweit-lokalbesucher-team-2026.webp" alt="Lucy Kalweit — Teamleitung Social Media, Lokalbesucher" width="200" height="260" loading="lazy"><div class="tm-name">Lucy Kalweit</div><div class="tm-role">Teamleitung Social Media</div></div>
+        <div class="tm" data-r><img src="/assets/images/mara-goronschewski-lokalbesucher-team.webp" alt="Mara Goronschewski — Social Media Managerin, Lokalbesucher" width="200" height="260" loading="lazy"><div class="tm-name">Mara Goronschewski</div><div class="tm-role">Social Media Managerin</div></div>
+      </div>
+      <div style="text-align:center;margin-top:2.2rem"><a href="/unser-team/" class="btn btn-o">Das ganze Team kennenlernen</a></div>
+    </div>
+  </section>
+
+  <!-- KUNDENSTIMMEN (rotierend) -->
+  <section class="quote">
+    <div class="wrap">
+      <div class="qx">
+        <div class="mark" aria-hidden="true">“</div>
+        <div class="qx-body" id="qxBody" aria-live="polite">
+          <div class="stars" aria-label="5 von 5 Sternen">★★★★★</div>
+          <blockquote id="qxText">„Von Beginn an hatten wir mit Tobias einen festen Ansprechpartner. Ein paar Wochen später wussten wir nicht, welche Anfrage wir zuerst bearbeiten sollten. Unsere Werbung ist einfach TOP."</blockquote>
+          <cite id="qxCite">Susanne Janßen</cite>
+        </div>
+        <div class="q-dots" id="qxDots" aria-hidden="true"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM -->
+  <section class="sec" id="anfrage">
+    <div class="wrap">
+      <div class="form-wrap">
+        <span class="eyebrow">Kostenloser Sichtbarkeits-Check</span>
+        <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin:.8rem 0 .6rem">Wo stehst du bei Google?</h2>
+        <p style="color:var(--muted);font-size:.95rem;line-height:1.7">Schick uns deinen Firmennamen — wir schauen in 15 Minuten rein, wo du stehst und was realistisch drin ist. Kein Pitch, kein Verkaufsgespräch.</p>
+        <form class="lead-form" id="hp-form" novalidate>
+          <div class="lf"><label for="hp-name">Dein Name *</label><input type="text" id="hp-name" name="name" autocomplete="name" required></div>
+          <div class="lf"><label for="hp-company">Unternehmen *</label><input type="text" id="hp-company" name="company" autocomplete="organization" required></div>
+          <div class="lf full"><label for="hp-phone">Mobilnummer *</label><input type="tel" id="hp-phone" name="phone" autocomplete="tel" placeholder="0171 1234567" required></div>
+          <div class="lf full"><label for="hp-email">E-Mail (optional)</label><input type="email" id="hp-email" name="email" autocomplete="email" placeholder="name@firma.de"></div>
+          <input type="text" class="hp" id="hp-hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <p class="lf-err" id="hp-err" role="alert"></p>
+          <button type="submit" class="btn btn-y" id="hp-submit" style="grid-column:1/-1">Kostenlosen Check anfragen →</button>
+          <p class="lf-legal" style="grid-column:1/-1">Mit dem Absenden erklärst du dich mit einer Kontaktaufnahme einverstanden. Daten gemäß <a href="/datenschutz/" style="color:var(--muted);text-decoration:underline">DSGVO</a>, keine Weitergabe an Dritte.</p>
+        </form>
+        <div id="hp-ok" class="lf-ok" hidden>
+          <div class="ok"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3ecf8e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h3>Danke! Anfrage erhalten.</h3>
+          <p>Tobias meldet sich <strong style="color:var(--text)">heute noch</strong> persönlich. Noch schneller? <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank" style="color:var(--yellow);text-decoration:underline">WhatsApp</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head" data-r style="text-align:center;max-width:820px;margin-inline:auto"><span class="eyebrow" style="display:flex;justify-content:center">Häufige Fragen</span><h2>Kurz &amp; ehrlich.</h2></div>
+      <div class="faq-list">
+        <details class="faq-item"><summary>Was kostet das Ultimate Paket?</summary><div class="a">279 € pro Monat zzgl. 19 % MwSt. Einmalige Einrichtung: 379 € zzgl. MwSt. Laufzeit 12 Monate — alle Leistungen sind enthalten, kein Aufpreis.</div></details>
+        <details class="faq-item"><summary>Was ist TapTag genau?</summary><div class="a">Ein Schlüsselanhänger mit individuellem QR-Code pro Mitarbeiter. Kunden scannen ihn und kommen direkt zur Bewertung. Du siehst die Ergebnisse pro Mitarbeiter im Echtzeit-Dashboard — plus monatliche Sachpreis-Verlosung, die wir bezahlen.</div></details>
+        <details class="faq-item"><summary>Wie schnell sehe ich Ergebnisse?</summary><div class="a">Erste Effekte auf Profilaufrufe und Anfragen sind oft in wenigen Wochen sichtbar. BattleKart Bochum sammelte mit TapTag über 800 Bewertungen in 9 Monaten.</div></details>
+        <details class="faq-item"><summary>Für wen lohnt sich das?</summary><div class="a">Für lokale Unternehmen mit Einzugsgebiet, die bei Google gefunden werden wollen — Handwerk, Gastronomie, Praxen, Studios, Dienstleister. Im Erstgespräch sagen wir dir ehrlich, ob es sich für dich rechnet.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="wrap">
+      <h2>Bereit, <span class="hl">gefunden<svg viewBox="0 0 260 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 C 70 4, 195 4, 256 11"/></svg></span> zu werden?</h2>
+      <p>Kostenloser Sichtbarkeits-Check — in 15 Minuten wissen wir, wo du stehst und was geht.</p>
+      <a href="#anfrage" class="btn btn-y">Jetzt Check holen</a>
+    </div>
+  </section>
 </main>
 
-<!-- ── Footer ─────────────────────────────────────────────────── -->
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft-grid">
       <div>
-        <div class="footer-brand">
-          <img src="/assets/images/lokalbesucher-logo-invers.webp" alt="Lokalbesucher Logo" width="34" height="37" loading="lazy">
-          Lokalbesucher
+        <div class="ft-brand"><img src="/assets/images/lokalbesucher-logo-invers.webp" alt="Lokalbesucher" width="30" height="33"> Lokalbesucher</div>
+        <p style="color:var(--muted);margin-bottom:1rem">einfach. lokal. erfolgreich.</p>
+        <address class="ft-nap"><strong style="color:var(--text)">Lokalbesucher GmbH</strong><br>Karl-Breuing-Str. 2<br>45770 Marl, NRW<br><a href="tel:+4915122358883">+49 151 22358883</a><br><a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a></address>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <div class="ft-links">
+          <a href="/google-business-agentur/">Google Business</a>
+          <a href="/bewertungsmanagement/">Bewertungsmanagement</a>
+          <a href="/seo-agentur/">SEO</a>
+          <a href="/google-ads/">Google Ads</a>
+          <a href="/meta-ads/">Meta Ads</a>
+          <a href="/social-media-agentur/">Social Media</a>
         </div>
-        <p class="footer-tagline">
-          einfach. lokal. erfolgreich.
-        </p>
-        <address class="footer-nap" style="font-style:normal">
-          <strong>Lokalbesucher GmbH</strong><br>
-          Karl-Breuing-Str. 2<br>
-          45770 Marl<br>
-          <a href="tel:+4915122358883">+49&nbsp;151&nbsp;22358883</a><br>
-          <!--email_off--><a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a><!--/email_off-->
-        </address>
       </div>
-
-      <nav aria-label="Leistungen">
-        <div class="footer-col-title">Leistungen</div>
-        <ul class="footer-links" role="list">
-          <li><a href="/google-business-agentur/">Google Business Optimierung</a></li>
-          <li><a href="/bewertungsmanagement/">Bewertungsmanagement</a></li>
-          <li><a href="/google-business-agentur/#verzeichnisse">Branchenverzeichnisse</a></li>
-          <li><a href="/google-business-agentur/#reporting">Monatliches Reporting</a></li>
-          <li><a href="/werbeagentur-recklinghausen/">Werbeagentur Recklinghausen</a></li>
-          <li><a href="/seo-agentur/">SEO Agentur</a></li>
-          <li><a href="/google-ads/">Google &amp; YouTube Ads</a></li>
-          <li><a href="/meta-ads/">Facebook &amp; Instagram Ads</a></li>
-        </ul>
-      </nav>
-
-      <nav aria-label="Unternehmen">
-        <div class="footer-col-title">Unternehmen</div>
-        <ul class="footer-links" role="list">
-          <li><a href="/unser-team/">Team</a></li>
-          <li><a href="/case-studies/">Erfolgsgeschichten</a></li>
-          <li><a href="/faq/">FAQ</a></li>
-          <li><a href="/jobs/">Jobs</a></li>
-          <li><a href="/schema-org-generator/">Schema Generator</a></li>
-          <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI Kalkulator</a></li>
-        </ul>
-      </nav>
-
       <div>
-        <div class="footer-col-title">Jetzt starten</div>
-        <p style="font-size:.875rem;color:#7c83aa;margin-bottom:1rem;line-height:1.7">
-          Kostenlose Erstberatung — direkt via WhatsApp, ohne Wartezeit.
-        </p>
-        <a href="https://wa.me/4915122358883"
-           class="btn btn-primary"
-           rel="noopener noreferrer"
-           target="_blank"
-           aria-label="WhatsApp Beratung starten">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          WhatsApp Beratung
-        </a>
+        <h4>Jetzt starten</h4>
+        <p style="color:var(--muted);margin-bottom:1rem">Kostenlose Erstberatung — direkt via WhatsApp, ohne Wartezeit.</p>
+        <a href="https://wa.me/4915122358883" class="btn btn-y" rel="noopener noreferrer" target="_blank">WhatsApp Beratung</a>
       </div>
-
     </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 Lokalbesucher GmbH &middot; Alle Rechte vorbehalten</p>
-      <nav class="footer-legal-links" aria-label="Rechtliches">
+    <div class="ft-bottom">
+      <span>© 2026 Lokalbesucher GmbH</span>
+      <nav class="ft-legal" aria-label="Rechtliches">
         <a href="/impressum/">Impressum</a>
         <a href="/datenschutz/">Datenschutz</a>
         <a href="/agb/">AGB</a>
-        <a href="#cookie-settings" id="cookie-settings-link">Cookie-Einstellungen</a>
       </nav>
     </div>
   </div>
 </footer>
 
-<!-- ── WhatsApp Float ─────────────────────────────────────────── -->
-<a href="https://wa.me/4915122358883"
-   class="whatsapp-float"
-   rel="noopener noreferrer"
-   target="_blank"
-   aria-label="WhatsApp Beratung starten">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-  Jetzt beraten lassen
+<a href="https://wa.me/4915122358883" class="wa-float" rel="noopener noreferrer" target="_blank" aria-label="WhatsApp">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884"/></svg>
 </a>
 
-<!-- ── Scripts ────────────────────────────────────────────────── -->
+<div class="sticky-cta">
+  <a href="#anfrage" class="btn btn-y">Sichtbarkeits-Check</a>
+  <a href="https://wa.me/4915122358883" class="btn btn-o" rel="noopener noreferrer" target="_blank">WhatsApp</a>
+</div>
+
 <script>
-(function () {
-  'use strict';
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('[data-r]').forEach(function(el){io.observe(el)});
 
-  // Mobile Nav Toggle
-  var toggle = document.querySelector('.nav-toggle');
-  var drawer = document.getElementById('nav-drawer');
-  if (toggle && drawer) {
-    toggle.addEventListener('click', function () {
-      var open = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!open));
-      drawer.classList.toggle('is-open', !open);
+  // Lead-Formular -> GHL (gleicher Webhook, source "homepage")
+  (function(){
+    var WH="https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/d1f245e0-1d61-4177-af6c-a15378ba74d0";
+    var f=document.getElementById('hp-form'); if(!f) return;
+    var t=Date.now(), b=document.getElementById('hp-submit'), e=document.getElementById('hp-err');
+    f.addEventListener('submit',async function(ev){
+      ev.preventDefault(); e.style.display='none';
+      if(document.getElementById('hp-hp').value) return;
+      if(Date.now()-t<1200) return;
+      var n=hp('hp-name'),c=hp('hp-company'),p=hp('hp-phone');
+      if(!n||!c||!p){e.textContent='Bitte Name, Unternehmen und Mobilnummer ausfüllen.';e.style.display='block';return;}
+      b.disabled=true; var l=b.textContent; b.textContent='Wird gesendet …';
+      try{
+        var r=await fetch(WH,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:n,companyName:c,phone:p,email:hp('hp-email'),source:'homepage',timestamp:new Date().toISOString()}),keepalive:true});
+        if(!r.ok) throw 0;
+        f.hidden=true; f.style.display='none';
+        var ok=document.getElementById('hp-ok'); ok.hidden=false; ok.scrollIntoView({behavior:'smooth',block:'center'});
+        if(typeof gtag==='function') gtag('event','generate_lead',{event_category:'lead',event_label:'homepage'});
+      }catch(x){ b.disabled=false; b.textContent=l; e.textContent='Senden fehlgeschlagen — bitte erneut versuchen oder via WhatsApp.'; e.style.display='block'; }
     });
-    document.addEventListener('click', function (e) {
-      if (!toggle.contains(e.target) && !drawer.contains(e.target)) {
-        toggle.setAttribute('aria-expanded', 'false');
-        drawer.classList.remove('is-open');
-      }
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        toggle.setAttribute('aria-expanded', 'false');
-        drawer.classList.remove('is-open');
-        toggle.focus();
-      }
-    });
-  }
+    function hp(id){return document.getElementById(id).value.trim();}
+  }());
 
-  // Accordion
-  document.querySelectorAll('.accordion-trigger').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var isOpen = btn.getAttribute('aria-expanded') === 'true';
-      document.querySelectorAll('.accordion-trigger').forEach(function (b) {
-        b.setAttribute('aria-expanded', 'false');
-        var el = document.getElementById(b.getAttribute('aria-controls'));
-        if (el) el.hidden = true;
-      });
-      if (!isOpen) {
-        btn.setAttribute('aria-expanded', 'true');
-        var body = document.getElementById(btn.getAttribute('aria-controls'));
-        if (body) body.hidden = false;
-      }
-    });
-  });
-
-  // Scroll Reveal
-  if ('IntersectionObserver' in window) {
-    var obs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-visible', 'revealed');
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('[data-reveal], .fade-up').forEach(function (el) {
-      obs.observe(el);
-    });
-  }
-
-}());
+  // Kundenstimmen — grosser Quote, langsamer Crossfade durch alle Stimmen
+  (function(){
+    var body=document.getElementById('qxBody'); if(!body) return;
+    var txt=document.getElementById('qxText'), cite=document.getElementById('qxCite'), dotsEl=document.getElementById('qxDots');
+    var Q=[
+      {t:"Von Beginn an hatten wir mit Tobias einen festen Ansprechpartner. Ein paar Wochen später wussten wir nicht, welche Anfrage wir zuerst bearbeiten sollten. Unsere Werbung ist einfach TOP.",n:"Susanne Janßen",r:""},
+      {t:"Der Service ist professionell, zuverlässig und genau auf die Bedürfnisse zugeschnitten. Besonders beeindruckt hat mich die transparente Kommunikation und die schnelle Umsetzung. Klare Empfehlung!",n:"Mesut Aksoy",r:""},
+      {t:"Vom ersten Gespräch an war spürbar, dass hier mit Herz, Leidenschaft und echtem Verständnis für Marken gearbeitet wird. Besonderes Dankeschön an Lucy für ein tolles Instagram-Reel — sehr viele Views. Mit Lokalbesucher entstehen großartige Dinge.",n:"Viktoria Tkachenko",r:""},
+      {t:"Obwohl ich dachte, dass ich bereits gut online präsent bin, hat Tobi mein Profil überarbeitet und verwaltet. Das Ergebnis ist einfach beeindruckend. Hätte ich Lokalbesucher nur früher kennengelernt!",n:"Cihan Sögüt",r:""},
+      {t:"Große Empfehlung! Tobias und sein Team betreuen unser Google-Profil und unterstützen uns rund um unseren digitalen Auftritt. Er nimmt sich viel Zeit und supportet uns auch mit Fotos & Videodreh — super einfach im Umgang und immer mit guten Ideen.",n:"Daniel Dominguez Schmeisser",r:"Steuerberater"}
+    ];
+    var i=0, timer;
+    Q.forEach(function(_,k){ var d=document.createElement('b'); if(k===0)d.className='on'; d.addEventListener('click',function(){ go(k); arm(); }); dotsEl.appendChild(d); });
+    function render(k){
+      txt.textContent='„'+Q[k].t+'“';
+      cite.innerHTML=Q[k].n+(Q[k].r?'<span class="role">'+Q[k].r+'</span>':'');
+      var ds=dotsEl.children; for(var j=0;j<ds.length;j++) ds[j].className=(j===k?'on':'');
+    }
+    function go(k){ body.style.opacity=0; setTimeout(function(){ i=k; render(i); body.style.opacity=1; },480); }
+    function arm(){ clearInterval(timer); timer=setInterval(function(){ go((i+1)%Q.length); },5500); }
+    function measure(){ body.style.minHeight=''; var mh=0; for(var k=0;k<Q.length;k++){ render(k); if(body.offsetHeight>mh) mh=body.offsetHeight; } render(i); body.style.minHeight=mh+'px'; }
+    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(measure,200); });
+    measure(); arm();
+  }());
 </script>
-
-<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}</style>
-<script src="/assets/js/cookie-consent.js?v=2026-05-06" defer></script>
-  <!-- Leadinfo B2B-Besucher-Identifikation — body-end für Performance -->
-  <script>
-  /* Leadinfo nach LCP-Fenster laden — Bot erscheint außerhalb PSI-Messfenster */
-  (window.requestIdleCallback||function(cb){setTimeout(cb,1);})(function(){
-    setTimeout(function(){
-      (function(l,e,a,d,i,n,f,o){if(!l[i]){l.GlobalLeadinfoNamespace=l.GlobalLeadinfoNamespace||[];l.GlobalLeadinfoNamespace.push(i);l[i]=function(){(l[i].q=l[i].q||[]).push(arguments)};l[i].t=l[i].t||n;l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;o.src=d;f.parentNode.insertBefore(o,f);}
-      }(window,document,'script','https://cdn.leadinfo.eu/ping.js','leadinfo','LI-69EB16FC309C3'));
-    }, 5000);
-  });
-  </script>
-  <!-- Google Ads click conversions: WhatsApp + Tel -->
-  <script>(function(){if(typeof gtag!=='function')return;document.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;var href=a.getAttribute('href')||'';if(/^https?:\/\/(api\.whatsapp\.com|wa\.me)\//i.test(href)){gtag('event','conversion',{'send_to':'AW-11287998127/f0A5CI7I-KccEK_dxIYq','value':50.0,'currency':'EUR'});}else if(/^tel:/i.test(href)){gtag('event','conversion',{'send_to':'AW-11287998127/VFn8CJHI-KccEK_dxIYq','value':75.0,'currency':'EUR'});}},{capture:true});})();</script>
+<script src="/assets/js/components.js?v=20260619" defer></script>
 </body>
 </html>
