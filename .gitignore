@@ -1,2 +1,9 @@
 node_modules/
 .claude/
+
+# Lokales Arbeitsverzeichnis für Screenshots/Temp (siehe CLAUDE.md §13) — nie committen
+tmp/
+
+# OS-/Editor-Müll
+.DS_Store
+Thumbs.db
