@@ -23,6 +23,11 @@
 /team/                                                  /unser-team/                                                    301
 /uber-uns/                                              /                                                               301
 
+# Entfernte Dubletten / Working-Ordner (Quell-Material, nicht deployen)
+/cases/                                                 /case-studies/                                                  301
+/cases/*                                                /case-studies/                                                  301
+/Bilder/*                                               /                                                               301
+
 # ── Alte WordPress Directory-/Listing-Plugin-URLs → passende aktive Seite ────
 /locations.kml                                          /werbeagentur-recklinghausen/                                   301
 /l_claims/*                                             /bewertungsmanagement/                                          301
