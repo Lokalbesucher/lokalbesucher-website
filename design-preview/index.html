@@ -109,12 +109,12 @@
     .hero-meta b{display:block;font-family:'Syne',sans-serif;font-size:1.5rem;color:var(--text);font-weight:800;letter-spacing:-.02em}
     @media(max-width:560px){.hero-meta{gap:1rem 1.4rem}.hero-meta div{flex:1 0 40%}.hero-meta b{font-size:1.2rem}}
     .hero-visual{position:relative;justify-self:center}
-    .photo-frame{position:relative;border-radius:22px;overflow:hidden;border:1px solid var(--border);transform:rotate(2.2deg);box-shadow:0 40px 80px -30px rgba(0,0,0,.8);max-width:420px}
-    .photo-frame img{width:100%;filter:saturate(1.05) contrast(1.03)}
-    .chip{position:absolute;left:-24px;bottom:34px;background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:16px;padding:.85rem 1.1rem;box-shadow:0 24px 50px -16px rgba(0,0,0,.7);transform:rotate(-3deg)}
+    .hero-visual::before{content:'';position:absolute;inset:-26px;background:radial-gradient(ellipse at center,rgba(255,189,89,.13) 0%,transparent 70%);pointer-events:none}
+    .photo-frame{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 40px 80px -34px rgba(0,0,0,.75);max-width:470px}
+    .photo-frame img{width:100%;display:block}
+    .chip{position:absolute;left:-20px;bottom:26px;background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:16px;padding:.85rem 1.1rem;box-shadow:0 24px 50px -16px rgba(0,0,0,.7)}
     .chip b{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;display:block;color:var(--yellow)}
     .chip span{font-size:.72rem;color:var(--muted);font-weight:600}
-    .blob{position:absolute;right:-28px;top:-24px;width:92px;height:92px;background:var(--yellow);border-radius:46% 54% 60% 40%/52% 44% 56% 48%;z-index:-1;opacity:.85}
 
     /* TRUST */
     .trust{padding:2.2rem 0;border-block:1px solid var(--border);background:var(--bg2)}
@@ -332,7 +332,6 @@
         </div>
       </div>
       <div class="hero-visual">
-        <span class="blob" aria-hidden="true"></span>
         <div class="photo-frame">
           <img src="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp" alt="Unternehmerin lächelt — dank Lokalbesucher dauerhaft sichtbar bei Google" width="560" height="600" loading="eager" fetchpriority="high">
         </div>
