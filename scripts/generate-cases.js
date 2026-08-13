@@ -17,10 +17,12 @@ const FOOTER = `<footer class="site-footer" role="contentinfo"><div class="conta
 const SCRIPTS = `<script>(function(){var t=document.querySelector('.nav-toggle'),d=document.getElementById('nav-drawer');if(t&&d){t.addEventListener('click',function(){var o=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!o));d.classList.toggle('is-open',!o);});document.addEventListener('click',function(e){if(!t.contains(e.target)&&!d.contains(e.target)){t.setAttribute('aria-expanded','false');d.classList.remove('is-open');}});document.addEventListener('keydown',function(e){if(e.key==='Escape'){t.setAttribute('aria-expanded','false');d.classList.remove('is-open');t.focus();}});}if('IntersectionObserver' in window){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('is-visible');obs.unobserve(e.target);}});},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('[data-reveal]').forEach(function(el){obs.observe(el);});}}());</script>
 <script src="/assets/js/cookie-consent.js" defer></script>`;
 
-const LEADINFO = `<script>(function(l,e,a,d,i,n,f,o){if(!l[i]){l.GlobalLeadinfoNamespace=l.GlobalLeadinfoNamespace||[];l.GlobalLeadinfoNamespace.push(i);l[i]=function(){(l[i].q=l[i].q||[]).push(arguments)};l[i].t=l[i].t||n;l[i].q=l[i].q||[];o=e.createElement(a);f=e.getElementsByTagName(a)[0];o.async=1;o.src=d;f.parentNode.insertBefore(o,f);}}(window,document,'script','https://cdn.leadinfo.eu/ping.js','leadinfo','LI-69EB16FC309C3'));</script>`;
-
-const GA4 = `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','wait_for_update':500});</script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KRKS5RL7MP"></script>
+const GA4 = `<link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://cdn.leadinfo.eu">
+  <link rel="dns-prefetch" href="https://cdn.leadinfo.net">
+  <link rel="dns-prefetch" href="https://collector4.leadinfo.net">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
+  <script src="/assets/js/third-party.js" defer></script>
   <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});</script>`;
 
 // ── Case data ──────────────────────────────────────────────────────────────────
@@ -309,7 +311,6 @@ function buildPage(c) {
   <link rel="icon" href="/assets/images/favicon.webp" type="image/webp" sizes="any">
   <script type="application/ld+json">${schema}</script>
   ${GA4}
-  ${LEADINFO}
 </head>
 <body>
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
@@ -452,7 +453,6 @@ function buildOverview() {
   <link rel="icon" href="/assets/images/favicon.webp" type="image/webp" sizes="any">
   <script type="application/ld+json">${schema}</script>
   ${GA4}
-  ${LEADINFO}
 </head>
 <body>
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
