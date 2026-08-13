@@ -1,3 +1,10 @@
+# Preview-Domain nicht indexieren (Duplicate Content zu lokalbesucher.de)
+https://lokalbesucher-website.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://*.lokalbesucher-website.pages.dev/*
+  X-Robots-Tag: noindex
+
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
