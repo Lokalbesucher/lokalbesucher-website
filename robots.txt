@@ -7,11 +7,20 @@ Disallow: /scripts/
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: ChatGPT-User
 Allow: /
 
 # ── Anthropic / Claude ───────────────────────────────────────
 User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: anthropic-ai
@@ -23,6 +32,21 @@ Allow: /
 
 # ── Perplexity ───────────────────────────────────────────────
 User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ── Mistral ──────────────────────────────────────────────────
+User-agent: MistralAI-User
+Allow: /
+
+# ── Common Crawl (Trainingsbasis vieler LLMs) ────────────────
+User-agent: CCBot
+Allow: /
+
+# ── Amazon (Alexa / Rufus) ───────────────────────────────────
+User-agent: Amazonbot
 Allow: /
 
 # ── Meta AI ──────────────────────────────────────────────────
