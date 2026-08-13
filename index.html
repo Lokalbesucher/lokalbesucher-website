@@ -22,7 +22,9 @@
   <link rel="preload" href="/assets/fonts/syne-800.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp" as="image" fetchpriority="high">
+  <link rel="preload" as="image" fetchpriority="high"
+        imagesrcset="/assets/images/lokalbesucher-hero-google-business-agentur-nrw-380.webp 380w, /assets/images/lokalbesucher-hero-google-business-agentur-nrw-470.webp 470w, /assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp 640w"
+        imagesizes="(min-width:920px) 470px, min(calc(100vw - 3rem), 470px)">
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 
   <script type="application/ld+json">
@@ -353,7 +355,10 @@
       </div>
       <div class="hero-visual">
         <div class="photo-frame">
-          <img src="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp" alt="Unternehmerin lächelt — dank Lokalbesucher dauerhaft sichtbar bei Google" width="560" height="600" loading="eager" fetchpriority="high">
+          <img src="/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp"
+               srcset="/assets/images/lokalbesucher-hero-google-business-agentur-nrw-380.webp 380w, /assets/images/lokalbesucher-hero-google-business-agentur-nrw-470.webp 470w, /assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp 640w"
+               sizes="(min-width:920px) 470px, min(calc(100vw - 3rem), 470px)"
+               alt="Unternehmerin lächelt — dank Lokalbesucher dauerhaft sichtbar bei Google" width="640" height="680" loading="eager" fetchpriority="high">
         </div>
         <div class="chip"><b>+158 %</b><span>mehr Profilaufrufe in 3 Monaten</span></div>
       </div>
@@ -654,9 +659,27 @@
     }
     function go(k){ body.style.opacity=0; setTimeout(function(){ i=k; render(i); body.style.opacity=1; },480); }
     function arm(){ clearInterval(timer); timer=setInterval(function(){ go((i+1)%Q.length); },5500); }
-    function measure(){ body.style.minHeight=''; var mh=0; for(var k=0;k<Q.length;k++){ render(k); if(body.offsetHeight>mh) mh=body.offsetHeight; } render(i); body.style.minHeight=mh+'px'; }
-    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(measure,200); });
-    measure(); arm();
+    // Höhen aller Zitate in unsichtbaren Klonen messen: erst alle Writes, dann alle Reads → nur 1 Reflow
+    function measure(){
+      var w=body.clientWidth;
+      var holder=document.createElement('div'), clones=[];
+      holder.style.cssText='position:absolute;left:-9999px;top:0;width:'+w+'px;visibility:hidden;pointer-events:none';
+      for(var k=0;k<Q.length;k++){
+        var c=body.cloneNode(true);
+        c.style.minHeight='0';
+        c.querySelectorAll('[id]').forEach(function(n){n.removeAttribute('id')});
+        c.querySelector('blockquote').textContent='„'+Q[k].t+'“';
+        c.querySelector('cite').innerHTML=Q[k].n+(Q[k].r?'<span class="role">'+Q[k].r+'</span>':'');
+        holder.appendChild(c); clones.push(c);
+      }
+      body.parentNode.appendChild(holder);
+      var mh=0;
+      for(var j=0;j<clones.length;j++){ if(clones[j].offsetHeight>mh) mh=clones[j].offsetHeight; }
+      holder.remove();
+      body.style.minHeight=mh+'px';
+    }
+    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ requestAnimationFrame(measure); },200); });
+    requestAnimationFrame(measure); arm();
   }());
 </script>
 <script src="/assets/js/components.js?v=20260619" defer></script>
