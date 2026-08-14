@@ -478,6 +478,10 @@
     .sg-content-section li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
     .sg-content-section a { color: var(--yellow); }
     .sg-content-section a:hover { color: var(--yellow); text-decoration: underline; }
+    /* Die gelben CTA-Buttons stehen in dieser Section — die Fliesstext-Linkfarbe
+       (0,2,0) schlaegt sonst .sg-btn-cta (0,1,0): gelbe Schrift auf gelbem Grund. */
+    .sg-content-section a.sg-btn-cta { color: #0c0e1a; }
+    .sg-content-section a.sg-btn-cta:hover { color: #0c0e1a; text-decoration: none; }
 
     /* ── CTA Box ── */
     .sg-cta-box {
@@ -562,7 +566,7 @@
         <li><a href="/faq/">FAQ</a></li>
         <li><a href="/jobs/">Jobs</a></li>
         <li class="nav-has-dropdown">
-          <a href="#" aria-haspopup="true">Tools</a>
+          <a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/" aria-haspopup="true">Tools</a>
           <ul class="nav-dropdown">
             <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI-Kalkulator <span class="dropdown-badge">Kostenlos</span></a></li>
             <li><a href="/schema-org-generator/" aria-current="page">Schema Generator <span class="dropdown-badge">Neu</span></a></li>
