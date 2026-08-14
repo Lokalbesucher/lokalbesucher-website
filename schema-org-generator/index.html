@@ -48,7 +48,6 @@
 
   <!-- Favicon -->
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/images/favicon.webp" type="image/webp" sizes="any">
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -556,12 +555,14 @@
             <li><a href="/seo-agentur/">SEO Agentur</a></li>
             <li><a href="/google-ads/">Google &amp; YouTube Ads</a></li>
             <li><a href="/meta-ads/">Facebook &amp; Instagram Ads</a></li>
+            <li><a href="/social-media-agentur/">Social Media Agentur</a></li>
           </ul>
         </li>
         <li><a href="/case-studies/">Erfolge</a></li>
-        <li><a href="/faq/">FAQ</a></li><li><a href="/jobs/">Jobs</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/jobs/">Jobs</a></li>
         <li class="nav-has-dropdown">
-          <a href="#" aria-haspopup="true" aria-current="page">Tools</a>
+          <a href="#" aria-haspopup="true">Tools</a>
           <ul class="nav-dropdown">
             <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI-Kalkulator <span class="dropdown-badge">Kostenlos</span></a></li>
             <li><a href="/schema-org-generator/" aria-current="page">Schema Generator <span class="dropdown-badge">Neu</span></a></li>
@@ -588,6 +589,7 @@
     <a href="/seo-agentur/" class="drawer-sub-link">SEO Agentur</a>
     <a href="/google-ads/" class="drawer-sub-link">Google &amp; YouTube Ads</a>
     <a href="/meta-ads/" class="drawer-sub-link">Facebook &amp; Instagram Ads</a>
+    <a href="/social-media-agentur/" class="drawer-sub-link">Social Media Agentur</a>
     <a href="/case-studies/">Erfolge</a>
     <a href="/faq/">FAQ</a>
     <a href="/jobs/">Jobs</a>
@@ -648,7 +650,7 @@
         <!-- Biz Info -->
         <div class="sg-card" id="sgBizCard">
           <div class="sg-biz-header">
-            <img id="sgBizImg" class="sg-biz-img sg-hidden" src="" alt="">
+            <img id="sgBizImg" class="sg-biz-img sg-hidden" alt="" width="80" height="80">
             <div class="sg-biz-info">
               <h2 class="sg-biz-name" id="sgBizName"></h2>
               <p class="sg-biz-addr" id="sgBizAddr"></p>
@@ -956,28 +958,29 @@
         btn.textContent = 'Wird gesendet …';
         if (form.querySelector('[name="website"]').value) return (btn.disabled = false);
         if (Date.now() - loadTime < 800) return (btn.disabled = false);
+        var res = null;
         try {
-          var res = await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-853d-7b58b2ab79a1', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              name:        document.getElementById('sg-name').value.trim(),
-              companyName: document.getElementById('sg-business').value.trim(),
-              email:       document.getElementById('sg-email').value.trim(),
-              phone:       document.getElementById('sg-phone').value.trim(),
-              source:      'schema-beratung'
-            })
+          res = await lbSendLead({
+            name:        document.getElementById('sg-name').value.trim(),
+            companyName: document.getElementById('sg-business').value.trim(),
+            email:       document.getElementById('sg-email').value.trim(),
+            phone:       document.getElementById('sg-phone').value.trim(),
+            source:      'schema-beratung'
           });
-          if (!res.ok) throw new Error(res.status);
+        } catch(ex) { /* lead.js nicht geladen o.ae. */ }
+
+        if (res && res.ok) {
           form.hidden = true;
           document.getElementById('sg-form-success').hidden = false;
           if (typeof gtag === 'function') {
             gtag('event', 'form_submit', { event_category:'lead', event_label:'schema-org-generator' });
           }
-        } catch(ex) {
+        } else {
           btn.disabled = false;
           btn.textContent = 'Kostenlose Beratung anfordern';
-          err.textContent = 'Senden fehlgeschlagen — bitte versuche es erneut oder schreib uns direkt.';
+          err.innerHTML = 'Senden fehlgeschlagen. Wir versuchen es automatisch erneut — schneller geht es ' +
+            '<a href="' + (res && res.mailto ? res.mailto : 'mailto:info@lokalbesucher.de') + '" style="color:#ffbd59">per E-Mail</a> oder ' +
+            '<a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank" style="color:#ffbd59">via WhatsApp</a>.';
           err.style.display = 'block';
         }
       });
@@ -1032,6 +1035,7 @@
         <a href="/impressum/">Impressum</a>
         <a href="/datenschutz/">Datenschutz</a>
         <a href="/agb/">AGB</a>
+        <a href="#cookie-settings" id="cookie-settings-link">Cookie-Einstellungen</a>
       </nav>
     </div>
   </div>
@@ -1052,7 +1056,7 @@ if (toggle && drawer) {
 <!-- ── JS: Schema Generator Tool (1:1 aus alter Site) ────────── -->
 <script>
 const SG_API_KEY = "AIzaSyDuz0V-su1x-5z1SNdlIlVVn2-icOBWlTE";
-const SG_WEBHOOK = "https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/9fb77c47-19cd-454f-bf53-c3dccdaf05cd";
+/* Lead-Zustellung laeuft zentral ueber lbSendLead() (Proxy + Fallbacks). */
 
 const GMAP={restaurant:"Restaurant",cafe:"CafeOrCoffeeShop",bar:"BarOrPub",bakery:"Bakery",night_club:"NightClub",meal_delivery:"Restaurant",meal_takeaway:"Restaurant",food:"FoodEstablishment",dentist:"Dentist",doctor:"Physician",hospital:"Hospital",pharmacy:"Pharmacy",physiotherapist:"MedicalBusiness",veterinary_care:"VeterinaryCare",health:"MedicalBusiness",lawyer:"LegalService",accounting:"AccountingService",insurance_agency:"InsuranceAgency",real_estate_agency:"RealEstateAgent",travel_agency:"TravelAgency",car_dealer:"AutoDealer",car_rental:"AutoRental",car_repair:"AutoRepair",car_wash:"AutoWash",gas_station:"GasStation",parking:"AutoParking",electrician:"Electrician",plumber:"Plumber",locksmith:"Locksmith",painter:"HousePainter",roofing_contractor:"RoofingContractor",moving_company:"MovingCompany",general_contractor:"GeneralContractor",hair_care:"HairSalon",beauty_salon:"BeautySalon",spa:"DaySpa",gym:"HealthClub",lodging:"LodgingBusiness",campground:"Campground",florist:"Florist",furniture_store:"FurnitureStore",hardware_store:"HardwareStore",home_goods_store:"HomeGoodsStore",jewelry_store:"JewelryStore",shoe_store:"ShoeStore",clothing_store:"ClothingStore",electronics_store:"ElectronicsStore",book_store:"BookStore",pet_store:"PetStore",bicycle_store:"BikeStore",liquor_store:"LiquorStore",convenience_store:"ConvenienceStore",supermarket:"GroceryStore",grocery_or_supermarket:"GroceryStore",department_store:"DepartmentStore",shopping_mall:"ShoppingCenter",store:"Store",school:"School",university:"CollegeOrUniversity",library:"Library",museum:"Museum",movie_theater:"MovieTheater",bowling_alley:"BowlingAlley",amusement_park:"AmusementPark",aquarium:"Aquarium",zoo:"Zoo",casino:"Casino",stadium:"StadiumOrArena",funeral_home:"FuneralHome",storage:"SelfStorage",laundry:"DryCleaningOrLaundry",post_office:"GovernmentOffice",child_care:"ChildCare",employment_agency:"EmploymentAgency",tourist_attraction:"TouristAttraction",rv_park:"Campground"};
 const DMAP={0:"Sunday",1:"Monday",2:"Tuesday",3:"Wednesday",4:"Thursday",5:"Friday",6:"Saturday"};
@@ -1092,57 +1096,247 @@ function sgValidatePhone(raw){
   return/^0(15[0-9]|16[0-9]|17[0-9])\d{7,8}$/.test(c);
 }
 
-function sgInitMap(){
-  sgHide("sgLoadingMaps");
-  sgShow("sgSearchCard");
-  sg$("sgSearchInput").focus();
+/* ── Google Places: Laden & Aufrufe ────────────────────────────
+   Die Places-Dienste sind die Kernfunktion dieser Seite — sie laden sofort
+   beim Seitenaufbau (nicht verzoegert ueber third-party.js) und zusaetzlich
+   spaetestens beim Fokus auf das Suchfeld als Sicherheitsnetz.
+
+   Bevorzugt wird die neue Places API (Place / AutocompleteSuggestion), weil sie
+   bei Fehlern echte Promise-Rejections liefert. Faellt sie aus, greifen die
+   Legacy-Dienste (PlacesService / AutocompleteService). Beide Pfade laufen
+   gegen ein hartes Timeout — ein Spinner darf niemals dauerhaft haengen
+   bleiben (genau das passierte bei gesperrter Places-API in der Cloud Console:
+   die Legacy-Callbacks feuern dann gar nicht). */
+const SG_TIMEOUT_MS=10000;
+const SG_NEW_FIELDS=["displayName","formattedAddress","addressComponents","location","nationalPhoneNumber","internationalPhoneNumber","websiteURI","googleMapsURI","regularOpeningHours","rating","userRatingCount","reviews","photos","types","priceLevel","businessStatus"];
+const SG_PRICE={FREE:0,INEXPENSIVE:1,MODERATE:2,EXPENSIVE:3,VERY_EXPENSIVE:4};
+
+let sgPlacesLib=null,sgPlacesMode=null,sgMapsScriptStarted=false,sgBlockedErr=null;
+
+function sgEsc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function sgPad2(n){return String(n==null?0:n).padStart(2,"0")}
+
+function sgWithTimeout(promise,label){
+  let t;
+  return Promise.race([
+    promise.finally(()=>clearTimeout(t)),
+    new Promise((_,rej)=>{t=setTimeout(()=>rej(new Error("timeout:"+label)),SG_TIMEOUT_MS)})
+  ]);
 }
+
+/* Places-API in der Cloud Console gesperrt (ApiTargetBlockedMapError bzw.
+   "Requests to this API … are blocked" / PERMISSION_DENIED) */
+function sgIsApiBlocked(e){
+  return /blocked|permission_denied|not authoriz|apitargetblocked|request_denied/i.test(String(e&&e.message||e));
+}
+
+function sgPlacesErrText(e){
+  const m=String(e&&e.message||e);
+  /* Legacy-Dienste liefern bei gesperrter API gar keinen Callback und laufen
+     nur ins Timeout — dann die eigentliche Ursache der neuen API melden. */
+  if(sgBlockedErr&&/^timeout:/i.test(m))e=sgBlockedErr;
+  if(/^timeout:|script-load-failed/i.test(String(e&&e.message||e)))return"Google Places antwortet nicht. Bitte lade die Seite neu — oder schreib uns via WhatsApp, wir erstellen dein Schema manuell.";
+  if(sgIsApiBlocked(e))return"Die Google-Places-Schnittstelle ist für diesen Zugang gerade gesperrt. Schreib uns via WhatsApp — wir erstellen dein Schema manuell und melden den Fehler intern.";
+  if(/zero_results/i.test(m))return"Kein Treffer. Versuch es mit Name + Ort, z.B. „Friseur Müller Dortmund“.";
+  return"Suche fehlgeschlagen. Bitte versuche es erneut.";
+}
+
+let sgMapsReadyResolve,sgMapsReadyReject;
+const sgMapsReadyPromise=new Promise((res,rej)=>{sgMapsReadyResolve=res;sgMapsReadyReject=rej});
+window.sgMapsReady=function(){sgMapsReadyResolve()};
 window.gm_authFailure=function(){
-  sgHide("sgLoadingMaps");
-  sg$("sgInitErrorMsg").textContent="Google Maps API-Authentifizierung fehlgeschlagen.";
-  sgShow("sgInitError");
+  sgMapsReadyReject(new Error("gm_authFailure: Maps-Key abgelehnt (Referrer- oder Key-Beschränkung)"));
 };
+
+function sgLoadMapsScript(){
+  if(!sgMapsScriptStarted){
+    sgMapsScriptStarted=true;
+    const s=document.createElement("script");
+    s.async=true;
+    s.src="https://maps.googleapis.com/maps/api/js?key="+encodeURIComponent(SG_API_KEY)+
+          "&libraries=places&language=de&loading=async&callback=sgMapsReady";
+    s.onerror=()=>sgMapsReadyReject(new Error("script-load-failed"));
+    document.head.appendChild(s);
+  }
+  return sgMapsReadyPromise;
+}
+
+async function sgLoadPlaces(){
+  if(sgPlacesLib)return sgPlacesLib;
+  await sgWithTimeout(sgLoadMapsScript(),"maps-script");
+  const lib=await sgWithTimeout(google.maps.importLibrary("places"),"places-library");
+  sgPlacesLib=lib;
+  sgPlacesMode=lib.AutocompleteSuggestion?"new":"legacy";
+  return lib;
+}
+
+/* ── Autocomplete ──────────────────────────────────────────── */
+async function sgPredictNew(lib,input){
+  if(!sgSessionToken)sgSessionToken=new lib.AutocompleteSessionToken();
+  const res=await sgWithTimeout(lib.AutocompleteSuggestion.fetchAutocompleteSuggestions({
+    input,includedPrimaryTypes:["establishment"],language:"de",sessionToken:sgSessionToken
+  }),"autocomplete");
+  return (res.suggestions||[]).map(s=>{
+    const p=s.placePrediction;
+    if(!p)return null;
+    return{placeId:p.placeId,main:p.mainText?.text||p.text?.text||"",sub:p.secondaryText?.text||""};
+  }).filter(Boolean);
+}
+
+function sgPredictLegacy(lib,input){
+  const AC=lib.AutocompleteService||google.maps.places.AutocompleteService;
+  const TK=lib.AutocompleteSessionToken||google.maps.places.AutocompleteSessionToken;
+  return sgWithTimeout(new Promise((resolve,reject)=>{
+    if(!sgSessionToken)sgSessionToken=new TK();
+    new AC().getPlacePredictions({input,types:["establishment"],sessionToken:sgSessionToken},(r,st)=>{
+      if(st!=="OK"&&st!=="ZERO_RESULTS")return reject(new Error("places:"+st));
+      resolve((r||[]).map(x=>({placeId:x.place_id,main:x.structured_formatting?.main_text||x.description,sub:x.structured_formatting?.secondary_text||""})));
+    });
+  }),"autocomplete-legacy");
+}
+
+async function sgFetchPredictions(input){
+  const lib=await sgLoadPlaces();
+  if(sgPlacesMode==="new"){
+    try{return await sgPredictNew(lib,input)}
+    catch(e){
+      if(!(sgIsApiBlocked(e)&&(lib.AutocompleteService||window.google?.maps?.places?.AutocompleteService)))throw e;
+      sgBlockedErr=e;sgPlacesMode="legacy"; /* neue API gesperrt → auf Legacy umschalten */
+    }
+  }
+  return sgPredictLegacy(lib,input);
+}
+
+/* ── Details ───────────────────────────────────────────────── */
+/* Neue Place-Instanz auf die Legacy-Struktur mappen, damit die Aufbereitung
+   unten fuer beide Pfade identisch bleibt. */
+function sgNormalizeNewPlace(pl){
+  const periods=(pl.regularOpeningHours?.periods||[]).map(p=>({
+    open:p.open?{day:p.open.day,time:sgPad2(p.open.hour)+sgPad2(p.open.minute)}:null,
+    close:p.close?{day:p.close.day,time:sgPad2(p.close.hour)+sgPad2(p.close.minute)}:null
+  }));
+  return{
+    name:pl.displayName||"",
+    formatted_address:pl.formattedAddress||"",
+    address_components:(pl.addressComponents||[]).map(c=>({long_name:c.longText,short_name:c.shortText,types:c.types||[]})),
+    geometry:pl.location?{location:pl.location}:null,
+    formatted_phone_number:pl.nationalPhoneNumber||"",
+    international_phone_number:pl.internationalPhoneNumber||"",
+    website:pl.websiteURI||"",
+    url:pl.googleMapsURI||"",
+    opening_hours:periods.length?{periods}:null,
+    rating:pl.rating,
+    user_ratings_total:pl.userRatingCount,
+    reviews:(pl.reviews||[]).map(r=>({
+      author_name:r.authorAttribution?.displayName||"",
+      rating:r.rating,
+      text:typeof r.text==="string"?r.text:(r.text?.text||""),
+      time:r.publishTime?Math.floor(new Date(r.publishTime).getTime()/1000):null
+    })),
+    photos:(pl.photos||[]).map(ph=>({getUrl:o=>ph.getURI(o)})),
+    types:pl.types||[],
+    price_level:typeof pl.priceLevel==="number"?pl.priceLevel:SG_PRICE[pl.priceLevel],
+    business_status:pl.businessStatus
+  };
+}
+
+async function sgDetailsNew(lib,placeId){
+  const pl=new lib.Place({id:placeId,requestedLanguage:"de"});
+  await sgWithTimeout(pl.fetchFields({fields:SG_NEW_FIELDS}),"details");
+  return sgNormalizeNewPlace(pl);
+}
+
+function sgDetailsLegacy(lib,placeId){
+  const PS=lib.PlacesService||google.maps.places.PlacesService;
+  return sgWithTimeout(new Promise((resolve,reject)=>{
+    new PS(document.createElement("div")).getDetails({
+      placeId,
+      fields:["name","formatted_address","address_components","geometry","formatted_phone_number","international_phone_number","website","url","opening_hours","rating","user_ratings_total","reviews","photos","types","price_level","business_status"],
+      sessionToken:sgSessionToken
+    },(p,st)=>{
+      if(st!=="OK"||!p)return reject(new Error("places:"+st));
+      resolve(p);
+    });
+  }),"details-legacy");
+}
+
+async function sgFetchDetails(placeId){
+  const lib=await sgLoadPlaces();
+  if(sgPlacesMode==="new"){
+    try{return await sgDetailsNew(lib,placeId)}
+    catch(e){
+      if(!(sgIsApiBlocked(e)&&(lib.PlacesService||window.google?.maps?.places?.PlacesService)))throw e;
+      sgBlockedErr=e;sgPlacesMode="legacy";
+    }
+  }
+  return sgDetailsLegacy(lib,placeId);
+}
+
+/* ── Start: sofort laden, Fokus aufs Suchfeld als Sicherheitsnetz ── */
+async function sgInitMap(){
+  try{
+    await sgLoadPlaces();
+    sgHide("sgLoadingMaps");
+    sgShow("sgSearchCard");
+    sg$("sgSearchInput").focus({preventScroll:true});
+  }catch(e){
+    /* Suchfeld trotzdem freigeben — ein erneuter Versuch beim Tippen ist moeglich */
+    sgHide("sgLoadingMaps");
+    sgShow("sgSearchCard");
+    sg$("sgInitErrorMsg").textContent=sgPlacesErrText(e);
+    sgShow("sgInitError");
+  }
+}
+sgInitMap();
+sg$("sgSearchInput").addEventListener("focus",function(){sgLoadPlaces().catch(()=>{})},{once:true});
 
 sg$("sgSearchInput").addEventListener("input",function(){
   const val=this.value;
+  const dd=sg$("sgDropdown");
   if(sgDebounce)clearTimeout(sgDebounce);
-  if(!val||val.length<3){sg$("sgDropdown").classList.remove("open");sg$("sgDropdown").innerHTML="";return}
-  sgDebounce=setTimeout(()=>{
-    if(!window.google?.maps?.places)return;
-    const svc=new google.maps.places.AutocompleteService();
-    if(!sgSessionToken)sgSessionToken=new google.maps.places.AutocompleteSessionToken();
-    svc.getPlacePredictions({input:val,types:["establishment"],sessionToken:sgSessionToken},(r,st)=>{
-      const dd=sg$("sgDropdown");
-      if(st==="OK"&&r?.length){
-        dd.innerHTML=r.map(x=>`<div class="sg-dd-item" onclick="sgPickPlace('${x.place_id}')" role="option" aria-selected="false" tabindex="-1"><div class="sg-dd-title">${x.structured_formatting?.main_text||x.description}</div><div class="sg-dd-sub">${x.structured_formatting?.secondary_text||""}</div></div>`).join("");
-        dd.classList.add("open");
-      }else{dd.innerHTML="";dd.classList.remove("open")}
-    });
+  if(!val||val.length<3){dd.classList.remove("open");dd.innerHTML="";return}
+  sgDebounce=setTimeout(async()=>{
+    try{
+      const preds=await sgFetchPredictions(val);
+      if(sg$("sgSearchInput").value!==val)return; /* Eingabe ist weitergelaufen */
+      sgHide("sgInitError");
+      if(!preds.length){dd.innerHTML="";dd.classList.remove("open");return}
+      dd.innerHTML=preds.map(p=>`<div class="sg-dd-item" data-place-id="${sgEsc(p.placeId)}" role="option" aria-selected="false" tabindex="-1"><div class="sg-dd-title">${sgEsc(p.main)}</div><div class="sg-dd-sub">${sgEsc(p.sub)}</div></div>`).join("");
+      dd.classList.add("open");
+      sgHide("sgSearchErr");
+    }catch(e){
+      dd.innerHTML="";dd.classList.remove("open");
+      sg$("sgSearchErr").textContent=sgPlacesErrText(e);
+      sgShow("sgSearchErr");
+    }
   },300);
+});
+
+sg$("sgDropdown").addEventListener("click",function(e){
+  const item=e.target.closest(".sg-dd-item");
+  if(item)sgPickPlace(item.dataset.placeId);
 });
 
 document.addEventListener("click",e=>{
   if(!e.target.closest("#sgSearchCard"))sg$("sgDropdown").classList.remove("open");
 });
 
-function sgPickPlace(placeId){
+async function sgPickPlace(placeId){
   sg$("sgDropdown").classList.remove("open");
   sgHide("sgSearchCard");
+  sgHide("sgSearchErr");
   sgShow("sgLoadingDetails");
-  const svc=new google.maps.places.PlacesService(document.createElement("div"));
-  svc.getDetails({
-    placeId,
-    fields:["name","formatted_address","address_components","geometry","formatted_phone_number","international_phone_number","website","url","opening_hours","rating","user_ratings_total","reviews","photos","types","price_level","business_status"],
-    sessionToken:sgSessionToken
-  },function(p,status){
-    sgSessionToken=null;
-    sgHide("sgLoadingDetails");
-    if(status!=="OK"||!p){
-      sgShow("sgSearchCard");
-      sg$("sgSearchErr").textContent="Daten konnten nicht geladen werden.";
-      sgShow("sgSearchErr");
-      return;
-    }
+  let p=null,detailsErr=null;
+  try{p=await sgFetchDetails(placeId)}catch(e){detailsErr=e}
+  sgSessionToken=null;
+  sgHide("sgLoadingDetails");
+  if(!p){
+    sgShow("sgSearchCard");
+    sg$("sgSearchErr").textContent=detailsErr?sgPlacesErrText(detailsErr):"Daten konnten nicht geladen werden.";
+    sgShow("sgSearchErr");
+    return;
+  }
+  {
     sgPlace=p;
     const typ=sgMapType(p.types);
     const ac=p.address_components||[];
@@ -1211,7 +1405,7 @@ function sgPickPlace(placeId){
     sgRenderCode();
     sgShow("sgResultSection");
     document.querySelector("#sgResultSection").scrollIntoView({behavior:"smooth",block:"start"});
-  });
+  }
 }
 
 function sgRenderScore(){
@@ -1264,22 +1458,27 @@ async function sgSubmitLead(btn){
 
   const data={email,phone,business_name:sgPlace?.name||"",business_address:sgPlace?.formatted_address||"",business_type:sgSchema?.["@type"]||"",business_rating:String(sgPlace?.rating||""),business_reviews:String(sgPlace?.user_ratings_total||""),business_website:sgPlace?.website||"",business_phone:sgPlace?.international_phone_number||sgPlace?.formatted_phone_number||"",schema_score:sg$("sgScoreBadge")?.textContent||"",source:"schema-generator",timestamp:new Date().toISOString()};
 
-  // Erst Lead sichern (mit Bestätigung), DANN Code freischalten.
   const origLabel=btn?btn.textContent:"";
   if(btn){btn.disabled=true;btn.textContent="Wird freigeschaltet …";}
-  try{
-    if(SG_WEBHOOK){
-      const params=new URLSearchParams();
-      Object.entries(data).forEach(([k,v])=>params.append(k,v));
-      const res=await fetch(SG_WEBHOOK,{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},body:params,keepalive:true});
-      if(!res.ok)throw new Error("HTTP "+res.status);
-    }
-    sgHide("sgCodeLocked");
-    sgShow("sgCodeUnlocked");
+
+  let res=null;
+  try{res=await lbSendLead(data)}catch(ex){/* lead.js nicht geladen o.ae. */}
+
+  /* Code IMMER freischalten. Der Besucher hat seine Daten hinterlassen — ihn
+     wegen unserer Zustellprobleme auszusperren kostet uns den Lead doppelt.
+     Der Lead selbst liegt in der Warteschlange von lead.js und wird erneut
+     versucht; zusaetzlich bekommt der Besucher den Mail-Weg angeboten. */
+  sgHide("sgCodeLocked");
+  sgShow("sgCodeUnlocked");
+  if(btn){btn.disabled=false;btn.textContent=origLabel||"Code freischalten →";}
+
+  if(res&&res.ok){
+    errEl.classList.add("sg-hidden");
     if(typeof gtag==="function"){gtag('event','unlock_code',{event_category:'lead',event_label:'schema-org-generator'});}
-  }catch(ex){
-    if(btn){btn.disabled=false;btn.textContent=origLabel||"Code freischalten →";}
-    errEl.textContent="Senden fehlgeschlagen — bitte versuche es erneut.";
+  }else{
+    errEl.innerHTML='Dein Code ist freigeschaltet — die Übermittlung deiner Daten hat aber nicht geklappt. '+
+      'Wenn du Rückmeldung möchtest: <a href="'+(res&&res.mailto?res.mailto:"mailto:info@lokalbesucher.de")+'" style="color:#ffbd59">kurz per E-Mail</a> '+
+      'oder <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank" style="color:#ffbd59">via WhatsApp</a>.';
     errEl.classList.remove("sg-hidden");
   }
 }
@@ -1319,8 +1518,9 @@ function sgToggleFaq(el){
 }
 </script>
 
-<!-- ── Google Maps API ────────────────────────────────────────── -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuz0V-su1x-5z1SNdlIlVVn2-icOBWlTE&libraries=places&language=de&callback=sgInitMap" async defer></script>
+<!-- Google Maps/Places wird vom Tool-Skript oben selbst geladen (sofort beim
+     Seitenaufbau, inkl. Timeout + Fallback) — kein statischer Tag mehr. -->
+<script src="/assets/js/lead.js" defer></script>
 <script src="/assets/js/cookie-consent.js" defer></script>
 </body>
 </html>

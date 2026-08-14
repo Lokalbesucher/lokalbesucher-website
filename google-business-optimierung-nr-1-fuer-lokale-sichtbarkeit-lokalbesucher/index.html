@@ -25,7 +25,6 @@
   <noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
 
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/images/favicon.webp" type="image/webp" sizes="any">
 
   <!-- reCAPTCHA v3 -->
   <script src="https://www.google.com/recaptcha/api.js?render=6LdTl30sAAAAAKis2EzgjxVkiZw_mehJsHQsn5jq" async defer></script>
@@ -472,7 +471,7 @@
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 
 <!-- ── Header ────────────────────────────────────────────────── -->
-<header class="site-header" role="banner">
+<header class="site-header">
   <div class="container">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="/" class="nav-logo" aria-label="Lokalbesucher – Startseite">
@@ -488,12 +487,14 @@
             <li><a href="/seo-agentur/">SEO Agentur</a></li>
             <li><a href="/google-ads/">Google &amp; YouTube Ads</a></li>
             <li><a href="/meta-ads/">Facebook &amp; Instagram Ads</a></li>
+            <li><a href="/social-media-agentur/">Social Media Agentur</a></li>
           </ul>
         </li>
         <li><a href="/case-studies/">Erfolge</a></li>
-        <li><a href="/faq/">FAQ</a></li><li><a href="/jobs/">Jobs</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/jobs/">Jobs</a></li>
         <li class="nav-has-dropdown">
-          <a href="#" aria-haspopup="true" aria-current="page">Tools</a>
+          <a href="#" aria-haspopup="true">Tools</a>
           <ul class="nav-dropdown">
             <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/" aria-current="page">ROI-Kalkulator <span class="dropdown-badge">Kostenlos</span></a></li>
             <li><a href="/schema-org-generator/">Schema Generator <span class="dropdown-badge">Neu</span></a></li>
@@ -502,7 +503,8 @@
       </ul>
       <a href="https://wa.me/4915122358883"
          class="btn btn-primary nav-cta"
-         rel="noopener noreferrer" target="_blank"
+         rel="noopener noreferrer"
+         target="_blank"
          aria-label="Kostenlose Beratung via WhatsApp">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Kostenlos beraten
@@ -519,6 +521,7 @@
     <a href="/seo-agentur/" class="drawer-sub-link">SEO Agentur</a>
     <a href="/google-ads/" class="drawer-sub-link">Google &amp; YouTube Ads</a>
     <a href="/meta-ads/" class="drawer-sub-link">Facebook &amp; Instagram Ads</a>
+    <a href="/social-media-agentur/" class="drawer-sub-link">Social Media Agentur</a>
     <a href="/case-studies/">Erfolge</a>
     <a href="/faq/">FAQ</a>
     <a href="/jobs/">Jobs</a>
@@ -1117,39 +1120,54 @@ function submitForm() {
   msg.className = 'cf-msg';
   msg.textContent = '';
 
+  const reset = () => {
+    btn.disabled = false;
+    btn.textContent = 'Jetzt Wettbewerbsvorteil sichern →';
+  };
+  const fail = (res) => {
+    msg.className = 'cf-msg err';
+    msg.innerHTML = 'Senden fehlgeschlagen. Bitte <a href="' + (res && res.mailto ? res.mailto : 'mailto:info@lokalbesucher.de') + '" style="color:#ffbd59">per E-Mail an info@lokalbesucher.de</a> ' +
+                    'oder <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank" style="color:#ffbd59">via WhatsApp</a> — ' +
+                    'deine Daten sind im Link bereits eingetragen. Wir versuchen es zusätzlich automatisch erneut.';
+    reset();
+  };
+
   grecaptcha.ready(() => {
     grecaptcha.execute('6LdTl30sAAAAAKis2EzgjxVkiZw_mehJsHQsn5jq', { action: 'contact' })
-      .then(token => {
+      .then(async token => {
         const tapWanted = document.getElementById('tap-check').checked;
         const branche   = document.querySelector('.bb.active')?.dataset.bname || 'k.A.';
         const potenzial = document.getElementById('roi-big').textContent;
 
-        const payload = new URLSearchParams({
-          name, phone, email, branche, potenzial,
-          tap_tags:        tapWanted ? 'Ja' : 'Nein',
-          recaptcha_token: token,
-          quelle:          'ROI-Kalkulator lokalbesucher.de'
-        });
+        /* Frueher: fetch(..., {mode:'no-cors'}) ohne then/catch und danach
+           bedingungslos "✓ Anfrage gesendet!". Eine opake Response laesst sich
+           prinzipiell nicht pruefen — fiel Zapier aus oder blockte ein
+           Adblocker, sah der Besucher Erfolg und der Lead war verloren. */
+        let res = null;
+        try {
+          res = await lbSendLead({
+            source:   'roi-kalkulator',
+            name, phone, email, branche, potenzial,
+            tap_tags:        tapWanted ? 'Ja' : 'Nein',
+            recaptcha_token: token,
+            quelle:          'ROI-Kalkulator lokalbesucher.de'
+          });
+        } catch (e) { /* lead.js nicht geladen o.ae. */ }
 
-        fetch('https://hooks.zapier.com/hooks/catch/17928974/u0a57h7/', {
-          method: 'POST', mode: 'no-cors',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: payload.toString()
-        });
+        if (!res || !res.ok) { fail(res); return; }
 
         msg.className = 'cf-msg ok';
         msg.textContent = '✓ Anfrage gesendet! Wir melden uns innerhalb von 24h.';
-        btn.disabled = false;
-        btn.textContent = 'Jetzt Wettbewerbsvorteil sichern →';
+        reset();
         document.getElementById('cf-name').value  = '';
         document.getElementById('cf-phone').value = '';
         document.getElementById('cf-email').value = '';
+        if (typeof gtag === 'function') gtag('event','generate_lead',{event_category:'lead',event_label:'roi-kalkulator'});
       })
       .catch(() => {
         msg.className = 'cf-msg err';
         msg.textContent = 'reCAPTCHA Fehler — bitte Seite neu laden.';
-        btn.disabled = false;
-        btn.textContent = 'Jetzt Wettbewerbsvorteil sichern →';
+        reset();
       });
   });
 }
@@ -1159,6 +1177,7 @@ const firstBtn = document.querySelector('.bb.active');
 setBranch(firstBtn);
 upd();
 </script>
+<script src="/assets/js/lead.js" defer></script>
 <script src="/assets/js/cookie-consent.js" defer></script>
 </body>
 </html>

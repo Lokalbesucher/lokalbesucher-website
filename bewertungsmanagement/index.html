@@ -65,7 +65,6 @@
   <noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
 
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="/assets/images/favicon.webp" type="image/webp" sizes="any">
 
   <!-- ── Schema.org JSON-LD ────────────────────────────────────── -->
   <script type="application/ld+json">
@@ -194,14 +193,13 @@
 <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
 
 <!-- ── Header ────────────────────────────────────────────────── -->
-<header class="site-header" role="banner">
+<header class="site-header">
   <div class="container">
     <nav class="nav" aria-label="Hauptnavigation">
       <a href="/" class="nav-logo" aria-label="Lokalbesucher – Startseite">
         <img src="/assets/images/lokalbesucher-logo-invers.webp" alt="Lokalbesucher Logo" width="35" height="38" loading="eager">
         Lokalbesucher
       </a>
-
       <ul class="nav-links" role="list">
         <li class="nav-has-dropdown">
           <a href="/google-business-agentur/" aria-haspopup="true">Leistungen</a>
@@ -211,10 +209,12 @@
             <li><a href="/seo-agentur/">SEO Agentur</a></li>
             <li><a href="/google-ads/">Google &amp; YouTube Ads</a></li>
             <li><a href="/meta-ads/">Facebook &amp; Instagram Ads</a></li>
+            <li><a href="/social-media-agentur/">Social Media Agentur</a></li>
           </ul>
         </li>
         <li><a href="/case-studies/">Erfolge</a></li>
-        <li><a href="/faq/">FAQ</a></li><li><a href="/jobs/">Jobs</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/jobs/">Jobs</a></li>
         <li class="nav-has-dropdown">
           <a href="#" aria-haspopup="true">Tools</a>
           <ul class="nav-dropdown">
@@ -223,7 +223,6 @@
           </ul>
         </li>
       </ul>
-
       <a href="https://wa.me/4915122358883"
          class="btn btn-primary nav-cta"
          rel="noopener noreferrer"
@@ -232,7 +231,6 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Kostenlos beraten
       </a>
-
       <button class="nav-toggle" aria-controls="nav-drawer" aria-expanded="false" aria-label="Navigation öffnen">
         <span></span><span></span><span></span>
       </button>
@@ -245,6 +243,7 @@
     <a href="/seo-agentur/" class="drawer-sub-link">SEO Agentur</a>
     <a href="/google-ads/" class="drawer-sub-link">Google &amp; YouTube Ads</a>
     <a href="/meta-ads/" class="drawer-sub-link">Facebook &amp; Instagram Ads</a>
+    <a href="/social-media-agentur/" class="drawer-sub-link">Social Media Agentur</a>
     <a href="/case-studies/">Erfolge</a>
     <a href="/faq/">FAQ</a>
     <a href="/jobs/">Jobs</a>
@@ -1076,28 +1075,24 @@
         if (form.querySelector('[name="website"]').value) return (btn.disabled = false);
         if (Date.now() - loadTime < 800) return (btn.disabled = false);
 
-        try {
-          var res = await fetch('https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/93baa80a-b89b-4fe7-853d-7b58b2ab79a1', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              name:        document.getElementById('lb-name').value.trim(),
-              companyName: document.getElementById('lb-business').value.trim(),
-              email:       document.getElementById('lb-email').value.trim(),
-              phone:       document.getElementById('lb-phone').value.trim(),
-              source:      'Bewertungsmanagement'
-            })
-          });
-          if (!res.ok) throw new Error(res.status);
+        var res = null;
+        try { res = await lbSendLead({
+            name:        document.getElementById('lb-name').value.trim(),
+            companyName: document.getElementById('lb-business').value.trim(),
+            email:       document.getElementById('lb-email').value.trim(),
+            phone:       document.getElementById('lb-phone').value.trim(),
+            source:      'Bewertungsmanagement'
+        }); } catch(ex) { /* lead.js nicht geladen o.ae. */ }
+        if (res && res.ok) {
           form.hidden = true;
           document.getElementById('lb-form-success').hidden = false;
           if (typeof gtag === 'function') {
             gtag('event', 'form_submit', { event_category:'lead', event_label:'bewertungsmanagement' });
           }
-        } catch(ex) {
+        } else {
           btn.disabled = false;
           btn.textContent = 'Kostenlose Analyse anfordern';
-          err.textContent = 'Senden fehlgeschlagen — bitte versuche es erneut oder schreib uns direkt.';
+          err.innerHTML = 'Senden fehlgeschlagen. Wir versuchen es automatisch erneut — schneller geht es <a href="' + (res && res.mailto ? res.mailto : 'mailto:info@lokalbesucher.de') + '" style="color:#ffbd59">per E-Mail</a> oder <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank" style="color:#ffbd59">via WhatsApp</a>.';
           err.style.display = 'block';
         }
       });
@@ -1182,6 +1177,7 @@
 </a>
 
 <script src="/assets/js/components.js?v=20260619" defer></script>
+<script src="/assets/js/lead.js" defer></script>
 <script src="/assets/js/cookie-consent.js" defer></script>
 </body>
 </html>
