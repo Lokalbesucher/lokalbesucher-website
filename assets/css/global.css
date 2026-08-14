@@ -762,6 +762,14 @@ p {
   color: var(--text);
 }
 
+/* Der gelbe CTA im Drawer braucht dunkle Schrift: .nav-drawer a (0,1,1)
+   schlaegt sonst .btn-primary (0,1,0) — heller Text auf Gelb, 1,5:1. */
+.nav-drawer a.btn-primary,
+.nav-drawer a.btn-primary:hover {
+  color: #0c0e1a;
+  border-bottom: none;
+}
+
 /* ── Footer ────────────────────────────────────────────────── */
 
 .site-footer {
@@ -888,7 +896,9 @@ p {
   align-items: center;
   gap: var(--space-sm);
   background: #25d366;
-  color: #fff;
+  /* Weiss auf WhatsApp-Gruen sind nur 2,0:1 — dunkle Schrift kommt auf 9,3:1
+     und behaelt das wiedererkennbare Gruen. */
+  color: #0c0e1a;
   font-family: var(--font-head);
   font-weight: 700;
   font-size: .9rem;
