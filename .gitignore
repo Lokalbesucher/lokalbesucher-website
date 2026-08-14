@@ -1,6 +1,9 @@
 node_modules/
 .claude/
 
+# API-Keys fuer scripts/ai-visibility-check.js — NIE committen/deployen
+.env
+
 # Lokales Arbeitsverzeichnis für Screenshots/Temp (siehe CLAUDE.md §13) — nie committen
 tmp/
 

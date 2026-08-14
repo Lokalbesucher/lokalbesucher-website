@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "download-images": "node scripts/download-images.js",
-    "download-fonts": "node scripts/download-fonts.js"
+    "download-fonts": "node scripts/download-fonts.js",
+    "ai-check": "node scripts/ai-visibility-check.js"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.117.1",
     "sharp": "^0.33.4"
   }
 }
