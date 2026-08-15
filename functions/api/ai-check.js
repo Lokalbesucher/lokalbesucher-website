@@ -166,7 +166,7 @@ export async function onRequestPost({ request, env }) {
   if (!tv.success) return json({ ok: false, reason: 'turnstile' }, 403);
 
   /* 2. Cache zuerst (kostet nichts, zählt nicht gegen Limits) */
-  const cacheKey = `res:${company}|${city}`;
+  const cacheKey = `res2:${company}|${city}`;
   const cachedRaw = await env.AI_CHECK_KV.get(cacheKey);
   if (cachedRaw) {
     try { return json({ ok: true, cached: true, ...JSON.parse(cachedRaw) }); } catch {}
@@ -202,7 +202,8 @@ export async function onRequestPost({ request, env }) {
       const { text, urls } = await e.ask(env, PROMPTS[e.promptId]);
       return { engine: e.name, prompt: e.promptId, ...analyze(company, website, text, urls) };
     } catch (err) {
-      return { engine: e.name, prompt: e.promptId, error: true };
+      /* nur Engine-Name + Statuscode — keine sensiblen Details */
+      return { engine: e.name, prompt: e.promptId, error: true, code: String(err && err.message || 'unknown').slice(0, 40) };
     }
   }));
 
@@ -217,7 +218,8 @@ export async function onRequestPost({ request, env }) {
     .filter(h => !domain || !h.includes(domain))
     .slice(0, 6);
 
-  const payload = { score, engines: valid.map(({ sources, ...e }) => e), competitorSources, checkedAt: day };
+  const engineErrors = results.filter(r => r.error).map(r => ({ engine: r.engine, code: r.code }));
+  const payload = { score, engines: valid.map(({ sources, ...e }) => e), competitorSources, checkedAt: day, engineErrors };
   await env.AI_CHECK_KV.put(cacheKey, JSON.stringify(payload), { expirationTtl: LIMITS.cacheTtlSeconds });
   return json({ ok: true, cached: false, ...payload });
 }
