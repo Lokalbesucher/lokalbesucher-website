@@ -223,7 +223,7 @@
       })});
       var j=await r.json().catch(function(){return {};});
       if(!r.ok||!j.ok){
-        var reasons={'ip-limit':'Du hast die 3 kostenlosen Checks für heute genutzt — morgen geht es weiter. Oder schreib uns direkt via WhatsApp.','daily-budget':'Das Tageskontingent des Tools ist ausgeschöpft — bitte morgen erneut versuchen.','turnstile':'Sicherheitsprüfung fehlgeschlagen — bitte Seite neu laden.','not-configured':'Das Tool ist gerade in Wartung — bitte später erneut versuchen.'};
+        var reasons={'ip-limit':'Du hast die 3 kostenlosen Checks für heute genutzt — morgen geht es weiter. Oder schreib uns direkt via WhatsApp.','daily-budget':'Das Tageskontingent des Tools ist ausgeschöpft — bitte morgen erneut versuchen.','turnstile':'Die Sicherheitsprüfung war abgelaufen und wurde erneuert — bitte einfach noch einmal auf „Jetzt kostenlos prüfen" klicken.','not-configured':'Das Tool ist gerade in Wartung — bitte später erneut versuchen.'};
         showErr(reasons[j.reason]||'Das hat leider nicht geklappt — bitte später erneut versuchen.');
         if(window.turnstile) turnstile.reset();
         return;
