@@ -101,19 +101,27 @@ async function askClaude(env, q) {
 
 /* ── Engine 3: Gemini — Ruf-Frage ("Bewertungen/Ruf?") ── */
 async function askGemini(env, q) {
-  const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${env.GEMINI_API_KEY}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: q + ' Antworte knapp auf Deutsch.' }] }],
-        tools: [{ google_search: {} }],
-        generationConfig: { maxOutputTokens: 400 },
-      }),
-    },
-  );
-  if (!res.ok) throw new Error('gemini-' + res.status);
+  /* Modell-Fallback: je nach API-Version des Keys heißen die Modelle anders */
+  const MODELS = ['gemini-2.5-flash-lite', 'gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-flash-latest'];
+  let res = null, lastStatus = 0;
+  for (const model of MODELS) {
+    res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${env.GEMINI_API_KEY}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: q + ' Antworte knapp auf Deutsch.' }] }],
+          tools: [{ google_search: {} }],
+          generationConfig: { maxOutputTokens: 400 },
+        }),
+      },
+    );
+    if (res.ok) break;
+    lastStatus = res.status;
+    if (res.status !== 404) throw new Error('gemini-' + res.status);
+  }
+  if (!res || !res.ok) throw new Error('gemini-' + (lastStatus || 'down'));
   const j = await res.json();
   const cand = j.candidates?.[0];
   return {
@@ -135,6 +143,8 @@ function analyze(company, website, text, urls) {
 }
 
 export async function onRequestPost({ request, env }) {
+  /* OPEN_API_KEY: tolerante Schreibweise (so im Dashboard angelegt) */
+  if (!env.OPENAI_API_KEY && env.OPEN_API_KEY) env.OPENAI_API_KEY = env.OPEN_API_KEY;
   const engines = [
     { name: 'chatgpt', key: env.OPENAI_API_KEY,    ask: askChatGPT, promptId: 'kategorie' },
     { name: 'claude',  key: env.ANTHROPIC_API_KEY, ask: askClaude,  promptId: 'brand' },
@@ -166,7 +176,7 @@ export async function onRequestPost({ request, env }) {
   if (!tv.success) return json({ ok: false, reason: 'turnstile' }, 403);
 
   /* 2. Cache zuerst (kostet nichts, zählt nicht gegen Limits) */
-  const cacheKey = `res2:${company}|${city}`;
+  const cacheKey = `res3:${company}|${city}`;
   const cachedRaw = await env.AI_CHECK_KV.get(cacheKey);
   if (cachedRaw) {
     try { return json({ ok: true, cached: true, ...JSON.parse(cachedRaw) }); } catch {}
