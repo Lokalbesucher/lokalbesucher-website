@@ -1,0 +1,11 @@
+# Cloudflare-Pages-Konfiguration (config-as-code)
+# Bindings/Vars hier; SECRETS (TURNSTILE_SECRET, PERPLEXITY_API_KEY, GEMINI_API_KEY)
+# werden weiterhin im Dashboard unter "Variablen und Geheimnisse" (Typ: Secret) gesetzt.
+name = "lokalbesucher-website"
+pages_build_output_dir = "."
+compatibility_date = "2026-04-16"
+
+# KV fuer /api/ai-check: Rate-Limits, Tages-Deckel, Ergebnis-Cache
+[[kv_namespaces]]
+binding = "AI_CHECK_KV"
+id = "016c5127d85c400aae6c382ebcefa5f5"
