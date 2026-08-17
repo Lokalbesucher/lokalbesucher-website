@@ -27,7 +27,7 @@
   {
     "@context":"https://schema.org",
     "@graph":[
-      {"@type":"WebPage","@id":"https://lokalbesucher.de/ki-sichtbarkeits-check/","name":"KI-Sichtbarkeits-Check","url":"https://lokalbesucher.de/ki-sichtbarkeits-check/","description":"Kostenloses Tool: prüft, ob ChatGPT, Claude und Gemini ein Unternehmen empfehlen.","datePublished":"2026-08-15","dateModified":"2026-08-15","publisher":{"@id":"https://lokalbesucher.de/#organization"}},
+      {"@type":"WebPage","@id":"https://lokalbesucher.de/ki-sichtbarkeits-check/","name":"KI-Sichtbarkeits-Check","url":"https://lokalbesucher.de/ki-sichtbarkeits-check/","description":"Kostenloses Tool: prüft, ob ChatGPT, Claude und Gemini ein Unternehmen empfehlen.","datePublished":"2026-08-15","dateModified":"2026-08-17","publisher":{"@id":"https://lokalbesucher.de/#organization"},"author":{"@type":"Person","name":"Tobias Frank","jobTitle":"Inhaber","worksFor":{"@id":"https://lokalbesucher.de/#organization"}}},
       {"@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"Startseite","item":"https://lokalbesucher.de/"},
         {"@type":"ListItem","position":2,"name":"KI-Sichtbarkeits-Check","item":"https://lokalbesucher.de/ki-sichtbarkeits-check/"}
@@ -35,7 +35,10 @@
       {"@type":"FAQPage","mainEntity":[
         {"@type":"Question","name":"Was prüft der KI-Sichtbarkeits-Check?","acceptedAnswer":{"@type":"Answer","text":"Der Check fragt ChatGPT, Claude und Gemini live: Wird dein Unternehmen empfohlen, wenn jemand in deiner Stadt nach deiner Leistung sucht? Kennt die KI deine Firma und deinen Ruf? Du bekommst einen Score von 0 bis 100 und siehst, welche Quellen stattdessen genannt werden."}},
         {"@type":"Question","name":"Was kostet der KI-Sichtbarkeits-Check?","acceptedAnswer":{"@type":"Answer","text":"Nichts. Der Check ist kostenlos, dauert etwa 30 Sekunden und ist auf 3 Checks pro Tag begrenzt."}},
-        {"@type":"Question","name":"Warum ist KI-Sichtbarkeit wichtig?","acceptedAnswer":{"@type":"Answer","text":"Immer mehr Menschen fragen ChatGPT und Co. nach lokalen Empfehlungen statt zu googeln. Wer dort nicht auftaucht, verliert Anfragen an Wettbewerber — ohne es zu merken. Die Grundlage der KI-Antworten sind Google-Business-Profil, Bewertungen und Verzeichniseinträge."}}
+        {"@type":"Question","name":"Warum ist KI-Sichtbarkeit wichtig?","acceptedAnswer":{"@type":"Answer","text":"Immer mehr Menschen fragen ChatGPT und Co. nach lokalen Empfehlungen statt zu googeln. Wer dort nicht auftaucht, verliert Anfragen an Wettbewerber — ohne es zu merken. Die Grundlage der KI-Antworten sind Google-Business-Profil, Bewertungen und Verzeichniseinträge."}},
+        {"@type":"Question","name":"Woher nehmen ChatGPT und Co. ihre lokalen Empfehlungen?","acceptedAnswer":{"@type":"Answer","text":"KI-Assistenten stützen sich vor allem auf das Google-Business-Profil, echte Bewertungen, Branchenverzeichnisse, die eigene Website und aktuelle Inhalte im Netz. ChatGPT nutzt zusätzlich stark den Bing-Index. Wer in diesen Quellen konsistent und stark vertreten ist, wird zitiert und empfohlen."}},
+        {"@type":"Question","name":"Wie verbessere ich meinen KI-Sichtbarkeits-Score?","acceptedAnswer":{"@type":"Answer","text":"Die fünf wichtigsten Hebel: ein vollständig gepflegtes Google-Business-Profil, viele echte und beantwortete Bewertungen, konsistente Einträge in 50+ Branchenverzeichnissen, regelmäßig frische Inhalte auf der Website und strukturierte Daten (Schema.org). Genau das ist das Handwerk von Lokalbesucher."}},
+        {"@type":"Question","name":"Wie oft sollte ich den KI-Sichtbarkeits-Check machen?","acceptedAnswer":{"@type":"Answer","text":"Ein Check pro Monat reicht. KI-Antworten ändern sich mit den Datenquellen — nach Verbesserungen an Profil, Bewertungen oder Website dauert es einige Wochen, bis die KIs sie übernehmen. Ergebnisse werden 7 Tage zwischengespeichert."}}
       ]}
     ]
   }
@@ -179,14 +182,62 @@
       </div>
     </div>
 
+    <!-- ── Kernargumente: Warum KI-Sichtbarkeit ─────────────── -->
+    <section class="why" aria-labelledby="why-title">
+      <h2 id="why-title" style="font-size:1.6rem;margin:3rem 0 .75rem">Warum KI-Sichtbarkeit jetzt über Anfragen entscheidet</h2>
+      <p style="color:var(--muted);max-width:70ch">Die lokale Suche verlagert sich messbar: Statt zehn blauen Links liefert die KI <em style="color:var(--text);font-style:normal">eine</em> Empfehlung — und die meisten Nutzer fragen nicht weiter. Drei Zahlen, die den Wandel zeigen:</p>
+      <div class="grid2" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:1.5rem 0">
+        <div class="card" style="margin:0;text-align:left">
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;color:var(--yellow)">45&nbsp;%</div>
+          <p style="color:var(--muted);font-size:.9rem">der Verbraucher nutzen bereits KI-Tools für lokale Empfehlungen — im Jahr davor waren es 6&nbsp;% <a href="https://www.searchable.com/blog/local-business-ai-search-optimization-2026" rel="noopener noreferrer" target="_blank" style="text-decoration:underline">(Searchable, 2026)</a></p>
+        </div>
+        <div class="card" style="margin:0;text-align:left">
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;color:var(--yellow)">~28&nbsp;%</div>
+          <p style="color:var(--muted);font-size:.9rem">der Google-Suchen in Deutschland zeigen bereits KI-Übersichten statt klassischer Ergebnisse <a href="https://www.sagemedia.de/ai-overviews-optimieren/" rel="noopener noreferrer" target="_blank" style="text-decoration:underline">(Sagemedia, 2026)</a></p>
+        </div>
+        <div class="card" style="margin:0;text-align:left">
+          <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;color:var(--yellow)">+35&nbsp;%</div>
+          <p style="color:var(--muted);font-size:.9rem">mehr Klicks erzielen Unternehmen, die in KI-Antworten als Quelle zitiert werden (Seer Interactive, 2025)</p>
+        </div>
+      </div>
+      <p style="color:var(--muted);max-width:70ch">Das Entscheidende: KI-Antworten fallen nicht vom Himmel. Sie entstehen aus <strong style="color:var(--text)">deinem Google-Business-Profil, echten Bewertungen, Verzeichniseinträgen und deiner Website</strong>. Wer diese Quellen im Griff hat, wird empfohlen — wer nicht, ist unsichtbar.</p>
+
+      <h2 style="font-size:1.6rem;margin:2.5rem 0 .75rem">Wie verbessere ich meine KI-Sichtbarkeit? Die 5 Hebel</h2>
+      <div class="card" style="margin-top:1rem">
+        <ol style="list-style:decimal;padding-left:1.25rem;display:grid;gap:.9rem;color:var(--muted)">
+          <li><strong style="color:var(--text)"><a href="/google-business-agentur/" style="text-decoration:underline">Google-Business-Profil</a> vollständig pflegen</strong> — Kategorien, Leistungen, Fotos, Öffnungszeiten. Es ist die wichtigste Einzelquelle für lokale KI-Empfehlungen.</li>
+          <li><strong style="color:var(--text)"><a href="/bewertungsmanagement/" style="text-decoration:underline">Echte Bewertungen</a> aufbauen und beantworten</strong> — Menge, Frische und Antworten fließen direkt in die Ruf-Einschätzung der KI ein. BattleKart Bochum: 800+ Bewertungen in 9 Monaten mit TapTag.</li>
+          <li><strong style="color:var(--text)">Konsistente Verzeichniseinträge</strong> — Name, Adresse, Telefonnummer identisch in 50+ Branchenverzeichnissen. Widersprüche machen die KI misstrauisch.</li>
+          <li><strong style="color:var(--text)">Frische Inhalte</strong> — KIs bevorzugen nachweislich aktuell gepflegte Quellen. Regelmäßige Posts und aktuelle Website-Inhalte halten dich zitierfähig.</li>
+          <li><strong style="color:var(--text)">Strukturierte Daten (Schema.org)</strong> — maschinenlesbare Fakten zu deinem Unternehmen. Kostenlos erstellen mit unserem <a href="/schema-org-generator/" style="text-decoration:underline">Schema-Generator</a>.</li>
+        </ol>
+      </div>
+      <p style="color:var(--muted);font-size:.9rem;margin-top:1rem">Alle fünf Hebel sind Teil des <a href="/google-business-agentur/" style="text-decoration:underline">Ultimate Pakets</a> (279&nbsp;€/Monat zzgl. 19&nbsp;% MwSt.) — über 100 betreute Unternehmen, offizieller Google Partner.</p>
+    </section>
+
     <div class="faq">
-      <h2>Kurz erklärt</h2>
-      <h3>Was prüft der KI-Sichtbarkeits-Check?</h3>
-      <p id="faq-was">Drei Live-Fragen an ChatGPT, Claude und Gemini: Empfehlung in deiner Stadt, Bekanntheit deiner Firma, dein Ruf. Daraus entsteht ein Score von 0–100 — plus die Liste der Quellen, die die KI stattdessen zitiert.</p>
-      <h3>Warum ist das wichtig?</h3>
-      <p id="faq-warum">KI-Assistenten beantworten immer mehr lokale Suchanfragen direkt. Die Antworten basieren vor allem auf deinem Google-Business-Profil, echten Bewertungen und Verzeichniseinträgen. Wer dort schwach ist, existiert für die KI nicht — und verliert Anfragen, ohne es zu merken.</p>
-      <h3>Was kostet das?</h3>
-      <p id="faq-kosten">Nichts. Der Check ist kostenlos und auf 3 Checks pro Tag begrenzt, damit das Tool für alle schnell bleibt.</p>
+      <h2>Häufige Fragen</h2>
+      <h3 id="faq-was">Was prüft der KI-Sichtbarkeits-Check?</h3>
+      <p>Drei Live-Fragen an ChatGPT, Claude und Gemini: Empfehlung in deiner Stadt, Bekanntheit deiner Firma, dein Ruf. Daraus entsteht ein Score von 0–100 — plus die Liste der Quellen, die die KI stattdessen zitiert.</p>
+      <h3 id="faq-warum">Warum ist KI-Sichtbarkeit wichtig?</h3>
+      <p>KI-Assistenten beantworten immer mehr lokale Suchanfragen direkt. Die Antworten basieren vor allem auf deinem Google-Business-Profil, echten Bewertungen und Verzeichniseinträgen. Wer dort schwach ist, existiert für die KI nicht — und verliert Anfragen, ohne es zu merken.</p>
+      <h3 id="faq-kosten">Was kostet der KI-Sichtbarkeits-Check?</h3>
+      <p>Nichts. Der Check ist kostenlos und auf 3 Checks pro Tag begrenzt, damit das Tool für alle schnell bleibt.</p>
+      <h3 id="faq-datenquellen">Woher nehmen ChatGPT und Co. ihre lokalen Empfehlungen?</h3>
+      <p>Vor allem aus dem Google-Business-Profil, echten Bewertungen, Branchenverzeichnissen, der eigenen Website und aktuellen Inhalten im Netz. ChatGPT stützt sich zusätzlich stark auf den Bing-Index. Wer in diesen Quellen konsistent und stark vertreten ist, wird zitiert und empfohlen.</p>
+      <h3 id="faq-score-verbessern">Wie verbessere ich meinen KI-Sichtbarkeits-Score?</h3>
+      <p>Mit den fünf Hebeln oben: vollständiges Google-Business-Profil, echte und beantwortete Bewertungen, konsistente Verzeichniseinträge, frische Inhalte und strukturierte Daten. Genau das ist unser Handwerk — wir setzen alle fünf systematisch um.</p>
+      <h3 id="faq-wie-oft">Wie oft sollte ich den Check machen?</h3>
+      <p>Einmal im Monat reicht. KI-Antworten ändern sich mit den Datenquellen — nach Verbesserungen dauert es einige Wochen, bis die KIs sie übernehmen. Ergebnisse werden 7 Tage zwischengespeichert.</p>
+    </div>
+
+    <!-- ── Autorenbox (E-E-A-T) ─────────────────────────────── -->
+    <div class="card" style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;margin-top:2.5rem">
+      <div>
+        <strong style="font-family:'Syne',sans-serif">Tobias Frank</strong><br>
+        <span style="color:var(--muted);font-size:.9rem">Inhaber Lokalbesucher GmbH · 20 Jahre Sales- &amp; Marketing-Erfahrung (Salesforce, Amazon, StepStone) · Offizieller <a href="https://www.google.com/partners/agency?id=9897265706" rel="noopener noreferrer" target="_blank" style="text-decoration:underline">Google Partner</a></span>
+      </div>
+      <span style="margin-left:auto;color:var(--muted);font-size:.8rem"><time datetime="2026-08-17">Stand: 17. August 2026</time></span>
     </div>
   </section>
 </main>

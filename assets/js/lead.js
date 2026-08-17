@@ -30,6 +30,7 @@
   /* Muss zu functions/api/lead.js passen — hier nur als Direkt-Fallback. */
   var DIRECT = {
     'homepage': GHL_LEAD,
+    'ki-check': GHL_LEAD,
     'meta-ads': GHL_LEAD,
     'google-ads': GHL_LEAD,
     'seo-agentur': GHL_LEAD,
