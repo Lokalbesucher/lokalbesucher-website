@@ -26,14 +26,14 @@ https://*.lokalbesucher-website.pages.dev/*
 /assets/js/*
   Cache-Control: public, max-age=3600, stale-while-revalidate=86400
 
-# Bilder und Fonts aendern sich nur mit neuem Dateinamen -> weiter immutable
+# Bilder und Fonts aendern sich nur mit neuem Dateinamen -> weiter immutable.
+# Eine Sammelregel /assets/* darf hier NICHT stehen: Cloudflare Pages fuehrt
+# passende Regeln zusammen statt sie zu ersetzen — "immutable" landete dadurch
+# auch auf css/js und machte die kurze Cachezeit wirkungslos.
 /assets/images/*
   Cache-Control: public, max-age=31536000, immutable
 
 /assets/fonts/*
-  Cache-Control: public, max-age=31536000, immutable
-
-/assets/*
   Cache-Control: public, max-age=31536000, immutable
 
 /*.html
