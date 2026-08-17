@@ -16,6 +16,23 @@ https://*.lokalbesucher-website.pages.dev/*
 /assets/js/cookie-consent.js
   Cache-Control: public, max-age=300, must-revalidate
 
+# CSS/JS haben KEINE Fingerprints im Dateinamen — mit "immutable" haetten
+# wiederkehrende Besucher Fixes bis zu einem Jahr lang nicht gesehen.
+# stale-while-revalidate liefert weiter sofort aus dem Cache und holt die
+# neue Fassung im Hintergrund: kein Tempoverlust, aber Aenderungen kommen an.
+/assets/css/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/assets/js/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+# Bilder und Fonts aendern sich nur mit neuem Dateinamen -> weiter immutable
+/assets/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
