@@ -278,6 +278,23 @@ p {
 
 /* ── Buttons ───────────────────────────────────────────────── */
 
+/* Dekorative Verlaeufe/Absolut-Elemente ragen auf schmalen Displays seitlich
+   heraus und erzeugen horizontales Wackeln. Geklippt wird bewusst <main> und
+   NICHT html/body: jeder overflow-Wert ausser visible auf einem Vorfahren des
+   Headers zerstoert dessen position:sticky (nachgemessen). */
+main {
+  overflow-x: clip;
+}
+
+/* Lange CTA-Beschriftungen sprengten unter ~400px die Zeile (white-space:nowrap) */
+@media (max-width: 400px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -569,8 +586,18 @@ p {
   color: var(--text);
 }
 
+/* Am Handy ausblenden: der Button schob sonst den Hamburger aus dem Bild
+   (bei 390px lag er 111px ausserhalb) — das Menue war dort nicht erreichbar.
+   Die WhatsApp-CTAs im Drawer und der Float-Button decken Mobil ab. */
 .nav-cta {
   margin-left: auto;
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .nav-cta {
+    display: inline-flex;
+  }
 }
 
 /* Tools Dropdown */
