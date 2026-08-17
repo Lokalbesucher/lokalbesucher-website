@@ -24,6 +24,7 @@ const ZAPIER_ROI   = 'https://hooks.zapier.com/hooks/catch/17928974/u0a57h7/';
 
 const TARGETS = {
   'homepage':                              { url: GHL_LEAD,     form: false },
+  'ki-check':                              { url: GHL_LEAD,     form: false },
   'meta-ads':                              { url: GHL_LEAD,     form: false },
   'google-ads':                            { url: GHL_LEAD,     form: false },
   'seo-agentur':                           { url: GHL_LEAD,     form: false },
