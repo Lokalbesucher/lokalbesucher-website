@@ -589,13 +589,15 @@ main {
 /* Am Handy ausblenden: der Button schob sonst den Hamburger aus dem Bild
    (bei 390px lag er 111px ausserhalb) — das Menue war dort nicht erreichbar.
    Die WhatsApp-CTAs im Drawer und der Float-Button decken Mobil ab. */
-.nav-cta {
+/* Ueber .nav adressiert (0,2,0): Seiten mit eigenem Stylesheet laden global.css
+   zuerst und wuerden ein einfaches .nav-cta mit ihrem eigenen .btn ueberschreiben. */
+.nav .nav-cta {
   margin-left: auto;
   display: none;
 }
 
 @media (min-width: 900px) {
-  .nav-cta {
+  .nav .nav-cta {
     display: inline-flex;
   }
 }
