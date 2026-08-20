@@ -61,7 +61,12 @@
       'border:1px solid #1e2240;border-radius:10px;cursor:pointer;white-space:nowrap;}',
       '#lb-btn-decline:hover{border-color:#6b7099;color:#e8eaf6;}',
       '</style>',
-      '<p>Wir nutzen <strong style="color:#e8eaf6">Google Analytics</strong> zur anonymisierten Auswertung. Technisch notwendige Cookies sind immer aktiv. ',
+      /* Eine Einwilligung ist nur wirksam, wenn sie informiert ist: seit dem
+         Google-Ads-Tag werden auch Werbe-Cookies gesetzt und Remarketing-Listen
+         gebildet — das muss hier stehen, nicht nur "Analytics". */
+      '<p>Wir nutzen <strong style="color:#e8eaf6">Google Analytics</strong> zur Auswertung und ',
+      '<strong style="color:#e8eaf6">Google Ads</strong> zur Erfolgsmessung und für Remarketing. ',
+      'Technisch notwendige Cookies sind immer aktiv. ',
       '<a href="/datenschutz/" rel="noopener">Datenschutzerklärung</a></p>',
       '<div id="lb-cookie-btns">',
       '<button id="lb-btn-accept">Alle akzeptieren</button>',
