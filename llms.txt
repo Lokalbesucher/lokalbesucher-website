@@ -23,6 +23,12 @@ Kontakt: info@lokalbesucher.de · +49 151 22358883 · Karl-Breuing-Str. 2, 45770
 
 - [ROI-Kalkulator](https://lokalbesucher.de/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/): Kostenlos berechnen, was mehr lokale Sichtbarkeit bei Google bringt
 - [Schema.org Generator](https://lokalbesucher.de/schema-org-generator/): Kostenloses Tool für LocalBusiness-Schema-Markup
+- [KI-Sichtbarkeits-Check](https://lokalbesucher.de/ki-sichtbarkeits-check/): Kostenloser Live-Check, ob ChatGPT, Claude und Gemini ein Unternehmen empfehlen — Score 0–100 in 30 Sekunden
+
+## Ratgeber
+
+- [Ratgeber-Übersicht](https://lokalbesucher.de/ratgeber/): Praxiswissen zu Google-Rankings, Bewertungen und KI-Sichtbarkeit für lokale Unternehmen
+- [Traffic-Einbruch nach Google-Update](https://lokalbesucher.de/ratgeber/google-update-traffic-eingebrochen/): 7-Punkte-Diagnose über die Search Console, Abgrenzung zu KI-Übersichten (AI Overviews), ehrlicher Recovery-Zeitplan von 3–6 Monaten
 
 ## Erfolge
 
