@@ -14,7 +14,7 @@
   <meta property="og:url"         content="https://lokalbesucher.de/google-business-agentur/">
   <meta property="og:title"       content="Google Business Optimierung NRW | Lokalbesucher">
   <meta property="og:description" content="Dauerhaft Top 3 bei Google Maps. Bewertungsmanagement, 50+ Verzeichnisse, KI-Antworten in unter 60 Minuten.">
-  <meta property="og:image"       content="https://lokalbesucher.de/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp">
+  <meta property="og:image"       content="https://lokalbesucher.de/assets/images/og-lokalbesucher.png">
   <meta property="og:locale"      content="de_DE">
   <meta property="og:site_name"   content="Lokalbesucher">
 
@@ -22,13 +22,13 @@
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Google Business Optimierung NRW | Lokalbesucher">
   <meta name="twitter:description" content="Dauerhaft Top 3 bei Google Maps. 100+ Unternehmen. 3,9 Mio. Profilaufrufe.">
-  <meta name="twitter:image"       content="https://lokalbesucher.de/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp">
+  <meta name="twitter:image"       content="https://lokalbesucher.de/assets/images/og-lokalbesucher.png">
 
   <!-- ── Preload ───────────────────────────────────────────────── -->
-  <link rel="preload" href="/assets/fonts/syne-700.woff2"    as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/syne-800.woff2"    as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/css/global.css?v=2026082001"          as="style">
+  <link rel="preload" href="/assets/fonts/syne-700-v2.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-800-v2.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/css/global.css?v=2026082201"          as="style">
 
   <!-- ── Critical CSS ──────────────────────────────────────────── -->
   <style>
@@ -60,10 +60,11 @@
     .page-hero-title em{color:#ffbd59;font-style:normal}
     .page-hero-desc{font-size:clamp(.95rem,2.2vw,1.15rem);color:#7c83aa;margin-bottom:2rem;max-width:620px;line-height:1.75}
     .hero-cta{display:flex;flex-wrap:wrap;gap:1rem}
+  @media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}
   </style>
 
-  <link rel="stylesheet" href="/assets/css/global.css?v=2026082001" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026082001"></noscript>
+  <link rel="stylesheet" href="/assets/css/global.css?v=2026082201" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026082201"></noscript>
 
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 
@@ -195,7 +196,8 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
   <script src="/assets/js/third-party.js?v=2026082001" defer></script>
   <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});gtag('config','AW-11287998127');</script>
-
+
+
 </head>
 <body>
 
@@ -423,7 +425,7 @@
       </div>
 
       <!-- Leistung 1: Profil-Optimierung -->
-      <div style="display:grid;grid-template-columns:1fr;gap:4rem">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:4rem">
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center" class="service-row">
           <div class="fade-up">
@@ -633,7 +635,7 @@
         <hr class="divider">
 
         <!-- Leistung 5: TapTag + Reporting -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem" class="service-row">
 
           <div id="reporting" class="card fade-up">
             <div class="icon-box icon-box-blue" style="margin-bottom:1.25rem;width:3.5rem;height:3.5rem">
@@ -1296,7 +1298,10 @@
 <!-- Responsive Service Rows fix via CSS -->
 <style>
   @media (max-width: 767px) {
-    .service-row { grid-template-columns: 1fr !important; }
+    .service-row { grid-template-columns: minmax(0, 1fr) !important; }
+    .service-row > * { min-width: 0; }
+    /* aspect-ratio-Panels blaehen sonst die 1fr-Spalte ueber den Viewport auf */
+    .service-row > [style*="aspect-ratio"] { aspect-ratio: auto !important; min-height: 220px; }
   }
   .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
 </style>
