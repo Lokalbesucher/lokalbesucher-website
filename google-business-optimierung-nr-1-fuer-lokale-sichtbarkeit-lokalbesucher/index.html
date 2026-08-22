@@ -12,17 +12,17 @@
   <meta property="og:url"         content="https://lokalbesucher.de/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">
   <meta property="og:title"       content="ROI-Kalkulator Google Business | Lokalbesucher">
   <meta property="og:description" content="Berechne in 60 Sekunden was jede Bewertung wirklich wert ist — kostenloser ROI-Kalkulator.">
-  <meta property="og:image"       content="https://lokalbesucher.de/assets/images/lokalbesucher-hero-google-business-agentur-nrw.webp">
+  <meta property="og:image"       content="https://lokalbesucher.de/assets/images/og-lokalbesucher.png">
   <meta name="twitter:card"       content="summary_large_image">
 
-  <link rel="preload" href="/assets/fonts/syne-700.woff2"    as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/syne-800.woff2"    as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/dm-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-700-v2.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-800-v2.woff2"    as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-mono-400-v2.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- Global CSS -->
-  <link rel="stylesheet" href="/assets/css/global.css?v=2026082001" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026082001"></noscript>
+  <link rel="stylesheet" href="/assets/css/global.css?v=2026082201" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026082201"></noscript>
 
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 
@@ -333,7 +333,7 @@
       position: relative; z-index: 1;
       display: grid; grid-template-columns: 1fr auto; gap: 52px; align-items: start;
     }
-    @media (max-width: 680px) { .cta-inner { grid-template-columns: 1fr; gap: 32px; } }
+    @media (max-width: 680px) { .cta-inner { grid-template-columns: minmax(0,1fr); gap: 32px; } .cta-inner > * { min-width: 0; } }
 
     .cta-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
     .cta-h {

@@ -303,9 +303,10 @@ function buildPage(c) {
   <meta property="og:url" content="${url}">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preload" href="/assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <style>${CSS}</style>
+  <link rel="preload" href="/assets/fonts/syne-700-v2.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
+  <style>${CSS}@media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}
+  </style>
   <link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
@@ -444,8 +445,8 @@ function buildOverview() {
   <meta property="og:url" content="https://lokalbesucher.de/case-studies/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="preload" href="/assets/fonts/syne-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/dm-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/syne-700-v2.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
   <style>${CSS_OVERVIEW}</style>
   <link rel="stylesheet" href="/assets/css/global.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="/assets/css/global.css"></noscript>
