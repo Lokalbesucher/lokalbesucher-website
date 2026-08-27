@@ -152,6 +152,8 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 | `/faq/` | FAQ |
 | `/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/` | ROI Kalkulator |
 | `/schema-org-generator/` | Tool (zieht Traffic) |
+| `/ki-sichtbarkeits-check/` | Tool — fragt ChatGPT/Claude/Gemini live ab; Backend `functions/api/ai-check.js`, KV `AI_CHECK_KV`, Turnstile-geschützt, 3 Checks/IP/Tag |
+| `/ratgeber/` | Ratgeber-Hub + Artikel auf Money-Keywords |
 
 **Service-Landingpages** (conversion-optimiert, On-Page-Lead-Formular → geteilter GHL-Webhook, unterschieden per `source`)
 | URL | `source` |
@@ -219,6 +221,26 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 <meta property="og:url">
 <script type="application/ld+json">/* Schema.org */</script>
 ```
+
+### Assets: Version bei JEDER Änderung hochzählen
+CSS und JS unter `/assets/` haben keine Fingerprints im Dateinamen. Alle
+Verweise tragen deshalb `?v=JJJJMMTT` (Stand: `?v=2026082001`). **Wer
+`global.css`, `lead.js`, `cookie-consent.js` oder `third-party.js` ändert, muss
+diese Version auf allen Seiten hochzählen** — sonst sehen wiederkehrende
+Besucher die Änderung bis zu 4 Stunden nicht. Früher stand `/assets/*` auf
+`immutable` mit einem Jahr Haltbarkeit; Änderungen kamen dadurch praktisch nie
+an. `_headers` liefert css/js jetzt mit `max-age=3600, stale-while-revalidate`,
+Bilder und Fonts bleiben `immutable`.
+
+Achtung: Cloudflare Pages **führt passende `_headers`-Regeln zusammen**, statt
+sie zu ersetzen. Eine Sammelregel `/assets/*` vererbt ihr `immutable` an
+`/assets/css/*` weiter — deshalb darf sie dort nicht stehen.
+
+### CSS-Fallstrick: sticky Header
+`overflow` auf einem **Vorfahren** des Headers (html, body) zerstört dessen
+`position: sticky` — nachgemessen. Wenn dekorative Elemente seitlich
+herausragen, wird deshalb `main { overflow-x: clip }` geklippt, niemals
+html oder body.
 
 ### _headers
 ```
@@ -307,13 +329,27 @@ git push origin main
 
 ## 13. ARBEITSUMGEBUNG — KRITISCH
 
-- **Arbeitsverzeichnis:** `C:\lokalbesucher - webseite\` — IMMER, AUSNAHMSLOS
-- **NIEMALS** `C:\tmp\`, `C:\Users\...` oder andere Pfade nutzen
+> Stand 2026-08: Entwicklung läuft auf **macOS**, nicht mehr auf Windows.
+
+- **Arbeitsverzeichnis:** `~/Desktop/lokalbesucher-website` — IMMER, AUSNAHMSLOS
 - Alle Dateien immer relativ zum Arbeitsverzeichnis anlegen
 - In Node.js Scripts: `path.join(__dirname, ...)` nutzen statt absolute Pfade
-- Vor jedem Datei-Schreiben prüfen ob Zielordner existiert, ggf. `fs.mkdirSync` mit `recursive: true`
-- Kein `C:\tmp\` für temporäre Dateien — stattdessen `C:\lokalbesucher - webseite\tmp\` (wird in .gitignore eingetragen)
+- Temporäres nach `tmp/` im Projekt (steht in .gitignore), nicht nach `/tmp`
 - Bei Fehler "ENOENT: no such file or directory": immer erst Ordner anlegen, dann Datei schreiben
+
+**macOS-Fallstrick:** Der Schreibtisch-Ordner ist bei macOS gesondert geschützt.
+Schlagen plötzlich alle Datei-Zugriffe mit `Operation not permitted` fehl (auch
+`git status`), liegt es an der TCC-Berechtigung — **nicht** am Festplatten-
+vollzugriff. Ein Befehl behebt es sofort, ohne Neustart und ohne Klick:
+```
+tccutil reset SystemPolicyDesktopFolder com.apple.Terminal
+```
+
+**Zwei weitere Repos gehören zum Gesamtbild** (eigene Codebases, eigener Deploy):
+`Lokalbesucher/Reporting` (`~/Desktop/Reporting_Tool`, Worker unter
+`/reporting/*`) und `Lokalbesucher/lokalisto` (`~/Desktop/lokalisto`, enthält
+das Akquise-Check-Tool unter `/check/*`). Beide werden **manuell** deployed
+(`npm run deploy`) — anders als diese Website, die bei jedem Push live geht.
 
 ---
 
