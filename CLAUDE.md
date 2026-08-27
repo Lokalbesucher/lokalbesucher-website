@@ -355,9 +355,14 @@ das Akquise-Check-Tool unter `/check/*`). Beide werden **manuell** deployed
 
 ## 14. ANALYTICS & TRACKING
 
-### Google Analytics 4
-- GA4 Measurement ID: wird von Tobias bereitgestellt (oder in Search Console nachschauen)
-- Einbindung: via gtag.js, NUR nach Cookie Consent (Klaro)
+### Google Analytics 4 + Google Ads
+- GA4 Measurement ID: `G-KRKS5RL7MP`
+- Google Ads: `AW-11287998127` — hängt als **eine Zeile** an derselben
+  gtag-config, KEIN zweites `<script src=googletagmanager…>`. Die Bibliothek
+  wird von `third-party.js` ohnehin geladen; ein zweiter Tag kostet PageSpeed.
+- Das Ads-Konto zieht eine **zweite GA4-Property** (`G-D0NGSXYXNL`) mit — von
+  Tobias so gewollt, in der Datenschutzerklärung §6 dokumentiert.
+- Einbindung: via gtag.js, geladen erst nach `load` + idle durch `third-party.js`
 - GA4 Consent Mode v2: `analytics_storage` und `ad_storage` default auf `denied`
 - Nach Consent: beide auf `granted` setzen
 - Tag in `<head>` aller Seiten einbauen — aber erst aktiv wenn Consent gegeben
