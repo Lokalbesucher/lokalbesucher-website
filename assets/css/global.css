@@ -5,42 +5,30 @@
 
 /* ── Self-hosted Fonts ─────────────────────────────────────── */
 
+/* Syne und DM Sans liegen als VARIABLE FONTS vor — eine Datei deckt die ganze
+   Gewichtsachse ab. Sie waren hier aber mit festen Gewichten deklariert
+   (font-weight: 700 bzw. 800). Eine Variable-Font-Datei meldet ihr Standard-
+   gewicht, und das ist bei beiden 400. Der Browser bekam also gesagt "das ist
+   die fette Schnitt" und rendert trotzdem Regular — Überschriften erschienen
+   dünn statt fett. Zusätzlich waren syne-700 und syne-800 byte-identisch und
+   wurden doppelt geladen.
+
+   Richtig ist EINE Regel je Familie/Stil mit einer Gewichts-RANGE. Erst damit
+   nutzt der Browser die Variationsachse und stellt 700/800 wirklich fett dar.
+   Geprüfte Achsen: Syne wght 400–800, DM Sans wght 100–1000. */
+
 @font-face {
   font-family: 'Syne';
   font-style:  normal;
-  font-weight: 700;
+  font-weight: 400 800;
   font-display: swap;
   src: url('/assets/fonts/syne-700-v2.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Syne';
-  font-style:  normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url('/assets/fonts/syne-800-v2.woff2') format('woff2');
-}
-
-@font-face {
   font-family: 'DM Sans';
   font-style:  normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url('/assets/fonts/dm-sans-300-v2.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'DM Sans';
-  font-style:  italic;
-  font-weight: 300;
-  font-display: swap;
-  src: url('/assets/fonts/dm-sans-300-italic-v2.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'DM Sans';
-  font-style:  normal;
-  font-weight: 400;
+  font-weight: 100 1000;
   font-display: swap;
   src: url('/assets/fonts/dm-sans-400-v2.woff2') format('woff2');
 }
@@ -48,19 +36,13 @@
 @font-face {
   font-family: 'DM Sans';
   font-style:  italic;
-  font-weight: 400;
+  font-weight: 100 1000;
   font-display: swap;
-  src: url('/assets/fonts/dm-sans-400-italic-v2.woff2') format('woff2');
+  src: url('/assets/fonts/dm-sans-300-italic-v2.woff2') format('woff2');
 }
 
-@font-face {
-  font-family: 'DM Sans';
-  font-style:  normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('/assets/fonts/dm-sans-500-v2.woff2') format('woff2');
-}
-
+/* DM Mono liegt als statische Schnitte vor (keine Variationsachse) — hier sind
+   feste Gewichte korrekt. */
 @font-face {
   font-family: 'DM Mono';
   font-style:  normal;

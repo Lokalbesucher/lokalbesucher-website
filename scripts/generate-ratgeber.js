@@ -64,7 +64,6 @@ function page(a) {
   <meta name="twitter:image"       content="${OG_IMG}">
 
   <link rel="preload" href="/assets/fonts/syne-700-v2.woff2"    as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/syne-800-v2.woff2"    as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/css/global.css?v=${V}" as="style">
 
