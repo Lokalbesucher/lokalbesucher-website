@@ -224,7 +224,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 
 ### Assets: Version bei JEDER Änderung hochzählen
 CSS und JS unter `/assets/` haben keine Fingerprints im Dateinamen. Alle
-Verweise tragen deshalb `?v=JJJJMMTT` (Stand: `?v=2026082001`). **Wer
+Verweise tragen deshalb `?v=JJJJMMTT` (Stand: `?v=2026090101`). **Wer
 `global.css`, `lead.js`, `cookie-consent.js` oder `third-party.js` ändert, muss
 diese Version auf allen Seiten hochzählen** — sonst sehen wiederkehrende
 Besucher die Änderung bis zu 4 Stunden nicht. Früher stand `/assets/*` auf
