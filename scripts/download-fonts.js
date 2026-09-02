@@ -1,7 +1,7 @@
 /**
  * download-fonts.js
  *
- * Lädt Syne + DM Sans + DM Mono von Google Fonts herunter
+ * Laedt DM Sans + DM Mono von Google Fonts herunter (Syne ist raus — nie gewollt)
  * und speichert sie selbst-gehostet in assets/fonts/.
  * Gibt am Ende den fertigen @font-face CSS-Block aus.
  *
@@ -17,10 +17,6 @@ const OUTPUT_DIR = 'assets/fonts';
 // ─── Schriften ────────────────────────────────────────────────────────────────
 // Google Fonts CSS2 API Anfragen (WOFF2 via modernen User-Agent)
 const FONT_REQUESTS = [
-  {
-    name: 'Syne',
-    url:  'https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap',
-  },
   {
     name: 'DM Sans',
     url:  'https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap',

@@ -50,13 +50,13 @@
       'color:#6b7099;line-height:1.6;margin:0;flex:1;}',
       '#lb-cookie-banner p a{color:#ffbd59;text-decoration:underline;}',
       '#lb-cookie-btns{display:flex;gap:.75rem;flex-shrink:0;flex-wrap:wrap;}',
-      '#lb-btn-accept{font-family:"Syne",system-ui,sans-serif;font-weight:700;font-size:.875rem;',
+      '#lb-btn-accept{font-family:"DM Sans",system-ui,sans-serif;font-weight:700;font-size:.875rem;',
       'padding:.6em 1.25em;background:#ffbd59;color:#0c0e1a;border:none;border-radius:10px;',
       'cursor:pointer;white-space:nowrap;}',
       '#lb-btn-accept:hover{background:#ffc96d;}',
       /* Ablehnen muss genauso gut lesbar sein wie Akzeptieren — #6b7099 lag
          bei 3,8:1 auf #111328 und damit unter den geforderten 4,5:1. */
-      '#lb-btn-decline{font-family:"Syne",system-ui,sans-serif;font-weight:700;font-size:.875rem;',
+      '#lb-btn-decline{font-family:"DM Sans",system-ui,sans-serif;font-weight:700;font-size:.875rem;',
       'padding:.6em 1.25em;background:transparent;color:#aeb4d8;',
       'border:1px solid #1e2240;border-radius:10px;cursor:pointer;white-space:nowrap;}',
       '#lb-btn-decline:hover{border-color:#6b7099;color:#e8eaf6;}',

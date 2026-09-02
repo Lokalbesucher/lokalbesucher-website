@@ -5,25 +5,14 @@
 
 /* ── Self-hosted Fonts ─────────────────────────────────────── */
 
-/* Syne und DM Sans liegen als VARIABLE FONTS vor — eine Datei deckt die ganze
-   Gewichtsachse ab. Sie waren hier aber mit festen Gewichten deklariert
-   (font-weight: 700 bzw. 800). Eine Variable-Font-Datei meldet ihr Standard-
-   gewicht, und das ist bei beiden 400. Der Browser bekam also gesagt "das ist
-   die fette Schnitt" und rendert trotzdem Regular — Überschriften erschienen
-   dünn statt fett. Zusätzlich waren syne-700 und syne-800 byte-identisch und
-   wurden doppelt geladen.
+/* Headlines UND Fließtext laufen auf DM Sans. Syne war früher die Headline-
+   Schrift, war aber nie gewollt und ist raus.
 
-   Richtig ist EINE Regel je Familie/Stil mit einer Gewichts-RANGE. Erst damit
-   nutzt der Browser die Variationsachse und stellt 700/800 wirklich fett dar.
-   Geprüfte Achsen: Syne wght 400–800, DM Sans wght 100–1000. */
-
-@font-face {
-  font-family: 'Syne';
-  font-style:  normal;
-  font-weight: 400 800;
-  font-display: swap;
-  src: url('/assets/fonts/syne-700-v2.woff2') format('woff2');
-}
+   DM Sans ist ein VARIABLE FONT: eine Datei deckt die Achse wght 100–1000 ab.
+   Deshalb steht hier eine Gewichts-RANGE statt fester Werte — mit einem festen
+   `font-weight: 700` meldet die Datei ihr Standardgewicht (400), und der
+   Browser rendert Überschriften dünn statt fett. Genau dieser Fehler war hier
+   lange drin. Bei neuen Schnitten also immer prüfen: Variable Font → Range. */
 
 @font-face {
   font-family: 'DM Sans';
@@ -75,7 +64,7 @@
   --muted:    #7c83aa;
 
   /* Typografie */
-  --font-head: 'Syne', system-ui, sans-serif;
+  --font-head: 'DM Sans', system-ui, sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
   --font-mono: 'DM Mono', 'Courier New', monospace;
 
@@ -1033,7 +1022,7 @@ main {
   }
 }
 
-/* Syne 800 ist breiter als der Fallback: Zahlen sprengten unter 480px die 2er-Karten */
+/* Die fette Headline-Schrift ist breiter als der Fallback: Zahlen sprengten unter 480px die 2er-Karten */
 @media (max-width: 480px) {
   .stat-card {
     padding: var(--space-lg) var(--space-sm);

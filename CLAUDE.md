@@ -124,15 +124,26 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 ```
 
 ### Typografie (self-hosted — DSGVO!)
-- **Headlines:** Syne 700/800
+- **Headlines:** DM Sans 700/800
 - **Body:** DM Sans 300/400/500
 - **Mono:** DM Mono 400/500
 - font-display: swap auf allen @font-face
 
+> **Syne ist raus und kommt nicht zurück.** Tobias wollte diese Schrift nie;
+> sie stand hier trotzdem jahrelang als Headline-Font und wurde dadurch immer
+> wieder eingebaut (zuletzt über `scripts/generate-ratgeber.js`). Headlines
+> laufen auf **DM Sans**, dieselbe Familie wie der Fließtext, nur fetter.
+>
+> **DM Sans ist ein Variable Font** (Achse `wght` 100–1000): `@font-face` braucht
+> deshalb eine Gewichts-**Range** (`font-weight: 100 1000`), keinen festen Wert.
+> Mit einem festen `font-weight: 700` meldet die Datei ihr Standardgewicht 400
+> und der Browser rendert Überschriften dünn statt fett — genau dieser Fehler
+> war monatelang live. Gilt für jede künftige Variable-Font-Einbindung.
+
 ### Design
 - Dark Theme durchgängig
 - Karten: surface-Hintergrund + border + border-radius: 16px
-- Buttons: #ffbd59, dunkler Text, border-radius: 10px, Syne Bold
+- Buttons: #ffbd59, dunkler Text, border-radius: 10px, DM Sans Bold
 - Animationen: CSS-only, max 0.3s, ease-out
 - Subtle Grid-Background Pattern
 - Radiale Gelb-Gradient-Akzente in Hero-Bereichen
@@ -224,7 +235,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 
 ### Assets: Version bei JEDER Änderung hochzählen
 CSS und JS unter `/assets/` haben keine Fingerprints im Dateinamen. Alle
-Verweise tragen deshalb `?v=JJJJMMTT` (Stand: `?v=2026090101`). **Wer
+Verweise tragen deshalb `?v=JJJJMMTT` (Stand: `?v=2026090201`). **Wer
 `global.css`, `lead.js`, `cookie-consent.js` oder `third-party.js` ändert, muss
 diese Version auf allen Seiten hochzählen** — sonst sehen wiederkehrende
 Besucher die Änderung bis zu 4 Stunden nicht. Früher stand `/assets/*` auf
