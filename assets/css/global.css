@@ -64,7 +64,7 @@
   --muted:    #7c83aa;
 
   /* Typografie */
-  --font-head: 'DM Sans', system-ui, sans-serif;
+  --font-head: Arial, Helvetica, sans-serif;   /* Headlines: Arial fett — wie in den Präsentationen */
   --font-body: 'DM Sans', system-ui, sans-serif;
   --font-mono: 'DM Mono', 'Courier New', monospace;
 

@@ -19,7 +19,7 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:#0c0e1a;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
-    h1,h2,h3,h4{font-family:'DM Sans',system-ui,sans-serif;line-height:1.2}
+    h1,h2,h3,h4{font-family:var(--font-head,Arial,Helvetica,sans-serif);line-height:1.2}
     a{color:#ffbd59;text-decoration:underline;text-underline-offset:3px}
     a:hover{color:#ffc96d}
     ul{list-style:none}
@@ -58,7 +58,7 @@
     .drawer-sub-link{padding-left:1.5rem!important;color:#7c83aa!important}
 
     /* ── Buttons ────────────────────────────────────────────────── */
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s ease;text-decoration:none}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s ease;text-decoration:none}
     .btn-primary{background:#ffbd59;color:#0c0e1a}
     .btn-primary:hover{background:#ffc96d;transform:translateY(-1px);color:#0c0e1a}
     .btn-outline{background:transparent;border-color:#1e2240;color:#e8eaf6}
@@ -104,7 +104,7 @@
     .job-body-inner{padding-top:1.75rem;display:flex;flex-direction:column;gap:2rem}
 
     .job-section-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#ffbd59;margin-bottom:.85rem}
-    .job-section h3{font-size:.975rem;font-weight:700;color:#e8eaf6;margin-bottom:.85rem;font-family:'DM Sans',system-ui,sans-serif}
+    .job-section h3{font-size:.975rem;font-weight:700;color:#e8eaf6;margin-bottom:.85rem;font-family:var(--font-head,Arial,Helvetica,sans-serif)}
     .job-list{display:flex;flex-direction:column;gap:.6rem}
     .job-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.935rem;color:#7c83aa;line-height:1.65}
     .job-list li::before{content:'→';color:#ffbd59;font-weight:700;flex-shrink:0;margin-top:.05em}
@@ -143,7 +143,7 @@
     .footer-nap strong{color:#e8eaf6}
     .footer-nap a{color:#7c83aa;text-decoration:none}
     .footer-nap a:hover{color:#e8eaf6}
-    .footer-col-title{font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#7c83aa;margin-bottom:1rem}
+    .footer-col-title{font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:#7c83aa;margin-bottom:1rem}
     .footer-links{display:flex;flex-direction:column;gap:.6rem}
     .footer-links a{font-size:.875rem;color:#7c83aa;text-decoration:none}
     .footer-links a:hover{color:#e8eaf6}
@@ -154,8 +154,8 @@
   @media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}
   </style>
 
-  <link rel="stylesheet" href="/assets/css/global.css?v=2026090201" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026090201"></noscript>
+  <link rel="stylesheet" href="/assets/css/global.css?v=2026090202" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026090202"></noscript>
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 
   <script type="application/ld+json">
@@ -228,7 +228,7 @@
   <link rel="dns-prefetch" href="https://cdn.leadinfo.net">
   <link rel="dns-prefetch" href="https://collector4.leadinfo.net">
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
-  <script src="/assets/js/third-party.js?v=2026090201" defer></script>
+  <script src="/assets/js/third-party.js?v=2026090202" defer></script>
   <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});gtag('config','AW-11287998127');</script>
 
 
@@ -778,6 +778,6 @@
   }
 }());
 </script>
-<script src="/assets/js/cookie-consent.js?v=2026090201" defer></script>
+<script src="/assets/js/cookie-consent.js?v=2026090202" defer></script>
 </body>
 </html>

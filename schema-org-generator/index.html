@@ -23,7 +23,7 @@
   <style>
     .skip-link{position:absolute;top:-40px;left:0;background:#ffbd59;color:#0c0e1a;padding:.5rem 1rem;font-weight:700;z-index:999;transition:top .2s}
     .skip-link:focus{top:0}
-    :root{--bg:#0c0e1a;--surface:#111328;--surface2:#181b35;--border:#1e2240;--yellow:#ffbd59;--blue:#4f82ff;--green:#3ecf8e;--red:#ff5c5c;--text:#e8eaf6;--muted:#6b7099;--dur:.25s;--ease:cubic-bezier(.4,0,.2,1)}
+    :root{--font-head:Arial,Helvetica,sans-serif;--bg:#0c0e1a;--surface:#111328;--surface2:#181b35;--border:#1e2240;--yellow:#ffbd59;--blue:#4f82ff;--green:#3ecf8e;--red:#ff5c5c;--text:#e8eaf6;--muted:#6b7099;--dur:.25s;--ease:cubic-bezier(.4,0,.2,1)}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh}
@@ -35,15 +35,15 @@
     .nav{display:flex;align-items:center;gap:2rem;height:4rem}
     .nav-logo{display:flex;align-items:center;gap:.55rem;font-family:Arial,sans-serif;font-weight:700;font-size:1.2rem;color:#e8eaf6;flex-shrink:0;text-decoration:none}
     .nav-logo img{height:2.4rem;width:auto;display:block}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
     .btn-primary{background:#ffbd59;color:#0c0e1a;box-shadow:0 4px 24px rgba(255,189,89,.2)}
     .btn-primary:hover{background:#ffc96d;transform:translateY(-1px);box-shadow:0 6px 32px rgba(255,189,89,.35)}
   @media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}
   </style>
 
   <!-- Global CSS async -->
-  <link rel="stylesheet" href="/assets/css/global.css?v=2026090201" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026090201"></noscript>
+  <link rel="stylesheet" href="/assets/css/global.css?v=2026090202" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026090202"></noscript>
 
   <!-- Favicon -->
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
@@ -127,7 +127,7 @@
       animation: sg-pulse 2s infinite;
     }
     .sg-hero h1 {
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family:var(--font-head,Arial,Helvetica,sans-serif);
       font-size: clamp(28px, 5vw, 48px);
       font-weight: 800;
       color: var(--text);
@@ -289,7 +289,7 @@
       font-weight: 700;
       cursor: pointer;
       transition: all 0.25s;
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family:var(--font-head,Arial,Helvetica,sans-serif);
       box-shadow: 0 4px 20px rgba(255,189,89,0.25);
     }
     .sg-btn-main:hover { filter: brightness(1.05); transform: translateY(-1px); box-shadow: 0 8px 30px rgba(255,189,89,0.35); }
@@ -318,7 +318,7 @@
       font-weight: 700;
       cursor: pointer;
       transition: all 0.25s;
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family:var(--font-head,Arial,Helvetica,sans-serif);
       text-decoration: none;
       box-shadow: 0 4px 20px rgba(255,189,89,0.25);
     }
@@ -347,7 +347,7 @@
     .sg-biz-header { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
     .sg-biz-img { width: 80px; height: 80px; border-radius: 16px; object-fit: cover; border: 2px solid rgba(79,130,255,0.15); }
     .sg-biz-info { flex: 1; min-width: 220px; }
-    .sg-biz-name { font-size: 22px; font-weight: 700; color: var(--text); margin: 0 0 4px; font-family: 'DM Sans', system-ui, sans-serif; }
+    .sg-biz-name { font-size: 22px; font-weight: 700; color: var(--text); margin: 0 0 4px; font-family:var(--font-head,Arial,Helvetica,sans-serif); }
     .sg-biz-addr { color: var(--muted); font-size: 14px; }
     .sg-hours-box { margin-top: 20px; padding: 16px 20px; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--border); }
     .sg-hours-label { font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: .04em; }
@@ -425,7 +425,7 @@
       padding: 32px 28px;
       border: 1px solid rgba(255,189,89,0.15);
     }
-    .sg-lead-box h4 { font-size: 20px; font-weight: 700; color: var(--text); margin: 0 0 6px; font-family: 'DM Sans', system-ui, sans-serif; }
+    .sg-lead-box h4 { font-size: 20px; font-weight: 700; color: var(--text); margin: 0 0 6px; font-family:var(--font-head,Arial,Helvetica,sans-serif); }
     .sg-lead-desc { font-size: 15px; color: var(--muted); margin: 0 0 22px; line-height: 1.6; }
     .sg-lead-row { display: flex; gap: 14px; flex-wrap: wrap; }
     .sg-lead-field { flex: 1 1 240px; }
@@ -453,7 +453,7 @@
 
     /* ── SEO Content ── */
     .sg-content-section h2 {
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family:var(--font-head,Arial,Helvetica,sans-serif);
       font-size: clamp(24px, 3.5vw, 34px);
       font-weight: 800;
       color: var(--text);
@@ -463,7 +463,7 @@
     }
     .sg-content-section h2 span { color: var(--blue); }
     .sg-content-section h3 {
-      font-family: 'DM Sans', system-ui, sans-serif;
+      font-family:var(--font-head,Arial,Helvetica,sans-serif);
       font-size: clamp(18px, 2.5vw, 23px);
       font-weight: 700;
       color: var(--text);
@@ -491,7 +491,7 @@
       margin: 40px 0;
       text-align: center;
     }
-    .sg-cta-box h3 { color: var(--text); margin: 0 0 10px; font-size: 22px; font-family: 'DM Sans', system-ui, sans-serif; }
+    .sg-cta-box h3 { color: var(--text); margin: 0 0 10px; font-size: 22px; font-family:var(--font-head,Arial,Helvetica,sans-serif); }
     .sg-cta-box p { color: var(--muted); margin: 0 0 20px; font-size: 15px; }
 
     /* ── Snippet Demo ── */
@@ -534,7 +534,7 @@
   <link rel="dns-prefetch" href="https://cdn.leadinfo.net">
   <link rel="dns-prefetch" href="https://collector4.leadinfo.net">
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
-  <script src="/assets/js/third-party.js?v=2026090201" defer></script>
+  <script src="/assets/js/third-party.js?v=2026090202" defer></script>
   <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});gtag('config','AW-11287998127');</script>
 
 </head>
@@ -872,7 +872,7 @@
         <div id="sg-form-grid" style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:start">
           <div>
             <span class="section-label">Kostenlose Beratung</span>
-            <h2 id="sg-form-title" style="margin-bottom:1.25rem;font-family:'DM Sans',system-ui,sans-serif;font-weight:800;font-size:clamp(1.5rem,3vw,2rem);color:#e8eaf6">
+            <h2 id="sg-form-title" style="margin-bottom:1.25rem;font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:800;font-size:clamp(1.5rem,3vw,2rem);color:#e8eaf6">
               Klingt kompliziert?<br>Wir übernehmen das.
             </h2>
             <p style="color:#7c83aa;margin-bottom:2rem;line-height:1.75">
@@ -927,7 +927,7 @@
                 </label>
               </div>
               <button type="submit" id="sg-submit-btn"
-                      style="width:100%;background:#ffbd59;color:#0c0e1a;border:none;border-radius:12px;padding:1em 1.5em;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:1rem;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.5rem">
+                      style="width:100%;background:#ffbd59;color:#0c0e1a;border:none;border-radius:12px;padding:1em 1.5em;font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;font-size:1rem;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.5rem">
                 Kostenlose Beratung anfordern
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </button>
@@ -1525,7 +1525,7 @@ function sgToggleFaq(el){
 
 <!-- Google Maps/Places wird vom Tool-Skript oben selbst geladen (sofort beim
      Seitenaufbau, inkl. Timeout + Fallback) — kein statischer Tag mehr. -->
-<script src="/assets/js/lead.js?v=2026090201" defer></script>
-<script src="/assets/js/cookie-consent.js?v=2026090201" defer></script>
+<script src="/assets/js/lead.js?v=2026090202" defer></script>
+<script src="/assets/js/cookie-consent.js?v=2026090202" defer></script>
 </body>
 </html>
