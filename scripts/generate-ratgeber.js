@@ -70,7 +70,7 @@ function page(a) {
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:#0c0e1a;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    h1,h2,h3,h4,h5,h6{font-family:'DM Sans',system-ui,sans-serif;line-height:1.15}
+    h1,h2,h3,h4,h5,h6{font-family:var(--font-head,Arial,Helvetica,sans-serif);line-height:1.15}
     img{display:block;max-width:100%;height:auto}
     a{color:inherit;text-decoration:none}
     ul{list-style:none}
@@ -81,7 +81,7 @@ function page(a) {
     .nav{display:flex;align-items:center;gap:2rem;height:4rem}
     .nav-logo{display:flex;align-items:center;gap:.55rem;font-family:Arial,sans-serif;font-weight:700;font-size:1.2rem;color:#e8eaf6;flex-shrink:0}
     .nav-logo img{height:2.4rem;width:auto;display:block}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8em 1.6em;font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;font-size:.95rem;line-height:1;border-radius:12px;border:2px solid transparent;cursor:pointer;white-space:nowrap;transition:all .25s cubic-bezier(.4,0,.2,1);text-decoration:none}
     .btn-primary{background:#ffbd59;color:#0c0e1a;box-shadow:0 4px 24px rgba(255,189,89,.2)}
     .btn-primary:hover{background:#ffc96d;transform:translateY(-1px)}
     .btn-ghost{background:transparent;color:#e8eaf6;border-color:#1e2240}
@@ -102,11 +102,11 @@ function page(a) {
     .capsule p{margin:0;font-size:.97rem}
     .statbox{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:1.5rem 0}
     .statbox>div{background:#111328;border:1px solid #1e2240;border-radius:12px;padding:1rem 1.1rem}
-    .statbox .n{font-family:'DM Sans',sans-serif;font-weight:800;font-size:1.7rem;color:#ffbd59}
+    .statbox .n{font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:800;font-size:1.7rem;color:#ffbd59}
     .statbox p{font-size:.85rem;margin:0;color:#7c83aa}
     .ptable{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:.92rem}
     .ptable th,.ptable td{border:1px solid #1e2240;padding:.65rem .8rem;text-align:left;color:#b9bedd;vertical-align:top}
-    .ptable th{background:#111328;color:#e8eaf6;font-family:'DM Sans',sans-serif;font-size:.85rem}
+    .ptable th{background:#111328;color:#e8eaf6;font-family:var(--font-head,Arial,Helvetica,sans-serif);font-size:.85rem}
     .tablewrap{overflow-x:auto}
   @media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}
   </style>
@@ -236,7 +236,7 @@ function page(a) {
              style="width:80px;height:auto;border-radius:10px;flex-shrink:0;object-fit:cover;object-position:top">
         <div>
           <p style="font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#ffbd59;margin-bottom:.25rem">Verfasst von</p>
-          <p style="font-family:'DM Sans',system-ui,sans-serif;font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.2rem">Tobias Frank</p>
+          <p style="font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.2rem">Tobias Frank</p>
           <p style="font-size:.8rem;color:#7c83aa;line-height:1.5">Inhaber &amp; Geschäftsführer · Lokalbesucher GmbH · 20&nbsp;Jahre Erfahrung (Salesforce, Amazon, StepStone) · <time datetime="${a.date}">Stand: ${a.dateNice}</time></p>
         </div>
       </div>

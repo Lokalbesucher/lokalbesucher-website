@@ -48,30 +48,30 @@
   <link rel="dns-prefetch" href="https://cdn.leadinfo.net">
   <link rel="dns-prefetch" href="https://collector4.leadinfo.net">
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
-  <script src="/assets/js/third-party.js?v=2026090201" defer></script>
+  <script src="/assets/js/third-party.js?v=2026090202" defer></script>
   <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});gtag('config','AW-11287998127');</script>
 
   <!-- global.css VOR dem seiteneigenen Style: liefert die sitewide Navigation
        (nav-links, dropdown, drawer); die Seitenstile darunter gewinnen bei Konflikten -->
 
-  <link rel="stylesheet" href="/assets/css/global.css?v=2026090201">
+  <link rel="stylesheet" href="/assets/css/global.css?v=2026090202">
 
   <style>
     @font-face{font-family:'DM Sans';src:url('/assets/fonts/dm-sans-400-v2.woff2') format('woff2');font-weight:100 1000;font-display:swap}
-    :root{--bg:#0c0e1a;--surface:#13162b;--surface2:#181b35;--border:#1e2240;--yellow:#ffbd59;--green:#3ecf8e;--red:#ff5c5c;--text:#eef0fb;--muted:#9097bd;--ink:#1a1205}
+    :root{--font-head:Arial,Helvetica,sans-serif;--bg:#0c0e1a;--surface:#13162b;--surface2:#181b35;--border:#1e2240;--yellow:#ffbd59;--green:#3ecf8e;--red:#ff5c5c;--text:#eef0fb;--muted:#9097bd;--ink:#1a1205}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
     img{display:block;max-width:100%;height:auto}
     a{color:inherit;text-decoration:none}
     address{font-style:normal}
-    h1,h2,h3{font-family:'DM Sans',system-ui,sans-serif;line-height:1.08;letter-spacing:-.02em}
+    h1,h2,h3{font-family:var(--font-head,Arial,Helvetica,sans-serif);line-height:1.08;letter-spacing:-.02em}
     .wrap{width:100%;max-width:880px;margin-inline:auto;padding-inline:1.5rem}
     .skip-link{position:absolute;left:-9999px;top:auto}
     .skip-link:focus{position:fixed;top:0;left:0;padding:.75rem 1.5rem;background:var(--yellow);color:var(--ink);font-weight:700;z-index:10000}
     .eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
     .eyebrow .pin{width:14px;height:14px;color:var(--yellow)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:'DM Sans',sans-serif;font-weight:700;font-size:1rem;padding:.9em 1.6em;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .2s,border-color .2s;white-space:nowrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;font-size:1rem;padding:.9em 1.6em;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .2s,border-color .2s;white-space:nowrap}
     .btn-y{background:var(--yellow);color:var(--ink);box-shadow:0 10px 30px -10px rgba(255,189,89,.55)}
     .btn-y:hover{transform:translateY(-2px)}
     .btn-y:disabled{opacity:.6;cursor:wait;transform:none}
@@ -98,10 +98,10 @@
     /* Ergebnis */
     #result{display:none}
     .score-row{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem}
-    .score-num{font-family:'DM Sans',sans-serif;font-weight:800;font-size:4rem;line-height:1}
+    .score-num{font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:800;font-size:4rem;line-height:1}
     .score-label{color:var(--muted);max-width:34ch}
     .engine{display:flex;align-items:center;justify-content:space-between;gap:1rem;border-top:1px solid var(--border);padding:.9rem 0;font-size:.95rem}
-    .engine b{font-family:'DM Sans',sans-serif}
+    .engine b{font-family:var(--font-head,Arial,Helvetica,sans-serif)}
     .badge{font-size:.8rem;font-weight:700;padding:.25em .8em;border-radius:999px;white-space:nowrap}
     .b-green{background:rgba(62,207,142,.15);color:var(--green)}
     .b-yellow{background:rgba(255,189,89,.15);color:var(--yellow)}
@@ -246,15 +246,15 @@
       <p style="color:var(--muted);max-width:70ch">Die lokale Suche verlagert sich messbar: Statt zehn blauen Links liefert die KI <em style="color:var(--text);font-style:normal">eine</em> Empfehlung — und die meisten Nutzer fragen nicht weiter. Drei Zahlen, die den Wandel zeigen:</p>
       <div class="grid2" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:1.5rem 0">
         <div class="card" style="margin:0;text-align:left">
-          <div style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:2.2rem;color:var(--yellow)">45&nbsp;%</div>
+          <div style="font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:800;font-size:2.2rem;color:var(--yellow)">45&nbsp;%</div>
           <p style="color:var(--muted);font-size:.9rem">der Verbraucher nutzen bereits KI-Tools für lokale Empfehlungen — im Jahr davor waren es 6&nbsp;% <a href="https://www.searchable.com/blog/local-business-ai-search-optimization-2026" rel="noopener noreferrer" target="_blank" style="text-decoration:underline">(Searchable, 2026)</a></p>
         </div>
         <div class="card" style="margin:0;text-align:left">
-          <div style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:2.2rem;color:var(--yellow)">~28&nbsp;%</div>
+          <div style="font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:800;font-size:2.2rem;color:var(--yellow)">~28&nbsp;%</div>
           <p style="color:var(--muted);font-size:.9rem">der Google-Suchen in Deutschland zeigen bereits KI-Übersichten statt klassischer Ergebnisse <a href="https://www.sagemedia.de/ai-overviews-optimieren/" rel="noopener noreferrer" target="_blank" style="text-decoration:underline">(Sagemedia, 2026)</a></p>
         </div>
         <div class="card" style="margin:0;text-align:left">
-          <div style="font-family:'DM Sans',sans-serif;font-weight:800;font-size:2.2rem;color:var(--yellow)">+35&nbsp;%</div>
+          <div style="font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:800;font-size:2.2rem;color:var(--yellow)">+35&nbsp;%</div>
           <p style="color:var(--muted);font-size:.9rem">mehr Klicks erzielen Unternehmen, die in KI-Antworten als Quelle zitiert werden (Seer Interactive, 2025)</p>
         </div>
       </div>
@@ -292,7 +292,7 @@
     <!-- ── Autorenbox (E-E-A-T) ─────────────────────────────── -->
     <div class="card" style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;margin-top:2.5rem">
       <div>
-        <strong style="font-family:'DM Sans',sans-serif">Tobias Frank</strong><br>
+        <strong style="font-family:var(--font-head,Arial,Helvetica,sans-serif)">Tobias Frank</strong><br>
         <span style="color:var(--muted);font-size:.9rem">Inhaber Lokalbesucher GmbH · 20 Jahre Sales- &amp; Marketing-Erfahrung (Salesforce, Amazon, StepStone) · Offizieller <a href="https://www.google.com/partners/agency?id=9897265706" rel="noopener noreferrer" target="_blank" style="text-decoration:underline">Google Partner</a></span>
       </div>
       <span style="margin-left:auto;color:var(--muted);font-size:.8rem"><time datetime="2026-08-17">Stand: 17. August 2026</time></span>
@@ -405,7 +405,7 @@
   });
 }());
 </script>
-<script src="/assets/js/lead.js?v=2026090201" defer></script>
-<script src="/assets/js/cookie-consent.js?v=2026090201" defer></script>
+<script src="/assets/js/lead.js?v=2026090202" defer></script>
+<script src="/assets/js/cookie-consent.js?v=2026090202" defer></script>
 </body>
 </html>

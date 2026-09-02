@@ -124,7 +124,10 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 ```
 
 ### Typografie (self-hosted — DSGVO!)
-- **Headlines:** DM Sans 700/800
+- **Headlines:** **Arial fett** — wie in den Lokalbesucher-Präsentationen.
+  Zentral über `--font-head` gesteuert; im Markup steht überall
+  `var(--font-head,Arial,Helvetica,sans-serif)`, nie ein harter Schriftname.
+  Ein Wechsel ist damit eine Zeile statt 370 Fundstellen.
 - **Body:** DM Sans 300/400/500
 - **Mono:** DM Mono 400/500
 - font-display: swap auf allen @font-face
@@ -143,7 +146,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 ### Design
 - Dark Theme durchgängig
 - Karten: surface-Hintergrund + border + border-radius: 16px
-- Buttons: #ffbd59, dunkler Text, border-radius: 10px, DM Sans Bold
+- Buttons: #ffbd59, dunkler Text, border-radius: 10px, Arial Bold
 - Animationen: CSS-only, max 0.3s, ease-out
 - Subtle Grid-Background Pattern
 - Radiale Gelb-Gradient-Akzente in Hero-Bereichen
@@ -235,7 +238,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 
 ### Assets: Version bei JEDER Änderung hochzählen
 CSS und JS unter `/assets/` haben keine Fingerprints im Dateinamen. Alle
-Verweise tragen deshalb `?v=JJJJMMTT` (Stand: `?v=2026090201`). **Wer
+Verweise tragen deshalb `?v=JJJJMMTT` (Stand: `?v=2026090202`). **Wer
 `global.css`, `lead.js`, `cookie-consent.js` oder `third-party.js` ändert, muss
 diese Version auf allen Seiten hochzählen** — sonst sehen wiederkehrende
 Besucher die Änderung bis zu 4 Stunden nicht. Früher stand `/assets/*` auf
