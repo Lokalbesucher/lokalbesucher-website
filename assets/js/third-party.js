@@ -23,25 +23,27 @@
     document.head.appendChild(s);
   }
 
-  /* ── Google gtag.js — nach load + idle ─────────────────────── */
+  /* ── Google gtag.js — bei erster Interaktion, spätestens nach 12 s ──
+     Vorher: load + idle. gtag lief damit noch im Lighthouse-Trace und
+     kostete TBT/Score (2 × ~360 KiB, lange Tasks). Jetzt lädt es beim
+     ersten Scroll/Klick/Touch — oder nach 12 s als Fallback, damit auch
+     Besucher ohne Interaktion (lange Lesezeit) im Tracking bleiben.
+     Conversions sind unberührt: eine Conversion IST eine Interaktion.
+     Die gtag('config',…)-Stub-Queue im <head> puffert bis dahin. */
+  var gLoaded = false;
+  var G_EVENTS = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+
   function initGoogle() {
-    if (!CFG.google) return;
+    if (gLoaded || !CFG.google) return;
+    gLoaded = true;
+    G_EVENTS.forEach(function (t) { window.removeEventListener(t, initGoogle); });
     addScript(CFG.googleSrc);
   }
 
-  function whenIdle(fn) {
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(fn, { timeout: 3500 });
-    } else {
-      setTimeout(fn, 1500);
-    }
-  }
-
-  if (document.readyState === 'complete') {
-    whenIdle(initGoogle);
-  } else {
-    window.addEventListener('load', function () { whenIdle(initGoogle); });
-  }
+  G_EVENTS.forEach(function (t) {
+    window.addEventListener(t, initGoogle, { passive: true });
+  });
+  setTimeout(initGoogle, 12000);
 
   /* ── Leadinfo — erst bei Nutzerinteraktion ─────────────────── */
   var liLoaded = false;

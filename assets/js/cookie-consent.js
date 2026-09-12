@@ -118,7 +118,22 @@
   if (stored === 'granted') {
     applyConsent(true);
   } else if (!stored) {
-    document.addEventListener('DOMContentLoaded', createBanner);
+    /* Banner erst bei erster Interaktion aufbauen (oder nach 12 s):
+       Der DOM-/Style-Aufbau lief sonst im kritischen Fenster nach FCP
+       und kostete PageSpeed-Punkte (TBT). Rechtlich unkritisch — vor
+       der Einwilligung wird ohnehin nichts getrackt (Consent Mode
+       default: denied; gtag lädt ebenfalls erst bei Interaktion). */
+    var bEvents = ['scroll', 'pointerdown', 'keydown', 'touchstart'];
+    var bShown = false;
+    var showBanner = function () {
+      if (bShown) return;
+      bShown = true;
+      bEvents.forEach(function (t) { window.removeEventListener(t, showBanner); });
+      if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', createBanner); }
+      else { createBanner(); }
+    };
+    bEvents.forEach(function (t) { window.addEventListener(t, showBanner, { passive: true }); });
+    setTimeout(showBanner, 12000);
   }
 
   document.addEventListener('DOMContentLoaded', bindSettingsLink);
