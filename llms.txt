@@ -25,6 +25,18 @@ Kontakt: info@lokalbesucher.de · +49 151 22358883 · Karl-Breuing-Str. 2, 45770
 - [Schema.org Generator](https://lokalbesucher.de/schema-org-generator/): Kostenloses Tool für LocalBusiness-Schema-Markup
 - [KI-Sichtbarkeits-Check](https://lokalbesucher.de/ki-sichtbarkeits-check/): Kostenloser Live-Check, ob ChatGPT, Claude und Gemini ein Unternehmen empfehlen — Score 0–100 in 30 Sekunden
 
+## Google Unternehmensprofil (Wissens-Hub)
+
+- [Google Unternehmensprofil: Der komplette Leitfaden](https://lokalbesucher.de/google-unternehmensprofil/): Leitseite zu Google Unternehmensprofil / Google My Business / Google Business Profile: Erstellen, Verifizierung, Bausteine, Optimierung, Bewertungen, Ranking, Statistiken, Probleme, Dienstleister ohne Ladenlokal, mehrere Standorte, Kosten, Glossar, 15 FAQ
+- [Google Unternehmensprofil erstellen 2026](https://lokalbesucher.de/ratgeber/google-unternehmensprofil-erstellen/): Google Unternehmensprofil erstellen in 7 Schritten: Konto, Eintrag, Kategorie, Adresse oder Einzugsgebiet, Verifizierung, erste Inhalte. Kostenlos, 20 Minuten.
+- [Google Unternehmensprofil verifizieren](https://lokalbesucher.de/ratgeber/google-unternehmensprofil-verifizieren/): Google Unternehmensprofil verifizieren: Was du im Video filmen musst, Postkarte, Telefon und Videoanruf im Vergleich, die 7 häufigsten Ablehnungsgründe, Dauer.
+- [Google Unternehmensprofil optimieren (2026)](https://lokalbesucher.de/ratgeber/google-unternehmensprofil-optimieren/): Google Unternehmensprofil optimieren: 20-Punkte-Checkliste mit Kategorien, Leistungen, Fotos, Beiträgen, Bewertungen und Verzeichnissen, nach Wirkung sortiert.
+- [Google Unternehmensprofil gesperrt: Hilfe](https://lokalbesucher.de/ratgeber/google-unternehmensprofil-gesperrt/): Google Unternehmensprofil gesperrt? Die 6 häufigsten Ursachen, der Einspruch in 5 Schritten, welche Nachweise Google verlangt und wie lange es dauert.
+- [Google Unternehmensprofil: Kategorie richtig wählen](https://lokalbesucher.de/ratgeber/google-unternehmensprofil-kategorien/): Die Hauptkategorie ist der stärkste Rankinghebel im Google Unternehmensprofil. So wählst du die richtige – und so viele Zusatzkategorien sind wirklich sinnvoll.
+- [Beiträge im Google Unternehmensprofil richtig nutzen](https://lokalbesucher.de/ratgeber/google-unternehmensprofil-beitraege/): Beiträge im Google Unternehmensprofil bringen Klicks und zeigen, dass dein Profil lebt. Alle Typen, Bildmaße, Laufzeiten, Redaktionsplan und 6 häufige Fehler.
+- [Fotos im Google Unternehmensprofil: Formate & Regeln](https://lokalbesucher.de/ratgeber/google-unternehmensprofil-fotos/): Fotos entscheiden, ob Kunden anrufen. Alle Formate und Größen für Logo, Titelbild und Galerie im Google Unternehmensprofil – und welche Fotos Google entfernt.
+- [Google My Business vs. Google Unternehmensprofil](https://lokalbesucher.de/ratgeber/google-my-business-vs-google-unternehmensprofil/): Google My Business ist seit November 2021 das Google Unternehmensprofil. Was sich geändert hat, wo du das Profil heute verwaltest – plus Glossar aller Begriffe.
+
 ## Ratgeber
 
 - [Ratgeber-Übersicht](https://lokalbesucher.de/ratgeber/): Praxiswissen zu Google-Rankings, Bewertungen und KI-Sichtbarkeit für lokale Unternehmen
