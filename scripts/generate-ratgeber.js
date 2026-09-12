@@ -2,17 +2,18 @@
    Rahmen = 1:1 die Blaupause von /ratgeber/google-update-traffic-eingebrochen/. */
 import fs from 'fs';
 import path from 'path';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
-const V = '2026082201';
+const V = '2026091202';
 
 const WA = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>';
 const OG_IMG = 'https://lokalbesucher.de/assets/images/og-lokalbesucher.png';
 const stripTags = h => h.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
-function page(a) {
-  const url = 'https://lokalbesucher.de/ratgeber/' + a.slug + '/';
+export function page(a) {
+  const url = a.url || ('https://lokalbesucher.de/ratgeber/' + a.slug + '/');
+  const parent = a.parent || { name: 'Ratgeber', href: '/ratgeber/' };
   const graph = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -27,7 +28,7 @@ function page(a) {
         isPartOf: { '@id': 'https://lokalbesucher.de/#website' }, datePublished: a.date, dateModified: a.date,
         breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://lokalbesucher.de/' },
-          { '@type': 'ListItem', position: 2, name: 'Ratgeber', item: 'https://lokalbesucher.de/ratgeber/' },
+          { '@type': 'ListItem', position: 2, name: parent.name, item: 'https://lokalbesucher.de' + parent.href },
           { '@type': 'ListItem', position: 3, name: a.crumb, item: url }
         ] }
       },
@@ -204,13 +205,13 @@ function page(a) {
       <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
         <a href="/">Startseite</a>
         <span class="breadcrumb-sep" aria-hidden="true">›</span>
-        <a href="/ratgeber/">Ratgeber</a>
+        <a href="${parent.href}">${parent.name}</a>
         <span class="breadcrumb-sep" aria-hidden="true">›</span>
         <span aria-current="page">${a.crumb}</span>
       </nav>
 
       <div style="max-width:820px">
-        <span class="section-label">Ratgeber · ${a.tag}</span>
+        <span class="section-label">${parent.name} · ${a.tag}</span>
         <h1 id="art-title" style="font-size:clamp(1.875rem,4.5vw,2.9rem);font-weight:800;margin-bottom:1rem">
           ${a.h1}
         </h1>
@@ -324,7 +325,7 @@ ${a.body}
         <div class="footer-col-title">Unternehmen</div>
         <ul class="footer-links" role="list">
           <li><a href="/case-studies/">Erfolgsgeschichten</a></li>
-          <li><a href="/faq/">FAQ</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/jobs/">Jobs</a></li>
+          <li><a href="/faq/">FAQ</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/google-unternehmensprofil/">Google Unternehmensprofil</a></li><li><a href="/jobs/">Jobs</a></li>
           <li><a href="/schema-org-generator/">Schema Generator</a></li><li><a href="/ki-sichtbarkeits-check/">KI-Sichtbarkeits-Check</a></li>
           <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI Kalkulator</a></li>
         </ul>
@@ -380,7 +381,7 @@ ${a.body}
 /* ═══════════════════ INHALTE ═══════════════════ */
 const D = '2026-08-21', DN = '21. August 2026';
 
-const ARTICLES = [
+export const ARTICLES = [
 
 /* ── 1. KOSTEN ─────────────────────────────────── */
 {
@@ -678,9 +679,13 @@ const ARTICLES = [
 }
 ];
 
-for (const a of ARTICLES) {
-  const dir = path.join(ROOT, 'ratgeber', a.slug);
-  fs.mkdirSync(dir, { recursive: true });
-  fs.writeFileSync(path.join(dir, 'index.html'), page(a), 'utf8');
-  console.log('OK', a.slug);
+/* Nur beim direkten Aufruf (node scripts/generate-ratgeber.js) schreiben —
+   andere Scripts importieren page() und schreiben ihre eigenen Artikel. */
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  for (const a of ARTICLES) {
+    const dir = path.join(ROOT, 'ratgeber', a.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, 'index.html'), page(a), 'utf8');
+    console.log('OK', a.slug);
+  }
 }

@@ -169,6 +169,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 | `/ki-sichtbarkeits-check/` | Tool — fragt ChatGPT/Claude/Gemini live ab; Backend `functions/api/ai-check.js`, KV `AI_CHECK_KV`, Turnstile-geschützt, 3 Checks/IP/Tag |
 | `/ki-sichtbarkeits-check/admin` | **Intern, Basic Auth** (Passwort = Pages-Secret `KI_ADMIN_PASSWORD`). Protokoll aller Checks + aller Formular-Anfragen aus D1 `KI_DB` (`lokalbesucher-ki-check`, Schema `migrations/0001_ki_check_log.sql`), Kennzahlen, CSV-Export. Geschrieben von `functions/_lib/kilog.js`: `lead.js` sichert jede Anfrage **vor** der Webhook-Weiterleitung (Spalte `delivered`), `ai-check.js` protokolliert jeden Ausgang (ok/cache/limit/turnstile). Test ohne Cloudflare: `node tmp/test-kilog.mjs` (lokal, gitignoriert). |
 | `/ratgeber/` | Ratgeber-Hub + Artikel auf Money-Keywords |
+| `/google-unternehmensprofil/` | **Leitseite Wissens-Hub** „Google Unternehmensprofil: Der komplette Leitfaden" (bundesweit, informational, kein NRW-/Agentur-Keyword) — Cluster-Artikel unter `/ratgeber/google-unternehmensprofil-*/`, siehe §19 |
 
 **Service-Landingpages** (conversion-optimiert, On-Page-Lead-Formular → geteilter GHL-Webhook, unterschieden per `source`)
 | URL | `source` |
@@ -515,3 +516,24 @@ Ausführen mit: `python scripts/download-images.py`
 - Lokale Stadt-Seiten — Bochum + Recklinghausen live; weitere nur mit echtem Beleg
 - **OFFEN (Tobias / per Browser-Prompt):** GHL-Workflow je `source` taggen (siehe Memory `project_tracking`)
 - Design-Politur, GEO-/SEO-Feinschliff, weitere echte Bilder von Tobias einpflegen
+
+---
+
+## 19. WISSENS-HUB „GOOGLE UNTERNEHMENSPROFIL" (seit 2026-09-12)
+
+**Ziel (Tobias):** lokalbesucher.de soll bundesweit die erste Anlaufstelle und der Thought Leader für
+„Google Unternehmensprofil" / „Google My Business" / „Google Business Profil" sein — für ALLE
+Informations-Suchen rund ums Profil, nicht nur für „Agentur"-Suchen. Kein NRW-Zusatz in diesen Seiten.
+
+- Leitseite: `/google-unternehmensprofil/` (Inhalt in `scripts/gup-articles/pillar.js`)
+- Cluster-Artikel: `scripts/gup-articles/set-*.js` → `/ratgeber/google-unternehmensprofil-*/`
+- Rendern: `node scripts/generate-gup-hub.js` (nutzt `page()` aus `generate-ratgeber.js`; `V` dort hochzählen)
+- Recherche-Grundlage (Fakten mit Quellen, Keyword-Landkarte, 15 Maßnahmen): `docs/RESEARCH-2026-google-unternehmensprofil-thought-leader.md`
+- Pflichten je Artikel: Answer-Capsule, Fragen als H2/H3, 6 FAQ mit `faq-`-IDs, Link auf die Leitseite und auf `/google-business-agentur/`, Datum „Stand" sichtbar
+- **Änderungs-Tabelle auf der Leitseite („Was sich 2025 und 2026 geändert hat") bei jeder Google-Änderung nachziehen** — das ist das Alleinstellungsmerkmal.
+- Überholte Fakten, die NICHT mehr geschrieben werden dürfen: Fragen & Antworten im Profil (seit Dez. 2025 weg), Chat im Profil (Juli 2024 weg), Gemini-Verknüpfung „verfügbar" (im EWR gesperrt), Ask Maps in Deutschland (noch nicht gestartet).
+- Bewertungsrichtlinie April 2026: Mitarbeiter-Quoten, Bewertungs-Tablets im Laden, Anreize, Aufforderung zur Namensnennung sind verboten — TapTag-Kommunikation daran ausrichten, keine Verlosung als Bewertungsanreiz bewerben.
+
+**Encoding-Schutz:** Nie rekursiv mit PowerShell Get-Content/Set-Content ohne `-Encoding utf8` über den Ordner
+schreiben (hat am 12.09.2026 Mojibake live gebracht). Reparatur: `node scripts/fix-encoding.mjs`.
+Nie in `.claude/worktrees/` anderer Sessions schreiben.
