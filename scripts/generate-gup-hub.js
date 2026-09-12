@@ -29,9 +29,18 @@ function write(rel, html) {
    Artikel-Layout ab; der asynchrone print-Trick liess die lange Leitseite beim Nachladen
    springen (CLS 0.377 laut Lighthouse mobile). ~7 KiB gzip kosten kaum LCP. */
 function blockingCss(html) {
-  return html
-    .replace(/<link rel="stylesheet" href="(/assets/css/global.css?v=[^"]+)" media="print" onload="this.media='all'">s*<noscript><link rel="stylesheet" href="[^"]+"></noscript>/,
-      '<link rel="stylesheet" href="$1">');
+  const lines = html.split('\n');
+  const out = [];
+  for (const l of lines) {
+    if (l.includes('global.css') && l.includes('media="print"')) {
+      const href = l.match(/href="([^"]+)"/)[1];
+      out.push('  <link rel="stylesheet" href="' + href + '">');
+      continue;
+    }
+    if (l.includes('<noscript><link rel="stylesheet" href="/assets/css/global.css')) continue;
+    out.push(l);
+  }
+  return out.join('\n');
 }
 const pillarHtml = blockingCss(page(pillar));
 if (pillarHtml.includes('media="print"')) throw new Error('CSS-Umstellung fehlgeschlagen');
