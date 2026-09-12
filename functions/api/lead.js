@@ -15,6 +15,8 @@
  *                                       dann auf Direktversand bzw. Mailto zurueck
  */
 
+import { logLead, markLeadDelivery } from '../_lib/kilog.js';
+
 /* Ziel je Formular-Quelle. Unbekannte Quellen laufen auf das Standard-
    GHL-Lead-Webhook — lieber ein Lead mit falschem Tag als gar kein Lead. */
 const GHL_LEAD     = 'https://services.leadconnectorhq.com/hooks/Ok3thIff14hF3QHsquxH/webhook-trigger/d1f245e0-1d61-4177-af6c-a15378ba74d0';
@@ -59,7 +61,8 @@ function encode(data, asForm) {
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
-export async function onRequestPost({ request }) {
+export async function onRequestPost(ctx) {
+  const { request, env } = ctx;
   let data;
   try {
     const raw = await request.text();
@@ -77,6 +80,15 @@ export async function onRequestPost({ request }) {
   const source = typeof data.source === 'string' ? data.source : '';
   const key = source.trim().toLowerCase().replace(/\s+/g, '-');
   const target = TARGETS[key] || DEFAULT_TARGET;
+
+  /* ZUERST in unsere eigene Tabelle (D1) schreiben, DANN weiterleiten. Faellt
+     der Webhook aus, steht die Anfrage trotzdem unter
+     /ki-sichtbarkeits-check/admin — kein Lead geht mehr still verloren. */
+  const leadId = await logLead(env, request, { ...data, source: source || 'unbekannt' }, key || 'default');
+  const mark = (ok, why) => {
+    const p = markLeadDelivery(env, leadId, ok, why);
+    if (ctx.waitUntil) ctx.waitUntil(p);
+  };
 
   /* Herkunft mitschicken, damit im CRM nachvollziehbar bleibt, ueber welchen
      Weg der Lead kam — und ob er ueber den Proxy oder direkt eingegangen ist. */
@@ -97,7 +109,7 @@ export async function onRequestPost({ request }) {
         headers: { 'Content-Type': type },
         body
       });
-      if (res.ok) return json({ ok: true, via: key || 'default' }, 200);
+      if (res.ok) { mark(true); return json({ ok: true, via: key || 'default' }, 200); }
       reason = 'upstream-' + res.status;
       /* 4xx wiederholen bringt nichts — Webhook existiert nicht oder Payload passt nicht */
       if (res.status < 500) break;
@@ -106,5 +118,6 @@ export async function onRequestPost({ request }) {
     }
     if (i < ATTEMPTS - 1) await sleep(300 * (i + 1));
   }
+  mark(false, reason);
   return json({ ok: false, reason }, 502);
 }
