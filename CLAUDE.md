@@ -167,6 +167,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 | `/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/` | ROI Kalkulator |
 | `/schema-org-generator/` | Tool (zieht Traffic) |
 | `/ki-sichtbarkeits-check/` | Tool — fragt ChatGPT/Claude/Gemini live ab; Backend `functions/api/ai-check.js`, KV `AI_CHECK_KV`, Turnstile-geschützt, 3 Checks/IP/Tag |
+| `/ki-sichtbarkeits-check/admin` | **Intern, Basic Auth** (Passwort = Pages-Secret `KI_ADMIN_PASSWORD`). Protokoll aller Checks + aller Formular-Anfragen aus D1 `KI_DB` (`lokalbesucher-ki-check`, Schema `migrations/0001_ki_check_log.sql`), Kennzahlen, CSV-Export. Geschrieben von `functions/_lib/kilog.js`: `lead.js` sichert jede Anfrage **vor** der Webhook-Weiterleitung (Spalte `delivered`), `ai-check.js` protokolliert jeden Ausgang (ok/cache/limit/turnstile). Test ohne Cloudflare: `node tmp/test-kilog.mjs` (lokal, gitignoriert). |
 | `/ratgeber/` | Ratgeber-Hub + Artikel auf Money-Keywords |
 
 **Service-Landingpages** (conversion-optimiert, On-Page-Lead-Formular → geteilter GHL-Webhook, unterschieden per `source`)
