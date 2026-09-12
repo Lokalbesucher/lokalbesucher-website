@@ -25,7 +25,17 @@ function write(rel, html) {
   console.log('OK', rel, Math.round(html.length / 1024) + ' KB');
 }
 
-write('google-unternehmensprofil', page(pillar));
+/* Leitseite: global.css render-blockend laden. Das Inline-Critical-CSS deckt nur das
+   Artikel-Layout ab; der asynchrone print-Trick liess die lange Leitseite beim Nachladen
+   springen (CLS 0.377 laut Lighthouse mobile). ~7 KiB gzip kosten kaum LCP. */
+function blockingCss(html) {
+  return html
+    .replace(/<link rel="stylesheet" href="(/assets/css/global.css?v=[^"]+)" media="print" onload="this.media='all'">s*<noscript><link rel="stylesheet" href="[^"]+"></noscript>/,
+      '<link rel="stylesheet" href="$1">');
+}
+const pillarHtml = blockingCss(page(pillar));
+if (pillarHtml.includes('media="print"')) throw new Error('CSS-Umstellung fehlgeschlagen');
+write('google-unternehmensprofil', pillarHtml);
 for (const a of articles) write(path.join('ratgeber', a.slug), page(a));
 
 export const HUB = { pillar, articles };
