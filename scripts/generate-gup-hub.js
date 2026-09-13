@@ -25,7 +25,45 @@ function write(rel, html) {
   console.log('OK', rel, Math.round(html.length / 1024) + ' KB');
 }
 
-write('google-unternehmensprofil', page(pillar));
+/* Leitseite: Das Inline-Critical-CSS des Artikel-Rahmens deckt Navigation, Breadcrumb und
+   Section-Klassen nicht ab; auf der langen Leitseite sprang deshalb beim asynchronen
+   Nachladen von global.css alles (CLS 0.377). Render-blockend laden kostete LCP (2,16 s).
+   Loesung: die betroffenen Regeln werden beim Bauen aus global.css extrahiert und als
+   zweiter <style>-Block inline eingebettet; global.css bleibt asynchron. */
+const CRITICAL_SEL = /\.(breadcrumb|breadcrumb-sep|grid-bg|section|section-label|skip-link|nav-links|nav-cta|nav-toggle|nav-drawer|nav-dropdown|nav-has-dropdown|dropdown-badge|drawer-sub-label|drawer-sub-link|whatsapp-float)(?![\w-])/;
+function parseBlocks(css) {
+  const out = []; let i = 0;
+  while (i < css.length) {
+    const open = css.indexOf('{', i); if (open < 0) break;
+    const sel = css.slice(i, open).trim();
+    let depth = 1, j = open + 1;
+    while (j < css.length && depth > 0) { if (css[j] === '{') depth++; else if (css[j] === '}') depth--; j++; }
+    out.push({ sel, body: css.slice(open + 1, j - 1) });
+    i = j;
+  }
+  return out;
+}
+function criticalExtra() {
+  const css = fs.readFileSync(path.join(ROOT, 'assets/css/global.css'), 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  const keep = [];
+  for (const b of parseBlocks(css)) {
+    if (b.sel.startsWith('@media')) {
+      const inner = parseBlocks(b.body).filter(r => CRITICAL_SEL.test(r.sel));
+      if (inner.length) keep.push(b.sel + '{' + inner.map(r => r.sel + '{' + r.body.trim() + '}').join('') + '}');
+    } else if (!b.sel.startsWith('@') && CRITICAL_SEL.test(b.sel)) {
+      keep.push(b.sel + '{' + b.body.trim() + '}');
+    }
+  }
+  return keep.join('\n    ').replace(/\s*\n\s*/g, '\n    ');
+}
+function withCriticalExtra(html) {
+  const extra = criticalExtra();
+  if (extra.length < 500) throw new Error('Critical-CSS-Extraktion leer: ' + extra.length);
+  const k = html.indexOf('</style>');
+  if (k < 0) throw new Error('kein Inline-<style> gefunden');
+  return html.slice(0, k) + '</style>\n  <style>\n    /* Critical-CSS Leitseite (aus global.css extrahiert, siehe generate-gup-hub.js) */\n    ' + extra + '\n  ' + html.slice(k);
+}
+write('google-unternehmensprofil', withCriticalExtra(page(pillar)));
 for (const a of articles) write(path.join('ratgeber', a.slug), page(a));
 
 export const HUB = { pillar, articles };
