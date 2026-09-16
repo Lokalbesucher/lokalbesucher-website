@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
-
+  <url>
+    <loc>https://lokalbesucher.de/news/2026-09-google-foto-verifizierung-test/</loc>
+    <news:news>
+      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
+      <news:publication_date>2026-09-04T08:00:00+02:00</news:publication_date>
+      <news:title>Google testet Foto-Verifizierung fürs Unternehmensprofil</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://lokalbesucher.de/news/2026-09-google-tell-maps-beitragsfunktion/</loc>
+    <news:news>
+      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
+      <news:publication_date>2026-09-02T08:00:00+02:00</news:publication_date>
+      <news:title>„Tell Maps&quot;: Nutzer ändern dein Profil jetzt per Chat</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>https://lokalbesucher.de/news/2026-08-google-beitrags-statistiken-zurueck/</loc>
+    <news:news>
+      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
+      <news:publication_date>2026-08-20T08:00:00+02:00</news:publication_date>
+      <news:title>Beitrags-Statistiken im Unternehmensprofil sind zurück</news:title>
+    </news:news>
+  </url>
 </urlset>
