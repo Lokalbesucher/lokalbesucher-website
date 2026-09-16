@@ -53,6 +53,63 @@ const R = {
 export const NEWS = [
 
 {
+  slug: '2026-09-google-dma-buchungsportale-vor-hotels-local-pack', date: '2026-09-16',
+  platform: 'google', topic: 'local-seo', hub: true,
+  hubWhat: 'DMA-Umbau der Suche: Bei Hotels, Flügen und Restaurants stehen Buchungsportale über Googles eigenen Ergebnissen',
+  image: '/assets/images/news/google-dma-portale-statt-local-pack-og.webp',
+  title: '890 Millionen Euro Strafe für Google: Die Buchungsportale gewinnen',
+  metaDesc: 'Seit 8. September 2026 liefern Booking und Co. bei Hotelsuchen die Top-3 statt Google. Was die 890-Millionen-Strafe der EU für Hotels, Restaurants und lokale Betriebe heißt.',
+  teaser: 'Wir suchen lokal auf Google. Bei „hotel berlin" liefert seit dem 8. September nicht mehr Google die drei Treffer, sondern Booking.com. Was das für Hotels, Restaurants und bald vielleicht jeden lokalen Betrieb heißt.',
+  summary: 'Die EU-Kommission hat Google am 23. Juli 2026 zu <strong>890 Millionen Euro Strafe</strong> verurteilt, 460 Millionen davon für die Bevorzugung eigener Dienste in der Suche. Seit dem 8. September zeigt Google bei Hotels, Flügen und Restaurants ein neues Layout: Ein Buchungsportal steht oben, Googles eigene Liste ist eingeklappt, Direktanbieter folgen ohne Preise. Jede Buchung über das Portal kostet den Betrieb Provision.',
+  body: `        <figure style="margin:0 0 1.75rem">
+          <img src="/assets/images/news/google-dma-portale-statt-local-pack-hotel-berlin-2026.webp" alt="Google-Suche „hotel berlin" am 16. September 2026: Booking.com liefert Karte und drei Hotels mit Preisen, Googles eigene Hotelliste ist eingeklappt" width="1600" height="2000" loading="eager" fetchpriority="high" style="border-radius:12px;border:1px solid #1e2240">
+          <figcaption style="font-size:.8rem;color:#7c83aa;margin-top:.5rem">Echte Google-Suche „hotel berlin", Deutschland, 16. September 2026: Das Portal steht über Google.</figcaption>
+        </figure>
+        <p>Wir suchen lokal auf Google. Es kommt der Kartenausschnitt mit drei Unternehmen. Das ist gelernt, und wer im sogenannten Local Pack landet, gewinnt Kunden: <strong>42 Prozent aller lokalen Suchen</strong> enden mit einem Klick auf genau diese drei Einträge, so eine Backlinko-Analyse von 306.000 lokalen Suchanfragen.</p>
+        <p>Doch das Spiel hat sich am 8. September geändert. Und Google bezahlt.</p>
+        <p>Leicht zu übersehen: Bei „hotel berlin" stammt das Local Pack nicht mehr von Google. Booking.com, BluePillow und weitere Portale liefern jetzt die Top-3-Ergebnisse, mit Karte, Preisen, Bewertungen und dem Button „Mehr auf Booking.com ansehen". Googles eigene Hotelliste? Eine eingeklappte Zeile darunter, gleichrangig mit Odigeo und Trip.com. Google selbst nennt den Umbau „die größte Qualitätsminderung in 29 Jahren Suche".</p>
+
+        <h2 id="was-passiert-ist">Was ist passiert?</h2>
+        <p>Am 23. Juli 2026 hat die EU-Kommission Google zu 890 Millionen Euro Strafe verurteilt. 460 Millionen davon für die Bevorzugung eigener Dienste in der Suche, 430 Millionen für den Play Store. Grundlage ist der Digital Markets Act, das EU-Gesetz gegen die Marktmacht der großen Plattformen. Google hatte 60 Tage. Am 8. September war die Frist um.</p>
+        <p>Seitdem gilt bei Hotels, Flügen und Restaurants ein neues Layout: Ein Portal steht prominent oben. Zwei weitere Portale folgen eingeklappt. Erst darunter kommt ein Karussell mit den Direktanbietern, ohne Live-Preise, ohne Datumsfilter, ohne Ausstattungs-Tags. Die Einheit für Ferienwohnungen hat Google komplett gestrichen.</p>
+        <div class="statbox">
+          <div><div class="n">890 Mio. €</div><p>DMA-Strafe der EU-Kommission vom 23. Juli 2026, davon 460 Mio. € für die Suche</p></div>
+          <div><div class="n">60 Tage</div><p>Umsetzungsfrist, seit 8. September 2026 ist das neue Layout in Kraft</p></div>
+          <div><div class="n">−30 %</div><p>Direktbuchungsklicks für Hotels nach den ersten DMA-Änderungen, laut Google im November 2024</p></div>
+        </div>
+
+        <h2 id="wer-gewinnt">Wer gewinnt?</h2>
+        <p>Booking, Expedia, HRS, Trivago, BluePillow. Die Portale bekommen den Platz, den Google jahrelang für sich reserviert hatte. Und jede Buchung, die dort landet, kostet den Betrieb Provision.</p>
+        <p>Die EU wollte Wettbewerb. Bekommen hat sie einen Platztausch: Ein Gatekeeper gibt ab, drei andere nehmen.</p>
+
+        <h2 id="wer-verliert">Wer ist der größte Verlierer?</h2>
+        <p>Nicht Google. Google verliert Klicks, der Betrieb verliert Gäste. Schon nach den ersten DMA-Anpassungen meldete Google im November 2024 einen Rückgang der Direktbuchungsklicks für Hotels um bis zu 30 Prozent. Das war die kleine Änderung. Jetzt kommt die große. Jede Buchung, die statt beim Hotel beim Portal landet, ist dieselbe Übernachtung, nur mit Provision.</p>
+
+        <h2 id="nicht-nur-hotels">Warum hört das nicht bei Hotels auf?</h2>
+        <p>Die Kommission rügt in ihrer Entscheidung die Bevorzugung eigener Google-Dienste bei Shopping, Hotels, Verkehr und Sport. Das Local Pack, die Karte mit den drei lokalen Ergebnissen, ist technisch dieselbe Art von Google-Einheit. Was heute die Hotelbox trifft, kann morgen die Karte treffen, auf die jeder Handwerker, jede Praxis und jedes Restaurant angewiesen ist.</p>
+
+        <h2 id="was-tun">Wie können lokale Unternehmen reagieren?</h2>
+        <p>Der Kunde kommt weiterhin über Google. Entscheidend ist, ob er beim Betrieb landet oder beim Vermittler. Drei Hebel bleiben in der Hand der Unternehmen.</p>
+        <ul>
+          <li><strong>Das Google-Unternehmensprofil wird zur Verkaufsfläche.</strong> Website, Telefonnummer und Reservierungslink sind die drei Felder, die Google weiterhin prominent ausspielt. Führen sie zu einem Portal statt zum eigenen Buchungsweg, ist der Direktkanal verloren, bevor der Gast ihn gesehen hat.</li>
+          <li><strong>Die eigene Marke muss abgesichert werden.</strong> Wer nach einem Hotel- oder Restaurantnamen sucht, soll den Betrieb finden, nicht Booking oder Lieferando. Eine Suchanzeige auf den eigenen Namen kostet wenig und schließt genau diese Lücke.</li>
+          <li><strong>Bewertungen, Fotos und Öffnungszeiten entscheiden.</strong> Ohne Preise und Filter bleibt dem Gast in Googles Einheit nur der Vergleich über Sterne und Bilder. Ein Betrieb mit 4,2 Sternen und 80 Bewertungen verliert gegen einen mit 4,7 und 600.</li>
+        </ul>
+        <p>Die Portale haben den besten Platz im Regal bekommen. Der Direktkanal ist der einzige, den einem Unternehmen niemand wegnehmen kann, sofern es ihn besetzt.</p>`,
+  impact: 'Website, Telefon und Reservierungslink im Profil auf den eigenen Buchungsweg zeigen lassen, den Firmennamen mit einer Suchanzeige absichern, Bewertungen und Fotos auf Vergleichsniveau bringen.',
+  sources: [
+    { label: 'EU-Kommission: 890 Mio. € Strafe für Google (23.07.2026)', url: 'https://digital-markets-act.ec.europa.eu/commission-fines-google-eur890-million-breaches-digital-markets-act-2026-07-23_en' },
+    { label: 'Skift: Google streicht Reise-Suchfunktionen in der EU (08.09.2026)', url: 'https://skift.com/2026/09/08/google-update-europe-travel-search-results-dma/' },
+    { label: 'Search Engine Roundtable: „Größte Qualitätsminderung" laut Google', url: 'https://www.seroundtable.com/google-eu-dma-largest-reduction-quality-42042.html' },
+    { label: 'Google-Blog: DMA-Update, Direktbuchungsklicks −30 % (26.11.2024)', url: 'https://blog.google/company-news/inside-google/around-the-globe/google-europe/dma-compliance-update/' },
+    { label: 'Backlinko: Local-Search-Studie', url: 'https://backlinko.com/local-seo-stats' },
+    { label: 'Eigener Test: google.de, „hotel berlin", 16.09.2026', url: 'https://www.google.de/search?q=hotel+berlin' }
+  ],
+  keywords: ['Digital Markets Act', 'DMA', 'Google Strafe', 'Local Pack', 'Booking.com', 'Hotels', 'Restaurants', 'Direktbuchung'],
+  related: [R.top3, R.optimieren, R.ads]
+},
+
+{
   slug: '2026-09-google-foto-verifizierung-test', date: '2026-09-04',
   platform: 'google', topic: 'unternehmensprofile', hub: false,
   title: 'Google testet Foto-Verifizierung fürs Unternehmensprofil',

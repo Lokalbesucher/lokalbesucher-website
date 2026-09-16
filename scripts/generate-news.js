@@ -197,6 +197,7 @@ function newsPage(n) {
     waText: encodeURIComponent(`Hallo Tobias, ich habe eure Meldung „${n.title}" gelesen. Betrifft das mein Unternehmen?`),
     date: n.date + 'T08:00:00+02:00', dateNice: nice(n.date),
     articleExtra: { articleSection: t.name, isAccessibleForFree: true, dateline: 'Marl, ' + nice(n.date), publishingPrinciples: SITE + '/news/redaktion/' },
+    image: n.image ? SITE + n.image : undefined,
     keywords: n.keywords, about: [{ '@type': 'Thing', name: p.name }, { '@type': 'Thing', name: t.name }],
     capsuleLabel: 'Das Wichtigste:', capsule: n.summary,
     beforeBody: `
