@@ -77,7 +77,9 @@ const CSS = `
     .rss-hint a{color:#ffbd59;text-decoration:underline;text-underline-offset:2px}
     .article{margin-inline:0;max-width:none}
     .page-hero .container > div{max-width:none!important}
-    .page-hero .container > div > p{max-width:none!important}
+    .page-hero .container > div > p{max-width:none!important;margin-bottom:0!important}
+    .page-hero{padding-bottom:1.5rem!important}
+    .article > .capsule:first-child{margin-top:.25rem}
     .article figure{margin:0 0 1.75rem}
     .article figure img{width:100%;height:auto}
     @media(min-width:900px){.article figure{float:right;width:min(40%,460px);margin:0 0 1.5rem 2.5rem}.article::after{content:'';display:block;clear:both}}
