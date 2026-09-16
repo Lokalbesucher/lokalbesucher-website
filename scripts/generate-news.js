@@ -195,7 +195,8 @@ function newsPage(n) {
     h1: esc(n.title), heroSub: esc(n.teaser),
     heroCta: 'Was heißt das für mich? Tobias fragen',
     waText: encodeURIComponent(`Hallo Tobias, ich habe eure Meldung „${n.title}" gelesen. Betrifft das mein Unternehmen?`),
-    date: n.date, dateNice: nice(n.date),
+    date: n.date + 'T08:00:00+02:00', dateNice: nice(n.date),
+    articleExtra: { articleSection: t.name, isAccessibleForFree: true, dateline: 'Marl, ' + nice(n.date) },
     keywords: n.keywords, about: [{ '@type': 'Thing', name: p.name }, { '@type': 'Thing', name: t.name }],
     capsuleLabel: 'Das Wichtigste:', capsule: n.summary,
     beforeBody: `
@@ -216,7 +217,18 @@ ${list.map(o => `          <li><time datetime="${o.date}">${nice(o.date)}</time>
 `,
     faqs: n.faqs || [], faqTitle: n.faqTitle || 'Häufige Fragen',
     related: n.related || [],
-    headExtra: rssLinks(n.platform), cssExtra: CSS,
+    headExtra: rssLinks(n.platform) +
+      `
+  <meta property="article:published_time" content="${n.date}T08:00:00+02:00">` +
+      `
+  <meta property="article:modified_time" content="${n.date}T08:00:00+02:00">` +
+      `
+  <meta property="article:section" content="${esc(t.name)}">` +
+      `
+  <meta property="article:author" content="Tobias Frank">` +
+      n.keywords.map(k => `
+  <meta property="article:tag" content="${esc(k)}">`).join(''),
+    cssExtra: CSS,
     ...cta(n)
   });
 }
@@ -256,6 +268,24 @@ function sitemapBlock() {
   for (const k of catKeys.filter(has)) out.push(u(catUrl(k), inCat(k)[0].date, 'weekly', '0.6'));
   for (const n of ITEMS) out.push(u(itemUrl(n), n.date, 'monthly', '0.6'));
   return out.join('\n\n');
+}
+
+/* ── Google-News-Sitemap: nur Meldungen der letzten 48 Stunden (Google-Vorgabe) ── */
+function newsSitemap() {
+  const cutoff = new Date(Date.now() - 2 * 86400000).toISOString().slice(0, 10);
+  const fresh = ITEMS.filter(n => n.date >= cutoff);
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+${fresh.map(n => `  <url>
+    <loc>${SITE + itemUrl(n)}</loc>
+    <news:news>
+      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
+      <news:publication_date>${n.date}T08:00:00+02:00</news:publication_date>
+      <news:title>${esc(n.title)}</news:title>
+    </news:news>
+  </url>`).join('\n')}
+</urlset>
+`;
 }
 
 /* ── Zeilen für die Änderungs-Tabelle der Leitseite ───────────────────── */
@@ -305,6 +335,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
 
   /* Meldungen */
   for (const n of ITEMS) write(`news/${n.slug}/index.html`, newsPage(n));
+
+  write('sitemap-news.xml', newsSitemap());
 
   /* Sitemap */
   const smPath = path.join(ROOT, 'sitemap.xml');

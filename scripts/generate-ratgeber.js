@@ -20,7 +20,7 @@ export function page(a) {
       {
         '@type': a.type || 'Article', '@id': url + '#article', headline: a.h1.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
         description: a.metaDesc, image: OG_IMG, datePublished: a.date, dateModified: a.dateModified || a.date, inLanguage: 'de',
-        ...(a.keywords ? { keywords: a.keywords.join(', ') } : {}), ...(a.about ? { about: a.about } : {}),
+        ...(a.keywords ? { keywords: a.keywords.join(', ') } : {}), ...(a.about ? { about: a.about } : {}), ...(a.articleExtra || {}),
         author: { '@type': 'Person', name: 'Tobias Frank', jobTitle: 'Inhaber Lokalbesucher GmbH', worksFor: { '@id': 'https://lokalbesucher.de/#organization' } },
         publisher: { '@id': 'https://lokalbesucher.de/#organization' }, mainEntityOfPage: url
       },

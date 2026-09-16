@@ -77,3 +77,4 @@ User-agent: Bytespider
 Allow: /
 
 Sitemap: https://lokalbesucher.de/sitemap.xml
+Sitemap: https://lokalbesucher.de/sitemap-news.xml
