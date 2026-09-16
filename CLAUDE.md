@@ -169,7 +169,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 | `/ki-sichtbarkeits-check/` | Tool — fragt ChatGPT/Claude/Gemini live ab; Backend `functions/api/ai-check.js`, KV `AI_CHECK_KV`, Turnstile-geschützt, 3 Checks/IP/Tag |
 | `/ki-sichtbarkeits-check/admin` | **Intern, Basic Auth** (Passwort = Pages-Secret `KI_ADMIN_PASSWORD`). Protokoll aller Checks + aller Formular-Anfragen aus D1 `KI_DB` (`lokalbesucher-ki-check`, Schema `migrations/0001_ki_check_log.sql`), Kennzahlen, CSV-Export. Geschrieben von `functions/_lib/kilog.js`: `lead.js` sichert jede Anfrage **vor** der Webhook-Weiterleitung (Spalte `delivered`), `ai-check.js` protokolliert jeden Ausgang (ok/cache/limit/turnstile). Test ohne Cloudflare: `node tmp/test-kilog.mjs` (lokal, gitignoriert). |
 | `/ratgeber/` | Ratgeber-Hub + Artikel auf Money-Keywords |
-| `/news/` | **News-Feed** für lokales Marketing (Google, Meta, Apple Maps, Bing Places, KI-Suche) — Kategorie-Seiten `/news/<plattform|thema>/`, Meldungen `/news/JJJJ-MM-slug/`, RSS `/news/feed.xml`, siehe §20 |
+| `/news/` | **News-Feed** für lokales Marketing (Google, Meta, Apple Maps, Bing Places, KI-Suche) — Kategorie-Seiten `/news/<plattform|thema>/`, Meldungen `/news/JJJJ-MM-slug/`, RSS `/news/feed.xml`, Redaktionsseite `/news/redaktion/`, Google-News-Sitemap `/sitemap-news.xml`, siehe §20 |
 | `/google-unternehmensprofil/` | **Leitseite Wissens-Hub** „Google Unternehmensprofil: Der komplette Leitfaden" (bundesweit, informational, kein NRW-/Agentur-Keyword) — Cluster-Artikel unter `/ratgeber/google-unternehmensprofil-*/`, siehe §19 |
 
 **Service-Landingpages** (conversion-optimiert, On-Page-Lead-Formular → geteilter GHL-Webhook, unterschieden per `source`)
@@ -241,7 +241,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 
 ### Assets: Version bei JEDER Änderung hochzählen
 CSS und JS unter `/assets/` haben keine Fingerprints im Dateinamen. Alle
-Verweise tragen deshalb `?v=JJJJMMTT` (Stand: `?v=2026090202`). **Wer
+Verweise tragen deshalb `?v=JJJJMMTT` (Stand: `?v=2026091601`). **Wer
 `global.css`, `lead.js`, `cookie-consent.js` oder `third-party.js` ändert, muss
 diese Version auf allen Seiten hochzählen** — sonst sehen wiederkehrende
 Besucher die Änderung bis zu 4 Stunden nicht. Früher stand `/assets/*` auf
@@ -252,6 +252,15 @@ Bilder und Fonts bleiben `immutable`.
 Achtung: Cloudflare Pages **führt passende `_headers`-Regeln zusammen**, statt
 sie zu ersetzen. Eine Sammelregel `/assets/*` vererbt ihr `immutable` an
 `/assets/css/*` weiter — deshalb darf sie dort nicht stehen.
+
+### CSS-Fallstrick: Dropdown-Menü
+Das Desktop-Dropdown (`.nav-has-dropdown`) darf **keine Lücke** zum Menüpunkt haben
+(kein `top: calc(100% + x)`, kein `margin-top`), sonst verliert es beim Runterziehen
+der Maus den Hover und klappt zu (Bug-Report Tobias 2026-09-16, war auf den
+Case-Study-Seiten so). Lösung in `global.css`: `visibility` mit 0,3 s
+Verzögerung beim Schließen (Gnadenfrist) + unsichtbarer Hover-Puffer per
+`.nav-has-dropdown::before`. Case-Study-Seiten (eigenes Inline-CSS) haben eine
+unsichtbare Brücke `.nav-dropdown::before` über die Lücke.
 
 ### CSS-Fallstrick: sticky Header
 `overflow` auf einem **Vorfahren** des Headers (html, body) zerstört dessen
@@ -516,6 +525,9 @@ Ausführen mit: `python scripts/download-images.py`
 - Conversion-Service-LPs (meta/google/seo/social) — live, feeden geteilten GHL-Webhook
 - Lokale Stadt-Seiten — Bochum + Recklinghausen live; weitere nur mit echtem Beleg
 - **OFFEN (Tobias / per Browser-Prompt):** GHL-Workflow je `source` taggen (siehe Memory `project_tracking`)
+- **News-Feed /news/ live (2026-09-16)** — 12 Start-Meldungen + erste tagesaktuelle Meldung (DMA/Buchungsportale). Ziel: 2–4 Meldungen/Woche, damit Google die Seite als Nachrichtenquelle einstuft (siehe §20)
+- **OFFEN (Tobias):** Google Publisher Center + Bing PubHub einrichten — Browser-Agent kann die Domains nicht öffnen (Erweiterung blockt `publishercenter.google.com` und `pubhub.bing.com`), Werte stehen in der Session-Notiz / Memory `project_news_hub`
+- **OFFEN (ich, nach Freigabe):** Generator liefert je Meldung automatisch GUP-Beitrag, LinkedIn-Post und WhatsApp-Satz mit
 - Design-Politur, GEO-/SEO-Feinschliff, weitere echte Bilder von Tobias einpflegen
 
 ---
@@ -550,7 +562,10 @@ Nie in `.claude/worktrees/` anderer Sessions schreiben.
 - Meldung: Slug `JJJJ-MM-…`, `summary` 50–60 Wörter (Answer Capsule „Das Wichtigste"), `metaDesc` ≤ 160 Zeichen (Generator warnt), Fragen als H2, `impact` = ein Satz „Was das für dich heißt", `sources` mit URL, `related` auf Ratgeber/Leitseite. Schema: NewsArticle + BreadcrumbList, Autor Tobias, Datum sichtbar.
 - `hub: true` + `hubWhat`: Meldung wird automatisch als Zeile in der Änderungs-Tabelle der Leitseite ergänzt (nur Datum > TABLE_UPTO in generate-gup-hub.js; ältere Zeilen sind dort handgepflegt). „Stand"-Datum der Leitseite zieht mit.
 - RSS je Kategorie (`/news/<kat>/feed.xml`) + gesamt; Sitemap-Block zwischen `<!-- news:start -->` / `<!-- news:end -->` wird vom Generator geschrieben.
-- Footer-Link „News" sitewide (Spalte Unternehmen, nach Ratgeber) — bei neuen Seiten mitnehmen.
+- „News" steht sitewide in der **Top-Navigation** (Desktop nach FAQ, Mobile-Drawer) und im Footer (Spalte Unternehmen, nach Ratgeber) — bei neuen Seiten mitnehmen.
+- **Google-News-Signale (seit 2026-09-16):** NewsArticle-Schema mit Zeitstempel+Zeitzone, `articleSection`, `dateline`, `publishingPrinciples` → `/news/redaktion/` (Transparenzseite: wer schreibt, Quellenarbeit, Korrekturen); OG `article:published_time/section/author/tag`; `/sitemap-news.xml` (nur Meldungen der letzten 48 h, Fallback 3 neueste, damit die Datei nie leer ist — leer = Fehler in der Search Console), in `robots.txt` eingetragen und in der **Search Console eingereicht** (Property `https://lokalbesucher.de/`, Konto tobias.frank84). Es gibt **keine Bewerbung** für Google News mehr; entscheidend ist Frequenz über Wochen (2–4 Meldungen/Woche, jede innerhalb von 1–2 Tagen nach dem Ereignis). Bing PubHub hat dagegen einen echten Bewerbungsprozess (pubhub.bing.com, Microsoft-Konto).
+- **Bilder je Meldung:** Feld `image` (OG-Zuschnitt 1200×630 unter `assets/images/news/`), Original als `<figure>` im Body; `page()` nutzt `a.image` für og:image, twitter:image und Schema. Konvertierung mit sharp (WebP q85).
+- **Distribution je Meldung (Reihenfolge):** Seite (Erstquelle) → GUP-Beitrag „Neuigkeit" mit Link → LinkedIn-Beitrag (kein Artikel! Duplicate Content) in Tobias' Worten, Link nur im ersten Kommentar, Di–Do 9–11 Uhr → Repost Unternehmensseite → WhatsApp an betroffene Bestandskunden → Instagram/Facebook am Folgetag. Keine Presseportale (noindex, Duplicate Content); echte Presse nur mit eigenen Daten (Studie aus KI-Check-Log).
 - Der Seitenrahmen `page()` in generate-ratgeber.js ist dafür parametrisiert (`main`, `faqs` optional, `type`, `headExtra`, `cssExtra`, `graph`, `beforeBody`/`afterBody`, `capsuleLabel`) — Ratgeber-Ausgabe bleibt unverändert.
 - **Layout-Regeln News (Tobias, 2026-09-16, NICHT ändern):** Meldung = kein Button im Hero; Headline und Subtext in voller Breite; Artikeltext in voller Container-Breite (bis zur rechten Kante des Nav-Buttons „Kostenlos beraten"); Bild rechtsbündig ca. 40 % mit umfließendem Text (Desktop), mobil oben in voller Breite; oben nur Plattform/Thema-Chips; Abstand Subtext → Text knapp; am Ende H2 „Fazit" (Feld `fazit`, Fallback `impact`) → Quellen-Liste → Weitere Meldungen → Autorenbox → EIN CTA-Block. Keine Box „Was das für dich heißt". Übersicht /news/ = Top-Meldung groß und aufgeklappt (Bild links, Kurzfassung, Ghost-Button), darunter 3-spaltiges Raster über die volle Breite. Alles steckt in `scripts/generate-news.js` (cssExtra, newsPage, listPage), nie per Hand in den HTML-Dateien.
 - Verbote gelten auch hier: NFC, „keine Mindestlaufzeit", Löschversprechen, Fragen & Antworten als aktive Funktion, Gemini-Verknüpfung als in DE verfügbar (Generator bricht bei NFC/Mindestlaufzeit ab).
