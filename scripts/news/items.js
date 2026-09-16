@@ -61,7 +61,7 @@ export const NEWS = [
   metaDesc: 'Seit 8. September 2026 liefern Booking und Co. bei Hotelsuchen die Top-3 statt Google. Was die 890-Millionen-Strafe der EU für Hotels und lokale Betriebe heißt.',
   teaser: 'Wir suchen lokal auf Google. Bei „hotel berlin" liefert seit dem 8. September nicht mehr Google die drei Treffer, sondern Booking.com. Was das für Hotels, Restaurants und bald vielleicht jeden lokalen Betrieb heißt.',
   summary: 'Die EU-Kommission hat Google am 23. Juli 2026 zu <strong>890 Millionen Euro Strafe</strong> verurteilt, 460 Millionen davon für die Bevorzugung eigener Dienste in der Suche. Seit dem 8. September zeigt Google bei Hotels, Flügen und Restaurants ein neues Layout: Ein Buchungsportal steht oben, Googles eigene Liste ist eingeklappt, Direktanbieter folgen ohne Preise. Jede Buchung über das Portal kostet den Betrieb Provision.',
-  body: `        <figure style="margin:0 0 1.75rem">
+  body: `        <figure>
           <img src="/assets/images/news/google-dma-portale-statt-local-pack-hotel-berlin-2026.webp" alt="Google-Suche „hotel berlin" am 16. September 2026: Booking.com liefert Karte und drei Hotels mit Preisen, Googles eigene Hotelliste ist eingeklappt" width="1600" height="2000" loading="eager" fetchpriority="high" style="border-radius:12px;border:1px solid #1e2240">
           <figcaption style="font-size:.8rem;color:#7c83aa;margin-top:.5rem">Echte Google-Suche „hotel berlin", Deutschland, 16. September 2026: Das Portal steht über Google.</figcaption>
         </figure>
