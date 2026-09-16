@@ -10,3 +10,6 @@ tmp/
 # OS-/Editor-Müll
 .DS_Store
 Thumbs.db
+
+# Lokaler Wrangler-Zustand (pages dev, D1/KV-Simulation)
+.wrangler/

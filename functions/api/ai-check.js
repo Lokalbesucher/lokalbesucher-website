@@ -26,6 +26,8 @@
  * Workers-Runtime; keine Bundling-Abhängigkeiten = kein Deploy-Risiko.
  */
 
+import { logCheck, engineLabel } from '../_lib/kilog.js';
+
 const LIMITS = {
   perIpPerDay: 3,
   globalPerDay: 200,      // harte Tagesbremse (Worst Case ~200 x 8 ct = ~16 EUR)
@@ -142,7 +144,8 @@ function analyze(company, website, text, urls) {
   };
 }
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost(ctx) {
+  const { request, env } = ctx;
   /* OPEN_API_KEY: tolerante Schreibweise (so im Dashboard angelegt) */
   if (!env.OPENAI_API_KEY && env.OPEN_API_KEY) env.OPENAI_API_KEY = env.OPEN_API_KEY;
   const engines = [
@@ -166,6 +169,24 @@ export async function onRequestPost({ request, env }) {
     return json({ ok: false, reason: 'missing-fields' }, 400);
   }
 
+  /* Protokoll (D1): laeuft im Hintergrund, bremst die Antwort nicht und darf
+     den Check nie zum Scheitern bringen. Jeder Ausgang wird festgehalten —
+     auch abgelehnte Versuche, damit man Limits und Bot-Druck sieht. */
+  const base = { company, city, industry, website };
+  const log = (row) => {
+    const p = logCheck(env, request, { ...base, ...row });
+    if (ctx.waitUntil) ctx.waitUntil(p);
+  };
+  const fromPayload = (p, cached) => {
+    const by = {};
+    for (const e of p.engines || []) by[e.engine] = engineLabel(e);
+    return {
+      status: 'ok', cached, score: p.score,
+      chatgpt: by.chatgpt, claude: by.claude, gemini: by.gemini,
+      competitorSources: p.competitorSources, engineErrors: p.engineErrors,
+    };
+  };
+
   /* 1. Turnstile serverseitig verifizieren */
   const ip = request.headers.get('CF-Connecting-IP') || '0.0.0.0';
   const tv = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -173,13 +194,17 @@ export async function onRequestPost({ request, env }) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ secret: env.TURNSTILE_SECRET, response: String(body.turnstile || ''), remoteip: ip }),
   }).then(r => r.json()).catch(() => ({ success: false }));
-  if (!tv.success) return json({ ok: false, reason: 'turnstile' }, 403);
+  if (!tv.success) { log({ status: 'turnstile' }); return json({ ok: false, reason: 'turnstile' }, 403); }
 
   /* 2. Cache zuerst (kostet nichts, zählt nicht gegen Limits) */
   const cacheKey = `res3:${company}|${city}`;
   const cachedRaw = await env.AI_CHECK_KV.get(cacheKey);
   if (cachedRaw) {
-    try { return json({ ok: true, cached: true, ...JSON.parse(cachedRaw) }); } catch {}
+    try {
+      const cachedPayload = JSON.parse(cachedRaw);
+      log(fromPayload(cachedPayload, true));
+      return json({ ok: true, cached: true, ...cachedPayload });
+    } catch {}
   }
 
   /* 3. Limits: pro IP + globale Kostenbremse */
@@ -190,8 +215,8 @@ export async function onRequestPost({ request, env }) {
     env.AI_CHECK_KV.get(ipKey).then(v => parseInt(v || '0', 10)),
     env.AI_CHECK_KV.get(globalKey).then(v => parseInt(v || '0', 10)),
   ]);
-  if (ipCount >= LIMITS.perIpPerDay) return json({ ok: false, reason: 'ip-limit' }, 429);
-  if (globalCount >= LIMITS.globalPerDay) return json({ ok: false, reason: 'daily-budget' }, 429);
+  if (ipCount >= LIMITS.perIpPerDay) { log({ status: 'ip-limit' }); return json({ ok: false, reason: 'ip-limit' }, 429); }
+  if (globalCount >= LIMITS.globalPerDay) { log({ status: 'daily-budget' }); return json({ ok: false, reason: 'daily-budget' }, 429); }
   await Promise.all([
     env.AI_CHECK_KV.put(ipKey, String(ipCount + 1), { expirationTtl: LIMITS.counterTtlSeconds }),
     env.AI_CHECK_KV.put(globalKey, String(globalCount + 1), { expirationTtl: LIMITS.counterTtlSeconds }),
@@ -218,7 +243,10 @@ export async function onRequestPost({ request, env }) {
   }));
 
   const valid = results.filter(r => !r.error);
-  if (!valid.length) return json({ ok: false, reason: 'engines-down' }, 502);
+  if (!valid.length) {
+    log({ status: 'engines-down', engineErrors: results.map(r => ({ engine: r.engine, code: r.code })) });
+    return json({ ok: false, reason: 'engines-down' }, 502);
+  }
 
   /* 5. Score: zitiert = 2 Punkte, erwähnt = 1 */
   const points = valid.reduce((s, e) => s + (e.cited ? 2 : e.mentioned ? 1 : 0), 0);
@@ -231,5 +259,6 @@ export async function onRequestPost({ request, env }) {
   const engineErrors = results.filter(r => r.error).map(r => ({ engine: r.engine, code: r.code }));
   const payload = { score, engines: valid.map(({ sources, ...e }) => e), competitorSources, checkedAt: day, engineErrors };
   await env.AI_CHECK_KV.put(cacheKey, JSON.stringify(payload), { expirationTtl: LIMITS.cacheTtlSeconds });
+  log(fromPayload(payload, false));
   return json({ ok: true, cached: false, ...payload });
 }

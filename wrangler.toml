@@ -9,3 +9,11 @@ compatibility_date = "2026-04-16"
 [[kv_namespaces]]
 binding = "AI_CHECK_KV"
 id = "016c5127d85c400aae6c382ebcefa5f5"
+
+# D1 fuer das Protokoll: jeder KI-Check und jede Formular-Anfrage landen hier
+# (Tabellen checks + leads, Schema in migrations/0001_ki_check_log.sql).
+# Einsehen unter /ki-sichtbarkeits-check/admin — Passwort = Secret KI_ADMIN_PASSWORD.
+[[d1_databases]]
+binding = "KI_DB"
+database_name = "lokalbesucher-ki-check"
+database_id = "381c72e8-0637-44e6-b025-c98b965ba422"
