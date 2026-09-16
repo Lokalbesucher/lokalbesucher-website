@@ -193,7 +193,7 @@ function newsPage(n) {
     type: 'NewsArticle', tag: `${p.name} · ${t.name}`, crumb: n.title,
     title: n.title + ' | Lokalbesucher', metaDesc: n.metaDesc,
     h1: esc(n.title), heroSub: esc(n.teaser),
-    heroCta: 'Was heißt das für mich? Tobias fragen',
+    heroCta: '', authorBottom: true, /* Tobias: kein Button im Hero, Autorenbox ans Ende, nur ein CTA */
     waText: encodeURIComponent(`Hallo Tobias, ich habe eure Meldung „${n.title}" gelesen. Betrifft das mein Unternehmen?`),
     date: n.date + 'T08:00:00+02:00', dateNice: nice(n.date),
     articleExtra: { articleSection: t.name, isAccessibleForFree: true, dateline: 'Marl, ' + nice(n.date), publishingPrinciples: SITE + '/news/redaktion/' },
