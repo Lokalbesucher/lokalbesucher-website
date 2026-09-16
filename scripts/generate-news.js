@@ -273,7 +273,9 @@ function sitemapBlock() {
 /* ── Google-News-Sitemap: nur Meldungen der letzten 48 Stunden (Google-Vorgabe) ── */
 function newsSitemap() {
   const cutoff = new Date(Date.now() - 2 * 86400000).toISOString().slice(0, 10);
-  const fresh = ITEMS.filter(n => n.date >= cutoff);
+  /* Google ignoriert Einträge älter als 2 Tage, eine leere Sitemap meldet die Search Console aber als Fehler: dann die 3 neuesten Meldungen. */
+  let fresh = ITEMS.filter(n => n.date >= cutoff);
+  if (!fresh.length) fresh = ITEMS.slice(0, 3);
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 ${fresh.map(n => `  <url>
