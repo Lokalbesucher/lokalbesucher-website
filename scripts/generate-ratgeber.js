@@ -45,6 +45,29 @@ export function page(a) {
   const related = !(a.related && a.related.length) ? '' : '<div class="capsule" style="border-left-color:#4f82ff"><p><strong>Weiterlesen:</strong> ' +
     a.related.map(r => '<a href="' + r.href + '">' + r.label + '</a>').join(' · ') + '</p></div>';
 
+  const authorCard = `      <div style="display:flex;align-items:center;gap:1.25rem;background:#111328;border:1px solid #1e2240;border-radius:16px;padding:1rem 1.25rem;max-width:680px">
+        <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
+             alt="Tobias Frank — Inhaber Lokalbesucher GmbH"
+             width="80" height="104" loading="lazy"
+             style="width:80px;height:auto;border-radius:10px;flex-shrink:0;object-fit:cover;object-position:top">
+        <div>
+          <p style="font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#ffbd59;margin-bottom:.25rem">Verfasst von</p>
+          <p style="font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.2rem">Tobias Frank</p>
+          <p style="font-size:.8rem;color:#7c83aa;line-height:1.5">Inhaber &amp; Geschäftsführer · Lokalbesucher GmbH · 20&nbsp;Jahre Erfahrung (Salesforce, Amazon, StepStone) · <time datetime="${a.date}">Stand: ${a.dateNice}</time></p>
+        </div>
+      </div>
+`;
+  const authorTop = `  <!-- Autorenbox (E-E-A-T) -->
+  <div style="border-bottom:1px solid #1e2240;padding:1rem 0">
+    <div class="container">
+${authorCard}    </div>
+  </div>
+`;
+  const authorBottom = `      <!-- Autorenbox (E-E-A-T), am Artikelende -->
+      <div style="max-width:760px;margin:2.5rem auto 0">
+${authorCard.replace('max-width:680px', 'max-width:none')}      </div>
+`;
+
   return `<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -221,34 +244,18 @@ ${a.main !== undefined ? a.main : `
         <p style="font-size:1.05rem;color:#7c83aa;max-width:640px;line-height:1.75;margin-bottom:1.5rem">
           ${a.heroSub}
         </p>
-        <a href="https://wa.me/4915122358883?text=${a.waText}"
+${a.heroCta ? `        <a href="https://wa.me/4915122358883?text=${a.waText}"
            class="btn btn-primary btn-lg" rel="noopener noreferrer" target="_blank"
            aria-label="Kostenlose Beratung via WhatsApp">
           ${a.heroCta}
         </a>
-      </div>
+` : ''}      </div>
     </div>
   </section>
 
-  <!-- Autorenbox (E-E-A-T) -->
-  <div style="border-bottom:1px solid #1e2240;padding:1rem 0">
-    <div class="container">
-      <div style="display:flex;align-items:center;gap:1.25rem;background:#111328;border:1px solid #1e2240;border-radius:16px;padding:1rem 1.25rem;max-width:680px">
-        <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp"
-             alt="Tobias Frank — Inhaber Lokalbesucher GmbH"
-             width="80" height="104" loading="lazy"
-             style="width:80px;height:auto;border-radius:10px;flex-shrink:0;object-fit:cover;object-position:top">
-        <div>
-          <p style="font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#ffbd59;margin-bottom:.25rem">Verfasst von</p>
-          <p style="font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;font-size:.95rem;color:#e8eaf6;margin-bottom:.2rem">Tobias Frank</p>
-          <p style="font-size:.8rem;color:#7c83aa;line-height:1.5">Inhaber &amp; Geschäftsführer · Lokalbesucher GmbH · 20&nbsp;Jahre Erfahrung (Salesforce, Amazon, StepStone) · <time datetime="${a.date}">Stand: ${a.dateNice}</time></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
+${a.authorBottom ? '' : authorTop}
   <!-- ARTIKEL -->
-  <section class="section" aria-label="Ratgeber-Artikel">
+  <section class="section" aria-label="Ratgeber-Artikel"${a.authorBottom ? ' style="padding-top:.5rem"' : ''}>
     <div class="container">
       <article class="article">
 
@@ -264,7 +271,7 @@ ${a.body}
         ${related}
 
       </article>
-    </div>
+${a.authorBottom ? authorBottom : ''}    </div>
   </section>
 
   <!-- CTA -->
