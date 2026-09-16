@@ -318,21 +318,21 @@
   <!-- news:start -->
   <url>
     <loc>https://lokalbesucher.de/news/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://lokalbesucher.de/news/redaktion/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
     <loc>https://lokalbesucher.de/news/google/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -367,8 +367,15 @@
 
   <url>
     <loc>https://lokalbesucher.de/news/local-seo/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalbesucher.de/news/2026-09-google-dma-buchungsportale-vor-hotels-local-pack/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 

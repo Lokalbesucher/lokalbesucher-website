@@ -19,7 +19,7 @@ export function page(a) {
     '@graph': [
       {
         '@type': a.type || 'Article', '@id': url + '#article', headline: a.h1.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
-        description: a.metaDesc, image: OG_IMG, datePublished: a.date, dateModified: a.dateModified || a.date, inLanguage: 'de',
+        description: a.metaDesc, image: a.image || OG_IMG, datePublished: a.date, dateModified: a.dateModified || a.date, inLanguage: 'de',
         ...(a.keywords ? { keywords: a.keywords.join(', ') } : {}), ...(a.about ? { about: a.about } : {}), ...(a.articleExtra || {}),
         author: { '@type': 'Person', name: 'Tobias Frank', jobTitle: 'Inhaber Lokalbesucher GmbH', worksFor: { '@id': 'https://lokalbesucher.de/#organization' } },
         publisher: { '@id': 'https://lokalbesucher.de/#organization' }, mainEntityOfPage: url
@@ -58,14 +58,14 @@ export function page(a) {
   <meta property="og:url"         content="${url}">
   <meta property="og:title"       content="${a.title.replace(' | Lokalbesucher', '')}">
   <meta property="og:description" content="${a.metaDesc}">
-  <meta property="og:image"       content="${OG_IMG}">
+  <meta property="og:image"       content="${a.image || OG_IMG}">
   <meta property="og:locale"      content="de_DE">
   <meta property="og:site_name"   content="Lokalbesucher">
 
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="${a.title.replace(' | Lokalbesucher', '')}">
   <meta name="twitter:description" content="${a.metaDesc}">
-  <meta name="twitter:image"       content="${OG_IMG}">
+  <meta name="twitter:image"       content="${a.image || OG_IMG}">
 
   <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/css/global.css?v=${V}" as="style">
