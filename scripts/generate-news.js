@@ -74,7 +74,10 @@ const CSS = `
     .news-more a{text-decoration:none;color:#e8eaf6}
     .news-more a:hover{color:#ffbd59}
     .rss-hint{font-size:.85rem;color:#7c83aa;margin-top:1.5rem}
-    .rss-hint a{color:#ffbd59;text-decoration:underline;text-underline-offset:2px}`;
+    .rss-hint a{color:#ffbd59;text-decoration:underline;text-underline-offset:2px}
+    .article{margin-inline:0}
+    .quellen{margin:0 0 1.1rem 1.25rem;color:#b9bedd;display:flex;flex-direction:column;gap:.45rem;font-size:.92rem}
+    .quellen a{color:#b9bedd}`;
 
 const CTA_BY_TOPIC = {
   'bewertungen':            { ghost: 'Zum Bewertungsmanagement →', href: '/bewertungsmanagement/' },
@@ -201,14 +204,18 @@ function newsPage(n) {
     keywords: n.keywords, about: [{ '@type': 'Thing', name: p.name }, { '@type': 'Thing', name: t.name }],
     capsuleLabel: 'Das Wichtigste:', capsule: n.summary,
     beforeBody: `
-        <p class="news-src">Plattform: <a href="${catUrl(n.platform)}" class="news-tag">${esc(p.name)}</a> &nbsp; Thema: <a href="${catUrl(n.topic)}" class="news-tag">${esc(t.name)}</a><br>
-        Quelle${n.sources.length > 1 ? 'n' : ''}: ${n.sources.map(s => `<a href="${s.url}" rel="noopener noreferrer" target="_blank">${esc(s.label)}</a>`).join(' · ')}</p>
+        <p class="news-src">Plattform: <a href="${catUrl(n.platform)}" class="news-tag">${esc(p.name)}</a> &nbsp; Thema: <a href="${catUrl(n.topic)}" class="news-tag">${esc(t.name)}</a></p>
 `,
     body: n.body,
     afterBody: `
         <div class="impact" id="was-das-fuer-dich-heisst">
           <p><strong>Was das für dich heißt:</strong> ${n.impact}</p>
         </div>
+
+        <h2 id="quellen">Quellen</h2>
+        <ul class="quellen">
+${n.sources.map(x => `          <li><a href="${x.url}" rel="noopener noreferrer" target="_blank">${esc(x.label)}</a></li>`).join('\n')}
+        </ul>
 
         <h2 id="weitere-meldungen">Weitere Meldungen</h2>
         <ul class="news-more">

@@ -601,8 +601,10 @@ main {
   padding-top: calc(.5rem + .75rem);
   list-style: none;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity .2s var(--ease), transform .2s var(--ease);
+  visibility: hidden;
+  /* Gnadenfrist: beim Verlassen bleibt das Menü .3s erreichbar, sonst schließt es bei
+     diagonaler Mausbewegung vom Menüpunkt ins Menü (Bug-Report Tobias, 2026-09-16). */
+  transition: opacity .2s var(--ease), transform .2s var(--ease), visibility 0s linear .3s;
   transform: translateX(-50%) translateY(-4px);
   box-shadow: 0 8px 32px rgba(0,0,0,.4);
   z-index: 200;
@@ -624,8 +626,19 @@ main {
 .nav-has-dropdown:hover .nav-dropdown,
 .nav-has-dropdown:focus-within .nav-dropdown {
   opacity: 1;
-  pointer-events: auto;
+  visibility: visible;
+  transition-delay: 0s, 0s, 0s;
   transform: translateX(-50%) translateY(0);
+}
+
+/* Unsichtbarer Hover-Puffer um den Menüpunkt: bis zum Header-Rand und seitlich in die Lücke */
+.nav-has-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -1.25rem;
+  bottom: -1.25rem;
+  left: -1rem;
+  right: -1rem;
 }
 
 .nav-has-dropdown:hover > a::before,
