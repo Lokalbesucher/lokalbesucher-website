@@ -157,7 +157,7 @@ function listPage({ key, url, title, h1, intro, metaDesc, crumb, items, feed }) 
       <div class="news-list">
 ${items.map(card).join('\n')}
       </div>
-      <p class="rss-hint" style="max-width:860px">Meldungen abonnieren: <a href="${feed}">RSS-Feed${key ? ' „' + esc(catName(key)) + '"' : ''}</a>${key ? ' · <a href="/news/feed.xml">alle Meldungen</a>' : ''}. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a>${key && PLATFORMS[key] && key === 'google' ? ' und im <a href="/google-unternehmensprofil/">Leitfaden zum Google Unternehmensprofil</a>' : ''}.</p>
+      <p class="rss-hint" style="max-width:860px">Meldungen abonnieren: <a href="${feed}">RSS-Feed${key ? ' „' + esc(catName(key)) + '"' : ''}</a>${key ? ' · <a href="/news/feed.xml">alle Meldungen</a>' : ''}. Wer schreibt und wie wir arbeiten: <a href="/news/redaktion/">Redaktion</a>. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a>${key && PLATFORMS[key] && key === 'google' ? ' und im <a href="/google-unternehmensprofil/">Leitfaden zum Google Unternehmensprofil</a>' : ''}.</p>
     </div>
   </section>
 
@@ -196,7 +196,7 @@ function newsPage(n) {
     heroCta: 'Was heißt das für mich? Tobias fragen',
     waText: encodeURIComponent(`Hallo Tobias, ich habe eure Meldung „${n.title}" gelesen. Betrifft das mein Unternehmen?`),
     date: n.date + 'T08:00:00+02:00', dateNice: nice(n.date),
-    articleExtra: { articleSection: t.name, isAccessibleForFree: true, dateline: 'Marl, ' + nice(n.date) },
+    articleExtra: { articleSection: t.name, isAccessibleForFree: true, dateline: 'Marl, ' + nice(n.date), publishingPrinciples: SITE + '/news/redaktion/' },
     keywords: n.keywords, about: [{ '@type': 'Thing', name: p.name }, { '@type': 'Thing', name: t.name }],
     capsuleLabel: 'Das Wichtigste:', capsule: n.summary,
     beforeBody: `
@@ -264,7 +264,7 @@ ${items.map(n => `  <item>
 /* ── Sitemap-Block zwischen Markern ───────────────────────────────────── */
 function sitemapBlock() {
   const u = (loc, lastmod, freq, prio) => `  <url>\n    <loc>${SITE}${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>`;
-  const out = [u('/news/', latest, 'daily', '0.8')];
+  const out = [u('/news/', latest, 'daily', '0.8'), u('/news/redaktion/', latest, 'monthly', '0.4')];
   for (const k of catKeys.filter(has)) out.push(u(catUrl(k), inCat(k)[0].date, 'weekly', '0.6'));
   for (const n of ITEMS) out.push(u(itemUrl(n), n.date, 'monthly', '0.6'));
   return out.join('\n\n');
@@ -286,6 +286,93 @@ ${fresh.map(n => `  <url>
   </url>`).join('\n')}
 </urlset>
 `;
+}
+
+/* ── Redaktionsseite: Transparenz-Pflicht für Google News / Bing PubHub ──── */
+function redaktionPage() {
+  const url = SITE + '/news/redaktion/';
+  const graph = () => [
+    {
+      '@type': 'AboutPage', '@id': url + '#webpage', url, name: 'Redaktion der Lokalbesucher News',
+      description: 'Wer die Lokalbesucher News schreibt, wie wir arbeiten und wie du Fehler meldest.',
+      inLanguage: 'de', isPartOf: { '@id': SITE + '/#website' }, dateModified: latest,
+      about: { '@id': SITE + '/#organization' },
+      breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Startseite', item: SITE + '/' },
+        { '@type': 'ListItem', position: 2, name: 'News', item: SITE + '/news/' },
+        { '@type': 'ListItem', position: 3, name: 'Redaktion', item: url }
+      ] }
+    },
+    {
+      '@type': 'Person', '@id': SITE + '/#tobias-frank', name: 'Tobias Frank', jobTitle: 'Inhaber und Chefredakteur',
+      worksFor: { '@id': SITE + '/#organization' }, email: 'info@lokalbesucher.de',
+      sameAs: ['https://www.linkedin.com/in/tobiasfrank/'],
+      knowsAbout: ['Google Unternehmensprofil', 'Local SEO', 'Bewertungsmanagement', 'Google Ads', 'Meta Ads', 'KI-Suche']
+    }
+  ];
+  const main = `
+  <section class="page-hero grid-bg" aria-labelledby="red-title">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="/news/">News</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Redaktion</span>
+      </nav>
+      <div style="max-width:820px">
+        <span class="section-label">Redaktion</span>
+        <h1 id="red-title" style="font-size:clamp(1.875rem,5vw,3rem);font-weight:800;margin-bottom:1rem">Wer die Lokalbesucher News schreibt<br>und wie wir arbeiten</h1>
+        <p style="font-size:1.05rem;color:#7c83aa;max-width:640px;line-height:1.75">Die Lokalbesucher News melden Änderungen bei Google, Meta, Apple Maps, Bing Places und in der KI-Suche, die lokale Unternehmen in Deutschland betreffen. Diese Seite erklärt, wer schreibt, woher die Fakten kommen und wie du Fehler meldest.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Redaktion">
+    <div class="container">
+      <article class="article">
+        <h2 id="wer">Wer schreibt?</h2>
+        <div style="display:flex;align-items:center;gap:1.25rem;background:#111328;border:1px solid #1e2240;border-radius:16px;padding:1rem 1.25rem;margin:1rem 0 1.5rem">
+          <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp" alt="Tobias Frank, Inhaber Lokalbesucher GmbH" width="80" height="104" loading="lazy" style="width:80px;height:auto;border-radius:10px;flex-shrink:0;object-fit:cover;object-position:top">
+          <div>
+            <p style="font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;color:#e8eaf6;margin:0 0 .2rem">Tobias Frank</p>
+            <p style="font-size:.9rem;margin:0">Inhaber der Lokalbesucher GmbH und verantwortlich für alle Meldungen. 20 Jahre in Vertrieb und Marketing, davor bei Salesforce, Amazon und StepStone. Betreut mit seinem Team seit 2021 über 100 lokale Unternehmen bei Google.</p>
+          </div>
+        </div>
+        <p>Verantwortlich im Sinne des Presserechts ist Tobias Frank, Lokalbesucher GmbH, Karl-Breuing-Str. 2, 45770 Marl. Die vollständigen Angaben stehen im <a href="/impressum/">Impressum</a>.</p>
+
+        <h2 id="wie">Wie entsteht eine Meldung?</h2>
+        <ul>
+          <li><strong>Quelle zuerst.</strong> Jede Meldung geht auf eine nachprüfbare Quelle zurück: Google-Hilfe, offizielle Blogs, Richtlinientexte, Studien oder Fachmedien wie Search Engine Roundtable und Sterling Sky. Die Quelle ist in jeder Meldung verlinkt.</li>
+          <li><strong>Eigene Prüfung.</strong> Was sich in Profilen prüfen lässt, prüfen wir in den Unternehmensprofilen unserer Kunden, bevor wir es melden.</li>
+          <li><strong>Einordnung für Deutschland.</strong> Viele Änderungen starten in den USA. Wir schreiben dazu, ob und wann sie hier gelten. Was im Europäischen Wirtschaftsraum nicht verfügbar ist, nennen wir so.</li>
+          <li><strong>Datum sichtbar.</strong> Jede Meldung trägt das Datum der Änderung. Wird eine Meldung nachträglich geändert, steht das am Ende der Meldung mit Datum.</li>
+        </ul>
+
+        <h2 id="was-nicht">Was wir nicht tun</h2>
+        <ul>
+          <li>Keine bezahlten Meldungen, keine Werbung Dritter im News-Bereich.</li>
+          <li>Keine Firmen-Nachrichten über Lokalbesucher selbst. Dafür gibt es LinkedIn.</li>
+          <li>Keine Meldung ohne Quelle, keine Gerüchte, keine KI-generierten Fakten. Wir nutzen KI-Werkzeuge beim Schreiben, jede Aussage prüft ein Mensch.</li>
+        </ul>
+        <p>Lokalbesucher verkauft Google-Business-Optimierung. Wo eine Meldung unsere eigene Leistung berührt, etwa bei Bewertungsrichtlinien, schreiben wir das dazu.</p>
+
+        <h2 id="fehler">Fehler gefunden?</h2>
+        <p>Schreib an <a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a> oder per <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank">WhatsApp</a>. Wir prüfen jede Meldung innerhalb eines Werktags und korrigieren sichtbar mit Datum.</p>
+
+        <h2 id="abonnieren">Abonnieren</h2>
+        <p>Alle Meldungen als <a href="/news/feed.xml">RSS-Feed</a>, je Plattform und Thema unter <a href="/news/">lokalbesucher.de/news</a>. Kürzere Fassungen erscheinen auf <a href="https://www.linkedin.com/in/tobiasfrank/" rel="noopener noreferrer" target="_blank">LinkedIn</a> und im Google Unternehmensprofil von Lokalbesucher.</p>
+      </article>
+    </div>
+  </section>
+`;
+  return page({
+    url, parent: { name: 'News', href: '/news/' }, ogType: 'website',
+    title: 'Redaktion der Lokalbesucher News | Lokalbesucher',
+    metaDesc: 'Wer die Lokalbesucher News schreibt, woher die Fakten kommen, was wir nicht tun und wie du Fehler meldest. Verantwortlich: Tobias Frank, Lokalbesucher GmbH, Marl.',
+    h1: 'Wer die Lokalbesucher News schreibt und wie wir arbeiten', crumb: 'Redaktion', tag: '',
+    date: latest, dateNice: nice(latest), headExtra: rssLinks(), cssExtra: CSS, graph, main
+  });
 }
 
 /* ── Zeilen für die Änderungs-Tabelle der Leitseite ───────────────────── */
@@ -336,6 +423,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   /* Meldungen */
   for (const n of ITEMS) write(`news/${n.slug}/index.html`, newsPage(n));
 
+  write('news/redaktion/index.html', redaktionPage());
   write('sitemap-news.xml', newsSitemap());
 
   /* Sitemap */
