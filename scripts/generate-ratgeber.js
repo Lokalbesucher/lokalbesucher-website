@@ -18,28 +18,31 @@ export function page(a) {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'Article', '@id': url + '#article', headline: a.h1.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
-        description: a.metaDesc, image: OG_IMG, datePublished: a.date, dateModified: a.date, inLanguage: 'de',
+        '@type': a.type || 'Article', '@id': url + '#article', headline: a.h1.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(),
+        description: a.metaDesc, image: OG_IMG, datePublished: a.date, dateModified: a.dateModified || a.date, inLanguage: 'de',
+        ...(a.keywords ? { keywords: a.keywords.join(', ') } : {}), ...(a.about ? { about: a.about } : {}),
         author: { '@type': 'Person', name: 'Tobias Frank', jobTitle: 'Inhaber Lokalbesucher GmbH', worksFor: { '@id': 'https://lokalbesucher.de/#organization' } },
         publisher: { '@id': 'https://lokalbesucher.de/#organization' }, mainEntityOfPage: url
       },
       {
         '@type': 'WebPage', '@id': url + '#webpage', url, name: a.title.replace(' | Lokalbesucher', ''),
-        isPartOf: { '@id': 'https://lokalbesucher.de/#website' }, datePublished: a.date, dateModified: a.date,
+        isPartOf: { '@id': 'https://lokalbesucher.de/#website' }, datePublished: a.date, dateModified: a.dateModified || a.date,
         breadcrumb: { '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://lokalbesucher.de/' },
           { '@type': 'ListItem', position: 2, name: parent.name, item: 'https://lokalbesucher.de' + parent.href },
           { '@type': 'ListItem', position: 3, name: a.crumb, item: url }
         ] }
       },
-      { '@type': 'FAQPage', mainEntity: a.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: stripTags(f.a) } })) }
+      ...(a.faqs && a.faqs.length ? [{ '@type': 'FAQPage', mainEntity: a.faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: stripTags(f.a) } })) }] : []),
+      ...(a.schemaExtra || [])
     ]
   };
+  if (a.graph) graph['@graph'] = a.graph(graph['@graph']);
 
-  const faqHtml = '<h2 id="faq">' + a.faqTitle + '</h2>\n' +
+  const faqHtml = !(a.faqs && a.faqs.length) ? '' : '<h2 id="faq">' + a.faqTitle + '</h2>\n' +
     a.faqs.map(f => '        <h3 id="' + f.id + '">' + f.q + '</h3>\n        <p>' + f.a + '</p>').join('\n');
 
-  const related = '<div class="capsule" style="border-left-color:#4f82ff"><p><strong>Weiterlesen:</strong> ' +
+  const related = !(a.related && a.related.length) ? '' : '<div class="capsule" style="border-left-color:#4f82ff"><p><strong>Weiterlesen:</strong> ' +
     a.related.map(r => '<a href="' + r.href + '">' + r.label + '</a>').join(' · ') + '</p></div>';
 
   return `<!DOCTYPE html>
@@ -51,7 +54,7 @@ export function page(a) {
   <meta name="description" content="${a.metaDesc}">
   <link rel="canonical" href="${url}">
 
-  <meta property="og:type"        content="article">
+  <meta property="og:type"        content="${a.ogType || 'article'}">${a.headExtra || ''}
   <meta property="og:url"         content="${url}">
   <meta property="og:title"       content="${a.title.replace(' | Lokalbesucher', '')}">
   <meta property="og:description" content="${a.metaDesc}">
@@ -109,7 +112,7 @@ export function page(a) {
     .ptable th,.ptable td{border:1px solid #1e2240;padding:.65rem .8rem;text-align:left;color:#b9bedd;vertical-align:top}
     .ptable th{background:#111328;color:#e8eaf6;font-family:var(--font-head,Arial,Helvetica,sans-serif);font-size:.85rem}
     .tablewrap{overflow-x:auto}
-  @media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}
+  @media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}${a.cssExtra || ''}
   </style>
 
   <link rel="stylesheet" href="/assets/css/global.css?v=${V}" media="print" onload="this.media='all'">
@@ -198,7 +201,7 @@ export function page(a) {
 </header>
 
 <main id="main">
-
+${a.main !== undefined ? a.main : `
   <!-- HERO -->
   <section class="page-hero grid-bg" aria-labelledby="art-title">
     <div class="container">
@@ -250,13 +253,14 @@ export function page(a) {
       <article class="article">
 
         <div class="capsule" id="antwort-kurz">
-          <p><strong>Die kurze Antwort:</strong> ${a.capsule}</p>
+          <p><strong>${a.capsuleLabel || 'Die kurze Antwort:'}</strong> ${a.capsule}</p>
         </div>
-
+${a.beforeBody || ''}
 ${a.body}
 
         ${faqHtml}
 
+        ${a.afterBody || ''}
         ${related}
 
       </article>
@@ -288,7 +292,7 @@ ${a.body}
       </div>
     </div>
   </section>
-
+`}
 </main>
 
 <footer class="site-footer" role="contentinfo">
@@ -325,7 +329,7 @@ ${a.body}
         <div class="footer-col-title">Unternehmen</div>
         <ul class="footer-links" role="list">
           <li><a href="/case-studies/">Erfolgsgeschichten</a></li>
-          <li><a href="/faq/">FAQ</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/google-unternehmensprofil/">Google Unternehmensprofil</a></li><li><a href="/jobs/">Jobs</a></li>
+          <li><a href="/faq/">FAQ</a></li><li><a href="/ratgeber/">Ratgeber</a></li><li><a href="/news/">News</a></li><li><a href="/google-unternehmensprofil/">Google Unternehmensprofil</a></li><li><a href="/jobs/">Jobs</a></li>
           <li><a href="/schema-org-generator/">Schema Generator</a></li><li><a href="/ki-sichtbarkeits-check/">KI-Sichtbarkeits-Check</a></li>
           <li><a href="/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/">ROI Kalkulator</a></li>
         </ul>

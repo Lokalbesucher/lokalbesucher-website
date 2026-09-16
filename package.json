@@ -6,7 +6,8 @@
   "scripts": {
     "download-images": "node scripts/download-images.js",
     "download-fonts": "node scripts/download-fonts.js",
-    "ai-check": "node scripts/ai-visibility-check.js"
+    "ai-check": "node scripts/ai-visibility-check.js",
+    "news": "node scripts/generate-news.js && node scripts/generate-gup-hub.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",

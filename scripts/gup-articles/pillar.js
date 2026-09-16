@@ -70,6 +70,7 @@ export default {
           </tbody>
         </table>
         </div>
+        <p>Jede neue Änderung melden wir zuerst in den <a href="/news/google/">Google-News für lokale Unternehmen</a>, datiert und mit Quelle. Dort kannst du auch den <a href="/news/google/feed.xml">RSS-Feed</a> abonnieren.</p>
         <p>Die vollständige Geschichte von Google Places bis heute: <a href="/ratgeber/google-my-business-vs-google-unternehmensprofil/">Google My Business heißt jetzt Google Unternehmensprofil</a>.</p>
 
         <h2 id="warum">Warum ist das Profil 2026 wichtiger als deine Website?</h2>

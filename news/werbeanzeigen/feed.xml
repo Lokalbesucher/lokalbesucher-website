@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Lokalbesucher News: Werbeanzeigen</title>
+  <link>https://lokalbesucher.de/news/werbeanzeigen/</link>
+  <description>Google Ads, Meta Ads, Local Services Ads.</description>
+  <language>de-de</language>
+  <lastBuildDate>Sat, 01 Aug 2026 06:00:00 GMT</lastBuildDate>
+  <atom:link href="https://lokalbesucher.de/news/werbeanzeigen/feed.xml" rel="self" type="application/rss+xml"/>
+  <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Werbeanzeigen</title><link>https://lokalbesucher.de/news/werbeanzeigen/</link></image>
+  <item>
+    <title>Local Services Ads wandern in Google Ads</title>
+    <link>https://lokalbesucher.de/news/2026-08-google-local-services-ads-migration/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-08-google-local-services-ads-migration/</guid>
+    <pubDate>Sat, 01 Aug 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Google</category>
+    <category>Werbeanzeigen</category>
+    <description><![CDATA[Google migriert die Local Services Ads (LSA) in Google Ads: Die Kampagnen laufen künftig als Pay-per-Lead-Variante von Performance Max. In den USA startet die Umstellung im August 2026, Konten außerhalb der USA folgen 2027. Gleichzeitig wächst die Zahl der Buchungspartner von rund 20 auf über 500, und Anzeigen können schon vor der Vergabe des Garantie-Siegels laufen.]]></description>
+  </item>
+</channel>
+</rss>

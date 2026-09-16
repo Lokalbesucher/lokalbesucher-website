@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Lokalbesucher News: Bewertungen</title>
+  <link>https://lokalbesucher.de/news/bewertungen/</link>
+  <description>Bewertungsrichtlinien, Antworten, Reputationsschutz.</description>
+  <language>de-de</language>
+  <lastBuildDate>Fri, 14 Aug 2026 06:00:00 GMT</lastBuildDate>
+  <atom:link href="https://lokalbesucher.de/news/bewertungen/feed.xml" rel="self" type="application/rss+xml"/>
+  <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Bewertungen</title><link>https://lokalbesucher.de/news/bewertungen/</link></image>
+  <item>
+    <title>Neu bei Google: Kunden können Inhaberantworten melden</title>
+    <link>https://lokalbesucher.de/news/2026-08-google-inhaberantwort-melden/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-08-google-inhaberantwort-melden/</guid>
+    <pubDate>Fri, 14 Aug 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Google</category>
+    <category>Bewertungen</category>
+    <description><![CDATA[Seit dem 14. August 2026 gibt es in Google-Bewertungen die Option „Inhaberantwort melden". Nutzer können damit Antworten von Unternehmen als beleidigend, werblich oder datenschutzwidrig markieren. Google prüft und entfernt gemeldete Antworten. Für Inhaber heißt das: sachlich bleiben, keine Kundendaten in der Antwort nennen, keine Drohungen. Jede Antwort ist öffentlich und wird jetzt auch geprüft.]]></description>
+  </item>
+  <item>
+    <title>Google verschärft Bewertungsrichtlinie: Quoten und Tablets verboten</title>
+    <link>https://lokalbesucher.de/news/2026-04-google-bewertungsrichtlinie-verschaerft/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-04-google-bewertungsrichtlinie-verschaerft/</guid>
+    <pubDate>Fri, 17 Apr 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Google</category>
+    <category>Bewertungen</category>
+    <description><![CDATA[Google hat am 16. und 17. April 2026 die Richtlinie gegen „Rating Manipulation" verschärft. Ausdrücklich verboten sind Bewertungsquoten für Mitarbeiter, Bewertungs-Kioske oder Firmen-Tablets im Geschäft, das Filtern unzufriedener Kunden vor der Bewertung, Anreize jeder Art und die Aufforderung, Mitarbeiternamen oder Keywords zu nennen. Bei Verstößen entfernt Google ganze Bewertungsblöcke und kann das Profil einschränken.]]></description>
+  </item>
+</channel>
+</rss>

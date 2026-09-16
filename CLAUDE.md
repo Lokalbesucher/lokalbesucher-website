@@ -169,6 +169,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 | `/ki-sichtbarkeits-check/` | Tool — fragt ChatGPT/Claude/Gemini live ab; Backend `functions/api/ai-check.js`, KV `AI_CHECK_KV`, Turnstile-geschützt, 3 Checks/IP/Tag |
 | `/ki-sichtbarkeits-check/admin` | **Intern, Basic Auth** (Passwort = Pages-Secret `KI_ADMIN_PASSWORD`). Protokoll aller Checks + aller Formular-Anfragen aus D1 `KI_DB` (`lokalbesucher-ki-check`, Schema `migrations/0001_ki_check_log.sql`), Kennzahlen, CSV-Export. Geschrieben von `functions/_lib/kilog.js`: `lead.js` sichert jede Anfrage **vor** der Webhook-Weiterleitung (Spalte `delivered`), `ai-check.js` protokolliert jeden Ausgang (ok/cache/limit/turnstile). Test ohne Cloudflare: `node tmp/test-kilog.mjs` (lokal, gitignoriert). |
 | `/ratgeber/` | Ratgeber-Hub + Artikel auf Money-Keywords |
+| `/news/` | **News-Feed** für lokales Marketing (Google, Meta, Apple Maps, Bing Places, KI-Suche) — Kategorie-Seiten `/news/<plattform|thema>/`, Meldungen `/news/JJJJ-MM-slug/`, RSS `/news/feed.xml`, siehe §20 |
 | `/google-unternehmensprofil/` | **Leitseite Wissens-Hub** „Google Unternehmensprofil: Der komplette Leitfaden" (bundesweit, informational, kein NRW-/Agentur-Keyword) — Cluster-Artikel unter `/ratgeber/google-unternehmensprofil-*/`, siehe §19 |
 
 **Service-Landingpages** (conversion-optimiert, On-Page-Lead-Formular → geteilter GHL-Webhook, unterschieden per `source`)
@@ -537,3 +538,18 @@ Informations-Suchen rund ums Profil, nicht nur für „Agentur"-Suchen. Kein NRW
 **Encoding-Schutz:** Nie rekursiv mit PowerShell Get-Content/Set-Content ohne `-Encoding utf8` über den Ordner
 schreiben (hat am 12.09.2026 Mojibake live gebracht). Reparatur: `node scripts/fix-encoding.mjs`.
 Nie in `.claude/worktrees/` anderer Sessions schreiben.
+
+---
+
+## 20. NEWS-FEED „LOKALES MARKETING" (seit 2026-09-16)
+
+**Ziel (Tobias):** sehr regelmäßig Kurzmeldungen (1–2/Woche) zu Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche — für lokale Betriebe eingeordnet. Frische ist der stärkste GEO-Hebel; der Feed macht lokalbesucher.de zur deutschen Erstquelle für solche Änderungen. Keine Presse-Sektion, keine Firmen-News (das gehört auf LinkedIn).
+
+- Quelle der Wahrheit: `scripts/news/items.js` (NEWS, PLATFORMS, TOPICS). Rendern: `npm run news` (= generate-news.js + generate-gup-hub.js). Generierte Dateien unter `news/` nie direkt editieren.
+- **Zwei feste Achsen**, jede Meldung genau eine Plattform + ein Thema. Filter sind **echte statische Seiten** (`/news/google/`, `/news/bewertungen/`), nie JS-only — sonst für Google/KI unsichtbar. Keine freien Tags, keine Kombi-Seiten (Thin Content). Kategorie-Seite entsteht erst, wenn eine Meldung existiert.
+- Meldung: Slug `JJJJ-MM-…`, `summary` 50–60 Wörter (Answer Capsule „Das Wichtigste"), `metaDesc` ≤ 160 Zeichen (Generator warnt), Fragen als H2, `impact` = ein Satz „Was das für dich heißt", `sources` mit URL, `related` auf Ratgeber/Leitseite. Schema: NewsArticle + BreadcrumbList, Autor Tobias, Datum sichtbar.
+- `hub: true` + `hubWhat`: Meldung wird automatisch als Zeile in der Änderungs-Tabelle der Leitseite ergänzt (nur Datum > TABLE_UPTO in generate-gup-hub.js; ältere Zeilen sind dort handgepflegt). „Stand"-Datum der Leitseite zieht mit.
+- RSS je Kategorie (`/news/<kat>/feed.xml`) + gesamt; Sitemap-Block zwischen `<!-- news:start -->` / `<!-- news:end -->` wird vom Generator geschrieben.
+- Footer-Link „News" sitewide (Spalte Unternehmen, nach Ratgeber) — bei neuen Seiten mitnehmen.
+- Der Seitenrahmen `page()` in generate-ratgeber.js ist dafür parametrisiert (`main`, `faqs` optional, `type`, `headExtra`, `cssExtra`, `graph`, `beforeBody`/`afterBody`, `capsuleLabel`) — Ratgeber-Ausgabe bleibt unverändert.
+- Verbote gelten auch hier: NFC, „keine Mindestlaufzeit", Löschversprechen, Fragen & Antworten als aktive Funktion, Gemini-Verknüpfung als in DE verfügbar (Generator bricht bei NFC/Mindestlaufzeit ab).
