@@ -7,6 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { page } from './generate-ratgeber.js';
 import pillar from './gup-articles/pillar.js';
+import { hubRows, NEWS_LATEST } from './generate-news.js';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SETS_DIR = path.join(ROOT, 'scripts', 'gup-articles');
@@ -63,7 +64,22 @@ function withCriticalExtra(html) {
   if (k < 0) throw new Error('kein Inline-<style> gefunden');
   return html.slice(0, k) + '</style>\n  <style>\n    /* Critical-CSS Leitseite (aus global.css extrahiert, siehe generate-gup-hub.js) */\n    ' + extra + '\n  ' + html.slice(k);
 }
-write('google-unternehmensprofil', withCriticalExtra(page(pillar)));
+/* Änderungs-Tabelle: Meldungen mit hub:true aus scripts/news/items.js, die jünger sind als der
+   handgepflegte Tabellenstand (TABLE_UPTO), werden als Zeilen angehängt; „Stand" wird nachgezogen. */
+const TABLE_UPTO = '2026-09-12';
+function withNewsRows(html) {
+  const rows = hubRows(TABLE_UPTO);
+  const k = html.indexOf('id="neu"'); const t = html.indexOf('</tbody>', k);
+  if (k < 0 || t < 0) throw new Error('Änderungs-Tabelle (id="neu") nicht gefunden');
+  if (rows.length) html = html.slice(0, t) + rows.join('\n') + '\n          ' + html.slice(t);
+  if (NEWS_LATEST > TABLE_UPTO) {
+    const M = ['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+    const [y, m, d] = NEWS_LATEST.split('-');
+    html = html.replace('Das ist der Stand vom 12. September 2026', 'Das ist der Stand vom ' + (+d) + '. ' + M[+m - 1] + ' ' + y);
+  }
+  return html;
+}
+write('google-unternehmensprofil', withCriticalExtra(withNewsRows(page(pillar))));
 for (const a of articles) write(path.join('ratgeber', a.slug), page(a));
 
 export const HUB = { pillar, articles };

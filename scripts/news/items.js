@@ -1,0 +1,387 @@
+/* News-Meldungen: Quelle der Wahrheit für /news/.
+   Neue Meldung = neues Objekt in NEWS, dann `node scripts/generate-news.js`
+   (rendert Übersicht, Kategorie-Seiten, Meldungen, RSS und Sitemap-Block).
+
+   Zwei feste Achsen, jede Meldung hat GENAU eine Plattform und GENAU ein Thema.
+   Kategorie-Seiten entstehen nur, wenn mindestens eine Meldung existiert
+   (keine leeren Seiten im Index). Neue Achsen-Werte: Zeile hier ergänzen.
+
+   Regeln je Meldung:
+   - slug beginnt mit JJJJ-MM- (Chronik, keine Kollision mit Kategorie-Slugs)
+   - date = Datum der Meldung (ISO), erscheint als „Stand" und im Schema
+   - summary = 50–60 Wörter, beantwortet direkt „Was ist passiert, was heißt das"
+   - body = Fragen als H2, kurze Absätze, nur belegte Fakten, Quelle verlinkt
+   - impact = ein Satz „Was das für dich heißt" (wird in der Leitseiten-Tabelle genutzt)
+   - hub: true → Zeile in der Änderungs-Tabelle auf /google-unternehmensprofil/
+     (nur für Google + unternehmensprofile/bewertungen sinnvoll)
+   - NIE: „NFC", „keine Mindestlaufzeit", „Bewertungen löschen" als Versprechen,
+     Fragen & Antworten als aktive Funktion, Gemini-Verknüpfung als in DE verfügbar */
+
+export const PLATFORMS = {
+  'google':      { name: 'Google',      desc: 'Google Unternehmensprofil, Google Maps, Google Suche und Google Ads.' },
+  'meta':        { name: 'Meta',        desc: 'Facebook, Instagram, WhatsApp Business und Meta Ads.' },
+  'apple-maps':  { name: 'Apple Maps',  desc: 'Apple Business Connect und Einträge in Apple Maps.' },
+  'bing-places': { name: 'Bing Places', desc: 'Bing Places for Business und die Bing-Suche.' },
+  'ki-suche':    { name: 'KI-Suche',    desc: 'ChatGPT, Perplexity, Gemini, Claude und KI-Übersichten in der Suche.' }
+};
+
+export const TOPICS = {
+  'unternehmensprofile':   { name: 'Unternehmensprofile',   desc: 'Einträge, Verifizierung, Richtlinien, neue Funktionen.' },
+  'bewertungen':           { name: 'Bewertungen',           desc: 'Bewertungsrichtlinien, Antworten, Reputationsschutz.' },
+  'werbeanzeigen':         { name: 'Werbeanzeigen',         desc: 'Google Ads, Meta Ads, Local Services Ads.' },
+  'social-media':          { name: 'Social Media',          desc: 'Beiträge, Reichweite, Formate für lokale Betriebe.' },
+  'conversion-optimierung':{ name: 'Conversion-Optimierung',desc: 'Aus Sichtbarkeit Anrufe, Anfragen und Kunden machen.' },
+  'local-seo':             { name: 'Local SEO',             desc: 'Lokales Ranking, Studien, Suchverhalten.' }
+};
+
+/* Gemeinsame Ratgeber-Ziele */
+const R = {
+  hub:        { href: '/google-unternehmensprofil/', label: 'Google Unternehmensprofil: Der komplette Leitfaden' },
+  verify:     { href: '/ratgeber/google-unternehmensprofil-verifizieren/', label: 'Google Unternehmensprofil verifizieren' },
+  gesperrt:   { href: '/ratgeber/google-unternehmensprofil-gesperrt/', label: 'Google Unternehmensprofil gesperrt: Hilfe' },
+  beitraege:  { href: '/ratgeber/google-unternehmensprofil-beitraege/', label: 'Beiträge im Google Unternehmensprofil richtig nutzen' },
+  optimieren: { href: '/ratgeber/google-unternehmensprofil-optimieren/', label: 'Google Unternehmensprofil optimieren' },
+  mehrBew:    { href: '/ratgeber/mehr-google-bewertungen-bekommen/', label: 'Mehr Google-Bewertungen bekommen: 7 erlaubte Wege' },
+  loeschen:   { href: '/ratgeber/google-bewertung-loeschen-lassen/', label: 'Google-Bewertung löschen lassen: Was wirklich geht' },
+  ki:         { href: '/ratgeber/ki-sichtbarkeit-lokale-unternehmen/', label: 'KI-Sichtbarkeit für lokale Unternehmen' },
+  top3:       { href: '/ratgeber/google-maps-top-3-ranking/', label: 'Top 3 bei Google Maps: So funktioniert das Ranking' },
+  bewMgmt:    { href: '/bewertungsmanagement/', label: 'Bewertungsmanagement von Lokalbesucher' },
+  kiCheck:    { href: '/ki-sichtbarkeits-check/', label: 'KI-Sichtbarkeits-Check (kostenlos)' },
+  ads:        { href: '/google-ads/', label: 'Google Ads für lokale Unternehmen' }
+};
+
+export const NEWS = [
+
+{
+  slug: '2026-09-google-foto-verifizierung-test', date: '2026-09-04',
+  platform: 'google', topic: 'unternehmensprofile', hub: false,
+  title: 'Google testet Foto-Verifizierung fürs Unternehmensprofil',
+  metaDesc: 'Seit 4. September 2026 zeigt Google bei einzelnen Profilen eine Foto-Verifizierung als Bestätigungsmethode. Was bekannt ist und welche Fotos du jetzt bereitlegst.',
+  teaser: 'Neben Video, Postkarte, Telefon und E-Mail taucht bei einzelnen Profilen eine sechste Methode auf. Ein Test, noch nicht flächendeckend.',
+  summary: 'Seit dem 4. September 2026 wird bei einzelnen Google Unternehmensprofilen eine <strong>Foto-Verifizierung</strong> als Bestätigungsmethode angezeigt. Google hat die Methode nicht offiziell angekündigt, die Hilfeseite nennt weiterhin fünf Wege. Es handelt sich um einen Test. Welche Methode du bekommst, entscheidet Google automatisch. Halte Außenfoto, Schild und Innenansicht in guter Qualität bereit.',
+  body: `        <h2 id="was-ist-neu">Was ist neu?</h2>
+        <p>Bei einzelnen Profilen erscheint seit dem 4. September 2026 im Verifizierungsdialog die Option, statt eines Videos mehrere Fotos hochzuladen: Außenansicht mit Firmenschild, Innenraum, Arbeitsmittel oder Fahrzeugbeschriftung. Die offizielle Google-Hilfe listet weiterhin nur fünf Methoden: Telefon oder SMS, E-Mail, Live-Videoanruf, Postkarte und Videoaufnahme.</p>
+        <h2 id="fuer-wen">Für wen gilt das?</h2>
+        <p>Für niemanden verlässlich. Google ermittelt die möglichen Bestätigungsmethoden automatisch, du kannst sie nicht auswählen. Wer die Foto-Option sieht, sollte sie nutzen, weil sie schneller ist als ein Video. Wer sie nicht sieht, muss weiter mit Video rechnen, das laut Experten-Konsens seit 2025 die häufigste Methode ist.</p>
+        <h2 id="was-tun">Was solltest du jetzt tun?</h2>
+        <ul>
+          <li>Fotos vorab machen: Ladenfront mit Schild, Eingang, Innenraum, bei Handwerkern das beschriftete Fahrzeug.</li>
+          <li>Name und Adresse müssen exakt so auf den Fotos zu sehen sein wie im Profil. Abweichungen sind der häufigste Ablehnungsgrund, auch beim Video.</li>
+          <li>Keine KI-generierten oder Stock-Fotos hochladen. Das gilt als Verstoß und kann das Profil sperren.</li>
+        </ul>
+        <p>Die Prüfung dauert laut Google bis zu fünf Arbeitstage. Wenn Google dich mehrfach zur Verifizierung auffordert, ist das normal und kein Zeichen für ein Problem.</p>`,
+  impact: 'Fotos von Schild, Eingang und Innenraum vorab bereitlegen, Name und Adresse müssen mit dem Profil übereinstimmen.',
+  sources: [
+    { label: 'Google-Hilfe: Unternehmensprofil bestätigen', url: 'https://support.google.com/business/answer/7107242?hl=de' }
+  ],
+  keywords: ['Google Unternehmensprofil', 'Verifizierung', 'Foto-Verifizierung', 'Bestätigungsmethode'],
+  related: [R.verify, R.gesperrt, R.hub]
+},
+
+{
+  slug: '2026-09-google-tell-maps-beitragsfunktion', date: '2026-09-02',
+  platform: 'google', topic: 'unternehmensprofile', hub: true,
+  hubWhat: '„Tell Maps": Nutzer schlagen Änderungen an deinem Profil per Foto oder Chat vor',
+  title: '„Tell Maps": Nutzer ändern dein Profil jetzt per Chat',
+  metaDesc: 'Google startet „Tell Maps": Nutzer schlagen Profiländerungen per Chat oder Foto vor, etwa neue Öffnungszeiten. Warum du Vorschläge jetzt wöchentlich prüfen musst.',
+  teaser: 'Ein Foto vom Schild reicht, und Google schlägt neue Öffnungszeiten für dein Profil vor. Gut für die Datenqualität, riskant für unbeaufsichtigte Profile.',
+  summary: 'Am 2. September 2026 hat Google „Tell Maps" vorgestellt: Nutzer können Änderungen an Unternehmensprofilen <strong>konversationell vorschlagen</strong>, zum Beispiel neue Öffnungszeiten per Foto des Türschilds. Die KI liest die Daten aus und legt einen Änderungsvorschlag an. Für Inhaber heißt das: Vorschläge landen häufiger im Profil und können ohne Reaktion übernommen werden. Wöchentliche Kontrolle wird Pflicht.',
+  body: `        <h2 id="was-ist-neu">Was ist neu?</h2>
+        <p>Bisher mussten Nutzer Änderungen an einem Profil über das Formular „Änderung vorschlagen" eingeben. Mit „Tell Maps" reicht ein Satz oder ein Foto: „Der Laden hat jetzt bis 20 Uhr auf" plus Foto vom Schild, und Google erstellt daraus einen strukturierten Vorschlag. Die Funktion nutzt Gemini und ist Teil des KI-Umbaus von Google Maps, zu dem auch „Ask Maps" gehört, das seit März 2026 in den USA und Indien läuft.</p>
+        <h2 id="warum-relevant">Warum ist das für lokale Betriebe relevant?</h2>
+        <p>Google übernimmt Nutzervorschläge schon heute teilweise ohne Bestätigung des Inhabers, wenn das Profil nicht aktiv gepflegt wird. Mit einer niedrigeren Hürde für Vorschläge steigt die Zahl der Änderungen. Falsche Öffnungszeiten sind dabei der häufigste Fehler und kosten direkt Kunden: „geöffnet zur Suchzeit" ist laut den Local Search Ranking Factors 2026 ein Top-5-Rankingfaktor.</p>
+        <h2 id="was-tun">Was solltest du jetzt tun?</h2>
+        <ul>
+          <li>Im Profil-Dashboard mindestens einmal pro Woche auf „Vorgeschlagene Änderungen" prüfen und ablehnen, was falsch ist.</li>
+          <li>Öffnungszeiten inklusive Feiertage selbst aktuell halten. Wo du korrekt bist, gibt es nichts vorzuschlagen.</li>
+          <li>Das Türschild mit den Zeiten im Profil abgleichen. Genau dieses Schild wird künftig fotografiert.</li>
+        </ul>
+        <p>Ein Starttermin für Deutschland ist nicht genannt. Der Ausbau von Ask Maps und Tell Maps läuft laut Google „in den kommenden Monaten".</p>`,
+  impact: 'Vorgeschlagene Änderungen wöchentlich prüfen, Öffnungszeiten und Türschild abgleichen.',
+  sources: [
+    { label: 'Search Engine Roundtable: Google Tell Maps', url: 'https://www.seroundtable.com/google-tell-maps-42001.html' },
+    { label: 'Google-Blog: Ask Maps und Immersive Navigation', url: 'https://blog.google/products-and-platforms/products/maps/ask-maps-immersive-navigation/' }
+  ],
+  keywords: ['Tell Maps', 'Google Maps', 'Öffnungszeiten', 'Änderungsvorschläge', 'Gemini'],
+  related: [R.optimieren, R.hub, R.top3]
+},
+
+{
+  slug: '2026-08-google-beitrags-statistiken-zurueck', date: '2026-08-20',
+  platform: 'google', topic: 'unternehmensprofile', hub: false,
+  title: 'Beitrags-Statistiken im Unternehmensprofil sind zurück',
+  metaDesc: 'Seit 20. August 2026 zeigt Google wieder Aufrufe und Klicks pro Beitrag im Unternehmensprofil. So liest du die Zahlen und findest die Beiträge, die sich lohnen.',
+  teaser: 'Monatelang gab es keine Zahlen zu Beiträgen. Jetzt siehst du wieder Aufrufe und Klicks pro Beitrag.',
+  summary: 'Seit dem 20. August 2026 zeigt das Google Unternehmensprofil wieder <strong>Aufrufe und Klicks pro Beitrag</strong>. Die Statistiken waren über Monate verschwunden, nachdem Google den Bereich „Updates" in „Beiträge" umbenannt und in einen zentralen Veröffentlichungen-Hub verschoben hatte. Jetzt kannst du wieder messen, welche Beitragstypen Reaktionen auslösen und den Redaktionsplan danach ausrichten.',
+  body: `        <h2 id="was-ist-neu">Was ist neu?</h2>
+        <p>Im Profil-Dashboard stehen unter jedem Beitrag wieder zwei Zahlen: wie oft er angezeigt und wie oft der Button geklickt wurde. Die Daten fehlten seit dem Umbau der Beitragsfunktion. Im April 2025 waren Beiträge zeitweise sogar komplett aus den Profilen verschwunden, damals ein Fehler bei Google.</p>
+        <h2 id="wie-nutzen">Wie nutzt du die Zahlen?</h2>
+        <p>Beiträge sind laut Ranking-Studien nur ein schwacher Rankingfaktor, aber ein sichtbares Lebenszeichen und ein Klickmagnet. Mit den Statistiken siehst du, welche Formate funktionieren:</p>
+        <ul>
+          <li>Angebote mit klarem Preis und Enddatum erzielen in unseren Kundenprofilen die höchste Klickrate.</li>
+          <li>Reine Bild-Updates ohne Button bekommen Aufrufe, aber kaum Klicks.</li>
+          <li>Beiträge, die nach 7 Tagen keine Aufrufe zeigen, wurden oft von Google abgelehnt. Im Dashboard prüfen.</li>
+        </ul>
+        <h2 id="was-tun">Was solltest du jetzt tun?</h2>
+        <p>Vier Beiträge pro Monat sind ein realistischer Rhythmus. Vergleiche nach vier Wochen die Klicks je Typ und streiche, was nicht läuft. Welche Beitragstypen es gibt, welche Bildmaße gelten und wie lange Beiträge sichtbar bleiben, steht im Ratgeber zu Beiträgen.</p>`,
+  impact: 'Klicks pro Beitrag auswerten und den Redaktionsplan an den erfolgreichen Formaten ausrichten.',
+  sources: [
+    { label: 'Sterling Sky: Timeline der Google-Local-Änderungen', url: 'https://www.sterlingsky.ca/google-local-changes/' },
+    { label: 'Search Engine Roundtable: Updates werden zu Beiträgen', url: 'https://www.seroundtable.com/google-business-profiles-changes-add-updates-to-posts-39582.html' }
+  ],
+  keywords: ['Google Beiträge', 'Beitrags-Statistiken', 'Google Unternehmensprofil', 'Aufrufe', 'Klicks'],
+  related: [R.beitraege, R.optimieren, R.hub]
+},
+
+{
+  slug: '2026-08-google-inhaberantwort-melden', date: '2026-08-14',
+  platform: 'google', topic: 'bewertungen', hub: true,
+  hubWhat: 'Neue Meldeoption „Inhaberantwort melden": Kunden können deine Antworten auf Bewertungen melden',
+  title: 'Neu bei Google: Kunden können Inhaberantworten melden',
+  metaDesc: 'Seit 14. August 2026 können Kunden Inhaberantworten auf Google-Bewertungen melden. Welche Antworten jetzt riskant sind und wie du auf Kritik richtig reagierst.',
+  teaser: 'Bisher konnten nur Bewertungen gemeldet werden. Jetzt auch deine Antwort darauf. Wer auf Kritik ausfällig reagiert, riskiert die Entfernung der Antwort.',
+  summary: 'Seit dem 14. August 2026 gibt es in Google-Bewertungen die Option <strong>„Inhaberantwort melden"</strong>. Nutzer können damit Antworten von Unternehmen als beleidigend, werblich oder datenschutzwidrig markieren. Google prüft und entfernt gemeldete Antworten. Für Inhaber heißt das: sachlich bleiben, keine Kundendaten in der Antwort nennen, keine Drohungen. Jede Antwort ist öffentlich und wird jetzt auch geprüft.',
+  body: `        <h2 id="was-ist-neu">Was ist neu?</h2>
+        <p>Neben jeder Inhaberantwort erscheint im Menü der Punkt „Inhaberantwort melden". Die Meldegründe entsprechen denen für Bewertungen: Beleidigung, Belästigung, persönliche Daten, Werbung, Themenfremdes. Google entfernt die Antwort bei Verstoß, die Bewertung bleibt stehen.</p>
+        <h2 id="welche-antworten-riskant">Welche Antworten sind jetzt riskant?</h2>
+        <ul>
+          <li>Antworten, die den Kunden namentlich nennen, seine Bestellung, Behandlung oder Rechnung offenlegen. Das verstößt gegen die Datenschutzregeln und bei Ärzten zusätzlich gegen die Schweigepflicht.</li>
+          <li>Antworten, die dem Bewerter Lügen oder Konkurrenz-Auftrag unterstellen, ohne Beleg.</li>
+          <li>Antworten mit Rabattcodes oder Werbung für andere Leistungen.</li>
+        </ul>
+        <h2 id="wie-antworten">Wie antwortest du richtig auf Kritik?</h2>
+        <p>Danken, Bedauern in einem Satz, Lösung anbieten, ins Private verlagern: „Ruf uns bitte unter … an, wir klären das." Maximal vier Sätze. Wer die Antwort in unter 60 Minuten liefert, zeigt späteren Lesern, dass hier jemand hinschaut, das wirkt stärker als die Kritik selbst. Bei rechtswidrigen Bewertungen bleibt der Meldeweg über das Reviews Management Tool; wir stellen pro Kunde einen Löschantrag pro Woche.</p>`,
+  impact: 'Antworten auf Bewertungen sachlich halten, keine Kundendaten nennen, keine Unterstellungen.',
+  sources: [
+    { label: 'Sterling Sky: Timeline der Google-Local-Änderungen', url: 'https://www.sterlingsky.ca/google-local-changes/' }
+  ],
+  keywords: ['Google Bewertungen', 'Inhaberantwort', 'Bewertung melden', 'Reputationsmanagement'],
+  related: [R.loeschen, R.mehrBew, R.bewMgmt]
+},
+
+{
+  slug: '2026-08-ki-uebersichten-lokale-listicles', date: '2026-08-12',
+  platform: 'ki-suche', topic: 'local-seo', hub: false,
+  title: 'KI-Übersichten zitieren bei lokalen Suchen vor allem Listicles',
+  metaDesc: 'KI-Übersichten zitieren bei lokalen Suchen vor allem „Die besten 10"-Listen, oft selbstwerbend. Was das für dein Ranking heißt und wie du in solche Listen kommst.',
+  teaser: 'Wer bei „bester Zahnarzt in Bochum" in der KI-Übersicht auftaucht, steht meist in einer Top-10-Liste. Nicht in den Top 3 von Maps.',
+  summary: 'Eine Auswertung vom 12. August 2026 zeigt: Googles <strong>KI-Übersichten zitieren bei lokalen Suchanfragen überwiegend Listicles</strong>, also „Die 10 besten …"-Artikel, darunter viele minderwertige und selbstwerbende Seiten. Das Google-Maps-Ranking und die Profildaten spielen für die Zitate eine kleinere Rolle als erwartet. Für lokale Betriebe wird die Erwähnung in solchen Listen zum eigenen Sichtbarkeitsfaktor.',
+  body: `        <h2 id="was-wurde-beobachtet">Was wurde beobachtet?</h2>
+        <p>Bei Suchen wie „bestes italienisches Restaurant in [Stadt]" zeigt die KI-Übersicht eine Auswahl an Betrieben und verlinkt als Quellen fast ausschließlich Ranglisten-Artikel von Blogs, Portalen und Agenturen. Teilweise stammen die Listen von Anbietern, die sich selbst auf Platz 1 setzen. Das deckt sich mit einer Ahrefs-Auswertung vom März 2026, nach der nur noch 37,9 Prozent der Zitate in KI-Übersichten aus den Top 10 der klassischen Suche kommen, vorher waren es 76 Prozent.</p>
+        <h2 id="was-heisst-das">Was heißt das für lokale Betriebe?</h2>
+        <p>Das Google Unternehmensprofil bleibt die Datenbasis für Sterne, Öffnungszeiten und Adresse in der KI-Antwort. Ob du aber überhaupt genannt wirst, hängt zunehmend davon ab, ob dich Dritte im Web empfehlen. Eine Ahrefs-Studie über 75.000 Marken vom Mai 2026 fand die stärkste Korrelation zur KI-Sichtbarkeit bei YouTube-Erwähnungen und Web-Erwähnungen, Backlinks spielen kaum eine Rolle.</p>
+        <h2 id="was-tun">Was solltest du jetzt tun?</h2>
+        <ul>
+          <li>Prüfe, in welchen Listen und Portalen deine Branche in deiner Stadt genannt wird, und bewirb dich um Aufnahme, wo es redaktionell ist.</li>
+          <li>Teste mit dem kostenlosen KI-Sichtbarkeits-Check, ob ChatGPT, Claude und Gemini dich bereits empfehlen.</li>
+          <li>Halte Profil, Verzeichnisse und Website widerspruchsfrei. KIs streichen Betriebe mit widersprüchlichen Daten.</li>
+        </ul>`,
+  impact: 'Erwähnungen in lokalen Ranglisten und Portalen aktiv aufbauen, KI-Sichtbarkeit regelmäßig testen.',
+  sources: [
+    { label: 'Search Engine Roundtable: AI Overviews und lokale Listicles', url: 'https://www.seroundtable.com/google-ai-overview-local-results-listicles-41854.html' },
+    { label: 'Ahrefs: Zitate in AI Overviews', url: 'https://ahrefs.com/blog/ai-overview-citations-top-10' },
+    { label: 'Ahrefs: Was mit KI-Sichtbarkeit korreliert', url: 'https://ahrefs.com/blog/ai-overview-brand-correlation/' }
+  ],
+  keywords: ['KI-Übersichten', 'AI Overviews', 'lokale Suche', 'KI-Sichtbarkeit', 'Listicles'],
+  related: [R.ki, R.kiCheck, R.top3]
+},
+
+{
+  slug: '2026-08-google-zweisprachige-firmennamen-verboten', date: '2026-08-10',
+  platform: 'google', topic: 'unternehmensprofile', hub: false,
+  title: 'Google verbietet doppelte Firmennamen in zwei Sprachen',
+  metaDesc: 'Seit 10. August 2026 verbietet Google zweisprachig wiederholte Firmennamen, auch wenn sie so am Schild stehen. Was erlaubt bleibt und wie du den Namen anpasst.',
+  teaser: 'Ein Name, eine Sprache. Wer den Firmennamen zweisprachig wiederholt, riskiert eine Sperre, selbst wenn das Schild genauso aussieht.',
+  summary: 'Google hat am 10. August 2026 die Namensrichtlinie erweitert: <strong>Wiederholte zweisprachige Namen und Transliterationen sind verboten</strong>, zum Beispiel „Restaurant Athen Εστιατόριο Αθήνα". Das gilt auch, wenn der Name so am Ladenschild steht. Erlaubt bleibt ein Name in einer Sprache oder ein echter Eigenname, der Wörter aus zwei Sprachen enthält. Betroffene Profile sollten den Namen jetzt selbst korrigieren, bevor Google sperrt.',
+  body: `        <h2 id="was-ist-neu">Was ist neu?</h2>
+        <p>Die Richtlinie zum Firmennamen verlangte schon immer den „echten Namen, wie er in der realen Welt verwendet wird", ohne Zusätze wie Ort, Leistung oder Slogan. Neu ist der ausdrückliche Passus gegen Wiederholungen des Namens in einer zweiten Sprache oder Schrift. Google begründet das mit der Lesbarkeit in Maps und mit Missbrauch: Der doppelte Name wurde oft genutzt, um zusätzliche Keywords unterzubringen.</p>
+        <h2 id="was-bleibt-erlaubt">Was bleibt erlaubt?</h2>
+        <ul>
+          <li>Ein Name in einer Sprache, auch in nicht-lateinischer Schrift.</li>
+          <li>Ein Eigenname, der von Natur aus zwei Sprachen mischt, etwa „Café Istanbul".</li>
+          <li>Die zweite Sprachfassung in der Beschreibung oder als Leistung, nicht im Namen.</li>
+        </ul>
+        <h2 id="was-tun">Was solltest du jetzt tun?</h2>
+        <p>Namen im Profil prüfen und die Wiederholung streichen. Eine Namensänderung kann eine erneute Verifizierung auslösen, das ist normal. Wer wartet, bis Google eingreift, riskiert eine Sperre mit Einspruchsverfahren, das bis zu zwei Wochen dauert. In unseren Kundenprofilen betrifft das vor allem Gastronomie und Lebensmittelhandel mit türkischen, griechischen und arabischen Namen.</p>`,
+  impact: 'Firmennamen auf eine Sprachfassung reduzieren, sonst droht eine Sperre.',
+  sources: [
+    { label: 'Search Engine Roundtable: Bilingual Names nicht mehr erlaubt', url: 'https://www.seroundtable.com/google-business-profiles-disallows-repeated-bilingual-names-41839.html' },
+    { label: 'Google-Hilfe: Richtlinien für Unternehmensprofile', url: 'https://support.google.com/business/answer/3038177?hl=de' }
+  ],
+  keywords: ['Firmenname', 'Google Unternehmensprofil', 'Namensrichtlinie', 'zweisprachig', 'Sperre'],
+  related: [R.gesperrt, R.optimieren, R.hub]
+},
+
+{
+  slug: '2026-08-google-local-services-ads-migration', date: '2026-08-01',
+  platform: 'google', topic: 'werbeanzeigen', hub: false,
+  title: 'Local Services Ads wandern in Google Ads',
+  metaDesc: 'Google überführt Local Services Ads in Google Ads: Pay-per-Lead über Performance Max, USA ab August 2026, andere Länder 2027. Was Betriebe in Deutschland jetzt tun.',
+  teaser: 'Die Anzeigen mit Google-Garantie-Siegel bekommen ein neues Zuhause. Für Deutschland ist 2027 relevant, vorbereiten kannst du dich jetzt.',
+  summary: 'Google migriert die <strong>Local Services Ads (LSA) in Google Ads</strong>: Die Kampagnen laufen künftig als Pay-per-Lead-Variante von Performance Max. In den USA startet die Umstellung im August 2026, Konten außerhalb der USA folgen 2027. Gleichzeitig wächst die Zahl der Buchungspartner von rund 20 auf über 500, und Anzeigen können schon vor der Vergabe des Garantie-Siegels laufen.',
+  body: `        <h2 id="was-ist-neu">Was ist neu?</h2>
+        <p>Local Services Ads waren bisher ein eigenes Produkt mit eigenem Dashboard und Abrechnung pro Lead. Google führt sie jetzt in die Google-Ads-Oberfläche über. Die Abrechnung bleibt pro Lead, die Steuerung übernimmt Performance Max. Neu sind Anzeigen ohne Siegel („Pre-Badge"), mehr Buchungspartner und die Verbindung mit den übrigen Kampagnen im selben Konto.</p>
+        <h2 id="deutschland">Was heißt das für Deutschland?</h2>
+        <p>In Deutschland sind Local Services Ads bisher nur in wenigen Branchen verfügbar. Die Migration für Nicht-US-Konten ist für 2027 angekündigt. Wer die Anzeigen heute schon nutzt, muss nichts tun. Wer sie nicht nutzt, sollte sich auf das Modell vorbereiten: Lead-Anzeigen gewinnen an Gewicht. Sterling Sky maß im Juni 2026, dass LSA in den USA bereits bei 31 Prozent der lokalen Suchanfragen erscheinen, im Vorjahr waren es 11 Prozent.</p>
+        <h2 id="was-tun">Was solltest du jetzt tun?</h2>
+        <ul>
+          <li>Google-Ads-Konto und Unternehmensprofil verknüpfen, das ist die Grundlage für alle lokalen Anzeigenformate.</li>
+          <li>Bewertungsstand pflegen. Bei Lead-Anzeigen entscheidet die Sternebewertung sichtbar über den Klick.</li>
+          <li>Anruf- und Formular-Tracking sauber aufsetzen, sonst kannst du Leads später nicht bewerten.</li>
+        </ul>`,
+  impact: 'Google Ads und Unternehmensprofil verknüpfen, Lead-Tracking aufsetzen, Migration in Deutschland ab 2027.',
+  sources: [
+    { label: 'Google Ads-Hilfe: Local Services Ads in Google Ads', url: 'https://support.google.com/google-ads/answer/17213585' },
+    { label: 'Search Engine Journal: Google bringt LSA in Google Ads', url: 'https://www.searchenginejournal.com/google-is-bringing-local-services-ads-into-google-ads/582816/' },
+    { label: 'Sterling Sky: State of Local SEO 2026', url: 'https://www.sterlingsky.ca/the-state-of-local-seo-in-2026/' }
+  ],
+  keywords: ['Local Services Ads', 'Google Ads', 'Performance Max', 'Pay-per-Lead', 'lokale Anzeigen'],
+  related: [R.ads, R.hub, R.top3]
+},
+
+{
+  slug: '2026-07-google-einspruch-nachweise-im-formular', date: '2026-07-08',
+  platform: 'google', topic: 'unternehmensprofile', hub: true,
+  hubWhat: 'Einspruch bei Sperrungen: Nachweise werden direkt im Formular hochgeladen',
+  title: 'Profil gesperrt: Nachweise jetzt direkt im Einspruch hochladen',
+  metaDesc: 'Seit 8. Juli 2026 lädst du Nachweise für gesperrte Profile direkt im Einspruchsformular hoch, das 60-Minuten-Fenster ist weg. Welche Dokumente Google akzeptiert.',
+  teaser: 'Das Nachreichen von Belegen innerhalb von 60 Minuten hat viele Einsprüche scheitern lassen. Das ist vorbei.',
+  summary: 'Seit dem 8. Juli 2026 lassen sich <strong>Nachweise direkt im Einspruchsformular</strong> für gesperrte Google Unternehmensprofile hochladen. Vorher schickte Google nach dem Einspruch ein separates Formular, das nur 60 Minuten offen blieb. Akzeptiert werden Gewerbeanmeldung, Handelsregisterauszug, Mietvertrag oder Rechnung mit Adresse sowie Fotos von Schild und Ladenfront. Die Bearbeitung dauert bis zu fünf Werktage.',
+  body: `        <h2 id="was-ist-neu">Was ist neu?</h2>
+        <p>Der Einspruch bei einer Sperrung läuft weiter über das Google-Formular „Einspruch einlegen". Neu ist der Upload-Schritt direkt darin. Das alte Verfahren mit dem zeitlich befristeten Nachreichen war der häufigste Grund, warum Einsprüche ohne Prüfung abgelehnt wurden: Wer die E-Mail zu spät sah, hatte verloren.</p>
+        <h2 id="welche-nachweise">Welche Nachweise akzeptiert Google?</h2>
+        <ul>
+          <li>Gewerbeanmeldung oder Handelsregisterauszug mit der Profiladresse.</li>
+          <li>Mietvertrag, Strom- oder Telefonrechnung auf Firmenname und Adresse, nicht älter als drei Monate.</li>
+          <li>Fotos von Außenschild, Ladenfront und Innenraum, bei Einzugsgebiets-Betrieben das beschriftete Fahrzeug.</li>
+        </ul>
+        <p>Wichtig: Name und Adresse auf den Dokumenten müssen exakt mit dem Profil übereinstimmen. Es gibt nur einen Einspruch. Wird er abgelehnt, folgt eine „zusätzliche Prüfung" mit neuen Nachweisen, die ein bis zwei Wochen dauert.</p>
+        <h2 id="haeufigste-gruende">Was sind die häufigsten Sperrgründe 2026?</h2>
+        <p>Laut der Whitespark-Risikoanalyse 2026 führen vor allem eine angezeigte Adresse bei reinen Einzugsgebiets-Betrieben, überlappende Einzugsgebiete mehrerer Profile, Einzugsgebiete mit über zwei Stunden Fahrzeit, KI-generierte Fotos und Keyword-Stuffing in der Beschreibung zur Sperre. Wer eine Sperre vermeiden will, prüft diese fünf Punkte zuerst.</p>`,
+  impact: 'Gewerbeanmeldung, Außenfoto und Rechnung vorab bereitlegen, es gibt nur einen Einspruch.',
+  sources: [
+    { label: 'Google-Hilfe: Einspruch bei Sperrung', url: 'https://support.google.com/business/answer/4569145?hl=de' },
+    { label: 'Digital Applied: Evidence Uploads im Einspruch 2026', url: 'https://www.digitalapplied.com/blog/google-business-profile-appeal-evidence-uploads-2026' }
+  ],
+  keywords: ['Google Unternehmensprofil gesperrt', 'Einspruch', 'Nachweise', 'Sperrung', 'Wiederherstellung'],
+  related: [R.gesperrt, R.verify, R.hub]
+},
+
+{
+  slug: '2026-06-state-of-local-seo-ki-local-packs', date: '2026-06-26',
+  platform: 'ki-suche', topic: 'local-seo', hub: false,
+  title: 'Studie: KI-Local-Packs zeigen nur ein Drittel der Betriebe',
+  metaDesc: 'Sterling Sky „State of Local SEO 2026": KI-Local-Packs bei 7 % der Suchen, nur 32 % so viele Betriebe sichtbar, Local-Pack-Anzeigen von 1 auf 22 %.',
+  teaser: 'Weniger Plätze, mehr Anzeigen: Die wichtigste Local-SEO-Studie des Jahres zeigt, wie eng es im lokalen Ergebnis geworden ist.',
+  summary: 'Die Studie „State of Local SEO 2026" von Sterling Sky vom 26. Juni 2026 zeigt: <strong>KI-gestützte Local Packs erscheinen bei rund 7 Prozent der lokalen Suchen</strong> (USA, mobil) und zeigen nur 32 Prozent so viele Unternehmen wie das klassische Local Pack. In 88 Prozent von 322 untersuchten Märkten sind weniger Betriebe sichtbar. Anzeigen im Local Pack stiegen von 1 auf 22 Prozent der Suchanfragen.',
+  body: `        <h2 id="die-zahlen">Was sind die wichtigsten Zahlen?</h2>
+        <div class="statbox">
+          <div><div class="n">7&nbsp;%</div><p>der lokalen Suchen (USA, mobil) zeigen ein KI-Local-Pack statt des klassischen Dreierpacks</p></div>
+          <div><div class="n">32&nbsp;%</div><p>so viele Unternehmen sind im KI-Local-Pack sichtbar wie im klassischen</p></div>
+          <div><div class="n">22&nbsp;%</div><p>der Suchen zeigen Anzeigen im Local Pack, ein Jahr zuvor 1 Prozent</p></div>
+          <div><div class="n">31&nbsp;%</div><p>der Suchen zeigen Local Services Ads, ein Jahr zuvor 11 Prozent</p></div>
+        </div>
+        <h2 id="was-heisst-das">Was heißt das für lokale Betriebe in Deutschland?</h2>
+        <p>Die Daten stammen aus den USA, wo Google neue Formate zuerst ausrollt. Der KI-Modus ist seit Oktober 2025 auch in Deutschland aktiv, KI-Übersichten seit März 2025. Die Richtung ist damit klar: Weniger organische Plätze, mehr bezahlte. Wer heute in den Top 3 steht, hat keine Garantie, im KI-Pack aufzutauchen. Die dort gezeigten Betriebe haben laut einer SOCi-Auswertung über 350.000 Standorte im Schnitt 4,3 Sterne.</p>
+        <h2 id="was-tun">Was solltest du jetzt tun?</h2>
+        <ul>
+          <li>Bewertungsschnitt über 4,3 halten und Bewertungen laufend frisch nachziehen. Das ist der sichtbarste Filter für die KI-Auswahl.</li>
+          <li>Profil vollständig ausfüllen, besonders Leistungen und Attribute. KI-Antworten greifen genau darauf zu.</li>
+          <li>Ein Budget für Local-Pack-Anzeigen einplanen, wenn organisch die Plätze knapp werden.</li>
+        </ul>`,
+  impact: 'Bewertungsschnitt über 4,3 halten, Profil komplett ausfüllen, Anzeigenbudget fürs Local Pack einplanen.',
+  sources: [
+    { label: 'Sterling Sky: The State of Local SEO in 2026', url: 'https://www.sterlingsky.ca/the-state-of-local-seo-in-2026/' },
+    { label: 'Search Engine Land: SOCi AI Local Visibility Report 2026', url: 'https://searchengineland.com/ai-local-visibility-report-2026-468085' }
+  ],
+  keywords: ['Local SEO', 'KI-Modus', 'Local Pack', 'Studie 2026', 'lokale Sichtbarkeit'],
+  related: [R.top3, R.ki, R.kiCheck]
+},
+
+{
+  slug: '2026-06-google-gemini-verknuepfung-nicht-in-deutschland', date: '2026-06-11',
+  platform: 'google', topic: 'unternehmensprofile', hub: false,
+  title: 'Gemini im Unternehmensprofil: In Deutschland nicht verfügbar',
+  metaDesc: 'Google verknüpft seit 11. Juni 2026 Gemini mit dem Unternehmensprofil: Bewertungen beantworten, Daten ändern. In Deutschland ist die Funktion gesperrt.',
+  teaser: 'Gemini beantwortet Bewertungen und ändert Öffnungszeiten per Chat. Klingt gut, gilt aber nicht für Betriebe im Europäischen Wirtschaftsraum.',
+  summary: 'Seit dem 11. Juni 2026 können Inhaber ihr Google Unternehmensprofil mit der Gemini-App verknüpfen und per Chat Bewertungen beantworten, Daten ändern und Leistungskennzahlen abfragen. Laut Google-Hilfe ist die Funktion <strong>„weltweit verfügbar, außer im EWR und in Großbritannien"</strong>. Für deutsche Betriebe gibt es den KI-Assistenten im Profil damit vorerst nicht, auch wenn Deutsch als Sprache unterstützt wird.',
+  body: `        <h2 id="was-ist-neu">Was kann die Verknüpfung?</h2>
+        <p>Wer sein Profil mit Gemini verbindet, kann im Chat sagen: „Antworte auf die neue 3-Sterne-Bewertung freundlich und biete ein Gespräch an" oder „Wie viele Anrufe hatte ich im Mai?". Gemini greift dafür auf die Profildaten zu. Einschränkungen laut Google: nur ein Profil pro Konto, nur mit privatem Google-Konto, nur im Web.</p>
+        <h2 id="warum-nicht-deutschland">Warum nicht in Deutschland?</h2>
+        <p>Google nennt keinen Grund. Die Sperre für den Europäischen Wirtschaftsraum und Großbritannien deckt sich mit anderen KI-Funktionen, die Google in Europa verzögert oder nicht startet, meist wegen DSGVO, KI-Verordnung und Digital Markets Act. Ein Termin für den EWR ist nicht angekündigt. Viele deutsche Ratgeber beschreiben die Funktion trotzdem als verfügbar, das ist falsch.</p>
+        <h2 id="was-geht">Welche KI-Funktionen gibt es im deutschen Profil?</h2>
+        <ul>
+          <li>„Beschreibung vorschlagen": Google generiert einen Textvorschlag für die Profilbeschreibung.</li>
+          <li>Bewertungszusammenfassungen: Google fasst den Tenor deiner Bewertungen mit Gemini zusammen, sichtbar für Kunden.</li>
+          <li>Externe Werkzeuge: Bewertungsantworten per KI sind auch ohne die Google-Verknüpfung möglich, wir liefern sie in unter 60 Minuten.</li>
+        </ul>`,
+  impact: 'Kein KI-Assistent im Profil für deutsche Betriebe, Bewertungsantworten laufen über externe Werkzeuge.',
+  sources: [
+    { label: 'Google-Hilfe: Unternehmensprofil mit Gemini verknüpfen', url: 'https://support.google.com/business/answer/17142585?hl=de' },
+    { label: 'Google-Blog: Gemini-Funktionen für Unternehmen', url: 'https://blog.google/innovation-and-ai/products/gemini-app/gemini-features-for-businesses/' }
+  ],
+  keywords: ['Gemini', 'Google Unternehmensprofil', 'KI-Assistent', 'EWR', 'nicht verfügbar'],
+  related: [R.hub, R.bewMgmt, R.ki]
+},
+
+{
+  slug: '2026-05-ahrefs-studie-erwaehnungen-ki-sichtbarkeit', date: '2026-05-26',
+  platform: 'ki-suche', topic: 'local-seo', hub: false,
+  title: 'Ahrefs-Studie: Erwähnungen schlagen Backlinks bei KI-Sichtbarkeit',
+  metaDesc: 'Ahrefs-Studie über 75.000 Marken: YouTube-Erwähnungen (0,737) und Web-Erwähnungen (0,664) korrelieren am stärksten mit KI-Sichtbarkeit, Backlinks nur mit 0,218.',
+  teaser: 'Zwanzig Jahre lang zählten Links. Für ChatGPT, Gemini und KI-Übersichten zählt, wer über dich spricht.',
+  summary: 'Ahrefs hat am 26. Mai 2026 die Sichtbarkeit von 75.000 Marken in KI-Antworten untersucht. <strong>YouTube-Erwähnungen korrelieren mit 0,737 am stärksten</strong> mit KI-Sichtbarkeit, Web-Erwähnungen mit 0,664, Backlinks nur mit 0,218. Für lokale Betriebe heißt das: Videos, Presse, Portale und Verzeichnisse mit Namensnennung wirken stärker als klassischer Linkaufbau. Widerspruchsfreie Daten in allen Quellen sind Voraussetzung.',
+  body: `        <h2 id="die-zahlen">Was hat Ahrefs gemessen?</h2>
+        <div class="statbox">
+          <div><div class="n">0,737</div><p>Korrelation zwischen YouTube-Erwähnungen und Sichtbarkeit in KI-Antworten</p></div>
+          <div><div class="n">0,664</div><p>Korrelation für Erwähnungen auf Websites, auch ohne Link</p></div>
+          <div><div class="n">0,218</div><p>Korrelation für klassische Backlinks</p></div>
+        </div>
+        <p>Untersucht wurden 75.000 Marken über KI-Übersichten, KI-Modus und Chat-Assistenten. Korrelation ist kein Beweis für Ursache, aber die Rangfolge ist eindeutig und deckt sich mit dem, was wir in Kundenprofilen sehen: Betriebe, die in Portalen, lokalen Medien und Videos genannt werden, tauchen in KI-Empfehlungen auf, auch ohne starke Website.</p>
+        <h2 id="was-heisst-das">Was heißt das für lokale Betriebe?</h2>
+        <p>Die klassische Local-SEO-Arbeit bleibt Grundlage, weil KIs die Profildaten als Fakten nutzen. Für die Frage „Wen empfiehlt die KI?" entscheidet aber die Zahl und Konsistenz der Erwähnungen. Ein Betrieb mit 50 Verzeichniseinträgen, einheitlichen Daten und drei lokalen Presseartikeln ist für ChatGPT „bekannt". Ein Betrieb mit tollem Google-Profil und sonst nichts ist es nicht.</p>
+        <h2 id="was-tun">Was solltest du jetzt tun?</h2>
+        <ul>
+          <li>In alle relevanten Branchenverzeichnisse mit identischen Daten eintragen. Wir pflegen für Kunden über 50 Verzeichnisse.</li>
+          <li>Ein kurzes YouTube-Video mit Firmennamen, Ort und Leistung veröffentlichen. Es muss nicht aufwendig sein.</li>
+          <li>Lokale Presse, Vereine, Stadtportale: jede Namensnennung zählt, auch ohne Link.</li>
+        </ul>`,
+  impact: 'Verzeichnisse, Presse und ein YouTube-Video mit Firmennamen bringen mehr KI-Sichtbarkeit als Linkaufbau.',
+  sources: [
+    { label: 'Ahrefs: AI Overview Brand Correlation Study', url: 'https://ahrefs.com/blog/ai-overview-brand-correlation/' },
+    { label: 'BusinessWire: Ahrefs-Studie über 75.000 Marken', url: 'https://www.businesswire.com/news/home/20260526119691/en/' }
+  ],
+  keywords: ['KI-Sichtbarkeit', 'Ahrefs', 'Erwähnungen', 'Backlinks', 'ChatGPT', 'Studie'],
+  related: [R.ki, R.kiCheck, R.hub]
+},
+
+{
+  slug: '2026-04-google-bewertungsrichtlinie-verschaerft', date: '2026-04-17',
+  platform: 'google', topic: 'bewertungen', hub: false,
+  title: 'Google verschärft Bewertungsrichtlinie: Quoten und Tablets verboten',
+  metaDesc: 'Seit 17. April 2026 verbietet Google Bewertungsquoten, Tablets im Laden, Anreize und Namensvorgaben. Was erlaubt bleibt und wie du regelkonform sammelst.',
+  teaser: 'Das Tablet an der Kasse ist verboten, die Prämie für 20 Bewertungen auch. Was Google jetzt als Manipulation wertet und was weiter erlaubt ist.',
+  summary: 'Google hat am 16. und 17. April 2026 die Richtlinie gegen <strong>„Rating Manipulation"</strong> verschärft. Ausdrücklich verboten sind Bewertungsquoten für Mitarbeiter, Bewertungs-Kioske oder Firmen-Tablets im Geschäft, das Filtern unzufriedener Kunden vor der Bewertung, Anreize jeder Art und die Aufforderung, Mitarbeiternamen oder Keywords zu nennen. Bei Verstößen entfernt Google ganze Bewertungsblöcke und kann das Profil einschränken.',
+  body: `        <h2 id="was-ist-verboten">Was ist jetzt ausdrücklich verboten?</h2>
+        <ul>
+          <li><strong>Quoten:</strong> Mitarbeitern eine Zahl von Bewertungen vorgeben, die sie pro Woche einsammeln müssen.</li>
+          <li><strong>Kioske und Tablets:</strong> Geräte im Geschäft, auf denen Kunden vor Ort bewerten.</li>
+          <li><strong>Gating:</strong> Erst nach Zufriedenheit fragen und nur zufriedene Kunden zur Bewertung leiten.</li>
+          <li><strong>Anreize:</strong> Rabatte, Gutscheine, Verlosungen oder Geschenke als Gegenleistung für eine Bewertung.</li>
+          <li><strong>Vorgaben zum Inhalt:</strong> Kunden bitten, den Mitarbeiter, den Ort oder bestimmte Keywords zu nennen.</li>
+        </ul>
+        <h2 id="was-bleibt-erlaubt">Was bleibt erlaubt?</h2>
+        <p>Kunden nach dem Besuch um eine Bewertung zu bitten, ist ausdrücklich in Ordnung, solange jeder Kunde gefragt wird, es keine Gegenleistung gibt und der Kunde frei entscheidet, was er schreibt. Erlaubt sind der Bewertungslink, ein QR-Code auf Rechnung oder Karte, eine E-Mail nach dem Auftrag und die persönliche Bitte. Das Scannen eines QR-Codes am eigenen Handy des Kunden ist kein Kiosk.</p>
+        <h2 id="was-tun">Was solltest du jetzt tun?</h2>
+        <p>Bewertungsprozess prüfen und alles streichen, was in die fünf Punkte oben fällt. Google gab an, 2025 rund 292 Millionen Bewertungen entfernt zu haben, und wertet seit 2024 Muster mit KI aus. Ein regelkonformer Sammelprozess bringt langfristig mehr Bewertungen, weil kein Block entfernt wird. Unser TapTag-System haben wir an die neue Richtlinie angepasst: Der Kunde scannt freiwillig am eigenen Handy, es gibt keine Quoten und keinen Anreiz für den Kunden.</p>`,
+  impact: 'Sammelprozess auf Quoten, Tablets, Anreize und Namensvorgaben prüfen und streichen, sonst droht die Entfernung ganzer Bewertungsblöcke.',
+  sources: [
+    { label: 'SOCi: Googles Rating-Manipulation-Richtlinie', url: 'https://www.soci.ai/blog/googles-rating-manipulation-policy-what-it-means-for-your-reputation-strategy/' },
+    { label: 'Birdeye: Google Review Policy Update', url: 'https://birdeye.com/blog/google-review-policy/' },
+    { label: 'Launchcodex: Review Policy Update 2026', url: 'https://launchcodex.com/blog/seo-geo-ai/google-business-profile-review-policy-update/' }
+  ],
+  keywords: ['Google Bewertungsrichtlinie', 'Rating Manipulation', 'Bewertungen sammeln', 'Anreize', 'Bewertungs-Tablet'],
+  related: [R.mehrBew, R.bewMgmt, R.loeschen]
+}
+
+];
