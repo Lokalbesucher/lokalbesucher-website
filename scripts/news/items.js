@@ -94,8 +94,8 @@ export const NEWS = [
           <li><strong>Das Google-Unternehmensprofil wird zur Verkaufsfläche.</strong> Website, Telefonnummer und Reservierungslink sind die drei Felder, die Google weiterhin prominent ausspielt. Führen sie zu einem Portal statt zum eigenen Buchungsweg, ist der Direktkanal verloren, bevor der Gast ihn gesehen hat.</li>
           <li><strong>Die eigene Marke muss abgesichert werden.</strong> Wer nach einem Hotel- oder Restaurantnamen sucht, soll den Betrieb finden, nicht Booking oder Lieferando. Eine Suchanzeige auf den eigenen Namen kostet wenig und schließt genau diese Lücke.</li>
           <li><strong>Bewertungen, Fotos und Öffnungszeiten entscheiden.</strong> Ohne Preise und Filter bleibt dem Gast in Googles Einheit nur der Vergleich über Sterne und Bilder. Ein Betrieb mit 4,2 Sternen und 80 Bewertungen verliert gegen einen mit 4,7 und 600.</li>
-        </ul>
-        <p>Die Portale haben den besten Platz im Regal bekommen. Der Direktkanal ist der einzige, den einem Unternehmen niemand wegnehmen kann, sofern es ihn besetzt.</p>`,
+        </ul>`,
+  fazit: 'Die Portale haben den besten Platz im Regal bekommen. Der Direktkanal ist der einzige, den einem Unternehmen niemand wegnehmen kann, sofern es ihn besetzt. Wer Profil, Markenschutz und Bewertungen jetzt in Ordnung bringt, verliert an die Portale weniger als die Konkurrenz.',
   impact: 'Website, Telefon und Reservierungslink im Profil auf den eigenen Buchungsweg zeigen lassen, den Firmennamen mit einer Suchanzeige absichern, Bewertungen und Fotos auf Vergleichsniveau bringen.',
   sources: [
     { label: 'EU-Kommission: 890 Mio. € Strafe für Google (23.07.2026)', url: 'https://digital-markets-act.ec.europa.eu/commission-fines-google-eur890-million-breaches-digital-markets-act-2026-07-23_en' },
