@@ -76,6 +76,21 @@ const CSS = `
     .rss-hint{font-size:.85rem;color:#7c83aa;margin-top:1.5rem}
     .rss-hint a{color:#ffbd59;text-decoration:underline;text-underline-offset:2px}
     .article{margin-inline:0}
+    .news-hero{padding-block:2.75rem 1.5rem}
+    .news-section{padding-top:1.25rem}
+    .news-featured{display:grid;gap:1.75rem;background:#111328;border:1px solid #1e2240;border-radius:20px;padding:1.5rem;margin-bottom:2rem;align-items:center}
+    @media(min-width:900px){.news-featured{padding:2rem}.news-featured.has-img{grid-template-columns:minmax(0,11fr) minmax(0,10fr);gap:2.5rem}}
+    .news-featured-img img{width:100%;height:auto;border-radius:14px;border:1px solid #1e2240;display:block}
+    .news-kicker{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ffbd59;margin-bottom:.6rem}
+    .news-featured h2{font-size:clamp(1.5rem,2.6vw,2.25rem);font-weight:800;line-height:1.15;margin:.7rem 0 .9rem;letter-spacing:-.01em}
+    .news-featured h2 a{color:#e8eaf6}
+    .news-featured h2 a:hover{color:#ffbd59}
+    .news-featured .lead{color:#b9bedd;font-size:1.02rem;line-height:1.7;margin-bottom:1rem}
+    .news-featured .impact-line{color:#7c83aa;font-size:.92rem;line-height:1.6;margin-bottom:1.4rem;padding-left:.9rem;border-left:3px solid #3ecf8e}
+    .news-featured .impact-line strong{color:#e8eaf6}
+    .news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem}
+    .news-grid .news-card{display:flex;flex-direction:column;height:100%}
+    .news-card .more{margin-top:auto;padding-top:1rem;font-size:.85rem;font-weight:600;color:#ffbd59}
     .quellen{margin:0 0 1.1rem 1.25rem;color:#b9bedd;display:flex;flex-direction:column;gap:.45rem;font-size:.92rem}
     .quellen a{color:#b9bedd}`;
 
@@ -114,11 +129,26 @@ function chips(active) {
         </nav>`;
 }
 
+const meta = n => `<div class="news-meta"><time datetime="${n.date}">${nice(n.date)}</time><span class="news-tag">${esc(PLATFORMS[n.platform].name)}</span><span class="news-tag">${esc(TOPICS[n.topic].name)}</span></div>`;
+
 const card = n => `        <a class="news-card" href="${itemUrl(n)}">
-          <div class="news-meta"><time datetime="${n.date}">${nice(n.date)}</time><span class="news-tag">${esc(PLATFORMS[n.platform].name)}</span><span class="news-tag">${esc(TOPICS[n.topic].name)}</span></div>
+          ${meta(n)}
           <h2>${esc(n.title)}</h2>
           <p>${esc(n.teaser)}</p>
+          <span class="more">Weiterlesen →</span>
         </a>`;
+
+/* Aktuellste Meldung: groß, aufgeklappt (Kurzfassung sichtbar), mit Bild, volle Breite */
+const featured = n => `      <article class="news-featured${n.image ? ' has-img' : ''}" aria-labelledby="featured-title">
+        ${n.image ? `<a href="${itemUrl(n)}" class="news-featured-img" tabindex="-1" aria-hidden="true"><img src="${n.image}" alt="" width="1200" height="630" loading="eager" fetchpriority="high"></a>` : ''}
+        <div>
+          <p class="news-kicker">Aktuelle Meldung</p>
+          ${meta(n)}
+          <h2 id="featured-title"><a href="${itemUrl(n)}">${esc(n.title)}</a></h2>
+          <p class="lead">${n.summary}</p>
+          <a href="${itemUrl(n)}" class="btn btn-ghost">Ganze Meldung lesen →</a>
+        </div>
+      </article>`;
 
 /* ── Übersicht + Kategorie-Seiten ─────────────────────────────────────── */
 function listPage({ key, url, title, h1, intro, metaDesc, crumb, items, feed }) {
@@ -137,7 +167,7 @@ function listPage({ key, url, title, h1, intro, metaDesc, crumb, items, feed }) 
     { '@type': 'ItemList', itemListElement: items.map((n, i) => ({ '@type': 'ListItem', position: i + 1, url: SITE + itemUrl(n), name: n.title })) }
   ];
   const main = `
-  <section class="page-hero grid-bg" aria-labelledby="news-title">
+  <section class="page-hero news-hero grid-bg" aria-labelledby="news-title" style="padding-bottom:1.5rem">
     <div class="container">
       <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
         <a href="/">Startseite</a>
@@ -155,12 +185,13 @@ function listPage({ key, url, title, h1, intro, metaDesc, crumb, items, feed }) 
     </div>
   </section>
 
-  <section class="section" aria-label="Meldungen">
+  <section class="section news-section" aria-label="Meldungen" style="padding-top:1rem">
     <div class="container">
-      <div class="news-list">
-${items.map(card).join('\n')}
+${featured(items[0])}
+      <div class="news-grid">
+${items.slice(1).map(card).join('\n')}
       </div>
-      <p class="rss-hint" style="max-width:860px">Meldungen abonnieren: <a href="${feed}">RSS-Feed${key ? ' „' + esc(catName(key)) + '"' : ''}</a>${key ? ' · <a href="/news/feed.xml">alle Meldungen</a>' : ''}. Wer schreibt und wie wir arbeiten: <a href="/news/redaktion/">Redaktion</a>. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a>${key && PLATFORMS[key] && key === 'google' ? ' und im <a href="/google-unternehmensprofil/">Leitfaden zum Google Unternehmensprofil</a>' : ''}.</p>
+      <p class="rss-hint">Meldungen abonnieren: <a href="${feed}">RSS-Feed${key ? ' „' + esc(catName(key)) + '"' : ''}</a>${key ? ' · <a href="/news/feed.xml">alle Meldungen</a>' : ''}. Wer schreibt und wie wir arbeiten: <a href="/news/redaktion/">Redaktion</a>. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a>${key && PLATFORMS[key] && key === 'google' ? ' und im <a href="/google-unternehmensprofil/">Leitfaden zum Google Unternehmensprofil</a>' : ''}.</p>
     </div>
   </section>
 
@@ -208,9 +239,8 @@ function newsPage(n) {
 `,
     body: n.body,
     afterBody: `
-        <div class="impact" id="was-das-fuer-dich-heisst">
-          <p><strong>Was das für dich heißt:</strong> ${n.impact}</p>
-        </div>
+        <h2 id="fazit">Fazit</h2>
+        <p>${n.fazit || n.impact}</p>
 
         <h2 id="quellen">Quellen</h2>
         <ul class="quellen">

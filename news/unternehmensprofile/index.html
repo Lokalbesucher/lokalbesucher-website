@@ -94,6 +94,21 @@
     .rss-hint{font-size:.85rem;color:#7c83aa;margin-top:1.5rem}
     .rss-hint a{color:#ffbd59;text-decoration:underline;text-underline-offset:2px}
     .article{margin-inline:0}
+    .news-hero{padding-block:2.75rem 1.5rem}
+    .news-section{padding-top:1.25rem}
+    .news-featured{display:grid;gap:1.75rem;background:#111328;border:1px solid #1e2240;border-radius:20px;padding:1.5rem;margin-bottom:2rem;align-items:center}
+    @media(min-width:900px){.news-featured{padding:2rem}.news-featured.has-img{grid-template-columns:minmax(0,11fr) minmax(0,10fr);gap:2.5rem}}
+    .news-featured-img img{width:100%;height:auto;border-radius:14px;border:1px solid #1e2240;display:block}
+    .news-kicker{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ffbd59;margin-bottom:.6rem}
+    .news-featured h2{font-size:clamp(1.5rem,2.6vw,2.25rem);font-weight:800;line-height:1.15;margin:.7rem 0 .9rem;letter-spacing:-.01em}
+    .news-featured h2 a{color:#e8eaf6}
+    .news-featured h2 a:hover{color:#ffbd59}
+    .news-featured .lead{color:#b9bedd;font-size:1.02rem;line-height:1.7;margin-bottom:1rem}
+    .news-featured .impact-line{color:#7c83aa;font-size:.92rem;line-height:1.6;margin-bottom:1.4rem;padding-left:.9rem;border-left:3px solid #3ecf8e}
+    .news-featured .impact-line strong{color:#e8eaf6}
+    .news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem}
+    .news-grid .news-card{display:flex;flex-direction:column;height:100%}
+    .news-card .more{margin-top:auto;padding-top:1rem;font-size:.85rem;font-weight:600;color:#ffbd59}
     .quellen{margin:0 0 1.1rem 1.25rem;color:#b9bedd;display:flex;flex-direction:column;gap:.45rem;font-size:.92rem}
     .quellen a{color:#b9bedd}
   </style>
@@ -266,7 +281,7 @@
 
 <main id="main">
 
-  <section class="page-hero grid-bg" aria-labelledby="news-title">
+  <section class="page-hero news-hero grid-bg" aria-labelledby="news-title" style="padding-bottom:1.5rem">
     <div class="container">
       <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
         <a href="/">Startseite</a>
@@ -288,41 +303,51 @@
     </div>
   </section>
 
-  <section class="section" aria-label="Meldungen">
+  <section class="section news-section" aria-label="Meldungen" style="padding-top:1rem">
     <div class="container">
-      <div class="news-list">
-        <a class="news-card" href="/news/2026-09-google-foto-verifizierung-test/">
+      <article class="news-featured" aria-labelledby="featured-title">
+        
+        <div>
+          <p class="news-kicker">Aktuelle Meldung</p>
           <div class="news-meta"><time datetime="2026-09-04">4. September 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
-          <h2>Google testet Foto-Verifizierung fürs Unternehmensprofil</h2>
-          <p>Neben Video, Postkarte, Telefon und E-Mail taucht bei einzelnen Profilen eine sechste Methode auf. Ein Test, noch nicht flächendeckend.</p>
-        </a>
+          <h2 id="featured-title"><a href="/news/2026-09-google-foto-verifizierung-test/">Google testet Foto-Verifizierung fürs Unternehmensprofil</a></h2>
+          <p class="lead">Seit dem 4. September 2026 wird bei einzelnen Google Unternehmensprofilen eine <strong>Foto-Verifizierung</strong> als Bestätigungsmethode angezeigt. Google hat die Methode nicht offiziell angekündigt, die Hilfeseite nennt weiterhin fünf Wege. Es handelt sich um einen Test. Welche Methode du bekommst, entscheidet Google automatisch. Halte Außenfoto, Schild und Innenansicht in guter Qualität bereit.</p>
+          <a href="/news/2026-09-google-foto-verifizierung-test/" class="btn btn-ghost">Ganze Meldung lesen →</a>
+        </div>
+      </article>
+      <div class="news-grid">
         <a class="news-card" href="/news/2026-09-google-tell-maps-beitragsfunktion/">
           <div class="news-meta"><time datetime="2026-09-02">2. September 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>„Tell Maps&quot;: Nutzer ändern dein Profil jetzt per Chat</h2>
           <p>Ein Foto vom Schild reicht, und Google schlägt neue Öffnungszeiten für dein Profil vor. Gut für die Datenqualität, riskant für unbeaufsichtigte Profile.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-08-google-beitrags-statistiken-zurueck/">
           <div class="news-meta"><time datetime="2026-08-20">20. August 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>Beitrags-Statistiken im Unternehmensprofil sind zurück</h2>
           <p>Monatelang gab es keine Zahlen zu Beiträgen. Jetzt siehst du wieder Aufrufe und Klicks pro Beitrag.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-08-google-zweisprachige-firmennamen-verboten/">
           <div class="news-meta"><time datetime="2026-08-10">10. August 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>Google verbietet doppelte Firmennamen in zwei Sprachen</h2>
           <p>Ein Name, eine Sprache. Wer den Firmennamen zweisprachig wiederholt, riskiert eine Sperre, selbst wenn das Schild genauso aussieht.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-07-google-einspruch-nachweise-im-formular/">
           <div class="news-meta"><time datetime="2026-07-08">8. Juli 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>Profil gesperrt: Nachweise jetzt direkt im Einspruch hochladen</h2>
           <p>Das Nachreichen von Belegen innerhalb von 60 Minuten hat viele Einsprüche scheitern lassen. Das ist vorbei.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-06-google-gemini-verknuepfung-nicht-in-deutschland/">
           <div class="news-meta"><time datetime="2026-06-11">11. Juni 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>Gemini im Unternehmensprofil: In Deutschland nicht verfügbar</h2>
           <p>Gemini beantwortet Bewertungen und ändert Öffnungszeiten per Chat. Klingt gut, gilt aber nicht für Betriebe im Europäischen Wirtschaftsraum.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
       </div>
-      <p class="rss-hint" style="max-width:860px">Meldungen abonnieren: <a href="/news/unternehmensprofile/feed.xml">RSS-Feed „Unternehmensprofile"</a> · <a href="/news/feed.xml">alle Meldungen</a>. Wer schreibt und wie wir arbeiten: <a href="/news/redaktion/">Redaktion</a>. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a>.</p>
+      <p class="rss-hint">Meldungen abonnieren: <a href="/news/unternehmensprofile/feed.xml">RSS-Feed „Unternehmensprofile"</a> · <a href="/news/feed.xml">alle Meldungen</a>. Wer schreibt und wie wir arbeiten: <a href="/news/redaktion/">Redaktion</a>. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a>.</p>
     </div>
   </section>
 

@@ -94,6 +94,21 @@
     .rss-hint{font-size:.85rem;color:#7c83aa;margin-top:1.5rem}
     .rss-hint a{color:#ffbd59;text-decoration:underline;text-underline-offset:2px}
     .article{margin-inline:0}
+    .news-hero{padding-block:2.75rem 1.5rem}
+    .news-section{padding-top:1.25rem}
+    .news-featured{display:grid;gap:1.75rem;background:#111328;border:1px solid #1e2240;border-radius:20px;padding:1.5rem;margin-bottom:2rem;align-items:center}
+    @media(min-width:900px){.news-featured{padding:2rem}.news-featured.has-img{grid-template-columns:minmax(0,11fr) minmax(0,10fr);gap:2.5rem}}
+    .news-featured-img img{width:100%;height:auto;border-radius:14px;border:1px solid #1e2240;display:block}
+    .news-kicker{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ffbd59;margin-bottom:.6rem}
+    .news-featured h2{font-size:clamp(1.5rem,2.6vw,2.25rem);font-weight:800;line-height:1.15;margin:.7rem 0 .9rem;letter-spacing:-.01em}
+    .news-featured h2 a{color:#e8eaf6}
+    .news-featured h2 a:hover{color:#ffbd59}
+    .news-featured .lead{color:#b9bedd;font-size:1.02rem;line-height:1.7;margin-bottom:1rem}
+    .news-featured .impact-line{color:#7c83aa;font-size:.92rem;line-height:1.6;margin-bottom:1.4rem;padding-left:.9rem;border-left:3px solid #3ecf8e}
+    .news-featured .impact-line strong{color:#e8eaf6}
+    .news-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem}
+    .news-grid .news-card{display:flex;flex-direction:column;height:100%}
+    .news-card .more{margin-top:auto;padding-top:1rem;font-size:.85rem;font-weight:600;color:#ffbd59}
     .quellen{margin:0 0 1.1rem 1.25rem;color:#b9bedd;display:flex;flex-direction:column;gap:.45rem;font-size:.92rem}
     .quellen a{color:#b9bedd}
   </style>
@@ -290,7 +305,7 @@
 
 <main id="main">
 
-  <section class="page-hero grid-bg" aria-labelledby="news-title">
+  <section class="page-hero news-hero grid-bg" aria-labelledby="news-title" style="padding-bottom:1.5rem">
     <div class="container">
       <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
         <a href="/">Startseite</a>
@@ -312,61 +327,75 @@
     </div>
   </section>
 
-  <section class="section" aria-label="Meldungen">
+  <section class="section news-section" aria-label="Meldungen" style="padding-top:1rem">
     <div class="container">
-      <div class="news-list">
-        <a class="news-card" href="/news/2026-09-google-dma-buchungsportale-vor-hotels-local-pack/">
+      <article class="news-featured has-img" aria-labelledby="featured-title">
+        <a href="/news/2026-09-google-dma-buchungsportale-vor-hotels-local-pack/" class="news-featured-img" tabindex="-1" aria-hidden="true"><img src="/assets/images/news/google-dma-portale-statt-local-pack-og.webp" alt="" width="1200" height="630" loading="eager" fetchpriority="high"></a>
+        <div>
+          <p class="news-kicker">Aktuelle Meldung</p>
           <div class="news-meta"><time datetime="2026-09-16">16. September 2026</time><span class="news-tag">Google</span><span class="news-tag">Local SEO</span></div>
-          <h2>890 Millionen Euro Strafe für Google: Die Buchungsportale gewinnen</h2>
-          <p>Wir suchen lokal auf Google. Bei „hotel berlin&quot; liefert seit dem 8. September nicht mehr Google die drei Treffer, sondern Booking.com. Was das für Hotels, Restaurants und bald vielleicht jeden lokalen Betrieb heißt.</p>
-        </a>
+          <h2 id="featured-title"><a href="/news/2026-09-google-dma-buchungsportale-vor-hotels-local-pack/">890 Millionen Euro Strafe für Google: Die Buchungsportale gewinnen</a></h2>
+          <p class="lead">Die EU-Kommission hat Google am 23. Juli 2026 zu <strong>890 Millionen Euro Strafe</strong> verurteilt, 460 Millionen davon für die Bevorzugung eigener Dienste in der Suche. Seit dem 8. September zeigt Google bei Hotels, Flügen und Restaurants ein neues Layout: Ein Buchungsportal steht oben, Googles eigene Liste ist eingeklappt, Direktanbieter folgen ohne Preise. Jede Buchung über das Portal kostet den Betrieb Provision.</p>
+          <a href="/news/2026-09-google-dma-buchungsportale-vor-hotels-local-pack/" class="btn btn-ghost">Ganze Meldung lesen →</a>
+        </div>
+      </article>
+      <div class="news-grid">
         <a class="news-card" href="/news/2026-09-google-foto-verifizierung-test/">
           <div class="news-meta"><time datetime="2026-09-04">4. September 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>Google testet Foto-Verifizierung fürs Unternehmensprofil</h2>
           <p>Neben Video, Postkarte, Telefon und E-Mail taucht bei einzelnen Profilen eine sechste Methode auf. Ein Test, noch nicht flächendeckend.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-09-google-tell-maps-beitragsfunktion/">
           <div class="news-meta"><time datetime="2026-09-02">2. September 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>„Tell Maps&quot;: Nutzer ändern dein Profil jetzt per Chat</h2>
           <p>Ein Foto vom Schild reicht, und Google schlägt neue Öffnungszeiten für dein Profil vor. Gut für die Datenqualität, riskant für unbeaufsichtigte Profile.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-08-google-beitrags-statistiken-zurueck/">
           <div class="news-meta"><time datetime="2026-08-20">20. August 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>Beitrags-Statistiken im Unternehmensprofil sind zurück</h2>
           <p>Monatelang gab es keine Zahlen zu Beiträgen. Jetzt siehst du wieder Aufrufe und Klicks pro Beitrag.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-08-google-inhaberantwort-melden/">
           <div class="news-meta"><time datetime="2026-08-14">14. August 2026</time><span class="news-tag">Google</span><span class="news-tag">Bewertungen</span></div>
           <h2>Neu bei Google: Kunden können Inhaberantworten melden</h2>
           <p>Bisher konnten nur Bewertungen gemeldet werden. Jetzt auch deine Antwort darauf. Wer auf Kritik ausfällig reagiert, riskiert die Entfernung der Antwort.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-08-google-zweisprachige-firmennamen-verboten/">
           <div class="news-meta"><time datetime="2026-08-10">10. August 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>Google verbietet doppelte Firmennamen in zwei Sprachen</h2>
           <p>Ein Name, eine Sprache. Wer den Firmennamen zweisprachig wiederholt, riskiert eine Sperre, selbst wenn das Schild genauso aussieht.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-08-google-local-services-ads-migration/">
           <div class="news-meta"><time datetime="2026-08-01">1. August 2026</time><span class="news-tag">Google</span><span class="news-tag">Werbeanzeigen</span></div>
           <h2>Local Services Ads wandern in Google Ads</h2>
           <p>Die Anzeigen mit Google-Garantie-Siegel bekommen ein neues Zuhause. Für Deutschland ist 2027 relevant, vorbereiten kannst du dich jetzt.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-07-google-einspruch-nachweise-im-formular/">
           <div class="news-meta"><time datetime="2026-07-08">8. Juli 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>Profil gesperrt: Nachweise jetzt direkt im Einspruch hochladen</h2>
           <p>Das Nachreichen von Belegen innerhalb von 60 Minuten hat viele Einsprüche scheitern lassen. Das ist vorbei.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-06-google-gemini-verknuepfung-nicht-in-deutschland/">
           <div class="news-meta"><time datetime="2026-06-11">11. Juni 2026</time><span class="news-tag">Google</span><span class="news-tag">Unternehmensprofile</span></div>
           <h2>Gemini im Unternehmensprofil: In Deutschland nicht verfügbar</h2>
           <p>Gemini beantwortet Bewertungen und ändert Öffnungszeiten per Chat. Klingt gut, gilt aber nicht für Betriebe im Europäischen Wirtschaftsraum.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
         <a class="news-card" href="/news/2026-04-google-bewertungsrichtlinie-verschaerft/">
           <div class="news-meta"><time datetime="2026-04-17">17. April 2026</time><span class="news-tag">Google</span><span class="news-tag">Bewertungen</span></div>
           <h2>Google verschärft Bewertungsrichtlinie: Quoten und Tablets verboten</h2>
           <p>Das Tablet an der Kasse ist verboten, die Prämie für 20 Bewertungen auch. Was Google jetzt als Manipulation wertet und was weiter erlaubt ist.</p>
+          <span class="more">Weiterlesen →</span>
         </a>
       </div>
-      <p class="rss-hint" style="max-width:860px">Meldungen abonnieren: <a href="/news/google/feed.xml">RSS-Feed „Google"</a> · <a href="/news/feed.xml">alle Meldungen</a>. Wer schreibt und wie wir arbeiten: <a href="/news/redaktion/">Redaktion</a>. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a> und im <a href="/google-unternehmensprofil/">Leitfaden zum Google Unternehmensprofil</a>.</p>
+      <p class="rss-hint">Meldungen abonnieren: <a href="/news/google/feed.xml">RSS-Feed „Google"</a> · <a href="/news/feed.xml">alle Meldungen</a>. Wer schreibt und wie wir arbeiten: <a href="/news/redaktion/">Redaktion</a>. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a> und im <a href="/google-unternehmensprofil/">Leitfaden zum Google Unternehmensprofil</a>.</p>
     </div>
   </section>
 
