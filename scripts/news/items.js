@@ -53,6 +53,63 @@ const R = {
 export const NEWS = [
 
 {
+  slug: '2026-09-google-anruf-assistent-erfasste-informationen', date: '2026-09-21',
+  platform: 'google', topic: 'unternehmensprofile', hub: true,
+  hubWhat: 'Neuer Tab „Erfasste Informationen": zeigt, was Googles automatisierter Assistent per Anruf, SMS oder WhatsApp gesammelt hat, einzeln löschbar',
+  image: '/assets/images/news/google-anruf-assistent-erfasste-informationen-og.webp',
+  title: 'Google ruft an: Neuer Tab zeigt, was der Assistent gesammelt hat',
+  metaDesc: 'Neuer Tab „Erfasste Informationen" im Google Unternehmensprofil: Was Googles Anruf-Assistent über deinen Betrieb sammelt, wie du es prüfst und löschst.',
+  teaser: 'Google ruft an, und das ist kein Fake. Was der automatisierte Assistent am Telefon über einen Betrieb erfährt, entscheidet mit, wofür er gefunden wird. Seit dem 14. September lässt sich das erstmals einsehen.',
+  summary: 'Seit dem 14. September 2026 zeigt das Google Unternehmensprofil den neuen Tab <strong>„Erfasste Informationen"</strong>. Dort steht, was Googles automatisierter Assistent per Anruf, SMS oder WhatsApp über einen Betrieb gesammelt hat, mit Quelle und Datum. Jeder Eintrag lässt sich einzeln löschen. Google nutzt die Angaben, um Betriebe passenden Suchanfragen zuzuordnen. Der Tab wird schrittweise ausgerollt.',
+  body: `        <figure>
+          <img src="/assets/images/news/google-anruf-assistent-erfasste-informationen-2026.webp" alt="Illustration: Googles automatisierter Assistent ruft in einem Laden an und notiert die Antworten des Mitarbeiters zu Öffnungszeiten und Leistungen" width="896" height="1120" loading="eager" fetchpriority="high" style="border-radius:12px;border:1px solid #1e2240">
+          <figcaption style="font-size:.8rem;color:#7c83aa;margin-top:.5rem">Google fragt nach Öffnungszeiten und Leistungen. Und notiert die Antwort.</figcaption>
+        </figure>
+        <p>Das Telefon klingelt im Betrieb. Eine freundliche, etwas zu gleichmäßige Stimme fragt, ob samstags noch bis 14 Uhr geöffnet ist und ob man auch Reparaturen macht. Der Mitarbeiter sagt „Ja, glaube ich", legt auf und vergisst es. Google nicht.</p>
+        <p>Seit dem 14. September ist es offiziell: Das Google Unternehmensprofil zeigt einen neuen Tab „Erfasste Informationen". Darin steht, was Googles automatisierter Assistent per Anruf, SMS oder WhatsApp über ein Unternehmen zusammengetragen hat, mit Quelle und Erfassungsdatum. Google auf X, übersetzt: „Ihr könnt jetzt direkt im Dashboard prüfen, welche Details Googles automatisierter Assistent verifiziert hat, und veraltete Angaben löschen."</p>
+
+        <h2 id="was-passiert-ist">Was ist passiert?</h2>
+        <p>Google kontaktiert Unternehmen seit Jahren automatisiert an der bestätigten Telefonnummer, um Profildaten zu prüfen. Seit Juli hatte Google getestet, ob Unternehmen diese Daten einsehen und löschen können. Jetzt ist die Funktion live: Unter „Profil bearbeiten" → „Erfasste Informationen" sind die gesammelten Angaben einzeln einsehbar und einzeln löschbar. Zweimal „Löschen", und der Eintrag verschwindet aus Googles Datensätzen. Andere Angaben im Profil ändert das nicht. Laut Google-Hilfe gilt die Funktion für „ausgewählte Regionen, Sprachen und Unternehmenskategorien". Die deutsche Hilfeseite existiert bereits.</p>
+        <p>Was Google nicht an die große Glocke hängt: Die Anrufe lassen sich abstellen. In den Profileinstellungen steht unter „Erweiterte Einstellungen" der Schalter „Automatisierte Anrufe und SMS von Google", und am Telefon genügt der Satz „Bitte rufen Sie mein Unternehmen nicht mehr an". Wer abschaltet, verzichtet allerdings auch auf Buchungs- und Verfügbarkeitsanfragen, die Google im Namen von Kunden stellt.</p>
+        <div class="statbox">
+          <div><div class="n">14.09.2026</div><p>Google bestätigt den Tab „Erfasste Informationen" offiziell, nach Tests seit Juli</p></div>
+          <div><div class="n">3 Kanäle</div><p>Anruf, SMS und WhatsApp: Darüber sammelt Googles Assistent Angaben zum Betrieb</p></div>
+          <div><div class="n">42 %</div><p>aller lokalen Suchen enden mit einem Klick auf den Kartenausschnitt, laut Backlinko</p></div>
+        </div>
+
+        <h2 id="entscheidender-satz">Wofür nutzt Google die gesammelten Daten?</h2>
+        <p>Im neuen Tab steht es, übersetzt aus dem englischen Original: „Diese Informationen wurden in Telefon- oder Chat-Gesprächen mit Ihrem Unternehmen erfasst. Sie werden verwendet, um Ihr Unternehmen mit Kunden zusammenzubringen, die nach Leistungen wie Ihren suchen."</p>
+        <p>Das ist keine Profilpflege. Das ist Relevanz. Was der Mitarbeiter am Telefon sagt, fließt in die Entscheidung ein, für welche Suchanfragen ein Betrieb erscheint. In jenem Kartenausschnitt, auf den bei <strong>42 Prozent aller lokalen Suchen</strong> der Klick fällt, so eine Backlinko-Analyse von 306.000 lokalen Suchanfragen.</p>
+
+        <h2 id="wer-gewinnt">Wer gewinnt?</h2>
+        <p>Google. Vollständigere Profile bedeuten bessere Antworten in Suche, Maps und Gemini, ohne dass der Betrieb selbst tätig werden muss. Der Anrufroboter ist der günstigste Datenlieferant, den Google hat. Betriebe, die den Tab nutzen, gewinnen ebenfalls: Erstmals lässt sich sehen und korrigieren, was Google im Hintergrund über sie annimmt.</p>
+
+        <h2 id="wer-verliert">Wer ist der größte Verlierer?</h2>
+        <p>Der Betrieb, der nicht hinschaut. Ein falsch verstandener Feiertag, eine Leistung, die es nicht mehr gibt, ein „Ja, glaube ich" am Telefon. Der Kunde steht vor verschlossener Tür und schreibt die Bewertung, die bleibt. Oder der Betrieb erscheint für eine Leistung, die er gar nicht anbietet, und für die, die er anbietet, nicht. Die Quelle des Fehlers, ein Telefonat von vor sechs Wochen, kennt im Betrieb niemand.</p>
+
+        <h2 id="was-tun">Wie können lokale Unternehmen reagieren?</h2>
+        <p>Der neue Tab ist keine Bedrohung, sondern ein Kontrollinstrument. Drei Punkte entscheiden, ob er nützt oder schadet.</p>
+        <ul>
+          <li><strong>Der Tab gehört in den monatlichen Profil-Check.</strong> Wer „Erfasste Informationen" regelmäßig prüft, sieht, was Google zu wissen glaubt, bevor es über die Sichtbarkeit entscheidet.</li>
+          <li><strong>Google-Anrufe brauchen einen Ansprechpartner.</strong> Wer im Betrieb ans Telefon geht, sollte wissen: Ein Anruf von Google ist kein Betrug, aber auch keine beiläufige Auskunft. Die saubere Regel lautet, an den Profilverantwortlichen weiterzuleiten.</li>
+          <li><strong>Die Sichtbarkeit je Profil ist zu prüfen.</strong> Google rollt den Tab schrittweise aus. Ob er in einem Profil bereits erscheint, zeigt nur der Blick ins Dashboard.</li>
+        </ul>`,
+  fazit: 'Google hat den Betrieben einen Blick in seine Notizen erlaubt. Wer ihn nicht nutzt, überlässt die Entscheidung, wofür er gefunden wird, einem Roboter.',
+  impact: 'Tab „Erfasste Informationen" monatlich prüfen, falsche Einträge löschen und im Betrieb festlegen, wer Google-Anrufe beantwortet.',
+  sources: [
+    { label: 'Search Engine Land: Google Business Profiles rolls out Collected Info (14.09.2026)', url: 'https://searchengineland.com/google-business-profiles-rolls-out-collected-info-488387' },
+    { label: 'Google (@GoogleMyBiz) auf X, 14.09.2026', url: 'https://x.com/GoogleMyBiz/status/2099489719440621982' },
+    { label: 'Google-Hilfe: Unternehmensprofil bearbeiten, Abschnitt „Erfasste Informationen"', url: 'https://support.google.com/business/answer/3039617?hl=de' },
+    { label: 'Google-Hilfe: Automatisierte Anrufe und SMS von Google', url: 'https://support.google.com/business/answer/7690269?hl=de' },
+    { label: 'Google-Hilfe: Erweiterte Profileinstellungen verwalten', url: 'https://support.google.com/business/answer/10737668?hl=de' },
+    { label: 'Search Engine Roundtable: Collected Info im Test (13.07.2026)', url: 'https://www.seroundtable.com/google-business-profiles-new-collected-info-41672.html' },
+    { label: 'Backlinko: Local-Search-Studie', url: 'https://backlinko.com/local-seo-stats' }
+  ],
+  keywords: ['Google Unternehmensprofil', 'Erfasste Informationen', 'Collected Info', 'automatisierter Assistent', 'Google Anruf', 'Profildaten'],
+  related: [R.optimieren, R.hub, R.top3]
+},
+
+{
   slug: '2026-09-google-dma-buchungsportale-vor-hotels-local-pack', date: '2026-09-16',
   platform: 'google', topic: 'local-seo', hub: true,
   hubWhat: 'DMA-Umbau der Suche: Bei Hotels, Flügen und Restaurants stehen Buchungsportale über Googles eigenen Ergebnissen',

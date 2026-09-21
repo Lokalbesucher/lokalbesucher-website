@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/unternehmensprofile/</link>
   <description>Einträge, Verifizierung, Richtlinien, neue Funktionen.</description>
   <language>de-de</language>
-  <lastBuildDate>Fri, 04 Sep 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 21 Sep 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/unternehmensprofile/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Unternehmensprofile</title><link>https://lokalbesucher.de/news/unternehmensprofile/</link></image>
+  <item>
+    <title>Google ruft an: Neuer Tab zeigt, was der Assistent gesammelt hat</title>
+    <link>https://lokalbesucher.de/news/2026-09-google-anruf-assistent-erfasste-informationen/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-09-google-anruf-assistent-erfasste-informationen/</guid>
+    <pubDate>Mon, 21 Sep 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Google</category>
+    <category>Unternehmensprofile</category>
+    <description><![CDATA[Seit dem 14. September 2026 zeigt das Google Unternehmensprofil den neuen Tab „Erfasste Informationen". Dort steht, was Googles automatisierter Assistent per Anruf, SMS oder WhatsApp über einen Betrieb gesammelt hat, mit Quelle und Datum. Jeder Eintrag lässt sich einzeln löschen. Google nutzt die Angaben, um Betriebe passenden Suchanfragen zuzuordnen. Der Tab wird schrittweise ausgerollt.]]></description>
+  </item>
   <item>
     <title>Google testet Foto-Verifizierung fürs Unternehmensprofil</title>
     <link>https://lokalbesucher.de/news/2026-09-google-foto-verifizierung-test/</link>
