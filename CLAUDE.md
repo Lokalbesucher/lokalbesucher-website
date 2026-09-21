@@ -351,13 +351,43 @@ git push origin main
 # Cloudflare deployed automatisch in ~30 Sekunden
 ```
 
+**Commit-Regeln (Tobias, 2026-09-21 — NICHT verhandelbar):**
+- **Keine KI-Attribution, nirgends.** Kein `Co-Authored-By: Claude …`, kein
+  `Claude-Session:`-Link, kein „Generated with Claude Code" — weder in
+  Commit-Nachrichten, PR-Texten, Code noch auf der Website. Technisch
+  abgeschaltet über `attribution` in `~/.claude/settings.json` (commit/pr leer,
+  `sessionUrl: false`) — diese Einstellung muss auf **jedem** Rechner stehen.
+- Die Git-Historie wurde am 2026-09-21 komplett bereinigt (alle 3 Branches,
+  force-gepusht, alle Commit-IDs neu, Inhalt identisch). Sicherung des alten
+  Stands liegt lokal in `tmp/backup-vor-historie-bereinigung.bundle`.
+- **Jeder andere Klon** (Mac, zweiter Windows-Rechner) muss einmalig
+  `git fetch origin` + `git reset --hard origin/main` ausführen — **NIE
+  `git pull`**, sonst kommt die alte Historie samt Attribution per Merge zurück.
+  Vorher prüfen, ob dort ungepushte Änderungen liegen.
+- Commit-Nachrichten mit Anführungszeichen („…") per Datei übergeben
+  (`git commit -F tmp/commitmsg.txt`) — PowerShell zerlegt sie sonst.
+
 ---
 
 ## 13. ARBEITSUMGEBUNG — KRITISCH
 
-> Stand 2026-08: Entwicklung läuft auf **macOS**, nicht mehr auf Windows.
+> Stand 2026-09-21: Entwicklung läuft auf **zwei Rechnern** — Windows
+> (`C:\lokalbesucher - webseite`) und macOS (`~/Desktop/lokalbesucher-website`).
+> Vor Arbeitsbeginn auf dem jeweils anderen Rechner: `git fetch origin` und
+> Stand prüfen (siehe §12 — nach der Historien-Bereinigung `reset --hard`, kein `pull`).
 
-- **Arbeitsverzeichnis:** `~/Desktop/lokalbesucher-website` — IMMER, AUSNAHMSLOS
+**Start auf Windows (PowerShell):**
+```powershell
+cd "C:\lokalbesucher - webseite"
+git fetch origin; git status -sb          # muss "## main...origin/main" ohne [ahead/behind] zeigen
+claude --dangerously-skip-permissions      # neue Session
+claude --dangerously-skip-permissions --continue   # letzte Session fortsetzen
+```
+
+- **Arbeitsverzeichnis:** immer das Repo-Root des jeweiligen Rechners — nie außerhalb arbeiten
+- Windows-Shell-Fallen: Chrome-Headless-Screenshots nur aus **PowerShell** starten
+  (aus Git Bash entsteht kein PNG); `gh` CLI ist auf Windows nicht installiert;
+  PowerShell 5.1 kennt kein `&&`
 - Alle Dateien immer relativ zum Arbeitsverzeichnis anlegen
 - In Node.js Scripts: `path.join(__dirname, ...)` nutzen statt absolute Pfade
 - Temporäres nach `tmp/` im Projekt (steht in .gitignore), nicht nach `/tmp`
@@ -525,7 +555,7 @@ Ausführen mit: `python scripts/download-images.py`
 - Conversion-Service-LPs (meta/google/seo/social) — live, feeden geteilten GHL-Webhook
 - Lokale Stadt-Seiten — Bochum + Recklinghausen live; weitere nur mit echtem Beleg
 - **OFFEN (Tobias / per Browser-Prompt):** GHL-Workflow je `source` taggen (siehe Memory `project_tracking`)
-- **News-Feed /news/ live (2026-09-16)** — 12 Start-Meldungen + erste tagesaktuelle Meldung (DMA/Buchungsportale). Ziel: 2–4 Meldungen/Woche, damit Google die Seite als Nachrichtenquelle einstuft (siehe §20)
+- **News-Feed /news/ live (2026-09-16)** — 12 Start-Meldungen + bisher 2 tagesaktuelle Meldungen von Tobias (16.09. DMA/Buchungsportale, 21.09. „Google ruft an" / Tab „Erfasste Informationen"). Ziel: 2–4 Meldungen/Woche, damit Google die Seite als Nachrichtenquelle einstuft (siehe §20)
 - **OFFEN (Tobias):** Google Publisher Center + Bing PubHub einrichten — Browser-Agent kann die Domains nicht öffnen (Erweiterung blockt `publishercenter.google.com` und `pubhub.bing.com`), Werte stehen in der Session-Notiz / Memory `project_news_hub`
 - **OFFEN (ich, nach Freigabe):** Generator liefert je Meldung automatisch GUP-Beitrag, LinkedIn-Post und WhatsApp-Satz mit
 - Design-Politur, GEO-/SEO-Feinschliff, weitere echte Bilder von Tobias einpflegen
@@ -564,7 +594,8 @@ Nie in `.claude/worktrees/` anderer Sessions schreiben.
 - RSS je Kategorie (`/news/<kat>/feed.xml`) + gesamt; Sitemap-Block zwischen `<!-- news:start -->` / `<!-- news:end -->` wird vom Generator geschrieben.
 - „News" steht sitewide in der **Top-Navigation** (Desktop nach FAQ, Mobile-Drawer) und im Footer (Spalte Unternehmen, nach Ratgeber) — bei neuen Seiten mitnehmen.
 - **Google-News-Signale (seit 2026-09-16):** NewsArticle-Schema mit Zeitstempel+Zeitzone, `articleSection`, `dateline`, `publishingPrinciples` → `/news/redaktion/` (Transparenzseite: wer schreibt, Quellenarbeit, Korrekturen); OG `article:published_time/section/author/tag`; `/sitemap-news.xml` (nur Meldungen der letzten 48 h, Fallback 3 neueste, damit die Datei nie leer ist — leer = Fehler in der Search Console), in `robots.txt` eingetragen und in der **Search Console eingereicht** (Property `https://lokalbesucher.de/`, Konto tobias.frank84). Es gibt **keine Bewerbung** für Google News mehr; entscheidend ist Frequenz über Wochen (2–4 Meldungen/Woche, jede innerhalb von 1–2 Tagen nach dem Ereignis). Bing PubHub hat dagegen einen echten Bewerbungsprozess (pubhub.bing.com, Microsoft-Konto).
-- **Bilder je Meldung:** Feld `image` (OG-Zuschnitt 1200×630 unter `assets/images/news/`), Original als `<figure>` im Body; `page()` nutzt `a.image` für og:image, twitter:image und Schema. Konvertierung mit sharp (WebP q85).
+- **Bilder je Meldung:** Feld `image` (OG-Zuschnitt 1200×630 unter `assets/images/news/`), Original als `<figure>` im Body; `page()` nutzt `a.image` für og:image, twitter:image und Schema. Konvertierung mit sharp (WebP q85). **Hochformat-Illustrationen** (Tobias liefert oft 896×1120): OG-Bild = Motiv-Ausschnitt auf 630 px Höhe mittig, Ränder gespiegelt + weichgezeichnet auffüllen — nie das ganze Hochformat klein auf unscharfem Grund und nie Köpfe anschneiden; Ergebnis in der Übersicht /news/ per Screenshot prüfen.
+- **Ablauf, wenn Tobias Text + Bild liefert:** Bild = neueste Datei in Downloads. Sein Text bleibt im Wortlaut, ABER jede Tatsachenbehauptung gegen die Primärquelle prüfen (Google-Hilfe auf Deutsch, Originalmeldung) und Abweichungen korrigieren + ihm nennen (21.09.: „Abmeldung nicht vorgesehen" war falsch — Google-Hilfe nennt den Schalter „Automatisierte Anrufe und SMS von Google"). Übersetzte Zitate als übersetzt kennzeichnen, Zwischenüberschriften als Fragen. Danach: `npm run news` → Desktop + Mobil (390-px-iframe-Probe) ansehen → Commit → Live-Check → GUP-, LinkedIn- und WhatsApp-Text mitliefern.
 - **Distribution je Meldung (Reihenfolge):** Seite (Erstquelle) → GUP-Beitrag „Neuigkeit" mit Link → LinkedIn-Beitrag (kein Artikel! Duplicate Content) in Tobias' Worten, Link nur im ersten Kommentar, Di–Do 9–11 Uhr → Repost Unternehmensseite → WhatsApp an betroffene Bestandskunden → Instagram/Facebook am Folgetag. Keine Presseportale (noindex, Duplicate Content); echte Presse nur mit eigenen Daten (Studie aus KI-Check-Log).
 - Der Seitenrahmen `page()` in generate-ratgeber.js ist dafür parametrisiert (`main`, `faqs` optional, `type`, `headExtra`, `cssExtra`, `graph`, `beforeBody`/`afterBody`, `capsuleLabel`) — Ratgeber-Ausgabe bleibt unverändert.
 - **Layout-Regeln News (Tobias, 2026-09-16, NICHT ändern):** Meldung = kein Button im Hero; Headline und Subtext in voller Breite; Artikeltext in voller Container-Breite (bis zur rechten Kante des Nav-Buttons „Kostenlos beraten"); Bild rechtsbündig ca. 40 % mit umfließendem Text (Desktop), mobil oben in voller Breite; oben nur Plattform/Thema-Chips; Abstand Subtext → Text knapp; am Ende H2 „Fazit" (Feld `fazit`, Fallback `impact`) → Quellen-Liste → Weitere Meldungen → Autorenbox → EIN CTA-Block. Keine Box „Was das für dich heißt". Übersicht /news/ = Top-Meldung groß und aufgeklappt (Bild links, Kurzfassung, Ghost-Button), darunter 3-spaltiges Raster über die volle Breite. Alles steckt in `scripts/generate-news.js` (cssExtra, newsPage, listPage), nie per Hand in den HTML-Dateien.
