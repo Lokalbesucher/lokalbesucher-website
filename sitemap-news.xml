@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://lokalbesucher.de/news/2026-09-uwg-umweltwerbung-abmahnfalle/</loc>
+    <news:news>
+      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
+      <news:publication_date>2026-09-23T08:00:00+02:00</news:publication_date>
+      <news:title>„Nachhaltig&quot; ohne Beleg: Ab Samstag drohen 50.000 Euro</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://lokalbesucher.de/news/2026-09-google-anruf-assistent-erfasste-informationen/</loc>
     <news:news>
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
