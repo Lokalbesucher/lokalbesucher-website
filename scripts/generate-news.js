@@ -308,29 +308,36 @@ ${items.map(n => `  <item>
 }
 
 /* ── Sitemap-Block zwischen Markern ───────────────────────────────────── */
-/* Aktuelles-Block fuer die Startseite: neueste Meldung gross, zwei weitere als Zeilen.
-   Steht dort zwischen <!-- home-news:start --> und <!-- home-news:end --> und wird bei
-   jedem Lauf neu geschrieben — eine neue Meldung landet damit ohne Handarbeit vorne. */
+/* Aktuelles-Block fuer die Startseite: dezenter Slider mit den letzten drei
+   Meldungen. Steht dort zwischen <!-- home-news:start --> und <!-- home-news:end -->
+   und wird bei jedem Lauf neu geschrieben — eine neue Meldung steht damit ohne
+   Handarbeit vorne. Das Blaettern macht CSS scroll-snap; die Punkte und Pfeile
+   bedient ein kleines Skript in der index.html. */
 function homeBlock() {
-  const [erste, ...weitere] = ITEMS.slice(0, 3);
-  const bild = erste.image || '/assets/images/og-lokalbesucher.png';
-  const zeilen = weitere.map(n => `        <a class="hn-item" href="/news/${n.slug}/">
-          <time datetime="${n.date}">${nice(n.date)}</time>
-          <span>${esc(n.title)}</span>
-        </a>`).join('\n');
+  const drei = ITEMS.slice(0, 3);
 
-  return `      <a class="hn-lead" href="/news/${erste.slug}/" data-r>
-        <img src="${bild}" alt="" width="1200" height="630" loading="lazy" decoding="async">
-        <div class="hn-body">
-          <div class="hn-meta"><span class="hn-chip">Neu</span><time datetime="${erste.date}">${nice(erste.date)}</time></div>
-          <h3>${esc(erste.title)}</h3>
-          <p>${esc(erste.teaser)}</p>
+  const folien = drei.map((n, i) => `          <a class="hn-slide" href="/news/${n.slug}/" role="group" aria-roledescription="Meldung" aria-label="${i + 1} von ${drei.length}: ${esc(n.title)}">
+            <img src="${n.image || '/assets/images/og-lokalbesucher.png'}" alt="" width="1200" height="630" loading="lazy" decoding="async">
+            <div class="hn-body">
+              <div class="hn-meta">${i === 0 ? '<span class="hn-chip">Neu</span>' : ''}<time datetime="${n.date}">${nice(n.date)}</time></div>
+              <h3>${esc(n.title)}</h3>
+              <p>${esc(n.teaser)}</p>
+            </div>
+          </a>`).join('\n');
+
+  const punkte = drei.map((n, i) => `          <button type="button" class="hn-dot" data-hn-go="${i}" aria-current="${i === 0}" aria-label="Meldung ${i + 1}: ${esc(n.title)}"></button>`).join('\n');
+
+  return `      <div class="hn-slider">
+        <div class="hn-track" id="hn-track" tabindex="0" role="region" aria-roledescription="Slider" aria-label="Neueste Meldungen">
+${folien}
         </div>
-      </a>
-      <div class="hn-more">
-${zeilen}
-      </div>
-      <div class="hn-cta"><a href="/news/" class="btn btn-o">Alle Meldungen ansehen</a></div>`;
+        <div class="hn-nav">
+          <button type="button" class="hn-step" id="hn-prev" aria-label="Vorherige Meldung" aria-controls="hn-track" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"/></svg></button>
+${punkte}
+          <button type="button" class="hn-step" id="hn-next" aria-label="Nächste Meldung" aria-controls="hn-track"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+        <div class="hn-cta"><a href="/news/" class="btn btn-o">Alle Meldungen ansehen</a></div>
+      </div>`;
 }
 
 function sitemapBlock() {

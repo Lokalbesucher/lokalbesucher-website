@@ -256,23 +256,31 @@
     .cta p{color:var(--muted);max-width:42ch;margin:0 auto 2rem}
 
     /* FOOTER */
-    /* Aktuelles: neueste Meldung gross, zwei weitere als Zeilen */
-    .hn-lead{display:grid;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:border-color .25s ease}
-    .hn-lead:hover{border-color:rgba(255,189,89,.4)}
-    @media(min-width:760px){.hn-lead{grid-template-columns:340px 1fr;align-items:stretch}}
-    .hn-lead img{width:100%;height:100%;min-height:190px;object-fit:cover;display:block}
+    /* Aktuelles: dezenter Slider mit den letzten drei Meldungen.
+       Das Blaettern macht CSS scroll-snap, das JS setzt nur Punkte und Pfeile —
+       ohne JS bleibt die Spur horizontal scroll- und wischbar. Kein Autoplay:
+       ein selbstlaufender Slider entzieht dem Leser die Kontrolle. */
+    .hn-slider{position:relative}
+    .hn-track{display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding-bottom:.2rem}
+    .hn-track::-webkit-scrollbar{display:none}
+    .hn-slide{scroll-snap-align:center;display:grid;gap:0;background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;transition:border-color .25s ease}
+    .hn-slide:hover{border-color:rgba(255,189,89,.4)}
+    @media(min-width:760px){.hn-slide{grid-template-columns:340px 1fr;align-items:stretch}}
+    .hn-slide img{width:100%;height:100%;min-height:190px;object-fit:cover;display:block}
     .hn-body{padding:1.5rem}
     @media(min-width:760px){.hn-body{padding:1.9rem 2rem}}
     .hn-meta{display:flex;align-items:center;gap:.65rem;flex-wrap:wrap;font-size:.78rem;color:var(--muted);margin-bottom:.7rem}
     .hn-chip{background:rgba(255,189,89,.12);color:var(--yellow);border-radius:999px;padding:.25em .75em;font-weight:700;letter-spacing:.02em}
     .hn-body h3{font-family:var(--font-head,Arial,Helvetica,sans-serif);font-size:clamp(1.15rem,2.4vw,1.45rem);font-weight:800;line-height:1.25;margin-bottom:.55rem}
     .hn-body p{color:var(--muted);font-size:.95rem;line-height:1.7}
-    .hn-more{margin-top:1.4rem}
-    .hn-item{display:flex;gap:1rem;align-items:baseline;padding:.95rem 0;border-top:1px solid var(--border)}
-    .hn-item time{flex-shrink:0;min-width:7.5rem;color:var(--muted);font-size:.8rem}
-    .hn-item span{font-weight:600;font-size:.95rem}
-    .hn-item:hover span{color:var(--yellow)}
-    .hn-cta{margin-top:1.8rem;text-align:center}
+    .hn-nav{display:flex;align-items:center;justify-content:center;gap:.25rem;margin-top:1rem}
+    .hn-step,.hn-dot{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;background:none;border:0;padding:0;cursor:pointer;color:var(--muted);border-radius:999px;transition:color .2s,opacity .2s}
+    .hn-step:hover:not(:disabled),.hn-dot:hover{color:var(--yellow)}
+    .hn-step:disabled{opacity:.3;cursor:default}
+    .hn-dot::before{content:'';width:8px;height:8px;border-radius:999px;background:var(--border);transition:background .25s ease,width .25s ease}
+    .hn-dot[aria-current="true"]::before{background:var(--yellow);width:22px}
+    .hn-cta{margin-top:.6rem;text-align:center}
+    @media(prefers-reduced-motion:reduce){.hn-track{scroll-behavior:auto}}
     footer.ft{background:var(--surface);border-top:1px solid var(--border);padding:3rem 0 1.5rem;font-size:.9rem}
     .ft-grid{display:grid;grid-template-columns:1fr;gap:2rem}
     @media(min-width:600px){.ft-grid{grid-template-columns:repeat(2,1fr)}}
@@ -618,25 +626,42 @@
     <div class="wrap">
       <div class="sec-head" data-r style="text-align:center;max-width:820px;margin-inline:auto"><span class="eyebrow" style="display:flex;justify-content:center">Aktuelles</span><h2 id="aktuelles-title">Was sich gerade ändert.</h2></div>
       <!-- home-news:start -->
-      <a class="hn-lead" href="/news/2026-09-uwg-umweltwerbung-abmahnfalle/" data-r>
-        <img src="/assets/images/news/nachhaltig-abmahnfalle-uwg-og.webp" alt="" width="1200" height="630" loading="lazy" decoding="async">
-        <div class="hn-body">
-          <div class="hn-meta"><span class="hn-chip">Neu</span><time datetime="2026-09-23">23. September 2026</time></div>
-          <h3>„Nachhaltig“ ohne Beleg: Ab Samstag drohen 50.000 Euro</h3>
-          <p>Vier Tage, dann wird „nachhaltig“ zur Abmahnfalle. Ab Samstag kostet ein Wort auf der Website bis zu 50.000 Euro. Und es trifft genau die Betriebe, die es gut meinen.</p>
+      <div class="hn-slider">
+        <div class="hn-track" id="hn-track" tabindex="0" role="region" aria-roledescription="Slider" aria-label="Neueste Meldungen">
+          <a class="hn-slide" href="/news/2026-09-uwg-umweltwerbung-abmahnfalle/" role="group" aria-roledescription="Meldung" aria-label="1 von 3: „Nachhaltig“ ohne Beleg: Ab Samstag drohen 50.000 Euro">
+            <img src="/assets/images/news/nachhaltig-abmahnfalle-uwg-og.webp" alt="" width="1200" height="630" loading="lazy" decoding="async">
+            <div class="hn-body">
+              <div class="hn-meta"><span class="hn-chip">Neu</span><time datetime="2026-09-23">23. September 2026</time></div>
+              <h3>„Nachhaltig“ ohne Beleg: Ab Samstag drohen 50.000 Euro</h3>
+              <p>Vier Tage, dann wird „nachhaltig“ zur Abmahnfalle. Ab Samstag kostet ein Wort auf der Website bis zu 50.000 Euro. Und es trifft genau die Betriebe, die es gut meinen.</p>
+            </div>
+          </a>
+          <a class="hn-slide" href="/news/2026-09-google-anruf-assistent-erfasste-informationen/" role="group" aria-roledescription="Meldung" aria-label="2 von 3: Google ruft an: Neuer Tab zeigt, was der Assistent gesammelt hat">
+            <img src="/assets/images/news/google-anruf-assistent-erfasste-informationen-og.webp" alt="" width="1200" height="630" loading="lazy" decoding="async">
+            <div class="hn-body">
+              <div class="hn-meta"><time datetime="2026-09-21">21. September 2026</time></div>
+              <h3>Google ruft an: Neuer Tab zeigt, was der Assistent gesammelt hat</h3>
+              <p>Google ruft an, und das ist kein Fake. Was der automatisierte Assistent am Telefon über einen Betrieb erfährt, entscheidet mit, wofür er gefunden wird. Seit dem 14. September lässt sich das erstmals einsehen.</p>
+            </div>
+          </a>
+          <a class="hn-slide" href="/news/2026-09-google-dma-buchungsportale-vor-hotels-local-pack/" role="group" aria-roledescription="Meldung" aria-label="3 von 3: 890 Millionen Euro Strafe für Google: Die Buchungsportale gewinnen">
+            <img src="/assets/images/news/google-dma-portale-statt-local-pack-og.webp" alt="" width="1200" height="630" loading="lazy" decoding="async">
+            <div class="hn-body">
+              <div class="hn-meta"><time datetime="2026-09-16">16. September 2026</time></div>
+              <h3>890 Millionen Euro Strafe für Google: Die Buchungsportale gewinnen</h3>
+              <p>Wir suchen lokal auf Google. Bei „hotel berlin“ liefert seit dem 8. September nicht mehr Google die drei Treffer, sondern Booking.com. Was das für Hotels, Restaurants und bald vielleicht jeden lokalen Betrieb heißt.</p>
+            </div>
+          </a>
         </div>
-      </a>
-      <div class="hn-more">
-        <a class="hn-item" href="/news/2026-09-google-anruf-assistent-erfasste-informationen/">
-          <time datetime="2026-09-21">21. September 2026</time>
-          <span>Google ruft an: Neuer Tab zeigt, was der Assistent gesammelt hat</span>
-        </a>
-        <a class="hn-item" href="/news/2026-09-google-dma-buchungsportale-vor-hotels-local-pack/">
-          <time datetime="2026-09-16">16. September 2026</time>
-          <span>890 Millionen Euro Strafe für Google: Die Buchungsportale gewinnen</span>
-        </a>
+        <div class="hn-nav">
+          <button type="button" class="hn-step" id="hn-prev" aria-label="Vorherige Meldung" aria-controls="hn-track" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18 9 12l6-6"/></svg></button>
+          <button type="button" class="hn-dot" data-hn-go="0" aria-current="true" aria-label="Meldung 1: „Nachhaltig“ ohne Beleg: Ab Samstag drohen 50.000 Euro"></button>
+          <button type="button" class="hn-dot" data-hn-go="1" aria-current="false" aria-label="Meldung 2: Google ruft an: Neuer Tab zeigt, was der Assistent gesammelt hat"></button>
+          <button type="button" class="hn-dot" data-hn-go="2" aria-current="false" aria-label="Meldung 3: 890 Millionen Euro Strafe für Google: Die Buchungsportale gewinnen"></button>
+          <button type="button" class="hn-step" id="hn-next" aria-label="Nächste Meldung" aria-controls="hn-track"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+        </div>
+        <div class="hn-cta"><a href="/news/" class="btn btn-o">Alle Meldungen ansehen</a></div>
       </div>
-      <div class="hn-cta"><a href="/news/" class="btn btn-o">Alle Meldungen ansehen</a></div>
       <!-- home-news:end -->
     </div>
   </section>
@@ -718,6 +743,37 @@
 <script>
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('[data-r]').forEach(function(el){io.observe(el)});
+
+  // Aktuelles-Slider: Punkte und Pfeile. Das Blaettern selbst macht CSS scroll-snap,
+  // ohne dieses Skript bleibt die Spur wisch- und scrollbar.
+  (function(){
+    var t=document.getElementById('hn-track'); if(!t) return;
+    var folien=[].slice.call(t.querySelectorAll('.hn-slide'));
+    var punkte=[].slice.call(document.querySelectorAll('.hn-dot'));
+    var prev=document.getElementById('hn-prev'), next=document.getElementById('hn-next');
+    if(!folien.length||!prev||!next) return;
+    var idx=0, tid;
+    function nah(){
+      var best=0, d=Infinity;
+      folien.forEach(function(f,i){var v=Math.abs(f.offsetLeft-t.offsetLeft-t.scrollLeft); if(v<d){d=v;best=i;}});
+      return best;
+    }
+    function zeichne(){
+      idx=nah();
+      punkte.forEach(function(p,i){p.setAttribute('aria-current', i===idx?'true':'false');});
+      prev.disabled=idx<=0; next.disabled=idx>=folien.length-1;
+    }
+    function geh(i){
+      i=Math.max(0,Math.min(folien.length-1,i));
+      t.scrollTo({left:folien[i].offsetLeft-t.offsetLeft, behavior:'smooth'});
+    }
+    t.addEventListener('scroll',function(){clearTimeout(tid);tid=setTimeout(zeichne,90);},{passive:true});
+    punkte.forEach(function(p){p.addEventListener('click',function(){geh(+p.getAttribute('data-hn-go'));});});
+    prev.addEventListener('click',function(){geh(idx-1);});
+    next.addEventListener('click',function(){geh(idx+1);});
+    window.addEventListener('resize',function(){clearTimeout(tid);tid=setTimeout(zeichne,150);});
+    zeichne();
+  }());
 
   // Lead-Formular -> GHL (gleicher Webhook, source "homepage")
   (function(){
