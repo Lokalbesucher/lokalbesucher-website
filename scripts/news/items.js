@@ -56,22 +56,22 @@ export const NEWS = [
   slug: '2026-09-uwg-umweltwerbung-abmahnfalle', date: '2026-09-23',
   platform: 'google', topic: 'unternehmensprofile', hub: false,
   image: '/assets/images/news/nachhaltig-abmahnfalle-uwg-og.webp',
-  title: '„Nachhaltig" ohne Beleg: Ab Samstag drohen 50.000 Euro',
-  metaDesc: 'Ab 27. September 2026 verbietet das UWG pauschale Umweltwerbung per se. Was „grün", „klimaneutral" und „nachhaltig" jetzt kosten und wie du deine Texte rettest.',
-  teaser: 'Vier Tage, dann wird „nachhaltig" zur Abmahnfalle. Ab Samstag kostet ein Wort auf der Website bis zu 50.000 Euro. Und es trifft genau die Betriebe, die es gut meinen.',
-  summary: 'Am <strong>27. September 2026</strong> treten sechs neue Verbote im Anhang zu § 3 Abs. 3 UWG in Kraft. Pauschale Umweltwerbung ohne Beleg ist dann per se unzulässig, ohne Prüfung im Einzelfall und ohne Übergangsfrist. Betroffen sind „umweltfreundlich", „grün", „öko", kompensationsbasierte Klimaneutralität und selbst gestaltete Nachhaltigkeitssiegel. Der Bußgeldrahmen liegt bei 50.000 Euro, abmahnen darf jeder Wettbewerber.',
+  title: '„Nachhaltig“ ohne Beleg: Ab Samstag drohen 50.000 Euro',
+  metaDesc: 'Ab 27. September 2026 verbietet das UWG pauschale Umweltwerbung per se. Was „grün“, „klimaneutral“ und „nachhaltig“ jetzt kosten und wie du deine Texte rettest.',
+  teaser: 'Vier Tage, dann wird „nachhaltig“ zur Abmahnfalle. Ab Samstag kostet ein Wort auf der Website bis zu 50.000 Euro. Und es trifft genau die Betriebe, die es gut meinen.',
+  summary: 'Am <strong>27. September 2026</strong> treten sechs neue Verbote im Anhang zu § 3 Abs. 3 UWG in Kraft. Pauschale Umweltwerbung ohne Beleg ist dann per se unzulässig, ohne Prüfung im Einzelfall und ohne Übergangsfrist. Betroffen sind „umweltfreundlich“, „grün“, „öko“, kompensationsbasierte Klimaneutralität und selbst gestaltete Nachhaltigkeitssiegel. Der Bußgeldrahmen liegt bei 50.000 Euro, abmahnen darf jeder Wettbewerber.',
   body: `        <figure>
           <img src="/assets/images/news/nachhaltig-abmahnfalle-uwg-2026.webp" alt="Illustration: Ein Ladeninhaber streicht auf einer Leiter ein grünes Blatt an sein Schaufenster, während ein Anwalt mit einer versiegelten Abmahnung danebensteht und der Kalender den 27. September zeigt" width="896" height="1120" loading="eager" fetchpriority="high" style="border-radius:12px;border:1px solid #1e2240">
           <figcaption style="font-size:.8rem;color:#7c83aa;margin-top:.5rem">Am 27. September ist das grüne Blatt ohne Beleg kein Marketing mehr, sondern ein Fall.</figcaption>
         </figure>
-        <p>Wie oft lest ihr das an einem Tag? „Grün" auf dem Firmenwagen. „Klimaneutral" im Google-Beitrag. „Umweltfreundlich" im Schaufenster. „Nachhaltige Küche" auf der Speisekarte. Am Samstag, dem 27. September, wird jedes dieser Wörter ohne Beleg verboten. Nicht abmahnfähig nach Prüfung im Einzelfall, sondern per se. Ohne Übergangsfrist.</p>
+        <p>Wie oft lest ihr das an einem Tag? „Grün“ auf dem Firmenwagen. „Klimaneutral“ im Google-Beitrag. „Umweltfreundlich“ im Schaufenster. „Nachhaltige Küche“ auf der Speisekarte. Am Samstag, dem 27. September, wird jedes dieser Wörter ohne Beleg verboten. Nicht abmahnfähig nach Prüfung im Einzelfall, sondern per se. Ohne Übergangsfrist.</p>
 
         <h2 id="was-passiert-ist">Was ist passiert?</h2>
         <p>Der Bundestag hat das Gesetz gegen den unlauteren Wettbewerb geändert. Das Dritte Gesetz zur Änderung des UWG vom 12. Februar 2026 wurde am 19. Februar im Bundesgesetzblatt verkündet (BGBl. 2026 I Nr. 43) und setzt die EU-Richtlinie 2024/825 um. Ab dem 27. September 2026 stehen sechs neue Verbote im Anhang zu § 3 Abs. 3 UWG, der sogenannten schwarzen Liste. Sie wächst damit von 32 auf 38 Einträge. Per se verboten heißt: keine Interessenabwägung, keine Spürbarkeitsschwelle, keine Prüfung im Einzelfall.</p>
         <p>Die drei Verbote, die jeden lokalen Betrieb treffen:</p>
         <ul>
-          <li><strong>Allgemeine Umweltaussagen</strong> ohne nachweisbar hervorragende Umweltleistung — „umweltfreundlich", „grün", „öko".</li>
-          <li><strong>„Klimaneutral" auf Basis von Kompensation</strong> — also das Zertifikat, das viele Betriebe für ein paar Hundert Euro im Jahr kaufen.</li>
+          <li><strong>Allgemeine Umweltaussagen</strong> ohne nachweisbar hervorragende Umweltleistung — „umweltfreundlich“, „grün“, „öko“.</li>
+          <li><strong>„Klimaneutral“ auf Basis von Kompensation</strong> — also das Zertifikat, das viele Betriebe für ein paar Hundert Euro im Jahr kaufen.</li>
           <li><strong>Nachhaltigkeitssiegel ohne Zertifizierungssystem</strong> — das selbst gestaltete Blatt-Logo auf der Website.</li>
         </ul>
         <p>Dazu kommen: Aussagen über den ganzen Betrieb, wenn nur ein Teil zutrifft. Gesetzliche Pflichten, die als Besonderheit beworben werden. Und Umweltversprechen für die Zukunft ohne überprüfbaren Umsetzungsplan.</p>
@@ -87,23 +87,23 @@ export const NEWS = [
         <p>Ein Detail, das in der Aufregung untergeht: Das ausdrückliche Verbot der Kompensationswerbung zielt auf produktbezogene Aussagen. Wer den ganzen Betrieb als klimaneutral bewirbt, fällt nicht automatisch darunter, wird aber weiterhin am allgemeinen Irreführungsmaßstab gemessen. Angreifbar ist damit beides.</p>
 
         <h2 id="wer-gewinnt">Wer gewinnt?</h2>
-        <p>Die Abmahnindustrie. Sie braucht keine Ermittlungen, sondern eine Google-Suche: „klimaneutral" plus Branche plus Stadt. Jede Trefferseite ist ab Samstag ein Fall.</p>
+        <p>Die Abmahnindustrie. Sie braucht keine Ermittlungen, sondern eine Google-Suche: „klimaneutral“ plus Branche plus Stadt. Jede Trefferseite ist ab Samstag ein Fall.</p>
 
         <h2 id="wer-verliert">Wer ist der größte Verlierer?</h2>
-        <p>Der lokale Betrieb, der es gut meint. Der Handwerker, der seit 2024 Ökostrom bezieht und deshalb „klimaneutral" auf den Transporter geschrieben hat. Das Restaurant mit „nachhaltiger Küche", weil das Gemüse vom Hof nebenan kommt. Beide haben recht — und beide sind ab Samstag angreifbar, weil das Wort größer ist als der Beleg.</p>
+        <p>Der lokale Betrieb, der es gut meint. Der Handwerker, der seit 2024 Ökostrom bezieht und deshalb „klimaneutral“ auf den Transporter geschrieben hat. Das Restaurant mit „nachhaltiger Küche“, weil das Gemüse vom Hof nebenan kommt. Beide haben recht — und beide sind ab Samstag angreifbar, weil das Wort größer ist als der Beleg.</p>
         <p>Die Konzerne haben ihre Rechtsabteilungen seit Monaten daran sitzen. Der Betrieb um die Ecke erfährt es aus der Abmahnung.</p>
 
         <h2 id="was-tun">Wie können lokale Unternehmen reagieren?</h2>
         <p>Die Regel ist einfach: Erlaubt bleibt, was konkret und belegbar ist. Verboten wird, was pauschal klingt.</p>
         <ul>
-          <li><strong>Bis Freitag alle Texte durchsuchen.</strong> Website, Google-Unternehmensprofil samt Beschreibung und Beiträgen, Social Media, Anzeigen, Fahrzeugbeschriftung. Jedes „grün", „nachhaltig", „öko", „klimaneutral", „umweltfreundlich" markieren.</li>
-          <li><strong>Pauschal durch konkret ersetzen.</strong> Aus „klimaneutral" wird „Ökostrom-Tarif seit 2024". Aus „nachhaltige Küche" wird „Gemüse von drei Höfen im Umkreis von zehn Kilometern". Aus „umweltfreundlich" wird „Verpackung aus 80 Prozent Recyclingpapier". Zahlen, Jahre, Namen — das ist ab Samstag die einzige sichere Sprache.</li>
+          <li><strong>Bis Freitag alle Texte durchsuchen.</strong> Website, Google-Unternehmensprofil samt Beschreibung und Beiträgen, Social Media, Anzeigen, Fahrzeugbeschriftung. Jedes „grün“, „nachhaltig“, „öko“, „klimaneutral“, „umweltfreundlich“ markieren.</li>
+          <li><strong>Pauschal durch konkret ersetzen.</strong> Aus „klimaneutral“ wird „Ökostrom-Tarif seit 2024“. Aus „nachhaltige Küche“ wird „Gemüse von drei Höfen im Umkreis von zehn Kilometern“. Aus „umweltfreundlich“ wird „Verpackung aus 80 Prozent Recyclingpapier“. Zahlen, Jahre, Namen — das ist ab Samstag die einzige sichere Sprache.</li>
           <li><strong>Siegel prüfen.</strong> Blauer Engel, EU-Ecolabel und das staatliche Bio-Siegel bleiben erlaubt, ebenso extern zertifizierte Systeme. Ein eigenes Blatt-Symbol ohne Zertifizierung muss weg.</li>
           <li><strong>Was nicht belegbar ist, fliegt raus.</strong> Kein Wort ist so viel wert wie eine Abmahnung.</li>
         </ul>
         <p>Die Wahrheit war schon immer das bessere Marketing. Ab Samstag ist sie auch das einzige erlaubte.</p>`,
-  fazit: 'Pauschale Umweltwerbung ist ab Samstag kein Risiko mehr, sondern ein Verstoß. Wer bis Freitag jedes unbelegte „grün" durch eine Zahl, ein Jahr oder einen Namen ersetzt, ist raus aus der Schusslinie.',
-  impact: 'Bis 26. September Website, Google-Profil, Beiträge und Fahrzeuge nach „grün", „öko", „nachhaltig" und „klimaneutral" durchsuchen und jede pauschale Aussage durch einen konkreten Beleg ersetzen.',
+  fazit: 'Pauschale Umweltwerbung ist ab Samstag kein Risiko mehr, sondern ein Verstoß. Wer bis Freitag jedes unbelegte „grün“ durch eine Zahl, ein Jahr oder einen Namen ersetzt, ist raus aus der Schusslinie.',
+  impact: 'Bis 26. September Website, Google-Profil, Beiträge und Fahrzeuge nach „grün“, „öko“, „nachhaltig“ und „klimaneutral“ durchsuchen und jede pauschale Aussage durch einen konkreten Beleg ersetzen.',
   sources: [
     { label: 'Bundesgesetzblatt 2026 I Nr. 43 vom 19.02.2026: Drittes Gesetz zur Änderung des UWG', url: 'https://dip.bundestag.de/vorgang/drittes-gesetz-zur-%C3%A4nderung-des-gesetzes-gegen-den-unlauteren-wettbewerb/325533' },
     { label: 'Richtlinie (EU) 2024/825 (EmpCo-Richtlinie)', url: 'https://eur-lex.europa.eu/eli/dir/2024/825/oj' },

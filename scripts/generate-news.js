@@ -308,6 +308,31 @@ ${items.map(n => `  <item>
 }
 
 /* ── Sitemap-Block zwischen Markern ───────────────────────────────────── */
+/* Aktuelles-Block fuer die Startseite: neueste Meldung gross, zwei weitere als Zeilen.
+   Steht dort zwischen <!-- home-news:start --> und <!-- home-news:end --> und wird bei
+   jedem Lauf neu geschrieben — eine neue Meldung landet damit ohne Handarbeit vorne. */
+function homeBlock() {
+  const [erste, ...weitere] = ITEMS.slice(0, 3);
+  const bild = erste.image || '/assets/images/og-lokalbesucher.png';
+  const zeilen = weitere.map(n => `        <a class="hn-item" href="/news/${n.slug}/">
+          <time datetime="${n.date}">${nice(n.date)}</time>
+          <span>${esc(n.title)}</span>
+        </a>`).join('\n');
+
+  return `      <a class="hn-lead" href="/news/${erste.slug}/" data-r>
+        <img src="${bild}" alt="" width="1200" height="630" loading="lazy" decoding="async">
+        <div class="hn-body">
+          <div class="hn-meta"><span class="hn-chip">Neu</span><time datetime="${erste.date}">${nice(erste.date)}</time></div>
+          <h3>${esc(erste.title)}</h3>
+          <p>${esc(erste.teaser)}</p>
+        </div>
+      </a>
+      <div class="hn-more">
+${zeilen}
+      </div>
+      <div class="hn-cta"><a href="/news/" class="btn btn-o">Alle Meldungen ansehen</a></div>`;
+}
+
 function sitemapBlock() {
   const u = (loc, lastmod, freq, prio) => `  <url>\n    <loc>${SITE}${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>`;
   const out = [u('/news/', latest, 'daily', '0.8'), u('/news/redaktion/', latest, 'monthly', '0.4')];
@@ -483,4 +508,14 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   sm = sm.slice(0, sm.indexOf(start) + start.length) + eol + sitemapBlock().replace(/\n/g, eol) + eol + '  ' + sm.slice(sm.indexOf(end));
   fs.writeFileSync(smPath, sm, 'utf8');
   console.log('OK sitemap.xml', 1 + catKeys.filter(has).length + ITEMS.length, 'News-URLs');
+
+  /* Aktuelles-Block auf der Startseite */
+  const hpPath = path.join(ROOT, 'index.html');
+  let hp = fs.readFileSync(hpPath, 'utf8');
+  const hs = '<!-- home-news:start -->', he = '<!-- home-news:end -->';
+  if (!hp.includes(hs) || !hp.includes(he)) throw new Error('index.html: Marker <!-- home-news:start --> / <!-- home-news:end --> fehlen');
+  const heol = hp.includes('\r\n') ? '\r\n' : '\n';
+  hp = hp.slice(0, hp.indexOf(hs) + hs.length) + heol + homeBlock().replace(/\n/g, heol) + heol + '      ' + hp.slice(hp.indexOf(he));
+  fs.writeFileSync(hpPath, hp, 'utf8');
+  console.log('OK index.html  Aktuelles-Block:', ITEMS.slice(0, 3).map(n => n.slug).join(', '));
 }
