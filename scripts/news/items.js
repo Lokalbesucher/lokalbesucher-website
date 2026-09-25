@@ -53,6 +53,61 @@ const R = {
 export const NEWS = [
 
 {
+  slug: '2026-09-google-kostenlose-produkteintraege-eea-entfernt', date: '2026-09-25',
+  platform: 'google', topic: 'local-seo', hub: false,
+  title: 'Google streicht kostenlose Produkteinträge in 30 Ländern',
+  metaDesc: 'Seit 18. September 2026 zeigt Google im EWR keine kostenlosen Produkteinträge mehr: bis zu 100 % Rückgang in Deutschland. Was Händler jetzt messen und tun müssen.',
+  teaser: 'Ohne Vorwarnung, ohne Übergangsfrist: Zwischen dem 17. und 18. September hat Google die kostenlosen Produkteinträge und Produkt-Karussells im gesamten Europäischen Wirtschaftsraum entfernt. Für lokale Händler ohne Werbebudget ist der Kanal seitdem geschlossen.',
+  summary: 'Google hat zwischen dem <strong>17. und 18. September 2026</strong> die kostenlosen Produkteinträge und das Karussell „Beliebte Produkte" aus der Suche im Europäischen Wirtschaftsraum entfernt, ohne Ankündigung und ohne Übergangsfrist. Tracking-Daten zeigen für Deutschland Rückgänge von 90 bis 100 Prozent. Grund ist der Digital Markets Act. Bezahlte Shopping-Anzeigen bleiben. Lokale Händler mit Merchant-Center-Feed verlieren einen kostenlosen Kanal.',
+  body: `        <p>Google hat zwischen dem 17. und 18. September 2026 die kostenlosen Produkteinträge und Produkt-Karussells aus der Suche im gesamten Europäischen Wirtschaftsraum entfernt. Eine Ankündigung gab es nicht, eine Übergangsfrist ebenso wenig. Für lokale Händler, die über diesen Kanal ohne Werbebudget gefunden wurden, ist er seitdem geschlossen.</p>
+
+        <h2 id="was-entfernt-wurde">Was wurde entfernt?</h2>
+        <p>Betroffen sind nicht die bezahlten Shopping-Anzeigen am Kopf der Suchergebnisse. Diese bleiben bestehen. Entfernt wurden die kostenlosen Formate: das Karussell „Beliebte Produkte", das bei Suchanfragen wie „Kinderfahrrad 20 Zoll" oder „Kaffeevollautomat" innerhalb der organischen Ergebnisse erschien, sowie die unbezahlten Einträge im Shopping-Tab. Beide speisten sich aus dem Google Merchant Center, ohne Gebot, ohne Budget.</p>
+        <p>Der Europäische Wirtschaftsraum umfasst die 27 EU-Staaten sowie Norwegen, Island und Liechtenstein. Deutschland ist betroffen, die Schweiz nicht.</p>
+
+        <h2 id="die-zahlen">Wie groß ist der Rückgang?</h2>
+        <p>Das Tracking von Hugo Huijer (Productrise) weist für Deutschland, Frankreich, Belgien, Schweden und die Niederlande Rückgänge von 90 bis 100 Prozent aus; Semrush bestätigt den Befund. Angaben dazu, wie viele Händler und Produkte betroffen sind, hat Google nicht veröffentlicht.</p>
+        <p>Ginny Marvin, Ads Liaison bei Google, bestätigte auf LinkedIn, dass die Entfernung eine Folge des Digital Markets Act ist, des EU-Gesetzes gegen die Selbstbevorzugung marktbeherrschender Plattformen. Die von der EU-Kommission gesetzte Frist lief am 21. September ab. Google setzte drei Tage früher um.</p>
+        <div class="statbox">
+          <div><div class="n">90–100 %</div><p>Rückgang der kostenlosen Produkteinträge in Deutschland, Frankreich, Belgien, Schweden und den Niederlanden</p></div>
+          <div><div class="n">30 Länder</div><p>27 EU-Staaten plus Norwegen, Island und Liechtenstein. Die Schweiz ist nicht betroffen</p></div>
+          <div><div class="n">0 Tage</div><p>Übergangsfrist. Keine Ankündigung, kein Hinweis im Merchant Center</p></div>
+        </div>
+        <p>Es ist die zweite DMA-bedingte Änderung innerhalb von zehn Tagen. Am 8. September verloren <a href="/news/2026-09-google-dma-buchungsportale-vor-hotels-local-pack/">Googles eigene Hotel-Einheiten ihren Vorrang gegenüber Buchungsportalen</a>; am 18. September folgten die Produkte. In beiden Fällen traf es das, was für Unternehmen kostenlos war.</p>
+
+        <h2 id="wen-es-trifft">Wen trifft es?</h2>
+        <p>Große Händler mit Werbebudget verlagern ihre Produkte in bezahlte Shopping-Anzeigen. Betroffen sind die Betriebe, für die der kostenlose Eintrag der einzige Weg in die Produktsuche war:</p>
+        <ul>
+          <li><strong>Fahrradhändler, Möbel- und Küchenstudios, Elektrofachgeschäfte:</strong> Sortimente mit Preisvergleich vor dem Kauf.</li>
+          <li><strong>Optiker, Apotheken mit Onlineshop, Buchhandlungen, Spielwarenläden:</strong> kleine Warenkörbe bei hoher Suchfrequenz.</li>
+          <li><strong>Jeder Händler mit Onlineshop und Abholung vor Ort:</strong> die Kombination, die Google bisher mit Sichtbarkeit belohnt hat.</li>
+        </ul>
+        <p>Wer keinen Merchant-Center-Feed betreibt, ist nicht betroffen. Wer einen betreibt, verzeichnet seit einer Woche einen Einbruch, der in vielen Betrieben noch nicht aufgefallen sein dürfte.</p>
+
+        <h2 id="wer-gewinnt">Wer gewinnt?</h2>
+        <p>Preisvergleichsdienste wie Idealo, billiger.de und Geizhals. Die frei gewordenen Flächen gehen laut Google an sie, so verlangt es die DMA-Entscheidung der Kommission. Und Google selbst: Wer in der Produktsuche sichtbar bleiben will, bucht Shopping-Anzeigen.</p>
+
+        <h2 id="was-tun">Wie können lokale Händler reagieren?</h2>
+        <ul>
+          <li><strong>Zunächst den Effekt messen.</strong> Im Merchant Center unter „Leistung" den Zeitraum 10. bis 20. September vergleichen. Der Rückgang zeigt, wie groß der Kanal war.</li>
+          <li><strong>Den Feed nicht abschalten.</strong> KI-Suchsysteme wie ChatGPT greifen auf Produktdaten zu; der Feed bleibt die Grundlage dafür, unabhängig vom Google-Karussell.</li>
+          <li><strong>Produkte im Google-Unternehmensprofil anlegen.</strong> Dort bleiben sie bei lokalen Suchanfragen sichtbar, kostenlos, mit Preis und Bild. Dieser Bereich ist vom DMA nicht berührt.</li>
+          <li><strong>Shopping-Anzeigen mit einem kleinen Testbudget prüfen.</strong> Mit den Zahlen aus dem ersten Schritt lässt sich beziffern, ob sich der bezahlte Weg rechnet.</li>
+        </ul>`,
+  fazit: 'Der kostenlose Zugang zur Produktsuche ist beendet. Was bleibt, ist der Kanal, den Google nicht monetarisiert: die Produkte im Unternehmensprofil. Viele Händler nutzen ihn bislang nicht.',
+  impact: 'Rückgang im Merchant Center messen, Feed behalten, Produkte im Unternehmensprofil anlegen und Shopping-Anzeigen mit Testbudget prüfen.',
+  sources: [
+    { label: 'Search Engine Roundtable: Google drops free product listings from EEA (18.09.2026)', url: 'https://www.seroundtable.com/google-drops-free-product-listings-eea-42113.html' },
+    { label: 'PPC Land: Google drops free shopping listings across Europe in two days (18.09.2026)', url: 'https://ppc.land/google-drops-free-shopping-listings-across-europe-in-two-days/' },
+    { label: 'Search Engine Watch: Google drops free listings and carousels from the EEA', url: 'https://searchenginewatch.com/google-drops-free-listings-and-carousels-from-the-european-economic-area/' },
+    { label: 'EU-Kommission: Entscheidung DMA.100193, 890 Mio. € Strafe (23.07.2026)', url: 'https://digital-markets-act.ec.europa.eu/commission-fines-google-eur890-million-breaches-digital-markets-act-2026-07-23_en' },
+    { label: 'Google-Hilfe: Produkteditor im Unternehmensprofil', url: 'https://support.google.com/business/answer/9124203?hl=de' }
+  ],
+  keywords: ['Google Shopping', 'kostenlose Produkteinträge', 'Merchant Center', 'Digital Markets Act', 'DMA', 'Beliebte Produkte', 'Preisvergleich', 'lokale Händler'],
+  related: [R.optimieren, R.hub, R.ads]
+},
+
+{
   slug: '2026-09-uwg-umweltwerbung-abmahnfalle', date: '2026-09-23',
   platform: 'google', topic: 'unternehmensprofile', hub: false,
   image: '/assets/images/news/nachhaltig-abmahnfalle-uwg-og.webp',
