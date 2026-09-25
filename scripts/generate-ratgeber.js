@@ -81,14 +81,17 @@ ${authorCard.replace('max-width:680px', 'max-width:none')}      </div>
   <meta property="og:url"         content="${url}">
   <meta property="og:title"       content="${a.title.replace(' | Lokalbesucher', '')}">
   <meta property="og:description" content="${a.metaDesc}">
-  <meta property="og:image"       content="${a.image || OG_IMG}">
+  <meta property="og:image"       content="${a.ogImage || a.image || OG_IMG}">${a.ogImage ? `
+  <meta property="og:image:type"  content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">` : ''}
   <meta property="og:locale"      content="de_DE">
   <meta property="og:site_name"   content="Lokalbesucher">
 
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="${a.title.replace(' | Lokalbesucher', '')}">
   <meta name="twitter:description" content="${a.metaDesc}">
-  <meta name="twitter:image"       content="${a.image || OG_IMG}">
+  <meta name="twitter:image"       content="${a.ogImage || a.image || OG_IMG}">
 
   <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/css/global.css?v=${V}" as="style">

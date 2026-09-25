@@ -240,6 +240,9 @@ function newsPage(n) {
     date: n.date + 'T08:00:00+02:00', dateNice: nice(n.date),
     articleExtra: { articleSection: t.name, isAccessibleForFree: true, dateline: 'Marl, ' + nice(n.date), publishingPrinciples: SITE + '/news/redaktion/' },
     image: n.image ? SITE + n.image : undefined,
+    /* Share-Vorschau (WhatsApp, LinkedIn, Facebook) braucht JPG, WebP wird dort oft nicht gerendert.
+       Das JPG liegt neben dem WebP (gleicher Name, -og.jpg); ?v= bricht alte Vorschau-Caches. */
+    ogImage: n.image && fs.existsSync(path.join(ROOT, n.image.replace('-og.webp', '-og.jpg'))) ? SITE + n.image.replace('-og.webp', '-og.jpg') + '?v=' + n.date.replace(/-/g, '') : undefined,
     keywords: n.keywords, about: [{ '@type': 'Thing', name: p.name }, { '@type': 'Thing', name: t.name }],
     capsuleLabel: 'Das Wichtigste:', capsule: n.summary,
     beforeBody: `
