@@ -55,11 +55,16 @@ export const NEWS = [
 {
   slug: '2026-09-google-kostenlose-produkteintraege-eea-entfernt', date: '2026-09-25',
   platform: 'google', topic: 'local-seo', hub: false,
+  image: '/assets/images/news/google-produkteintraege-eea-entfernt-og.webp',
   title: 'Google streicht kostenlose Produkteinträge in 30 Ländern',
   metaDesc: 'Seit 18. September 2026 zeigt Google im EWR keine kostenlosen Produkteinträge mehr: bis zu 100 % Rückgang in Deutschland. Was Händler jetzt messen und tun müssen.',
   teaser: 'Ohne Vorwarnung, ohne Übergangsfrist: Zwischen dem 17. und 18. September hat Google die kostenlosen Produkteinträge und Produkt-Karussells im gesamten Europäischen Wirtschaftsraum entfernt. Für lokale Händler ohne Werbebudget ist der Kanal seitdem geschlossen.',
   summary: 'Google hat zwischen dem <strong>17. und 18. September 2026</strong> die kostenlosen Produkteinträge und das Karussell „Beliebte Produkte" aus der Suche im Europäischen Wirtschaftsraum entfernt, ohne Ankündigung und ohne Übergangsfrist. Tracking-Daten zeigen für Deutschland Rückgänge von 90 bis 100 Prozent. Grund ist der Digital Markets Act. Bezahlte Shopping-Anzeigen bleiben. Lokale Händler mit Merchant-Center-Feed verlieren einen kostenlosen Kanal.',
-  body: `        <p>Google hat zwischen dem 17. und 18. September 2026 die kostenlosen Produkteinträge und Produkt-Karussells aus der Suche im gesamten Europäischen Wirtschaftsraum entfernt. Eine Ankündigung gab es nicht, eine Übergangsfrist ebenso wenig. Für lokale Händler, die über diesen Kanal ohne Werbebudget gefunden wurden, ist er seitdem geschlossen.</p>
+  body: `        <figure>
+          <img src="/assets/images/news/google-produkteintraege-eea-entfernt-2026.webp" alt="Illustration: Händler mit Karton voller Produkte vor leeren Regalen in der Google-Suche, nur die bezahlten Anzeigen leuchten noch" width="928" height="1152" loading="eager" fetchpriority="high" style="border-radius:12px;border:1px solid #1e2240">
+          <figcaption style="font-size:.8rem;color:#7c83aa;margin-top:.5rem">Die kostenlosen Regale sind leer. Sichtbar bleibt, was bezahlt ist.</figcaption>
+        </figure>
+        <p>Google hat zwischen dem 17. und 18. September 2026 die kostenlosen Produkteinträge und Produkt-Karussells aus der Suche im gesamten Europäischen Wirtschaftsraum entfernt. Eine Ankündigung gab es nicht, eine Übergangsfrist ebenso wenig. Für lokale Händler, die über diesen Kanal ohne Werbebudget gefunden wurden, ist er seitdem geschlossen.</p>
 
         <h2 id="was-entfernt-wurde">Was wurde entfernt?</h2>
         <p>Betroffen sind nicht die bezahlten Shopping-Anzeigen am Kopf der Suchergebnisse. Diese bleiben bestehen. Entfernt wurden die kostenlosen Formate: das Karussell „Beliebte Produkte", das bei Suchanfragen wie „Kinderfahrrad 20 Zoll" oder „Kaffeevollautomat" innerhalb der organischen Ergebnisse erschien, sowie die unbezahlten Einträge im Shopping-Tab. Beide speisten sich aus dem Google Merchant Center, ohne Gebot, ohne Budget.</p>
