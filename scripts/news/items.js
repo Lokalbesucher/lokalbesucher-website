@@ -53,6 +53,57 @@ const R = {
 export const NEWS = [
 
 {
+  slug: '2026-09-google-aenderungsvorschlaege-4-tage-frist', date: '2026-09-28',
+  platform: 'google', topic: 'unternehmensprofile', hub: true,
+  image: '/assets/images/news/google-aenderungsvorschlaege-4-tage-og.webp',
+  hubWhat: '4-Tage-Frist: Fremde Änderungsvorschläge kann Google veröffentlichen, wenn der Inhaber nicht innerhalb von 4 Tagen reagiert',
+  title: 'Warum ändern sich meine Unternehmensinfos? Google gibt dir 4 Tage – danach wird ohne dich geändert',
+  metaDesc: 'Google gibt dir 4 Tage, um fremde Änderungen an deinem Unternehmensprofil abzulehnen. Danach kann Google selbst veröffentlichen. So schützt du dein Profil.',
+  teaser: 'Seit vergangener Woche steht in der Google-Hilfe eine Frist: Vier Tage nach der Benachrichtigung über einen fremden Änderungsvorschlag darf Google die Änderung selbst veröffentlichen. Als Beleg dient unter anderem deine eigene Website.',
+  summary: 'Google gibt Inhabern laut Google-Hilfe <strong>4 Tage</strong>, um einen fremden Änderungsvorschlag am Unternehmensprofil anzunehmen oder abzulehnen. Reagiert niemand, kann Google die Änderung veröffentlichen, wenn öffentliche Quellen wie die eigene Website sie stützen. Betroffen sind Öffnungszeiten, Telefonnummer, Kategorie, Standort und „Dauerhaft geschlossen“. Wer sein Profil nicht wöchentlich prüft, riskiert falsche Angaben.',
+  body: `        <figure>
+          <img src="/assets/images/news/google-aenderungsvorschlaege-4-tage-2026.webp" alt="Illustration: Besorgter Inhaber schaut zu, wie fremde Hände Standort, Öffnungszeiten und Telefonnummer in seinem Google-Profil ändern, darüber tickt eine Uhr" width="928" height="1152" loading="eager" fetchpriority="high" style="border-radius:12px;border:1px solid #1e2240">
+          <figcaption style="font-size:.8rem;color:#7c83aa;margin-top:.5rem">Vier Tage lang darfst du widersprechen. Danach entscheidet Google.</figcaption>
+        </figure>
+        <p>Wie oft prüfst du dein Google-Unternehmensprofil? Bei vielen Betrieben passiert das nur, wenn eine neue Bewertung eintrifft oder die Ferienöffnungszeiten anstehen. Seit vergangener Woche steht in der Google-Hilfe eine Frist, die dieses Verhalten teuer machen kann: Vier Tage nach der Benachrichtigung über einen fremden Änderungsvorschlag darf Google die Änderung selbst veröffentlichen. Als Beleg dient dabei unter anderem deine eigene Website.</p>
+
+        <h2 id="was-ist-passiert">Was ist passiert?</h2>
+        <p>Jeder Google-Nutzer kann über Maps oder die Suche Änderungen an einem Unternehmensprofil vorschlagen: Öffnungszeiten, Telefonnummer, Kategorie, Standort oder die Markierung „Dauerhaft geschlossen“. Die deutsche Google-Hilfe formuliert jetzt: „Du hast dann 4 Tage Zeit, den Vorschlag anzunehmen oder abzulehnen.“ Reagiert der Inhaber nicht, kann Google die Änderung veröffentlichen, sofern öffentlich zugängliche Informationen sie stützen. Als Beispiel nennt die englische Fassung der Hilfe die Unternehmenswebsite. Search Engine Roundtable hat die neue Formulierung am 23. September 2026 dokumentiert.</p>
+        <p>Zwei weitere Punkte stehen in derselben Hilfe. Ist eine Änderung nötig, damit das Profil den Google-Richtlinien entspricht, kann Google sie ohne vorherige Prüfung durch den Inhaber übernehmen. Und im Profil-Editor sind Informationen, die Google geändert hat, blau markiert. Wer wissen will, was fremde Nutzer an seinem Profil verändert haben, muss aktiv nach blauen Feldern suchen.</p>
+
+        <h2 id="die-zahlen">Welche Zahlen nennt Google?</h2>
+        <div class="statbox">
+          <div><div class="n">4 Tage</div><p>bleiben nach der Benachrichtigung, um einen Vorschlag anzunehmen oder abzulehnen (Google-Hilfe, Artikel 3480441, abgerufen 28.09.2026)</p></div>
+          <div><div class="n">0 Tage</div><p>Frist gilt, wenn eine Änderung zur Einhaltung der Richtlinien erforderlich ist: Google kann sie ohne Prüfung durch den Inhaber übernehmen (ebd.)</p></div>
+          <div><div class="n">?</div><p>Wie viele Profile monatlich durch Fremdvorschläge verändert werden, veröffentlicht Google nicht</p></div>
+        </div>
+
+        <h2 id="wer-gewinnt">Wer gewinnt?</h2>
+        <p>Google erhält aktuellere Daten, ohne selbst zu recherchieren: Nutzer melden, der Inhaber muss binnen vier Tagen widersprechen. Im Vorteil sind außerdem Betriebe und Agenturen, die Profile täglich überwachen. Für sie ändert die Frist nichts.</p>
+
+        <h2 id="wer-verliert">Wer verliert am meisten?</h2>
+        <p>Der lokale Betrieb, der sein Profil nicht überwacht. Ein Handwerksbetrieb, dessen Inhaber die Google-Mail erst am Wochenende öffnet, findet sein Profil womöglich mit fremden Öffnungszeiten, einer falschen Telefonnummer oder dem Hinweis „Dauerhaft geschlossen“ vor. Anrufe laufen dann ins Leere, Kunden stehen vor verschlossener Tür. Besonders gefährdet sind nach unserer Erfahrung Branchen mit hohem Wettbewerbsdruck im Kartenpaket, etwa Schlüsseldienste, Umzugsunternehmen und Gastronomie, weil dort falsche Angaben auch gezielt eingereicht werden.</p>
+        <p>Wie Nutzer Änderungen inzwischen sogar per Chat einreichen, zeigt unsere Meldung zu <a href="/news/2026-09-google-tell-maps-beitragsfunktion/">„Tell Maps“</a>.</p>
+
+        <h2 id="was-tun">Wie können lokale Unternehmen reagieren?</h2>
+        <ul>
+          <li><strong>Erstens:</strong> Die im Unternehmensprofil hinterlegte E-Mail-Adresse und die Push-Benachrichtigungen müssen bei einer Person landen, die sie innerhalb von 24 Stunden liest.</li>
+          <li><strong>Zweitens:</strong> Der Profil-Editor gehört wöchentlich auf die Kontrollliste, mit Blick auf blau markierte Felder.</li>
+          <li><strong>Drittens:</strong> Website, Impressum und Profil müssen dieselben Angaben zu Öffnungszeiten, Adresse und Telefon zeigen, denn genau diese öffentlichen Quellen zieht Google heran, um Fremdvorschläge zu bestätigen oder zu verwerfen.</li>
+          <li><strong>Viertens:</strong> Betriebe mit mehreren Standorten sollten die Überwachung einer festen Stelle oder einem Dienstleister übertragen.</li>
+        </ul>`,
+  fazit: 'Vier Tage sind kürzer als der Urlaub der meisten Inhaber. Wer sein Profil in dieser Zeit nicht prüft, überlässt die Entscheidung Google.',
+  impact: 'Benachrichtigungen an eine Person leiten, die sie binnen 24 Stunden liest, und den Profil-Editor wöchentlich auf blau markierte Felder prüfen.',
+  sources: [
+    { label: 'Google-Hilfe: Google-Updates für Unternehmensprofile (Artikel 3480441, abgerufen 28.09.2026)', url: 'https://support.google.com/business/answer/3480441?hl=de' },
+    { label: 'Google Help: Understand Google updates on your Business Profile (englische Fassung, abgerufen 28.09.2026)', url: 'https://support.google.com/business/answer/3480441?hl=en' },
+    { label: 'Search Engine Roundtable: Google Business Profiles Gives You Four Days To Reject User Suggested Edits (23.09.2026)', url: 'https://www.seroundtable.com/google-business-profiles-4-days-42139.html' }
+  ],
+  keywords: ['Google Unternehmensprofil', 'Änderungsvorschläge', 'Google-Updates', '4 Tage Frist', 'Öffnungszeiten', 'Dauerhaft geschlossen', 'Profil-Editor', 'Google Maps'],
+  related: [R.optimieren, R.hub, R.gesperrt]
+},
+
+{
   slug: '2026-09-google-kostenlose-produkteintraege-eea-entfernt', date: '2026-09-25',
   platform: 'google', topic: 'local-seo', hub: false,
   image: '/assets/images/news/google-produkteintraege-eea-entfernt-og.webp',
