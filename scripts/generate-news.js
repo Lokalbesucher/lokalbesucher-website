@@ -388,7 +388,7 @@ function redaktionPage() {
     },
     {
       '@type': 'Person', '@id': SITE + '/#tobias-frank', name: 'Tobias Frank', jobTitle: 'Inhaber und Chefredakteur',
-      worksFor: { '@id': SITE + '/#organization' }, email: 'info@lokalbesucher.de',
+      worksFor: { '@type': 'Organization', '@id': SITE + '/#organization', name: 'Lokalbesucher GmbH' }, email: 'info@lokalbesucher.de',
       sameAs: ['https://www.linkedin.com/in/tobiasfrank/'],
       knowsAbout: ['Google Unternehmensprofil', 'Local SEO', 'Bewertungsmanagement', 'Google Ads', 'Meta Ads', 'KI-Suche']
     }
