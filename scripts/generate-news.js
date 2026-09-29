@@ -234,7 +234,7 @@ function newsPage(n) {
     slug: n.slug, url: SITE + itemUrl(n), parent: { name: 'News', href: '/news/' },
     type: 'NewsArticle', tag: `${p.name} · ${t.name}`, crumb: n.title,
     title: n.title + ' | Lokalbesucher', metaDesc: n.metaDesc,
-    h1: esc(n.title), heroSub: esc(n.teaser),
+    h1: esc(n.headline || n.title), heroSub: esc(n.teaser),
     heroCta: '', authorBottom: true, /* Tobias: kein Button im Hero, Autorenbox ans Ende, nur ein CTA */
     waText: encodeURIComponent(`Hallo Tobias, ich habe eure Meldung „${n.title}" gelesen. Betrifft das mein Unternehmen?`),
     date: n.date + 'T08:00:00+02:00', dateNice: nice(n.date),

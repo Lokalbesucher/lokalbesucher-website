@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Mon, 28 Sep 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 29 Sep 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>Google pausiert Bewertungen nach Spam-Warnung</title>
+    <link>https://lokalbesucher.de/news/2026-09-google-spam-rezensionen-bewertungen-pausiert/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-09-google-spam-rezensionen-bewertungen-pausiert/</guid>
+    <pubDate>Tue, 29 Sep 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Google</category>
+    <category>Bewertungen</category>
+    <description><![CDATA[Google verschickt seit September 2026 eine E-Mail mit dem Betreff „Protecting your Business Profile from spam reviews“: Ein Anstieg an Spam-Rezensionen wurde erkannt, die Bewertungen wurden entfernt, neue Beiträge sind für mehrere Tage pausiert. Google hatte das Verfahren im April 2026 angekündigt. Ein dokumentierter Fall betrifft einen frisch eröffneten Standort mit stetigem Bewertungsfluss. Wer echte Bewertungen verloren hat, kann über den Link in der Mail eine Prüfung anfordern.]]></description>
+  </item>
   <item>
     <title>Warum ändern sich meine Unternehmensinfos? Google gibt dir 4 Tage – danach wird ohne dich geändert</title>
     <link>https://lokalbesucher.de/news/2026-09-google-aenderungsvorschlaege-4-tage-frist/</link>

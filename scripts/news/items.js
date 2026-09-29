@@ -53,6 +53,55 @@ const R = {
 export const NEWS = [
 
 {
+  slug: '2026-09-google-spam-rezensionen-bewertungen-pausiert', date: '2026-09-29',
+  platform: 'google', topic: 'bewertungen', hub: true,
+  hubWhat: 'Spam-Filter pausiert Profile: Bei einem erkannten Anstieg an Spam-Rezensionen entfernt Google die Bewertungen, stoppt neue Beiträge für mehrere Tage und informiert den Inhaber per E-Mail',
+  image: '/assets/images/news/google-spam-rezensionen-bewertungen-pausiert-og.webp',
+  title: 'Google pausiert Bewertungen nach Spam-Warnung',
+  headline: 'Google sperrt Bewertungen für mehrere Tage: Neue Spam-Warnung trifft auch frisch eröffnete Standorte',
+  metaDesc: 'Google entfernt Spam-Rezensionen und pausiert neue Bewertungen für mehrere Tage. Ein dokumentierter Fall zeigt: Es kann auch frisch eröffnete Standorte treffen.',
+  teaser: 'Seit vergangener Woche kann in einer E-Mail von Google ein Satz stehen, der für lokale Betriebe Folgen hat: Spam-Rezensionen erkannt, Bewertungen entfernt, neue Rezensionen vorerst gestoppt. Wer nach einer Neueröffnung viele Bewertungen in kurzer Zeit sammelt, kann genau dieses Schreiben bekommen.',
+  summary: 'Google verschickt seit <strong>September 2026</strong> eine E-Mail mit dem Betreff „Protecting your Business Profile from spam reviews“: Ein Anstieg an Spam-Rezensionen wurde erkannt, die Bewertungen wurden entfernt, neue Beiträge sind für mehrere Tage pausiert. Google hatte das Verfahren im April 2026 angekündigt. Ein dokumentierter Fall betrifft einen frisch eröffneten Standort mit stetigem Bewertungsfluss. Wer echte Bewertungen verloren hat, kann über den Link in der Mail eine Prüfung anfordern.',
+  body: `        <figure>
+          <img src="/assets/images/news/google-spam-rezensionen-bewertungen-pausiert-2026.webp" alt="Comic: Greifarm entfernt Sterne-Bewertungen von einem Tablet, Schloss über dem Bewertungsbereich" width="928" height="1152" loading="eager" fetchpriority="high" style="border-radius:12px;border:1px solid #1e2240">
+          <figcaption style="font-size:.8rem;color:#7c83aa;margin-top:.5rem">Bewertungen weg, Bewertungsbereich zu: Was Google seit April als Schutz ankündigt, kommt jetzt im Postfach an.</figcaption>
+        </figure>
+        <p>Wann hast du zuletzt eine E-Mail von Google zu deinem Unternehmensprofil geöffnet? Seit vergangener Woche kann darin ein Satz stehen, der für lokale Betriebe Folgen hat: Google hat auf deinem Profil einen Anstieg von Spam-Rezensionen erkannt, die Bewertungen entfernt und neue Rezensionen vorerst gestoppt. Ob der Filter dabei zwischen gekauften Bewertungen und einer Welle echter Kundenstimmen nach einer Aktion unterscheidet, geht aus der Mail nicht hervor. Wer nach einer Neueröffnung viele Bewertungen in kurzer Zeit sammelt, kann genau dieses Schreiben bekommen.</p>
+
+        <h2 id="was-passiert-ist">Was passiert ist</h2>
+        <p>Am 22. September 2026 hat Search Engine Roundtable eine neue Google-Benachrichtigung dokumentiert, die der Berater Antoine Cameron auf LinkedIn geteilt hatte. Betreff: „Protecting your Business Profile from spam reviews“. Der Kernsatz lautet: „Google has detected a spike in spam reviews on your Business Profile and removed them so they do not affect your Google rating.“ Weiter heißt es, dass neue Bewertungen, Rezensionen und andere Nutzerbeiträge vorübergehend pausiert sind. Die Pause endet laut E-Mail „typically within a few days“. Wer glaubt, dass echte Bewertungen mit entfernt wurden, kann über den Link in der Mail eine Prüfung anfordern. Google schreibt außerdem, dass keine Handlung erforderlich sei.</p>
+        <p>Einen zweiten Fall schildert die Beraterin Amy Toman im selben Beitrag: ein neu eröffneter Standort eines früheren Kunden. Der Betrieb erhielt laut Toman einen stetigen Strom an Bewertungen; sie vermutet, dass Google die Art der Bewertungssammlung hinterfragt hat. Ihr Urteil: „I think this filter, along with many of the new ones, needs to be refined a bit.“</p>
+        <p>Neu ist das Verfahren nicht, neu ist, dass es dokumentiert bei Betrieben ankommt. Google hatte es am 16. April 2026 im Blogbeitrag zum Maps Safety Report angekündigt: „If we do see a sudden spike in spam reviews, we'll quickly remove the fake content, pause new reviews on the profile, alert the Business Profile owner and display a notification banner to let consumers know why contributions are temporarily paused.“ Kunden sehen die Pause also auf dem Profil. Eine Stellungnahme zu den konkreten Fällen gibt es von Google nicht. Ob die Benachrichtigung bereits an deutsche Profile geht, ist nicht bestätigt. Da Google die Funktion ohne Länderbeschränkung angekündigt hat, ist eine weltweite Aussteuerung wahrscheinlich.</p>
+
+        <h2 id="die-zahlen">Die Zahlen</h2>
+        <div class="statbox">
+          <div><div class="n">292 Mio.</div><p>Rezensionen hat Google 2025 blockiert oder entfernt, 21 Prozent mehr als 2024 mit 240 Millionen (Google Maps Safety Report, 16.04.2026)</p></div>
+          <div><div class="n">13 Mio.</div><p>gefälschte Unternehmensprofile wurden 2025 gelöscht, 782.000 Konten mit Beitragssperren belegt (ebd.)</p></div>
+          <div><div class="n">„Mehrere Tage“</div><p>dauert die Bewertungspause laut Google-E-Mail; eine genaue Frist nennt Google nicht (Search Engine Roundtable, 22.09.2026)</p></div>
+        </div>
+
+        <h2 id="wer-gewinnt">Wer gewinnt</h2>
+        <p>Google selbst: Der Konzern prüft laut Safety Report nicht mehr nur einzelne Rezensionen, sondern kann die Bewertungsfunktion eines ganzen Profils pausieren. Das senkt den Aufwand pro Fall. Im Vorteil dürften außerdem etablierte Betriebe mit gleichmäßigem Bewertungsfluss über Jahre sein, denn ein Anstieg, den der Filter als Spike wertet, entsteht dort seltener.</p>
+
+        <h2 id="wer-verliert">Der größte Verlierer ist der lokale Betrieb mit Bewertungen in Wellen</h2>
+        <p>Neueröffnungen, Restaurants nach einem Event, Handwerker nach einer Saisonaktion, Praxen mit QR-Aufsteller am Empfang: Überall dort kommen Bewertungen gebündelt. Nach dem von Toman geschilderten Fall ist es dieses Muster, das den Filter auslösen kann. Die Folge ist doppelt: Bereits abgegebene Bewertungen verschwinden, und für mehrere Tage kann kein Kunde eine neue schreiben. Für einen frisch eröffneten Standort ohne Bewertungspolster ist das der Zeitraum, in dem das Profil ohne Sterne im Kartenpaket steht, mit einem Hinweis für Kunden, dass Beiträge pausiert sind.</p>
+
+        <h2 id="was-tun">Wie können lokale Unternehmen reagieren?</h2>
+        <p>Erstens: Bewertungsanfragen gleichmäßig über den Monat verteilen statt nach Aktionen gebündelt zu verschicken. Zweitens: Die im Unternehmensprofil hinterlegte E-Mail-Adresse täglich prüfen, denn den Link zur Prüfung entfernter Bewertungen verschickt Google in dieser Mail. Drittens: Entfernte Bewertungen dokumentieren (Name, Datum, Text), bevor die Prüfung angefordert wird. Viertens: Bei Neueröffnungen die ersten Bewertungen über mehrere Wochen aufbauen, nicht in der Eröffnungswoche.</p>
+        <p>Google entfernt 292 Millionen Rezensionen im Jahr. Bei dieser Größenordnung entscheidet ein Muster darüber, ob eine Eröffnungswoche als Erfolg oder als Spam gilt.</p>`,
+  fazit: 'Google pausiert bei einem erkannten Spam-Anstieg die Bewertungsfunktion eines ganzen Profils, angekündigt im April, jetzt dokumentiert im Postfach. Wer Bewertungsanfragen über den Monat verteilt und die Profil-Mail täglich liest, senkt das Risiko und verpasst den Prüf-Link nicht.',
+  impact: 'Bewertungsanfragen über den Monat verteilen, die Profil-E-Mail täglich prüfen und entfernte Bewertungen dokumentieren, bevor die Prüfung angefordert wird.',
+  sources: [
+    { label: 'Search Engine Roundtable, 22.09.2026: Google Business Profiles spike in spam reviews (Screenshot der Google-E-Mail, geteilt von Antoine Cameron auf LinkedIn), abgerufen am 29.09.2026', url: 'https://www.seroundtable.com/google-business-profiles-spike-in-spam-reviews-42123.html' },
+    { label: 'Google (The Keyword), 16.04.2026: New ways we’re protecting businesses on Maps (Maps Safety Report 2025), abgerufen am 29.09.2026', url: 'https://blog.google/products-and-platforms/products/maps/new-ways-were-protecting-businesses-on-maps/' },
+    { label: 'Search Engine Roundtable, 17.04.2026: Google Maps spam fighting 2025, abgerufen am 29.09.2026', url: 'https://www.seroundtable.com/google-maps-spam-fighting-2025-41176.html' },
+    { label: 'Google Transparenzbericht: Maps-Inhalte', url: 'https://transparencyreport.google.com/maps-content/overview' }
+  ],
+  keywords: ['Spam-Rezensionen', 'Google Bewertungen pausiert', 'Protecting your Business Profile from spam reviews', 'Google Maps Safety Report', 'Bewertungsfilter', 'Neueröffnung', 'Google Unternehmensprofil'],
+  related: [R.mehrBew, R.bewMgmt, R.hub]
+},
+
+{
   slug: '2026-09-google-aenderungsvorschlaege-4-tage-frist', date: '2026-09-28',
   platform: 'google', topic: 'unternehmensprofile', hub: true,
   image: '/assets/images/news/google-aenderungsvorschlaege-4-tage-og.webp',
