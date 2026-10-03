@@ -609,10 +609,11 @@ Auf `lokalbesucher.de` laufen neben dieser Website mehrere **Worker auf eigenen 
 
 | Pfad | Worker | Quelle | Was |
 |------|--------|--------|-----|
-| `/admin/*` | `lokalbesucher-admin` | `C:\lokalbesucher-toolsdmin\` | Zentrales Admin: eigene Nutzer (kein lokalisto-Login), Affiliates, Anfragen mit Status, A/B, Google-Ads-Export, SSO in die Tools |
+| `/admin/*` | `lokalbesucher-admin` | `C:\lokalbesucher-tools\admin\` | Zentrales Admin: eigene Nutzer (kein lokalisto-Login), Affiliates, Anfragen mit Status, A/B, Google-Ads-Export, SSO in die Tools |
 | `/start/*` | `lokalbesucher-start-route` | `C:\lokalbesucher-tools\start-lp\` | Verkaufs-Landingpage (Pages-Projekt `lokalbesucher-start` als Origin) + Backend: Lead-/Bestell-Mails via Resend, Affiliate-Cookie, Mini-Check |
 | `/check/*` | `lokalbesucher-check` | `C:\Lokalbesucher\lokalbesucher-check\` | Sales-Check (55 Punkte); stellt intern den Places-Proxy und den SSO-Einstieg bereit |
-| `/reporting/*` | `reporting` | github.com/Lokalbesucher/Reporting (Klon in `C:\lokalbesucher-toolseporting\`) | Kunden-Reporting |
+| `/reporting/*` | `reporting` | github.com/Lokalbesucher/Reporting (Klon in `C:\lokalbesucher-tools
+eporting\`) | Kunden-Reporting |
 
 **Niemals** in dieser Website Ordner `admin/`, `start/`, `check/` oder `reporting/` anlegen — sie wären unerreichbar.
 
