@@ -167,7 +167,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 | `/google-business-optimierung-nr-1-fuer-lokale-sichtbarkeit-lokalbesucher/` | ROI Kalkulator |
 | `/schema-org-generator/` | Tool (zieht Traffic) |
 | `/ki-sichtbarkeits-check/` | Tool — fragt ChatGPT/Claude/Gemini live ab; Backend `functions/api/ai-check.js`, KV `AI_CHECK_KV`, Turnstile-geschützt, 3 Checks/IP/Tag |
-| `/ki-sichtbarkeits-check/admin` | **Intern, Basic Auth** (Passwort = Pages-Secret `KI_ADMIN_PASSWORD`). Protokoll aller Checks + aller Formular-Anfragen aus D1 `KI_DB` (`lokalbesucher-ki-check`, Schema `migrations/0001_ki_check_log.sql`), Kennzahlen, CSV-Export. Geschrieben von `functions/_lib/kilog.js`: `lead.js` sichert jede Anfrage **vor** der Webhook-Weiterleitung (Spalte `delivered`), `ai-check.js` protokolliert jeden Ausgang (ok/cache/limit/turnstile). Test ohne Cloudflare: `node tmp/test-kilog.mjs` (lokal, gitignoriert). |
+| `/ki-sichtbarkeits-check/admin` | **Intern, Basic Auth** (Passwort = Pages-Secret `KI_ADMIN_PASSWORD`) **oder SSO** aus dem zentralen Admin (`?sso=<Token>`, Secret `SSO_SECRET`, Cookie `lb_ki_sso` 24 h — siehe §21). Protokoll aller Checks + aller Formular-Anfragen aus D1 `KI_DB` (`lokalbesucher-ki-check`, Schema `migrations/0001_ki_check_log.sql`), Kennzahlen, CSV-Export. Geschrieben von `functions/_lib/kilog.js`: `lead.js` sichert jede Anfrage **vor** der Webhook-Weiterleitung (Spalte `delivered`), `ai-check.js` protokolliert jeden Ausgang (ok/cache/limit/turnstile). Test ohne Cloudflare: `node tmp/test-kilog.mjs` (lokal, gitignoriert). |
 | `/ratgeber/` | Ratgeber-Hub + Artikel auf Money-Keywords |
 | `/news/` | **News-Feed** für lokales Marketing (Google, Meta, Apple Maps, Bing Places, KI-Suche) — Kategorie-Seiten `/news/<plattform|thema>/`, Meldungen `/news/JJJJ-MM-slug/`, RSS `/news/feed.xml`, Redaktionsseite `/news/redaktion/`, Google-News-Sitemap `/sitemap-news.xml`, siehe §20 |
 | `/google-unternehmensprofil/` | **Leitseite Wissens-Hub** „Google Unternehmensprofil: Der komplette Leitfaden" (bundesweit, informational, kein NRW-/Agentur-Keyword) — Cluster-Artikel unter `/ratgeber/google-unternehmensprofil-*/`, siehe §19 |
@@ -600,3 +600,27 @@ Nie in `.claude/worktrees/` anderer Sessions schreiben.
 - Der Seitenrahmen `page()` in generate-ratgeber.js ist dafür parametrisiert (`main`, `faqs` optional, `type`, `headExtra`, `cssExtra`, `graph`, `beforeBody`/`afterBody`, `capsuleLabel`) — Ratgeber-Ausgabe bleibt unverändert.
 - **Layout-Regeln News (Tobias, 2026-09-16, NICHT ändern):** Meldung = kein Button im Hero; Headline und Subtext in voller Breite; Artikeltext in voller Container-Breite (bis zur rechten Kante des Nav-Buttons „Kostenlos beraten"); Bild rechtsbündig ca. 40 % mit umfließendem Text (Desktop), mobil oben in voller Breite; oben nur Plattform/Thema-Chips; Abstand Subtext → Text knapp; am Ende H2 „Fazit" (Feld `fazit`, Fallback `impact`) → Quellen-Liste → Weitere Meldungen → Autorenbox → EIN CTA-Block. Keine Box „Was das für dich heißt". Übersicht /news/ = Top-Meldung groß und aufgeklappt (Bild links, Kurzfassung, Ghost-Button), darunter 3-spaltiges Raster über die volle Breite. Alles steckt in `scripts/generate-news.js` (cssExtra, newsPage, listPage), nie per Hand in den HTML-Dateien.
 - Verbote gelten auch hier: NFC, „keine Mindestlaufzeit", Löschversprechen, Fragen & Antworten als aktive Funktion, Gemini-Verknüpfung als in DE verfügbar (Generator bricht bei NFC/Mindestlaufzeit ab).
+
+---
+
+## 21. ZENTRALES ADMIN, START-LANDINGPAGE, ANDERE WORKER (seit 2026-10-03)
+
+Auf `lokalbesucher.de` laufen neben dieser Website mehrere **Worker auf eigenen Pfaden** — Worker-Routen gewinnen vor Pages:
+
+| Pfad | Worker | Quelle | Was |
+|------|--------|--------|-----|
+| `/admin/*` | `lokalbesucher-admin` | `C:\lokalbesucher-toolsdmin\` | Zentrales Admin: eigene Nutzer (kein lokalisto-Login), Affiliates, Anfragen mit Status, A/B, Google-Ads-Export, SSO in die Tools |
+| `/start/*` | `lokalbesucher-start-route` | `C:\lokalbesucher-tools\start-lp\` | Verkaufs-Landingpage (Pages-Projekt `lokalbesucher-start` als Origin) + Backend: Lead-/Bestell-Mails via Resend, Affiliate-Cookie, Mini-Check |
+| `/check/*` | `lokalbesucher-check` | `C:\Lokalbesucher\lokalbesucher-check\` | Sales-Check (55 Punkte); stellt intern den Places-Proxy und den SSO-Einstieg bereit |
+| `/reporting/*` | `reporting` | github.com/Lokalbesucher/Reporting (Klon in `C:\lokalbesucher-toolseporting\`) | Kunden-Reporting |
+
+**Niemals** in dieser Website Ordner `admin/`, `start/`, `check/` oder `reporting/` anlegen — sie wären unerreichbar.
+
+Doku für alles Übergreifende: `C:\lokalbesucher-tools\docs\` (`ARCHITEKTUR.md`, `SSO.md`, `GOOGLE-ADS.md`, `RUNBOOK.md`)
+und die READMEs der Ordner. Regeln dort: nichts Bestehendes abschalten, Paritäts-Check vor Deploy fremder Worker,
+Secrets ohne Zeilenumbruch (`printf '%s'`), Doku im selben Commit.
+
+Diese Website hält für das SSO das Pages-Secret `SSO_SECRET` (gemeinsam mit dem Admin-Worker). Die einzige betroffene
+Datei ist `functions/ki-sichtbarkeits-check/admin.js` (Basic Auth bleibt, zusätzlich signiertes Cookie).
+
+**Tobias' Grundsatz für alle Projekte: überall eine saubere Doku (README/CLAUDE.md), gepflegt im selben Commit wie die Änderung.**
