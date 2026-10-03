@@ -39,6 +39,49 @@ function safeEqual(a, b) {
   return diff === 0;
 }
 
+/* ── SSO aus dem zentralen Lokalbesucher-Admin (lokalbesucher.de/admin) ──
+   Das Admin haengt ?sso=<HMAC-Token> an (SSO_SECRET gemeinsam, 60 s gueltig).
+   Daraus wird ein signiertes Cookie (24 h). Basic Auth bleibt daneben bestehen. */
+const SSO_COOKIE = 'lb_ki_sso';
+const b64u = (buf) => btoa(String.fromCharCode(...new Uint8Array(buf))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+const unb64u = (t) => { t = t.replace(/-/g, '+').replace(/_/g, '/'); while (t.length % 4) t += '='; return Uint8Array.from(atob(t), (c) => c.charCodeAt(0)); };
+async function hmacKey(secret, usage) {
+  return crypto.subtle.importKey('raw', new TextEncoder().encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, usage);
+}
+async function ssoVerify(secret, token) {
+  const [body, sig] = String(token || '').split('.');
+  if (!body || !sig) return null;
+  try {
+    const ok = await crypto.subtle.verify('HMAC', await hmacKey(secret, ['verify']), unb64u(sig), new TextEncoder().encode(body));
+    if (!ok) return null;
+    const d = JSON.parse(new TextDecoder().decode(unb64u(body)));
+    return d && d.exp && d.exp > Date.now() ? d : null;
+  } catch { return null; }
+}
+async function ssoSign(secret, payload) {
+  const body = b64u(new TextEncoder().encode(JSON.stringify(payload)));
+  const sig = b64u(await crypto.subtle.sign('HMAC', await hmacKey(secret, ['sign']), new TextEncoder().encode(body)));
+  return body + '.' + sig;
+}
+/* Liefert null (nicht erlaubt), true (Basic Auth / gueltiges Cookie) oder einen
+   Set-Cookie-Header (frischer SSO-Token: Cookie setzen und weiterleiten). */
+async function ssoAuthorized(request, env) {
+  if (!env.SSO_SECRET) return null;
+  const url = new URL(request.url);
+  const t = url.searchParams.get('sso');
+  if (t) {
+    const d = await ssoVerify(env.SSO_SECRET, t);
+    if (d && d.aud === 'ki') {
+      const v = await ssoSign(env.SSO_SECRET, { email: d.email, exp: Date.now() + 24 * 3600 * 1000 });
+      return `${SSO_COOKIE}=${v}; Path=/ki-sichtbarkeits-check; Max-Age=86400; HttpOnly; Secure; SameSite=Lax`;
+    }
+    return null;
+  }
+  const m = (request.headers.get('Cookie') || '').match(new RegExp('(?:^|;\\s*)' + SSO_COOKIE + '=([^;]+)'));
+  if (!m) return null;
+  return (await ssoVerify(env.SSO_SECRET, decodeURIComponent(m[1]))) ? true : null;
+}
+
 function authorized(request, env) {
   if (!env.KI_ADMIN_PASSWORD) return false;
   const h = request.headers.get('Authorization') || '';
@@ -211,7 +254,12 @@ ${tab === 'checks' ? `
 }
 
 export async function onRequestGet({ request, env }) {
-  if (!authorized(request, env)) return deny();
+  const sso = await ssoAuthorized(request, env);
+  if (typeof sso === 'string') {
+    const clean = new URL(request.url); clean.searchParams.delete('sso');
+    return new Response(null, { status: 302, headers: { Location: clean.pathname + clean.search, 'Set-Cookie': sso, 'Cache-Control': 'no-store' } });
+  }
+  if (!sso && !authorized(request, env)) return deny();
   if (!env.KI_DB) {
     return new Response('KI_DB-Binding fehlt (wrangler.toml).', { status: 503, headers: { 'Cache-Control': 'no-store' } });
   }
