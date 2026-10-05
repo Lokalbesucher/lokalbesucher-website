@@ -1,0 +1,40 @@
+# Veröffentlicht im Admin freigegebene News (lokalbesucher.de/admin/news).
+# Ohne Freigabe passiert nichts. Ablauf und Regeln: CLAUDE.md §20, docs/news-regeln.md.
+# Zeiten in UTC: jede Stunde zur halben, Mo–Fr. Der Admin gibt Meldungen erst ab 6 Uhr deutscher Zeit heraus.
+name: News veröffentlichen
+on:
+  schedule:
+    - cron: '30 4-17 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: news-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      NEWS_PUBLISH_KEY: ${{ secrets.NEWS_PUBLISH_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - id: prep
+        run: node scripts/news/publish-auto.mjs prepare
+      - name: Commit und Push (geht sofort live)
+        if: steps.prep.outputs.changed == 'true'
+        run: |
+          git config user.name "$(git log -1 --format=%an)"
+          git config user.email "$(git log -1 --format=%ae)"
+          git add -A
+          git diff --cached --quiet && exit 0
+          git commit -m "News: ${{ steps.prep.outputs.title }}"
+          git push origin HEAD:main
+      - name: Warten bis live, dann dem Admin melden
+        if: steps.prep.outputs.changed == 'true'
+        run: node scripts/news/publish-auto.mjs confirm

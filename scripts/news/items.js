@@ -722,3 +722,8 @@ export const NEWS = [
 }
 
 ];
+
+/* Meldungen aus der Freigabe im Admin (lokalbesucher.de/admin/news). Die Datei schreibt
+   scripts/news/publish-auto.mjs – nie von Hand editieren, Korrekturen laufen über das Admin. */
+import { readFileSync } from 'fs';
+NEWS.push(...JSON.parse(readFileSync(new URL('./auto-items.json', import.meta.url), 'utf8')));

@@ -16,4 +16,12 @@
       <news:title>Warum ändern sich meine Unternehmensinfos? Google gibt dir 4 Tage – danach wird ohne dich geändert</news:title>
     </news:news>
   </url>
+  <url>
+    <loc>https://lokalbesucher.de/news/2026-09-google-kostenlose-produkteintraege-eea-entfernt/</loc>
+    <news:news>
+      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
+      <news:publication_date>2026-09-25T08:00:00+02:00</news:publication_date>
+      <news:title>Google streicht kostenlose Produkteinträge in 30 Ländern</news:title>
+    </news:news>
+  </url>
 </urlset>

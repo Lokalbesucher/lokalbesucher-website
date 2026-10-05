@@ -62,7 +62,7 @@ Leser per Du, kein Siezen. Keine Autorenzeile im Text. Abkürzungen (DMA, EWR, U
 
 - Zeile 1 öffnet eine Lücke: Frage, Widerspruch oder ein Satz, der ohne Kontext nicht aufgeht. Nie mit der reinen Nachricht starten. Maximal 120 Zeichen.
 - Ein Absatz = ein Gedanke, 1–2 Sätze, Leerzeile dazwischen. Keine Block-Labels („Die Zahlen:“, „Was sich geändert hat:“).
-- Haltung zeigen. Auf der Firmenseite in Wir-Form („Unser Rat“). Ich-Form nur für Tobias' persönliches Profil, jede persönliche Behauptung mit [BESTÄTIGEN].
+- Haltung zeigen. Immer in Tobias' Stimme und Ich-Form („Mein Rat“) – auf seinem persönlichen Profil und auch auf der Firmenseite soll es klingen, als hätte Tobias Frank es selbst geschrieben (Entscheidung Tobias, 05.10.2026). Jede persönliche Behauptung mit [BESTÄTIGEN].
 - Eine Wendung in der Mitte: der Moment, an dem die Nachricht kippt.
 - Zahlen bleiben Pflicht, im Fließtext mit Quelle im Halbsatz.
 - Ein Absatz Rat oder Agentursicht.
