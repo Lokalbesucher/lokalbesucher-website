@@ -623,4 +623,11 @@ Secrets ohne Zeilenumbruch (`printf '%s'`), Doku im selben Commit.
 Diese Website hält für das SSO das Pages-Secret `SSO_SECRET` (gemeinsam mit dem Admin-Worker). Die einzige betroffene
 Datei ist `functions/ki-sichtbarkeits-check/admin.js` (Basic Auth bleibt, zusätzlich signiertes Cookie).
 
+**Arbeiten von jedem Rechner (Tobias, 2026-10-05 — NICHT verhandelbar):** Tobias will an Windows und Mac gleichermaßen
+weiterarbeiten können. Deshalb gilt für **jedes** Repo (dieses, `lokalbesucher-tools`, `Reporting`, `lokalisto`): GitHub ist die
+einzige Quelle der Wahrheit; zu Beginn jeder Sitzung Stand holen, nach jeder Änderung commit + push; nie mit ungepushten Commits
+aufhören; deployt wird nur aus gepushtem Stand; neue Projekte bekommen **sofort** ein privates GitHub-Repo; nichts Wichtiges in
+`tmp/` oder anderen gitignorierten Ordnern liegen lassen. `lokalbesucher-tools` liegt seit 2026-10-05 unter
+github.com/Lokalbesucher/lokalbesucher-tools (privat) — vorher zwei Tage nur lokal, das hat die Mac-Arbeit blockiert.
+
 **Tobias' Grundsatz für alle Projekte: überall eine saubere Doku (README/CLAUDE.md), gepflegt im selben Commit wie die Änderung.**
