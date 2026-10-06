@@ -12,6 +12,8 @@ das Admin, wo Tobias sie freigibt. Du veröffentlichst selbst NICHTS und postest
 - `curl -s https://lokalbesucher.de/docs/news-regeln.md` – verbindliche Redaktionsregeln. Der Abschnitt „Rückmeldungen aus der
   Freigabe“ am Ende hat Vorrang vor allem anderen.
 - `curl -s https://lokalbesucher.de/news/feed.xml` – bereits veröffentlichte Meldungen. Kein Thema doppelt bringen.
+- `curl -s https://lokalbesucher.de/admin/api/news/known -H "X-LB-News: KEY"` – was schon im Admin liegt (offen, freigegeben,
+  Ersatz, raus). Auch davon nichts doppelt liefern; was Tobias rausgeworfen hat (`raus`), nicht noch einmal anbieten.
 
 ## Schritt 2 – Recherchieren (breit, nicht nur Google)
 
@@ -94,6 +96,7 @@ Datei `woche.json` (UTF-8) in genau dieser Form:
    "linkedin": "900–1.500 Zeichen",
    "gbp": "höchstens 1.300 Zeichen, ohne URL",
    "whatsapp": "2–4 Sätze, ohne URL",
+   "social": "Text für Facebook und Instagram: 400–800 Zeichen, lockerer als LinkedIn, Du-Ansprache, erste Zeile ist der Aufhänger, ein klarer Tipp, ohne URL, höchstens 3 Hashtags am Ende",
    "confirm": [],
    "slop": 8,
    "slop_note": "ein Satz Begründung",
@@ -135,3 +138,25 @@ curl -s -X POST https://lokalbesucher.de/admin/api/news/week -H "Content-Type: a
 Erste Zeile: „GELIEFERT: n Vorschläge und m Ersatz-Meldungen warten unter https://lokalbesucher.de/admin/news auf Freigabe“
 oder „NICHT GELIEFERT: Grund“. Danach je Meldung eine Zeile: Titel – Plattform – Relevanz – Primärquelle – Slop-Note. Zum
 Schluss eine Zeile mit Themen, die du bewusst weggelassen hast, und warum.
+
+---
+
+# Morgen-Check (Dienstag bis Freitag) – nur Eilmeldungen
+
+Der Morgen-Check ist eine zweite, kleine Routine. Sie liefert an den meisten Tagen **nichts**. Ziel: Wenn etwas wirklich
+Wichtiges passiert, steht es ein bis zwei Tage später auf der Seite und nicht erst nach dem nächsten Montag.
+
+1. Regeln, Feed und `known` lesen wie in Schritt 1.
+2. Kurz recherchieren: nur die letzten 48 Stunden, dieselben Themenfelder wie in Schritt 2, in erster Linie über die
+   Primärquellen und Search Engine Roundtable / Search Engine Land. Höchstens etwa 15 Minuten.
+3. Liefern nur, wenn ALLE Punkte zutreffen:
+   - Relevanz ehrlich `hoch`: betrifft viele lokale Betriebe in Deutschland jetzt oder in Kürze, mit Handlungsbedarf.
+   - Belegt durch eine Primärquelle (oder zwei unabhängige seriöse Quellen), Geltung für Deutschland geklärt.
+   - Noch nicht auf der Seite und nicht im Admin.
+   - Es wäre ein Nachteil, damit bis Montag zu warten.
+   Im Zweifel NICHT liefern und das Thema in der Abschlussmeldung für Montag vormerken.
+4. Wenn ja: genau **eine** Meldung schreiben (alle Regeln und das Format aus Schritt 4 und 5, Slop-Test mindestens 8) und mit
+   `{"urgent": true, "items": [ … ]}` senden. Das Admin plant sie auf den nächsten freien Tag und schickt Tobias eine Mail
+   „EILIG“. Danach Bilder abholen lassen wie in Schritt 6.
+5. Abschlussmeldung: erste Zeile „EILMELDUNG GELIEFERT: Titel“ oder „NICHTS EILIGES“. Danach in zwei bis vier Zeilen, was du
+   gesehen und warum du es (nicht) geliefert hast, und was du für Montag vormerkst.
