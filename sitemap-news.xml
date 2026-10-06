@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://lokalbesucher.de/news/2026-09-google-spam-rezensionen-bewertungen-pausiert/</loc>
+    <loc>https://lokalbesucher.de/news/2026-10-google-beitraege-unbestaetigte-kontaktdaten/</loc>
     <news:news>
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-09-29T08:00:00+02:00</news:publication_date>
-      <news:title>Google pausiert Bewertungen nach Spam-Warnung</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-09-google-aenderungsvorschlaege-4-tage-frist/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-09-28T08:00:00+02:00</news:publication_date>
-      <news:title>Warum ändern sich meine Unternehmensinfos? Google gibt dir 4 Tage – danach wird ohne dich geändert</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-09-google-kostenlose-produkteintraege-eea-entfernt/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-09-25T08:00:00+02:00</news:publication_date>
-      <news:title>Google streicht kostenlose Produkteinträge in 30 Ländern</news:title>
+      <news:publication_date>2026-10-06T08:00:00+02:00</news:publication_date>
+      <news:title>Google entfernt Beiträge mit unbestätigten Kontaktdaten</news:title>
     </news:news>
   </url>
 </urlset>

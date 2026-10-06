@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Tue, 29 Sep 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 06 Oct 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>Google entfernt Beiträge mit unbestätigten Kontaktdaten</title>
+    <link>https://lokalbesucher.de/news/2026-10-google-beitraege-unbestaetigte-kontaktdaten/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-10-google-beitraege-unbestaetigte-kontaktdaten/</guid>
+    <pubDate>Tue, 06 Oct 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Google</category>
+    <category>Unternehmensprofile</category>
+    <description><![CDATA[Google kann Beiträge im Unternehmensprofil entfernen, die nicht bestätigte Kontaktdaten enthalten. Laut Google-Hilfe zählen dazu Telefonnummern, E-Mail-Adressen und Social-Media-Handles. Die Änderung wurde am 25. September 2026 dokumentiert und steht auch in der deutschen Richtlinie. Betroffen ist jeder Betrieb, der Kontaktdaten in den Beitragstext schreibt. Google empfiehlt stattdessen den Button „Jetzt anrufen“, der die bestätigte Nummer des Profils nutzt.]]></description>
+  </item>
   <item>
     <title>Google pausiert Bewertungen nach Spam-Warnung</title>
     <link>https://lokalbesucher.de/news/2026-09-google-spam-rezensionen-bewertungen-pausiert/</link>
