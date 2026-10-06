@@ -60,6 +60,9 @@ async function prepare() {
       const og = await ogImage(src);
       await sharp(og).webp({ quality: 85 }).toFile(path.join(IMG_DIR, `${name}-og.webp`));
       await sharp(og).jpeg({ quality: 82 }).toFile(path.join(IMG_DIR, `${name}-og.jpg`));
+      /* ganzes Hochformat als JPG für LinkedIn und Unternehmensprofil (Metricool holt es von hier) */
+      await sharp(src).resize({ width: 1080 }).jpeg({ quality: 86 }).toFile(path.join(IMG_DIR, `${name}-social.jpg`));
+      it.social = `/assets/images/news/${name}-social.jpg`;
       it.date = due.date;
       it.image = `/assets/images/news/${name}-og.webp`;
       it.body = `        <figure>
