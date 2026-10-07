@@ -453,6 +453,15 @@ mit konsistenten Attributen überall identisch auftreten: Website, GBP, Verzeich
 - `GeoCoordinates` mit exakten Koordinaten Marl (51.6391° N, 7.1041° E)
 - `areaServed` auf alle NRW-Städte + Deutschland
 
+**Startseite, Stand 2026-10-07:** Firma (Organization/LocalBusiness/ProfessionalService) ist eigener Knoten mit `sameAs`
+(Google-Profil per CID 14171878920008474487, LinkedIn, Instagram, YouTube, Facebook, ProvenExpert), `founder` → Person Tobias,
+`makesOffer` Ultimate Paket (279 €/Monat netto), Geo = Koordinaten des Google-Profils (51.6379537, 7.1089851).
+- `WebSite` hat bewusst **kein** `publisher`: Sonst zeigt validator.schema.org die Firma nur verschachtelt unter WebSite
+  und es sieht aus, als fehle sie. Nicht wieder einbauen.
+- Kein `SearchAction`, weil die Seite keine Suche hat (nur echte Such-URLs eintragen).
+- Kein `AggregateRating`, solange Sterne/Anzahl nicht sichtbar auf der Startseite stehen.
+- Prüfen: validator.schema.org → URL → muss „Organization / LocalBusiness / ProfessionalService“ als eigenes Element zeigen.
+
 ### 15.2 GEO — AI-Zitierbarkeit
 50% der von AI zitierten Inhalte sind unter 13 Wochen alt — Frische ist kritisch.
 
