@@ -55,5 +55,60 @@
    }
   ],
   "image": "/assets/images/news/google-beitraege-unbestaetigte-kontaktdaten-og.webp"
+ },
+ {
+  "slug": "2026-10-google-maps-rezensionen-nur-mit-anmeldung",
+  "date": "2026-10-09",
+  "platform": "google",
+  "topic": "bewertungen",
+  "title": "Google Maps: Alle Rezensionen nur noch mit Anmeldung",
+  "headline": "Über 1 Milliarde Rezensionen im Jahr, aber nicht mehr für jeden: Google Maps verlangt die Anmeldung für alle Bewertungen",
+  "metaDesc": "Google Maps zeigt Nutzern ohne Google-Konto offenbar nicht mehr alle Rezensionen. Was beobachtet wurde, was Google dazu sagt und was Betriebe prüfen sollten.",
+  "teaser": "Seit Ende September melden Nutzer, dass Google Maps eine Anmeldung verlangt, bevor sich alle Rezensionen eines Betriebs lesen oder sortieren lassen. Google hat die Änderung nicht angekündigt. Im Februar gab es eine ähnliche Einschränkung, auch in Deutschland; sie wurde nach einer Woche zurückgenommen.",
+  "summary": "Google Maps verlangt nach Berichten vom <strong>30. September 2026</strong> eine Anmeldung mit Google-Konto, um alle Rezensionen eines Betriebs zu lesen, sie zu sortieren und alle Fotos zu sehen. Ohne Anmeldung bleiben die Sternebewertung und einige Rezensionen sichtbar. Google hat die Änderung nicht bestätigt; ob sie in Deutschland greift, ist offen. Betriebe sollten ihr Profil im privaten Browserfenster prüfen.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/google-maps-rezensionen-nur-mit-anmeldung-2026.webp\" alt=\"Comic: Kunde mit drei Sternekarten vor einem Drehkreuz, dahinter eine Wand voller Bewertungskarten, ein Roboter zeigt auf den Ausweisschlitz\" width=\"928\" height=\"1152\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">Die Sterne und einige Rezensionen bleiben offen, alles dahinter gibt es nach den Berichten nur noch mit Anmeldung.</figcaption>\n        </figure>\n        <p>Wer liest eigentlich deine Bewertungen, wenn er nicht bei Google angemeldet ist? Bisher lautete die Antwort: jeder, der den Betrieb in Google Maps öffnet. Seit Ende September melden Nutzer, dass Maps an dieser Stelle eine Anmeldung verlangt. Zu sehen bleiben demnach die Sternebewertung und die ersten Rezensionen; wer weiterlesen oder nach den neuesten Bewertungen sortieren will, braucht ein Google-Konto. Für Betriebe heißt das: Ein Teil der Besucher sieht vom Bewertungsprofil womöglich nur noch den Ausschnitt, den Google auswählt.</p>\n\n        <h2 id=\"was-ist-passiert\">Was ist passiert?</h2>\n        <p>Am 30. September 2026 hat Search Engine Roundtable die Beobachtung dokumentiert, nachdem mehrere Nutzer sie unabhängig voneinander auf X und LinkedIn geteilt hatten. Maps zeigt demnach ein Fenster mit der Überschrift „Sign-in to get the best of Google Maps“ und dem Hinweis: „Reviews &amp; photos: Read and search through every review and photo.“ Die Anmeldung ist nach dem Bericht nötig, um alle Rezensionen eines Unternehmensprofils zu sehen, Rezensionen zu sortieren und auf die Fotos zuzugreifen. Zum Schreiben einer Rezension war ein Google-Konto schon immer erforderlich.</p>\n        <p>Eine Ankündigung von Google gibt es nicht, auch keine Angabe zu Ländern oder zum Anteil der betroffenen Nutzer. Barry Schwartz, Gründer von Search Engine Roundtable, schreibt: „I assume this was done to help prevent AI, bots, and third parties from scraping the Google reviews.“ Das ist eine Vermutung, keine Auskunft von Google.</p>\n        <p>Neu ist der Versuch nicht. Am 18. Februar 2026 berichtete Android Authority, dass Maps abgemeldeten Nutzern nur noch ein Foto und keine Rezensionen zeigte. Laut Techbook trat die reduzierte Ansicht mindestens in Deutschland und den USA auf; am 25. Februar war sie wieder verschwunden. Geäußert hat sich Google damals weder zur Einführung noch zur Rücknahme. Die jetzt beobachtete Fassung geht weniger weit: Ein Teil der Rezensionen bleibt offen. Ob sie in Deutschland ausgespielt wird und ob sie bleibt, ist nicht bestätigt.</p>\n\n        <h2 id=\"welche-zahlen\">Welche Zahlen gibt es?</h2>\n        <div class=\"statbox\">\n          <div><div class=\"n\">1 Mrd.</div><p>Rezensionen haben Nutzer 2025 auf Google Maps veröffentlicht; 292 Millionen weitere hat Google blockiert oder entfernt (Google, The Keyword, 16.04.2026)</p></div>\n          <div><div class=\"n\">7 Tage</div><p>lagen im Februar 2026 zwischen dem ersten Bericht über die eingeschränkte Ansicht und der Rücknahme (Android Authority, 18.02.2026; Techbook, 25.02.2026)</p></div>\n          <div><div class=\"n\">?</div><p>Wie viele Rezensionen ohne Anmeldung sichtbar bleiben und wie viele Nutzer Maps abgemeldet verwenden, veröffentlicht Google nicht</p></div>\n        </div>\n\n        <h2 id=\"wer-gewinnt\">Wer gewinnt?</h2>\n        <p>Google. Jede Anmeldung liefert dem Konzern einen zuordenbaren Nutzer, und das automatisierte Auslesen von Rezensionen durch Dritte wird schwerer. Im Vorteil dürften außerdem Betriebe sein, deren oberste Rezensionen gut ausfallen, denn bei abgemeldeten Besuchern bestimmt dieser Ausschnitt das Bild.</p>\n\n        <h2 id=\"wer-verliert\">Wer verliert am meisten?</h2>\n        <p>Der lokale Betrieb, bei dem eine kritische Rezension weit oben steht. Abgemeldete Besucher können nach dem Bericht weder auf „Neueste“ umsortieren noch die Menge an guten Bewertungen dahinter lesen. Betroffen sind vor allem Branchen, in denen Kunden vor dem ersten Kontakt viele Rezensionen lesen, etwa Praxen, Handwerksbetriebe und Restaurants. Auch Werkzeuge, die Rezensionen auslesen und auf der eigenen Website anzeigen, können betroffen sein, wenn sie nicht über die offizielle Schnittstelle arbeiten. Für die Frage, wie stabil ein Bewertungsprofil ist, lohnt der Blick auf die Meldung zur <a href=\"/news/2026-09-google-spam-rezensionen-bewertungen-pausiert/\">Bewertungspause nach Spam-Warnung</a>.</p>\n\n        <h2 id=\"was-tun\">Wie können lokale Unternehmen reagieren?</h2>\n        <p>Erstens: Das eigene Profil im privaten Browserfenster öffnen und prüfen, welche Rezensionen ohne Anmeldung zu sehen sind. Zweitens: Auf die Rezensionen antworten, die dort oben stehen, sachlich und mit Lösungsangebot; die Antwort erscheint direkt darunter. Drittens: Bewertungen laufend sammeln statt in Wellen, damit die sichtbare Auswahl aktuell bleibt. Viertens: Widgets und Werkzeuge prüfen, die Rezensionen auf der eigenen Website einbinden.</p>\n        <p>Die Rezensionen schreiben die Kunden; wie viele davon ein Besucher ohne Konto sieht, legt Google fest.</p>",
+  "fazit": "Google Maps verlangt nach übereinstimmenden Berichten eine Anmeldung, um alle Rezensionen zu lesen und zu sortieren; bestätigt hat Google das nicht. Betriebe sollten ihr Profil im privaten Fenster prüfen und auf die Rezensionen antworten, die dort ohne Anmeldung sichtbar sind.",
+  "impact": "Das eigene Profil im privaten Browserfenster öffnen, prüfen, welche Rezensionen ohne Anmeldung sichtbar sind, und genau auf diese antworten.",
+  "sources": [
+   {
+    "label": "Search Engine Roundtable, 30.09.2026: Google Maps Requiring Sign In To Read All Reviews & More, abgerufen am 05.10.2026",
+    "url": "https://www.seroundtable.com/google-maps-account-reviews-42186.html"
+   },
+   {
+    "label": "Android Authority, 18.02.2026 (Update 23.02.2026): Google Maps may now force you to sign in before showing photos and reviews, abgerufen am 05.10.2026",
+    "url": "https://www.androidauthority.com/google-maps-missing-photos-and-reviews-3642040/"
+   },
+   {
+    "label": "Techbook, 25.02.2026: Google Maps nimmt umstrittene Änderung zurück, abgerufen am 05.10.2026",
+    "url": "https://www.techbook.de/mobile-lifestyle/apps/google-maps-log-in-aenderung"
+   },
+   {
+    "label": "Google (The Keyword), 16.04.2026: New ways we’re protecting businesses on Maps, abgerufen am 05.10.2026",
+    "url": "https://blog.google/products-and-platforms/products/maps/new-ways-were-protecting-businesses-on-maps/"
+   }
+  ],
+  "keywords": [
+   "Google Maps Anmeldung",
+   "Rezensionen ohne Konto",
+   "Google Bewertungen lesen",
+   "Google Maps Rezensionen sortieren",
+   "Bewertungsprofil"
+  ],
+  "related": [
+   {
+    "href": "/bewertungsmanagement/",
+    "label": "Bewertungsmanagement von Lokalbesucher"
+   },
+   {
+    "href": "/ratgeber/mehr-google-bewertungen-bekommen/",
+    "label": "Mehr Google-Bewertungen bekommen: 7 erlaubte Wege"
+   },
+   {
+    "href": "/google-unternehmensprofil/",
+    "label": "Google Unternehmensprofil: Der komplette Leitfaden"
+   }
+  ],
+  "social": "/assets/images/news/google-maps-rezensionen-nur-mit-anmeldung-social.jpg",
+  "image": "/assets/images/news/google-maps-rezensionen-nur-mit-anmeldung-og.webp"
  }
 ]
