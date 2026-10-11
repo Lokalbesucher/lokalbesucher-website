@@ -1,6 +1,6 @@
 # Auftrag der Routine „News-Woche vorbereiten“
 
-Diese Datei ist der vollständige Arbeitsauftrag für die Montags-Routine in Claude (und für jede Sitzung, die die Woche von Hand
+Diese Datei ist der vollständige Arbeitsauftrag für die Wochen-Routine in Claude (läuft seit 11.10.2026 sonntags früh, vorher montags) (und für jede Sitzung, die die Woche von Hand
 liefert). Die Routine selbst enthält nur den Verweis hierher und den Liefer-Schlüssel. Änderungen am Ablauf werden **hier**
 gemacht, nicht im Routine-Text. Redaktionsregeln: `docs/news-regeln.md`. Technik dahinter: `lokalbesucher-tools/admin/README.md`.
 
@@ -141,22 +141,36 @@ Schluss eine Zeile mit Themen, die du bewusst weggelassen hast, und warum.
 
 ---
 
-# Morgen-Check (Dienstag bis Freitag) – nur Eilmeldungen
+# Tages-Check (Montag bis Samstag) – nur Eilmeldungen
 
-Der Morgen-Check ist eine zweite, kleine Routine. Sie liefert an den meisten Tagen **nichts**. Ziel: Wenn etwas wirklich
-Wichtiges passiert, steht es ein bis zwei Tage später auf der Seite und nicht erst nach dem nächsten Montag.
+Der Tages-Check ist eine zweite, kleine Routine. Sie liefert an den meisten Tagen **nichts**. Ziel: Wenn etwas wirklich
+Wichtiges passiert, steht es ein bis zwei Tage später auf der Seite und nicht erst nach dem nächsten Sonntag.
 
 1. Regeln, Feed und `known` lesen wie in Schritt 1.
-2. Kurz recherchieren: nur die letzten 48 Stunden, dieselben Themenfelder wie in Schritt 2, in erster Linie über die
-   Primärquellen und Search Engine Roundtable / Search Engine Land. Höchstens etwa 15 Minuten.
+2. **Quellen direkt öffnen, nicht nur suchen.** Eine allgemeine Websuche findet Neues der letzten 48 Stunden meist nicht
+   (so lief der Check vom 07. bis 09.10.2026 leer: zwei Suchen, 21 Sekunden, nichts geprüft). Rufe deshalb jede dieser
+   Seiten mit `curl -sL` oder WebFetch ab und lies die Überschriften und Daten der neuesten Einträge:
+   - https://www.seroundtable.com/category/google-maps
+   - https://www.seroundtable.com/category/google-search-engine-optimization
+   - https://searchengineland.com/library/platforms/google/google-business-profile (liefert manchmal 403 – dann überspringen)
+   - https://blog.google/products/maps/ und https://blog.google/products/search/
+   - https://support.google.com/business/answer/9292476?hl=de (Richtlinien, auf Änderungsdatum achten)
+   - https://about.fb.com/de/news/ und https://business.whatsapp.com/blog
+   - https://www.apple.com/de/newsroom/
+   - https://blogs.bing.com/search
+   - https://openai.com/news/
+   - https://www.sterlingsky.ca/blog/ und https://www.nearmedia.co/
+   Danach höchstens drei gezielte Websuchen zu dem, was dabei aufgefallen ist. Nur Einträge der letzten 48 Stunden zählen
+   (montags: der letzten 72 Stunden, weil sonntags das Wochenpaket läuft und samstags nur kurz geprüft wird).
+   Der Check darf ruhig fünf bis zehn Minuten dauern – gründlich geht vor schnell.
 3. Liefern nur, wenn ALLE Punkte zutreffen:
    - Relevanz ehrlich `hoch`: betrifft viele lokale Betriebe in Deutschland jetzt oder in Kürze, mit Handlungsbedarf.
    - Belegt durch eine Primärquelle (oder zwei unabhängige seriöse Quellen), Geltung für Deutschland geklärt.
    - Noch nicht auf der Seite und nicht im Admin.
-   - Es wäre ein Nachteil, damit bis Montag zu warten.
-   Im Zweifel NICHT liefern und das Thema in der Abschlussmeldung für Montag vormerken.
+   - Es wäre ein Nachteil, damit bis zum Wochenpaket am Sonntag zu warten.
+   Im Zweifel NICHT liefern und das Thema in der Abschlussmeldung für Sonntag vormerken.
 4. Wenn ja: genau **eine** Meldung schreiben (alle Regeln und das Format aus Schritt 4 und 5, Slop-Test mindestens 8) und mit
    `{"urgent": true, "items": [ … ]}` senden. Das Admin plant sie auf den nächsten freien Tag und schickt Tobias eine Mail
    „EILIG“. Danach Bilder abholen lassen wie in Schritt 6.
-5. Abschlussmeldung: erste Zeile „EILMELDUNG GELIEFERT: Titel“ oder „NICHTS EILIGES“. Danach in zwei bis vier Zeilen, was du
-   gesehen und warum du es (nicht) geliefert hast, und was du für Montag vormerkst.
+5. Abschlussmeldung: erste Zeile „EILMELDUNG GELIEFERT: Titel“ oder „NICHTS EILIGES“. Danach je geprüfter Quelle eine kurze
+   Zeile: neuester Eintrag mit Datum (oder „nicht erreichbar“), und was du für Sonntag vormerkst.
