@@ -151,14 +151,14 @@ Wichtiges passiert, steht es ein bis zwei Tage später auf der Seite und nicht e
    (so lief der Check vom 07. bis 09.10.2026 leer: zwei Suchen, 21 Sekunden, nichts geprüft). Rufe deshalb jede dieser
    Seiten mit `curl -sL` oder WebFetch ab und lies die Überschriften und Daten der neuesten Einträge:
    - https://www.seroundtable.com/category/google-maps
-   - https://www.seroundtable.com/category/google-search-engine-optimization
+   - https://www.seroundtable.com/category/google-seo
    - https://searchengineland.com/library/platforms/google/google-business-profile (liefert manchmal 403 – dann überspringen)
    - https://blog.google/products/maps/ und https://blog.google/products/search/
    - https://support.google.com/business/answer/9292476?hl=de (Richtlinien, auf Änderungsdatum achten)
    - https://about.fb.com/de/news/ und https://business.whatsapp.com/blog
    - https://www.apple.com/de/newsroom/
    - https://blogs.bing.com/search
-   - https://openai.com/news/
+   - https://openai.com/news/rss.xml (Feed; die Seite selbst liefert 403)
    - https://www.sterlingsky.ca/blog/ und https://www.nearmedia.co/
    Danach höchstens drei gezielte Websuchen zu dem, was dabei aufgefallen ist. Nur Einträge der letzten 48 Stunden zählen
    (montags: der letzten 72 Stunden, weil sonntags das Wochenpaket läuft und samstags nur kurz geprüft wird).
