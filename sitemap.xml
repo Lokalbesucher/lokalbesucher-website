@@ -318,21 +318,21 @@
   <!-- news:start -->
   <url>
     <loc>https://lokalbesucher.de/news/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://lokalbesucher.de/news/redaktion/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
 
   <url>
     <loc>https://lokalbesucher.de/news/google/</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -353,7 +353,7 @@
 
   <url>
     <loc>https://lokalbesucher.de/news/unternehmensprofile/</loc>
-    <lastmod>2026-10-06</lastmod>
+    <lastmod>2026-10-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -383,6 +383,13 @@
     <loc>https://lokalbesucher.de/news/local-seo/</loc>
     <lastmod>2026-09-25</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalbesucher.de/news/2026-10-google-richtlinie-preise-aktionen-im-eintrag/</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
