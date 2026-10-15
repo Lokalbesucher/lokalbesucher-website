@@ -210,5 +210,52 @@
   "hubWhat": "Google verbietet im Eintrag des Unternehmensprofils befristete Aktionen, Preise und direkte Handlungsaufforderungen; Angebote bleiben in Beiträgen erlaubt.",
   "social": "/assets/images/news/google-richtlinie-preise-aktionen-im-eintrag-social.jpg",
   "image": "/assets/images/news/google-richtlinie-preise-aktionen-im-eintrag-og.webp"
+ },
+ {
+  "slug": "2026-10-google-whatsapp-button-lokales-panel",
+  "date": "2026-10-15",
+  "platform": "google",
+  "topic": "conversion-optimierung",
+  "title": "Google zeigt WhatsApp-Button neben Anruf und Route",
+  "headline": "WhatsApp-Button neben „Anrufen“ und „Route“: Was du jetzt im Chat-Feld deines Google-Profils prüfen solltest",
+  "metaDesc": "Google zeigt im Profil in der Suche einen WhatsApp-Button. Wie du die Chat-Option einrichtest, was in Deutschland gilt und welche Fehler du vermeidest.",
+  "teaser": "In der Google-Suche taucht neben Anrufen, Route und Website ein WhatsApp-Button im Unternehmensprofil auf. Google hat das nicht angekündigt, die Chat-Funktion dahinter gibt es aber schon. Ein Blick in das Chat-Feld deines Profils lohnt sich.",
+  "summary": "Google zeigt im Unternehmensprofil in der Suche einen <strong>WhatsApp-Button</strong> neben Anrufen und Route, berichtet Search Engine Roundtable am 07.10.2026. Grundlage ist die Chat-Option im Profil, die Google laut Hilfe nur in ausgewählten Regionen anbietet. Ob der Button in Deutschland erscheint, ist offen. Inhaber sollten prüfen, ob im Chat-Feld eine funktionierende WhatsApp-Verbindung steht.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/google-whatsapp-button-lokales-panel-2026.webp\" alt=\"Comic: Friseurin sieht auf einem Riesen-Handy einen neuen Sprechblasen-Knopf neben Telefon- und Pfeilsymbol\" width=\"928\" height=\"1152\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">Neben Anrufen und Route zeigt Google jetzt einen WhatsApp-Button im Unternehmensprofil.</figcaption>\n        </figure>\n<p>Viele Kunden schreiben lieber eine Nachricht, als anzurufen, besonders abends oder während der Arbeitszeit. Google reagiert darauf offenbar mit einem eigenen WhatsApp-Button im Unternehmensprofil der Suche. Er erscheint neben den bekannten Schaltflächen für Anrufen, Route, Website und Teilen. Wer die Chat-Option sauber eingerichtet hat, kann davon profitieren; wer dort eine falsche Nummer stehen hat, eher nicht.</p>\n<h2 id=\"was-ist-passiert\">Was ist passiert?</h2>\n<p>Search Engine Roundtable berichtete am 07.10.2026, dass Google im lokalen Profil in der Suche einen WhatsApp-Button anzeigt, teils statt, teils zusätzlich zur Chat-Schaltfläche. Entdeckt hat das Sachin Patel; Herausgeber Barry Schwartz konnte die Anzeige nachstellen und hält eine vollständige Einführung für möglich. Eine Ankündigung von Google gibt es dazu bisher nicht.</p>\n<p>Die Funktion dahinter ist dokumentiert. In der deutschen Google-Hilfe heißt es: „Unternehmen, die Anspruch auf ihr Unternehmensprofil erhoben und es bestätigt haben, können ihren Kontaktinformationen eine WhatsApp- oder SMS-Option hinzufügen.“ Und weiter: „Chatoptionen sind derzeit nur für ausgewählte Regionen verfügbar und möglicherweise nicht für Ihr Unternehmensprofil.“ Ob Deutschland zu diesen Regionen gehört, nennt Google nicht.</p>\n<p>Wichtig ist ein Hinweis aus derselben Hilfeseite: „Wenn Sie beide Optionen hinzufügen, wird Kunden nur die SMS-Option angezeigt.“ Wer SMS und WhatsApp einträgt, verschenkt also den WhatsApp-Button.</p>\n<p>Die Einrichtung beschreibt Google so: Profil aufrufen, „Profil bearbeiten“ und „Kontakt“ wählen, neben „Chat“ auf „Bearbeiten“ klicken, WhatsApp auswählen und die Click-to-Chat-URL eintragen. Ein WhatsApp-Link kann laut Hilfe auch für mehrere Unternehmensprofile genutzt werden, etwa bei mehreren Filialen mit einer zentralen Nummer. Die Nutzung des Chats lässt sich in den Leistungsmesswerten des Profils verfolgen.</p>\n<h2 id=\"welche-zahlen-gibt-es\">Welche Zahlen gibt es?</h2>\n<div class=\"statbox\"><div><div class=\"n\">07.10.</div><p>Erster Bericht über den WhatsApp-Button im lokalen Profil (Search Engine Roundtable, 07.10.2026)</p></div><div><div class=\"n\">1</div><p>Chat-Option wird angezeigt: Bei SMS und WhatsApp zeigt Google nur SMS (Google-Hilfe, abgerufen am 11.10.2026)</p></div><div><div class=\"n\">?</div><p>In welchen Ländern der Button erscheint, veröffentlicht Google nicht.</p></div></div>\n<h2 id=\"wer-gewinnt\">Wer gewinnt?</h2>\n<p>Betriebe, deren Kunden ohnehin per WhatsApp anfragen: Friseure, Kosmetikstudios, Handwerker mit Terminanfragen, Restaurants mit Tischreservierungen. Ein Button direkt im Suchergebnis spart dem Kunden das Abtippen der Nummer und das Speichern als Kontakt. Wer Fotos mitschicken lässt, etwa vom tropfenden Wasserhahn oder vom gewünschten Haarschnitt, kann Anfragen außerdem besser einschätzen. Gewinner ist auch, wer schnell antwortet, denn eine Nachricht ohne Antwort ist für den Kunden ärgerlicher als ein besetztes Telefon.</p>\n<h2 id=\"wer-verliert-am-meisten\">Wer verliert am meisten?</h2>\n<p>Lokale Betriebe mit fehlerhaftem Chat-Feld. Im Juni 2026 hatte Google laut Search Engine Roundtable bei vielen Profilen automatisch WhatsApp-Nummern ergänzt, teils mit Festnetznummern, die gar kein WhatsApp empfangen. Eine Google-Produktexpertin bestätigte damals einen Fehler. Löschen ließen sich solche Nummern laut dem damaligen Bericht zunächst nicht. Steht so eine Nummer noch im Profil, kann ein neuer Button Kunden ins Leere schicken. Betroffen sind vor allem Praxen und Dienstleister mit reiner Festnetznummer.</p>\n<h2 id=\"wie-koennen-lokale-unternehmen-reagieren\">Wie können lokale Unternehmen reagieren?</h2>\n<ul>\n<li><strong>Erstens:</strong> Im Profil unter „Profil bearbeiten“ und „Kontakt“ das Feld „Chat“ prüfen: Steht dort etwas, und funktioniert es?</li>\n<li><strong>Zweitens:</strong> Für WhatsApp die Click-to-Chat-URL einer Nummer eintragen, die tatsächlich WhatsApp nutzt.</li>\n<li><strong>Drittens:</strong> Entscheiden, ob SMS oder WhatsApp angeboten wird, weil Google bei beiden nur SMS zeigt.</li>\n<li><strong>Viertens:</strong> Zuständigkeit und Antwortzeiten festlegen und die Chat-Messwerte in der Profil-Leistung beobachten.</li>\n</ul>\n<blockquote>Ein Chat-Button ist nur so gut wie die Antwort, die danach kommt.</blockquote>",
+  "fazit": "Google zeigt im Unternehmensprofil der Suche einen WhatsApp-Button, ob in Deutschland, ist noch offen. Prüfe dein Chat-Feld jetzt, damit der Button im Ernstfall zu einer funktionierenden Nummer führt.",
+  "impact": "Ein kurzer Blick ins Chat-Feld deines Google-Profils verhindert, dass ein neuer WhatsApp-Button Kunden zu einer falschen Nummer schickt.",
+  "sources": [
+   {
+    "label": "Search Engine Roundtable, Google Local Panel Gains WhatsApp Button, 07.10.2026, abgerufen am 11.10.2026",
+    "url": "https://www.seroundtable.com/google-local-panel-whatsapp-button-42230.html"
+   },
+   {
+    "label": "Google Unternehmensprofil-Hilfe, Über Ihr Unternehmensprofil mit Nutzern chatten, abgerufen am 11.10.2026",
+    "url": "https://support.google.com/business/answer/15013580?hl=de"
+   },
+   {
+    "label": "Search Engine Roundtable, Google Business Profiles Adds WhatsApp Numbers In Bulk, 11.06.2026, abgerufen am 11.10.2026",
+    "url": "https://www.seroundtable.com/google-business-profiles-adds-whatsapp-numbers-in-bulk-41483.html"
+   }
+  ],
+  "keywords": [
+   "WhatsApp Google Unternehmensprofil",
+   "WhatsApp Button Google Suche",
+   "Google Profil Chat einrichten",
+   "Click-to-Chat Google",
+   "Google Unternehmensprofil Kontakt"
+  ],
+  "related": [
+   {
+    "href": "/ratgeber/google-unternehmensprofil-optimieren/",
+    "label": "Google Unternehmensprofil optimieren"
+   },
+   {
+    "href": "/google-unternehmensprofil/",
+    "label": "Google Unternehmensprofil: Der komplette Leitfaden"
+   }
+  ],
+  "social": "/assets/images/news/google-whatsapp-button-lokales-panel-social.jpg",
+  "image": "/assets/images/news/google-whatsapp-button-lokales-panel-og.webp"
  }
 ]
