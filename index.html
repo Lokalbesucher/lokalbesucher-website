@@ -133,6 +133,12 @@
     .logos{display:flex;gap:2.4rem;align-items:center;justify-content:center;flex-wrap:wrap}
     .logos img{height:46px;width:auto;border-radius:10px;opacity:.8;filter:grayscale(.25);transition:.25s}
     .logos img:hover{opacity:1;filter:none;transform:translateY(-3px)}
+    .marquee{display:flex;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+    .marquee-track{display:flex;flex:none;align-items:center;gap:3.2rem;padding-right:3.2rem;animation:marquee 140s linear infinite}
+    .marquee-track img{flex:none;opacity:.75;max-height:48px;width:auto;height:auto}
+    .marquee:hover .marquee-track{animation-play-state:paused}
+    @keyframes marquee{to{transform:translateX(-100%)}}
+    @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee{overflow-x:auto}}
 
     /* sections */
     .sec{padding:5rem 0}
@@ -191,6 +197,12 @@
     @media(min-width:900px){.split-grid{grid-template-columns:.92fr 1.08fr;gap:3.5rem}}
     .split-photo{border-radius:22px;overflow:hidden;border:1px solid var(--border);transform:rotate(-1.6deg)}
     .split-photo img{width:100%}
+    .split-case{display:flex;flex-direction:column;align-items:center;gap:1.1rem;text-align:center}
+    .split-logo{display:flex;align-items:center;justify-content:center;width:100%;padding:3rem 2rem;border-radius:22px;border:1px solid var(--border);background:radial-gradient(80% 70% at 50% 40%,rgba(255,189,89,.10),transparent 70%),var(--surface);transition:transform .25s ease-out,border-color .25s}
+    .split-logo:hover{transform:translateY(-3px);border-color:var(--yellow)}
+    .split-logo img{width:min(320px,80%);height:auto}
+    .split-link{color:var(--yellow);font-weight:600;max-width:38ch;line-height:1.45}
+    .split-link:hover{text-decoration:underline}
     .ticks{display:flex;flex-direction:column;gap:.7rem;margin-top:1.2rem}
     .ticks div{display:flex;gap:.6rem;align-items:flex-start;font-size:.98rem}
     .ticks svg{flex-shrink:0;color:var(--yellow);margin-top:.15rem}
@@ -451,12 +463,144 @@
         <span class="gp-cap">Offizieller <b>Google</b> Partner</span>
       </div>
       <div class="gp-divider" aria-hidden="true"></div>
-      <p>Vertrauen von lokalen Unternehmen in ganz Deutschland</p>
-      <div class="logos">
-        <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp" alt="EasyFitness" width="46" height="46" loading="lazy">
-        <img src="/assets/images/orthoclinic-kunde-lokalbesucher.webp" alt="Orthoclinic" width="46" height="46" loading="lazy">
-        <img src="/assets/images/bb-kunde-lokalbesucher.webp" alt="Kunde von Lokalbesucher" width="46" height="46" loading="lazy">
-        <img src="/assets/images/qulis-kunde-lokalbesucher.webp" alt="Qulis" width="46" height="46" loading="lazy">
+      <p>Über 60 lokale Unternehmen in ganz Deutschland vertrauen uns</p>
+      <div class="marquee">
+        <div class="marquee-track">
+          <img src="/assets/images/kunden/autohaus-waltrop.webp" alt="Autohaus Waltrop" width="98" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/zahnaerzte-bruchkoebel.webp" alt="Zahnärzte Bruchköbel" width="88" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/das-pfandhaus-schumachers.webp" alt="Das Pfandhaus Schumachers" width="143" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/elithera-gesundheitszentrum-saar.webp" alt="Elithera Gesundheitszentrum Saar" width="100" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/emmerich-maschinentechnik.webp" alt="Emmerich Maschinentechnik" width="122" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/fahrschule-schnell.webp" alt="Fahrschule Schnell" width="125" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/fleuter-zentrum-fuer-zahnmedizin.webp" alt="Fleuter Zentrum für Zahnmedizin" width="89" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/hautmanufaktur.webp" alt="Hautmanufaktur" width="50" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/aloha-living-immobilien.webp" alt="Aloha Living Immobilien" width="66" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/isas-fahrschule.webp" alt="Isas Fahrschule" width="58" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/karate-kickbox-team.webp" alt="Karate &amp; Kickbox Team" width="80" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/kisec.webp" alt="KISEC" width="124" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/krone.webp" alt="Krone" width="117" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/ponge-kuechen.webp" alt="Ponge Küchen" width="90" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/lm-v-events.webp" alt="LM:V Events" width="104" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/edeka-haag.webp" alt="EDEKA Haag" width="126" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/ladyfitness.webp" alt="Ladyfitness" width="108" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/cleaning-service-medcal-clean.webp" alt="Cleaning Service Med’cal Clean" width="98" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/lakeside-inn-haltern-am-see.webp" alt="Lakeside Inn Haltern am See" width="81" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/die-maackler.webp" alt="Die Maackler" width="64" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/malerbetrieb.webp" alt="Malerbetrieb" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/hartl-immobilienbewertung.webp" alt="Hartl Immobilienbewertung" width="62" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/marrakesch-lounge-bar.webp" alt="Marrakesch Lounge &amp; Bar" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/medical-aesthetic-concept.webp" alt="Medical Aesthetic Concept" width="78" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/philema-mediterran-grill.webp" alt="Philema Mediterran Grill" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/praxis-theres.webp" alt="Praxis Theres" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/restaurant-breuing.webp" alt="Restaurant Breuing" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/schaefer-heizungsbau.webp" alt="Schäfer Heizungsbau" width="101" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/schnittpunkt-by-ahmad.webp" alt="Schnittpunkt by Ahmad" width="118" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/akademie-fuer-selbstverteidigung.webp" alt="Akademie für Selbstverteidigung" width="54" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/sf-physiotherapiepraxis.webp" alt="SF Physiotherapiepraxis" width="119" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/solartechnik-tappeser.webp" alt="Solartechnik Tappeser" width="98" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/mattheus-apotheken-dresden.webp" alt="Mattheus Apotheken Dresden" width="65" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/steakhouse.webp" alt="Steakhouse" width="58" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/garten-und-landschaftsbau-surmann.webp" alt="Garten- und Landschaftsbau Surmann" width="52" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/therapie-fuer-first.webp" alt="Therapie für First" width="76" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/treffpunkt-bar-oko.webp" alt="Treffpunkt Bar-Oko" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/unikat-clean.webp" alt="Unikat Clean" width="134" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/verschlusssache-escape-room.webp" alt="Verschlusssache Escape Room" width="114" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/vogelsang-automobile.webp" alt="Vogelsang Automobile" width="132" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/zimmer-im-revier.webp" alt="Zimmer im Revier" width="52" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/privataerztliche-praxis-fuer-manuelle-therapie-und-schmerzmedizin.webp" alt="Privatärztliche Praxis für Manuelle Therapie und Schmerzmedizin" width="44" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/weberei-bendix-hotel-appartements.webp" alt="Weberei Bendix Hotel &amp; Appartements" width="88" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/blumengalerie-datteln.webp" alt="BlumenGalerie Datteln" width="85" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/dr-dr-hoppe-partner.webp" alt="Dr. Dr. Hoppe &amp; Partner" width="75" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/cv.webp" alt="CV" width="68" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/english-more-lernstudio.webp" alt="English &amp; More Lernstudio" width="86" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/loeffler-haushaltsaufloesungen.webp" alt="Löffler Haushaltsauflösungen" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/p-susak-sanitaer-heizung.webp" alt="P. Susak Sanitär &amp; Heizung" width="94" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/avesana-apotheke-am-ei.webp" alt="Avesana Apotheke am Ei" width="90" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/la-placa.webp" alt="La Placa" width="62" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/sophien-apotheke.webp" alt="Sophien Apotheke" width="58" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/hotel-schloss-westerholt.webp" alt="Hotel Schloss Westerholt" width="90" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/lsc-unternehmensberatung.webp" alt="LSC Unternehmensberatung" width="180" height="27" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/metallbau.webp" alt="Metallbau" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/mods-hair.webp" alt="Mod’s Hair" width="140" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/parkhotel-wittekindshof.webp" alt="Parkhotel Wittekindshof" width="176" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/caffe-ristorante-la-vita-dolce.webp" alt="Caffè Ristorante La Vita Dolce" width="100" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/schlafnerds.webp" alt="Schlafnerds" width="82" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/tanzrevier-pompoes.webp" alt="Tanzrevier Pompös" width="76" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/solar-richter.webp" alt="Solar Richter" width="104" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/sudhaus-steuerberatung.webp" alt="Sudhaus Steuerberatung" width="122" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/syrtaki-grill.webp" alt="Syrtaki Grill" width="74" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/viabeauty.webp" alt="Viabeauty" width="80" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/wirtshaus-im-bendix.webp" alt="Wirtshaus im Bendix" width="60" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/wuestenrot.webp" alt="Wüstenrot" width="117" height="28" loading="lazy" decoding="async">
+        </div>
+        <div class="marquee-track" aria-hidden="true">
+          <img src="/assets/images/kunden/autohaus-waltrop.webp" alt="" width="98" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/zahnaerzte-bruchkoebel.webp" alt="" width="88" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/das-pfandhaus-schumachers.webp" alt="" width="143" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/elithera-gesundheitszentrum-saar.webp" alt="" width="100" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/emmerich-maschinentechnik.webp" alt="" width="122" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/fahrschule-schnell.webp" alt="" width="125" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/fleuter-zentrum-fuer-zahnmedizin.webp" alt="" width="89" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/hautmanufaktur.webp" alt="" width="50" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/aloha-living-immobilien.webp" alt="" width="66" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/isas-fahrschule.webp" alt="" width="58" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/karate-kickbox-team.webp" alt="" width="80" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/kisec.webp" alt="" width="124" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/krone.webp" alt="" width="117" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/ponge-kuechen.webp" alt="" width="90" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/lm-v-events.webp" alt="" width="104" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/edeka-haag.webp" alt="" width="126" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/ladyfitness.webp" alt="" width="108" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/cleaning-service-medcal-clean.webp" alt="" width="98" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/lakeside-inn-haltern-am-see.webp" alt="" width="81" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/die-maackler.webp" alt="" width="64" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/malerbetrieb.webp" alt="" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/hartl-immobilienbewertung.webp" alt="" width="62" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/marrakesch-lounge-bar.webp" alt="" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/medical-aesthetic-concept.webp" alt="" width="78" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/philema-mediterran-grill.webp" alt="" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/praxis-theres.webp" alt="" width="96" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/restaurant-breuing.webp" alt="" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/schaefer-heizungsbau.webp" alt="" width="101" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/schnittpunkt-by-ahmad.webp" alt="" width="118" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/akademie-fuer-selbstverteidigung.webp" alt="" width="54" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/sf-physiotherapiepraxis.webp" alt="" width="119" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/solartechnik-tappeser.webp" alt="" width="98" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/mattheus-apotheken-dresden.webp" alt="" width="65" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/steakhouse.webp" alt="" width="58" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/garten-und-landschaftsbau-surmann.webp" alt="" width="52" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/therapie-fuer-first.webp" alt="" width="76" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/treffpunkt-bar-oko.webp" alt="" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/unikat-clean.webp" alt="" width="134" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/verschlusssache-escape-room.webp" alt="" width="114" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/vogelsang-automobile.webp" alt="" width="132" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/zimmer-im-revier.webp" alt="" width="52" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/privataerztliche-praxis-fuer-manuelle-therapie-und-schmerzmedizin.webp" alt="" width="44" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/weberei-bendix-hotel-appartements.webp" alt="" width="88" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/blumengalerie-datteln.webp" alt="" width="85" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/dr-dr-hoppe-partner.webp" alt="" width="75" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/cv.webp" alt="" width="68" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/english-more-lernstudio.webp" alt="" width="86" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/loeffler-haushaltsaufloesungen.webp" alt="" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/p-susak-sanitaer-heizung.webp" alt="" width="94" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/avesana-apotheke-am-ei.webp" alt="" width="90" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/la-placa.webp" alt="" width="62" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/sophien-apotheke.webp" alt="" width="58" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/hotel-schloss-westerholt.webp" alt="" width="90" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/lsc-unternehmensberatung.webp" alt="" width="180" height="27" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/metallbau.webp" alt="" width="48" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/mods-hair.webp" alt="" width="140" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/parkhotel-wittekindshof.webp" alt="" width="176" height="28" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/caffe-ristorante-la-vita-dolce.webp" alt="" width="100" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/schlafnerds.webp" alt="" width="82" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/tanzrevier-pompoes.webp" alt="" width="76" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/solar-richter.webp" alt="" width="104" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/sudhaus-steuerberatung.webp" alt="" width="122" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/syrtaki-grill.webp" alt="" width="74" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/viabeauty.webp" alt="" width="80" height="36" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/wirtshaus-im-bendix.webp" alt="" width="60" height="48" loading="lazy" decoding="async">
+          <img src="/assets/images/kunden/wuestenrot.webp" alt="" width="117" height="28" loading="lazy" decoding="async">
+        </div>
       </div>
     </div>
   </section>
@@ -513,10 +657,10 @@
   <!-- INSTAGRAM (Kacheln pflegt scripts/update-insta.js täglich) -->
   <section class="sec" aria-labelledby="insta-title">
     <div class="wrap">
-      <div class="sec-head" data-r>
-        <span class="eyebrow">Instagram · @lokalbesucher</span>
+      <div class="sec-head" data-r style="text-align:center;max-width:820px;margin-inline:auto">
+        <span class="eyebrow" style="display:flex;justify-content:center">Instagram · @lokalbesucher</span>
         <h2 id="insta-title">Jeden Tag bei lokalen Betrieben.</h2>
-        <p>Restaurants, Handwerk, Praxen, Studios: Auf Instagram zeigen wir, was lokale Unternehmen besonders macht. So entstehen auch die Beiträge für unsere Kunden.</p>
+        <p style="max-width:60ch;margin-inline:auto">Restaurants, Handwerk, Praxen, Studios: Auf Instagram zeigen wir, was lokale Unternehmen besonders macht. So entstehen auch die Beiträge für unsere Kunden.</p>
       </div>
       <div class="ig-grid">
         <!-- INSTA:START -->
@@ -569,8 +713,9 @@
   <!-- SPLIT / TapTag -->
   <section class="sec">
     <div class="wrap split-grid">
-      <div class="split-photo" data-r>
-        <img src="/assets/images/easyfitness-kunde-lokalbesucher.webp" alt="Lokales Unternehmen, das mit Lokalbesucher sichtbarer wurde" width="150" height="150" loading="lazy">
+      <div class="split-case" data-r>
+        <a class="split-logo" href="/case-studies/battlekart/" aria-label="Case Study BattleKart ansehen"><img src="/assets/images/battlekart-logo.webp" alt="BattleKart" width="320" height="204" loading="lazy"></a>
+        <a class="split-link" href="/case-studies/battlekart/">So hat BattleKart in 9 Monaten über 800 echte 5‑Sterne‑Bewertungen gesammelt →</a>
       </div>
       <div data-r>
         <span class="eyebrow">Weltweit einzigartig</span>

@@ -196,6 +196,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 
 **Startseite – Partner-Leiste & Instagram-Feed (seit 2026-10-16)**
 - Partner-Leiste vor dem CTA (`.partners`), Logos in `assets/images/partner/` (WebP, 1x/2x, freigestellt). Google-Badge `assets/images/google-partner-badge.svg` (Klasse `gp`, etwas größer). BNI → Tobias' Mitgliederprofil, BVMW → Mitgliedsseite, Leadinfo ohne Link (keine Partnerseite).
+- Kundenlogo-Laufband oben (`.trust` → `.marquee`): weiße Logos in `assets/images/kunden/` (WebP, freigestellt, Quelle: Ordner „logos weiß“). Track steht zweimal drin (zweiter `aria-hidden`) für die Endlosschleife; neues Logo → in **beiden** Tracks ergänzen. TapTag-Abschnitt zeigt das BattleKart-Logo mit Link auf `/case-studies/battlekart/`.
 - Instagram-Feed vor Preisen: Kacheln zwischen `<!-- INSTA:START -->` / `<!-- INSTA:END -->` werden **nicht von Hand** gepflegt, sondern von `scripts/update-insta.js` (täglich per `.github/workflows/insta-feed.yml`). Quelle `lokalbesucher.de/admin/api/insta-feed` (Admin-Worker, Metricool). Bilder lokal in `assets/images/insta/`, kein Fremd-Script, keine Cookies.
 
 **Case Studies** (9 Stück, mit Tobias abgestimmt & live)
