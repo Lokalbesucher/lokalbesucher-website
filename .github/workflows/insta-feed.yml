@@ -1,0 +1,32 @@
+# Aktualisiert den Instagram-Feed der Startseite (CLAUDE.md §6, scripts/update-insta.js).
+# Quelle: lokalbesucher.de/admin/api/insta-feed (Metricool). Täglich 05:15 UTC, nur Commit wenn sich etwas ändert.
+name: Instagram-Feed aktualisieren
+on:
+  schedule:
+    - cron: '15 5 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: insta-feed
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node scripts/update-insta.js
+      - name: Commit und Push (geht sofort live)
+        run: |
+          git config user.name "$(git log -1 --format=%an)"
+          git config user.email "$(git log -1 --format=%ae)"
+          git add index.html assets/images/insta
+          git diff --cached --quiet && exit 0
+          git commit -m "Instagram-Feed aktualisiert"
+          git push origin HEAD:main

@@ -192,6 +192,11 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 |-----|-------|
 | `/unser-team/` | Team |
 | `/jobs/` | Karriere |
+| `/partner/` | Partner & Mitgliedschaften (Google Partner, BNI Chapter Vest, BVMW, Leadinfo) |
+
+**Startseite – Partner-Leiste & Instagram-Feed (seit 2026-10-16)**
+- Partner-Leiste vor dem CTA (`.partners`), Logos in `assets/images/partner/` (WebP, 1x/2x, freigestellt). Google-Badge `assets/images/google-partner-badge.svg` (Klasse `gp`, etwas größer). BNI → Tobias' Mitgliederprofil, BVMW → Mitgliedsseite, Leadinfo ohne Link (keine Partnerseite).
+- Instagram-Feed vor Preisen: Kacheln zwischen `<!-- INSTA:START -->` / `<!-- INSTA:END -->` werden **nicht von Hand** gepflegt, sondern von `scripts/update-insta.js` (täglich per `.github/workflows/insta-feed.yml`). Quelle `lokalbesucher.de/admin/api/insta-feed` (Admin-Worker, Metricool). Bilder lokal in `assets/images/insta/`, kein Fremd-Script, keine Cookies.
 
 **Case Studies** (9 Stück, mit Tobias abgestimmt & live)
 `/case-studies/` (Übersicht) · `battlekart` · `ristorante-peperoncino` · `viabeauty` · `orthoclinic-hamburg` · `muhis-restaurant` · `solar-richter` · `elithera-physio` · `praxis-theres` · `sanitaer-susak`
