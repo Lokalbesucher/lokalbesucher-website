@@ -259,6 +259,12 @@ Achtung: Cloudflare Pages **führt passende `_headers`-Regeln zusammen**, statt
 sie zu ersetzen. Eine Sammelregel `/assets/*` vererbt ihr `immutable` an
 `/assets/css/*` weiter — deshalb darf sie dort nicht stehen.
 
+### Ausrichtung & Breiten (seit 2026-10-16)
+- Jeder Abschnitt nutzt die volle Container-Breite **oder** ist zentriert mit zentrierter Überschrift. Keine schmalen Spalten mit linksbündiger Überschrift (wirkt eingerückt).
+- Längere Texte: `.split-text` (global.css) → `.split-head` (Label + h2) links, `.split-body` rechts. Fallstudien: gleiches Raster über `.cs-content` (ab 1000 px).
+- `.section-desc` ist nur unter zentrierten Köpfen mittig (`.section-header` oder `text-align:center` am Eltern-Element).
+- Autor-Kästen: immer Foto `tobias-frank-inhaber-lokalbesucher-gmbh.webp`, Name verlinkt auf `/unser-team/` — kein Platzhalter-Icon.
+
 ### CSS-Fallstrick: Dropdown-Menü
 Das Desktop-Dropdown (`.nav-has-dropdown`) darf **keine Lücke** zum Menüpunkt haben
 (kein `top: calc(100% + x)`, kein `margin-top`), sonst verliert es beim Runterziehen

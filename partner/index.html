@@ -49,7 +49,8 @@
     @media(min-width:800px){
   @media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}
 
-    .partner-list{display:grid;gap:1.25rem;max-width:860px}
+    .partner-list{display:grid;gap:1.25rem}
+    @media(min-width:900px){.partner-list{grid-template-columns:1fr 1fr}.partner-card{grid-template-columns:1fr!important;align-content:start}.partner-logo{justify-content:flex-start;min-height:120px}}
     .partner-card{display:grid;grid-template-columns:220px 1fr;gap:1.5rem;align-items:center;background:#111328;border:1px solid #1e2240;border-radius:16px;padding:1.5rem}
     @media(max-width:560px){.partner-card{grid-template-columns:1fr;gap:1rem}}
     .partner-logo{display:flex;align-items:center;justify-content:center;min-height:110px}
@@ -61,8 +62,8 @@
     .partner-card a.more{display:inline-block;margin-top:.5rem;color:#ffbd59;font-size:.9rem}
   </style>
 
-  <link rel="stylesheet" href="/assets/css/global.css?v=2026091601" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026091601"></noscript>
+  <link rel="stylesheet" href="/assets/css/global.css?v=2026101601" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026101601"></noscript>
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 
   

@@ -419,6 +419,14 @@ main {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 600px;
+  margin-inline: 0;
+}
+
+/* Nur unter zentrierten Überschriften mittig — unter linksbündigen wirkte der Text sonst eingerückt (2026-10-16) */
+.section-header .section-desc,
+[style*="text-align:center"] .section-desc,
+[style*="text-align: center"] .section-desc,
+.section-desc[style*="text-align:center"] {
   margin-inline: auto;
 }
 
@@ -1458,3 +1466,13 @@ main {
     max-width: 100%;
   }
 }
+
+/* Text-Abschnitte auf voller Container-Breite: Überschrift links, Text rechts (seit 2026-10-16).
+   Ersetzt schmale, zentrierte Spalten mit linksbündiger Überschrift, die gegenüber den übrigen Abschnitten eingerückt wirkten. */
+.split-text{display:grid;gap:1.25rem}
+@media (min-width:1000px){
+  .split-text{grid-template-columns:minmax(0,1fr) minmax(0,2fr);column-gap:4rem;align-items:start}
+  .split-head{position:sticky;top:6rem}
+  .split-head h2{margin-bottom:0}
+}
+.split-body>:first-child{margin-top:0}

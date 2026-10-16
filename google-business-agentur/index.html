@@ -26,7 +26,7 @@
 
   <!-- ── Preload ───────────────────────────────────────────────── -->
   <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/css/global.css?v=2026091601"          as="style">
+  <link rel="preload" href="/assets/css/global.css?v=2026101601"          as="style">
 
   <!-- ── Critical CSS ──────────────────────────────────────────── -->
   <style>
@@ -61,8 +61,8 @@
   @media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}
   </style>
 
-  <link rel="stylesheet" href="/assets/css/global.css?v=2026091601" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026091601"></noscript>
+  <link rel="stylesheet" href="/assets/css/global.css?v=2026101601" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="/assets/css/global.css?v=2026101601"></noscript>
 
   <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
 
@@ -374,11 +374,14 @@
   <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)" aria-labelledby="was-ist-title">
     <div class="container">
       <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:center">
-        <div style="max-width:760px;margin-inline:auto">
+        <div class="split-text">
+        <div class="split-head">
           <span class="section-label">Grundlagen</span>
           <h2 id="was-ist-title" style="font-size:clamp(1.5rem,4vw,2.25rem);font-weight:800;margin-bottom:1.25rem">
             Was ist Google Business Optimierung — und warum ist sie entscheidend?
           </h2>
+        </div>
+        <div class="split-body">
           <div style="display:flex;flex-direction:column;gap:1.25rem;color:#7c83aa;font-size:.97rem;line-height:1.8">
             <p>
               <strong style="color:#e8eaf6">Google Business Profile</strong> (früher: Google My Business) ist das Unternehmensverzeichnis von Google.
@@ -410,6 +413,7 @@
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </section>
@@ -1001,7 +1005,7 @@
   <!-- ── LEAD FORM ─────────────────────────────────────────────── -->
   <section class="section" id="anfrage" aria-labelledby="gba-form-title">
     <div class="container">
-      <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:start;max-width:960px;margin:0 auto">
+      <div style="display:grid;grid-template-columns:1fr;gap:3rem;align-items:start">
         <style>
           @media(min-width:768px){#gba-form-grid{grid-template-columns:1fr 1fr!important}}
           .lb-input{width:100%;background:#0c0e1a;border:1px solid #1e2240;border-radius:10px;padding:.85em 1.1em;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;font-size:.95rem;outline:none;transition:border-color .2s}
@@ -1030,11 +1034,11 @@
               <div class="lb-trust-item"><span class="lb-trust-dot"></span>100% kostenlos, kein Verkaufsgespräch</div>
               <div class="lb-trust-item"><span class="lb-trust-dot"></span>Keine Verpflichtung</div>
             </div>
-            <div style="background:#111328;border:1px solid #1e2240;border-radius:12px;padding:1.25rem;display:flex;gap:1rem;align-items:flex-start">
-              <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp" alt="Tobias Frank — Inhaber Lokalbesucher GmbH" width="48" height="62" loading="lazy" style="flex-shrink:0;width:48px;height:auto;filter:drop-shadow(0 6px 12px rgba(0,0,0,.4))">
+            <div style="background:#111328;border:1px solid #1e2240;border-radius:12px;padding:1.25rem;display:flex;gap:1rem;align-items:center">
+              <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp" alt="Tobias Frank, Inhaber der Lokalbesucher GmbH" width="56" height="56" loading="lazy" style="width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 15%;flex-shrink:0;border:2px solid #1e2240">
               <div>
-                <div style="font-size:.875rem;font-weight:600;color:#e8eaf6;margin-bottom:.2rem">Tobias Frank</div>
-                <div style="font-size:.8rem;color:#7c83aa">Inhaber · antwortet persönlich</div>
+                <a href="/unser-team/" style="display:block;font-size:.95rem;font-weight:600;color:#e8eaf6;text-decoration:none;margin-bottom:.15rem">Tobias Frank</a>
+                <div style="font-size:.8rem;color:#7c83aa">Inhaber &amp; Geschäftsführer · antwortet persönlich</div>
               </div>
             </div>
           </div>
