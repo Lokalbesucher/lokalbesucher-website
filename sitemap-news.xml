@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://lokalbesucher.de/news/2026-10-google-whatsapp-button-lokales-panel/</loc>
+    <loc>https://lokalbesucher.de/news/2026-10-google-ki-suche-offizielle-websites-links/</loc>
     <news:news>
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-10-15T08:00:00+02:00</news:publication_date>
-      <news:title>Google zeigt WhatsApp-Button neben Anruf und Route</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-10-google-richtlinie-preise-aktionen-im-eintrag/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-10-14T08:00:00+02:00</news:publication_date>
-      <news:title>Google verbietet Preise und Aktionen im Profileintrag</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-10-meta-one-abo-unternehmen-verifizierung/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-10-13T08:00:00+02:00</news:publication_date>
-      <news:title>Meta One: Was das neue Abo für Unternehmen kostet</news:title>
+      <news:publication_date>2026-10-20T08:00:00+02:00</news:publication_date>
+      <news:title>KI-Suche: Google testet Extra-Bereich für offizielle Seiten</news:title>
     </news:news>
   </url>
 </urlset>
