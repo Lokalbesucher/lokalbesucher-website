@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Lokalbesucher News: Bing Places</title>
+  <link>https://lokalbesucher.de/news/bing-places/</link>
+  <description>Bing Places for Business und die Bing-Suche.</description>
+  <language>de-de</language>
+  <lastBuildDate>Wed, 21 Oct 2026 06:00:00 GMT</lastBuildDate>
+  <atom:link href="https://lokalbesucher.de/news/bing-places/feed.xml" rel="self" type="application/rss+xml"/>
+  <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Bing Places</title><link>https://lokalbesucher.de/news/bing-places/</link></image>
+  <item>
+    <title>Bing testet große Einzelanzeige über den Suchergebnissen</title>
+    <link>https://lokalbesucher.de/news/2026-10-bing-test-grosse-anzeige-oben/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-10-bing-test-grosse-anzeige-oben/</guid>
+    <pubDate>Wed, 21 Oct 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Bing Places</category>
+    <category>Werbeanzeigen</category>
+    <description><![CDATA[Bing testet laut einem Screenshot vom Oktober 2026 eine einzelne große Anzeige ganz oben in den Suchergebnissen, mit Bild, Button, Titel und Beschreibung. Microsoft hat sich nicht geäußert, Land und Umfang sind unbekannt. Lokale Werbetreibende sollten bei Microsoft Advertising schon jetzt gute Bilder hinterlegen, darüber hinaus besteht derzeit kein Handlungsbedarf.]]></description>
+  </item>
+</channel>
+</rss>

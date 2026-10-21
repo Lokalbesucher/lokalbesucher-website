@@ -325,14 +325,14 @@
   <!-- news:start -->
   <url>
     <loc>https://lokalbesucher.de/news/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://lokalbesucher.de/news/redaktion/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -347,6 +347,13 @@
   <url>
     <loc>https://lokalbesucher.de/news/meta/</loc>
     <lastmod>2026-10-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalbesucher.de/news/bing-places/</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -374,7 +381,7 @@
 
   <url>
     <loc>https://lokalbesucher.de/news/werbeanzeigen/</loc>
-    <lastmod>2026-08-01</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -397,6 +404,13 @@
     <loc>https://lokalbesucher.de/news/local-seo/</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalbesucher.de/news/2026-10-bing-test-grosse-anzeige-oben/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
