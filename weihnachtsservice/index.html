@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Interne Kunden-Landingpage: nicht indexieren, nicht in Sitemap/Navigation (siehe CLAUDE.md) -->
+  <title>Weihnachtsservice 2026 | Lokalbesucher</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Mitarbeiter-Geschenkboxen im eigenen Design, fertig getextete Weihnachtskarten und Kundengeschenke – in 2 Minuten zusammenstellen, wir erledigen den Rest.">
+
+  <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/global.css?v=2026101601">
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0c0e1a;color:#e8eaf6;font-family:'DM Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    h1,h2,h3{font-family:Arial,Helvetica,sans-serif;line-height:1.2}
+    a{color:inherit}
+    .wrap{width:100%;max-width:760px;margin-inline:auto;padding-inline:16px}
+    @media(min-width:768px){.wrap{padding-inline:2rem}}
+
+    .ws-top{border-bottom:1px solid #1e2240;background:rgba(12,14,26,.9)}
+    .ws-top .wrap{max-width:1100px;display:flex;align-items:center;justify-content:space-between;height:4rem;gap:1rem}
+    .ws-logo{display:flex;align-items:center;gap:.55rem;font-family:Arial,sans-serif;font-weight:700;font-size:1.15rem;text-decoration:none}
+    .ws-logo img{height:2.3rem;width:auto}
+    .ws-help{font-size:.9rem;color:#7c83aa;text-decoration:none}
+    .ws-help:hover{color:#ffbd59}
+
+    .ws-hero{padding:3rem 0 1.5rem;text-align:center}
+    .ws-label{display:inline-block;padding:.35em .9em;font-size:.78rem;font-weight:500;border-radius:999px;border:1px solid rgba(255,189,89,.3);background:rgba(255,189,89,.08);color:#ffbd59;margin-bottom:1rem}
+    .ws-hero h1{font-size:clamp(1.75rem,5vw,2.75rem);font-weight:800;margin-bottom:1rem}
+    .ws-hero h1 em{color:#ffbd59;font-style:normal}
+    .ws-hero p{color:#a3a9c9;font-size:clamp(1rem,2.2vw,1.1rem);max-width:600px;margin-inline:auto}
+    .ws-usp{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.25rem;margin-top:1.25rem;font-size:.9rem;color:#a3a9c9;list-style:none}
+    .ws-usp li::before{content:"✓ ";color:#3ecf8e;font-weight:700}
+
+    .ws-card{background:#111328;border:1px solid #1e2240;border-radius:16px;padding:1.5rem 1.25rem;margin:1.5rem 0 3rem}
+    @media(min-width:768px){.ws-card{padding:2.25rem 2.5rem}}
+    .ws-progress{height:6px;background:#1e2240;border-radius:99px;overflow:hidden;margin-bottom:.6rem}
+    .ws-progress span{display:block;height:100%;width:0;background:#ffbd59;transition:width .3s}
+    .ws-count{font-size:.8rem;color:#7c83aa;margin-bottom:1.25rem}
+
+    .ws-step{display:none}
+    .ws-step.on{display:block;animation:wsIn .25s ease}
+    @keyframes wsIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+    @media(prefers-reduced-motion:reduce){.ws-step.on{animation:none}.ws-progress span{transition:none}}
+    .ws-step h2{font-size:clamp(1.3rem,3.5vw,1.65rem);margin-bottom:.4rem}
+    .ws-lead{color:#a3a9c9;margin-bottom:1.5rem}
+    .ws-q{margin-bottom:1.6rem;border:0}
+    .ws-q > legend,.ws-q > label.ws-ql{display:block;font-weight:700;margin-bottom:.6rem;font-size:1rem}
+    .ws-hint{display:block;font-weight:400;color:#7c83aa;font-size:.85rem;margin-top:.15rem}
+
+    .ws-opts{display:grid;gap:.6rem}
+    @media(min-width:600px){.ws-opts.two{grid-template-columns:1fr 1fr}.ws-opts.three{grid-template-columns:repeat(3,1fr)}}
+    .ws-opt{position:relative;display:flex;gap:.7rem;align-items:flex-start;padding:.85rem 1rem;border:1px solid #1e2240;border-radius:12px;background:#0c0e1a;cursor:pointer;transition:border-color .15s,background .15s}
+    .ws-opt:hover{border-color:#3a3f66}
+    .ws-opt input{margin-top:.25rem;accent-color:#ffbd59;width:1.05rem;height:1.05rem;flex-shrink:0}
+    .ws-opt:has(input:checked){border-color:#ffbd59;background:rgba(255,189,89,.06)}
+    .ws-opt b{display:block;font-size:.97rem}
+    .ws-opt small{display:block;color:#7c83aa;font-size:.84rem;line-height:1.45;margin-top:.1rem}
+    .ws-opt.big{padding:1.1rem 1.1rem}
+    .ws-opt.big b{font-size:1.05rem}
+
+    .ws-in,.ws-ta{width:100%;padding:.8rem .9rem;border-radius:10px;border:1px solid #1e2240;background:#0c0e1a;color:#e8eaf6;font:inherit;font-size:1rem}
+    .ws-in:focus,.ws-ta:focus,.ws-opt:focus-within{outline:2px solid #ffbd59;outline-offset:1px}
+    .ws-ta{min-height:90px;resize:vertical}
+    .ws-euro{position:relative;max-width:220px}
+    .ws-euro .ws-in{padding-right:2.2rem}
+    .ws-euro::after{content:"€";position:absolute;right:.9rem;top:50%;transform:translateY(-50%);color:#7c83aa}
+    .ws-num{max-width:160px}
+    .ws-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.6rem}
+    .ws-chip{padding:.4rem .85rem;border-radius:999px;border:1px solid #1e2240;background:#0c0e1a;color:#e8eaf6;font:inherit;font-size:.88rem;cursor:pointer}
+    .ws-chip:hover,.ws-chip.on{border-color:#ffbd59;color:#ffbd59}
+    .ws-grid2{display:grid;gap:1rem}
+    @media(min-width:600px){.ws-grid2{grid-template-columns:1fr 1fr}}
+
+    .ws-restr{display:grid;gap:.5rem}
+    @media(min-width:600px){.ws-restr{grid-template-columns:1fr 1fr}}
+    .ws-rrow{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.55rem .8rem;border:1px solid #1e2240;border-radius:10px;background:#0c0e1a}
+    .ws-rrow span{font-size:.93rem;line-height:1.3}
+    .ws-rrow span small{display:block;color:#7c83aa;font-size:.78rem}
+    .ws-rrow input{width:4.6rem;padding:.45rem .5rem;border-radius:8px;border:1px solid #1e2240;background:#111328;color:#e8eaf6;font:inherit;text-align:center}
+
+    .ws-note{border-radius:12px;padding:1rem 1.1rem;font-size:.92rem;line-height:1.55;margin:0 0 1.4rem}
+    .ws-note b{display:block;margin-bottom:.25rem;font-size:.97rem}
+    .ws-note p + p{margin-top:.45rem}
+    .ws-note.info{background:rgba(79,130,255,.08);border:1px solid rgba(79,130,255,.3)}
+    .ws-note.warn{background:rgba(255,92,92,.08);border:1px solid rgba(255,92,92,.45)}
+    .ws-note.warn b{color:#ff8a8a}
+    .ws-note .ws-opt{margin-top:.75rem;background:transparent}
+    .ws-note[hidden],.ws-cond[hidden]{display:none}
+
+    .ws-nav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid #1e2240}
+    .ws-btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.9em 1.6em;border-radius:12px;border:1px solid transparent;font-family:Arial,Helvetica,sans-serif;font-weight:700;font-size:1rem;cursor:pointer;line-height:1}
+    .ws-btn.pri{background:#ffbd59;color:#0c0e1a}
+    .ws-btn.pri:hover{background:#ffc96d}
+    .ws-btn.pri[disabled]{opacity:.6;cursor:wait}
+    .ws-btn.ghost{background:transparent;color:#a3a9c9;border-color:#1e2240}
+    .ws-btn.ghost:hover{color:#e8eaf6;border-color:#3a3f66}
+    .ws-err{color:#ff8a8a;font-size:.9rem;margin-top:.9rem;min-height:1.2em}
+
+    .ws-sum{background:#0c0e1a;border:1px solid #1e2240;border-radius:12px;padding:1rem 1.1rem;margin-bottom:1.5rem;font-size:.92rem}
+    .ws-sum h3{font-size:1rem;margin:.9rem 0 .35rem;color:#ffbd59}
+    .ws-sum h3:first-child{margin-top:0}
+    .ws-sum ul{list-style:none}
+    .ws-sum li{padding:.15rem 0;color:#c4c8e0}
+    .ws-sum .tot{margin-top:.9rem;padding-top:.75rem;border-top:1px solid #1e2240;font-weight:700;color:#e8eaf6}
+    .ws-consent{display:flex;gap:.6rem;align-items:flex-start;font-size:.88rem;color:#a3a9c9;margin-top:1rem}
+    .ws-consent input{margin-top:.25rem;accent-color:#ffbd59}
+    .ws-consent a{color:#ffbd59}
+
+    .ws-done{text-align:center;padding:1rem 0}
+    .ws-done .ic{width:64px;height:64px;border-radius:50%;background:rgba(62,207,142,.12);color:#3ecf8e;display:grid;place-items:center;margin:0 auto 1rem;font-size:2rem}
+
+    .ws-tax{padding:0 0 3.5rem}
+    .ws-tax h2{font-size:1.3rem;margin-bottom:1rem;text-align:center}
+    .ws-tax details{border:1px solid #1e2240;border-radius:12px;background:#111328;margin-bottom:.6rem}
+    .ws-tax summary{cursor:pointer;padding:1rem 1.1rem;font-weight:700;list-style:none}
+    .ws-tax summary::-webkit-details-marker{display:none}
+    .ws-tax summary::after{content:"+";float:right;color:#ffbd59}
+    .ws-tax details[open] summary::after{content:"–"}
+    .ws-tax details div{padding:0 1.1rem 1rem;color:#a3a9c9;font-size:.93rem}
+    .ws-tax .small{text-align:center;color:#7c83aa;font-size:.82rem;margin-top:1rem}
+
+    .ws-foot{border-top:1px solid #1e2240;padding:1.75rem 0;font-size:.85rem;color:#7c83aa}
+    .ws-foot .wrap{max-width:1100px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem}
+    .ws-foot nav{display:flex;gap:1.1rem;flex-wrap:wrap}
+    .ws-foot a{text-decoration:none}
+    .ws-foot a:hover{color:#ffbd59}
+    [hidden]{display:none!important}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  </style>
+
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});</script>
+  <script src="/assets/js/third-party.js?v=2026091601" defer></script>
+  <script>gtag('js',new Date());gtag('config','G-KRKS5RL7MP',{anonymize_ip:true});gtag('config','AW-11287998127');</script>
+</head>
+<body>
+
+<header class="ws-top">
+  <div class="wrap">
+    <a href="/" class="ws-logo" aria-label="Lokalbesucher – Startseite">
+      <img src="/assets/images/lokalbesucher-logo-invers.webp" alt="" width="35" height="38">
+      Lokalbesucher
+    </a>
+    <a class="ws-help" href="https://wa.me/4915122358883" target="_blank" rel="noopener noreferrer">Fragen? WhatsApp</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="ws-hero">
+    <div class="wrap">
+      <span class="ws-label">Weihnachtsservice 2026</span>
+      <h1>Weihnachten für Team und Kunden – <em>wir erledigen das.</em></h1>
+      <p>Geschenkboxen im Design deines Unternehmens, fertig getextete Weihnachtskarten und Geschenke für deine Kunden. Stell in 2 Minuten zusammen, was du brauchst – du bekommst ein Angebot.</p>
+      <ul class="ws-usp">
+        <li>Box im eigenen Design</li>
+        <li>befüllt &amp; verpackt</li>
+        <li>Allergien &amp; Einschränkungen berücksichtigt</li>
+        <li>steuerliche Grenzen im Blick</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <form class="ws-card" id="ws" novalidate>
+      <div class="ws-progress" aria-hidden="true"><span id="ws-bar"></span></div>
+      <p class="ws-count" id="ws-count" aria-live="polite"></p>
+
+      <!-- 1 · Auswahl -->
+      <section class="ws-step" data-step="start">
+        <h2>Was möchtest du zum Jahresende nutzen?</h2>
+        <p class="ws-lead">Mehrfachauswahl möglich. Wir fragen danach nur das ab, was wir dafür wirklich brauchen.</p>
+        <div class="ws-opts">
+          <label class="ws-opt big"><input type="checkbox" name="leistung" value="box"><span><b>Weihnachtsbox für Mitarbeitende</b><small>Box im eigenen Design, von uns befüllt und verpackt – auf Wunsch mit Grußkarte.</small></span></label>
+          <label class="ws-opt big"><input type="checkbox" name="leistung" value="karten"><span><b>Weihnachtskarten</b><small>Gestaltet, gedruckt und auf Wunsch fertig getextet – du musst nur noch unterschreiben.</small></span></label>
+          <label class="ws-opt big"><input type="checkbox" name="leistung" value="geschenke"><span><b>Geschenke für Kunden &amp; Partner</b><small>Zu Weihnachten oder zum neuen Jahr – passend zu deinem Budget, auf Wunsch direkt an die Empfänger.</small></span></label>
+        </div>
+      </section>
+
+      <!-- 2 · Box: Umfang & Budget -->
+      <section class="ws-step" data-step="box-basis">
+        <h2>Weihnachtsbox: Menge &amp; Budget</h2>
+        <p class="ws-lead">Das Budget brauchen wir immer – danach richten wir die Befüllung aus.</p>
+        <div class="ws-grid2">
+          <div class="ws-q"><label class="ws-ql" for="b-anzahl">Wie viele Boxen?</label><input class="ws-in ws-num" id="b-anzahl" type="number" min="1" max="5000" inputmode="numeric" placeholder="z. B. 25"></div>
+          <div class="ws-q"><label class="ws-ql" for="b-budget">Budget pro Box<span class="ws-hint">Warenwert inkl. MwSt.</span></label>
+            <div class="ws-euro"><input class="ws-in" id="b-budget" type="number" min="10" max="1000" step="1" inputmode="numeric" placeholder="z. B. 45"></div>
+            <div class="ws-chips" data-for="b-budget"><button type="button" class="ws-chip" data-v="30">30 €</button><button type="button" class="ws-chip" data-v="40">40 €</button><button type="button" class="ws-chip" data-v="50">50 €</button><button type="button" class="ws-chip" data-v="75">75 €</button></div>
+          </div>
+        </div>
+        <div class="ws-note warn" id="w-box" hidden>
+          <b>Achtung: über 50 € pro Box</b>
+          <p>Weihnachtsgeschenke an Mitarbeitende sind nur bis <strong>50 € pro Monat</strong> steuer- und sozialversicherungsfrei (Sachbezugsfreigrenze, § 8 Abs. 2 Satz 11 EStG). Die Grenze gilt inkl. MwSt. – wird sie auch nur um 1 € überschritten, ist der <strong>gesamte Betrag</strong> lohnsteuer- und beitragspflichtig.</p>
+          <p>Möglich bleibt: pauschal mit 30 % versteuern (§ 37b EStG) oder die Box auf der Weihnachtsfeier überreichen – dann zählt sie zum 110-€-Freibetrag der Feier. Bitte vorher mit deinem Steuerbüro klären.</p>
+          <label class="ws-opt"><input type="checkbox" id="b-ok"><span><b>Verstanden – wir möchten trotzdem dieses Budget.</b><small>Die Versteuerung klären wir selbst.</small></span></label>
+        </div>
+        <fieldset class="ws-q"><legend>Bekommen eure Mitarbeitenden im Dezember schon andere Sachbezüge?<span class="ws-hint">z. B. Gutscheinkarte, Tankgutschein, Essensgutscheine über einen Sachbezugsanbieter</span></legend>
+          <div class="ws-opts three">
+            <label class="ws-opt"><input type="radio" name="b-sach" value="nein"><span><b>Nein</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-sach" value="ja"><span><b>Ja</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-sach" value="unklar"><span><b>Weiß ich nicht</b></span></label>
+          </div>
+        </fieldset>
+        <div class="ws-note warn" id="w-sach" hidden>
+          <b>Die 50 € gelten für alle Sachbezüge im Monat zusammen</b>
+          <p>Gibt es im Dezember schon eine Gutschein- oder Tankkarte, bleibt für die Box nur der Rest bis 50 €. Sonst wird alles steuerpflichtig. Wir stimmen das Budget gern mit dir ab.</p>
+        </div>
+        <fieldset class="ws-q"><legend>Design der Box</legend>
+          <div class="ws-opts">
+            <label class="ws-opt"><input type="radio" name="b-design" value="Eigenes Design (Logo & Farben)"><span><b>Komplett im Design deines Unternehmens</b><small>Logo und Farben auf Box bzw. Banderole</small></span></label>
+            <label class="ws-opt"><input type="radio" name="b-design" value="Weihnachtsbox mit Logo"><span><b>Weihnachtliche Box mit deinem Logo</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-design" value="Neutral ohne Logo"><span><b>Neutral, ohne Logo</b></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="ws-q"><legend>Grußkarte in die Box?</legend>
+          <div class="ws-opts">
+            <label class="ws-opt"><input type="radio" name="b-karte" value="Ja, wir texten, Kunde unterschreibt"><span><b>Ja – ihr textet, wir unterschreiben nur</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-karte" value="Ja, Text kommt vom Kunden"><span><b>Ja – den Text geben wir vor</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-karte" value="Keine Karte"><span><b>Keine Karte</b></span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- 3 · Box: Inhalt -->
+      <section class="ws-step" data-step="box-inhalt">
+        <h2>Was darf grundsätzlich in die Box?</h2>
+        <p class="ws-lead">Kreuz alles an, was passt. Die genaue Zusammenstellung schlagen wir dir passend zum Budget vor.</p>
+        <div class="ws-opts two" id="b-inhalt">
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Schokolade & Süßes"><span><b>Schokolade &amp; Süßes</b></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Plätzchen & Weihnachtsgebäck"><span><b>Plätzchen &amp; Weihnachtsgebäck</b></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Kaffee & Tee"><span><b>Kaffee &amp; Tee</b></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Herzhaftes & Feinkost"><span><b>Herzhaftes &amp; Feinkost</b><small>Nüsse, Chips, Aufstriche, Gewürze</small></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Regionale Produkte"><span><b>Regionale Produkte</b><small>aus eurer Region</small></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Alkoholfreie Getränke"><span><b>Alkoholfreie Getränke</b><small>Punsch, Saft, alkoholfreier Sekt</small></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Wein, Sekt oder Glühwein" data-alk><span><b>Wein, Sekt oder Glühwein</b></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Bier / Craft-Bier" data-alk><span><b>Bier / Craft-Bier</b></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Spirituosen & Likör" data-alk><span><b>Spirituosen &amp; Likör</b><small>z. B. Gin, Likör – auch Likörpralinen</small></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Nützliches mit Logo"><span><b>Nützliches mit Logo</b><small>Tasse, Thermobecher, Notizbuch</small></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Gemütliches"><span><b>Gemütliches</b><small>Socken, Kerze, kleine Decke</small></span></label>
+          <label class="ws-opt"><input type="checkbox" name="b-inhalt" value="Pflege & Wellness"><span><b>Pflege &amp; Wellness</b><small>Handcreme, Lippenpflege, Badezusatz</small></span></label>
+        </div>
+        <fieldset class="ws-q" style="margin-top:1.4rem"><legend>Worauf sollen wir achten?</legend>
+          <div class="ws-opts two">
+            <label class="ws-opt"><input type="checkbox" name="b-extra" value="Nachhaltig / Bio bevorzugt"><span><b>Nachhaltig / Bio bevorzugt</b></span></label>
+            <label class="ws-opt"><input type="checkbox" name="b-extra" value="Plastikfrei verpacken"><span><b>Möglichst plastikfrei</b></span></label>
+          </div>
+        </fieldset>
+        <div class="ws-q"><label class="ws-ql" for="b-wunsch">Wünsche oder No-Gos <span class="ws-hint">optional</span></label><textarea class="ws-ta" id="b-wunsch" maxlength="600" placeholder="z. B. Lieblingsrösterei aus der Stadt, keine Werbeartikel …"></textarea></div>
+      </section>
+
+      <!-- 4 · Box: Einschränkungen -->
+      <section class="ws-step" data-step="box-einschr">
+        <h2>Gibt es Mitarbeitende mit Einschränkungen?</h2>
+        <p class="ws-lead">Allergien, Unverträglichkeiten, Ernährung oder Religion – diese Boxen stellen wir angepasst zusammen, packen sie separat und beschriften sie mit dem Namen.</p>
+        <fieldset class="ws-q"><legend class="sr-only">Einschränkungen</legend>
+          <div class="ws-opts three">
+            <label class="ws-opt"><input type="radio" name="b-hat" value="ja"><span><b>Ja</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-hat" value="nein"><span><b>Nein</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-hat" value="unklar"><span><b>Weiß ich noch nicht</b></span></label>
+          </div>
+        </fieldset>
+        <div class="ws-note info ws-cond" id="c-unklar" hidden>
+          <b>Kein Problem</b>
+          <p>Wir schicken dir eine kurze Abfrage-Vorlage, die du ins Team geben kannst. Die genauen Zahlen reichst du dann nach.</p>
+        </div>
+        <div class="ws-cond" id="c-restr" hidden>
+          <p class="ws-hint" style="margin-bottom:.75rem">Trag ein, wie viele Personen betroffen sind (leer lassen = keine).</p>
+          <div class="ws-restr" id="b-restr">
+            <label class="ws-rrow"><span>Vegan</span><input type="number" min="0" inputmode="numeric" data-r="Vegan"></label>
+            <label class="ws-rrow"><span>Vegetarisch</span><input type="number" min="0" inputmode="numeric" data-r="Vegetarisch"></label>
+            <label class="ws-rrow"><span>Halal</span><input type="number" min="0" inputmode="numeric" data-r="Halal"></label>
+            <label class="ws-rrow"><span>Kein Schweinefleisch<small>auch keine Gelatine vom Schwein</small></span><input type="number" min="0" inputmode="numeric" data-r="Kein Schweinefleisch"></label>
+            <label class="ws-rrow"><span>Alkoholfrei<small>z. B. Schwangerschaft, Religion, persönlich</small></span><input type="number" min="0" inputmode="numeric" data-r="Alkoholfrei"></label>
+            <label class="ws-rrow"><span>Unter 18 Jahre<small>z. B. Azubis – automatisch alkoholfrei</small></span><input type="number" min="0" inputmode="numeric" data-r="Unter 18"></label>
+            <label class="ws-rrow"><span>Glutenfrei / Zöliakie</span><input type="number" min="0" inputmode="numeric" data-r="Glutenfrei"></label>
+            <label class="ws-rrow"><span>Laktosefrei</span><input type="number" min="0" inputmode="numeric" data-r="Laktosefrei"></label>
+            <label class="ws-rrow"><span>Nussallergie</span><input type="number" min="0" inputmode="numeric" data-r="Nussallergie"></label>
+            <label class="ws-rrow"><span>Erdnussallergie</span><input type="number" min="0" inputmode="numeric" data-r="Erdnussallergie"></label>
+            <label class="ws-rrow"><span>Zuckerfrei / Diabetes</span><input type="number" min="0" inputmode="numeric" data-r="Zuckerfrei"></label>
+            <label class="ws-rrow"><span>Koffeinfrei</span><input type="number" min="0" inputmode="numeric" data-r="Koffeinfrei"></label>
+          </div>
+          <div class="ws-q" style="margin-top:1rem"><label class="ws-ql" for="b-restr-sonst">Weitere Allergien oder Hinweise <span class="ws-hint">z. B. Sesam, Soja, Ei, Fisch, Sellerie – mit Anzahl</span></label><textarea class="ws-ta" id="b-restr-sonst" maxlength="600"></textarea></div>
+          <div class="ws-note info">
+            <b>Gut zu wissen</b>
+            <p>Bei schweren Allergien wählen wir Produkte ohne den Stoff und ohne Spuren-Hinweis, soweit möglich. Ganz ausschließen können Hersteller Spuren aber nie – bei Anaphylaxie-Risiko sprechen wir das mit dir ab. Namen brauchen wir erst später.</p>
+          </div>
+        </div>
+        <div class="ws-note warn" id="w-u18" hidden>
+          <b>Alkohol &amp; Mitarbeitende unter 18</b>
+          <p>Nach dem Jugendschutzgesetz (§ 9 JuSchG) gibt es für unter 16-Jährige keinen Alkohol und für unter 18-Jährige keine Spirituosen. Wir packen für alle unter 18 automatisch eine komplett alkoholfreie Box – auch ohne Likörpralinen.</p>
+        </div>
+        <div class="ws-note info" id="i-alk" hidden>
+          <b>Alkohol in der Box</b>
+          <p>Gibt es Azubis unter 18? Dann trag sie oben ein – sie bekommen automatisch eine alkoholfreie Box.</p>
+        </div>
+      </section>
+
+      <!-- 5 · Box: Lieferung -->
+      <section class="ws-step" data-step="box-liefer">
+        <h2>Wie sollen die Boxen ankommen?</h2>
+        <p class="ws-lead">Damit wir Produktion und Versand richtig planen.</p>
+        <fieldset class="ws-q"><legend>Lieferung</legend>
+          <div class="ws-opts">
+            <label class="ws-opt"><input type="radio" name="b-liefer" value="Gesammelt an einen Standort"><span><b>Gesammelt an einen Standort</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-liefer" value="An mehrere Standorte"><span><b>An mehrere Standorte</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-liefer" value="Einzeln nach Hause"><span><b>Einzeln zu den Mitarbeitenden nach Hause</b><small>Dafür brauchen wir eine Adressliste – das regeln wir datenschutzkonform mit einem Auftragsverarbeitungsvertrag.</small></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="ws-q"><legend>Wie werden die Boxen übergeben?</legend>
+          <div class="ws-opts">
+            <label class="ws-opt"><input type="radio" name="b-uebergabe" value="Im Büro / am Arbeitsplatz"><span><b>Im Büro / am Arbeitsplatz</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-uebergabe" value="Auf der Weihnachtsfeier"><span><b>Auf der Weihnachtsfeier</b></span></label>
+            <label class="ws-opt"><input type="radio" name="b-uebergabe" value="Per Post"><span><b>Per Post (siehe oben)</b></span></label>
+          </div>
+        </fieldset>
+        <div class="ws-note info" id="i-feier" hidden>
+          <b>Übergabe auf der Weihnachtsfeier</b>
+          <p>Dann zählt die Box zu den Kosten der Feier. Dort gilt ein Freibetrag von 110 € pro Person (§ 19 Abs. 1 Nr. 1a EStG) – für Essen, Getränke, Location <em>und</em> Geschenk zusammen.</p>
+        </div>
+        <fieldset class="ws-q"><legend>Bis wann sollen die Boxen da sein?</legend>
+          <div class="ws-opts two">
+            <label class="ws-opt"><input type="radio" name="b-termin" value="Anfang Dezember (bis 5.12.)"><span><b>Anfang Dezember</b><small>bis 5.12.</small></span></label>
+            <label class="ws-opt"><input type="radio" name="b-termin" value="Mitte Dezember (bis 12.12.)"><span><b>Mitte Dezember</b><small>bis 12.12.</small></span></label>
+            <label class="ws-opt"><input type="radio" name="b-termin" value="Kurz vor Weihnachten (bis 19.12.)"><span><b>Kurz vor Weihnachten</b><small>bis 19.12.</small></span></label>
+            <label class="ws-opt"><input type="radio" name="b-termin" value="Fester Termin (siehe Nachricht)"><span><b>Fester Termin</b><small>z. B. Datum der Feier – bitte am Ende angeben</small></span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- 6 · Karten -->
+      <section class="ws-step" data-step="karten">
+        <h2>Weihnachtskarten</h2>
+        <p class="ws-lead">Auf Wunsch schreiben wir alles vor – du musst nur noch unterschreiben.</p>
+        <div class="ws-q"><label class="ws-ql" for="k-anzahl">Wie viele Karten?</label><input class="ws-in ws-num" id="k-anzahl" type="number" min="1" max="10000" inputmode="numeric" placeholder="z. B. 80">
+          <div class="ws-chips" data-for="k-anzahl"><button type="button" class="ws-chip" data-v="25">25</button><button type="button" class="ws-chip" data-v="50">50</button><button type="button" class="ws-chip" data-v="100">100</button><button type="button" class="ws-chip" data-v="250">250</button></div>
+        </div>
+        <fieldset class="ws-q"><legend>Für wen sind die Karten?</legend>
+          <div class="ws-opts three">
+            <label class="ws-opt"><input type="checkbox" name="k-fuer" value="Kunden"><span><b>Kunden</b></span></label>
+            <label class="ws-opt"><input type="checkbox" name="k-fuer" value="Mitarbeitende"><span><b>Mitarbeitende</b></span></label>
+            <label class="ws-opt"><input type="checkbox" name="k-fuer" value="Partner & Lieferanten"><span><b>Partner &amp; Lieferanten</b></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="ws-q"><legend>Sollen wir die Karten vorschreiben?</legend>
+          <div class="ws-opts">
+            <label class="ws-opt"><input type="radio" name="k-text" value="Vorgeschrieben, Kunde unterschreibt nur"><span><b>Ja – ihr schreibt alles vor, wir unterschreiben nur</b><small>einheitlicher Text, fertig zum Signieren</small></span></label>
+            <label class="ws-opt"><input type="radio" name="k-text" value="Vorgeschrieben mit persönlicher Anrede je Empfänger"><span><b>Ja – mit persönlicher Anrede je Empfänger</b><small>„Liebe Frau Schulz, …“ – Namensliste von euch</small></span></label>
+            <label class="ws-opt"><input type="radio" name="k-text" value="Nur Druck, Text kommt vom Kunden"><span><b>Nein – den Text liefern wir, ihr druckt</b></span></label>
+            <label class="ws-opt"><input type="radio" name="k-text" value="Blanko zum selbst Schreiben"><span><b>Nein – wir schreiben selbst von Hand</b></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="ws-q"><legend>Design</legend>
+          <div class="ws-opts">
+            <label class="ws-opt"><input type="radio" name="k-design" value="Weihnachtsmotiv mit Logo"><span><b>Weihnachtsmotiv mit eurem Logo</b></span></label>
+            <label class="ws-opt"><input type="radio" name="k-design" value="Eigenes Design (z. B. Teamfoto)"><span><b>Ganz eigenes Design</b><small>z. B. mit Teamfoto</small></span></label>
+            <label class="ws-opt"><input type="radio" name="k-design" value="Design ist vorhanden"><span><b>Design haben wir schon</b></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="ws-q"><legend>Versand</legend>
+          <div class="ws-opts">
+            <label class="ws-opt"><input type="radio" name="k-versand" value="Lokalbesucher kuvertiert, frankiert und versendet"><span><b>Ihr kuvertiert, frankiert und verschickt</b><small>nach dem Unterschreiben – Adressliste von uns</small></span></label>
+            <label class="ws-opt"><input type="radio" name="k-versand" value="Kunde verschickt selbst"><span><b>Wir verschicken selbst</b></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="ws-q"><legend>Anlass</legend>
+          <div class="ws-opts two">
+            <label class="ws-opt"><input type="radio" name="k-anlass" value="Weihnachten"><span><b>Weihnachten</b></span></label>
+            <label class="ws-opt"><input type="radio" name="k-anlass" value="Neujahr"><span><b>Neujahr</b></span></label>
+          </div>
+        </fieldset>
+      </section>
+
+      <!-- 7 · Kundengeschenke -->
+      <section class="ws-step" data-step="geschenke">
+        <h2>Geschenke für Kunden &amp; Partner</h2>
+        <p class="ws-lead">Sag uns, wie viele Empfänger es sind und was du pro Geschenk ausgeben möchtest.</p>
+        <div class="ws-grid2">
+          <div class="ws-q"><label class="ws-ql" for="g-anzahl">Wie viele Empfänger?</label><input class="ws-in ws-num" id="g-anzahl" type="number" min="1" max="5000" inputmode="numeric" placeholder="z. B. 40"></div>
+          <div class="ws-q"><label class="ws-ql" for="g-budget">Budget pro Geschenk<span class="ws-hint">netto, ohne MwSt.</span></label>
+            <div class="ws-euro"><input class="ws-in" id="g-budget" type="number" min="5" max="1000" step="1" inputmode="numeric" placeholder="z. B. 35"></div>
+            <div class="ws-chips" data-for="g-budget"><button type="button" class="ws-chip" data-v="20">20 €</button><button type="button" class="ws-chip" data-v="35">35 €</button><button type="button" class="ws-chip" data-v="50">50 €</button><button type="button" class="ws-chip" data-v="75">75 €</button></div>
+          </div>
+        </div>
+        <div class="ws-note warn" id="w-gesch" hidden>
+          <b>Achtung: über 50 € pro Empfänger</b>
+          <p>Geschenke an Kunden und Geschäftspartner sind nur bis <strong>50 € netto pro Empfänger und Jahr</strong> als Betriebsausgabe absetzbar (§ 4 Abs. 5 Satz 1 Nr. 1 EStG). Darüber entfällt der Abzug für den <strong>gesamten Betrag</strong> – und die Vorsteuer gleich mit. Andere Geschenke an denselben Empfänger im selben Jahr zählen mit.</p>
+          <p>Zusätzlich muss der Empfänger das Geschenk versteuern, wenn du es nicht pauschal mit 30 % übernimmst (§ 37b EStG). Bitte vorher mit deinem Steuerbüro klären.</p>
+          <label class="ws-opt"><input type="checkbox" id="g-ok"><span><b>Verstanden – wir möchten trotzdem dieses Budget.</b><small>Die steuerliche Behandlung klären wir selbst.</small></span></label>
+        </div>
+        <div class="ws-note info">
+          <b>Gut zu wissen</b>
+          <p>Für die Absetzbarkeit müssen die Empfänger namentlich festgehalten werden – die Liste bekommst du von uns mit. Empfänger im öffentlichen Dienst oder in großen Unternehmen dürfen oft nur sehr kleine Geschenke annehmen.</p>
+        </div>
+        <fieldset class="ws-q"><legend>Was darf es sein?</legend>
+          <div class="ws-opts two">
+            <label class="ws-opt" id="g-wiebox"><input type="checkbox" name="g-art" value="Wie die Mitarbeiterbox"><span><b>Wie die Mitarbeiterbox</b></span></label>
+            <label class="ws-opt"><input type="checkbox" name="g-art" value="Feinkost & Genuss"><span><b>Feinkost &amp; Genuss</b></span></label>
+            <label class="ws-opt"><input type="checkbox" name="g-art" value="Wein & Sekt"><span><b>Wein &amp; Sekt</b></span></label>
+            <label class="ws-opt"><input type="checkbox" name="g-art" value="Regionale Produkte"><span><b>Regionale Produkte</b></span></label>
+            <label class="ws-opt"><input type="checkbox" name="g-art" value="Nützliches mit Logo"><span><b>Nützliches mit Logo</b></span></label>
+            <label class="ws-opt"><input type="checkbox" name="g-art" value="Überrascht uns"><span><b>Überrascht uns</b></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="ws-q"><legend>Wann sollen die Geschenke ankommen?</legend>
+          <div class="ws-opts three">
+            <label class="ws-opt"><input type="radio" name="g-zeit" value="Vor Weihnachten"><span><b>Vor Weihnachten</b></span></label>
+            <label class="ws-opt"><input type="radio" name="g-zeit" value="Zwischen den Jahren"><span><b>Zwischen den Jahren</b></span></label>
+            <label class="ws-opt"><input type="radio" name="g-zeit" value="Zum neuen Jahr (Januar)"><span><b>Zum neuen Jahr</b><small>Januar</small></span></label>
+          </div>
+        </fieldset>
+        <fieldset class="ws-q"><legend>Versand &amp; Karte</legend>
+          <div class="ws-opts two">
+            <label class="ws-opt"><input type="radio" name="g-versand" value="Direkt an die Empfänger"><span><b>Direkt an die Empfänger</b></span></label>
+            <label class="ws-opt"><input type="radio" name="g-versand" value="Gesammelt an uns"><span><b>Gesammelt an uns</b><small>wir übergeben persönlich</small></span></label>
+          </div>
+          <label class="ws-opt" style="margin-top:.6rem"><input type="checkbox" id="g-karte"><span><b>Mit Grußkarte</b></span></label>
+        </fieldset>
+      </section>
+
+      <!-- 8 · Kontakt -->
+      <section class="ws-step" data-step="kontakt">
+        <h2>Fast geschafft – wohin dürfen wir das Angebot schicken?</h2>
+        <p class="ws-lead">Kurz prüfen, Kontaktdaten eintragen, fertig.</p>
+        <div class="ws-sum" id="ws-sum"></div>
+        <div class="ws-grid2">
+          <div class="ws-q"><label class="ws-ql" for="c-firma">Unternehmen</label><input class="ws-in" id="c-firma" autocomplete="organization" maxlength="120"></div>
+          <div class="ws-q"><label class="ws-ql" for="c-name">Dein Name</label><input class="ws-in" id="c-name" autocomplete="name" maxlength="120"></div>
+          <div class="ws-q"><label class="ws-ql" for="c-mail">E-Mail</label><input class="ws-in" id="c-mail" type="email" autocomplete="email" maxlength="160"></div>
+          <div class="ws-q"><label class="ws-ql" for="c-tel">Telefon <span class="ws-hint">optional, für Rückfragen</span></label><input class="ws-in" id="c-tel" type="tel" autocomplete="tel" maxlength="40"></div>
+        </div>
+        <div class="ws-q"><label class="ws-ql" for="c-msg">Noch etwas? <span class="ws-hint">optional – z. B. fester Liefertermin, Logo-Link</span></label><textarea class="ws-ta" id="c-msg" maxlength="1000"></textarea></div>
+        <label class="ws-consent"><input type="checkbox" id="c-dsgvo"><span>Ich bin einverstanden, dass Lokalbesucher meine Angaben zur Bearbeitung der Anfrage speichert. Mehr in der <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>.</span></label>
+      </section>
+
+      <!-- 9 · Danke -->
+      <section class="ws-step" data-step="danke">
+        <div class="ws-done">
+          <div class="ic" aria-hidden="true">✓</div>
+          <h2>Danke, deine Anfrage ist da!</h2>
+          <p class="ws-lead" style="margin-top:.5rem">Wir melden uns mit einem konkreten Vorschlag und Angebot bei dir. Eilig? Schreib uns direkt per <a href="https://wa.me/4915122358883" target="_blank" rel="noopener noreferrer" style="color:#ffbd59">WhatsApp</a>.</p>
+          <p id="ws-mailto" hidden style="margin-top:1rem"></p>
+        </div>
+      </section>
+
+      <p class="ws-err" id="ws-err" role="alert"></p>
+      <div class="ws-nav" id="ws-nav">
+        <button type="button" class="ws-btn ghost" id="ws-back">Zurück</button>
+        <button type="button" class="ws-btn pri" id="ws-next">Weiter</button>
+      </div>
+    </form>
+  </div>
+
+  <section class="ws-tax">
+    <div class="wrap">
+      <h2>Steuer-Grenzen kurz erklärt</h2>
+      <details><summary>Geschenke an Mitarbeitende</summary><div>Bis 50 € pro Monat inklusive MwSt. sind Sachgeschenke steuer- und sozialversicherungsfrei (§ 8 Abs. 2 Satz 11 EStG). Die Grenze gilt für alle Sachbezüge im Monat zusammen – also auch Gutschein- oder Tankkarten. Wird sie überschritten, ist der ganze Betrag steuerpflichtig. Die 60-€-Grenze für „Aufmerksamkeiten“ gilt nur für persönliche Anlässe wie Geburtstag oder Hochzeit, nicht für Weihnachten.</div></details>
+      <details><summary>Übergabe auf der Weihnachtsfeier</summary><div>Wird das Geschenk auf der Feier überreicht, zählt es zu den Kosten der Betriebsveranstaltung. Dafür gilt ein Freibetrag von 110 € pro Person für alles zusammen (§ 19 Abs. 1 Nr. 1a EStG).</div></details>
+      <details><summary>Geschenke an Kunden &amp; Geschäftspartner</summary><div>Absetzbar bis 50 € netto pro Empfänger und Jahr (§ 4 Abs. 5 Satz 1 Nr. 1 EStG). Darüber ist der gesamte Betrag nicht absetzbar und die Vorsteuer entfällt. Die Empfänger müssen namentlich aufgezeichnet werden. Wer die Steuer für den Empfänger übernehmen will, kann pauschal 30 % zahlen (§ 37b EStG).</div></details>
+      <details><summary>Alkohol &amp; Azubis</summary><div>Unter 16 Jahren kein Alkohol, unter 18 Jahren keine Spirituosen (§ 9 JuSchG). Wir packen für alle Mitarbeitenden unter 18 automatisch eine alkoholfreie Box.</div></details>
+      <p class="small">Allgemeine Hinweise, keine Steuerberatung. Im Einzelfall entscheidet dein Steuerbüro.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="ws-foot">
+  <div class="wrap">
+    <span>&copy; 2026 Lokalbesucher GmbH · Karl-Breuing-Str. 2, 45770 Marl</span>
+    <nav aria-label="Rechtliches"><a href="/impressum/">Impressum</a><a href="/datenschutz/">Datenschutz</a><a href="/agb/">AGB</a><a href="#cookie-settings" id="cookie-settings-link">Cookie-Einstellungen</a></nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var form = document.getElementById('ws');
+  var $ = function (id) { return document.getElementById(id); };
+  var steps = {};
+  form.querySelectorAll('.ws-step').forEach(function (s) { steps[s.dataset.step] = s; });
+  var DRAFT = 'lb-ws-2026';
+  var cur = 'start';
+
+  function checked(name) { return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked'), function (i) { return i.value; }); }
+  function radio(name) { var i = form.querySelector('input[name="' + name + '"]:checked'); return i ? i.value : ''; }
+  function num(id) { var v = parseInt($(id).value, 10); return isNaN(v) ? 0 : v; }
+  function has(v) { return checked('leistung').indexOf(v) > -1; }
+  function eur(n) { return n.toLocaleString('de-DE') + ' €'; }
+
+  function flow() {
+    var f = ['start'];
+    if (has('box')) f.push('box-basis', 'box-inhalt', 'box-einschr', 'box-liefer');
+    if (has('karten')) f.push('karten');
+    if (has('geschenke')) f.push('geschenke');
+    f.push('kontakt');
+    return f;
+  }
+
+  function restr() {
+    var out = [];
+    form.querySelectorAll('#b-restr input').forEach(function (i) { var n = parseInt(i.value, 10); if (n > 0) out.push(i.dataset.r + ': ' + n); });
+    return out;
+  }
+  function u18() { var i = form.querySelector('#b-restr input[data-r="Unter 18"]'); return parseInt(i.value, 10) > 0; }
+  function alk() { return !!form.querySelector('input[name="b-inhalt"][data-alk]:checked'); }
+
+  /* Warnungen und bedingte Blöcke */
+  function sync() {
+    var bb = num('b-budget'), gb = num('g-budget');
+    $('w-box').hidden = !(bb > 50);
+    $('w-gesch').hidden = !(gb > 50);
+    $('w-sach').hidden = radio('b-sach') !== 'ja';
+    var hat = radio('b-hat');
+    $('c-restr').hidden = hat !== 'ja';
+    $('c-unklar').hidden = hat !== 'unklar';
+    $('w-u18').hidden = !(alk() && hat === 'ja' && u18());
+    $('i-alk').hidden = !(alk() && hat !== 'ja');
+    $('i-feier').hidden = radio('b-uebergabe') !== 'Auf der Weihnachtsfeier';
+    $('g-wiebox').hidden = !has('box');
+    progress();
+    form.querySelectorAll('.ws-chips').forEach(function (c) {
+      var v = $(c.dataset.for).value;
+      c.querySelectorAll('.ws-chip').forEach(function (b) { b.classList.toggle('on', b.dataset.v === v); });
+    });
+  }
+
+  function validate(step) {
+    if (step === 'start' && !checked('leistung').length) return 'Bitte wähle mindestens eine Leistung.';
+    if (step === 'box-basis') {
+      if (num('b-anzahl') < 1) return 'Bitte gib an, wie viele Boxen du brauchst.';
+      if (num('b-budget') < 10) return 'Bitte gib ein Budget pro Box an (mindestens 10 €).';
+      if (num('b-budget') > 50 && !$('b-ok').checked) return 'Bitte bestätige den Hinweis zur 50-€-Grenze.';
+      if (!radio('b-design')) return 'Bitte wähle ein Design.';
+      if (!radio('b-karte')) return 'Bitte sag uns, ob eine Grußkarte rein soll.';
+    }
+    if (step === 'box-inhalt' && !checked('b-inhalt').length) return 'Bitte wähle aus, was grundsätzlich in die Box darf.';
+    if (step === 'box-einschr') {
+      if (!radio('b-hat')) return 'Bitte wähle Ja, Nein oder „Weiß ich noch nicht“.';
+      if (radio('b-hat') === 'ja' && !restr().length && !$('b-restr-sonst').value.trim()) return 'Bitte trag mindestens eine Einschränkung ein.';
+    }
+    if (step === 'box-liefer') {
+      if (!radio('b-liefer')) return 'Bitte wähle die Lieferart.';
+      if (!radio('b-uebergabe')) return 'Bitte wähle, wie die Boxen übergeben werden.';
+      if (!radio('b-termin')) return 'Bitte wähle einen Liefertermin.';
+    }
+    if (step === 'karten') {
+      if (num('k-anzahl') < 1) return 'Bitte gib die Anzahl der Karten an.';
+      if (!radio('k-text')) return 'Bitte sag uns, ob wir die Karten vorschreiben sollen.';
+      if (!radio('k-design')) return 'Bitte wähle ein Design.';
+      if (!radio('k-versand')) return 'Bitte wähle, wer die Karten verschickt.';
+    }
+    if (step === 'geschenke') {
+      if (num('g-anzahl') < 1) return 'Bitte gib die Anzahl der Empfänger an.';
+      if (num('g-budget') < 5) return 'Bitte gib ein Budget pro Geschenk an.';
+      if (num('g-budget') > 50 && !$('g-ok').checked) return 'Bitte bestätige den Hinweis zur 50-€-Grenze.';
+      if (!radio('g-zeit')) return 'Bitte wähle, wann die Geschenke ankommen sollen.';
+      if (!radio('g-versand')) return 'Bitte wähle den Versand.';
+    }
+    if (step === 'kontakt') {
+      if (!$('c-firma').value.trim()) return 'Bitte gib dein Unternehmen an.';
+      if (!$('c-name').value.trim()) return 'Bitte gib deinen Namen an.';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('c-mail').value.trim())) return 'Bitte gib eine gültige E-Mail-Adresse an.';
+      if (!$('c-dsgvo').checked) return 'Bitte bestätige die Datenschutz-Einwilligung.';
+    }
+    return '';
+  }
+
+  /* Zusammenfassung: einmal als HTML für die Seite, einmal als Text für die Anfrage */
+  function summary() {
+    var parts = [], total = 0;
+    function block(title, rows) { parts.push({ t: title, r: rows.filter(Boolean) }); }
+    if (has('box')) {
+      var bn = num('b-anzahl'), bb = num('b-budget'); total += bn * bb;
+      var hat = radio('b-hat');
+      block('Weihnachtsbox für Mitarbeitende', [
+        bn + ' Boxen à ' + eur(bb) + ' (inkl. MwSt.)' + (bb > 50 ? ' – über 50-€-Grenze, Hinweis bestätigt' : ''),
+        'Andere Sachbezüge im Dezember: ' + radio('b-sach'),
+        'Design: ' + radio('b-design'),
+        'Grußkarte: ' + radio('b-karte'),
+        'Inhalt: ' + checked('b-inhalt').join(', '),
+        checked('b-extra').length ? 'Achten auf: ' + checked('b-extra').join(', ') : '',
+        $('b-wunsch').value.trim() ? 'Wünsche/No-Gos: ' + $('b-wunsch').value.trim() : '',
+        'Einschränkungen: ' + (hat === 'ja' ? (restr().join(', ') || '–') : hat === 'unklar' ? 'noch unklar – Abfrage-Vorlage schicken' : 'keine'),
+        hat === 'ja' && $('b-restr-sonst').value.trim() ? 'Weitere: ' + $('b-restr-sonst').value.trim() : '',
+        'Lieferung: ' + radio('b-liefer') + ' · Übergabe: ' + radio('b-uebergabe'),
+        'Termin: ' + radio('b-termin')
+      ]);
+    }
+    if (has('karten')) {
+      block('Weihnachtskarten', [
+        num('k-anzahl') + ' Karten' + (checked('k-fuer').length ? ' für ' + checked('k-fuer').join(', ') : ''),
+        'Text: ' + radio('k-text'),
+        'Design: ' + radio('k-design'),
+        'Versand: ' + radio('k-versand'),
+        radio('k-anlass') ? 'Anlass: ' + radio('k-anlass') : ''
+      ]);
+    }
+    if (has('geschenke')) {
+      var gn = num('g-anzahl'), gb = num('g-budget'); total += gn * gb;
+      block('Geschenke für Kunden & Partner', [
+        gn + ' Empfänger à ' + eur(gb) + ' (netto)' + (gb > 50 ? ' – über 50-€-Grenze, Hinweis bestätigt' : ''),
+        checked('g-art').length ? 'Art: ' + checked('g-art').join(', ') : '',
+        'Zeitpunkt: ' + radio('g-zeit'),
+        'Versand: ' + radio('g-versand') + ($('g-karte').checked ? ' · mit Grußkarte' : '')
+      ]);
+    }
+    return { parts: parts, total: total };
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function renderSum() {
+    var s = summary();
+    $('ws-sum').innerHTML = s.parts.map(function (p) { return '<h3>' + esc(p.t) + '</h3><ul>' + p.r.map(function (r) { return '<li>' + esc(r) + '</li>'; }).join('') + '</ul>'; }).join('') +
+      (s.total ? '<p class="tot">Warenbudget gesamt: ca. ' + eur(s.total) + '</p>' : '');
+  }
+  function sumText() {
+    var s = summary();
+    return s.parts.map(function (p) { return p.t.toUpperCase() + '\n' + p.r.map(function (r) { return '- ' + r; }).join('\n'); }).join('\n\n') +
+      (s.total ? '\n\nWarenbudget gesamt: ca. ' + eur(s.total) : '');
+  }
+
+  function show(step) {
+    var f = flow(), i = f.indexOf(step);
+    cur = step;
+    Object.keys(steps).forEach(function (k) { steps[k].classList.toggle('on', k === step); });
+    $('ws-err').textContent = '';
+    var done = step === 'danke';
+    $('ws-nav').hidden = done;
+    $('ws-back').style.visibility = i > 0 ? 'visible' : 'hidden';
+    $('ws-next').textContent = step === 'kontakt' ? 'Anfrage senden' : 'Weiter';
+    if (step === 'kontakt') renderSum();
+    sync();
+  }
+  function progress() {
+    var f = flow(), i = f.indexOf(cur), done = cur === 'danke';
+    $('ws-bar').style.width = done ? '100%' : Math.round((i / f.length) * 100) + '%';
+    $('ws-count').textContent = done ? '' : 'Schritt ' + (i + 1) + ' von ' + f.length;
+  }
+  function scrollTop() { var y = form.getBoundingClientRect().top + window.scrollY - 16; if (window.scrollY > y) window.scrollTo({ top: y, behavior: 'smooth' }); }
+
+  /* Entwurf im Browser merken (nur Bequemlichkeit; ohne Speicher geht alles genauso) */
+  function save() {
+    try {
+      var d = {};
+      form.querySelectorAll('input,textarea').forEach(function (el) {
+        if (!el.id && !el.name && !el.dataset.r) return;
+        var k = el.id || (el.name + '=' + el.value) || el.dataset.r;
+        if (el.dataset.r) k = 'r:' + el.dataset.r;
+        d[k] = (el.type === 'checkbox' || el.type === 'radio') ? el.checked : el.value;
+      });
+      localStorage.setItem(DRAFT, JSON.stringify(d));
+    } catch (e) {}
+  }
+  function load() {
+    try {
+      var d = JSON.parse(localStorage.getItem(DRAFT) || 'null'); if (!d) return;
+      form.querySelectorAll('input,textarea').forEach(function (el) {
+        var k = el.dataset.r ? 'r:' + el.dataset.r : (el.id || (el.name + '=' + el.value));
+        if (!(k in d)) return;
+        if (el.type === 'checkbox' || el.type === 'radio') el.checked = !!d[k]; else el.value = d[k];
+      });
+    } catch (e) {}
+  }
+
+  form.addEventListener('input', function () { sync(); save(); });
+  form.addEventListener('change', function () { sync(); save(); });
+  form.addEventListener('click', function (e) {
+    var c = e.target.closest('.ws-chip'); if (!c) return;
+    $(c.parentNode.dataset.for).value = c.dataset.v; sync(); save();
+  });
+  form.addEventListener('submit', function (e) { e.preventDefault(); $('ws-next').click(); });
+
+  $('ws-back').addEventListener('click', function () {
+    var f = flow(), i = f.indexOf(cur); if (i > 0) { show(f[i - 1]); scrollTop(); }
+  });
+
+  var sending = false;
+  $('ws-next').addEventListener('click', async function () {
+    var err = validate(cur);
+    if (err) { $('ws-err').textContent = err; return; }
+    if (cur !== 'kontakt') {
+      var f = flow(); show(f[f.indexOf(cur) + 1]); scrollTop();
+      if (typeof gtag === 'function') gtag('event', 'ws_step', { step: cur });
+      return;
+    }
+    if (sending) return;
+    sending = true; this.disabled = true; this.textContent = 'Wird gesendet …';
+    var data = {
+      source: 'weihnachtsservice',
+      name: $('c-name').value.trim(),
+      companyName: $('c-firma').value.trim(),
+      email: $('c-mail').value.trim(),
+      phone: $('c-tel').value.trim(),
+      leistungen: checked('leistung').join(', '),
+      message: sumText() + ($('c-msg').value.trim() ? '\n\nNACHRICHT\n' + $('c-msg').value.trim() : '')
+    };
+    var res = null;
+    try { res = await window.lbSendLead(data); } catch (ex) {}
+    if (res && res.ok) {
+      try { localStorage.removeItem(DRAFT); } catch (e) {}
+      if (typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'lead', event_label: 'weihnachtsservice' });
+    } else if (res && res.mailto) {
+      $('ws-mailto').hidden = false;
+      $('ws-mailto').innerHTML = 'Die Übertragung hat leider nicht geklappt. <a style="color:#ffbd59" href="' + esc(res.mailto) + '">Hier per E-Mail senden</a> – deine Angaben sind schon eingetragen.';
+    } else {
+      sending = false; this.disabled = false; this.textContent = 'Anfrage senden';
+      $('ws-err').textContent = 'Senden hat nicht geklappt. Bitte versuch es noch einmal oder schreib uns per WhatsApp.';
+      return;
+    }
+    show('danke'); scrollTop();
+  });
+
+  load();
+  show('start');
+}());
+</script>
+<script src="/assets/js/lead.js?v=2026102101" defer></script>
+<script src="/assets/js/cookie-consent.js?v=2026091601" defer></script>
+</body>
+</html>

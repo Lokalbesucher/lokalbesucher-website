@@ -41,3 +41,7 @@ https://*.lokalbesucher-website.pages.dev/*
 
 /
   Cache-Control: public, max-age=0, must-revalidate
+
+# Interne Kunden-Landingpage Weihnachtsservice: nicht indexieren (zusätzlich zu meta robots)
+/weihnachtsservice/*
+  X-Robots-Tag: noindex, nofollow

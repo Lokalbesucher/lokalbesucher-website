@@ -42,7 +42,8 @@
     'google-business-agentur': GHL_BERATUNG,
     'schema-beratung': GHL_BERATUNG,
     'schema-generator': GHL_SCHEMA,
-    'roi-kalkulator': ZAPIER_ROI
+    'roi-kalkulator': ZAPIER_ROI,
+    'weihnachtsservice': GHL_LEAD
   };
   var FORM_ENCODED = { 'schema-generator': true, 'roi-kalkulator': true };
 
