@@ -26,7 +26,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 - Team: ~12 Mitarbeiter — **NIE öffentlich die Mitarbeiterzahl nennen** (Tobias findet „11/12 Leute" prahlerisch; `numberOfEmployees` aus Schema raus, Fließtext zahllos)
 - Adresse: Karl-Breuing-Str. 2, 45770 Marl (offiziell, HRB 19857)
 - Zielgruppe: KMU in Deutschland die lokal bei Google gefunden werden wollen
-- Erfahrung: ~20 Jahre Sales & Marketing (Salesforce, Amazon, StepStone)
+- Erfahrung: 23 Jahre Sales & Marketing (Tobias bestätigt 2026-10-21) (Salesforce, Amazon, StepStone)
 
 ---
 
@@ -493,7 +493,7 @@ mit konsistenten Attributen überall identisch auftreten: Website, GBP, Verzeich
   (z.B. "Was kostet eine Google Business Agentur?" statt "Preise")
 
 ### 15.3 E-E-A-T — Tobias Frank als Experte
-- Autorenbox auf allen inhaltlichen Seiten: Foto, Name, Titel, 20 Jahre Erfahrung
+- Autorenbox auf allen inhaltlichen Seiten: Foto, Name, Titel, 23 Jahre Erfahrung
 - `Person` Schema mit `jobTitle`, `worksFor`, `sameAs` → LinkedIn
 - Frühere Stationen nennen: Salesforce, Amazon, StepStone (Expertise-Beweis)
 - Case Studies mit echten, verifizierbaren Zahlen

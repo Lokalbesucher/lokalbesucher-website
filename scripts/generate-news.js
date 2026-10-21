@@ -419,7 +419,7 @@ function redaktionPage() {
           <img src="/assets/images/tobias-frank-inhaber-lokalbesucher-gmbh.webp" alt="Tobias Frank, Inhaber Lokalbesucher GmbH" width="80" height="104" loading="lazy" style="width:80px;height:auto;border-radius:10px;flex-shrink:0;object-fit:cover;object-position:top">
           <div>
             <p style="font-family:var(--font-head,Arial,Helvetica,sans-serif);font-weight:700;color:#e8eaf6;margin:0 0 .2rem">Tobias Frank</p>
-            <p style="font-size:.9rem;margin:0">Inhaber der Lokalbesucher GmbH und verantwortlich für alle Meldungen. 20 Jahre in Vertrieb und Marketing, davor bei Salesforce, Amazon und StepStone. Betreut mit seinem Team seit 2021 über 100 lokale Unternehmen bei Google.</p>
+            <p style="font-size:.9rem;margin:0">Inhaber der Lokalbesucher GmbH und verantwortlich für alle Meldungen. 23 Jahre in Vertrieb und Marketing, davor bei Salesforce, Amazon und StepStone. Betreut mit seinem Team seit 2021 über 100 lokale Unternehmen bei Google.</p>
           </div>
         </div>
         <p>Verantwortlich im Sinne des Presserechts ist Tobias Frank, Lokalbesucher GmbH, Karl-Breuing-Str. 2, 45770 Marl. Die vollständigen Angaben stehen im <a href="/impressum/">Impressum</a>.</p>
