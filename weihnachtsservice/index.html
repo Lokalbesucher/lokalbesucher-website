@@ -156,7 +156,7 @@
       <p>Geschenkboxen im Design deines Unternehmens, fertig getextete Weihnachtskarten und Geschenke für deine Kunden. Stell in 2 Minuten zusammen, was du brauchst – du bekommst ein Angebot.</p>
       <ul class="ws-usp">
         <li>Box im eigenen Design</li>
-        <li>befüllt &amp; verpackt</li>
+        <li>befüllt, verpackt &amp; geliefert</li>
         <li>Allergien &amp; Einschränkungen berücksichtigt</li>
         <li>steuerliche Grenzen im Blick</li>
       </ul>
@@ -299,20 +299,16 @@
 
       <!-- 5 · Box: Lieferung -->
       <section class="ws-step" data-step="box-liefer">
-        <h2>Wie sollen die Boxen ankommen?</h2>
-        <p class="ws-lead">Damit wir Produktion und Versand richtig planen.</p>
-        <fieldset class="ws-q"><legend>Lieferung</legend>
-          <div class="ws-opts">
-            <label class="ws-opt"><input type="radio" name="b-liefer" value="Gesammelt an einen Standort"><span><b>Gesammelt an einen Standort</b></span></label>
-            <label class="ws-opt"><input type="radio" name="b-liefer" value="An mehrere Standorte"><span><b>An mehrere Standorte</b></span></label>
-            <label class="ws-opt"><input type="radio" name="b-liefer" value="Einzeln nach Hause"><span><b>Einzeln zu den Mitarbeitenden nach Hause</b><small>Dafür brauchen wir eine Adressliste – das regeln wir datenschutzkonform mit einem Auftragsverarbeitungsvertrag.</small></span></label>
-          </div>
-        </fieldset>
+        <h2>Übergabe &amp; Termin</h2>
+        <p class="ws-lead">Damit wir die Produktion richtig planen.</p>
+        <div class="ws-note info">
+          <b>Lieferung in deinen Betrieb</b>
+          <p>Wir liefern alle Boxen fertig befüllt und verpackt zu dir in den Betrieb – Boxen mit Einschränkungen separat und mit Namen beschriftet.</p>
+        </div>
         <fieldset class="ws-q"><legend>Wie werden die Boxen übergeben?</legend>
-          <div class="ws-opts">
+          <div class="ws-opts two">
             <label class="ws-opt"><input type="radio" name="b-uebergabe" value="Im Büro / am Arbeitsplatz"><span><b>Im Büro / am Arbeitsplatz</b></span></label>
             <label class="ws-opt"><input type="radio" name="b-uebergabe" value="Auf der Weihnachtsfeier"><span><b>Auf der Weihnachtsfeier</b></span></label>
-            <label class="ws-opt"><input type="radio" name="b-uebergabe" value="Per Post"><span><b>Per Post (siehe oben)</b></span></label>
           </div>
         </fieldset>
         <div class="ws-note info" id="i-feier" hidden>
@@ -431,6 +427,7 @@
           <div class="ws-q"><label class="ws-ql" for="c-tel">Telefon <span class="ws-hint">optional, für Rückfragen</span></label><input class="ws-in" id="c-tel" type="tel" autocomplete="tel" maxlength="40"></div>
         </div>
         <div class="ws-q"><label class="ws-ql" for="c-msg">Noch etwas? <span class="ws-hint">optional – z. B. fester Liefertermin, Logo-Link</span></label><textarea class="ws-ta" id="c-msg" maxlength="1000"></textarea></div>
+        <input type="text" id="c-web" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px">
         <label class="ws-consent"><input type="checkbox" id="c-dsgvo"><span>Ich bin einverstanden, dass Lokalbesucher meine Angaben zur Bearbeitung der Anfrage speichert. Mehr in der <a href="/datenschutz/" target="_blank">Datenschutzerklärung</a>.</span></label>
       </section>
 
@@ -539,7 +536,6 @@
       if (radio('b-hat') === 'ja' && !restr().length && !$('b-restr-sonst').value.trim()) return 'Bitte trag mindestens eine Einschränkung ein.';
     }
     if (step === 'box-liefer') {
-      if (!radio('b-liefer')) return 'Bitte wähle die Lieferart.';
       if (!radio('b-uebergabe')) return 'Bitte wähle, wie die Boxen übergeben werden.';
       if (!radio('b-termin')) return 'Bitte wähle einen Liefertermin.';
     }
@@ -582,7 +578,7 @@
         $('b-wunsch').value.trim() ? 'Wünsche/No-Gos: ' + $('b-wunsch').value.trim() : '',
         'Einschränkungen: ' + (hat === 'ja' ? (restr().join(', ') || '–') : hat === 'unklar' ? 'noch unklar – Abfrage-Vorlage schicken' : 'keine'),
         hat === 'ja' && $('b-restr-sonst').value.trim() ? 'Weitere: ' + $('b-restr-sonst').value.trim() : '',
-        'Lieferung: ' + radio('b-liefer') + ' · Übergabe: ' + radio('b-uebergabe'),
+        'Lieferung in den Betrieb · Übergabe: ' + radio('b-uebergabe'),
         'Termin: ' + radio('b-termin')
       ]);
     }
@@ -684,27 +680,25 @@
     }
     if (sending) return;
     sending = true; this.disabled = true; this.textContent = 'Wird gesendet …';
-    var data = {
-      source: 'weihnachtsservice',
-      name: $('c-name').value.trim(),
-      companyName: $('c-firma').value.trim(),
-      email: $('c-mail').value.trim(),
-      phone: $('c-tel').value.trim(),
-      leistungen: checked('leistung').join(', '),
-      message: sumText() + ($('c-msg').value.trim() ? '\n\nNACHRICHT\n' + $('c-msg').value.trim() : '')
-    };
-    var res = null;
-    try { res = await window.lbSendLead(data); } catch (ex) {}
+    var s = summary(), res = null;
+    var data = { firma: $('c-firma').value.trim(), name: $('c-name').value.trim(), mail: $('c-mail').value.trim(), tel: $('c-tel').value.trim(),
+      msg: $('c-msg').value.trim(), website: $('c-web').value, parts: s.parts, total: s.total };
+    try {
+      var r = await fetch('/api/weihnachtsservice', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+      res = await r.json();
+    } catch (ex) {}
     if (res && res.ok) {
       try { localStorage.removeItem(DRAFT); } catch (e) {}
       if (typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'lead', event_label: 'weihnachtsservice' });
-    } else if (res && res.mailto) {
-      $('ws-mailto').hidden = false;
-      $('ws-mailto').innerHTML = 'Die Übertragung hat leider nicht geklappt. <a style="color:#ffbd59" href="' + esc(res.mailto) + '">Hier per E-Mail senden</a> – deine Angaben sind schon eingetragen.';
-    } else {
+    } else if (res && res.reason === 'fields') {
       sending = false; this.disabled = false; this.textContent = 'Anfrage senden';
-      $('ws-err').textContent = 'Senden hat nicht geklappt. Bitte versuch es noch einmal oder schreib uns per WhatsApp.';
+      $('ws-err').textContent = 'Bitte prüf Unternehmen, Name und E-Mail.';
       return;
+    } else {
+      var body = 'Hallo Lokalbesucher-Team,\n\nhier meine Anfrage zum Weihnachtsservice:\n\n' + data.firma + ', ' + data.name + ', ' + data.mail + (data.tel ? ', ' + data.tel : '') + '\n\n' + sumText() + (data.msg ? '\n\n' + data.msg : '');
+      var mailto = 'mailto:info@lokalbesucher.de?subject=' + encodeURIComponent('Weihnachtsservice: ' + data.firma) + '&body=' + encodeURIComponent(body);
+      $('ws-mailto').hidden = false;
+      $('ws-mailto').innerHTML = 'Die Übertragung hat leider nicht geklappt. <a style="color:#ffbd59" href="' + esc(mailto) + '">Hier per E-Mail senden</a> – deine Angaben sind schon eingetragen.';
     }
     show('danke'); scrollTop();
   });
@@ -713,7 +707,6 @@
   show('start');
 }());
 </script>
-<script src="/assets/js/lead.js?v=2026102101" defer></script>
 <script src="/assets/js/cookie-consent.js?v=2026091601" defer></script>
 </body>
 </html>

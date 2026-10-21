@@ -40,8 +40,7 @@ const TARGETS = {
   'schema-generator':                      { url: GHL_SCHEMA,   form: true  },
   /* Zapier-Catch-Hook erwartet weiterhin form-encoded — der bestehende Zap ist
      darauf gebaut, deshalb hier nicht auf JSON umstellen. */
-  'roi-kalkulator':                        { url: ZAPIER_ROI,   form: true  },
-  'weihnachtsservice':                     { url: GHL_LEAD,     form: false }
+  'roi-kalkulator':                        { url: ZAPIER_ROI,   form: true  }
 };
 const DEFAULT_TARGET = { url: GHL_LEAD, form: false };
 
