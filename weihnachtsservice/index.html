@@ -75,13 +75,21 @@
     .ws-grid2{display:grid;gap:1rem}
     @media(min-width:600px){.ws-grid2{grid-template-columns:1fr 1fr}}
 
-    .ws-restr{display:grid;gap:.5rem}
-    @media(min-width:600px){.ws-restr{grid-template-columns:1fr 1fr}}
-    .ws-rrow{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.55rem .8rem;border:1px solid #1e2240;border-radius:10px;background:#0c0e1a}
-    .ws-rrow span{font-size:.93rem;line-height:1.3}
-    .ws-rrow span small{display:block;color:#7c83aa;font-size:.78rem}
-    .ws-rrow input{width:4.6rem;padding:.45rem .5rem;border-radius:8px;border:1px solid #1e2240;background:#111328;color:#e8eaf6;font:inherit;text-align:center}
-
+    .ws-person{border:1px solid #1e2240;border-radius:12px;background:#0c0e1a;padding:1rem;margin-bottom:.75rem}
+    .ws-phead{display:flex;gap:.6rem;align-items:center;margin-bottom:.75rem}
+    .ws-phead b{white-space:nowrap;font-size:.95rem}
+    .ws-phead .ws-in{padding:.55rem .75rem;font-size:.93rem}
+    .ws-pdel{background:none;border:0;color:#7c83aa;font:inherit;font-size:.85rem;cursor:pointer;white-space:nowrap;padding:.4rem}
+    .ws-pdel:hover{color:#ff8a8a}
+    .ws-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+    .ws-tag{position:relative;display:inline-flex}
+    .ws-tag input{position:absolute;opacity:0;inset:0;cursor:pointer}
+    .ws-tag span{padding:.4rem .8rem;border-radius:999px;border:1px solid #1e2240;background:#111328;font-size:.86rem;line-height:1.2;transition:border-color .15s,color .15s}
+    .ws-tag input:checked + span{border-color:#ffbd59;color:#ffbd59;background:rgba(255,189,89,.08)}
+    .ws-tag input:focus-visible + span{outline:2px solid #ffbd59;outline-offset:1px}
+    .ws-person .ws-in.other{margin-top:.75rem;padding:.55rem .75rem;font-size:.93rem}
+    .ws-add{width:100%;padding:.75rem;border:1px dashed #3a3f66;border-radius:12px;background:transparent;color:#ffbd59;font:inherit;font-weight:700;cursor:pointer}
+    .ws-add:hover{border-color:#ffbd59}
     .ws-note{border-radius:12px;padding:1rem 1.1rem;font-size:.92rem;line-height:1.55;margin:0 0 1.4rem}
     .ws-note b{display:block;margin-bottom:.25rem;font-size:.97rem}
     .ws-note p + p{margin-top:.45rem}
@@ -174,7 +182,7 @@
         <p class="ws-lead">Mehrfachauswahl möglich. Wir fragen danach nur das ab, was wir dafür wirklich brauchen.</p>
         <div class="ws-opts">
           <label class="ws-opt big"><input type="checkbox" name="leistung" value="box"><span><b>Weihnachtsbox für Mitarbeitende</b><small>Box im eigenen Design, von uns befüllt und verpackt – auf Wunsch mit Grußkarte.</small></span></label>
-          <label class="ws-opt big"><input type="checkbox" name="leistung" value="karten"><span><b>Weihnachtskarten</b><small>Gestaltet, gedruckt und auf Wunsch fertig getextet – du musst nur noch unterschreiben.</small></span></label>
+          <label class="ws-opt big"><input type="checkbox" name="leistung" value="karten"><span><b>Weihnachtskarten</b><small>Gestaltet, gedruckt und auf Wunsch fertig getextet – du musst nur noch unterschreiben und verschicken.</small></span></label>
           <label class="ws-opt big"><input type="checkbox" name="leistung" value="geschenke"><span><b>Geschenke für Kunden &amp; Partner</b><small>Zu Weihnachten oder zum neuen Jahr – passend zu deinem Budget, auf Wunsch direkt an die Empfänger.</small></span></label>
         </div>
       </section>
@@ -266,25 +274,32 @@
           <p>Wir schicken dir eine kurze Abfrage-Vorlage, die du ins Team geben kannst. Die genauen Zahlen reichst du dann nach.</p>
         </div>
         <div class="ws-cond" id="c-restr" hidden>
-          <p class="ws-hint" style="margin-bottom:.75rem">Trag ein, wie viele Personen betroffen sind (leer lassen = keine).</p>
-          <div class="ws-restr" id="b-restr">
-            <label class="ws-rrow"><span>Vegan</span><input type="number" min="0" inputmode="numeric" data-r="Vegan"></label>
-            <label class="ws-rrow"><span>Vegetarisch</span><input type="number" min="0" inputmode="numeric" data-r="Vegetarisch"></label>
-            <label class="ws-rrow"><span>Halal</span><input type="number" min="0" inputmode="numeric" data-r="Halal"></label>
-            <label class="ws-rrow"><span>Kein Schweinefleisch<small>auch keine Gelatine vom Schwein</small></span><input type="number" min="0" inputmode="numeric" data-r="Kein Schweinefleisch"></label>
-            <label class="ws-rrow"><span>Alkoholfrei<small>z. B. Schwangerschaft, Religion, persönlich</small></span><input type="number" min="0" inputmode="numeric" data-r="Alkoholfrei"></label>
-            <label class="ws-rrow"><span>Unter 18 Jahre<small>z. B. Azubis – automatisch alkoholfrei</small></span><input type="number" min="0" inputmode="numeric" data-r="Unter 18"></label>
-            <label class="ws-rrow"><span>Glutenfrei / Zöliakie</span><input type="number" min="0" inputmode="numeric" data-r="Glutenfrei"></label>
-            <label class="ws-rrow"><span>Laktosefrei</span><input type="number" min="0" inputmode="numeric" data-r="Laktosefrei"></label>
-            <label class="ws-rrow"><span>Nussallergie</span><input type="number" min="0" inputmode="numeric" data-r="Nussallergie"></label>
-            <label class="ws-rrow"><span>Erdnussallergie</span><input type="number" min="0" inputmode="numeric" data-r="Erdnussallergie"></label>
-            <label class="ws-rrow"><span>Zuckerfrei / Diabetes</span><input type="number" min="0" inputmode="numeric" data-r="Zuckerfrei"></label>
-            <label class="ws-rrow"><span>Koffeinfrei</span><input type="number" min="0" inputmode="numeric" data-r="Koffeinfrei"></label>
-          </div>
-          <div class="ws-q" style="margin-top:1rem"><label class="ws-ql" for="b-restr-sonst">Weitere Allergien oder Hinweise <span class="ws-hint">z. B. Sesam, Soja, Ei, Fisch, Sellerie – mit Anzahl</span></label><textarea class="ws-ta" id="b-restr-sonst" maxlength="600"></textarea></div>
+          <p class="ws-hint" style="margin-bottom:.75rem">Pro Person eine Karte – einfach alles anklicken, was für diese Person gilt. Ein Name ist optional.</p>
+          <div id="b-persons"></div>
+          <button type="button" class="ws-add" id="b-add">+ Weitere Person</button>
+          <template id="t-person">
+            <div class="ws-person">
+              <div class="ws-phead"><b class="ws-pnr"></b><input class="ws-in" data-f="label" maxlength="60" placeholder="Name (optional)" aria-label="Name oder Bezeichnung"><button type="button" class="ws-pdel">Entfernen</button></div>
+              <div class="ws-tags">
+                <label class="ws-tag"><input type="checkbox" value="Vegan"><span>Vegan</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Vegetarisch"><span>Vegetarisch</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Halal"><span>Halal</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Kein Schweinefleisch"><span>Kein Schwein (auch keine Gelatine)</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Alkoholfrei"><span>Alkoholfrei</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Unter 18"><span>Unter 18</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Glutenfrei"><span>Glutenfrei</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Laktosefrei"><span>Laktosefrei</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Nussallergie"><span>Nussallergie</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Erdnussallergie"><span>Erdnussallergie</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Zuckerfrei"><span>Zuckerfrei / Diabetes</span></label>
+                <label class="ws-tag"><input type="checkbox" value="Koffeinfrei"><span>Koffeinfrei</span></label>
+              </div>
+              <input class="ws-in other" data-f="other" maxlength="200" placeholder="Weitere Allergien, z. B. Sesam, Soja, Ei (optional)" aria-label="Weitere Allergien">
+            </div>
+          </template>
           <div class="ws-note info">
             <b>Gut zu wissen</b>
-            <p>Bei schweren Allergien wählen wir Produkte ohne den Stoff und ohne Spuren-Hinweis, soweit möglich. Ganz ausschließen können Hersteller Spuren aber nie – bei Anaphylaxie-Risiko sprechen wir das mit dir ab. Namen brauchen wir erst später.</p>
+            <p>Für unter 18-Jährige ist die Box automatisch alkoholfrei. Bei schweren Allergien wählen wir Produkte ohne den Stoff und ohne Spuren-Hinweis, soweit möglich. Ganz ausschließen können Hersteller Spuren aber nie – bei Anaphylaxie-Risiko sprechen wir das mit dir ab. Namen brauchen wir erst später.</p>
           </div>
         </div>
         <div class="ws-note warn" id="w-u18" hidden>
@@ -354,12 +369,10 @@
             <label class="ws-opt"><input type="radio" name="k-design" value="Design ist vorhanden"><span><b>Design haben wir schon</b></span></label>
           </div>
         </fieldset>
-        <fieldset class="ws-q"><legend>Versand</legend>
-          <div class="ws-opts">
-            <label class="ws-opt"><input type="radio" name="k-versand" value="Lokalbesucher kuvertiert, frankiert und versendet"><span><b>Ihr kuvertiert, frankiert und verschickt</b><small>nach dem Unterschreiben – Adressliste von uns</small></span></label>
-            <label class="ws-opt"><input type="radio" name="k-versand" value="Kunde verschickt selbst"><span><b>Wir verschicken selbst</b></span></label>
-          </div>
-        </fieldset>
+        <div class="ws-note info">
+          <b>Versand übernehmt ihr</b>
+          <p>Wir liefern dir die fertigen Karten mit Umschlägen in den Betrieb. Unterschreiben, eintüten und verschicken machst du selbst.</p>
+        </div>
         <fieldset class="ws-q"><legend>Anlass</legend>
           <div class="ws-opts two">
             <label class="ws-opt"><input type="radio" name="k-anlass" value="Weihnachten"><span><b>Weihnachten</b></span></label>
@@ -475,7 +488,7 @@
   var $ = function (id) { return document.getElementById(id); };
   var steps = {};
   form.querySelectorAll('.ws-step').forEach(function (s) { steps[s.dataset.step] = s; });
-  var DRAFT = 'lb-ws-2026';
+  var DRAFT = 'lb-ws-2026b';
   var cur = 'start';
 
   function checked(name) { return Array.prototype.map.call(form.querySelectorAll('input[name="' + name + '"]:checked'), function (i) { return i.value; }); }
@@ -493,12 +506,39 @@
     return f;
   }
 
-  function restr() {
-    var out = [];
-    form.querySelectorAll('#b-restr input').forEach(function (i) { var n = parseInt(i.value, 10); if (n > 0) out.push(i.dataset.r + ': ' + n); });
-    return out;
+  /* Einschränkungen pro Person (eine Person kann mehrere haben, z. B. Azubi: Halal + Nussallergie + unter 18) */
+  function persons() {
+    return Array.prototype.map.call(form.querySelectorAll('#b-persons .ws-person'), function (p) {
+      return {
+        label: p.querySelector('[data-f=label]').value.trim(),
+        tags: Array.prototype.map.call(p.querySelectorAll('.ws-tags input:checked'), function (i) { return i.value; }),
+        other: p.querySelector('[data-f=other]').value.trim()
+      };
+    });
   }
-  function u18() { var i = form.querySelector('#b-restr input[data-r="Unter 18"]'); return parseInt(i.value, 10) > 0; }
+  function filled() { return persons().filter(function (p) { return p.tags.length || p.other; }); }
+  function restr() {
+    return filled().map(function (p, i) {
+      return 'Person ' + (i + 1) + (p.label ? ' (' + p.label + ')' : '') + ': ' + p.tags.concat(p.other ? ['weitere: ' + p.other] : []).join(', ');
+    });
+  }
+  function u18() { return filled().some(function (p) { return p.tags.indexOf('Unter 18') > -1; }); }
+  function renumber() {
+    form.querySelectorAll('#b-persons .ws-person').forEach(function (p, i, all) {
+      p.querySelector('.ws-pnr').textContent = 'Person ' + (i + 1);
+      p.querySelector('.ws-pdel').hidden = all.length < 2;
+    });
+  }
+  function addPerson(data) {
+    var el = $('t-person').content.firstElementChild.cloneNode(true);
+    if (data) {
+      el.querySelector('[data-f=label]').value = data.label || '';
+      el.querySelector('[data-f=other]').value = data.other || '';
+      el.querySelectorAll('.ws-tags input').forEach(function (i) { i.checked = (data.tags || []).indexOf(i.value) > -1; });
+    }
+    $('b-persons').appendChild(el); renumber();
+    return el;
+  }
   function alk() { return !!form.querySelector('input[name="b-inhalt"][data-alk]:checked'); }
 
   /* Warnungen und bedingte Blöcke */
@@ -509,6 +549,7 @@
     $('w-sach').hidden = radio('b-sach') !== 'ja';
     var hat = radio('b-hat');
     $('c-restr').hidden = hat !== 'ja';
+    if (hat === 'ja' && !$('b-persons').children.length) addPerson();
     $('c-unklar').hidden = hat !== 'unklar';
     $('w-u18').hidden = !(alk() && hat === 'ja' && u18());
     $('i-alk').hidden = !(alk() && hat !== 'ja');
@@ -533,7 +574,7 @@
     if (step === 'box-inhalt' && !checked('b-inhalt').length) return 'Bitte wähle aus, was grundsätzlich in die Box darf.';
     if (step === 'box-einschr') {
       if (!radio('b-hat')) return 'Bitte wähle Ja, Nein oder „Weiß ich noch nicht“.';
-      if (radio('b-hat') === 'ja' && !restr().length && !$('b-restr-sonst').value.trim()) return 'Bitte trag mindestens eine Einschränkung ein.';
+      if (radio('b-hat') === 'ja' && !filled().length) return 'Bitte klick bei mindestens einer Person an, was gilt.';
     }
     if (step === 'box-liefer') {
       if (!radio('b-uebergabe')) return 'Bitte wähle, wie die Boxen übergeben werden.';
@@ -543,7 +584,6 @@
       if (num('k-anzahl') < 1) return 'Bitte gib die Anzahl der Karten an.';
       if (!radio('k-text')) return 'Bitte sag uns, ob wir die Karten vorschreiben sollen.';
       if (!radio('k-design')) return 'Bitte wähle ein Design.';
-      if (!radio('k-versand')) return 'Bitte wähle, wer die Karten verschickt.';
     }
     if (step === 'geschenke') {
       if (num('g-anzahl') < 1) return 'Bitte gib die Anzahl der Empfänger an.';
@@ -576,18 +616,18 @@
         'Inhalt: ' + checked('b-inhalt').join(', '),
         checked('b-extra').length ? 'Achten auf: ' + checked('b-extra').join(', ') : '',
         $('b-wunsch').value.trim() ? 'Wünsche/No-Gos: ' + $('b-wunsch').value.trim() : '',
-        'Einschränkungen: ' + (hat === 'ja' ? (restr().join(', ') || '–') : hat === 'unklar' ? 'noch unklar – Abfrage-Vorlage schicken' : 'keine'),
-        hat === 'ja' && $('b-restr-sonst').value.trim() ? 'Weitere: ' + $('b-restr-sonst').value.trim() : '',
+        'Einschränkungen: ' + (hat === 'ja' ? filled().length + ' Sonderbox' + (filled().length > 1 ? 'en' : '') : hat === 'unklar' ? 'noch unklar – Abfrage-Vorlage schicken' : 'keine'),
+      ].concat(hat === 'ja' ? restr().map(function (r) { return '  · ' + r; }) : []).concat([
         'Lieferung in den Betrieb · Übergabe: ' + radio('b-uebergabe'),
         'Termin: ' + radio('b-termin')
-      ]);
+      ]));
     }
     if (has('karten')) {
       block('Weihnachtskarten', [
         num('k-anzahl') + ' Karten' + (checked('k-fuer').length ? ' für ' + checked('k-fuer').join(', ') : ''),
         'Text: ' + radio('k-text'),
         'Design: ' + radio('k-design'),
-        'Versand: ' + radio('k-versand'),
+        'Versand: macht der Kunde selbst (Karten + Umschläge in den Betrieb)',
         radio('k-anlass') ? 'Anlass: ' + radio('k-anlass') : ''
       ]);
     }
@@ -638,11 +678,11 @@
     try {
       var d = {};
       form.querySelectorAll('input,textarea').forEach(function (el) {
-        if (!el.id && !el.name && !el.dataset.r) return;
-        var k = el.id || (el.name + '=' + el.value) || el.dataset.r;
-        if (el.dataset.r) k = 'r:' + el.dataset.r;
+        if (el.closest('.ws-person') || (!el.id && !el.name)) return;
+        var k = el.id || (el.name + '=' + el.value);
         d[k] = (el.type === 'checkbox' || el.type === 'radio') ? el.checked : el.value;
       });
+      d.__persons = persons();
       localStorage.setItem(DRAFT, JSON.stringify(d));
     } catch (e) {}
   }
@@ -650,10 +690,12 @@
     try {
       var d = JSON.parse(localStorage.getItem(DRAFT) || 'null'); if (!d) return;
       form.querySelectorAll('input,textarea').forEach(function (el) {
-        var k = el.dataset.r ? 'r:' + el.dataset.r : (el.id || (el.name + '=' + el.value));
+        if (el.closest('.ws-person')) return;
+        var k = el.id || (el.name + '=' + el.value);
         if (!(k in d)) return;
         if (el.type === 'checkbox' || el.type === 'radio') el.checked = !!d[k]; else el.value = d[k];
       });
+      (d.__persons || []).forEach(addPerson);
     } catch (e) {}
   }
 
@@ -662,6 +704,11 @@
   form.addEventListener('click', function (e) {
     var c = e.target.closest('.ws-chip'); if (!c) return;
     $(c.parentNode.dataset.for).value = c.dataset.v; sync(); save();
+  });
+  $('b-add').addEventListener('click', function () { var el = addPerson(); el.querySelector('[data-f=label]').focus(); save(); });
+  $('b-persons').addEventListener('click', function (e) {
+    var d = e.target.closest('.ws-pdel'); if (!d) return;
+    d.closest('.ws-person').remove(); renumber(); sync(); save();
   });
   form.addEventListener('submit', function (e) { e.preventDefault(); $('ws-next').click(); });
 
