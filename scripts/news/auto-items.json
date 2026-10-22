@@ -335,5 +335,58 @@
   ],
   "social": "/assets/images/news/bing-test-grosse-anzeige-oben-social.jpg",
   "image": "/assets/images/news/bing-test-grosse-anzeige-oben-og.webp"
+ },
+ {
+  "slug": "2026-10-google-speisekarte-glutenfrei-halal-koscher",
+  "date": "2026-10-22",
+  "platform": "google",
+  "topic": "unternehmensprofile",
+  "title": "Google-Speisekarte: Neue Labels für glutenfrei und halal",
+  "headline": "Glutenfrei, milchfrei, halal, koscher: Google erweitert die Speisekarte im Unternehmensprofil auf 6 Ernährungs-Labels",
+  "metaDesc": "Gerichte im Google Unternehmensprofil lassen sich jetzt als glutenfrei, milchfrei, halal oder koscher kennzeichnen. Was das bringt und worauf du achtest.",
+  "teaser": "Bisher konnten Restaurants einzelne Gerichte im Google Unternehmensprofil nur als vegetarisch oder vegan markieren. Jetzt kommen vier Labels dazu. Wer sie sauber pflegt, beantwortet die wichtigste Frage vieler Gäste schon im Profil.",
+  "summary": "Google hat die Ernährungs-Labels für Speisekarten im Unternehmensprofil erweitert: Neben <strong>vegetarisch und vegan</strong> lassen sich Gerichte jetzt als <strong>glutenfrei, milchfrei, halal und koscher</strong> markieren. Das geht über „Speisekarte bearbeiten“ und über die Schnittstelle. Für Restaurants heißt das: Labels jetzt setzen, aber nur dort, wo die Angabe stimmt. Für „glutenfrei“ gilt EU-Lebensmittelrecht.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/google-speisekarte-glutenfrei-halal-koscher-2026.webp\" alt=\"Comic: Koch setzt kleine Symbol-Plaketten auf Teller, darüber ein Handy mit denselben Symbolen auf einer Karte\" width=\"928\" height=\"1152\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">Ein Label pro Gericht: Google zeigt Ernährungsangaben jetzt direkt in der Speisekarte im Profil.</figcaption>\n        </figure>\n<p>„Gibt es bei euch etwas Glutenfreies?“ Diese Frage stellen Gäste oft schon, bevor sie reservieren, und immer häufiger direkt in Google Maps. Google hat darauf reagiert und die Speisekarte im Unternehmensprofil um vier Ernährungs-Labels erweitert. Ein Restaurant kann damit einzelne Gerichte so kennzeichnen, dass Suchende mit besonderen Ernährungsbedürfnissen sie im Profil sofort finden. Die Funktion ist klein, wirkt aber genau an der Stelle, an der Gäste entscheiden.</p><h2 id=\"was-ist-passiert\">Was ist passiert?</h2><p>Lisa Landsman von Google hat die Erweiterung auf LinkedIn angekündigt, Search Engine Roundtable berichtete am 13.10.2026 darüber. Zu den bestehenden Labels vegetarisch und vegan kommen <strong>Gluten-Free, Dairy-Free, Halal und Kosher</strong>, also glutenfrei, milchfrei, halal und koscher. Landsman schreibt: „When guests search on Google Maps or Search for specific diets (like ‚gluten-free dinner near me‘), tagged dishes help your items stand out right on your profile.“ Gekennzeichnete Gerichte sollen also bei solchen Suchen im Profil hervorstechen.</p><p>Der Weg laut Google: Unternehmensprofil öffnen, „Speisekarte bearbeiten“ wählen, ein Gericht anklicken und die passenden Labels setzen. Im offiziellen Änderungsprotokoll der Schnittstelle für das Unternehmensprofil steht unter dem 09.10.2026, dass die Werte GLUTEN_FREE und DAIRY_FREE jetzt für Speisekarten-Einträge unterstützt werden. Für welche Länder die neuen Labels gelten, nennt Google nicht.</p><h2 id=\"welche-zahlen-gibt-es\">Welche Zahlen gibt es?</h2><div class=\"statbox\"><div><div class=\"n\">6</div><p>Ernährungs-Labels pro Gericht: 2 bestehende plus 4 neue (Lisa Landsman, Google, LinkedIn, Oktober 2026)</p></div><div><div class=\"n\">09.10.</div><p>Datum, an dem Google glutenfrei und milchfrei in der Schnittstelle freigeschaltet hat (Google Business Profile APIs, Latest updates, 2026)</p></div><div><div class=\"n\">20 mg/kg</div><p>Höchstwert Gluten, damit ein Lebensmittel in der EU als „glutenfrei“ bezeichnet werden darf (Durchführungsverordnung (EU) Nr. 828/2014)</p></div></div><p>Wie viele Restaurants ihre Speisekarte im Profil pflegen und wie oft nach diesen Labels gesucht wird, veröffentlicht Google nicht.</p><h2 id=\"wer-gewinnt\">Wer gewinnt?</h2><p>Restaurants, Imbisse und Cafés mit einem echten Angebot für diese Gäste. Wer glutenfreie Pizza, halal zertifiziertes Fleisch oder milchfreie Desserts führt, konnte das bisher nur im Beschreibungstext oder auf der eigenen Website zeigen. Jetzt steht die Angabe direkt am Gericht. Dazu kommen Betriebe, die ihre Speisekarte über ein Verwaltungstool mit Schnittstelle pflegen: Sie können die Labels gesammelt setzen.</p><h2 id=\"wer-verliert-am-meisten\">Wer verliert am meisten?</h2><p>Der lokale Betrieb, der Labels aus Bequemlichkeit großzügig vergibt. „Glutenfrei“ ist in der EU an einen Grenzwert gebunden, Halal und Koscher sind für viele Gäste religiöse Zusagen. Eine falsche Angabe kann nach dem Gesetz gegen den unlauteren Wettbewerb (UWG) als Irreführung gelten und Abmahnungen auslösen. Ob Google die Angaben prüft, geht aus der Ankündigung nicht hervor. Leer gehen außerdem Restaurants aus, die gar keine Speisekarte im Profil hinterlegt haben: Ohne Gericht gibt es kein Label.</p><h2 id=\"wie-koennen-lokale-unternehmen-reagieren\">Wie können lokale Unternehmen reagieren?</h2><ul><li><strong>Erstens:</strong> Speisekarte im Unternehmensprofil vollständig anlegen, mit Preisen und kurzen Beschreibungen.</li><li><strong>Zweitens:</strong> Für jedes Gericht mit der Küche klären, welches Label belegbar ist, und nur diese setzen.</li><li><strong>Drittens:</strong> Bei „glutenfrei“ auf Kreuzkontamination in der Küche achten; im Zweifel lieber kein Label.</li><li><strong>Viertens:</strong> Speisekarte im Profil, auf der Website und auf Papier aus einer gemeinsamen Vorlage pflegen, damit die Angaben nicht auseinanderlaufen.</li></ul><p>Wie Google andere Profilinhalte inzwischen strenger behandelt, zeigt die Meldung zu <a href=\"/news/2026-10-google-richtlinie-preise-aktionen-im-eintrag/\" rel=\"noopener noreferrer\">Preisen und Aktionen im Profileintrag</a>.</p><p>Ein Häkchen kostet zehn Sekunden, ein falsches Häkchen unter Umständen eine Abmahnung.</p>",
+  "fazit": "Google erweitert die Speisekarte im Unternehmensprofil um vier Ernährungs-Labels, neben vegetarisch und vegan jetzt auch glutenfrei, milchfrei, halal und koscher. Restaurants sollten die Labels zeitnah setzen, aber ausschließlich dort, wo die Angabe nachweisbar stimmt.",
+  "impact": "Wenn du ein Restaurant führst, kannst du Gäste mit besonderen Ernährungsbedürfnissen jetzt direkt im Google-Profil abholen, solange jedes Label belegbar ist.",
+  "sources": [
+   {
+    "label": "Lisa Landsman (Google), LinkedIn-Beitrag „Great news for local restaurants“, Oktober 2026, abgerufen am 18.10.2026",
+    "url": "https://www.linkedin.com/posts/lisa-landsman-6076312_great-news-for-local-restaurants-google-share-7515424982504570880-IA59/"
+   },
+   {
+    "label": "Google Business Profile APIs, Latest updates, Eintrag vom 09.10.2026, abgerufen am 18.10.2026",
+    "url": "https://developers.google.com/my-business/content/latest-updates"
+   },
+   {
+    "label": "Search Engine Roundtable, New Google Local Dietary Attributes, 13.10.2026, abgerufen am 18.10.2026",
+    "url": "https://www.seroundtable.com/google-business-profiles-dietary-attributes-42281.html"
+   },
+   {
+    "label": "EUR-Lex, Durchführungsverordnung (EU) Nr. 828/2014 zu glutenfreien Lebensmitteln, abgerufen am 18.10.2026",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32014R0828"
+   }
+  ],
+  "keywords": [
+   "Google Unternehmensprofil Speisekarte",
+   "glutenfrei Google Maps",
+   "halal Restaurant Google",
+   "Ernährungs-Labels",
+   "Restaurant Marketing"
+  ],
+  "related": [
+   {
+    "href": "/google-unternehmensprofil/",
+    "label": "Google Unternehmensprofil: Der komplette Leitfaden"
+   },
+   {
+    "href": "/ratgeber/google-unternehmensprofil-optimieren/",
+    "label": "Google Unternehmensprofil optimieren"
+   }
+  ],
+  "hub": true,
+  "hubWhat": "Die Speisekarte im Unternehmensprofil kennt jetzt sechs Ernährungs-Labels: vegetarisch, vegan, glutenfrei, milchfrei, halal und koscher.",
+  "social": "/assets/images/news/google-speisekarte-glutenfrei-halal-koscher-social.jpg",
+  "image": "/assets/images/news/google-speisekarte-glutenfrei-halal-koscher-og.webp"
  }
 ]
