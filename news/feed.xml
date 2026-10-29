@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Wed, 28 Oct 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 29 Oct 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>KI-Übersichten: Google fasst Quellen selbst zusammen</title>
+    <link>https://lokalbesucher.de/news/2026-10-ki-uebersichten-quellenkarten-ki-zusammenfassung/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-10-ki-uebersichten-quellenkarten-ki-zusammenfassung/</guid>
+    <pubDate>Thu, 29 Oct 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>KI-Suche</category>
+    <category>Local SEO</category>
+    <description><![CDATA[Google testet in den Quellenkarten der KI-Übersichten Kurztexte, die von der KI selbst formuliert sind. Sie fassen die verlinkte Seite passend zur Suchanfrage zusammen. Beobachtet wurde das am 23. Oktober 2026 bei einem Teil der Anfragen. Ob der Test in Deutschland läuft, ist offen; eine Ankündigung von Google gibt es bisher nicht.]]></description>
+  </item>
   <item>
     <title>Google Business Home: Neue Zentrale, erst USA und UK</title>
     <link>https://lokalbesucher.de/news/2026-10-google-business-home-beta-usa-uk/</link>

@@ -533,5 +533,48 @@
   ],
   "social": "/assets/images/news/google-business-home-beta-usa-uk-social.jpg",
   "image": "/assets/images/news/google-business-home-beta-usa-uk-og.webp"
+ },
+ {
+  "slug": "2026-10-ki-uebersichten-quellenkarten-ki-zusammenfassung",
+  "date": "2026-10-29",
+  "platform": "ki-suche",
+  "topic": "local-seo",
+  "title": "KI-Übersichten: Google fasst Quellen selbst zusammen",
+  "headline": "Google testet: KI-Übersichten beschreiben verlinkte Websites in eigenen Worten",
+  "metaDesc": "Google testet KI-generierte Kurztexte in den Quellenkarten der KI-Übersichten. Was das für die Beschreibung deiner Website in der Google-Suche heißt.",
+  "teaser": "In einigen KI-Übersichten der Google-Suche stehen unter den Quellen jetzt Kurztexte, die so nicht auf der verlinkten Seite vorkommen. Google formuliert sie offenbar selbst, passend zur Suchanfrage.",
+  "summary": "Google testet in den <strong>Quellenkarten der KI-Übersichten</strong> Kurztexte, die <strong>von der KI selbst formuliert</strong> sind. Sie fassen die verlinkte Seite passend zur Suchanfrage zusammen. Beobachtet wurde das am 23. Oktober 2026 bei einem Teil der Anfragen. Ob der Test in Deutschland läuft, ist offen; eine Ankündigung von Google gibt es bisher nicht.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/ki-uebersichten-quellenkarten-ki-zusammenfassung-2026.webp\" alt=\"Comic: Klempner hält sein Schild hoch, ein Roboter malt daneben ein eigenes, einfacheres Schild und hängt es darüber\" width=\"928\" height=\"1152\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">In Googles Test formuliert die KI den Text zur eigenen Website selbst.</figcaption>\n        </figure>\n<p>Bisher stand unter einem Link in der Google-Suche meist ein Ausschnitt der eigenen Seite oder die eigene Meta-Beschreibung. In den Quellenkarten der KI-Übersichten testet Google nun etwas anderes: einen Kurztext, den die KI selbst schreibt. Für einen Betrieb heißt das, dass Google die eigene Website in eigenen Worten beschreibt.</p><h2 id=\"was-ist-passiert\">Was ist passiert?</h2><p>Der SEO-Berater Brodie Clark hat den Test auf X gezeigt. Er schrieb: „The text doesn't appear exactly like this on the page – it is being summarised based on the information that Google thinks is most relevant to the query.“ Barry Schwartz von Search Engine Roundtable bestätigte am 23. Oktober 2026, dass er die Kurztexte bei einigen seiner Testanfragen ebenfalls sieht, nicht bei allen.</p><p>KI-Übersichten sind die von Google erzeugten Antwortkästen oberhalb der klassischen Treffer. Die Quellenkarten stehen rechts oder darunter und verlinken auf die Seiten, aus denen die Antwort stammt. Bisher zeigten sie in der Regel Titel, Domain und einen Textausschnitt der verlinkten Seite. Im Test steht dort nun ein Kurztext, der je nach Frage anders ausfallen kann. Dieselbe Seite könnte also bei einer Frage nach Preisen anders beschrieben werden als bei einer Frage nach Öffnungszeiten.</p><p>Eine Ankündigung von Google haben wir nicht gefunden. Im Search-Blog-Beitrag vom 15. Oktober 2026 über klarere Links und Quellenangaben in KI-Übersichten und im KI-Modus kommen KI-Zusammenfassungen in den Quellenkarten nicht vor. Der Beitrag beschreibt andere Neuerungen, darunter Links direkt im Antworttext und einen eigenen Bereich für offizielle Websites. Für welche Länder und Sprachen die Neuerungen gelten, nennt Google dort nicht.</p><h2 id=\"welche-zahlen-gibt-es\">Welche Zahlen gibt es?</h2><div class=\"statbox\"><div><div class=\"n\">23.10.</div><p>erstmals öffentlich dokumentiert (Search Engine Roundtable, 2026)</p></div><div><div class=\"n\">?</div><p>Wie viele Anfragen betroffen sind, veröffentlicht Google nicht</p></div><div><div class=\"n\">?</div><p>Ob der Test in Deutschland läuft, ist offen; Google hat ihn nicht angekündigt</p></div></div><h2 id=\"wer-gewinnt\">Wer gewinnt?</h2><p>Nutzer, die schneller sehen, was eine Quelle zur eigenen Frage beiträgt. Und Seiten, deren Inhalte die Frage direkt beantworten, weil die KI dann einen passenden Kurztext findet.</p><h2 id=\"wer-verliert-am-meisten\">Wer verliert am meisten?</h2><p>Betriebe, die viel Arbeit in ihre Meta-Beschreibungen gesteckt haben, verlieren an Kontrolle über den Text unter dem eigenen Link. Für einen Handwerker oder eine Praxis kann das heißen, dass ein Angebot anders beschrieben wird als gewollt, etwa ohne Einzugsgebiet oder Notdienst. Ob die Kurztexte Klicks erhöhen oder senken, lässt sich ohne Daten von Google nicht sagen. Ob die Kurztexte auch bei Suchen nach Betrieben in der Nähe erscheinen, ist bisher nicht dokumentiert.</p><h2 id=\"wie-koennen-lokale-unternehmen-reagieren\">Wie können lokale Unternehmen reagieren?</h2><ul><li><strong>Erstens:</strong> die wichtigsten Fakten zum Angebot, zum Ort und zu den Leistungen im sichtbaren Text der Seite nennen, nicht nur in der Meta-Beschreibung.</li><li><strong>Zweitens:</strong> typische Kundenfragen auf der Seite in klaren Sätzen beantworten.</li><li><strong>Drittens:</strong> stichprobenartig suchen, wie die eigene Seite in KI-Übersichten beschrieben wird, und Fehler auf der Seite selbst korrigieren.</li><li><strong>Viertens:</strong> Angaben auf Website und Unternehmensprofil abgleichen, damit die KI keine widersprüchlichen Daten zusammenfasst.</li></ul><p>Zum Vorgänger-Test passt unsere Meldung <a href=\"/news/2026-10-google-ki-suche-offizielle-websites-links/\" rel=\"noopener noreferrer\">KI-Suche: Google testet Extra-Bereich für offizielle Seiten</a>.</p><p>Was unter deinem Link steht, schreibt in diesem Test Google, und zwar aus dem, was auf deiner Seite steht.</p>",
+  "fazit": "Google testet KI-formulierte Kurztexte in den Quellenkarten der KI-Übersichten, angekündigt ist das nicht. Betriebe sollten die wichtigsten Fakten im sichtbaren Seitentext klar formulieren, weil die Zusammenfassung daraus entsteht.",
+  "impact": "Google könnte deine Website in KI-Übersichten selbst beschreiben; sorg dafür, dass Angebot und Ort klar im Seitentext stehen.",
+  "sources": [
+   {
+    "label": "Search Engine Roundtable: Google AI Overview Citation Cards With AI-Generated Summary Snippets, 23.10.2026, abgerufen am 25.10.2026",
+    "url": "https://www.seroundtable.com/google-ai-overview-citation-ai-summaries-42361.html"
+   },
+   {
+    "label": "Google Search Blog: Updates zu KI-Modus und KI-Übersichten (Links und Quellen), 15.10.2026, abgerufen am 25.10.2026",
+    "url": "https://blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web/"
+   }
+  ],
+  "keywords": [
+   "KI-Übersichten",
+   "AI Overviews Quellen",
+   "Google KI Zusammenfassung",
+   "Meta-Beschreibung",
+   "KI-Sichtbarkeit"
+  ],
+  "related": [
+   {
+    "href": "/ratgeber/ki-sichtbarkeit-lokale-unternehmen/",
+    "label": "KI-Sichtbarkeit für lokale Unternehmen"
+   },
+   {
+    "href": "/ki-sichtbarkeits-check/",
+    "label": "KI-Sichtbarkeits-Check"
+   }
+  ],
+  "social": "/assets/images/news/ki-uebersichten-quellenkarten-ki-zusammenfassung-social.jpg",
+  "image": "/assets/images/news/ki-uebersichten-quellenkarten-ki-zusammenfassung-og.webp"
  }
 ]
