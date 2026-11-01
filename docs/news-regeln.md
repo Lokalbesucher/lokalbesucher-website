@@ -82,6 +82,7 @@ Headline in einer Zeile, ein Absatz mit dem Kern (was, Frist oder Zahl, Folge), 
 
 - Marke Lokalbesucher: blogId 4659370. Nie in einer Kundenmarke posten.
 - Vorher Dopplung prüfen: Gibt es für diese News schon einen geplanten oder veröffentlichten Post?
+- Website (seit 01.11.2026): Mo–Fr eine News pro Tag. Die erste nach der Freigabe geht am nächsten Werktag um 9:30 live (Freigabe Sonntag → Montag 9:30), die weiteren zu wechselnden Testzeiten (12:30, 17:30, 7:30, 14:30), damit wir lernen, wann News am meisten bringen. Nie mehr 6:30 (keine Views).
 - LinkedIn Dienstag bis Freitag 11:00, Link im ersten Kommentar, Bild als JPG. Unternehmensprofil 12:00, Link im Text.
 - Nicht auf Tage legen, an denen schon ein Post der Marke läuft.
 - Erst posten, wenn die News-URL live ist.
