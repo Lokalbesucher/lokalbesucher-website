@@ -88,11 +88,13 @@ Headline in einer Zeile, ein Absatz mit dem Kern (was, Frist oder Zahl, Folge), 
 
 ## Bild
 
-Serienstil-Prompt:
+Seit 01.11.2026 (Tobias: die Comic-Bilder waren „massiv überfrachtet und sehr abstrakt“, Vorbild Cointelegraph): **ein** großes Hauptmotiv, das die Nachricht wörtlich zeigt, ruhiger dunkler Hintergrund, höchstens drei Objekte, Querformat 16:9. Wer das Bild in einer Sekunde sieht, muss wissen, worum es geht.
 
-„Editorial comic illustration, bold black outlines, flat vivid colors, slight cel shading, dynamic diagonal composition, halftone dot accents. [Bildidee in einem Satz]. Deep navy blue background (#1e365c) with warm yellow (#ffbd59) speed lines and light rays. No logos, no text, no letters, no numbers.“
+Serienstil-Prompt (steht in `lokalbesucher-tools/admin/src/news.js`, `STYLE_PROMPT`):
 
-Format 4:5, zwei Varianten. Bildidee: konkret, mit sichtbarem Bezug zur Nachricht (leere Regale im Handy-Bildschirm für gestrichene Produkteinträge; Profilkarte, die fremde Hände überschreiben; Greifarm, der Sterne vom Tablet fegt). Keine Metaphern, keine Markenlogos, kein Text-Overlay. Screenshots nur 1:1 echt, nie nachgebaute Mockups. Jedes Bild nach dem Erzeugen ansehen: Ziffern, Buchstaben oder Logos im Bild → neu erzeugen.
+„Cinematic 3D editorial news illustration, one single large hero subject in the center: [Bildidee in einem Satz] Clean minimal composition with lots of calm negative space, dark navy blue gradient background (#1e365c fading to near black), strong warm yellow (#ffbd59) rim light and soft glow, glossy realistic materials, soft shadows, shallow depth of field, high detail. At most three objects, no clutter, no confetti, no sparkles, no small icons. Screens and papers show only simple shapes. No text, no letters, no numbers, no logos.“
+
+Format 16:9, zwei Varianten. Bildidee: ein Gegenstand, den jeder sofort erkennt, in einer Handlung, die die Nachricht zeigt (Smartphone, über dem mehrere Dokumente zu einer leuchtenden Karte verschmelzen, für KI-Zusammenfassungen; rote Kartennadel, die in einer Speisekarte steckt; Bewertungsstern, der zerbricht). Keine Szenen mit mehreren Figuren, keine Sammlung kleiner Symbole, keine Comic-Optik, keine Markenlogos, kein Text-Overlay. Passt kein erzeugtes Bild, lädt Tobias im Admin über „Eigenes Bild“ ein eigenes hoch (Foto, echter Screenshot); das wird ohne Schrift-Prüfung übernommen. Screenshots nur 1:1 echt, nie nachgebaute Mockups. Jedes Bild nach dem Erzeugen ansehen: Ziffern, Buchstaben oder Logos im Bild → neu erzeugen.
 
 ## Slop-Test (Pflicht)
 

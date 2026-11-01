@@ -31,9 +31,12 @@ const api = async (p, body) => {
 const fail = async (id, msg) => { console.error('FEHLER', msg); try { await api('error', { id, error: msg }); } catch (e) { console.error(e.message); } };
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
-/* Hochformat → OG 1200×630: Motiv auf volle Höhe mittig, Ränder gespiegelt und weichgezeichnet (CLAUDE.md §20) */
+/* OG 1200×630. Querformat (ab 1,6:1, seit 01.11.2026 der Standard) wird zugeschnitten; Hochformat: Motiv auf volle Höhe
+   mittig, Ränder gespiegelt und weichgezeichnet (CLAUDE.md §20) */
 async function ogImage(buf) {
   const H = 630, W = 1200;
+  const meta = await sharp(buf).metadata();
+  if (meta.width / meta.height >= 1.6) return sharp(buf).resize(W, H, { fit: 'cover' }).toBuffer();
   const mid = await sharp(buf).resize({ height: H }).toBuffer();
   const mw = (await sharp(mid).metadata()).width;
   if (mw >= W) return sharp(buf).resize(W, H, { fit: 'cover' }).toBuffer();
@@ -54,14 +57,15 @@ async function prepare() {
       const name = it.slug.replace(/^\d{4}-\d{2}-/, '');
       const r = await fetch(d.image, { headers: { 'X-LB-News': KEY } });
       if (!r.ok) throw new Error('Bild nicht abrufbar: ' + r.status);
-      const src = Buffer.from(await r.arrayBuffer());
-      const main = await sharp(src).resize({ width: 928 }).webp({ quality: 85 }).toBuffer({ resolveWithObject: true });
+      /* .rotate(): Handyfotos aus dem Upload richtig herum (EXIF) */
+      const src = await sharp(Buffer.from(await r.arrayBuffer())).rotate().toBuffer();
+      const main = await sharp(src).resize({ width: 928, withoutEnlargement: true }).webp({ quality: 85 }).toBuffer({ resolveWithObject: true });
       fs.writeFileSync(path.join(IMG_DIR, `${name}-2026.webp`), main.data);
       const og = await ogImage(src);
       await sharp(og).webp({ quality: 85 }).toFile(path.join(IMG_DIR, `${name}-og.webp`));
       await sharp(og).jpeg({ quality: 82 }).toFile(path.join(IMG_DIR, `${name}-og.jpg`));
-      /* ganzes Hochformat als JPG für LinkedIn und Unternehmensprofil (Metricool holt es von hier) */
-      await sharp(src).resize({ width: 1080 }).jpeg({ quality: 86 }).toFile(path.join(IMG_DIR, `${name}-social.jpg`));
+      /* ganzes Bild als JPG für LinkedIn und Unternehmensprofil (Metricool holt es von hier) */
+      await sharp(src).resize({ width: 1080, withoutEnlargement: true }).jpeg({ quality: 86 }).toFile(path.join(IMG_DIR, `${name}-social.jpg`));
       it.social = `/assets/images/news/${name}-social.jpg`;
       it.date = due.date;
       it.image = `/assets/images/news/${name}-og.webp`;

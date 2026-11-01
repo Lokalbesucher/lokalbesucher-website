@@ -100,8 +100,8 @@ Datei `woche.json` (UTF-8) in genau dieser Form:
    "confirm": [],
    "slop": 8,
    "slop_note": "ein Satz Begründung",
-   "image_idea": "EIN englischer Satz: Comic-Szene mit einer handelnden Person und klarem Bildwitz. Keine Schrift, keine Logos, keine Markennamen, keine Bildschirme mit Text – Bildschirme und Schilder zeigen nur Symbole.",
-   "image_alt": "Comic: … (höchstens 125 Zeichen)",
+   "image_idea": "EIN englischer Satz: EIN großes, sofort erkennbares Hauptmotiv, das die Nachricht wörtlich zeigt (z. B. 'a glossy smartphone standing upright, three paper documents fly into a glowing orb above its screen, which condenses them into one bright summary card.'). Höchstens drei Gegenstände, keine Personen-Szenen, keine Sammlung kleiner Symbole, keine Schrift, keine Logos, keine Markennamen.",
+   "image_alt": "3D-Illustration: … (höchstens 125 Zeichen)",
    "image_caption": "deutsche Bildunterschrift, ein Satz"
   }
  ]
