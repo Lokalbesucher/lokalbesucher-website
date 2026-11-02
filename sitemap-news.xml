@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://lokalbesucher.de/news/2026-10-ki-uebersichten-quellenkarten-ki-zusammenfassung/</loc>
+    <loc>https://lokalbesucher.de/news/2026-11-olg-muenchen-google-loeschhinweis-bewertungen/</loc>
     <news:news>
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-10-29T08:00:00+02:00</news:publication_date>
-      <news:title>KI-Übersichten: Google fasst Quellen selbst zusammen</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-10-google-business-home-beta-usa-uk/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-10-28T08:00:00+02:00</news:publication_date>
-      <news:title>Google Business Home: Neue Zentrale, erst USA und UK</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-10-google-einsprueche-bewertungen-verzoegert/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-10-27T08:00:00+02:00</news:publication_date>
-      <news:title>Google: Einsprüche gegen Bewertungen dauern länger</news:title>
+      <news:publication_date>2026-11-02T08:00:00+02:00</news:publication_date>
+      <news:title>OLG München: Google darf Lösch-Hinweis im Profil zeigen</news:title>
     </news:news>
   </url>
 </urlset>

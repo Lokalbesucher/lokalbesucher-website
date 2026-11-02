@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Thu, 29 Oct 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 02 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>OLG München: Google darf Lösch-Hinweis im Profil zeigen</title>
+    <link>https://lokalbesucher.de/news/2026-11-olg-muenchen-google-loeschhinweis-bewertungen/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-olg-muenchen-google-loeschhinweis-bewertungen/</guid>
+    <pubDate>Mon, 02 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Google</category>
+    <category>Bewertungen</category>
+    <description><![CDATA[Das OLG München hat am 21.09.2026 entschieden (Az. 18 W 839/26): Google darf im Profil anzeigen, dass „zwei bis fünf Bewertungen aufgrund von Beschwerden wegen Diffamierung entfernt“ wurden. Ansprüche aus DSGVO, DSA und UWG lehnte das Gericht ab. Für dich heißt das: Jede erfolgreiche Löschung kann im Profil sichtbar werden. Melde nur, was sich wirklich lohnt.]]></description>
+  </item>
   <item>
     <title>KI-Übersichten: Google fasst Quellen selbst zusammen</title>
     <link>https://lokalbesucher.de/news/2026-10-ki-uebersichten-quellenkarten-ki-zusammenfassung/</link>
