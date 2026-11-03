@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Mon, 02 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 03 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>KI-Training sperren, in KI-Antworten bleiben: So geht’s</title>
+    <link>https://lokalbesucher.de/news/2026-11-ki-training-robots-txt-google-bing-openai/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-ki-training-robots-txt-google-bing-openai/</guid>
+    <pubDate>Tue, 03 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>KI-Suche</category>
+    <category>Local SEO</category>
+    <description><![CDATA[Am 30.10.2026 haben Google, Microsoft und OpenAI angekündigt, ein gemeinsames Signal in der robots.txt zu unterstützen, mit dem Websites KI-Training ablehnen können. Microsoft beachtet die neuen Einstellungen ab 01.02.2027 und trennt Training von KI-Antworten. Prüfe deine robots.txt: Training sperren ist möglich, ohne aus KI-Antworten zu verschwinden. Wer bei Bing NoArchive nutzt, muss bis 01.03.2027 umstellen.]]></description>
+  </item>
   <item>
     <title>OLG München: Google darf Lösch-Hinweis im Profil zeigen</title>
     <link>https://lokalbesucher.de/news/2026-11-olg-muenchen-google-loeschhinweis-bewertungen/</link>

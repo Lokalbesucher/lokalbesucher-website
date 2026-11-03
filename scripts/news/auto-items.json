@@ -627,5 +627,56 @@
   ],
   "social": "/assets/images/news/olg-muenchen-google-loeschhinweis-bewertungen-social.jpg",
   "image": "/assets/images/news/olg-muenchen-google-loeschhinweis-bewertungen-og.webp"
+ },
+ {
+  "slug": "2026-11-ki-training-robots-txt-google-bing-openai",
+  "date": "2026-11-03",
+  "platform": "ki-suche",
+  "topic": "local-seo",
+  "title": "KI-Training sperren, in KI-Antworten bleiben: So geht’s",
+  "headline": "Ab Februar 2027: Eine Zeile in der robots.txt entscheidet, ob KI mit deiner Website trainiert",
+  "metaDesc": "Google, Microsoft und OpenAI unterstützen ein gemeinsames KI-Trainings-Signal. Bing trennt Training und KI-Antworten. Frist: 01.03.2027.",
+  "teaser": "Google, Microsoft und OpenAI haben am 30.10.2026 ein gemeinsames Signal für KI-Training angekündigt. Microsoft trennt zusätzlich zwischen Training und der Nutzung für KI-Antworten. Wer falsch sperrt, kann in KI-Antworten unsichtbar werden.",
+  "summary": "Am <strong>30.10.2026</strong> haben Google, Microsoft und OpenAI angekündigt, ein gemeinsames Signal in der robots.txt zu unterstützen, mit dem Websites KI-Training ablehnen können. Microsoft beachtet die neuen Einstellungen ab <strong>01.02.2027</strong> und trennt Training von KI-Antworten. Prüfe deine robots.txt: Training sperren ist möglich, ohne aus KI-Antworten zu verschwinden. Wer bei Bing NoArchive nutzt, muss bis 01.03.2027 umstellen.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/ki-training-robots-txt-google-bing-openai-2026.webp\" alt=\"Comic: Ladeninhaber hält Robotern ein Schild mit durchgestrichenem Buch hin, lässt aber einen Roboter mit Sprechblase durch\" width=\"928\" height=\"518\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">Training nein, Zitieren ja: Bing trennt künftig, wofür KI deine Website nutzen darf.</figcaption>\n        </figure>\n<p>Darf eine KI mit den Texten deiner Website trainiert werden, und darf sie deine Seite in Antworten zitieren? Bisher musste ein Websitebetreiber dafür jeden KI-Anbieter einzeln in der Datei robots.txt ansprechen. Am 30.10.2026 haben Google, Microsoft und OpenAI angekündigt, ein gemeinsames Signal zu unterstützen. Microsoft trennt dabei ausdrücklich zwischen Training und der Nutzung für KI-Antworten. Für lokale Betriebe ist die zentrale Erkenntnis: Wer das Training sperrt, kann trotzdem in KI-Antworten auftauchen. Wer zu viel sperrt, kann dort verschwinden.</p><h2 id=\"was-ist-passiert\">Was ist passiert?</h2><p>Google schreibt im <a href=\"https://developers.google.com/search/blog/2026/10/ai-training-control\" rel=\"noopener noreferrer\">Search Central Blog vom 30.10.2026</a>, man wolle eine gemeinsame KI-Trainings-Steuerung in der robots.txt unterstützen. Sie beruht auf einem Entwurf der Arbeitsgruppe AIPREF der Internet Engineering Task Force (IETF), dem Gremium für Internet-Standards. Laut Googles Crawler-Dokumentation soll das Signal mit der Zeile „user-agent: __usage_ai-training“ Anfang 2027 greifen. Wer damit das Training verbietet und Google-Extended nicht eigens nennt, wird so behandelt, als hätte er Google-Extended gesperrt.</p><p>Microsoft geht im <a href=\"https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/\" rel=\"noopener noreferrer\">Bing-Blog vom selben Tag</a> weiter. Neben der Trainings-Einstellung gibt es eine eigene Einstellung für „Grounding“, also die Nutzung von Inhalten, um KI-Antworten in Bing, Copilot und Microsoft 365 zu belegen. Microsoft schreibt: Wer Grounding sperrt, „will see reduced brand visibility in AI experiences“, also weniger Sichtbarkeit der Marke in KI-Angeboten. Die normale Bing-Suche bleibt davon unberührt. Auch <a href=\"https://openai.com/index/helping-websites-express-ai-training-preferences/\" rel=\"noopener noreferrer\">OpenAI</a> hat am 30.10.2026 einen Beitrag zum gemeinsamen Signal veröffentlicht.</p><h2 id=\"welche-zahlen-gibt-es\">Welche Zahlen gibt es?</h2><div class=\"statbox\"><div><div class=\"n\">01.02.2027</div><p>Ab diesem Tag beachtet Microsoft die neuen Einstellungen beim Crawlen. Quelle: Bing-Blog, 30.10.2026</p></div><div><div class=\"n\">01.03.2027</div><p>Frist für Websites mit NoArchive oder NoCache, die neuen Einstellungen zu setzen. Quelle: Bing-Blog, 30.10.2026</p></div><div><div class=\"n\">3</div><p>Große Anbieter haben am 30.10.2026 das gemeinsame Signal angekündigt: Google, Microsoft, OpenAI. Quelle: Anbieter-Blogs</p></div></div><p>Wie viele Websites bisher KI-Crawler sperren, veröffentlichen die Anbieter nicht.</p><h2 id=\"wer-gewinnt\">Wer gewinnt?</h2><p>Websitebetreiber, die ihre Texte nicht für das Training freigeben wollen, aber in KI-Antworten genannt werden möchten. Sie können beides künftig getrennt regeln, zumindest bei Microsoft. Gewinner sind auch kleine Betriebe ohne IT-Abteilung, weil eine Zeile künftig mehrere Anbieter abdeckt.</p><h2 id=\"wer-verliert\">Wer verliert am meisten?</h2><p>Lokale Betriebe, deren Website pauschal alle KI-Crawler aussperrt, oft durch ein Plugin oder einen Dienstleister, ohne dass der Inhaber davon weiß. Für Arztpraxen, Handwerker oder Restaurants, die in ChatGPT, Copilot oder Gemini empfohlen werden wollen, kann eine zu strenge Einstellung Sichtbarkeit kosten. Wer heute bei Bing NoArchive oder NoCache nutzt, muss bis 01.03.2027 handeln, sonst gelten diese Angaben nicht mehr als KI-Einstellung.</p><h2 id=\"wie-reagieren\">Wie können lokale Unternehmen reagieren?</h2><ul><li>Erstens: Die eigene robots.txt öffnen (Domain plus „/robots.txt“) und prüfen, welche KI-Crawler gesperrt sind.</li><li>Zweitens: Training und Zitieren getrennt bewerten. Für die meisten lokalen Betriebe ist Sichtbarkeit in KI-Antworten wichtiger als der Schutz vor Training.</li><li>Drittens: NoArchive- oder NoCache-Angaben bis 01.03.2027 auf die neuen Bing-Einstellungen umstellen.</li><li>Viertens: Den Webdienstleister fragen, ob Plugins oder die Firewall KI-Crawler blockieren.</li></ul><p>Wie KI-Antworten Quellen auswählen, zeigt unsere Meldung <a href=\"/news/2026-10-ki-uebersichten-quellenkarten-ki-zusammenfassung/\">zu Googles neuen Quellen-Zusammenfassungen</a>.</p><p>Die neue Zeile in der robots.txt ist kurz, ihre Wirkung auf die Sichtbarkeit in KI-Antworten nicht.</p>",
+  "fazit": "Google, Microsoft und OpenAI vereinfachen die Steuerung von KI-Training per robots.txt, die neuen Regeln greifen 2027. Lokale Betriebe sollten jetzt prüfen, ob ihre Website KI-Crawler unbeabsichtigt aussperrt.",
+  "impact": "Prüfe deine robots.txt, damit deine Website zwar nicht ungewollt fürs KI-Training dient, aber in KI-Antworten sichtbar bleibt.",
+  "sources": [
+   {
+    "label": "Google Search Central Blog: Supporting a shared AI training control for websites, 30.10.2026, abgerufen am 01.11.2026",
+    "url": "https://developers.google.com/search/blog/2026/10/ai-training-control"
+   },
+   {
+    "label": "Microsoft Bing Blog: Your content, your choice: clearer preferences for training and grounding, 30.10.2026, abgerufen am 01.11.2026",
+    "url": "https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/"
+   },
+   {
+    "label": "OpenAI: Making it easier for websites to express AI training preferences, 30.10.2026, abgerufen am 01.11.2026",
+    "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/"
+   },
+   {
+    "label": "IETF-Entwurf: AI training preference signal, abgerufen am 01.11.2026",
+    "url": "https://datatracker.ietf.org/doc/draft-kelley-aipref-training-preference-signal/"
+   }
+  ],
+  "keywords": [
+   "KI-Training robots.txt",
+   "Google-Extended",
+   "Bing Grounding",
+   "KI-Sichtbarkeit Website",
+   "AIPREF"
+  ],
+  "related": [
+   {
+    "href": "/ratgeber/ki-sichtbarkeit-lokale-unternehmen/",
+    "label": "KI-Sichtbarkeit für lokale Unternehmen"
+   },
+   {
+    "href": "/ki-sichtbarkeits-check/",
+    "label": "KI-Sichtbarkeits-Check"
+   }
+  ],
+  "social": "/assets/images/news/ki-training-robots-txt-google-bing-openai-social.jpg",
+  "image": "/assets/images/news/ki-training-robots-txt-google-bing-openai-og.webp"
  }
 ]
