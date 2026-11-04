@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Tue, 03 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 04 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>Google-Profil: Restaurants können Lieferdienste abwählen</title>
+    <link>https://lokalbesucher.de/news/2026-11-google-restaurants-lieferdienste-abwaehlen/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-google-restaurants-lieferdienste-abwaehlen/</guid>
+    <pubDate>Wed, 04 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Google</category>
+    <category>Unternehmensprofile</category>
+    <description><![CDATA[Google hat Ende Oktober 2026 die Steuerung von Bestell-Links im Unternehmensprofil ausgebaut. Restaurants können einzelne Lieferdienste über „Link entfernen“ abwählen und für Abholung und Lieferung einen bevorzugten Anbieter festlegen. Laut deutscher Google-Hilfe müssen Drittanbieter Links nach Anfrage binnen fünf Arbeitstagen entfernen. Prüfe dein Profil unter „Lebensmittel bestellen“ und lege deinen eigenen Bestellweg als bevorzugt fest.]]></description>
+  </item>
   <item>
     <title>KI-Training sperren, in KI-Antworten bleiben: So geht’s</title>
     <link>https://lokalbesucher.de/news/2026-11-ki-training-robots-txt-google-bing-openai/</link>
