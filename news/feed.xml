@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Wed, 04 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 05 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>Bing testet Werbung in KI-Antworten und QR-Anruf</title>
+    <link>https://lokalbesucher.de/news/2026-11-bing-werbung-ki-uebersichten-qr-anruf/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-bing-werbung-ki-uebersichten-qr-anruf/</guid>
+    <pubDate>Thu, 05 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Bing Places</category>
+    <category>Werbeanzeigen</category>
+    <description><![CDATA[Ende Oktober 2026 sind zwei Bing-Tests aufgetaucht: gesponserte Ergebnisse in den KI-Übersichten und ein QR-Code zum Anrufen im lokalen Kartenbereich am Desktop. Microsoft hat beides nicht bestätigt, Belege sind Screenshots eines Beobachters. Für dich heißt das: Bing-Places-Eintrag mit Telefonnummer und Öffnungszeiten prüfen, Werbebudgets aber noch nicht verschieben, solange Microsoft nichts bestätigt.]]></description>
+  </item>
   <item>
     <title>Google-Profil: Restaurants können Lieferdienste abwählen</title>
     <link>https://lokalbesucher.de/news/2026-11-google-restaurants-lieferdienste-abwaehlen/</link>
