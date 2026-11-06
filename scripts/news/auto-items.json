@@ -774,5 +774,48 @@
   ],
   "social": "/assets/images/news/bing-werbung-ki-uebersichten-qr-anruf-social.jpg",
   "image": "/assets/images/news/bing-werbung-ki-uebersichten-qr-anruf-og.webp"
+ },
+ {
+  "slug": "2026-11-ki-uebersichten-opt-out-weniger-klicks",
+  "date": "2026-11-06",
+  "platform": "ki-suche",
+  "topic": "local-seo",
+  "title": "Raus aus KI-Übersichten: Test zeigt weniger Klicks",
+  "headline": "0,9 Prozent Klickrate: Wer sich aus Googles KI-Übersichten abmeldet, verliert auch normale Klicks",
+  "metaDesc": "Ein Test von Cyrus Shepard zeigt: Wer seine Website aus Googles KI-Funktionen nimmt, verliert auch Klicks in den normalen Ergebnissen.",
+  "teaser": "Ein US-Suchmaschinenberater hat seine Website zeitweise aus Googles KI-Übersichten genommen. Die KI-Klicks fielen weg, aber auch die normalen Klicks gingen zurück. Der Test ist klein, liefert aber erste Zahlen.",
+  "summary": "Cyrus Shepard hat seine Website über die Search Console aus Googles <strong>KI-Übersichten</strong> und dem KI-Modus ausgeschlossen. Die KI-Impressionen hatten eine geschätzte Klickrate von <strong>0,9 Prozent</strong>. Während des Ausschlusses sanken auch die normalen Klicks. Der Test umfasst nur eine Website. Melde dich deshalb nicht vorschnell aus KI-Funktionen ab, sondern prüfe zuerst deine eigenen Daten in der Search Console.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/ki-uebersichten-opt-out-weniger-klicks-2026.webp\" alt=\"Comic: Handwerker zieht einem Lupen-Roboter den Stecker, gleichzeitig drehen Besucher vor seiner Tür um\" width=\"928\" height=\"518\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">Ein kleiner Test zeigt: Wer sich aus Googles KI-Übersichten abmeldet, verliert auch normale Klicks.</figcaption>\n        </figure>\n<p>Bringen KI-Übersichten überhaupt Klicks, oder kann man sich aus ihnen abmelden, ohne etwas zu verlieren? Der US-Suchmaschinenberater Cyrus Shepard hat das mit einer eigenen Website getestet und die Ergebnisse am 28.10.2026 auf LinkedIn veröffentlicht. Er nahm seine Seite zeitweise aus den KI-Übersichten und dem KI-Modus von Google heraus. Ergebnis: Auch die Klicks auf die normalen Suchergebnisse gingen zurück. Es ist ein einzelner, kleiner Test, aber er liefert erstmals Zahlen zu einer Frage, die viele Websitebetreiber umtreibt.</p><h2 id=\"was-ist-passiert\">Was ist passiert?</h2><p>Google bietet in der Search Console eine Möglichkeit, eine Website von KI-Funktionen der Suche auszuschließen. Shepard nutzte sie und verglich Impressionen und Klicks vor, während und nach dem Ausschluss. Laut seinem <a href=\"https://www.linkedin.com/posts/cyrusshepard_case-study-what-happens-when-you-opt-your-share-7521340039763505152-gKbY/\" rel=\"noopener noreferrer\">LinkedIn-Beitrag</a> fielen die KI-Impressionen sofort auf null. Die KI-Impressionen hatten nach seiner Schätzung eine Klickrate von etwa 0,9 Prozent. Überraschend sei gewesen: „regular organic clicks ALSO DROPPED when AI features were disabled“, also auch die normalen Klicks sanken.</p><p>Gegenüber <a href=\"https://www.seroundtable.com/google-ai-overviews-mode-ctr-42421.html\" rel=\"noopener noreferrer\">Search Engine Roundtable</a> erklärte Shepard, KI-Impressionen hätten rund 8 Prozent aller Impressionen ausgemacht. KI-Übersichten erschienen während des Tests weiter, nur seine Seite war darin nicht vertreten. Shepard selbst nennt den Test „admittedly small“, also zugegeben klein, und schreibt: „Results not guaranteed. Always test your own data.“</p><h2 id=\"welche-zahlen-gibt-es\">Welche Zahlen gibt es?</h2><div class=\"statbox\"><div><div class=\"n\">0,9 %</div><p>Geschätzte Klickrate der KI-Impressionen. Quelle: Cyrus Shepard, LinkedIn, 28.10.2026</p></div><div><div class=\"n\">8 %</div><p>Anteil der KI-Impressionen an allen Impressionen der Test-Website. Quelle: Search Engine Roundtable, 30.10.2026</p></div><div><div class=\"n\">1</div><p>Website wurde getestet, die Stichprobe ist also sehr klein. Quelle: Cyrus Shepard, LinkedIn, 28.10.2026</p></div></div><p>Wie viele Klicks KI-Übersichten lokalen Betrieben im Schnitt bringen, veröffentlicht Google nicht.</p><h2 id=\"wer-gewinnt\">Wer gewinnt?</h2><p>Websites, die in KI-Übersichten zitiert werden. Shepard vermutet einen Mitnahme-Effekt: Wer an mehreren Stellen der Ergebnisseite auftaucht, wird eher an einer davon angeklickt. Belegt ist das bisher nur für seine eine Seite.</p><h2 id=\"wer-verliert\">Wer verliert am meisten?</h2><p>Lokale Betriebe, die sich aus Sorge vor KI pauschal aus allen KI-Funktionen abmelden. Für Handwerker, Praxen oder Restaurants mit eigener Website kann das nach diesem Test weniger Klicks bedeuten, nicht mehr. Ob sich das Ergebnis auf lokale Suchen übertragen lässt, ist offen, denn der Test lief mit einer einzelnen Fach-Website.</p><h2 id=\"wie-reagieren\">Wie können lokale Unternehmen reagieren?</h2><ul><li>Erstens: Einen Ausschluss aus KI-Funktionen nur nach eigener Prüfung der Search-Console-Daten erwägen.</li><li>Zweitens: Inhalte so aufbereiten, dass sie für KI-Übersichten zitierfähig sind, etwa mit klaren Antworten auf häufige Kundenfragen.</li><li>Drittens: Die Entwicklung der Klicks in der Search Console monatlich beobachten.</li><li>Viertens: Weitere Studien abwarten, bevor grundsätzliche Entscheidungen fallen.</li></ul><p>Welche Quellen Google in KI-Übersichten bevorzugt, zeigt unsere Meldung <a href=\"/news/2026-08-ki-uebersichten-lokale-listicles/\">zu Listicles in lokalen KI-Übersichten</a>.</p><p>Wer aus der KI-Übersicht verschwindet, ist nach diesem Test auch darunter seltener gefragt.</p>",
+  "fazit": "Ein kleiner Test legt nahe, dass der Ausschluss aus Googles KI-Funktionen auch normale Klicks kosten kann. Lokale Betriebe sollten sich nicht vorschnell abmelden und stattdessen ihre Inhalte zitierfähig machen.",
+  "impact": "Melde deine Website nicht vorschnell aus Googles KI-Funktionen ab, das kann laut einem ersten Test auch normale Klicks kosten.",
+  "sources": [
+   {
+    "label": "Cyrus Shepard auf LinkedIn: Case study: What happens when you opt your site out of Google's AI features?, 28.10.2026, abgerufen am 01.11.2026",
+    "url": "https://www.linkedin.com/posts/cyrusshepard_case-study-what-happens-when-you-opt-your-share-7521340039763505152-gKbY/"
+   },
+   {
+    "label": "Search Engine Roundtable: Google AI Overviews & AI Mode 0.9% Click-Through Rate, Opt Out Study Says, 30.10.2026, abgerufen am 01.11.2026",
+    "url": "https://www.seroundtable.com/google-ai-overviews-mode-ctr-42421.html"
+   }
+  ],
+  "keywords": [
+   "KI-Übersichten Klickrate",
+   "AI Overviews Opt-out",
+   "Google KI-Modus",
+   "Search Console KI",
+   "KI-Sichtbarkeit"
+  ],
+  "related": [
+   {
+    "href": "/ratgeber/ki-sichtbarkeit-lokale-unternehmen/",
+    "label": "KI-Sichtbarkeit für lokale Unternehmen"
+   },
+   {
+    "href": "/ki-sichtbarkeits-check/",
+    "label": "KI-Sichtbarkeits-Check"
+   }
+  ],
+  "social": "/assets/images/news/ki-uebersichten-opt-out-weniger-klicks-social.jpg",
+  "image": "/assets/images/news/ki-uebersichten-opt-out-weniger-klicks-og.webp"
  }
 ]

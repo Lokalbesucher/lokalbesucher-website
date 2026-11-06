@@ -325,14 +325,14 @@
   <!-- news:start -->
   <url>
     <loc>https://lokalbesucher.de/news/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://lokalbesucher.de/news/redaktion/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -360,7 +360,7 @@
 
   <url>
     <loc>https://lokalbesucher.de/news/ki-suche/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -402,8 +402,15 @@
 
   <url>
     <loc>https://lokalbesucher.de/news/local-seo/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalbesucher.de/news/2026-11-ki-uebersichten-opt-out-weniger-klicks/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 

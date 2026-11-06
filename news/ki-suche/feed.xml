@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/ki-suche/</link>
   <description>ChatGPT, Perplexity, Gemini, Claude und KI-Übersichten in der Suche.</description>
   <language>de-de</language>
-  <lastBuildDate>Tue, 03 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 06 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/ki-suche/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: KI-Suche</title><link>https://lokalbesucher.de/news/ki-suche/</link></image>
+  <item>
+    <title>Raus aus KI-Übersichten: Test zeigt weniger Klicks</title>
+    <link>https://lokalbesucher.de/news/2026-11-ki-uebersichten-opt-out-weniger-klicks/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-ki-uebersichten-opt-out-weniger-klicks/</guid>
+    <pubDate>Fri, 06 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>KI-Suche</category>
+    <category>Local SEO</category>
+    <description><![CDATA[Cyrus Shepard hat seine Website über die Search Console aus Googles KI-Übersichten und dem KI-Modus ausgeschlossen. Die KI-Impressionen hatten eine geschätzte Klickrate von 0,9 Prozent. Während des Ausschlusses sanken auch die normalen Klicks. Der Test umfasst nur eine Website. Melde dich deshalb nicht vorschnell aus KI-Funktionen ab, sondern prüfe zuerst deine eigenen Daten in der Search Console.]]></description>
+  </item>
   <item>
     <title>KI-Training sperren, in KI-Antworten bleiben: So geht’s</title>
     <link>https://lokalbesucher.de/news/2026-11-ki-training-robots-txt-google-bing-openai/</link>
