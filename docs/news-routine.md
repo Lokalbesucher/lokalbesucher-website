@@ -100,7 +100,7 @@ Datei `woche.json` (UTF-8) in genau dieser Form:
    "confirm": [],
    "slop": 8,
    "slop_note": "ein Satz Begründung",
-   "image_idea": "EIN englischer Satz, beschreibt nur die Szene (der Stil – klarer Comic wie Tim und Struppi – kommt automatisch dazu): eine Person mit einer klaren Handlung und einem sofort erkennbaren Gegenstand, der die Nachricht zeigt, z. B. 'a curious young man at an office desk looks at a large smartphone; above the screen several paper documents fly together and merge into one glowing summary card.' Wenig Requisiten, keine Schrift, keine Logos, keine Markennamen.",
+   "image_idea": "EIN englischer Satz, beschreibt nur die Szene (der Stil – klarer Comic wie Tim und Struppi – kommt automatisch dazu): eine Person mit einer klaren Handlung und einem sofort erkennbaren Gegenstand, der die Nachricht zeigt, z. B. 'a curious young man at an office desk looks at a large smartphone; above the screen several paper documents fly together and merge into one glowing summary card.' Keine Bild-Metaphern (Inseln, Schiffe, Ferngläser), das Motiv zeigt den Gegenstand der Nachricht selbst. Wenig Requisiten, keine Schrift, keine Logos, keine Markennamen.",
    "image_alt": "Comic: … (höchstens 125 Zeichen)",
    "image_caption": "deutsche Bildunterschrift, ein Satz"
   }
