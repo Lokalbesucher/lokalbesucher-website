@@ -245,7 +245,7 @@ ${nlBox(key || 'uebersicht')}      <p class="rss-hint">Meldungen abonnieren: <a 
 /* Newsletter-Anmeldung mit Double-Opt-in (Tobias, 08.11.2026). Backend functions/api/newsletter.js, Skript assets/js/newsletter.js.
    Der Einwilligungstext muss wörtlich zu EINWILLIGUNG in functions/_lib/newsletter.js passen. */
 const NL_EINWILLIGUNG = 'Ja, ich möchte die Lokalbesucher-News per E-Mail erhalten: Änderungen bei Google, KI-Suche, Meta und Co. für lokale Betriebe, in der Regel einmal pro Woche. Abmeldung jederzeit über den Link in jeder Mail.';
-export function nlBox(quelle, { h = 'h2', titel = 'Die News jede Woche in deinem Postfach', text = 'Was sich bei Google, KI-Suche und Meta ändert, eingeordnet für lokale Betriebe. Kompakt, mit Quelle, kostenlos.' } = {}) {
+export function nlBox(quelle, { h = 'h2', titel = 'Jeden Freitag die News in deinem Postfach', text = 'Was sich bei Google, KI-Suche und Meta ändert, eingeordnet für lokale Betriebe. Kompakt, mit Quelle, kostenlos, jeden Freitag.' } = {}) {
   const id = 'nl-' + quelle;
   return `
         <aside class="nl-box" aria-labelledby="${id}-t">
@@ -482,7 +482,7 @@ function redaktionPage() {
         <p>Schreib an <a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a> oder per <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank">WhatsApp</a>. Wir prüfen jede Meldung innerhalb eines Werktags und korrigieren sichtbar mit Datum.</p>
 
         <h2 id="abonnieren">Abonnieren</h2>
-        <p>Per Mail über den <a href="/newsletter/">Newsletter</a> (in der Regel einmal pro Woche), alle Meldungen als <a href="/news/feed.xml">RSS-Feed</a>, je Plattform und Thema unter <a href="/news/">lokalbesucher.de/news</a>. Kürzere Fassungen erscheinen auf <a href="https://www.linkedin.com/in/tobiasfrank/" rel="noopener noreferrer" target="_blank">LinkedIn</a> und im Google Unternehmensprofil von Lokalbesucher.</p>
+        <p>Per Mail über den <a href="/newsletter/">Newsletter</a> (jeden Freitag), alle Meldungen als <a href="/news/feed.xml">RSS-Feed</a>, je Plattform und Thema unter <a href="/news/">lokalbesucher.de/news</a>. Kürzere Fassungen erscheinen auf <a href="https://www.linkedin.com/in/tobiasfrank/" rel="noopener noreferrer" target="_blank">LinkedIn</a> und im Google Unternehmensprofil von Lokalbesucher.</p>
       </article>
     </div>
   </section>
@@ -522,7 +522,7 @@ function newsletterPage() {
     <div class="container">
       <article class="article">
         <p>Google ändert sein Unternehmensprofil im Wochentakt, Meta und Apple ziehen nach, und die KI-Suche verschiebt, wer überhaupt empfohlen wird. Der Lokalbesucher-Newsletter bringt dir die Änderungen, die für lokale Betriebe wirklich zählen, ins Postfach: datiert, mit Quelle und mit einer klaren Einordnung, was du daraus machst.</p>
-${nlBox('seite', { titel: 'Jetzt kostenlos abonnieren', text: 'In der Regel einmal pro Woche. Kein Spam, keine Weitergabe, Abmeldung mit einem Klick.' })}
+${nlBox('seite', { titel: 'Jetzt kostenlos abonnieren', text: 'Jeden Freitag um 9 Uhr. Kein Spam, keine Weitergabe, Abmeldung mit einem Klick.' })}
         <h2 id="was-du-bekommst">Was steht im Newsletter?</h2>
         <ul>
           <li><strong>Die wichtigsten Meldungen der Woche</strong> aus unserem <a href="/news/">News-Feed</a>: Google Unternehmensprofil, Bewertungen, Google Ads, Meta, Apple Maps, Bing und KI-Suche.</li>
@@ -541,7 +541,7 @@ ${nlBox('seite', { titel: 'Jetzt kostenlos abonnieren', text: 'In der Regel einm
     title: 'Newsletter: Lokales Marketing per Mail | Lokalbesucher',
     metaDesc: 'Der Lokalbesucher-Newsletter: Änderungen bei Google, KI-Suche, Meta und Apple Maps für lokale Betriebe, einmal pro Woche, kostenlos und mit Quelle.',
     h1: 'Die Lokalbesucher-News per Mail', crumb: 'Newsletter', tag: '',
-    heroSub: 'Einmal pro Woche das Wichtigste zu Google, KI-Suche und Meta für lokale Betriebe. Kostenlos, mit Quelle, jederzeit abbestellbar.',
+    heroSub: 'Jeden Freitag das Wichtigste zu Google, KI-Suche und Meta für lokale Betriebe. Kostenlos, mit Quelle, jederzeit abbestellbar.',
     date: '2026-11-08', dateNice: nice('2026-11-08'), cssExtra: CSS, graph, main
   });
 }

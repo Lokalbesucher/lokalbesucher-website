@@ -42,7 +42,7 @@ export async function onRequestPost({ request, env }) {
 <p style="font-size:20px;font-weight:bold;margin:0 0 14px">Ein Klick noch, dann bist du dabei.</p>
 <p>Du hast dich gerade für die Lokalbesucher-News angemeldet. Bitte bestätige kurz, dass diese Adresse dir gehört:</p>
 <p style="margin:22px 0"><a href="${esc(link)}" style="display:inline-block;background:#ffbd59;color:#0c0e1a;font-weight:bold;text-decoration:none;padding:14px 22px;border-radius:10px">Anmeldung bestätigen</a></p>
-<p>Danach bekommst du in der Regel einmal pro Woche die wichtigsten Änderungen bei Google, KI-Suche, Meta und Co., eingeordnet für lokale Betriebe von Tobias Frank.</p>
+<p>Danach bekommst du jeden Freitag die wichtigsten Änderungen bei Google, KI-Suche, Meta und Co., eingeordnet für lokale Betriebe von Tobias Frank.</p>
 <p style="color:#4f5967;font-size:14px">Du hast dich nicht angemeldet? Dann ignoriere diese Mail einfach. Ohne Bestätigung schicken wir dir nichts. Der Link gilt 7 Tage.</p>
 <p style="color:#4f5967;font-size:13px;margin-top:24px">Lokalbesucher GmbH · Karl-Breuing-Str. 2 · 45770 Marl · <a href="${SITE}/datenschutz/#newsletter" style="color:#4f5967">Datenschutz</a> · <a href="${SITE}/impressum/" style="color:#4f5967">Impressum</a></p></div>`;
   const text = `Ein Klick noch, dann bist du dabei.\n\nDu hast dich gerade für die Lokalbesucher-News angemeldet. Bitte bestätige hier:\n${link}\n\nDu hast dich nicht angemeldet? Dann ignoriere diese Mail einfach. Der Link gilt 7 Tage.\n\nLokalbesucher GmbH, Karl-Breuing-Str. 2, 45770 Marl`;
