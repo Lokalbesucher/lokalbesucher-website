@@ -80,6 +80,23 @@
     .ptable th{background:#111328;color:#e8eaf6;font-family:var(--font-head,Arial,Helvetica,sans-serif);font-size:.85rem}
     .tablewrap{overflow-x:auto}
   @media(max-width:400px){.btn{white-space:normal;text-align:center;max-width:100%}}
+    .nl-box{margin:2.5rem 0 1rem;padding:1.6rem 1.5rem;background:#111328;border:1px solid #1e2240;border-radius:16px;position:relative;overflow:hidden}
+    .nl-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0,rgba(255,189,89,.14),transparent 55%);pointer-events:none}
+    .nl-box h2{margin:0 0 .4rem;font-size:1.35rem}
+    .nl-box > p{margin:0 0 1rem;color:#b9bedd}
+    .nl-form label{display:block;font-size:.85rem;color:#b9bedd;margin-bottom:.35rem}
+    .nl-row{display:flex;gap:.6rem;flex-wrap:wrap}
+    .nl-row input{flex:1 1 220px;min-width:0;padding:.85rem 1rem;border-radius:10px;border:1px solid #2a2f55;background:#0c0e1a;color:#e8eaf6;font-size:1rem}
+    .nl-row input:focus-visible{outline:2px solid #ffbd59;outline-offset:2px}
+    .nl-row button{flex:0 0 auto;padding:.85rem 1.3rem;border:0;border-radius:10px;background:#ffbd59;color:#0c0e1a;font:700 1rem var(--font-head,Arial,Helvetica,sans-serif);cursor:pointer}
+    .nl-row button:disabled{opacity:.6;cursor:wait}
+    .nl-row button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .nl-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+    .nl-consent{font-size:.78rem;color:#8a90b8;margin:.7rem 0 0;line-height:1.5}
+    .nl-consent a{color:#b9bedd}
+    .nl-msg{margin:.6rem 0 0;font-size:.92rem;min-height:1.2em}
+    .nl-msg.ok{color:#3ecf8e}.nl-msg.err{color:#ff8a8a}.nl-msg:empty{margin:0;min-height:0}
+    .nl-form p{margin-bottom:0}
     .chips{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.75rem}
     .chips-label{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6b7099;margin-right:.25rem;min-width:5.5rem}
     .chip{display:inline-flex;align-items:center;padding:.42rem .9rem;border:1px solid #1e2240;border-radius:999px;font-size:.85rem;color:#b9bedd;background:#111328;transition:border-color .2s,color .2s}
@@ -373,7 +390,20 @@
           <li><time datetime="2026-10-28">28. Oktober 2026</time><a href="/news/2026-10-google-business-home-beta-usa-uk/">Google Business Home: Neue Zentrale, erst USA und UK</a></li>
           <li><time datetime="2026-10-27">27. Oktober 2026</time><a href="/news/2026-10-google-einsprueche-bewertungen-verzoegert/">Google: Einsprüche gegen Bewertungen dauern länger</a></li>
         </ul>
-        <p class="rss-hint">Alle Meldungen zu <a href="/news/google/">Google</a> und <a href="/news/bewertungen/">Bewertungen</a> · <a href="/news/feed.xml">RSS-Feed</a></p>
+        <p class="rss-hint">Alle Meldungen zu <a href="/news/google/">Google</a> und <a href="/news/bewertungen/">Bewertungen</a> · <a href="/news/feed.xml">RSS-Feed</a> · <a href="/newsletter/">Newsletter</a></p>
+
+        <aside class="nl-box" aria-labelledby="nl-artikel-t">
+          <h2 id="nl-artikel-t">Die News jede Woche in deinem Postfach</h2>
+          <p>Was sich bei Google, KI-Suche und Meta ändert, eingeordnet für lokale Betriebe. Kompakt, mit Quelle, kostenlos.</p>
+          <form class="nl-form" data-quelle="artikel" novalidate>
+            <label for="nl-artikel-mail">Deine E-Mail-Adresse</label>
+            <div class="nl-row"><input id="nl-artikel-mail" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="name@betrieb.de"><button type="submit">Kostenlos abonnieren</button></div>
+            <input class="nl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="nl-consent">Mit dem Klick auf „Kostenlos abonnieren“ erklärst du: Ja, ich möchte die Lokalbesucher-News per E-Mail erhalten: Änderungen bei Google, KI-Suche, Meta und Co. für lokale Betriebe, in der Regel einmal pro Woche. Abmeldung jederzeit über den Link in jeder Mail. Du bekommst zuerst eine Mail zur Bestätigung. Details in der <a href="/datenschutz/#newsletter">Datenschutzerklärung</a>.</p>
+            <p class="nl-msg" role="status" aria-live="polite"></p>
+          </form>
+        </aside>
+        <script src="/assets/js/newsletter.js?v=2026110801" defer></script>
 
         <div class="capsule" style="border-left-color:#4f82ff"><p><strong>Weiterlesen:</strong> <a href="/ratgeber/mehr-google-bewertungen-bekommen/">Mehr Google-Bewertungen bekommen</a> · <a href="/ratgeber/google-maps-top-3-ranking/">In Google Maps unter die Top 3</a></p></div>
 

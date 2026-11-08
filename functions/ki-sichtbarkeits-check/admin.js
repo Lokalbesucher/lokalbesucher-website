@@ -10,8 +10,9 @@
  * KI_ADMIN_PASSWORD (Pages → Einstellungen → Variablen und Geheimnisse).
  * Ohne gesetztes Secret bleibt die Seite geschlossen (fail-closed).
  *
- *   ?tab=checks | leads        Ansicht (Standard: leads)
- *   ?export=checks | leads     CSV-Download (alle Zeilen, neueste zuerst)
+ *   ?tab=checks | leads | newsletter   Ansicht (Standard: leads)
+ *   ?export=checks | leads | newsletter  CSV-Download (alle Zeilen, neueste zuerst)
+ * Newsletter: Tabelle newsletter (migrations/0002_newsletter.sql), Double-Opt-in über functions/api/newsletter.js.
  */
 
 const MAX_ROWS = 200;
@@ -143,7 +144,8 @@ async function stats(db) {
   return { c: c || {}, l: l || {} };
 }
 
-function page({ tab, s, rows, bySource }) {
+const NL_COLS = ['id', 'created_at', 'email', 'status', 'quelle', 'einwilligung', 'created_ip', 'confirmed_at', 'confirmed_ip', 'unsub_at'];
+function page({ tab, s, rows, bySource, nl }) {
   const n = (v) => (v == null ? 0 : v);
   const tile = (label, value, hint) =>
     `<div class="tile"><div class="v">${esc(value)}</div><div class="l">${esc(label)}</div>${hint ? `<div class="h">${esc(hint)}</div>` : ''}</div>`;
@@ -233,11 +235,16 @@ ${bySource.length ? `<ul class="src">${bySource.map(r => `<li>${esc(r.source)}: 
 <div class="bar">
   <a class="btn ${tab === 'leads' ? 'active' : ''}" href="?tab=leads">Anfragen</a>
   <a class="btn ${tab === 'checks' ? 'active' : ''}" href="?tab=checks">Checks</a>
-  <a class="btn export" href="?export=${tab}">CSV herunterladen (${tab === 'leads' ? 'Anfragen' : 'Checks'})</a>
+  <a class="btn ${tab === 'newsletter' ? 'active' : ''}" href="?tab=newsletter">Newsletter${nl ? ` (${n(nl.bestaetigt)})` : ''}</a>
+  <a class="btn export" href="?export=${tab}">CSV herunterladen (${tab === 'leads' ? 'Anfragen' : tab === 'newsletter' ? 'Newsletter' : 'Checks'})</a>
 </div>
 
 <div class="wrap">
-${tab === 'checks' ? `
+${tab === 'newsletter' ? `
+<table>
+  <thead><tr><th>Angemeldet</th><th>E-Mail</th><th>Status</th><th>Bestätigt</th><th>Seite</th></tr></thead>
+  <tbody>${rows.map(r => `<tr><td>${esc(fmtDate(r.created_at))}</td><td>${esc(r.email)}</td><td><span class="tag ${r.status === 'bestaetigt' ? 't-ok' : r.status === 'abgemeldet' ? 't-turnstile' : 't-ip-limit'}">${r.status === 'bestaetigt' ? 'bestätigt' : r.status === 'offen' ? 'wartet auf Bestätigung' : 'abgemeldet'}</span></td><td>${r.confirmed_at ? esc(fmtDate(r.confirmed_at)) : '–'}</td><td class="small">${esc(r.quelle || '')}</td></tr>`).join('') || empty}</tbody>
+</table>` : tab === 'checks' ? `
 <table>
   <thead><tr><th>Zeit</th><th>Status</th><th>Unternehmen</th><th>Stadt</th><th>Branche</th><th>Website</th><th>Score</th><th>ChatGPT</th><th>Claude</th><th>Gemini</th><th>Wettbewerber-Quellen</th><th>Land</th></tr></thead>
   <tbody>${checkRows || empty}</tbody>
@@ -268,8 +275,8 @@ export async function onRequestGet({ request, env }) {
   const headers = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' };
 
   try {
-    if (exp === 'checks' || exp === 'leads') {
-      const cols = exp === 'checks' ? CHECK_COLS : LEAD_COLS;
+    if (exp === 'checks' || exp === 'leads' || exp === 'newsletter') {
+      const cols = exp === 'checks' ? CHECK_COLS : exp === 'newsletter' ? NL_COLS : LEAD_COLS;
       const { results } = await env.KI_DB.prepare(`SELECT ${cols.join(', ')} FROM ${exp} ORDER BY id DESC`).all();
       const stamp = new Date().toISOString().slice(0, 10);
       return new Response(csv(results || [], cols), {
@@ -277,13 +284,14 @@ export async function onRequestGet({ request, env }) {
       });
     }
 
-    const tab = url.searchParams.get('tab') === 'checks' ? 'checks' : 'leads';
-    const [s, list, src] = await Promise.all([
+    const tab = ['checks', 'newsletter'].includes(url.searchParams.get('tab')) ? url.searchParams.get('tab') : 'leads';
+    const [s, list, src, nl] = await Promise.all([
       stats(env.KI_DB),
-      env.KI_DB.prepare(`SELECT ${(tab === 'checks' ? CHECK_COLS : LEAD_COLS).join(', ')} FROM ${tab} ORDER BY id DESC LIMIT ${MAX_ROWS}`).all(),
+      env.KI_DB.prepare(`SELECT ${(tab === 'checks' ? CHECK_COLS : tab === 'newsletter' ? NL_COLS : LEAD_COLS).join(', ')} FROM ${tab} ORDER BY id DESC LIMIT ${MAX_ROWS}`).all(),
       env.KI_DB.prepare('SELECT source, COUNT(*) AS n FROM leads GROUP BY source ORDER BY n DESC').all(),
+      env.KI_DB.prepare("SELECT SUM(status = 'bestaetigt') AS bestaetigt, SUM(status = 'offen') AS offen, SUM(status = 'abgemeldet') AS abgemeldet FROM newsletter").first().catch(() => null),
     ]);
-    return new Response(page({ tab, s, rows: list.results || [], bySource: src.results || [] }), {
+    return new Response(page({ tab, s, rows: list.results || [], bySource: src.results || [], nl }), {
       headers: { ...headers, 'Content-Type': 'text/html;charset=utf-8' },
     });
   } catch (e) {

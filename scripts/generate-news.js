@@ -50,6 +50,23 @@ const latest = ITEMS[0].date;
 
 /* ── Gemeinsames CSS für News-Seiten (inline, kein global.css-Bump nötig) ── */
 const CSS = `
+    .nl-box{margin:2.5rem 0 1rem;padding:1.6rem 1.5rem;background:#111328;border:1px solid #1e2240;border-radius:16px;position:relative;overflow:hidden}
+    .nl-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 100% 0,rgba(255,189,89,.14),transparent 55%);pointer-events:none}
+    .nl-box h2{margin:0 0 .4rem;font-size:1.35rem}
+    .nl-box > p{margin:0 0 1rem;color:#b9bedd}
+    .nl-form label{display:block;font-size:.85rem;color:#b9bedd;margin-bottom:.35rem}
+    .nl-row{display:flex;gap:.6rem;flex-wrap:wrap}
+    .nl-row input{flex:1 1 220px;min-width:0;padding:.85rem 1rem;border-radius:10px;border:1px solid #2a2f55;background:#0c0e1a;color:#e8eaf6;font-size:1rem}
+    .nl-row input:focus-visible{outline:2px solid #ffbd59;outline-offset:2px}
+    .nl-row button{flex:0 0 auto;padding:.85rem 1.3rem;border:0;border-radius:10px;background:#ffbd59;color:#0c0e1a;font:700 1rem var(--font-head,Arial,Helvetica,sans-serif);cursor:pointer}
+    .nl-row button:disabled{opacity:.6;cursor:wait}
+    .nl-row button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+    .nl-hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0}
+    .nl-consent{font-size:.78rem;color:#8a90b8;margin:.7rem 0 0;line-height:1.5}
+    .nl-consent a{color:#b9bedd}
+    .nl-msg{margin:.6rem 0 0;font-size:.92rem;min-height:1.2em}
+    .nl-msg.ok{color:#3ecf8e}.nl-msg.err{color:#ff8a8a}.nl-msg:empty{margin:0;min-height:0}
+    .nl-form p{margin-bottom:0}
     .chips{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-top:.75rem}
     .chips-label{font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6b7099;margin-right:.25rem;min-width:5.5rem}
     .chip{display:inline-flex;align-items:center;padding:.42rem .9rem;border:1px solid #1e2240;border-radius:999px;font-size:.85rem;color:#b9bedd;background:#111328;transition:border-color .2s,color .2s}
@@ -199,7 +216,7 @@ ${featured(items[0])}
       <div class="news-grid">
 ${items.slice(1).map(card).join('\n')}
       </div>
-      <p class="rss-hint">Meldungen abonnieren: <a href="${feed}">RSS-Feed${key ? ' „' + esc(catName(key)) + '"' : ''}</a>${key ? ' · <a href="/news/feed.xml">alle Meldungen</a>' : ''}. Wer schreibt und wie wir arbeiten: <a href="/news/redaktion/">Redaktion</a>. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a>${key && PLATFORMS[key] && key === 'google' ? ' und im <a href="/google-unternehmensprofil/">Leitfaden zum Google Unternehmensprofil</a>' : ''}.</p>
+${nlBox(key || 'uebersicht')}      <p class="rss-hint">Meldungen abonnieren: <a href="${feed}">RSS-Feed${key ? ' „' + esc(catName(key)) + '"' : ''}</a>${key ? ' · <a href="/news/feed.xml">alle Meldungen</a>' : ''}. Wer schreibt und wie wir arbeiten: <a href="/news/redaktion/">Redaktion</a>. Zeitlose Anleitungen findest du im <a href="/ratgeber/">Ratgeber</a>${key && PLATFORMS[key] && key === 'google' ? ' und im <a href="/google-unternehmensprofil/">Leitfaden zum Google Unternehmensprofil</a>' : ''}.</p>
     </div>
   </section>
 
@@ -225,6 +242,27 @@ ${items.slice(1).map(card).join('\n')}
 }
 
 /* ── Einzelne Meldung ─────────────────────────────────────────────────── */
+/* Newsletter-Anmeldung mit Double-Opt-in (Tobias, 08.11.2026). Backend functions/api/newsletter.js, Skript assets/js/newsletter.js.
+   Der Einwilligungstext muss wörtlich zu EINWILLIGUNG in functions/_lib/newsletter.js passen. */
+const NL_EINWILLIGUNG = 'Ja, ich möchte die Lokalbesucher-News per E-Mail erhalten: Änderungen bei Google, KI-Suche, Meta und Co. für lokale Betriebe, in der Regel einmal pro Woche. Abmeldung jederzeit über den Link in jeder Mail.';
+export function nlBox(quelle, { h = 'h2', titel = 'Die News jede Woche in deinem Postfach', text = 'Was sich bei Google, KI-Suche und Meta ändert, eingeordnet für lokale Betriebe. Kompakt, mit Quelle, kostenlos.' } = {}) {
+  const id = 'nl-' + quelle;
+  return `
+        <aside class="nl-box" aria-labelledby="${id}-t">
+          <${h} id="${id}-t">${titel}</${h}>
+          <p>${text}</p>
+          <form class="nl-form" data-quelle="${quelle}" novalidate>
+            <label for="${id}-mail">Deine E-Mail-Adresse</label>
+            <div class="nl-row"><input id="${id}-mail" type="email" name="email" autocomplete="email" inputmode="email" required placeholder="name@betrieb.de"><button type="submit">Kostenlos abonnieren</button></div>
+            <input class="nl-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="nl-consent">Mit dem Klick auf „Kostenlos abonnieren“ erklärst du: ${NL_EINWILLIGUNG} Du bekommst zuerst eine Mail zur Bestätigung. Details in der <a href="/datenschutz/#newsletter">Datenschutzerklärung</a>.</p>
+            <p class="nl-msg" role="status" aria-live="polite"></p>
+          </form>
+        </aside>
+        <script src="/assets/js/newsletter.js?v=2026110801" defer></script>
+`;
+}
+
 function newsPage(n) {
   const p = PLATFORMS[n.platform], t = TOPICS[n.topic];
   const others = ITEMS.filter(o => o !== n && (o.platform === n.platform || o.topic === n.topic)).slice(0, 4);
@@ -262,8 +300,8 @@ ${n.sources.map(x => `          <li><a href="${x.url}" rel="noopener noreferrer"
         <ul class="news-more">
 ${list.map(o => `          <li><time datetime="${o.date}">${nice(o.date)}</time><a href="${itemUrl(o)}">${esc(o.title)}</a></li>`).join('\n')}
         </ul>
-        <p class="rss-hint">Alle Meldungen zu <a href="${catUrl(n.platform)}">${esc(p.name)}</a> und <a href="${catUrl(n.topic)}">${esc(t.name)}</a> · <a href="/news/feed.xml">RSS-Feed</a></p>
-`,
+        <p class="rss-hint">Alle Meldungen zu <a href="${catUrl(n.platform)}">${esc(p.name)}</a> und <a href="${catUrl(n.topic)}">${esc(t.name)}</a> · <a href="/news/feed.xml">RSS-Feed</a> · <a href="/newsletter/">Newsletter</a></p>
+${nlBox('artikel')}`,
     faqs: n.faqs || [], faqTitle: n.faqTitle || 'Häufige Fragen',
     related: n.related || [],
     headExtra: rssLinks(n.platform) +
@@ -345,7 +383,7 @@ ${punkte}
 
 function sitemapBlock() {
   const u = (loc, lastmod, freq, prio) => `  <url>\n    <loc>${SITE}${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>`;
-  const out = [u('/news/', latest, 'daily', '0.8'), u('/news/redaktion/', latest, 'monthly', '0.4')];
+  const out = [u('/news/', latest, 'daily', '0.8'), u('/news/redaktion/', latest, 'monthly', '0.4'), u('/newsletter/', '2026-11-08', 'monthly', '0.5')];
   for (const k of catKeys.filter(has)) out.push(u(catUrl(k), inCat(k)[0].date, 'weekly', '0.6'));
   for (const n of ITEMS) out.push(u(itemUrl(n), n.date, 'monthly', '0.6'));
   return out.join('\n\n');
@@ -444,7 +482,7 @@ function redaktionPage() {
         <p>Schreib an <a href="mailto:info@lokalbesucher.de">info@lokalbesucher.de</a> oder per <a href="https://wa.me/4915122358883" rel="noopener noreferrer" target="_blank">WhatsApp</a>. Wir prüfen jede Meldung innerhalb eines Werktags und korrigieren sichtbar mit Datum.</p>
 
         <h2 id="abonnieren">Abonnieren</h2>
-        <p>Alle Meldungen als <a href="/news/feed.xml">RSS-Feed</a>, je Plattform und Thema unter <a href="/news/">lokalbesucher.de/news</a>. Kürzere Fassungen erscheinen auf <a href="https://www.linkedin.com/in/tobiasfrank/" rel="noopener noreferrer" target="_blank">LinkedIn</a> und im Google Unternehmensprofil von Lokalbesucher.</p>
+        <p>Per Mail über den <a href="/newsletter/">Newsletter</a> (in der Regel einmal pro Woche), alle Meldungen als <a href="/news/feed.xml">RSS-Feed</a>, je Plattform und Thema unter <a href="/news/">lokalbesucher.de/news</a>. Kürzere Fassungen erscheinen auf <a href="https://www.linkedin.com/in/tobiasfrank/" rel="noopener noreferrer" target="_blank">LinkedIn</a> und im Google Unternehmensprofil von Lokalbesucher.</p>
       </article>
     </div>
   </section>
@@ -455,6 +493,56 @@ function redaktionPage() {
     metaDesc: 'Wer die Lokalbesucher News schreibt, woher die Fakten kommen, was wir nicht tun und wie du Fehler meldest. Verantwortlich: Tobias Frank, Lokalbesucher GmbH, Marl.',
     h1: 'Wer die Lokalbesucher News schreibt und wie wir arbeiten', crumb: 'Redaktion', tag: '',
     date: latest, dateNice: nice(latest), headExtra: rssLinks(), cssExtra: CSS, graph, main
+  });
+}
+
+/* ── /newsletter/ ─────────────────────────────────────────────────────── */
+function newsletterPage() {
+  const url = SITE + '/newsletter/';
+  const graph = (g) => g; /* Standard-Graph aus page() (Organisation, Website, Breadcrumb) */
+  const main = `
+  <section class="page-hero grid-bg" aria-labelledby="nl-title">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="/news/">News</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Newsletter</span>
+      </nav>
+      <div style="max-width:820px">
+        <span class="section-label">Newsletter</span>
+        <h1 id="nl-title" style="font-size:clamp(1.875rem,5vw,3rem);font-weight:800;margin-bottom:1rem">Die Lokalbesucher-News<br>jede Woche per Mail</h1>
+        <p style="font-size:1.05rem;color:#7c83aa;max-width:640px;line-height:1.75">Das Wichtigste zu Google, KI-Suche und Meta für lokale Betriebe. Kostenlos, mit Quelle, jederzeit abbestellbar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-label="Newsletter" style="padding-top:.5rem">
+    <div class="container">
+      <article class="article">
+        <p>Google ändert sein Unternehmensprofil im Wochentakt, Meta und Apple ziehen nach, und die KI-Suche verschiebt, wer überhaupt empfohlen wird. Der Lokalbesucher-Newsletter bringt dir die Änderungen, die für lokale Betriebe wirklich zählen, ins Postfach: datiert, mit Quelle und mit einer klaren Einordnung, was du daraus machst.</p>
+${nlBox('seite', { titel: 'Jetzt kostenlos abonnieren', text: 'In der Regel einmal pro Woche. Kein Spam, keine Weitergabe, Abmeldung mit einem Klick.' })}
+        <h2 id="was-du-bekommst">Was steht im Newsletter?</h2>
+        <ul>
+          <li><strong>Die wichtigsten Meldungen der Woche</strong> aus unserem <a href="/news/">News-Feed</a>: Google Unternehmensprofil, Bewertungen, Google Ads, Meta, Apple Maps, Bing und KI-Suche.</li>
+          <li><strong>Was das für deinen Betrieb heißt</strong>, in einem Satz je Meldung, geschrieben von Tobias Frank.</li>
+          <li><strong>Fristen und neue Regeln</strong>, bevor sie dich Sichtbarkeit oder Geld kosten.</li>
+        </ul>
+        <h2 id="wie-anmelden">Wie funktioniert die Anmeldung?</h2>
+        <p>Du gibst deine E-Mail-Adresse ein und bekommst sofort eine Mail mit dem Knopf „Anmeldung bestätigen“. Erst nach diesem Klick bist du eingetragen (Double-Opt-in). Jede Ausgabe enthält unten einen Link zum Abmelden. Wie wir mit deinen Daten umgehen, steht in der <a href="/datenschutz/#newsletter">Datenschutzerklärung</a>.</p>
+      </article>
+    </div>
+  </section>
+`;
+  return page({
+    url, ogType: 'website',
+    parent: { name: 'News', href: '/news/' },
+    title: 'Newsletter: Lokales Marketing per Mail | Lokalbesucher',
+    metaDesc: 'Der Lokalbesucher-Newsletter: Änderungen bei Google, KI-Suche, Meta und Apple Maps für lokale Betriebe, einmal pro Woche, kostenlos und mit Quelle.',
+    h1: 'Die Lokalbesucher-News per Mail', crumb: 'Newsletter', tag: '',
+    heroSub: 'Einmal pro Woche das Wichtigste zu Google, KI-Suche und Meta für lokale Betriebe. Kostenlos, mit Quelle, jederzeit abbestellbar.',
+    date: '2026-11-08', dateNice: nice('2026-11-08'), cssExtra: CSS, graph, main
   });
 }
 
@@ -507,6 +595,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
   for (const n of ITEMS) write(`news/${n.slug}/index.html`, newsPage(n));
 
   write('news/redaktion/index.html', redaktionPage());
+  write('newsletter/index.html', newsletterPage());
   write('sitemap-news.xml', newsSitemap());
 
   /* Sitemap */
