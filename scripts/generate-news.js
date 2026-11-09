@@ -357,7 +357,7 @@ ${items.map(n => `  <item>
 function homeBlock() {
   const drei = ITEMS.slice(0, 3);
 
-  const folien = drei.map((n, i) => `          <a class="hn-slide" href="/news/${n.slug}/" role="group" aria-roledescription="Meldung" aria-label="${i + 1} von ${drei.length}: ${esc(n.title)}">
+  const folien = drei.map((n, i) => `          <a class="hn-slide" href="/news/${n.slug}/" aria-label="${i + 1} von ${drei.length}: ${esc(n.title)}">
             <img src="${n.image || '/assets/images/og-lokalbesucher.png'}" alt="" width="1200" height="630" loading="lazy" decoding="async">
             <div class="hn-body">
               <div class="hn-meta">${i === 0 ? '<span class="hn-chip">Neu</span>' : ''}<time datetime="${n.date}">${nice(n.date)}</time></div>
