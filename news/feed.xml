@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Fri, 06 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>Google Maps: Nachrichten-Button jetzt neben „Anrufen“</title>
+    <link>https://lokalbesucher.de/news/2026-11-google-maps-nachrichten-button-neben-anrufen/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-google-maps-nachrichten-button-neben-anrufen/</guid>
+    <pubDate>Mon, 09 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Google</category>
+    <category>Unternehmensprofile</category>
+    <description><![CDATA[Google zeigt in der Maps-App für Android und iOS einen gut sichtbaren Nachrichten-Button direkt neben „Anrufen“. Bisher lag der Chat tief im Profil. Der Button führt zu dem Kanal, den du im Unternehmensprofil hinterlegt hast: WhatsApp oder SMS. Prüfe deshalb jetzt, ob dein Chat-Link stimmt. Die Verfügbarkeit in Deutschland nennt Google nicht genau.]]></description>
+  </item>
   <item>
     <title>Raus aus KI-Übersichten: Test zeigt weniger Klicks</title>
     <link>https://lokalbesucher.de/news/2026-11-ki-uebersichten-opt-out-weniger-klicks/</link>
