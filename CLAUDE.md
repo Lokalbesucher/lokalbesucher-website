@@ -57,6 +57,7 @@ Migration von WordPress (TheGem/Elementor) zu purem HTML — kein Framework, kei
 - Schema.org JSON-LD auf jeder Seite — mindestens: Organization, WebSite, BreadcrumbList
 - NAP konsistent auf jeder Seite im Footer
 - Canonical Tags, Open Graph, Twitter Cards auf jeder Seite
+- **Social-Vorschaubilder (seit 2026-11-09):** jede Seite hat ein eigenes Bild `assets/images/og/<slug>.jpg` (1200×630, JPG für WhatsApp) im Look ihres Seitenkopfs: Rubrik + H1 der Seite links, passendes Motiv rechts (Maps-Ergebnis, Bewertungen, KI-Chat, Anzeige, Team …). Erzeugt mit `npm run og` (Playwright, lokal, einmalig `npx playwright install chromium`; `npm run og -- faq` nur eine Seite). Das Skript `scripts/generate-og.mjs` liest H1/Rubrik aus der fertigen Seite, rendert und trägt `og:image`/`twitter:image` mit `?v=<Hash>` ein; Seite → Motiv steht oben in `SEITEN`. **Neue Seite oder neue H1 → Eintrag in `SEITEN` ergänzen und `npm run og` laufen lassen.** Ratgeber/News nehmen das Bild über `ogBild()` (`scripts/og-bild.js`) automatisch; Meldungen mit Comic behalten ihr Comic. `og-lokalbesucher.png` ist nur noch Rückfall.
 - GEO-Optimierung: faktendichte, präzise Texte die LLMs direkt als Quelle nutzen
 
 ### 3.4 Conversion First

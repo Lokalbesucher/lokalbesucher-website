@@ -7,10 +7,14 @@
     "download-images": "node scripts/download-images.js",
     "download-fonts": "node scripts/download-fonts.js",
     "ai-check": "node scripts/ai-visibility-check.js",
-    "news": "node scripts/generate-news.js && node scripts/generate-gup-hub.js"
+    "news": "node scripts/generate-news.js && node scripts/generate-gup-hub.js",
+    "og": "node scripts/generate-og.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",
     "sharp": "^0.33.4"
+  },
+  "devDependencies": {
+    "playwright": "^1.65.0"
   }
 }

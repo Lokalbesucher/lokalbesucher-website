@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
+import { ogBild } from './og-bild.js';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const V = '2026091601';
@@ -13,6 +14,8 @@ const stripTags = h => h.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace
 
 export function page(a) {
   const url = a.url || ('https://lokalbesucher.de/ratgeber/' + a.slug + '/');
+  // eigenes Vorschaubild (Meldungs-Comic oder scripts/generate-og.mjs), sonst das allgemeine
+  const ogImg = a.ogImage || ogBild(url);
   const parent = a.parent || { name: 'Ratgeber', href: '/ratgeber/' };
   const graph = {
     '@context': 'https://schema.org',
@@ -81,7 +84,7 @@ ${authorCard.replace('max-width:680px', 'max-width:none')}      </div>
   <meta property="og:url"         content="${url}">
   <meta property="og:title"       content="${a.title.replace(' | Lokalbesucher', '')}">
   <meta property="og:description" content="${a.metaDesc}">
-  <meta property="og:image"       content="${a.ogImage || a.image || OG_IMG}">${a.ogImage ? `
+  <meta property="og:image"       content="${ogImg || a.image || OG_IMG}">${ogImg ? `
   <meta property="og:image:type"  content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">` : ''}
@@ -91,7 +94,7 @@ ${authorCard.replace('max-width:680px', 'max-width:none')}      </div>
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="${a.title.replace(' | Lokalbesucher', '')}">
   <meta name="twitter:description" content="${a.metaDesc}">
-  <meta name="twitter:image"       content="${a.ogImage || a.image || OG_IMG}">
+  <meta name="twitter:image"       content="${ogImg || a.image || OG_IMG}">
 
   <link rel="preload" href="/assets/fonts/dm-sans-400-v2.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/css/global.css?v=${V}" as="style">
