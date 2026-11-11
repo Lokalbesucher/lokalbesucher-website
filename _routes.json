@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "include": [
+    "/api/*",
+    "/ki-sichtbarkeits-check/admin", "/ki-sichtbarkeits-check/admin/*",
+    "/newsletter/abmelden", "/newsletter/abmelden/*",
+    "/newsletter/bestaetigen", "/newsletter/bestaetigen/*",
+    "/CLAUDE.md", "/claude.md", "/wrangler.toml", "/package.json", "/package-lock.json", "/.gitignore",
+    "/docs", "/docs/*", "/scripts", "/scripts/*", "/migrations", "/migrations/*", "/tmp", "/tmp/*",
+    "/.github", "/.github/*", "/functions", "/functions/*", "/node_modules", "/node_modules/*"
+  ],
+  "exclude": []
+}

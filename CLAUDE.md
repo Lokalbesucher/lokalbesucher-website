@@ -307,6 +307,9 @@ html oder body.
 - `/home/faq/` → `/faq/` 301 (Redirect-Loop-Bug fixen)
 - Alle alten WordPress-URLs → neue URLs 301
 
+### Interne Dateien sperren (seit 2026-11-11)
+Pages veröffentlicht das ganze Repo (`pages_build_output_dir = "."`). Bis 11.11.2026 waren deshalb `CLAUDE.md`, `docs/`, `scripts/`, `migrations/`, `tmp/`, `.github/`, `wrangler.toml` und `package.json` öffentlich abrufbar. Jetzt gibt `functions/_middleware.js` dort 404 (Seite `404.html`, `noindex`). **Ausnahme:** `docs/news-regeln.md` und `docs/news-routine.md` bleiben erreichbar (mit `X-Robots-Tag: noindex`), weil die News-Routine sie per curl von der Live-Seite liest. Die Middleware läuft nur auf den Pfaden in `_routes.json` – **neue Function-Pfade oder neue interne Ordner dort eintragen**, sonst läuft die Function nicht bzw. der Ordner ist öffentlich. Achtung: Das GitHub-Repo selbst ist öffentlich, dort ist alles weiter lesbar.
+
 ---
 
 ## 8. PRODUKT — NUR ULTIMATE PAKET!
