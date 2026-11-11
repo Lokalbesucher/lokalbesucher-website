@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Tue, 10 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 11 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>ChatGPT baut ein Unternehmensprofil mit Statistiken</title>
+    <link>https://lokalbesucher.de/news/2026-11-chatgpt-unternehmensprofil-business-hub-in-arbeit/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-chatgpt-unternehmensprofil-business-hub-in-arbeit/</guid>
+    <pubDate>Wed, 11 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>KI-Suche</category>
+    <category>Unternehmensprofile</category>
+    <description><![CDATA[OpenAI entwickelt laut einem Bericht vom 06.11.2026 einen Business Hub für ChatGPT. Firmen sollen ihr Profil beanspruchen, Produkte und Angaben pflegen und sehen, wie oft sie in Antworten erscheinen und angeklickt werden. Die Funktion ist noch nicht gestartet, OpenAI hat sie nicht offiziell angekündigt. Für Deutschland gibt es keinen Termin.]]></description>
+  </item>
   <item>
     <title>KI-Modus: Google bucht Handwerker direkt, erst in den USA</title>
     <link>https://lokalbesucher.de/news/2026-11-google-ki-modus-handwerker-direkt-buchen-usa/</link>

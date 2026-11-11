@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/unternehmensprofile/</link>
   <description>Einträge, Verifizierung, Richtlinien, neue Funktionen.</description>
   <language>de-de</language>
-  <lastBuildDate>Mon, 09 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 11 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/unternehmensprofile/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Unternehmensprofile</title><link>https://lokalbesucher.de/news/unternehmensprofile/</link></image>
+  <item>
+    <title>ChatGPT baut ein Unternehmensprofil mit Statistiken</title>
+    <link>https://lokalbesucher.de/news/2026-11-chatgpt-unternehmensprofil-business-hub-in-arbeit/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-chatgpt-unternehmensprofil-business-hub-in-arbeit/</guid>
+    <pubDate>Wed, 11 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>KI-Suche</category>
+    <category>Unternehmensprofile</category>
+    <description><![CDATA[OpenAI entwickelt laut einem Bericht vom 06.11.2026 einen Business Hub für ChatGPT. Firmen sollen ihr Profil beanspruchen, Produkte und Angaben pflegen und sehen, wie oft sie in Antworten erscheinen und angeklickt werden. Die Funktion ist noch nicht gestartet, OpenAI hat sie nicht offiziell angekündigt. Für Deutschland gibt es keinen Termin.]]></description>
+  </item>
   <item>
     <title>Google Maps: Nachrichten-Button jetzt neben „Anrufen“</title>
     <link>https://lokalbesucher.de/news/2026-11-google-maps-nachrichten-button-neben-anrufen/</link>
