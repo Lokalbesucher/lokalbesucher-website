@@ -952,5 +952,48 @@
   ],
   "social": "/assets/images/news/chatgpt-unternehmensprofil-business-hub-in-arbeit-social.jpg",
   "image": "/assets/images/news/chatgpt-unternehmensprofil-business-hub-in-arbeit-og.webp"
+ },
+ {
+  "slug": "2026-11-microsoft-clarity-brand-agents-lokale-betriebe",
+  "date": "2026-11-12",
+  "platform": "bing-places",
+  "topic": "conversion-optimierung",
+  "title": "Microsoft: KI-Agent bucht Termine für lokale Betriebe",
+  "headline": "Kostenloser KI-Agent für deine Website: Microsoft lässt Kunden über Clarity Termine bei lokalen Betrieben buchen",
+  "metaDesc": "Microsoft erweitert die Brand Agents in Clarity auf lokale Betriebe: Ein KI-Agent beantwortet Fragen und bucht Termine. Was das in Deutschland heißt.",
+  "teaser": "Microsoft bietet lokalen Betrieben über sein kostenloses Analyse-Werkzeug Clarity einen KI-Assistenten für die eigene Website an. Er soll Fragen beantworten und Termine direkt buchen. Gleichzeitig zeigt Microsoft, wie schnell KI-Agenten auf Websites zunehmen.",
+  "summary": "Microsoft hat am 04.11.2026 die <strong>Brand Agents in Clarity auf lokale Betriebe erweitert</strong>. Ein KI-Assistent auf der Website erklärt Leistungen und <strong>bucht Termine</strong> über angebundene Werkzeuge wie Calendly, Square oder HubSpot. Starten können zunächst <strong>berechtigte WordPress-Seiten</strong>. In Deutschland braucht Clarity in der Regel eine <strong>Einwilligung im Cookie-Banner</strong>.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/microsoft-clarity-brand-agents-lokale-betriebe-2026.webp\" alt=\"Comic: freundlicher Roboter am Empfang trägt nachts einen Termin in einen großen Kalender ein\" width=\"928\" height=\"518\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">Microsofts KI-Assistent soll auf der Website auch nachts Termine buchen.</figcaption>\n        </figure>\n<p>Ein Kunde schreibt abends um zehn auf der Website eines Sanitärbetriebs: „Unter meiner Spüle tropft es.“ Ein KI-Assistent erkennt die passende Leistung und bietet direkt einen Termin an. Genau dieses Beispiel nennt Microsoft in einer Ankündigung vom 04.11.2026. Über das kostenlose Analyse-Werkzeug Clarity können lokale Betriebe jetzt einen solchen Assistenten auf ihrer Website einsetzen. Zugleich meldet Microsoft, dass sich die Besuche von KI-Agenten auf Websites binnen drei Wochen fast verdoppelt haben.</p>\n<h2 id=\"was-ist-passiert\">Was ist passiert?</h2>\n<p>Im Clarity-Blog schreibt Microsoft: „we’re excited to expand Brand Agents to local businesses.“ Brand Agents sind KI-Assistenten, die bisher vor allem Online-Shops als Einkaufsberater nutzten. Für lokale Betriebe sollen sie erklären, was angeboten wird, die passende Leistung finden und „take the next step to book“. Dafür verbinden sie sich mit Buchungs- und Kundenwerkzeugen wie Square, Jobber, HubSpot, Calendly, Housecall Pro und Salesforce.</p>\n<p>Starten können laut Microsoft zunächst „eligible WordPress businesses“: Clarity installieren, „Clarity with Brand Agents“ wählen, den Agenten veröffentlichen und ein unterstütztes Kundensystem anbinden. Neu ist außerdem ein Bericht, der zeigt, welche KI-Agenten eine Website besuchen und was sie dort tun, etwa Formulare ausfüllen oder Termine buchen. Für Online-Händler mit Shopify oder WooCommerce können Produkte zudem in Microsoft Copilot und Bing erscheinen.</p>\n<p>Mit sogenannten Simulationen lässt sich laut Microsoft zudem testen, ob ein Agent eine Aufgabe auf der Website erledigen kann, bevor ein echter Kunde scheitert. Die Simulationen zeigen, ob die Aufgabe gelang, wie lange sie dauerte und wie viele Schritte nötig waren. Microsoft startet damit bei Handel und Reisen und will weitere Abläufe ergänzen.</p>\n<h2 id=\"welche-zahlen-gibt-es\">Welche Zahlen gibt es?</h2>\n<div class=\"statbox\"><div><div class=\"n\">2 Mio.</div><p>wöchentliche Sitzungen von KI-Agenten zählte Clarity zuletzt, fast doppelt so viele wie drei Wochen zuvor (Microsoft Clarity, 04.11.2026).</p></div><div><div class=\"n\">230.511</div><p>Projekte hat Microsoft für die Analyse ausgewertet, mit 5,23 Mio. Agenten-Sitzungen vom 13.08. bis 09.09.2026 (Microsoft Clarity).</p></div><div><div class=\"n\">6</div><p>Buchungs- und Kundenwerkzeuge nennt Microsoft als Anbindung, darunter Calendly, Square und HubSpot (Microsoft Clarity, 04.11.2026).</p></div></div>\n<p>Die Zahlen beziehen sich auf Websites, die Clarity nutzen, und auf Agenten von OpenAI, Google und Anthropic, die Clarity erkennt. Sie zeigen einen Trend, keine Marktgröße für Deutschland.</p>\n<h2 id=\"wer-gewinnt\">Wer gewinnt?</h2>\n<p>Betriebe mit WordPress-Website und Online-Kalender, die abends und am Wochenende Anfragen verlieren. Für sie kann ein Assistent, der rund um die Uhr Termine anbietet, verpasste Anfragen auffangen. Microsoft gewinnt Daten über Websites und eine stärkere Rolle für Copilot und Bing.</p>\n<h2 id=\"wer-verliert-am-meisten\">Wer verliert am meisten?</h2>\n<p>Lokale Betriebe, deren Website weder Leistungen noch freie Termine klar zeigt. Ein KI-Agent kann nur buchen, was er findet. Wer den Assistenten unbedacht einbaut, riskiert außerdem Ärger mit dem Datenschutz: Clarity zeichnet Sitzungen auf, dafür ist nach deutschem Recht in der Regel eine Einwilligung der Besucher nötig. Ob die Brand Agents für deutsche Betriebe schon freigeschaltet sind, sagt Microsoft nicht.</p>\n<h2 id=\"wie-koennen-lokale-unternehmen-reagieren\">Wie können lokale Unternehmen reagieren?</h2>\n<ul><li><strong>Erstens:</strong> Prüfen, ob Website und Kalender zu den genannten Anbindungen passen.</li><li><strong>Zweitens:</strong> Vor dem Einbau mit dem Datenschutzbeauftragten klären, wie Clarity im Cookie-Banner abgefragt wird.</li><li><strong>Drittens:</strong> Leistungen, Preise und Einsatzgebiet auf der Website so beschreiben, dass ein Agent sie versteht.</li><li><strong>Viertens:</strong> Testweise selbst einen Termin über den Assistenten buchen, bevor er für Kunden live geht.</li></ul>\n<p>Die Website wird damit zur Rezeption, die nie Feierabend macht.</p>",
+  "fazit": "Microsoft bietet lokalen Betrieben über Clarity einen kostenlosen KI-Assistenten an, der auf der Website Fragen beantwortet und Termine bucht. Wer ihn nutzen will, sollte zuerst Datenschutz und Kalenderanbindung klären.",
+  "impact": "Mit WordPress und Online-Kalender kannst du Terminanfragen künftig auch nachts per KI annehmen, brauchst dafür aber eine saubere Einwilligung.",
+  "sources": [
+   {
+    "label": "Microsoft Clarity Blog, Agents act, LLMs recommend, People browse: Clarity connects all three, 04.11.2026, abgerufen am 08.11.2026",
+    "url": "https://clarity.microsoft.com/blog/clarity-connects-agents-LLMs-people/"
+   },
+   {
+    "label": "Search Engine Roundtable, Microsoft Clarity Gains Agentic Analytics, Ask Clarity and More, 04.11.2026, abgerufen am 08.11.2026",
+    "url": "https://www.seroundtable.com/microsoft-clarity-gains-agentic-analytics-and-ask-clarity-42449.html"
+   }
+  ],
+  "keywords": [
+   "Microsoft Clarity Brand Agents",
+   "KI-Agent Website",
+   "Online-Terminbuchung",
+   "Copilot lokale Unternehmen",
+   "KI-Agenten Website"
+  ],
+  "related": [
+   {
+    "href": "/ratgeber/ki-sichtbarkeit-lokale-unternehmen/",
+    "label": "KI-Sichtbarkeit für lokale Unternehmen"
+   },
+   {
+    "href": "/ki-sichtbarkeits-check/",
+    "label": "KI-Sichtbarkeits-Check"
+   }
+  ],
+  "social": "/assets/images/news/microsoft-clarity-brand-agents-lokale-betriebe-social.jpg",
+  "image": "/assets/images/news/microsoft-clarity-brand-agents-lokale-betriebe-og.webp"
  }
 ]

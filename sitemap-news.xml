@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://lokalbesucher.de/news/2026-11-microsoft-clarity-brand-agents-lokale-betriebe/</loc>
+    <news:news>
+      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
+      <news:publication_date>2026-11-12T08:00:00+02:00</news:publication_date>
+      <news:title>Microsoft: KI-Agent bucht Termine für lokale Betriebe</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://lokalbesucher.de/news/2026-11-chatgpt-unternehmensprofil-business-hub-in-arbeit/</loc>
     <news:news>
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
@@ -14,14 +22,6 @@
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
       <news:publication_date>2026-11-10T08:00:00+02:00</news:publication_date>
       <news:title>KI-Modus: Google bucht Handwerker direkt, erst in den USA</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-11-google-maps-nachrichten-button-neben-anrufen/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-11-09T08:00:00+02:00</news:publication_date>
-      <news:title>Google Maps: Nachrichten-Button jetzt neben „Anrufen“</news:title>
     </news:news>
   </url>
 </urlset>
