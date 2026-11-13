@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://lokalbesucher.de/news/2026-11-whatsapp-events-einladungen-ohne-konto/</loc>
+    <news:news>
+      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
+      <news:publication_date>2026-11-13T08:00:00+02:00</news:publication_date>
+      <news:title>WhatsApp-Events: Einladungen jetzt auch ohne Konto</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://lokalbesucher.de/news/2026-11-microsoft-clarity-brand-agents-lokale-betriebe/</loc>
     <news:news>
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
@@ -14,14 +22,6 @@
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
       <news:publication_date>2026-11-11T08:00:00+02:00</news:publication_date>
       <news:title>ChatGPT baut ein Unternehmensprofil mit Statistiken</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-11-google-ki-modus-handwerker-direkt-buchen-usa/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-11-10T08:00:00+02:00</news:publication_date>
-      <news:title>KI-Modus: Google bucht Handwerker direkt, erst in den USA</news:title>
     </news:news>
   </url>
 </urlset>
