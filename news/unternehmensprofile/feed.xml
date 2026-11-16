@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/unternehmensprofile/</link>
   <description>Einträge, Verifizierung, Richtlinien, neue Funktionen.</description>
   <language>de-de</language>
-  <lastBuildDate>Wed, 11 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 16 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/unternehmensprofile/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Unternehmensprofile</title><link>https://lokalbesucher.de/news/unternehmensprofile/</link></image>
+  <item>
+    <title>ChatGPT-Profil: Betriebe können ihren Eintrag beanspruchen</title>
+    <link>https://lokalbesucher.de/news/2026-11-chatgpt-business-hub-gestartet-profil-beanspruchen/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-chatgpt-business-hub-gestartet-profil-beanspruchen/</guid>
+    <pubDate>Mon, 16 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>KI-Suche</category>
+    <category>Unternehmensprofile</category>
+    <description><![CDATA[OpenAI hat am 10.11.2026 „Businesses in ChatGPT“ als Beta gestartet. Über den Business Hub beanspruchen Betriebe ihren Eintrag, bestätigt per SMS, Anruf auf die Hauptnummer oder DNS-Eintrag. Danach pflegen sie ihre Angaben und sehen Nennungen und Website-Klicks. Beanspruchen können berechtigte Betriebe überall, wo ChatGPT verfügbar ist. Die Business Agents gibt es vorerst nur in den USA.]]></description>
+  </item>
   <item>
     <title>ChatGPT baut ein Unternehmensprofil mit Statistiken</title>
     <link>https://lokalbesucher.de/news/2026-11-chatgpt-unternehmensprofil-business-hub-in-arbeit/</link>
