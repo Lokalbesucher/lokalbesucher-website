@@ -1179,5 +1179,52 @@
   ],
   "social": "/assets/images/news/google-suche-gemini-4-hydrogen-ki-antworten-social.jpg",
   "image": "/assets/images/news/google-suche-gemini-4-hydrogen-ki-antworten-og.webp"
+ },
+ {
+  "slug": "2026-11-chatgpt-ads-regionen-ziel-cpa-max-gebot-endet",
+  "date": "2026-11-19",
+  "platform": "ki-suche",
+  "topic": "werbeanzeigen",
+  "title": "ChatGPT-Werbung: Regionen wählbar, Max-Gebot endet 2027",
+  "headline": "ChatGPT-Werbung nach Regionen: Produktanzeigen lassen sich jetzt im eigenen Land eingrenzen – und ab 1. Januar fällt das Max-Gebot weg",
+  "metaDesc": "OpenAI erlaubt bei ChatGPT-Produktanzeigen jetzt Regionen innerhalb eines Landes und neue Ziel-Kosten. Max Bid und Max CPC enden am 01.01.2027.",
+  "teaser": "OpenAI hat seinen Anzeigenkunden diese Woche vier Neuerungen gemeldet. Für lokale Händler zählt vor allem eine: Produkt-Feed-Kampagnen lassen sich jetzt auf Regionen innerhalb eines Landes begrenzen.",
+  "summary": "OpenAI hat Werbetreibenden am <strong>12.11.2026</strong> mehrere Neuerungen für ChatGPT-Anzeigen gemeldet. Produkt-Feed-Kampagnen lassen sich jetzt auf <strong>Regionen innerhalb eines Landes</strong> ausrichten. Neue Kampagnen steuern über Ziel-CPA oder Ziel-CPC. Die Gebotsarten Max Bid und Max CPC enden für bestehende Kampagnen am <strong>01.01.2027</strong>. Wer in ChatGPT wirbt, sollte seine Kampagnen bis dahin umstellen.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/chatgpt-ads-regionen-ziel-cpa-max-gebot-endet-2026.webp\" alt=\"Comic: Fahrradhändler markiert auf einer Landkarte seine Region, daneben ein Smartphone mit Chatfenster\" width=\"928\" height=\"518\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">ChatGPT-Produktanzeigen lassen sich jetzt auf Regionen innerhalb eines Landes begrenzen.</figcaption>\n        </figure>\n<p>Ein Fahrradladen in Bochum, der seine E-Bikes in ChatGPT bewirbt, zahlte bisher auch für Interessenten in Flensburg. OpenAI ändert das gerade. In der wöchentlichen Update-Mail an Werbetreibende kündigte das Unternehmen in dieser Woche an, dass Produkt-Feed-Kampagnen sich auf Regionen innerhalb eines Landes begrenzen lassen. Für lokale Händler macht das ChatGPT-Werbung zum ersten Mal planbar, weil Streuverluste schrumpfen.</p>\n<h2 id=\"was-ist-passiert\">Was hat OpenAI an den ChatGPT-Anzeigen geändert?</h2>\n<p>Search Engine Roundtable hat die Mail am 12.11.2026 mit Screenshot veröffentlicht. Darin nennt OpenAI vier Punkte. Die automatische Gebotsstrategie heißt „Maximize Results“ ab sofort „Intelligent Bidding“. Neue Kampagnen können mit Ziel-CPA, also einem Zielwert für die Kosten pro Anfrage oder Kauf, oder mit Ziel-CPC, einem Zielwert pro Klick, laufen. Für Produkt-Feed-Kampagnen gibt es mehr geografische Spielräume: Du kannst laut OpenAI „bestimmte Regionen oder Märkte innerhalb eines Landes“ ansprechen (übersetzt). Und Produktgruppen lassen sich mit mehreren Bedingungen filtern.</p>\n<p>Wichtig für bestehende Konten: Max Bid und Max CPC werden laut OpenAI-Hilfe am 01.01.2027 für bestehende Kampagnen abgeschaltet und durch Ziel-CPA und Ziel-CPC ersetzt. OpenAI schreibt dazu, die tatsächlichen Kosten könnten über oder unter dem Ziel liegen. In Deutschland ist ChatGPT-Werbung seit dem 24.08.2026 buchbar.</p>\n<h2 id=\"welche-zahlen-gibt-es\">Welche Zahlen gibt es zu ChatGPT-Werbung?</h2>\n<div class=\"statbox\"><div><div class=\"n\">01.01.2027</div><p>Ab diesem Tag enden Max Bid und Max CPC für bestehende Kampagnen (OpenAI-Hilfe, abgerufen 15.11.2026).</p></div><div><div class=\"n\">24.08.2026</div><p>Start von ChatGPT-Anzeigen in Deutschland und weiteren europäischen Ländern (t3n).</p></div><div><div class=\"n\">?</div><p>Wie klein eine wählbare Region sein darf, nennt OpenAI nicht.</p></div></div>\n<p>Das Datum 1. Januar ist die Zahl mit Handlungsbedarf. Wer mit festen Höchstgeboten arbeitet, gibt ab dann die Gebotskontrolle an das System ab und steuert nur noch über Zielwerte. Damit das funktioniert, braucht die Kampagne gemessene Anfragen oder Käufe. Ohne sauberes Conversion-Tracking schätzt das System ins Blaue. Für kleine Konten mit wenigen Anfragen pro Monat ist das heikel, weil der Algorithmus dann kaum Daten zum Lernen hat. OpenAI folgt hier dem Weg, den Google Ads seit Jahren geht: weniger Handarbeit, mehr Automatik.</p>\n<h2 id=\"wer-gewinnt\">Wer profitiert von den regionalen Produktanzeigen?</h2>\n<p>Händler mit Laden und Produkt-Feed: Fahrradhändler, Möbelhäuser, Baumärkte, Optiker mit Fassungen im Sortiment. Sie können ihr Budget auf das Gebiet lenken, aus dem Kunden tatsächlich kommen. Auch Agenturen gewinnen, weil sich ChatGPT-Anzeigen damit eher mit Google- und Meta-Kampagnen vergleichen lassen, die regionale Ausrichtung längst kennen. Für OpenAI ist das ein klares Signal: Das Unternehmen will nicht nur Markenbudgets großer Konzerne, sondern auch das Geld des Händlers um die Ecke.</p>\n<h2 id=\"wer-verliert\">Wen treffen die Änderungen bei den Geboten?</h2>\n<p>Den lokalen Betrieb, der eine Kampagne mit festem Höchstgebot eingerichtet hat und sie nicht mehr anschaut. Ab Januar steuert das System selbst, und ohne gemessene Conversions kann das teurer werden als geplant. Dienstleister ohne Produkt-Feed haben von der regionalen Ausrichtung vorerst nichts, denn sie gilt laut Mail für Produkt-Feed-Kampagnen.</p>\n<h2 id=\"wie-reagieren\">Wie stellst du deine ChatGPT-Kampagnen jetzt um?</h2>\n<ul>\n<li><strong>Bestehende Kampagnen prüfen.</strong> Schau im Ads Manager nach, welche Kampagnen mit Max Bid oder Max CPC laufen, und plane den Wechsel vor dem 1. Januar.</li>\n<li><strong>Conversions messen.</strong> Richte das Tracking für Anfragen oder Käufe ein, damit Ziel-CPA eine Grundlage hat.</li>\n<li><strong>Das Einzugsgebiet eingrenzen.</strong> Begrenze Produkt-Feed-Kampagnen auf die Regionen, aus denen deine Kunden kommen.</li>\n</ul>\n<p>Werbung in ChatGPT wird damit erwachsen, und wie bei Google bezahlt am Ende, wer seine Zahlen nicht misst.</p>",
+  "fazit": "OpenAI erlaubt bei ChatGPT-Produktanzeigen jetzt Regionen innerhalb eines Landes und stellt ab 01.01.2027 auf Ziel-CPA und Ziel-CPC um. Prüfe deine Kampagnen, richte Conversion-Tracking ein und grenze dein Gebiet ein.",
+  "impact": "Wenn du in ChatGPT wirbst, musst du bis 1. Januar deine Gebote umstellen und kannst dein Budget jetzt auf deine Region lenken.",
+  "sources": [
+   {
+    "label": "Search Engine Roundtable, OpenAI ChatGPT Ads Updates: Intelligent Bidding, New Cost Targets, Geo-Flexibility & Product Set Filters, 12.11.2026, abgerufen am 15.11.2026",
+    "url": "https://www.seroundtable.com/openai-chatgpt-ads-updates-42524.html"
+   },
+   {
+    "label": "OpenAI Help Center, Bidding strategies and how pricing works in ChatGPT Ads, abgerufen am 15.11.2026",
+    "url": "https://help.openai.com/en/articles/20001634-bidding-strategies-and-how-pricing-works-in-chatgpt-ads"
+   },
+   {
+    "label": "t3n, ChatGPT-Werbung in Deutschland, 2026, abgerufen am 15.11.2026",
+    "url": "https://t3n.de/news/chatgpt-werbung-deutschland-1758391/"
+   }
+  ],
+  "keywords": [
+   "ChatGPT Ads",
+   "ChatGPT Werbung",
+   "Ziel-CPA",
+   "regionale Ausrichtung",
+   "Produktanzeigen"
+  ],
+  "related": [
+   {
+    "href": "/google-ads/",
+    "label": "Google Ads für lokale Unternehmen"
+   },
+   {
+    "href": "/ratgeber/ki-sichtbarkeit-lokale-unternehmen/",
+    "label": "KI-Sichtbarkeit für lokale Unternehmen"
+   }
+  ],
+  "social": "/assets/images/news/chatgpt-ads-regionen-ziel-cpa-max-gebot-endet-social.jpg",
+  "image": "/assets/images/news/chatgpt-ads-regionen-ziel-cpa-max-gebot-endet-og.webp"
  }
 ]
