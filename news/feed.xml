@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Thu, 19 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 20 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>Bing zeigt Anzeigen oben im KI-Modus</title>
+    <link>https://lokalbesucher.de/news/2026-11-bing-ki-modus-anzeigen-oben-ki-abschalten/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-bing-ki-modus-anzeigen-oben-ki-abschalten/</guid>
+    <pubDate>Fri, 20 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Bing Places</category>
+    <category>Werbeanzeigen</category>
+    <description><![CDATA[Bing zeigt im KI-Modus (früher Copilot Search) Such- und Shopping-Anzeigen ganz oben, auch bei Folgefragen. Das haben Sachin Patel und Search Engine Roundtable am 09.11.2026 beobachtet, offiziell angekündigt hat Microsoft es nicht. Parallel erklärt der Bing-Blog zwei Wege, KI-Antworten abzuschalten: eine Browser-Erweiterung und den Zusatz -ai in der Suche. Wer bei Microsoft wirbt, sollte prüfen, wo seine Anzeigen jetzt landen.]]></description>
+  </item>
   <item>
     <title>ChatGPT-Werbung: Regionen wählbar, Max-Gebot endet 2027</title>
     <link>https://lokalbesucher.de/news/2026-11-chatgpt-ads-regionen-ziel-cpa-max-gebot-endet/</link>
