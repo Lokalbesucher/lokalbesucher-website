@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
-    <loc>https://lokalbesucher.de/news/2026-11-bing-ki-modus-anzeigen-oben-ki-abschalten/</loc>
+    <loc>https://lokalbesucher.de/news/2026-11-google-ask-maps-deutschland-oesterreich-schweiz/</loc>
     <news:news>
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-11-20T08:00:00+02:00</news:publication_date>
-      <news:title>Bing zeigt Anzeigen oben im KI-Modus</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-11-chatgpt-ads-regionen-ziel-cpa-max-gebot-endet/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-11-19T08:00:00+02:00</news:publication_date>
-      <news:title>ChatGPT-Werbung: Regionen wählbar, Max-Gebot endet 2027</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-11-google-suche-gemini-4-hydrogen-ki-antworten/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-11-18T08:00:00+02:00</news:publication_date>
-      <news:title>Gemini 4 Hydrogen: Googles KI-Suche verlinkt breiter</news:title>
+      <news:publication_date>2026-11-23T08:00:00+02:00</news:publication_date>
+      <news:title>Ask Maps kommt nach Deutschland: Was Betriebe jetzt tun</news:title>
     </news:news>
   </url>
 </urlset>

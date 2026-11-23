@@ -1277,5 +1277,57 @@
   ],
   "social": "/assets/images/news/bing-ki-modus-anzeigen-oben-ki-abschalten-social.jpg",
   "image": "/assets/images/news/bing-ki-modus-anzeigen-oben-ki-abschalten-og.webp"
+ },
+ {
+  "slug": "2026-11-google-ask-maps-deutschland-oesterreich-schweiz",
+  "date": "2026-11-23",
+  "platform": "google",
+  "topic": "unternehmensprofile",
+  "title": "Ask Maps kommt nach Deutschland: Was Betriebe jetzt tun",
+  "headline": "Ask Maps kommt nach Deutschland: Googles KI-Karte antwortet mit Bewertungen von 500 Millionen Nutzern",
+  "metaDesc": "Google weitet Ask Maps auf über 30 Länder Europas aus, auch auf Deutschland. Was die KI in Maps aus deinem Profil und deinen Bewertungen liest.",
+  "teaser": "Google weitet seine KI-Suche in Maps auf über 30 Länder Europas aus, darunter Deutschland. Nutzer stellen ganze Fragen, die KI antwortet mit Orten. Welche Betriebe sie nennt, hängt an Daten, die du selbst pflegst.",
+  "summary": "<strong>Google hat am 17.11.2026 angekündigt, Ask Maps auf über 30 Länder Europas auszuweiten, darunter Deutschland.</strong> Die KI in Google Maps beantwortet ganze Fragen und stützt sich auf Informationen zu über 300 Millionen Orten und auf Bewertungen von mehr als 500 Millionen Nutzern. Wann jeder Nutzer sie sieht, sagt Google nicht. Pflege jetzt Öffnungszeiten, Merkmale und Bewertungen.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/google-ask-maps-deutschland-oesterreich-schweiz-2026.webp\" alt=\"Comic: Kellner hält ein Smartphone mit Karte, Sprechblase und einer roten Kartennadel hoch\" width=\"928\" height=\"518\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">Ask Maps beantwortet in Google Maps ganze Fragen und zeigt passende Orte.</figcaption>\n        </figure>\n<p>Wer abends in Recklinghausen einen Ort sucht, an dem er sein Handy laden und nebenbei etwas essen kann, tippt bisher „Café“ in Google Maps und klickt sich durch die Treffer. Künftig stellt er die ganze Frage, und Maps antwortet. Google hat am 17.11.2026 im deutschen Unternehmensblog angekündigt, Ask Maps auf über 30 Länder in Europa auszuweiten, ausdrücklich auch auf Deutschland, Österreich und die Schweiz. Damit dürfte Maps künftig nicht mehr nur nach Stichwort und Entfernung sortieren, sondern auch nach dem, was die KI über einen Ort weiß. Und dieses Wissen stammt zu einem großen Teil aus deinem Unternehmensprofil und deinen Bewertungen.</p>\n<h2 id=\"was-ist-passiert\">Was hat Google für Deutschland angekündigt?</h2>\n<p>Google nennt Ask Maps im Blogbeitrag „das größte Update für Google Maps seit über einem Jahrzehnt“. Die Funktion arbeitet mit Gemini, Googles KI-Modellen, und beantwortet laut Google „komplexe Fragen aus dem Alltag, die eine Karte bisher nicht beantworten konnte“. Als Beispiele nennt Google einen öffentlichen Tennisplatz mit Flutlicht für den Abend, Reisepläne mit Echtzeit-Infos zu Wetter und Parkplätzen sowie die Suche in gespeicherten Listen. Die englische Fassung erschien am 16.11.2026, die deutsche einen Tag später.</p>\n<p>In den USA war Ask Maps bereits im August gestartet, berichtet ComputerBase. In der deutschen App heißt die Funktion dort „Frag Maps“. Ob jeder Nutzer sie sofort sieht und welche Teilfunktionen hierzulande zuerst ankommen, schlüsselt Googles Beitrag nicht auf. Wer Ask Maps heute noch nicht in seiner App findet, hat also nichts falsch gemacht.</p>\n<h2 id=\"welche-zahlen-gibt-es\">Wie viel weiß Ask Maps über deinen Betrieb?</h2>\n<div class=\"statbox\"><div><div class=\"n\">30+</div><p>Länder in Europa, in die Google Ask Maps ausweitet, darunter Deutschland (Google-Blog, 17.11.2026)</p></div><div><div class=\"n\">300 Mio.</div><p>Orte, zu denen Ask Maps laut Google Informationen hat (Google-Blog, 17.11.2026)</p></div><div><div class=\"n\">500 Mio.</div><p>Nutzer, deren Bewertungen in Ask Maps einfließen (Google-Blog, 17.11.2026)</p></div></div>\n<p>Die wichtigste Zahl ist die letzte. Ask Maps zieht seine Antworten aus Rezensionen. Wer dort nur „super“ und „top“ stehen hat, liefert der KI wenig Stoff für eine Frage wie „Wo bekomme ich heute Abend noch eine glutenfreie Pizza?“. Wie Ask Maps einzelne Orte gewichtet, veröffentlicht Google nicht. Wie viele Menschen in Deutschland die Funktion nutzen, ebenfalls nicht.</p>\n<h2 id=\"wer-gewinnt\">Welche Betriebe nennt die KI eher?</h2>\n<p>Im Vorteil sind Betriebe, deren Profil konkrete Fragen beantwortet. Die Frage nach dem Tennisplatz mit Flutlicht lässt sich nur mit Details lösen: Öffnungszeiten, Ausstattung, Angebot. Google beschreibt Ask Maps als Werkzeug, mit dem Nutzer „Pläne in die Tat umsetzen“. Daraus folgt eine naheliegende Vermutung: Die KI dürfte Orte bevorzugen, bei denen sie sicher sein kann, dass sie heute geöffnet haben und das Gesuchte bieten. Gastronomie und Freizeitanbieter spüren das vermutlich zuerst, weil Googles Beispiele genau aus diesem Bereich stammen.</p>\n<p>Der Schritt passt zu dem, was Google in der Suche schon vorgemacht hat. Seit dem Upgrade auf <a href=\"/news/2026-11-google-suche-gemini-4-hydrogen-ki-antworten/\" rel=\"noopener noreferrer\">Gemini 4 Hydrogen</a> zerlegt die KI dort Fragen in viele Teilsuchen. Maps folgt jetzt demselben Prinzip.</p>\n<h2 id=\"wer-verliert\">Wen trifft Ask Maps zuerst?</h2>\n<p>Schwer wird es für den lokalen Betrieb mit dünnem Profil: falsche Feiertagszeiten, keine Leistungsbeschreibung, Bewertungen ohne Inhalt. Für die klassische Kartensuche reichten oft der richtige Name und die Nähe zum Suchenden. Für eine Frage mit drei Bedingungen reicht das nicht. Betroffen sind Restaurants, Cafés und Freizeitbetriebe, perspektivisch auch Handwerker, bei denen Kunden nach Notdienst oder Samstagsterminen fragen. Ob Ask Maps solche Handwerkerfragen in Deutschland schon beantwortet, geht aus Googles Beitrag nicht hervor.</p>\n<h2 id=\"wie-reagieren\">Wie bereitest du dein Profil auf Ask Maps vor?</h2>\n<ul><li><strong>Sonderöffnungszeiten für Dezember eintragen.</strong> Wer an Weihnachten und Silvester anders öffnet, sollte das im Profil stehen haben, bevor Nutzer die KI danach fragen.</li><li><strong>Merkmale und Leistungen vollständig pflegen.</strong> Angaben wie barrierefreier Zugang, Terrasse oder Kartenzahlung sind genau die Details, aus denen sich Antworten auf Fragen mit Bedingungen bauen lassen.</li><li><strong>Kunden um aussagekräftige Bewertungen bitten.</strong> Eine Rezension, die den Samstagstermin oder das glutenfreie Gericht erwähnt, beantwortet eine Frage, die fünf Sterne allein nicht beantworten.</li><li><strong>Selbst testen.</strong> Sobald Ask Maps in deiner App erscheint, stell die Fragen, die deine Kunden stellen würden, und prüfe, ob dein Betrieb auftaucht.</li></ul>\n<p>Bisher hat Google Maps gezeigt, wo etwas ist. Jetzt entscheidet es mit, was davon zur Frage passt.</p>",
+  "fazit": "Google weitet Ask Maps auf über 30 Länder Europas aus, darunter Deutschland, und beantwortet ganze Fragen mit Daten aus Profilen und Bewertungen. Wer Sonderöffnungszeiten, Merkmale und Bewertungen jetzt pflegt, liefert der KI die Details, nach denen ihre Nutzer fragen.",
+  "impact": "Dein Unternehmensprofil liefert den Stoff, aus dem Googles KI in Maps ihre Antworten baut.",
+  "sources": [
+   {
+    "label": "Google Blog Deutschland: Ask Maps kommt nach Deutschland, Österreich und in die Schweiz, 17.11.2026, abgerufen am 22.11.2026",
+    "url": "https://blog.google/intl/de-de/produkte/suchen-entdecken/ask-maps-kommt-nach-deutschland-osterreich-und-in-die-schweiz/"
+   },
+   {
+    "label": "Google Blog: Ask Maps is coming to Europe, 16.11.2026, abgerufen am 22.11.2026",
+    "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-is-coming-to-europe/"
+   },
+   {
+    "label": "ComputerBase: Google Maps: Ask Maps startet in Deutschland, 17.11.2026, abgerufen am 22.11.2026",
+    "url": "https://www.computerbase.de/news/apps/google-maps-ask-maps-startet-in-deutschland.100365/"
+   }
+  ],
+  "keywords": [
+   "Ask Maps",
+   "Frag Maps",
+   "Google Maps KI",
+   "Google Unternehmensprofil",
+   "Bewertungen",
+   "Gemini"
+  ],
+  "related": [
+   {
+    "href": "/ratgeber/google-unternehmensprofil-optimieren/",
+    "label": "Google Unternehmensprofil optimieren"
+   },
+   {
+    "href": "/ratgeber/mehr-google-bewertungen-bekommen/",
+    "label": "Mehr Google-Bewertungen bekommen"
+   },
+   {
+    "href": "/ratgeber/ki-sichtbarkeit-lokale-unternehmen/",
+    "label": "KI-Sichtbarkeit für lokale Unternehmen"
+   }
+  ],
+  "social": "/assets/images/news/google-ask-maps-deutschland-oesterreich-schweiz-social.jpg",
+  "image": "/assets/images/news/google-ask-maps-deutschland-oesterreich-schweiz-og.webp"
  }
 ]
