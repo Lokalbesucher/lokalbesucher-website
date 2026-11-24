@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Mon, 23 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>Meta stoppt neue Regeln zum Auslesen von Websites</title>
+    <link>https://lokalbesucher.de/news/2026-11-meta-geschaeftsbedingungen-crawler-gestoppt/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-meta-geschaeftsbedingungen-crawler-gestoppt/</guid>
+    <pubDate>Tue, 24 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Meta</category>
+    <category>Social Media</category>
+    <description><![CDATA[Meta hat am 18.11.2026 die geplanten Änderungen an seinen kommerziellen Nutzungsbedingungen gestoppt. Nach Kritik von Verlagen an den Regeln für Web-Crawler werden die Entwürfe überarbeitet, Anfang 2027 will Meta sie mit Verlagen und Behörden abstimmen. Kontoinhaber sollen vorab informiert werden. Ändere deine robots.txt jetzt nicht überstürzt und prüfe bestehende Sperren.]]></description>
+  </item>
   <item>
     <title>Ask Maps kommt nach Deutschland: Was Betriebe jetzt tun</title>
     <link>https://lokalbesucher.de/news/2026-11-google-ask-maps-deutschland-oesterreich-schweiz/</link>

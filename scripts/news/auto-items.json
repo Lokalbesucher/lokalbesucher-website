@@ -1329,5 +1329,49 @@
   ],
   "social": "/assets/images/news/google-ask-maps-deutschland-oesterreich-schweiz-social.jpg",
   "image": "/assets/images/news/google-ask-maps-deutschland-oesterreich-schweiz-og.webp"
+ },
+ {
+  "slug": "2026-11-meta-geschaeftsbedingungen-crawler-gestoppt",
+  "date": "2026-11-24",
+  "platform": "meta",
+  "topic": "social-media",
+  "title": "Meta stoppt neue Regeln zum Auslesen von Websites",
+  "headline": "Meta stoppt seine neuen Geschäftsbedingungen: Die Regeln für Web-Crawler werden überarbeitet, Abstimmung erst Anfang 2027",
+  "metaDesc": "Meta hat die geplanten Geschäftsbedingungen zum Auslesen von Websites gestoppt. Was das für deine robots.txt und geteilte Links bedeutet.",
+  "teaser": "Meta hat die geplanten Änderungen an seinen kommerziellen Nutzungsbedingungen gestoppt. Auslöser war Kritik an den Regeln für Web-Crawler. Neue Gespräche mit Verlagen und Behörden plant der Konzern für Anfang 2027.",
+  "summary": "<strong>Meta hat am 18.11.2026 die geplanten Änderungen an seinen kommerziellen Nutzungsbedingungen gestoppt.</strong> Nach Kritik von Verlagen an den Regeln für Web-Crawler werden die Entwürfe überarbeitet, Anfang 2027 will Meta sie mit Verlagen und Behörden abstimmen. Kontoinhaber sollen vorab informiert werden. Ändere deine robots.txt jetzt nicht überstürzt und prüfe bestehende Sperren.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/meta-geschaeftsbedingungen-crawler-gestoppt-2026.webp\" alt=\"Comic: Ladeninhaberin hält einen Vertrag mit großem gelbem Pause-Stempel, daneben ein Laptop\" width=\"928\" height=\"518\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">Meta hat die geplanten neuen Geschäftsbedingungen vorerst gestoppt.</figcaption>\n        </figure>\n<p>Viele Betriebe haben im Oktober gelesen, dass Meta neue Geschäftsbedingungen plant, die auch das Auslesen von Websites betreffen. Manche haben daraufhin überlegt, Metas Crawler, also die Programme, die Webseiten automatisch abrufen, auszusperren. Jetzt stoppt Meta die Pläne selbst. Am 18.11.2026 schreibt der Konzern in seinem Newsroom, die geplanten Änderungen an den kommerziellen Nutzungsbedingungen seien „zurückgestellt“ (übersetzt). Für Inhaber heißt das: Es gibt Zeit, aber keine Entwarnung für immer.</p>\n<h2 id=\"was-ist-passiert\">Was hat Meta genau gestoppt?</h2>\n<p>Im Beitrag „Our Approach to Updating Our Commercial Terms of Service“ erklärt Meta, man habe von Nachrichtenverlagen und anderen Beteiligten Bedenken gehört, „wie die geplanten Änderungen auf unsere Web-Crawler angewendet werden“ (übersetzt). Die Bedingungen würden nun nach weiteren Gesprächen überarbeitet. Meta betont, die eigenen Crawler hielten sich an robots.txt, die Textdatei, mit der Websitebetreiber Suchprogrammen Bereiche ihrer Seite sperren.</p>\n<p>Meta beschreibt drei Phasen: zuhören, die Entwürfe überarbeiten und dann „Anfang 2027“ erneut mit Verlagen, weiteren Beteiligten und Aufsichtsbehörden sprechen. Dazu soll ein erklärendes Dokument erscheinen. Kontoinhaber will Meta vor dem Inkrafttreten neuer Bedingungen benachrichtigen und ihnen Zeit zur Prüfung geben. Einen namentlich genannten Verfasser hat der Beitrag nicht. Welche Produkte Meta mit den neuen Regeln ermöglichen will, lässt der Text offen.</p>\n<h2 id=\"welche-zahlen-gibt-es\">Welche Fristen nennt Meta?</h2>\n<div class=\"statbox\"><div><div class=\"n\">18.11.</div><p>Meta erklärt die Änderungen an den kommerziellen Nutzungsbedingungen für gestoppt (Meta Newsroom, 18.11.2026)</p></div><div><div class=\"n\">3</div><p>Phasen bis zu neuen Bedingungen: zuhören, überarbeiten, erneut abstimmen (Meta Newsroom, 18.11.2026)</p></div><div><div class=\"n\">2027</div><p>Anfang 2027 will Meta erneut mit Verlagen und Behörden sprechen (Meta Newsroom, 18.11.2026)</p></div></div>\n<p>Die Jahreszahl ist die wichtigste. Meta sagt selbst, der Prozess dürfte „einige Monate“ dauern. Vor der Abstimmungsrunde Anfang 2027 ist also nicht mit neuen Crawler-Regeln zu rechnen. Wie viele Websites Metas Crawler abrufen, veröffentlicht Meta nicht.</p>\n<h2 id=\"wer-gewinnt\">Wer hat Meta zum Umdenken gebracht?</h2>\n<p>Die Gewinner sind zuerst die Nachrichtenverlage. Ihr Widerspruch hat den Konzern gebremst, und sie sitzen in der nächsten Runde wieder mit am Tisch. Indirekt profitiert jeder Websitebetreiber: Wenn Regeln zum Auslesen von Inhalten mit Behörden abgestimmt werden, sinkt das Risiko, dass sie still durchgesetzt werden. Dass Meta ausdrücklich auf robots.txt verweist, ist dabei mehr als eine Fußnote. Es bestätigt, dass Betreiber über diese Datei mitentscheiden, was Metas Programme lesen.</p>\n<h2 id=\"wer-verliert\">Was bedeutet der Stopp für deinen Betrieb?</h2>\n<p>Für den lokalen Betrieb ändert sich vorerst nichts an den Regeln, wohl aber an der Lage: Wer aus Sorge vor den angekündigten Bedingungen Metas Crawler pauschal gesperrt hat, sollte das prüfen. Meta nutzt für die Vorschau geteilter Links einen eigenen Crawler. Eine Sperre kann dazu führen, dass Links zu deiner Website auf Facebook oder in WhatsApp ohne Bild und Beschreibung erscheinen. Für Restaurants, Läden und Handwerker, die Angebote über Links teilen, wäre das ein spürbarer Verlust. Wie sich robots.txt gezielt für KI-Dienste einstellen lässt, steht in der Meldung zu <a href=\"/news/2026-11-ki-training-robots-txt-google-bing-openai/\" rel=\"noopener noreferrer\">KI-Training und robots.txt</a>.</p>\n<h2 id=\"wie-reagieren\">Wie reagierst du auf Metas Stopp?</h2>\n<ul><li><strong>Die robots.txt nicht überstürzt ändern.</strong> Solange keine neuen Bedingungen gelten, gibt es keinen Grund, Metas Crawler pauschal auszusperren.</li><li><strong>Bestehende Sperren prüfen.</strong> Wer schon gesperrt hat, sollte testen, ob geteilte Links auf Facebook und in WhatsApp noch eine Vorschau zeigen.</li><li><strong>Die Kontaktadresse im Meta-Konto aktuell halten.</strong> Meta will Kontoinhaber vor neuen Bedingungen benachrichtigen, die Mail muss also ankommen.</li><li><strong>Den Termin Anfang 2027 vormerken.</strong> Dann will Meta die überarbeiteten Regeln mit Behörden abstimmen, und erst danach lohnt eine neue Bewertung.</li></ul>\n<p>Meta hat nicht verzichtet, sondern vertagt. Wer jetzt ruhig bleibt und seine Einstellungen prüft, ist für 2027 besser vorbereitet als jemand, der heute alles sperrt.</p>",
+  "fazit": "Meta hat die geplanten Geschäftsbedingungen gestoppt und will die Crawler-Regeln erst nach einer Abstimmung Anfang 2027 neu fassen. Ändere deine robots.txt jetzt nicht überstürzt und prüfe, ob geteilte Links noch eine Vorschau zeigen.",
+  "impact": "Du hast bis mindestens Anfang 2027 Zeit, bevor neue Meta-Regeln zum Auslesen deiner Website kommen können.",
+  "sources": [
+   {
+    "label": "Meta Newsroom: Our Approach to Updating Our Commercial Terms of Service, 18.11.2026, abgerufen am 22.11.2026",
+    "url": "https://about.fb.com/news/2026/11/our-approach-to-updating-our-commercial-terms-of-service/"
+   }
+  ],
+  "keywords": [
+   "Meta",
+   "Geschäftsbedingungen",
+   "Web-Crawler",
+   "robots.txt",
+   "Facebook",
+   "WhatsApp Linkvorschau"
+  ],
+  "related": [
+   {
+    "href": "/social-media-agentur/",
+    "label": "Social-Media-Agentur für lokale Unternehmen"
+   },
+   {
+    "href": "/meta-ads/",
+    "label": "Meta Ads"
+   },
+   {
+    "href": "/ratgeber/ki-sichtbarkeit-lokale-unternehmen/",
+    "label": "KI-Sichtbarkeit für lokale Unternehmen"
+   }
+  ],
+  "social": "/assets/images/news/meta-geschaeftsbedingungen-crawler-gestoppt-social.jpg",
+  "image": "/assets/images/news/meta-geschaeftsbedingungen-crawler-gestoppt-og.webp"
  }
 ]
