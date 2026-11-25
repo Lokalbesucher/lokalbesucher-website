@@ -7,7 +7,7 @@
  * Liste der Präsentationen: /p-daten/liste.json (schreibt lokalbesucher-tools/decks/veroeffentlichen.mjs).
  */
 import { deny, authorized, ssoAuthorized } from '../admin.js';
-import { SITE, MAIL_RE, esc, token, jetzt, spaeter, slugOk, db, deck, mail, mailRahmen, knopf } from '../../_lib/decks.js';
+import { SITE, MAIL_RE, esc, token, jetzt, spaeter, slugOk, db, deck, mail, mailRahmen, knopf, einladungenUebernehmen } from '../../_lib/decks.js';
 
 const kopf = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow', 'Content-Type': 'text/html;charset=utf-8' };
 const text = (s, n) => String(s == null ? '' : s).trim().slice(0, n);
@@ -65,6 +65,7 @@ async function ansicht(env, request, url, meldung = '') {
   if (!decks.length) return rahmen(`${meldung}<div class="wrap"><table><tr><td class="leer">Noch keine Präsentation veröffentlicht.</td></tr></table></div>`);
   const slug = decks.some((x) => x.slug === url.searchParams.get('deck')) ? url.searchParams.get('deck') : decks[0].slug;
   const akt = decks.find((x) => x.slug === slug);
+  await einladungenUebernehmen(env, slug, await deck(env, request, slug));
   const nav = `<div class="bar">${decks.map((x) => `<a class="btn ${x.slug === slug ? 'active' : ''}" href="?deck=${esc(x.slug)}">${esc(x.titel)}</a>`).join('')}</div>`;
 
   const bid = url.searchParams.get('besuch');

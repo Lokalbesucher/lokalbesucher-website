@@ -97,6 +97,17 @@ export async function datei(env, request, slug, d, pfad) {
   return { ct: f.ct, body: await gcm(d.K, await r.arrayBuffer()) };
 }
 
+/* ── Persönliche Links ──
+   Angelegt in der Auswertung (dann stehen sie in D1) oder beim Veröffentlichen über deck.json (dann stehen sie in den
+   verschlüsselten Metadaten und werden hier beim ersten Aufruf nach D1 übernommen). */
+export async function einladungenUebernehmen(env, slug, d0) {
+  const l = (d0 && d0.meta.einladungen) || [];
+  if (!l.length) return;
+  const d = await db(env);
+  await d.batch(l.filter((e) => /^[a-f0-9]{48}$/.test(e.token || '')).map((e) => d.prepare('INSERT OR IGNORE INTO deck_einladungen (token, slug, name, email, firma, created_at, expires_at) VALUES (?,?,?,?,?,?,?)')
+    .bind(e.token, slug, String(e.name || '').slice(0, 80), String(e.email || '').slice(0, 200), String(e.firma || '').slice(0, 80), jetzt(), spaeter(60 * TAGE))));
+}
+
 /* ── Sitzung ── */
 export async function sitzung(env, request) {
   const m = (request.headers.get('Cookie') || '').match(new RegExp('(?:^|;\\s*)' + COOKIE + '=([a-f0-9]{48})'));

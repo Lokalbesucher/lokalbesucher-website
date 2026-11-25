@@ -10,7 +10,7 @@
  */
 import {
   SITE, MAIL_RE, esc, token, hash, jetzt, spaeter, slugOk, kopf, db, deck, datei, sitzung, sitzungAnlegen,
-  mail, mailRahmen, knopf, INTERN, tuer, formular, einloesen, geraet, messung, oeffentlicherSchluessel,
+  mail, mailRahmen, knopf, INTERN, tuer, formular, einloesen, geraet, messung, oeffentlicherSchluessel, einladungenUebernehmen,
 } from '../_lib/decks.js';
 
 const MAX_GERAETE = 5;          /* so viele Browser darf ein persönlicher Link freischalten, danach gilt das Formular */
@@ -114,6 +114,7 @@ async function zeigen(request, env, ctx, url, slug, pfad) {
   const k = url.searchParams.get('k');
   if (start && k && /^[a-f0-9]{48}$/.test(k)) {
     if (s) return weiter(`/p/${slug}/`);
+    await einladungenUebernehmen(env, slug, d0);
     const d = await db(env);
     const e = await d.prepare('SELECT name, geraete FROM deck_einladungen WHERE token = ? AND slug = ? AND expires_at > ?').bind(k, slug, jetzt()).first();
     if (e && e.geraete < MAX_GERAETE) return tuer(einloesen('/p/_k', k, `${esc(d0.meta.titel || 'Deine Präsentation')}`, 'Präsentation öffnen'));
