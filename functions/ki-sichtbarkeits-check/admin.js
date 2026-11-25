@@ -10,7 +10,8 @@
  * KI_ADMIN_PASSWORD (Pages → Einstellungen → Variablen und Geheimnisse).
  * Ohne gesetztes Secret bleibt die Seite geschlossen (fail-closed).
  *
- * Präsentationen (wer hat welches Deck wie lange angesehen): eigene Seite admin/decks.js, nutzt deny/authorized/ssoAuthorized von hier.
+ * Präsentationen (wer hat welches Deck wie lange angesehen): eigene Seite admin/decks.js mit eigenem SSO-Ziel „decks“;
+ * sie nutzt deny/authorized/ssoVerify/ssoSign von hier. Das Cookie dieser Seite (Ziel „ki“) öffnet die Präsentationen nicht.
  *
  *   ?tab=checks | leads | newsletter   Ansicht (Standard: leads)
  *   ?export=checks | leads | newsletter  CSV-Download (alle Zeilen, neueste zuerst)
@@ -51,7 +52,7 @@ const unb64u = (t) => { t = t.replace(/-/g, '+').replace(/_/g, '/'); while (t.le
 async function hmacKey(secret, usage) {
   return crypto.subtle.importKey('raw', new TextEncoder().encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, usage);
 }
-async function ssoVerify(secret, token) {
+export async function ssoVerify(secret, token) {
   const [body, sig] = String(token || '').split('.');
   if (!body || !sig) return null;
   try {
@@ -61,7 +62,7 @@ async function ssoVerify(secret, token) {
     return d && d.exp && d.exp > Date.now() ? d : null;
   } catch { return null; }
 }
-async function ssoSign(secret, payload) {
+export async function ssoSign(secret, payload) {
   const body = b64u(new TextEncoder().encode(JSON.stringify(payload)));
   const sig = b64u(await crypto.subtle.sign('HMAC', await hmacKey(secret, ['sign']), new TextEncoder().encode(body)));
   return body + '.' + sig;
@@ -238,7 +239,6 @@ ${bySource.length ? `<ul class="src">${bySource.map(r => `<li>${esc(r.source)}: 
   <a class="btn ${tab === 'leads' ? 'active' : ''}" href="?tab=leads">Anfragen</a>
   <a class="btn ${tab === 'checks' ? 'active' : ''}" href="?tab=checks">Checks</a>
   <a class="btn ${tab === 'newsletter' ? 'active' : ''}" href="?tab=newsletter">Newsletter${nl ? ` (${n(nl.bestaetigt)})` : ''}</a>
-  <a class="btn" href="/ki-sichtbarkeits-check/admin/decks">Präsentationen</a>
   <a class="btn export" href="?export=${tab}">CSV herunterladen (${tab === 'leads' ? 'Anfragen' : tab === 'newsletter' ? 'Newsletter' : 'Checks'})</a>
 </div>
 

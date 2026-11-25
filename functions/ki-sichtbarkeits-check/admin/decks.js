@@ -1,12 +1,14 @@
 /**
  * /ki-sichtbarkeits-check/admin/decks — interne Auswertung der persönlichen Präsentationen (/p/<slug>/).
- * Zugang wie die Protokollseite daneben (Basic Auth KI_ADMIN_PASSWORD oder SSO aus dem zentralen Admin).
+ * Zugang: Menüpunkt „Pitch-Decks“ im zentralen Admin (SSO-Ziel „decks“, eigenes Cookie lb_deck_sso, 24 h) oder Basic Auth
+ * mit KI_ADMIN_PASSWORD. Das Cookie der Protokollseite (Ziel „ki“) reicht hier bewusst nicht: Die Auswertung ist Chefsache,
+ * wer sie sieht, regelt das Recht „Pitch-Decks“ im Admin.
  *
  *   GET  ?deck=<slug>            Besuche einer Präsentation      ?besuch=<id>  Sekunden je Seite
  *   POST (Formular)              persönlichen Link anlegen, auf Wunsch gleich per Mail verschicken
  * Liste der Präsentationen: /p-daten/liste.json (schreibt lokalbesucher-tools/decks/veroeffentlichen.mjs).
  */
-import { deny, authorized, ssoAuthorized } from '../admin.js';
+import { deny, authorized, ssoVerify, ssoSign } from '../admin.js';
 import { SITE, MAIL_RE, esc, token, jetzt, spaeter, slugOk, db, deck, mail, mailRahmen, knopf, einladungenUebernehmen } from '../../_lib/decks.js';
 
 const kopf = { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow', 'Content-Type': 'text/html;charset=utf-8' };
@@ -15,12 +17,22 @@ const zeit = (iso) => { if (!iso) return ''; const d = new Date(iso.replace(' ',
 const dauer = (s) => { s = Math.round(s || 0); return s >= 60 ? `${Math.floor(s / 60)} Min ${String(s % 60).padStart(2, '0')} Sek` : `${s} Sek`; };
 
 async function zugang(request, env) {
-  const sso = await ssoAuthorized(request, env);
-  if (typeof sso === 'string') {
-    const c = new URL(request.url); c.searchParams.delete('sso');
-    return new Response(null, { status: 302, headers: { Location: c.pathname + c.search, 'Set-Cookie': sso, 'Cache-Control': 'no-store' } });
+  if (env.SSO_SECRET) {
+    const url = new URL(request.url), t = url.searchParams.get('sso');
+    if (t) {
+      const d = await ssoVerify(env.SSO_SECRET, t);
+      if (d && d.aud === 'decks') {
+        const v = await ssoSign(env.SSO_SECRET, { aud: 'decks', email: d.email, exp: Date.now() + 24 * 3600 * 1000 });
+        url.searchParams.delete('sso');
+        return new Response(null, { status: 302, headers: { Location: url.pathname + url.search, 'Set-Cookie': `lb_deck_sso=${v}; Path=/ki-sichtbarkeits-check/admin/decks; Max-Age=86400; HttpOnly; Secure; SameSite=Lax`, 'Cache-Control': 'no-store' } });
+      }
+    } else {
+      const m = (request.headers.get('Cookie') || '').match(/(?:^|;\s*)lb_deck_sso=([^;]+)/);
+      const d = m ? await ssoVerify(env.SSO_SECRET, decodeURIComponent(m[1])) : null;
+      if (d && d.aud === 'decks') return null;
+    }
   }
-  return sso || authorized(request, env) ? null : deny();
+  return authorized(request, env) ? null : deny();
 }
 
 async function liste(env, request) {
@@ -47,7 +59,7 @@ form.neu{background:var(--surface);border:1px solid var(--border);border-radius:
 form.neu input[type=text],form.neu input[type=email],form.neu textarea{width:100%;font:inherit;padding:10px 12px;border-radius:10px;border:1px solid var(--border);background:var(--surface2);color:var(--text)}form.neu textarea{min-height:110px}form.neu .breit{grid-column:1/-1}
 input:focus-visible,textarea:focus-visible,.btn:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .link{font-family:monospace;font-size:.78rem;word-break:break-all;color:var(--muted)}.ok{background:rgba(62,207,142,.12);border:1px solid var(--green);border-radius:12px;padding:12px 14px;margin:0 0 16px}.bad{background:rgba(255,92,92,.12);border:1px solid #ff5c5c;border-radius:12px;padding:12px 14px;margin:0 0 16px}
-</style></head><body><h1>Präsentationen</h1><div class="sub">Wer hat welche Präsentation geöffnet, wie lange, bis wohin · Zeiten in Berliner Zeit · <a href="/ki-sichtbarkeits-check/admin">zurück zu Anfragen &amp; Checks</a></div>${inhalt}
+</style></head><body><h1>Präsentationen</h1><div class="sub">Wer hat welche Präsentation geöffnet, wie lange, bis wohin · Zeiten in Berliner Zeit · <a href="/admin/">zurück ins Admin</a></div>${inhalt}
 <script>document.addEventListener('click',function(e){var b=e.target.closest('[data-kopie]');if(!b)return;navigator.clipboard.writeText(b.getAttribute('data-kopie')).then(function(){b.textContent='Kopiert';setTimeout(function(){b.textContent='Link kopieren'},1500)})})</script></body></html>`;
 }
 
