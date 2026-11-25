@@ -670,3 +670,19 @@ aufhören; deployt wird nur aus gepushtem Stand; neue Projekte bekommen **sofort
 github.com/Lokalbesucher/lokalbesucher-tools (privat) — vorher zwei Tage nur lokal, das hat die Mac-Arbeit blockiert.
 
 **Tobias' Grundsatz für alle Projekte: überall eine saubere Doku (README/CLAUDE.md), gepflegt im selben Commit wie die Änderung.**
+
+---
+
+## 22. PERSÖNLICHE PRÄSENTATIONEN `/p/<slug>/` (seit 2026-11-25)
+
+**Ziel (Tobias):** Jedes Sales-Deck liegt als animierte HTML-Präsentation auf lokalbesucher.de, nicht indexiert, hinter einer Tür – und wir sehen, wer welche Seite wie lange ansieht. Ein Weg für alle Decks, das Deck selbst muss dafür nichts können.
+
+- **Tür:** `functions/p/[[path]].js` (Bausteine `functions/_lib/decks.js`). Ohne Sitzung kommt das Formular (Name + E-Mail → Login-Link per Resend, 1 Stunde gültig, einmal nutzbar, kein Passwort). Mit persönlichem Link (`/p/<slug>/?k=<Token>`, angelegt in der Auswertung, 60 Tage, bis zu 5 Browser) öffnet die Präsentation sofort. Links aus Mails lösen erst per POST ein (Zwischenseite), weil Mail-Scanner Links vorab aufrufen. Sitzung: Cookie `lb_deck`, Pfad `/p`, 30 Tage, in D1 nur als Hash.
+- **Inhalte liegen verschlüsselt im Repo** unter `p-daten/<slug>/` (`m.json` + `*.bin`, AES-256-GCM). Das Repo ist öffentlich, Klartext eines Decks gehört **nie** hierher. Entschlüsseln kann nur die Function: Ihr privater Schlüssel liegt in KV `AI_CHECK_KV` unter `deck:serverkey` (beim ersten Aufruf von `/p/_schluessel` erzeugt). **Diesen KV-Eintrag nie löschen** – sonst müssen alle Decks neu veröffentlicht werden (Quellen liegen in `lokalbesucher-tools/decks/`).
+- **Neues Deck veröffentlichen:** Quelle nach `lokalbesucher-tools/decks/<slug>/` (index.html, Bilder, `deck.json` mit `titel` + `kunde`), dann `node decks/veroeffentlichen.mjs <slug> --website <Pfad zu diesem Repo>`, hier committen und pushen. Das Skript holt den öffentlichen Schlüssel von `/p/_schluessel`, verschlüsselt und trägt den Slug in `p-daten/liste.json` ein.
+- **Messung:** Die Function hängt beim Ausliefern ein kleines Skript an (`messung()`): Seiten = `[data-slide]`, sonst `.sl`, `.slide`, `section`; Sekunden je Seite gehen alle 8 s und beim Verlassen an `POST /p/_t`. Titel einer Seite = `data-titel` oder erste Überschrift. Die Preisseite bekommt im Deck das Attribut `data-preis`.
+- **Benachrichtigung** per Resend an `DECK_MAIL_TO` (sonst `MAIL_TO`, sonst info@lokalbesucher.de): beim ersten Öffnen je Person und Deck, und einmal je Besuch, wenn jemand 40 Sekunden auf der Preisseite ist. Adressen @lokalbesucher.de lösen nichts aus. Absender `praesentation@send.lokalbesucher.de` (optional Var `DECK_FROM`).
+- **Auswertung:** `/ki-sichtbarkeits-check/admin/decks` (`functions/ki-sichtbarkeits-check/admin/decks.js`), Zugang wie die Protokollseite (Basic Auth oder SSO aus dem Admin). Besuche, Sekunden je Seite, persönliche Links anlegen und auf Wunsch mit eigenem Text mailen.
+- **Daten:** D1 `KI_DB`, Tabellen `deck_*` (`migrations/0003_praesentationen.sql`, die Function legt sie selbst an). Besuche werden nach 12 Monaten gelöscht (beim Öffnen der Auswertung) – so steht es in der Datenschutzerklärung, Abschnitt 11a. Den Hinweistext an der Tür (`HINWEIS` in `decks.js`) und Abschnitt 11a nur zusammen ändern.
+- `/p` und `/p/*` stehen in `_routes.json`. Kein Eintrag in Sitemap, Navigation oder robots.txt (die Tür antwortet mit `X-Robots-Tag: noindex`).
+- Lokal testen: `npx wrangler pages dev . --binding KI_ADMIN_PASSWORD=test`, Deck mit `--schluessel http://127.0.0.1:8788/p/_schluessel` verschlüsseln; die so erzeugten `p-daten/` **nicht** committen (anderer Schlüssel als live).

@@ -1,0 +1,8 @@
+-- Persönliche Präsentationen unter /p/<slug>/ (functions/p/[[path]].js, functions/_lib/decks.js, CLAUDE.md §22).
+-- Die Function legt diese Tabellen bei Bedarf selbst an (CREATE TABLE IF NOT EXISTS) – diese Datei ist die Doku dazu.
+CREATE TABLE IF NOT EXISTS deck_einladungen (token TEXT PRIMARY KEY, slug TEXT NOT NULL, name TEXT NOT NULL, email TEXT NOT NULL DEFAULT '', firma TEXT NOT NULL DEFAULT '', created_at TEXT NOT NULL, expires_at TEXT NOT NULL, geraete INTEGER NOT NULL DEFAULT 0, gemailt INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS deck_logins (token_hash TEXT PRIMARY KEY, slug TEXT NOT NULL, name TEXT NOT NULL, email TEXT NOT NULL, ip TEXT, created_at TEXT NOT NULL, expires_at TEXT NOT NULL, used_at TEXT);
+CREATE TABLE IF NOT EXISTS deck_sessions (id_hash TEXT PRIMARY KEY, name TEXT NOT NULL, email TEXT NOT NULL, quelle TEXT NOT NULL, einladung TEXT, created_at TEXT NOT NULL, expires_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS deck_besuche (id TEXT PRIMARY KEY, slug TEXT NOT NULL, titel TEXT NOT NULL DEFAULT '', session TEXT NOT NULL, name TEXT NOT NULL, email TEXT NOT NULL, quelle TEXT NOT NULL, started_at TEXT NOT NULL, last_at TEXT NOT NULL, sekunden REAL NOT NULL DEFAULT 0, max_slide INTEGER NOT NULL DEFAULT 0, slides_total INTEGER NOT NULL DEFAULT 0, geraet TEXT, land TEXT, stadt TEXT, signal INTEGER NOT NULL DEFAULT 0);
+CREATE INDEX IF NOT EXISTS deck_besuche_slug ON deck_besuche (slug, started_at);
+CREATE TABLE IF NOT EXISTS deck_slidezeit (besuch TEXT NOT NULL, slide INTEGER NOT NULL, titel TEXT NOT NULL DEFAULT '', preis INTEGER NOT NULL DEFAULT 0, sekunden REAL NOT NULL DEFAULT 0, PRIMARY KEY (besuch, slide));

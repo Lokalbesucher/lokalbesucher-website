@@ -42,6 +42,11 @@ https://*.lokalbesucher-website.pages.dev/*
 /
   Cache-Control: public, max-age=0, must-revalidate
 
+# Persönliche Präsentationen (/p/*, CLAUDE.md §22): Die Dateien hier sind verschlüsselt und nur über die Function lesbar
+/p-daten/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
 # Interne Kunden-Landingpage Weihnachtsservice: nicht indexieren (zusätzlich zu meta robots)
 /weihnachtsservice/*
   X-Robots-Tag: noindex, nofollow

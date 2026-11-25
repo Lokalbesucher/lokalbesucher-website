@@ -3,6 +3,7 @@
   "include": [
     "/api/*",
     "/ki-sichtbarkeits-check/admin", "/ki-sichtbarkeits-check/admin/*",
+    "/p", "/p/*",
     "/newsletter/abmelden", "/newsletter/abmelden/*",
     "/newsletter/bestaetigen", "/newsletter/bestaetigen/*",
     "/CLAUDE.md", "/claude.md", "/wrangler.toml", "/package.json", "/package-lock.json", "/.gitignore",

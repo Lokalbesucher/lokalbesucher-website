@@ -10,6 +10,8 @@
  * KI_ADMIN_PASSWORD (Pages → Einstellungen → Variablen und Geheimnisse).
  * Ohne gesetztes Secret bleibt die Seite geschlossen (fail-closed).
  *
+ * Präsentationen (wer hat welches Deck wie lange angesehen): eigene Seite admin/decks.js, nutzt deny/authorized/ssoAuthorized von hier.
+ *
  *   ?tab=checks | leads | newsletter   Ansicht (Standard: leads)
  *   ?export=checks | leads | newsletter  CSV-Download (alle Zeilen, neueste zuerst)
  * Newsletter: Tabelle newsletter (migrations/0002_newsletter.sql), Double-Opt-in über functions/api/newsletter.js.
@@ -20,7 +22,7 @@ const MAX_ROWS = 200;
 const esc = (v) => String(v == null ? '' : v)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
-function deny() {
+export function deny() {
   return new Response('Zugang nur mit Passwort.', {
     status: 401,
     headers: {
@@ -66,7 +68,7 @@ async function ssoSign(secret, payload) {
 }
 /* Liefert null (nicht erlaubt), true (Basic Auth / gueltiges Cookie) oder einen
    Set-Cookie-Header (frischer SSO-Token: Cookie setzen und weiterleiten). */
-async function ssoAuthorized(request, env) {
+export async function ssoAuthorized(request, env) {
   if (!env.SSO_SECRET) return null;
   const url = new URL(request.url);
   const t = url.searchParams.get('sso');
@@ -83,7 +85,7 @@ async function ssoAuthorized(request, env) {
   return (await ssoVerify(env.SSO_SECRET, decodeURIComponent(m[1]))) ? true : null;
 }
 
-function authorized(request, env) {
+export function authorized(request, env) {
   if (!env.KI_ADMIN_PASSWORD) return false;
   const h = request.headers.get('Authorization') || '';
   if (!h.startsWith('Basic ')) return false;
@@ -236,6 +238,7 @@ ${bySource.length ? `<ul class="src">${bySource.map(r => `<li>${esc(r.source)}: 
   <a class="btn ${tab === 'leads' ? 'active' : ''}" href="?tab=leads">Anfragen</a>
   <a class="btn ${tab === 'checks' ? 'active' : ''}" href="?tab=checks">Checks</a>
   <a class="btn ${tab === 'newsletter' ? 'active' : ''}" href="?tab=newsletter">Newsletter${nl ? ` (${n(nl.bestaetigt)})` : ''}</a>
+  <a class="btn" href="/ki-sichtbarkeits-check/admin/decks">Präsentationen</a>
   <a class="btn export" href="?export=${tab}">CSV herunterladen (${tab === 'leads' ? 'Anfragen' : tab === 'newsletter' ? 'Newsletter' : 'Checks'})</a>
 </div>
 
