@@ -5,9 +5,19 @@
   <link>https://lokalbesucher.de/news/</link>
   <description>Änderungen bei Google, Meta, Apple Maps, Bing Places und KI-Suche, eingeordnet für lokale Unternehmen.</description>
   <language>de-de</language>
-  <lastBuildDate>Tue, 24 Nov 2026 06:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 25 Nov 2026 06:00:00 GMT</lastBuildDate>
   <atom:link href="https://lokalbesucher.de/news/feed.xml" rel="self" type="application/rss+xml"/>
   <image><url>https://lokalbesucher.de/assets/images/og-lokalbesucher.png</url><title>Lokalbesucher News: Lokales Marketing</title><link>https://lokalbesucher.de/news/</link></image>
+  <item>
+    <title>Bing: Werbung in KI-Übersichten, KI-Bilder mit Label</title>
+    <link>https://lokalbesucher.de/news/2026-11-microsoft-ads-ki-uebersichten-alle-maerkte-ki-label/</link>
+    <guid isPermaLink="true">https://lokalbesucher.de/news/2026-11-microsoft-ads-ki-uebersichten-alle-maerkte-ki-label/</guid>
+    <pubDate>Wed, 25 Nov 2026 06:00:00 GMT</pubDate>
+    <author>info@lokalbesucher.de (Tobias Frank)</author>
+    <category>Bing Places</category>
+    <category>Werbeanzeigen</category>
+    <description><![CDATA[Microsoft zeigt seit dem 19.11.2026 offiziell Anzeigen neben den KI-Übersichten von Bing, in allen Märkten außer China. Eine eigene Kampagne ist nicht nötig, die Anzeigen laufen über bestehende Kampagnen wie Performance Max. Zusätzlich können Werbetreibende KI-erzeugte Bilder und Videos kennzeichnen. Wer bei Microsoft wirbt, sollte jetzt Suchbegriffe und Ausschlüsse prüfen und KI-Bilder kennzeichnen.]]></description>
+  </item>
   <item>
     <title>Meta stoppt neue Regeln zum Auslesen von Websites</title>
     <link>https://lokalbesucher.de/news/2026-11-meta-geschaeftsbedingungen-crawler-gestoppt/</link>
