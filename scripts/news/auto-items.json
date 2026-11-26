@@ -1421,5 +1421,53 @@
   ],
   "social": "/assets/images/news/microsoft-ads-ki-uebersichten-alle-maerkte-ki-label-social.jpg",
   "image": "/assets/images/news/microsoft-ads-ki-uebersichten-alle-maerkte-ki-label-og.webp"
+ },
+ {
+  "slug": "2026-11-ki-modus-studie-empfehlungen-aus-google-suche",
+  "date": "2026-11-26",
+  "platform": "ki-suche",
+  "topic": "local-seo",
+  "title": "Studie: Googles KI-Modus empfiehlt, was die Suche liefert",
+  "headline": "45 Prozent der Marken kommen aus der Google-Suche: Studie mit 10.701 Fragen zeigt, woher der KI-Modus seine Empfehlungen nimmt",
+  "metaDesc": "Eine Studie mit 10.701 Fragen zeigt: 45 Prozent der Marken in Googles KI-Modus kommen aus der Suche. Warum Local SEO für KI-Antworten zählt.",
+  "teaser": "Googles KI-Modus weiß aus dem Gedächtnis wenig über kleinere Anbieter. Eine Auswertung von 10.701 Fragenpaaren zeigt, dass fast die Hälfte der empfohlenen Marken erst durch die Google-Suche in die Antwort kommt. Für lokale Betriebe ist das eine Chance.",
+  "summary": "<strong>Fast jede zweite Marke, die Googles KI-Modell Gemini 4 Hydrogen mit Suche empfiehlt, kommt erst durch die Suchergebnisse in die Antwort.</strong> Das zeigt eine Auswertung der Agentur DEJAN mit 10.701 Fragenpaaren vom 13. bis 18.11.2026. Nur 1,8 Prozent der Antworten blieben gleich. Wer in der klassischen Suche auffindbar ist, hat damit auch in KI-Antworten eine Chance.",
+  "body": "        <figure>\n          <img src=\"/assets/images/news/ki-modus-studie-empfehlungen-aus-google-suche-2026.webp\" alt=\"Comic: Handwerker am Tisch sieht auf ein Tablet, Suchergebnisse fließen in eine leuchtende Antwortkarte\" width=\"928\" height=\"518\" loading=\"eager\" fetchpriority=\"high\" style=\"border-radius:12px;border:1px solid #1e2240\">\n          <figcaption style=\"font-size:.8rem;color:#7c83aa;margin-top:.5rem\">Googles KI-Modus baut seine Empfehlungen zu einem großen Teil aus Suchergebnissen.</figcaption>\n        </figure>\n<p>Fragt man Googles KI-Modus nach dem besten Anbieter für irgendetwas, klingt die Antwort, als wüsste die Maschine Bescheid. Eine neue Auswertung zeigt, wie viel davon tatsächlich aus der Google-Suche kommt: fast die Hälfte. Die australische KI-SEO-Agentur DEJAN hat dafür zwischen dem 13. und 18.11.2026 dem Modell Gemini 4 Hydrogen 10.701 Fragenpaare gestellt, jeweils einmal ohne und einmal mit Google-Suche. Für lokale Betriebe ist das eine gute Nachricht mit Bedingung. Wer in der Suche gut auffindbar ist, hat auch in der KI-Antwort eine Chance, selbst wenn das Modell ihn aus dem Gedächtnis gar nicht kennt.</p>\n<h2 id=\"was-ist-passiert\">Was hat die Studie genau gemessen?</h2>\n<p>Gemini 4 Hydrogen ist seit dem 12.11.2026 das Standardmodell im KI-Modus, wie DEJAN unter Berufung auf Search Engine Roundtable schreibt. Im KI-Modus führt Google zur Frage eigene Suchen aus und gibt die Ergebnisse an das Modell weiter, das daraus die Antwort schreibt und die Marken auswählt. DEJAN hat diesen Ablauf über die Gemini-Programmierschnittstelle nachgestellt: dieselbe Empfehlungsfrage einmal aus dem Gedächtnis, einmal mit Google-Suche als Quelle. Die Daten stammen aus 3.503 verschiedenen Fragen zu 119 beobachteten Websites.</p>\n<p>In einem zweiten Test fragte DEJAN das Modell nach der eigenen Firma. Ohne Suche riet Hydrogen anhand des Domainnamens und nannte in zehn Listen keines der eigenen Produkte. Mit Suchergebnissen beschrieb es die Firma korrekt. Das Fazit der Agentur lautet übersetzt: Was Hydrogen im KI-Modus über eine Marke sagt, „kommt aus dem, was die Suche ihm liefert“.</p>\n<h2 id=\"welche-zahlen-gibt-es\">Wie stark hängt die KI-Antwort an der Suche?</h2>\n<div class=\"statbox\"><div><div class=\"n\">10.701</div><p>Fragenpaare, je einmal ohne und mit Google-Suche gestellt, 13. bis 18.11.2026 (DEJAN, November 2026)</p></div><div><div class=\"n\">45 %</div><p>der Marken in einer Antwort mit Suche kamen erst durch die Suche hinzu, im Schnitt 3,4 von 7,5 (DEJAN, November 2026)</p></div><div><div class=\"n\">1,8 %</div><p>der Antwortpaare waren ohne und mit Suche identisch (DEJAN, November 2026)</p></div></div>\n<p>Die 45 Prozent sind die Kernzahl. Fast jede zweite empfohlene Marke steht nur deshalb in der Antwort, weil die Suche sie geliefert hat. Umgekehrt flogen im Schnitt 2,3 Marken aus dem Gedächtnis wieder raus, etwa weil sie umbenannt oder übernommen wurden. Einschränkung: 62 Prozent der Fragen waren englisch, und es ging um Markenempfehlungen, nicht gezielt um lokale Suchen. Wie das bei „Elektriker in Marl“ aussieht, misst die Studie nicht.</p>\n<h2 id=\"wer-gewinnt\">Wer profitiert davon, dass die KI auf die Suche hört?</h2>\n<p>Im Vorteil sind kleine und regionale Anbieter. Ein großes Sprachmodell kennt aus dem Training vor allem bekannte Namen. Wenn es schon über eine in der SEO-Branche bekannte Agentur aus dem Gedächtnis kaum Konkretes weiß, dürfte es über einen Malerbetrieb in Dorsten noch weniger wissen. Die Suche gleicht das aus. DEJAN beschreibt, dass die Suche die Liste über die bekanntesten Namen hinaus erweitert. Wer in der klassischen Suche für seine Leistung und seinen Ort auftaucht, kommt so in eine Antwort, die das Modell allein nie gegeben hätte.</p>\n<h2 id=\"wer-verliert\">Wer fällt aus den KI-Empfehlungen heraus?</h2>\n<p>Schwer haben es lokale Betriebe ohne eigene Website oder mit einer Seite, die nicht sagt, was sie verkaufen. Die Suche kann dem Modell nur liefern, was im Netz steht. Eine Startseite mit „Willkommen“ und Telefonnummer gibt keine Antwort auf die Frage, wer in der Nähe Wärmepumpen wartet. Auch Vergleichsportale verlieren nach DEJANs Daten an Platz in der Antwort selbst. Sie wandern aus der Empfehlung in die Quellenliste, das Modell liest sie, nennt sie aber seltener als Anbieter.</p>\n<h2 id=\"wie-reagieren\">Wie wirst du für die KI-Suche auffindbar?</h2>\n<ul><li><strong>Leistungen auf der Website ausschreiben.</strong> Jede Leistung, die du anbietest, braucht einen klaren Satz mit Ort, sonst kann die Suche sie dem Modell nicht liefern.</li><li><strong>Namen und Adresse überall gleich halten.</strong> Die Studie zeigt, dass Suchergebnisse veraltete Namen aus dem Gedächtnis des Modells überschreiben; einheitliche Angaben machen es der Suche leicht.</li><li><strong>In der klassischen Suche sichtbar bleiben.</strong> Lokale Suchmaschinenoptimierung ist die Zufahrt zur KI-Antwort und kein Auslaufmodell.</li><li><strong>Den eigenen Betrieb im KI-Modus abfragen.</strong> Stell die Fragen deiner Kunden und prüfe, ob und wie dein Betrieb genannt wird.</li></ul>\n<p>Die KI im Suchschlitz weiß wenig über deinen Betrieb. Sie liest nach, und zwar dort, wo du deine Hausaufgaben gemacht hast.</p>",
+  "fazit": "Googles KI-Modus empfiehlt laut einer Studie mit 10.701 Fragen fast die Hälfte seiner Marken erst aufgrund der Suchergebnisse. Schreib deine Leistungen mit Ort auf die Website und bleib in der klassischen Suche sichtbar, dann kann die KI dich finden.",
+  "impact": "Wer in der Google-Suche für seine Leistung und seinen Ort auftaucht, hat auch in der KI-Antwort eine Chance.",
+  "sources": [
+   {
+    "label": "DEJAN: Gemini 4 Hydrogen keeps 45% of its brand recommendations when Google Search is switched on, November 2026, abgerufen am 22.11.2026",
+    "url": "https://dejan.ai/blog/gemini-4-hydrogen-keeps-45-of-its-brand-recommendations-when-google-search-is-switched-on/"
+   },
+   {
+    "label": "DEJAN: Gemini 4 Hydrogen, the model behind AI Mode, named none of our products from memory, November 2026, abgerufen am 22.11.2026",
+    "url": "https://dejan.ai/blog/gemini-4-hydrogen-the-model-behind-ai-mode-named-none-of-our-products-from-memory/"
+   }
+  ],
+  "keywords": [
+   "KI-Modus",
+   "Gemini 4 Hydrogen",
+   "KI-Sichtbarkeit",
+   "Local SEO",
+   "KI-Suche",
+   "Studie"
+  ],
+  "related": [
+   {
+    "href": "/ratgeber/ki-sichtbarkeit-lokale-unternehmen/",
+    "label": "KI-Sichtbarkeit für lokale Unternehmen"
+   },
+   {
+    "href": "/ki-sichtbarkeits-check/",
+    "label": "KI-Sichtbarkeits-Check"
+   },
+   {
+    "href": "/ratgeber/google-maps-top-3-ranking/",
+    "label": "In die Top 3 bei Google Maps"
+   }
+  ],
+  "social": "/assets/images/news/ki-modus-studie-empfehlungen-aus-google-suche-social.jpg",
+  "image": "/assets/images/news/ki-modus-studie-empfehlungen-aus-google-suche-og.webp"
  }
 ]
