@@ -325,14 +325,14 @@
   <!-- news:start -->
   <url>
     <loc>https://lokalbesucher.de/news/</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://lokalbesucher.de/news/redaktion/</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
@@ -346,7 +346,7 @@
 
   <url>
     <loc>https://lokalbesucher.de/news/google/</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -388,7 +388,7 @@
 
   <url>
     <loc>https://lokalbesucher.de/news/werbeanzeigen/</loc>
-    <lastmod>2026-11-25</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -411,6 +411,13 @@
     <loc>https://lokalbesucher.de/news/local-seo/</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://lokalbesucher.de/news/2026-11-google-lokale-dienstleistungen-umzug-google-ads/</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 

@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
   <url>
+    <loc>https://lokalbesucher.de/news/2026-11-google-lokale-dienstleistungen-umzug-google-ads/</loc>
+    <news:news>
+      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
+      <news:publication_date>2026-11-27T08:00:00+02:00</news:publication_date>
+      <news:title>Lokale Dienstleistungsanzeigen ziehen in Google Ads um</news:title>
+    </news:news>
+  </url>
+  <url>
     <loc>https://lokalbesucher.de/news/2026-11-ki-modus-studie-empfehlungen-aus-google-suche/</loc>
     <news:news>
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
@@ -14,14 +22,6 @@
       <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
       <news:publication_date>2026-11-25T08:00:00+02:00</news:publication_date>
       <news:title>Bing: Werbung in KI-Übersichten, KI-Bilder mit Label</news:title>
-    </news:news>
-  </url>
-  <url>
-    <loc>https://lokalbesucher.de/news/2026-11-meta-geschaeftsbedingungen-crawler-gestoppt/</loc>
-    <news:news>
-      <news:publication><news:name>Lokalbesucher</news:name><news:language>de</news:language></news:publication>
-      <news:publication_date>2026-11-24T08:00:00+02:00</news:publication_date>
-      <news:title>Meta stoppt neue Regeln zum Auslesen von Websites</news:title>
     </news:news>
   </url>
 </urlset>
