@@ -171,6 +171,17 @@ ${fehler ? `<p class="fehler" role="alert">${esc(fehler)}</p>` : ''}
 <label for="e">E-Mail</label><input id="e" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200" value="${esc(email)}">
 <button type="submit">Link schicken</button></form>`;
 }
+/* Passwort-Zugang: für Vorschauen, die mehrere Leute mit einem gemeinsamen Passwort öffnen (deck.json: "passwort").
+   Im Repo steht nur der Hash, und der liegt in den verschlüsselten Metadaten. Groß-/Kleinschreibung egal. */
+export const pwHash = (slug, pw) => hash('deck-pw:' + slug + ':' + String(pw || '').trim().toUpperCase());
+export function passwortFormular(slug, titel, { fehler = '' } = {}) {
+  return `<p class="kk">Geschützte Vorschau</p><h1>${esc(titel)}</h1>
+<p>Bitte das Passwort eingeben.</p>
+${fehler ? `<p class="fehler" role="alert">${esc(fehler)}</p>` : ''}
+<form method="post" action="/p/_pw"><input type="hidden" name="slug" value="${esc(slug)}">
+<label for="pw">Passwort</label><input id="pw" name="pw" type="password" autocomplete="off" autocapitalize="characters" required maxlength="80" autofocus>
+<button type="submit">Öffnen</button></form>`;
+}
 /* Zwischenseite: Mail-Scanner rufen Links vorab auf – erst der POST löst den Link ein. */
 export function einloesen(aktion, tok, text, knopfText) {
   return `<p class="kk">Persönliche Präsentation</p><h1>${text}</h1>
@@ -195,7 +206,7 @@ function buchen(){if(akt<0||!seit)return;var s=(Date.now()-seit)/1000;seit=Date.
 function zeige(i){buchen();akt=i;seit=document.hidden?0:Date.now();if(i+1>max)max=i+1}
 function senden(){buchen();var k=Object.keys(puf);if(!k.length)return;var d=JSON.stringify({b:B,n:S.length,m:max,s:puf});puf={};
 try{if(!(navigator.sendBeacon&&navigator.sendBeacon('/p/_t',new Blob([d],{type:'text/plain'}))))fetch('/p/_t',{method:'POST',body:d,keepalive:true,credentials:'same-origin'})}catch(e){}}
-if('IntersectionObserver' in window&&S.length>1){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>=.5)zeige(S.indexOf(e.target))})},{threshold:[.5]});S.forEach(function(e){io.observe(e)})}else zeige(0);
+if('IntersectionObserver' in window&&S.length>1){/* Gezählt wird der Abschnitt, der die Bildschirmmitte kreuzt – so zählen auch Abschnitte, die länger sind als der Bildschirm. */var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)zeige(S.indexOf(e.target))})},{rootMargin:'-50% 0px -50% 0px',threshold:0});S.forEach(function(e){io.observe(e)})}else zeige(0);
 document.addEventListener('visibilitychange',function(){if(document.hidden){senden();seit=0}else seit=Date.now()});
 addEventListener('pagehide',senden);setInterval(senden,8000)})()</script>`;
 }

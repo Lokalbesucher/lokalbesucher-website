@@ -5,12 +5,13 @@
  *   GET  /p/<slug>/?k=<Token>  persönlicher Link aus einer Einladung → Zwischenseite → POST /p/_k
  *   POST /p/_anmelden          Name + E-Mail → Login-Link per Mail (kein Passwort)
  *   GET  /p/_a?t=<Token>       Login-Link aus der Mail → Zwischenseite → POST /p/_a
+ *   POST /p/_pw                Passwort einer Vorschau mit gemeinsamem Passwort (deck.json: "passwort") → Sitzung nur für diese Vorschau
  *   POST /p/_t                 Messung (Sekunden je Seite), nur mit Sitzung
  *   GET  /p/_schluessel        öffentlicher Schlüssel, mit dem Präsentationen verschlüsselt werden
  */
 import {
   SITE, MAIL_RE, esc, token, hash, jetzt, spaeter, slugOk, kopf, db, deck, datei, sitzung, sitzungAnlegen,
-  mail, mailRahmen, knopf, INTERN, tuer, formular, einloesen, geraet, messung, oeffentlicherSchluessel, einladungenUebernehmen,
+  mail, mailRahmen, knopf, INTERN, tuer, formular, einloesen, geraet, messung, oeffentlicherSchluessel, einladungenUebernehmen, pwHash, passwortFormular,
 } from '../_lib/decks.js';
 
 const MAX_GERAETE = 5;          /* so viele Browser darf ein persönlicher Link freischalten, danach gilt das Formular */
@@ -71,6 +72,26 @@ async function einladungEinloesen(request, env) {
   return weiter(`/p/${e.slug}/`, await sitzungAnlegen(env, { name: e.name, email: e.email, quelle: 'einladung', einladung: tok }));
 }
 
+async function passwortPruefen(request, env) {
+  const f = await request.formData().catch(() => null);
+  if (!f) return fehlt();
+  const slug = text(f.get('slug'), 80);
+  const d0 = slugOk(slug) ? await deck(env, request, slug) : null;
+  if (!d0 || !d0.meta.pw) return fehlt();
+  const titel = d0.meta.titel || slug;
+  const d = await db(env);
+  const ip = request.headers.get('CF-Connecting-IP') || '';
+  const z = await d.prepare("SELECT COUNT(*) AS n FROM deck_logins WHERE email = 'passwort' AND ip = ? AND created_at > ?").bind(ip, spaeter(-3600)).first();
+  if (z && z.n >= 15) return tuer(passwortFormular(slug, titel, { fehler: 'Zu viele Versuche. Bitte in einer Stunde noch einmal probieren.' }), { status: 429 });
+  if ((await pwHash(slug, f.get('pw'))) !== d0.meta.pw) {
+    /* Fehlversuche zählen wir in deck_logins mit (email = 'passwort'), sie laufen dort nach einer Stunde aus der Zählung. */
+    await d.prepare('INSERT INTO deck_logins (token_hash, slug, name, email, ip, created_at, expires_at, used_at) VALUES (?,?,?,?,?,?,?,?)')
+      .bind(await hash(token()), slug, '', 'passwort', ip, jetzt(), jetzt(), jetzt()).run();
+    return tuer(passwortFormular(slug, titel, { fehler: 'Das Passwort stimmt nicht.' }), { status: 403 });
+  }
+  return weiter(`/p/${slug}/`, await sitzungAnlegen(env, { name: 'Gast mit Passwort', email: 'passwort', quelle: 'passwort:' + slug }));
+}
+
 async function messen(request, env, ctx) {
   const leer = () => new Response(null, { status: 204, headers: kopf() });
   const s = await sitzung(env, request);
@@ -109,7 +130,9 @@ async function messen(request, env, ctx) {
 async function zeigen(request, env, ctx, url, slug, pfad) {
   const d0 = await deck(env, request, slug);
   if (!d0) return fehlt();
-  const s = await sitzung(env, request);
+  let s = await sitzung(env, request);
+  /* Eine Passwort-Sitzung gilt nur für die Vorschau, für die das Passwort eingegeben wurde. */
+  if (s && String(s.quelle).startsWith('passwort:') && s.quelle !== 'passwort:' + slug) s = null;
   const start = pfad === '' || pfad === 'index.html';
   const k = url.searchParams.get('k');
   if (start && k && /^[a-f0-9]{48}$/.test(k)) {
@@ -119,20 +142,22 @@ async function zeigen(request, env, ctx, url, slug, pfad) {
     const e = await d.prepare('SELECT name, geraete FROM deck_einladungen WHERE token = ? AND slug = ? AND expires_at > ?').bind(k, slug, jetzt()).first();
     if (e && e.geraete < MAX_GERAETE) return tuer(einloesen('/p/_k', k, `${esc(d0.meta.titel || 'Deine Präsentation')}`, 'Präsentation öffnen'));
   }
-  if (!s) return start ? tuer(formular(slug)) : new Response('Bitte zuerst anmelden.', { status: 403, headers: kopf({ 'Content-Type': 'text/plain;charset=utf-8' }) });
+  if (!s) return start ? tuer(d0.meta.pw ? passwortFormular(slug, d0.meta.titel || slug) : formular(slug)) : new Response('Bitte zuerst anmelden.', { status: 403, headers: kopf({ 'Content-Type': 'text/plain;charset=utf-8' }) });
   const f = await datei(env, request, slug, d0, start ? 'index.html' : pfad);
   if (!f) return fehlt();
   if (!start) return new Response(f.body, { headers: kopf({ 'Content-Type': f.ct, 'Cache-Control': 'private, max-age=86400' }) });
 
   const d = await db(env);
   const id = token(), cf = request.cf || {}, titel = d0.meta.titel || slug;
-  const vorher = await d.prepare('SELECT COUNT(*) AS n FROM deck_besuche WHERE slug = ? AND email = ?').bind(slug, s.email).first();
+  const pwGast = s.email === 'passwort'; /* Passwort-Gäste haben keine Adresse: Hinweis einmal je Browser statt einmal je Person */
+  const vorher = pwGast ? await d.prepare('SELECT COUNT(*) AS n FROM deck_besuche WHERE slug = ? AND session = ?').bind(slug, s.id_hash).first()
+    : await d.prepare('SELECT COUNT(*) AS n FROM deck_besuche WHERE slug = ? AND email = ?').bind(slug, s.email).first();
   await d.prepare('INSERT INTO deck_besuche (id, slug, titel, session, name, email, quelle, started_at, last_at, geraet, land, stadt) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)')
     .bind(id, slug, titel, s.id_hash, s.name, s.email, s.quelle, jetzt(), jetzt(), geraet(request.headers.get('User-Agent')), cf.country || '', cf.city || '').run();
   if (!(vorher && vorher.n) && !intern(s.email)) {
     ctx.waitUntil(mail(env, {
-      to: INTERN(env), subject: `Präsentation geöffnet: ${s.name} – ${titel}`,
-      html: mailRahmen(`<p><strong>${esc(s.name)}</strong> (${esc(s.email)}) hat gerade „${esc(titel)}“ zum ersten Mal geöffnet.</p><p>${esc(geraet(request.headers.get('User-Agent')))}${cf.city ? ' · ' + esc(cf.city) : ''} · ${s.quelle === 'einladung' ? 'über den persönlichen Link' : 'über das Anmeldeformular (Link wurde weitergegeben oder selbst aufgerufen)'}</p>${knopf(`${SITE}/ki-sichtbarkeits-check/admin/decks?deck=${slug}`, 'Auswertung öffnen')}`),
+      to: INTERN(env), subject: `${pwGast ? 'Vorschau' : 'Präsentation'} geöffnet: ${s.name} – ${titel}`,
+      html: mailRahmen(`<p><strong>${esc(s.name)}</strong>${pwGast ? '' : ` (${esc(s.email)})`} hat gerade „${esc(titel)}“ ${pwGast ? 'auf einem neuen Gerät' : 'zum ersten Mal'} geöffnet.</p><p>${esc(geraet(request.headers.get('User-Agent')))}${cf.city ? ' · ' + esc(cf.city) : ''} · ${pwGast ? 'mit dem gemeinsamen Passwort' : s.quelle === 'einladung' ? 'über den persönlichen Link' : 'über das Anmeldeformular (Link wurde weitergegeben oder selbst aufgerufen)'}</p>${knopf(`${SITE}/ki-sichtbarkeits-check/admin/decks?deck=${slug}`, 'Auswertung öffnen')}`),
       text: `${s.name} (${s.email}) hat gerade „${titel}“ zum ersten Mal geöffnet.\n${SITE}/ki-sichtbarkeits-check/admin/decks?deck=${slug}`,
     }));
   }
@@ -152,6 +177,7 @@ export async function onRequest({ request, env, waitUntil }) {
       if (erst === '_anmelden') return await anmelden(request, env, ctx);
       if (erst === '_a') return await loginEinloesen(request, env);
       if (erst === '_k') return await einladungEinloesen(request, env);
+      if (erst === '_pw') return await passwortPruefen(request, env);
       if (erst === '_t') return await messen(request, env, ctx);
       return fehlt();
     }
